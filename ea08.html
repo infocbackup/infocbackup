@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Dinamikus memóriakezelés</title>
+<meta property="og:title" content="InfoC :: Dinamikus memóriakezelés">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Dinamikus memóriakezelés. Összetett típusok, több dimenziós tömbök, pointertömbök.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Dinamikus memóriakezelés. Összetett típusok, több dimenziós tömbök, pointertömbök.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea08.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="eadinamikusmemoria" class="namer"></a>
+<h1 class="eloadascim">Dinamikus memóriakezelés</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18</p>
+<p class="kivonat">Dinamikus memóriakezelés. Összetett típusok, több dimenziós tömbök, pointertömbök.</p>
+</div>
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea08.html#1">Pointer emlékeztető – mutatók használata</a>
+<li><a href="ea08.html#2">Pointer emlékeztető – címaritmetika</a>
+<li><a href="ea08.html#3">A <code>const</code> kulcsszó</a>
+<li><a href="ea08.html#4">Const kulcsszó általában</a>
+<li><a href="ea08.html#5"><em>Dinamikus memóriakezelés</em></a>
+<li><a href="ea08.html#6">Memóriakezelés: a három gondunk</a>
+<li><a href="ea08.html#7">Dinamikus memóriakezelés: célok</a>
+<li><a href="ea08.html#8">A <code>malloc()</code> és a <code>free()</code> függvény</a>
+<li><a href="ea08.html#9"><code>malloc()</code>, <code>free()</code>: példák</a>
+<li><a href="ea08.html#10"><code>malloc()</code>, <code>free()</code>: a terület tulajdonosa</a>
+<li><a href="ea08.html#11"><code>calloc()</code>, <code>realloc()</code></a>
+<li><a href="ea08.html#12"><code>malloc()</code>, <code>free()</code> – kérdések</a>
+<li><a href="ea08.html#13">A DinamikusTömb</a>
+<li><a href="ea08.html#14">Pointerek struktúrákra: a nyíl operátor</a>
+<li><a href="ea08.html#15">A DinamikusTömb függvényei</a>
+<li><a href="ea08.html#16"><em>A memóriakezelés áttekintése</em></a>
+<li><a href="ea08.html#17">A három memóriaterület</a>
+<li><a href="ea08.html#18">A globális memóriaterület</a>
+<li><a href="ea08.html#19">Függvények statikus változói</a>
+<li><a href="ea08.html#20">A verem (stack)</a>
+<li><a href="ea08.html#21"><code>sizeof(s)</code> és <code>strlen(s)</code></a>
+<li><a href="ea08.html#22">A kupac (heap)</a>
+<li><a href="ea08.html#23">Hibalehetőség: érvénytelen pointerek</a>
+<li><a href="ea08.html#24">Visszatérés dinamikusan foglalt területtel</a>
+<li><a href="ea08.html#25">&hellip; ezek vajon helyesek-e?</a>
+<li><a href="ea08.html#26"><em>Több dimenziós tömbök</em></a>
+<li><a href="ea08.html#27">Emlékeztető – több dimenziós tömbök</a>
+<li><a href="ea08.html#28">Több dimenziós – átadás függvénynek</a>
+<li><a href="ea08.html#29">Összetett deklarációk</a>
+<li><a href="ea08.html#30">Sztringek tömbje – tömbök tömbje</a>
+<li><a href="ea08.html#31">Sztringek tömbje – pointerek tömbje</a>
+<li><a href="ea08.html#32">2D dinamikus tömbök – módszerek</a>
+<li><a href="ea08.html#33">2D dinamikus tömb – melyiket válasszuk?</a>
+<li><a href="ea08.html#34">Többszörös indirekció – mutató mutatóra</a>
+<li><a href="ea08.html#35">Többszörös indirekció – 2D tömb</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Pointer emlékeztető – mutatók használata</h2>
+</div>
+
+<h3>Mutatók létrehozása, cím képzése, indirekció</h3>
+<div class="columns c4060">
+<div>
+<pre class="brush: c "  >
+int i, *pi;
+pi = &amp;i;
+i = 2;
+*pi = 2;
+
+char c, *pc;
+pc = &amp;c;
+putchar(c);
+putchar(*pc);</pre>
+</div>
+<div>
+<img src="ea08/indirekcio.svg" class="kozep" style="width: 18em;">
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>A pointer egy változó címét (helyét) tárolja a memóriában. Egy
+adott változóra ez a cím az <code>&amp;</code> operátorral képezhető,
+és a pointerben eltárolható. Így a pointer gyakorlatilag az adott
+változóra hivatkozik, rajta keresztül elérjük a változót, aminek
+a címét képeztük. Ha a pointert dereferáljuk a <code>*</code>
+operátorral, akkor a változót kapjuk meg, amelynek értéke írható
+és olvasható is a pointeren „keresztül”. Vagyis a dereferált
+pointer is lehet balérték.</p>
+<p>
+A pointer típusához hozzátartozik a mutatott változó típusa is, pl.
+egészre mutató pointer típusa <code>int*</code>, karakterre mutató
+pointer típusa pedig <code>char*</code>. Erre két dolog miatt van
+szükség:
+</p>
+<ul>
+    <li>Egyrészt így válik értelmessé a dereferálás, hiszen az csak
+        akkor értelmes művelet, ha tudjuk, hogy milyen típusú adatot
+        hivatkozunk a memóriában. A helye önmagában ehhez kevés.
+    <li>Tömbök esetén a típus ismerete ad lehetőséget a pointer aritmetikára:
+        kiszámítható, hogy a következő elem hol van. Annyi bájttal van
+        arrébb a tömb kezdetéhez képest, ahány bájtos egy elem.
+</ul>
+<p>
+Ezért működnek úgy a tömbök, hogy egyforma típusokat lehet csak tárolni
+bennük. Nem lehet egy tömbben összevissza mindenféle, <code>int</code>,
+<code>double</code>, <code>struct&nbsp;Pont</code> stb. típusú
+adat, hiszen ezek eltérő méretűek, és nem lehetne könnyen kiszámítani,
+hogy melyik elem hol található a memóriában.
+</p>
+</div>
+
+<br class="smallskip">
+
+<h3>Cím szerinti paraméterátadás</h3>
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+void pluszegy(int *hova) {
+    *hova += 1;
+}</pre>
+</div>
+<div>
+<pre class="brush: cbub "  >
+int x = 2;
+
+pluszegy(&amp;x);</pre>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Pointer emlékeztető – címaritmetika</h2>
+</div>
+
+<div class="columns c4060">
+<div>
+<pre class="brush: cbub "  >
+int tomb[4], *pi;
+
+pi = tomb;  // &amp;tomb[0]
+
+pi[2] = 4;  // *(pi+2)=4
+
+tomb[1] = 2;// *(tomb+1)</pre>
+</div>
+<div>
+<img src="ea08/cimaritmetika.svg" class="kozep" style="width: 19em;">
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>A tömb elemei helyének kiszámítására azért van lehetőség, mert
+tudjuk, hogy azok egymás mellett helyezkednek el a memóriában.
+A fordító e célból pontosan így helyezi el őket a memóriában.
+</p>
+<p>
+Akkor is ez történik, amikor az indexelő operátort használjuk;
+akár pointeren, akár egy tömbön magán. Kiszámítódik az adott
+elem címe, utána pedig az így keletkező pointer dereferálódik.
+C-ben így működik a tömbök paraméterként átadása is, ahogyan
+az a következő forráskódokon látható.
+</p>
+</div>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+void tomb_kiir(int *tomb, int meret) {
+    int i;
+    for (i = 0; i &lt; meret; ++i)
+        printf(&quot;%d &quot;, tomb[i]);
+}</pre>
+
+<pre class="brush: cbub "  >
+int tomb[10];
+tomb_kiir(tomb, 10);</pre>
+
+<div class="csakdoksi">
+<p>Akár változót adunk át cím szerint, akár egy tömböt a függvénynek, mindkét
+esetben egy pointer adódik át. Önálló változó esetén ezt a pointert a <code>*</code>
+operátorral dereferáljuk a függvényben, és így elérjük a változót.
+Tömbök esetén elvileg egy címszámítás és egy dereferencia kell (<code>*(tomb+i)</code>),
+de ilyen operátorokkal írni felesleges, sőt értelemzavaró, mert ehelyett találták ki az indexelő operátort.
+</p>
+<p>
+Az itt bemutatott működés kellemetlen tulajdonsága az, hogy akár tömböt adunk át,
+akár önálló változóra mutató pointert, mindkét esetben a paraméter típusa mutató.
+Ezért ha látunk egy ilyen függvénydeklarációt:
+</p>
+<pre class="brush: c "  >
+void fuggveny(int*);</pre>
+<p>akkor ránézésre nem tudjuk megmondani, hogy ez a függvény egy darab integert
+vár cím szerint, vagy egy tömböt. Tömb esetén ezért a definiálatlan méretű
+tömbparamétert szokták használni néha:</p>
+<pre class="brush: c "  >
+void fuggveny(int[]);</pre>
+<p>De ez <em>tökéletesen ugyanazt jelenti</em> a fordító számára, mint az előbbi.
+Vagyis ilyenkor is egy pointer adódik csak át, és ilyenkor sem másolódik
+le a tömb, hanem az eredetit látjuk! Ezért ez a forma meg ilyen szempontból
+lehet kicsit megtévesztő.</p>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<a id="eakonstans" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A <code>const</code> kulcsszó</h2>
+</div>
+
+<pre class="sticky syntaxhighlighter mono" style="text-align: left; margin-top: -0.8em; line-height: 1.2;">
+<span class="comment">/* a világ utolsó C bugja */</span>
+while (1) {
+   status = GetRadarInfo();
+   if (status = 1)
+      LaunchMissiles();
+}
+</pre>
+
+<p>Nem mindig szeretnénk, ha a cím szerint átadott változót
+meg tudná változtatni a függvény!</p>
+
+<br class="smallskip">
+
+<div class="csakdoksi">
+<p>Például egy kereső függvénytől nem
+várjuk, hogy megváltozzon a hívás során a tömb értéke, és ha ilyet
+hibázunk, arra a fordító sem figyelmeztet. Előfordulhat, hogy egy
+nagy struktúrát cím szerint adunk át egy függvénynek – nem azért,
+hogy meg tudjuk változtatni, hanem csak mert nem szeretnénk feleslegesen
+lemásolni, mert az nagyon lassítaná a programunkat.</p>
+<p>A <code>const</code> kulcsszóval tudjuk jelezni egy adatnál, hogy
+azt nem szabad megváltoztatni.</p>
+</div>
+
+<pre class="brush: cbub "  >
+void kiir(int const *tomb, int meret);
+
+int tomb[100] = { … … … };
+kiir(tomb, 100);          // int* → int const*</pre>
+
+<pre class="brush: cbub "  >
+struct Rajz { … … … };
+void rajzol(Rajz const *r);
+
+Rajz r;
+rajzol(&amp;r);               // Rajz * → Rajz const *</pre>
+
+<div class="csakdoksi">
+<p>
+<code>int const *</code> – ez azt jelenti, hogy ez a mutató
+konstans integerekre mutat. Vagyis hogy meg lehet hivatkozni
+a mutatott értékeket (a tömb elemeit), és ki is lehet olvasni azokat,
+de változtatni nem lehet rajtuk. Vagyis pl. egy értékadást nem fog
+engedni a fordító, hanem fordítási hibával visszadobja a programot.
+</p>
+<p>
+Az ilyen mutatókat kétféleképpen szokták írni: <code>int const *</code>
+és <code>const int *</code>. Mind a kettő ugyanazt jelenti: a pointer
+által mutatott integereket konstansnak tekintjük. Az utóbbi időben
+elterjedtebb az <code>int const</code> forma, mert az logikusabb,
+ha mindig azután írjuk, hogy <code>const</code>, ami konstans. (Pl.
+<code>int * const</code> azt jelenti, hogy az integereket lehet
+változtatni, de a pointert nem lehet máshova állítani: <code>*p=2</code>
+szabad, <code>p++</code> viszont nem. Erről a második
+félévben lesz szó részletesebben.)
+</p>
+<p>
+A függvényhívás helyén a tömb kezdőcíme elvileg <code>int *</code>
+típusú. Ezt a fordító automatikusan konvertálja <code>int const *</code>-gá;
+ilyenkor persze igazából semmi nem történik, ez csak egy jelzés, hogy
+a függvényen belül már tilos a változtatás. Egy adott típusról
+ugyanolyan típusú konstanssá automatikus a konverzió. A másik irányba
+viszont értelemszerűen tiltott: ha egy konstans pointer sima pointerré
+alakulhatna vissza automatikusan, akkor az egésznek semmi értelme
+nem lenne.
+</p>
+<p>
+A konstansoknak egyébként kiváló „öndokumentáló” szerepük is van.
+Ha olvassuk a kódot, és látjuk valamiről, hogy konstans,
+akkor hamarabb megértjük a program működését – hiszen egyből látjuk,
+mi a konstans, és mi a változó.
+</p>
+</div>
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<a id="magikus" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Const kulcsszó általában</h2>
+</div>
+
+<p>A karbantarthatóság egyik alapfeltétele: az <em>olvashatóság</em>.</p>
+
+<br class="smallskip">
+
+<pre class="brush: c "  >
+for (y = 0; y &lt; 480; ++y)
+  for (x = 0; x &lt; 640; ++x)
+    putpixel(x, y, 133, 224, 89);</pre>
+<div class="kozep">„mágikus számok” – kezelhetetlenek!</div>
+<pre class="brush: c "  >
+int const KepMag = 480;
+int const KepSzel = KepMag/3*4;
+Szin const sz1 = { 133, 224, 89 };
+
+for (y = 0; y &lt; KepMag; ++y)
+  for (x = 0; x &lt; KepSzel; ++x)
+    putpixel(x, y, sz1.r, sz1.g, sz1.b);</pre>
+<div class="kozep">konstansok</div>
+
+<br class="smallskip">
+
+<div class="csakdoksi">
+<p>Ha a programunkat egy másik felbontásra szeretnénk átállítani, elegendő
+mindössze a két konstans értékét felülírni és a következő fordításnál már
+minden algoritmus az új értékekkel fog dolgozni.</p>
+
+<p>Ha a konstansok helyett számokat használtunk volna, akkor minden
+előfordulásnál felül kéne írni őket. Ez fáradságos munka, és
+hibalehetőségeket is rejt magában: elég egy  helyen elfelejteni az átírást,
+és egy nehezen megtalálható hibát vittünk a programba.</p>
+
+<p>A konstansok „furcsa állatok”. Ezek tulajdonképp konstans
+változók: az oxymoron mindkét fontos tulajdonságukat kifejezi.
+Konstansok, mert a létrehozás után már nem lehet őket megváltoztatni.
+Változók, ugyanúgy van helyük a memóriában, értéket kaptak a
+létrehozásuk pillanatában – és nem lehet velük tömb méretét megadni!
+Az utóbbi ok miatt konstans egészeket gyakran az <code>enum</code> kulcsszóval
+hozunk létre, bár az eredendően nem erre való.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<h1 class="diacim">Dinamikus memóriakezelés</h1>
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Memóriakezelés: a három gondunk</h2>
+</div>
+
+<pre class="brush: c float athuzott"  >
+int tomb[1000], i, n;
+printf(&quot;Hány szám? &quot;);
+scanf(&quot;%d&quot;, &amp;n);
+for (i = 0; i &lt; n; ++i)
+   tomb[i] = …</pre>
+<p>1. A program írásakor <em>nem tudjuk előre, mennyi</em> memória kell.</p>
+  <ul>
+     <li>Pl. a felhasználó mondja meg, mennyi adat lesz.
+     <li>Felülbecsüljük? Alulbecsüljük?
+  </ul>
+
+<p class="csakdoksi">Ha felülbecsüljük a tömb méretét, túl sok
+memóriát használ a programunk feleslegesen. Ha alulbecsüljük, akkor
+pedig egyszerűen nem fog működni: túlindexelés lesz benne.</p>
+
+<br class="smallskip">
+<pre class="brush: c float athuzott"  >
+char *beolvas(void) {  
+   char s[200];
+   gets(s);
+   return s;
+}</pre>
+<p>2. Nem tudjuk kontrollálni az <em>élettartamot.</em></p>
+  <ul>
+     <li>Globális változó: „örökké” létezik
+     <li>Függvény lokális változója: csak a függvényen belül létezik
+  </ul>
+
+<p class="csakdoksi">Az élettartam problémája: például egy globális változó akkor
+is létezik, ha éppen nincs rá szükség, és ilyenkor feleslegesen foglalja a
+memóriát. A lokális változó meg megszűnik, ezért ott nem tudunk eredményt
+létrehozni a hívó számára – hacsak nem másoljuk le. A fenti
+<code>beolvas()</code> függvény kifejzetten hibás: a függvényből visszatérve
+megszűnik az <code>s[]</code> tömb, ezért az arra mutató pointer érvénytelenné
+válik. </p>
+
+<br class="smallskip">
+
+<p>3. A hatalmas tömb, amit szeretnénk, <em>nem fér a verembe.</em></p>
+
+<p class="csakdoksi">A lokális változókat tároló, <em>verem</em> nevű
+memóriaterület általában viszonylag kicsi szokott lenni. Nem jó ötlet ezért
+túl nagy tömböket használni lokális változóként, mert azt a memóriaterületet
+fogjuk elhasználni, amire szükségünk van a függvényhívások kivitelezéséhez!</p>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Dinamikus memóriakezelés: célok</h2>
+</div>
+
+<h3>Mi dönthetjük el:</h3>
+<ul>
+   <li><em>Mennyi</em> memóriát foglalunk
+   <li><em>Mikor foglalunk</em> memóriát, és <em>mikor szabadítjuk fel</em>
+</ul>
+<p>Vagyis a kezünkbe kerül minden.</p>
+
+<p class="csakdoksi">A <em>„dinamikus memóriakezelés”</em> azt jelenti, hogy
+egyes memóriaterületek foglalását és felszabadítását mi vezéreljük a programból.
+A „dinamikus” szó az időre utal.</p>
+
+<br class="smallskip">
+
+<blockquote>
+<img class="float" src="ea08/warning.svg" style="width: 6em;">
+<h3 style="margin-top: 0">Mindennek van ára…</h3>
+
+<p>A fentiekért cserébe a <strong>saját felelősségünk</strong>
+<ul>
+    <li>a foglalás, és
+    <li>a felszabadítás is.
+</ul>
+</blockquote>
+
+
+<div class="csakdoksi">
+<p>
+Ha elfelejtjük megtenni, a programunk folyton növekszik, és
+előbb-utóbb le kell állítani…</p>
+<ul>
+   <li>Ez vagy a felhasználónak kellemetlen,
+   <li>Vagy nekünk, ha ezt az operációs rendszer kénytelen megtenni.
+</ul>
+<p>Gondoljunk bele, a dolog néha kényelmetlen, ugyanakkor nagyon hasznos
+tud lenni. Ha egy adott memóriaterületre csak egy bizonyos ideig van szükség,
+akkor lefoglalhatjuk csak akkor, amikor először kell, és felszabadítatjuk,
+amikor már nem kell. Így a programunk kevesebb memóriát foglal.
+</p>
+<p>
+Másrészt pedig nem kell pazarlóan
+felülbecsülnünk a méretet, és nem kell attól sem félni, hogy alulbecsüljük
+azt a program tervezése során. Amikor már tudjuk, mennyi memória kell, csak
+akkor foglalunk. Például két sztring összefűzve: megnézzük a két összefűzendő
+sztring hosszát, és az alapján tudjuk, hogy az összefűzött számára mennyit
+kell foglalnunk. Vagy megnyitunk egy fájlt, megnézzük, milyen hosszú, lefoglalunk
+annyi memóriát, és beolvassuk az egészet.
+</p>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>A <code>malloc()</code> és a <code>free()</code> függvény</h2>
+</div>
+
+<p class="csakdoksi">A <code>malloc()</code> és <code>free()</code> függvénypárost
+biztosítja a C nyelv a dinamikus memóriakezelés megvalósítására.</p>
+
+<pre class="brush: c kozep"  >
+void *malloc(size_t méret)</pre>
+
+<p><strong>Lefoglal</strong> egy bájtban megadott méretű memóriaterületet (malloc: memory allocation).</p>
+
+<ul>
+    <li><em>Visszaad</em> egy pointert a legfoglalt területre, ami <code>méret</code> bájtból áll.
+    <li>A terület inicializálatlan (memóriaszemét).
+    <li>Azért <code>void*</code>, mert nem ismeri a típusunkat.
+    <li>Ha nem sikerül, akkor <code>NULL</code> pointert ad.
+</ul>
+
+<pre class="brush: c kozep"  >
+void free(void *ptr)</pre>
+
+<p><strong>Felszabadít</strong> egy memóriaterületet, amit a <code>malloc()</code> foglalt.</p>
+
+<ul>
+    <li>A <em><code>malloc()</code> által adott</em> címet kell neki adni.
+</ul>
+
+<br class="smallskip">
+<div class="kozep"><button data-diapopup="jatekszabalyok">Játékszabályok</button></div>
+
+<div id="jatekszabalyok">
+<div class="csakdoksi">
+<h3>A <code>malloc()</code> és <code>free()</code> játékszabályai</h3>
+<p>Az alábbi játékszabályokat tökéletesen kell érteni, a legutolsó bitig.
+A be nem tartásuk a legsúlyosabb programozási hibák közé tartozik!</p>
+</div>
+
+<ol>
+<li>A lefoglalt memóriaterületet <em>fel kell szabadítani.</em>
+    <br>
+    Ahány <code>malloc()</code> hívás, annyi <code>free()</code> hívás kell történjen.
+    <br class="smallskip">
+
+<li>A <code>malloc()</code> által adott pointer <em>szemünk fénye!</em>
+    <br>
+    Ha elveszítjük, nem tudjuk majd azt a területet visszaadni.
+    <br class="smallskip">
+
+<li>Allokálatlan memóriaterület nem használható!
+
+    <div class="columns">
+    <div>
+        <div class="sticky" style="margin-top: 2em;"><img src="modulz/halalfej.png" style="display: block"></div>
+        <pre class="brush: c athuzott"  >
+char *szoveg;
+szoveg[2] = 'x';</pre>
+        <p>Ha nem foglaltuk le, akkor <em>még nem.</em></p>
+    </div>
+
+    <div>
+        <div class="sticky" style="margin-top: 2em;"><img src="modulz/halalfej.png" style="display: block"></div>
+        <pre class="brush: c athuzott"  >
+free(szoveg);
+szoveg[2] = 'x';</pre>
+        <p>Ha felszabadítottuk, akkor <em>már nem.</em></p>
+    </div>
+    </div>
+
+</ol>
+</div>
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<a id="eadinamikustomb" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">9</span><code>malloc()</code>, <code>free()</code>: példák</h2>
+</div>
+
+<h3>Nem tudjuk, mekkora tömb kell</h3>
+
+<button class="float" data-diapopup="mallocfreepelda1">Megoldás</button>
+<p><em>Feladat:</em> írjunk programot, amiben a felhasználó bárhány számot tud adni;
+    ezeket mind tároljuk el!</p>
+
+<pre class="brush: cbub "   id="mallocfreepelda1">
+#include &lt;stdlib.h&gt;
+
+double *tomb; // ptr a majdan lefoglalt területre
+int i, n;
+
+printf(&quot;Hány számot? &quot;);
+scanf(&quot;%d&quot;, &amp;n);
+
+tomb = (double*) malloc(n*sizeof(double)); // foglalás
+if (tomb == NULL) {
+    printf(&quot;Nem sikerült memóriát foglalni!\n&quot;);
+    return 1;
+}
+
+tomb[3] = 12; /* tesszük a dolgunkat */    // ez egy tömb!
+
+free(tomb);                                // felszabadítás
+tomb = NULL;  /* kell ez? */</pre>
+
+<div class="csakdoksi">
+<p><em>A lefoglalt területre</em> egy <code>void*</code> mutatót kapunk.
+Ez azért mutat <code>void</code>, vagyis ismeretlen típusra,
+mivel a <code>malloc()</code> nem tudja, milyen típusúak
+a lefoglalt területen tárolt adataink. (Nem is tudhatja, hiszen
+a <code>malloc()</code> a nyelvbe van beépítve, vagyis nem lehet
+felkészítve az összes általunk létrehozott típusra, pl. a
+saját magunk által definiált felépítésű struktúrákra.)
+Ezt a <code>void*</code> típusú pointert átalakítjuk a saját
+típusunkra mutató pointerré (type cast), pl. jelen esetben
+<code>double*</code> típusúvá, és így tároljuk el a
+változónkban.</p>
+<p>Mivel a <code>malloc()</code> semmit nem tud a lefoglalt
+területünkről, a méretét nekünk kell kiszámítani, és bájtokban
+megadni. Itt egy tömböt foglalunk, ezért a legegyszerűbben
+ezt egy szorzással tehetjük meg. A <code>sizeof</code>
+operátor egy adott típus
+méretét bájtban megadja; pl. <code>sizeof(double)</code>
+annyi lesz, ahány bájtos egy <code>double</code> szám.
+Ha ezt megszorozzuk a tömb elemszámával, akkor éppen a kérdéses
+méretet kapjuk. A lefoglalt terület inicializálatlan, vagyis memóriaszemetet
+tartalmaz.</p>
+<p>Innentől kezdve <em>a pointeren keresztül el tudjuk érni a
+memóriaterületet.</em> Kényelmes itt nagyon, hogy a pointereken
+is használható az indexelő operátor, hiszen a használat közben
+nem is kell foglalkozni vele, hogy a tömb statikusan vagy dinamikusan
+lett lefoglalva; ugyanúgy működik az indexelő operátor, ugyanúgy
+átadható függvénynek (hiszen a tömbös függvények eddig is pointert
+vártak) és így tovább. Túlindexelni természetesen továbbra sem szabad.
+</p>
+<p>
+Ha végeztünk, és már nincsen szükség az adatokra, akkor visszaadjuk
+a lefoglalt területet. Ehhez átadjuk a <code>free()</code> utasításnak
+azt a pointert, amit a <code>malloc()</code>-tól kaptunk (ezzel
+azonosítja, hogy melyik területről van szó). Elvileg ugyan a <code>free()</code>
+egy <code>void*</code> típusú pointert vár, de ilyenkor a típus
+konverzióját nem kell elvégezni, mert a <code>valami*</code>&rarr;<code>void*</code>
+konverzió automatikus. Miután felszabadítottuk a memóriaterületet, már
+<em>nem szabad hivatkozni azt!</em> Hiszen azt egy másik <code>malloc()</code>
+hívás másra használhatja, vagy bármi más történhet vele. Ha így teszünk,
+az nagyon súlyos hiba! Mivel azonban a pointer megmarad, érdemes lehet azt
+<code>NULL</code>-ra állítani, hogy észre tudjuk venni ezt a programozási hibát.</p>
+</div>
+
+<div class="csakdoksi megjegyzes">
+<p>A C nyelv újabb, de nem minden fordító által elfogadhatóan támogatott verziójában, a C99-ben 
+lehetőség van arra, hogy <code>malloc()</code> hívás nélkül hozzunk létre olyan tömböt, amelynek 
+mérete futási időben derül ki. Ilyen tömb természetesen csak függvény lokális változója lehet, 
+és bár a mérete nem fix, de az élettartama igen, hiszen a függvényből visszatérve meg fog 
+szűnni. Vagyis a fentit C99-ben akár így is írhatjuk (természetesen a <code>free()</code> hívást 
+is elhagyva):</p>
+<pre class="brush: c "  >
+printf(&quot;Hány számot? &quot;);
+scanf(&quot;%d&quot;, &amp;n);
+double tomb[n];
+…</pre>
+<p>A változóval megadott méretű tömböket a különböző programozási nyelvek vagy támogatják, vagy 
+nem. A Pascal és a C89 nem támogatja, a C99 és a C++ igen. A programunk tervezésekor figyelembe 
+kell vennünk, hogy egy meg nem adott méretű tömböt esetleg dinamikus memóriakezeléssel tudunk 
+csak majd megvalósítani a választott programozási nyelven. Figyelembe kell vennünk azt is, hogy 
+a verem mérete általában jóval kisebb, mint a dinamikusan, <code>malloc()</code>-kal foglalható 
+memória mérete. Így ezt <em>csak kisebb tömbökre</em> használhatjuk. További peremfeltétel, hogy
+bár a veremben, automatikus lokális változóként hozható létre így tömb, adatszerkezet része
+(pl. struktúrában) továbbra sem lehet ilyen.</p>
+</div>
+
+
+<br class="smallskip">
+
+<h3>Kontrollálnunk kell az élettartamot is</h3>
+
+<button class="float" data-diapopup="mallocfreepelda2">Megoldás</button>
+<p><em>Feladat:</em> írjunk függvényt, amely összefűz két, paraméterként kapott sztringet!
+A függvény visszatérési értéke legyen az összefűzött sztring!</p>
+
+<pre class="brush: c "  >
+char *s;
+s = osszefuz(&quot;alma&quot;, &quot;fa&quot;);
+...</pre>
+
+<p class="csakdoksi">Ebben dinamikus memóriakezelést kell használnunk.
+Nem csak azért, mert nem tudjuk előre, hogy mekkora lesz a tömb, hanem
+azért is, mert a függvényből visszatérve a lefoglalt tömbnek meg
+kell maradnia. Az semmiképpen nem lehet a függvény lokális változója!</p>
+
+<pre class="brush: cbub "   id="mallocfreepelda2">
+/* visszatér egy sztringgel, ami s1 és s2 összefűzve.
+ * a hívónak fel kell szabadítania a kapott sztringet! */
+char *osszefuz(char const *s1, char const *s2) {
+    int mennyi;
+    char *res;
+
+    mennyi = strlen(s1)+strlen(s2)+1;
+    res = (char*) malloc(mennyi * sizeof(char));
+    if (res == NULL)    /* ha nem sikerült a malloc() */
+        return NULL;
+
+    strcpy(res, s1);
+    strcat(res, s2);
+
+    return res;
+}</pre>
+
+<div class="csakdoksi">
+<p>
+Látható, hogy így meg tudjuk oldani az élettartam problémáját is.
+A függvényből visszatérve ugyanis az új sztringet tároló memóriaterület
+nem szabadul fel automatikusan, hanem a hívó döntheti el, hogy
+mikor nincsen már a továbbiakban szüksége arra. Vissza
+ez a függvény nem a sztringet adja, hanem csak egy pointert a lefoglalt
+memóriaterületre. A lokális <code>char*&nbsp;res</code> változó
+ugyan megszűnik, de azt a visszaadáskor lemásoljuk! (Csak a pointert!
+Nem az egész tömböt!)
+</p>
+<p>Amikor visszatérünk, a létrehozott tömb így <em>nem szűnik meg!</em>
+A pointer ugyan igen, de azt <em>visszaadjuk,</em> és a hívónak azt
+el kell tárolnia magának.</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span><code>malloc()</code>, <code>free()</code>: a terület tulajdonosa</h2>
+</div>
+
+<p>Ha a hívó dolga a felszabadítás, azt a tényt <em>dokumentálni kell!</em></p>
+
+<pre class="brush: cbub "  >
+/* visszatér egy sztringgel, ami s1 és s2 összefűzve.
+ * a hívónak fel kell szabadítania a kapott sztringet! */
+char *osszefuz(char const *s1, char const *s2);</pre>
+
+<pre class="brush: cbub "  >
+char *s;
+s = osszefuz(&quot;alma&quot;, &quot;fa&quot;);
+printf(&quot;Ezt írtad be: %s\n&quot;, s);
+free(s); // !
+s = NULL;   /* a biztonság kedvéért */</pre>
+
+<div class="csakdoksi">
+<p>
+A függvény visszatér egy pointerrel a lefoglalt területre. Valakinek
+a foglalt területet fel is kell szabadítania – <em>a hívó felel érte,</em> hogy fel legyen
+szabadítva. Fontos figyelni arra, hogy ezt megtegyük,
+ha már nincsen rá szükség. Mivel az <code>osszefuz()</code> függvény ezt nem teheti meg
+(hiszen épp az a feladata, hogy foglalja le a sztringet, és <em>ne</em>
+szabadítsa fel), ez csakis a hívó feladata és felelőssége lehet.</p>
+<p>Emiatt a visszakapott pointert el <em>kell</em> mentenie egy változóba,
+hiszen ha elfelejti, akkor semmi mód nem lesz már arra, hogy
+felszabadítsa azt a memóriaterületet. Természetesen az
+<code>s = osszefuz(………)</code> értékadás ilyenkor nem sztring másolás,
+hanem csak egy pointer értékadás. Hiszen <code>s</code> típusa
+pointer, a visszaadott érték is pointer, és ezt másoljuk az értékadással.</p>
+</div>
+
+<br class="smallskip">
+
+
+<div class="csakdoksi">
+<p>Ha a változó élettartama átível a függvényeken,
+<em>bízzuk rá valakire!</em> Rendeljük valakihez a <em>felelősséget!</em></p>
+<p>Hogy biztosítsuk a program tervezése során, hogy a területet végül fel is
+fogja valaki szabadítani, annak egy szemléletes módja az, ha valakihez
+hozzárendeljük a felelősséget. Például a <code>int*&nbsp;fuggveny(void)</code>
+függvény dokumentációjában leírjuk azt, hogy a visszaadott pointer egy
+olyan memóriaterületre mutat, ahol az eredmény van; és hogy azt később
+a hívó dolga lesz felszabadítani, ha már nincsen rá szüksége. Ezzel
+azt jelöljük ki, hogy ki annak az erőforrásnak a <em>tulajdonosa.</em></p>
+<p>Maga a <code>malloc()</code>–<code>free()</code> függvénypáros
+is ilyen! A <code>malloc()</code> lefoglal egy területet, és az a program
+tulajdonába kerül. Felelőssé válik is ezáltal azért, hogy később a <code>free()</code>
+függvényt meghívja.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span><code>calloc()</code>, <code>realloc()</code></h2>
+</div>
+
+<pre class="brush: c kozep"  >
+void *calloc(size_t darabszám, size_t egyelem)</pre>
+
+<p><em>Lefoglal egy tömböt</em> és kitölti 0 bájtokkal.</p>
+
+<ul class="eloadaskicsinyit">
+    <li>Első paraméter: a tömb elemszáma, második: egy elem mérete
+    <li>Pl. <code>int *tomb = (int*) calloc(100, sizeof(int));</code>
+    <li><strong>Vigyázat!</strong> Ez nem biztos, hogy a csupa 0 bájt jó nekünk!
+        Pl. lehet, a <code>NULL</code> pointert nem csupa 0 bitsorozat jelöli.
+        A <code>calloc()</code> ezért csak egész típusokhoz (<code>int</code>, <code>char</code>...) jó.
+</ul>
+
+<br class="smallskip">
+
+<pre class="brush: c kozep"  >
+void *realloc(void *ptr, size_t méret)</pre>
+
+<p><em>Újrafoglalja, átméretezi</em> a <code>ptr</code>-rel megadott dinamikus tömböt.
+
+<ul class="eloadaskicsinyit">
+   <li>A meglévő adatokat másolja
+   <li>Ha nagyobb lett, a többi memóriaszemét, ha kisebb, a vége elveszik
+   <li><strong>Vigyázat!</strong> Lassú lehet!
+</ul>
+
+<p class="csakdoksi">Vigyázni kell a <code>realloc()</code> függvénnyel, mert lassú
+lehet. A megnagyobbított tömb lehet, hogy nem fér el az adott memóriaterületen (mert
+utána is van lefoglalva egy másik változó), és ilyenkor a <code>realloc()</code>
+kénytelen az egész tömböt egy teljesen másik helyre átmásolni. Ne írjunk olyan programokat,
+amelyek gyakran méreteznek át tömböket!</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<div class="slideheader">
+<h2><span class="oldalszam">12</span><code>malloc()</code>, <code>free()</code> – kérdések</h2>
+</div>
+
+<dl>
+<dt>Hogyan lehet lekérdezni, hogy hány elemű tömböt foglaltunk?</dt>
+<dd>Sehogyan, nekünk kell tudni.</dd>
+</dl>
+
+<br class="smallskip">
+
+<dl>
+<dt>Hogyan lehet ellenőrizni, adott terület le van-e foglalva?</dt>
+<dd>Sehogyan, nekünk kell tudni.</dd>
+</dl>
+
+<blockquote class="csakdoksi">
+<p>
+Ezek nagyon fontosak. Különösen nem szabad egy dinamikus tömbön
+a <code>sizeof</code> operátort használni – hiszen az nem a tömb
+méretét, hanem a pointer méretét fogja megadni!
+</p>
+</blockquote>
+
+<br class="smallskip">
+
+<dl>
+<dt>Szabad nulla méretű területet foglalni?</dt>
+<dd>Szabad. Kapunk egy NULL vagy egy nem NULL pointert.<sup>*</sup></dd>
+</dl>
+
+<br class="smallskip">
+
+<dl>
+<dt>Szabad <code>free(NULL)</code> hívást csinálni?</dt>
+<dd>Szabad.<sup>*</sup></dd>
+</dl>
+
+<div class="csakdoksi megjegyzes">
+<p><sup>*</sup> A legutóbbiak nem voltak mindig így. A C szabvány 1990-es verziója (C90) előtt
+gyakran volt az, hogy régebbi fordítók által generált programok lefagytak egy <code>free(NULL)</code>
+hívás hatására. Ma azonban már a szabvány előírja, hogy kezeljék ezt az esetet. Ennek
+ellenére előfordul manapság is az, hogy ez problémát jelent egyes fordítók és C könyvtárak
+esetén. </p>
+<p> Azt nem írja pontosan elő a szabvány, hogy a nulla méretű terület foglalásakor mi kell
+történjen. Vagy kapunk egy nem <code>NULL</code> értékű pointert, amelyet azonban dereferálni
+nem szabad (hiszen ott nulla méretű adat van), vagy kapunk egy <code>NULL</code> pointert (akkor
+meg azért nem szabad dereferálni). Ez a fordítókra van bízva. Viszont ha a pointer nem
+<code>NULL</code>, akkor fel is kell szabadítanunk azt (a nulla méretétől függetlenül), úgyhogy emiatt
+kényelmes az, hogy a <code>free()</code> elvileg hívható <code>NULL</code> paraméterrel is. </p>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<a id="adinamikustomb" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>A DinamikusTömb</h2>
+</div>
+
+<p>Tartsuk nyilván, mekkora a legfoglalt terület.</p>
+
+<p>A méret és a pointer összetartozó adat – rakjuk <em>struktúrába!</em>
+<span class="csakdoksi">Hiszen éppen erre való a struktúra: tartsuk egy
+helyen, ami összetartozik.</span></p>
+
+<div class="columns c3070">
+<div>
+<pre class="brush: c "  >
+struct DinTomb {
+    double *adat;
+    int meret;
+};</pre>
+</div>
+<div>
+<img src="ea08/dintomb.svg" class="kozep" style="width: 22em;">
+</div>
+</div>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+DinTomb dt;
+
+dintomb_foglal(&amp;dt, 100); // inicializálás
+
+dt.adat[34] = 19;         // használat
+dintomb_kiir(&amp;dt);
+
+dintomb_felszabadit(&amp;dt); // felszabadítás</pre>
+
+<div class="csakdoksi">
+<p>Amikor létrehozzuk a <code>dt</code> nevű struktúrát, akkor a tömbnek természetesen nem lesz
+memória lefoglalva, mert a struktúrában csak egy pointer és egy integer van. Ezért a foglaláshoz
+írunk egy függvényt: ennek feladata a memóriaterület lefoglalása, és az adatok beírása a
+struktúrába. (Mivel módosítja a struktúrát, ezért arra mutató pointert kell átvegyen.)</p>
+<p>Ezután már használhatjuk a tömböt. A struktúra előnye itt is látszik: egy ilyen tömböt
+egyetlen paraméterrel át tudunk adni. Nem kell megadnunk a pointert és a méretet is, hanem elég
+csak a struktúrát megmutatni, hiszen abban benne van minden információ.</p>
+<p>Minden függvény, amelynek egy ilyen struktúrát átadunk, cím szerint kapja azt: hogy tudja
+módosítani. A struktúrákra mutató pointerek használatához a C-nek van egy nyelvi eleme, a
+nyíl operátor.</p>
+</div>
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>Pointerek struktúrákra: a nyíl operátor</h2>
+</div>
+
+<pre class="brush: c "  >
+DinTomb dt;
+dintomb_foglal(&amp;dt, 100);</pre>
+
+<pre class="brush: c "  >
+int dintomb_foglal(DinTomb *pdt, int meret) {
+    pdt-&gt;meret = meret;
+    pdt-&gt;adat = (double*) malloc(meret*sizeof(double));
+    ...
+}</pre>
+
+<br class="smallskip">
+
+<p>Nyíl operátor: a <em>pointer által mutatott struktúra adattagja.</em></p>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+pdt-&gt;meret = 160;</pre>
+</div>
+<div>
+<pre class="brush: cbub "  >
+(*pdt).meret = 160;</pre>
+</div>
+</div>
+
+<p>Dereferál és mezőt kiválaszt. Nem kell zárójelezni!</p>
+
+<blockquote class="csakdoksi">
+<p>A lényeg: ha struktúrából egy mező kell, akkor ponttal választjuk
+ki. Ha pointer van a struktúrára, akkor pedig nyíllal.</p>
+</blockquote>
+
+<div class="csakdoksi">
+<p>A nyíl operátort azért találták ki, mert a <code>.</code> mezőkiválasztó operátornak magasabb
+a precedenciája, mint a <code>*</code> dereferáló operátornak. Ha ennyit írnánk:
+<code>*pdt.meret</code>, akkor azt a <code>.</code> magasabb precedenciája miatt
+<code>*(pdt.meret)</code>-ként próbálná meg értelmezni a fordító, ami viszont nyilván nem
+lehetséges, hiszen <code>pdt</code> nem struktúra, hanem pointer, amelynek nincsenek mezői. Ha
+nem lenne a nyíl operátor, akkor minden ilyen hozzáférést zárójelezni kellene, mint ahogyan az
+fent a példában is látszik.</p>
+<p>Struktúrákra mutató pointerek esetén mindig a nyilat használjuk, mert egyszerűbb, olvashatóbb
+kódot kapunk, mintha zárójelezni kellene. Ugyanúgy, ahogyan az indexelő operátor esetén:
+<code>tomb[i]</code> helyett sem írunk <code>*(tomb+i)</code>-t, mert nehézkesebb, bonyolultabb,
+és semmivel nem jobb, mint az indexelő operátoros forma.</p>
+<p>Nyíl karakter egyébként nincsen sem a billentyűzeteken, sem az ASCII karaktertáblában. Ezért
+ezt az operátort egy „mínusz” és egy „nagyobb, mint” karakter adja.</p>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>A DinamikusTömb függvényei</h2>
+</div>
+
+<pre class="brush: cbub "  >
+int dintomb_foglal(DinTomb *dt, int meret) {
+    dt-&gt;meret = meret;
+    dt-&gt;adat = (double*) malloc(meret*sizeof(double));
+    if (dt-&gt;adat == NULL)
+        return 0;       // nem sikerült
+    else
+        return 1;       // sikerült
+}
+
+void dintomb_kiir(DinTomb const *dt) {
+    int i;
+    for (i = 0; i &lt; dt-&gt;meret; ++i)
+        printf(&quot;%f &quot;, dt-&gt;adat[i]);
+    printf(&quot;\n&quot;);
+}
+
+void dintomb_felszabadit(DinTomb *dt) {
+    free(dt-&gt;adat);
+}</pre>
+
+<p class="csakdoksi">A kiíró függvény ugyan nem kellene pointerével átvegye a struktúrát (mert
+úgysem akarja megváltoztatni), de egyszerűbb így megoldani. Nem kell majd fejben tartani, hogy
+melyik függvény várja értékként és melyik címként a paramétert, hanem mindegyik címként, így
+mindegyiknél ki kell írni az <code>&amp;</code> operátort. Ez azoknak kényelmes, akik használják
+a függvényt. A pointer viszont ebben az esetben konstans adatra mutat: ezzel jelezzük azt, hogy a függvény,
+bár cím szerint veszi át a struktúrát, megváltoztatni nem szeretné azt.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<h1 class="diacim">A memóriakezelés áttekintése</h1>
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<div class="slideheader">
+<h2><span class="oldalszam">17</span>A három memóriaterület</h2>
+</div>
+
+<p>Egy változó <em>definíciójának módjától</em> függ, hogy hol jön létre.</p>
+
+<p class="csakdoksi">A definíció módja alatt főként a definíció helyét értjük.
+Ha egy függvény belsejében azt mondjuk, hogy <code>int x</code>, az mást jelent
+(lokális változót), mintha függvényen kívül írjuk ugyanazt az <code>int x</code>-et
+(globális változót). Ez egyben a változó élettartamát is meghatározza.</p>
+
+<br class="smallskip">
+
+<p>Ezeket a helyeket <em>tárolási osztályoknak</em> nevezzük (storage class):</p>
+
+<ul>
+   <li><em>Globális</em> változók memóriaterülete (data segment),
+   <li><em>Lokális változók</em> memóriaterülete (stack segment),
+   <li><em>Dinamikusan foglalt</em> memóriaterület (heap, free store).
+</ul>
+
+<img src="ea08/memoriak.svg" style="width: 24em;" class="kozep">
+
+<br class="smallskip">
+
+<p class="csakdoksi">A három memóriaterület mérete változik is. A globális 
+adatterületen mindig ugyanannyi adat van. A veremben lévő adatok mennyisége 
+függvényhívásokkor nő, visszatéréskor pedig csökken. (Így aztán pl. a 
+<code>main()</code> változói mindig ott vannak a „legalján”.) A kupac mérete is 
+változik, a lefoglalt-felszabadított területek nagyságától függően.</p>
+
+<p class="csakdoksi">Természetesen a fentiek nem azt jelentik, hogy a 
+számítógépben valójában is többféle memória van. Csak annyit, hogy ugyanannak a 
+memóriának egyes részeit máshogyan kezeljük, és más célból teszünk oda 
+változókat. <em>A pointerek</em> viszont bármelyik memóriaterület változóira tudnak mutatni.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>A globális memóriaterület</h2>
+</div>
+
+<div class="columns c7030">
+<div>
+<p>Itt vannak a <em>globális változók.</em>
+Ugyancsak itt vannak a névtelen sztring konstansok is.</p>
+<pre class="brush: c "  >
+int x = 7;
+char sz[15] = &quot;szöveg\0&quot;;
+char *p;
+
+int main(void) {
+   p = sz;
+   printf(&quot;Helló világ&quot;);
+
+   return 0;
+}</pre>
+</div>
+<div>
+<img src="ea08/mem_global.svg" style="width: 12em;" class="kozep">
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>A globális változók a program futása alatt mindvégig léteznek. Egyszerűen
+úgy adjuk meg őket, hogy nem függvény belsejében, hanem függvényen kívülre
+írjuk a definíciójukat.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Függvények statikus változói</h2>
+</div>
+
+<p class="csakeloadas">A függvények statikus változói megőrzik értéküket a hívások között.</p>
+
+<p class="csakdoksi">A globális változókhoz hasonlóan „örökéletűek” a függvények <code>static</code>
+kulcsszóval jelzett változói is: megmaradnak a program futásának végéig, és
+megőrzik értéküket. Léteznek azután is, miután visszatérünk a függvényből.
+(A <code>static</code> kulcsszót a változó definíciója elé tesszük;
+neve ilyenkor: storage class specifier.) Példa:</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int hanyszor_hivodott(void) {
+    static int hanyszor = 0;
+    ++hanyszor;
+    return hanyszor;
+}
+
+int main(void) {
+    printf(&quot;%d\n&quot;, hanyszor_hivodott());    /* 1 */
+    printf(&quot;%d\n&quot;, hanyszor_hivodott());    /* 2 */
+    printf(&quot;%d\n&quot;, hanyszor_hivodott());    /* 3 */
+    
+    return 0;
+}</pre>
+
+<p class="csakdoksi">Röviden: a függvények statikus változói láthatóságban úgy viselkednek,
+mint a lokális változók (csak a függvényben látszanak), élettartamukban viszont úgy, mint
+a globális változók („örökéletűek”).</p>
+
+<div class="csakdoksi megjegyzes">
+
+<p>Ezt a nyelvi elemet ritkán használjuk. Nem is igazán ajánlott ilyen függvényeket írni, mert
+az olvashatóságot rontja, ha egy függvény visszatérési értéke nem kizárólag a bemeneti
+paraméterek értékétől függ. Sok beépített, könyvtári függvény használja azonban, ezért fontos,
+hogy ismerjük és tudjuk, hogy mi történik a háttérben. Ilyen például a <code>strtok()</code>,
+amely arra használható, hogy egy szöveget bizonyos határoló karakterek mentén feladaraboljunk.
+Például a "Szia, ez itt egy proba. Futtass le!" szöveget úgy darabolhatjuk fel szavakra, hogy
+határoló karakterként megadjuk a következő karaktereket: ' ', ',', '.', '!'.</p>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main(void) {
+    char str[] = &quot;Szia, ez itt egy proba. Futtass le!&quot;;
+    char *pch;
+
+    printf(&quot;Az eredeti szoveg: %s\n&quot;,str);
+
+    pch = strtok(str, &quot; ,.!&quot;);
+    while (pch != NULL) {
+        printf(&quot;%s\n&quot;, pch);
+        pch = strtok(NULL, &quot; ,.!&quot;);
+    }
+
+    return 0;
+}</pre>
+
+<p>Látható, hogy az <code>strtok()</code> függvény első hívásakor megadjuk a feldolgozandó
+sztringet, de a későbbiekben már <code>NULL</code> pointerrel hívjuk. Honnan tudja hát, hogy
+milyen szövegen dolgozzon? A másik talány pedig az, hogy hogyan tudja megjegyezni, hogy hol tart
+a szövegben, hiszen minden híváskor a soron következő szóval tér vissza.</p>
+
+<p>Mindkét kérdésre a <code>static</code> változó a megoldás: amikor egy nem <code>NULL</code>
+pointerrel hívjuk meg, akkor egy <code>static char *</code> típusú változó értékében elmenti ezt
+a címet. Elkezd a sztringgel dolgozni, visszatér az első szóval és a <code>static</code> változó
+értékét beállítja a soron következő szó elejére. A következő hívásnál <code>NULL</code>
+pointerel hívjuk, így tudja, hogy folytatnia kell egy korábbi sztringet. A cím pedig, amivel
+dolgoznia kell, el van tárolva a <code>static</code> változóban.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<div class="slideheader">
+<h2><span class="oldalszam">20</span>A verem (stack)</h2>
+</div>
+
+<div class="columns c7030">
+<div>
+<p>A verem legtetején <em>jönnek létre a lokális változók,</em>
+és <em>szűnnek meg, ha visszatérünk</em> a függvényekből.</p>
+
+<pre class="brush: cbub "  >
+void fv(void) {
+   char sz[10] = &quot;HELLÓ&quot;;
+   char *p = &quot;helló&quot;; // !
+}
+
+int main(void) {
+   int x = 7;
+   fv();
+}</pre>
+
+<p>A veremben mindig a legfelső adatokat látjuk – emiatt lehetséges
+a rekurzió.</p>
+</div>
+
+<div>
+<img src="ea08/mem_verem.svg" style="width: 12em;" class="kozep">
+</div>
+</div>
+
+<div class="csakdoksi"> <p> A veremben a fehér színű terület tartozik a <code>main()</code> 
+függvényhez, a szürke színű pedig az <code>fv()</code> függvényhez. Ha az <code>fv()</code> 
+függvény visszatér, a szürke színű rész változói eltűnnek. Így a veremben lévő adatok mennyisége 
+folyamatosan változik a függvényhívások és visszatérések során. Az „örökké” létező globális 
+változókkal szemben ezek csak addig léteznek, amíg a függvény belsejében vagyunk. Ugyanazon 
+függvény újbóli meghívása esetén újra létrejönnek, újra inicializálódnak (ha van megadva kezdeti 
+érték) – tulajdonképpen azok már másik változók. </p>
+
+<p> Vegyük észre, hogy a függvény <code>sz[]</code> tömbje és <code>p</code> pointere másképp 
+működik! A lokális változó az <code>sz[]</code> tömb és a <code>p</code> pointer; a kisbetűs 
+<code>"helló"</code> sztring nem lokális változó! Ez a <code>char*&nbsp;p</code> pointer által 
+mutatott sztring a globális memóriaterületre került. Miért? Azért, mert a fordító csinálja, amit 
+mondtunk. A <code>p</code> nevű lokális változó típusa <code>char*</code>, azaz a vermen 
+létrehozott egy pointert. A névtelen sztring konstansok globális memóriaterületre kerülnek, ezért
+<em>az</em> a kisbetűs „helló” sztring oda került. Ez a sztring most névtelen, mivel a 
+<code>p</code> változó definiálásával nem tömböt, hanem pointert kértünk. Ezzel szemben az 
+<code>sz</code> változó típusa <code>char[10]</code>, vagyis egy karaktertömb. Mivel tömböt 
+definiáltuk, az egész nagybetűs „HELLÓ” a verembe került. </p>
+
+<p> A <code>p</code> pointernél azt mondtuk, hogy legyen egy pointer, ami egy máshol foglalt karaktertömbre mutat. (Olyasmi, 
+mintha ezt írnánk: <code>char sztring[] = "hello";</code>, utána <code>char *p = sz;</code>.) Az <code>sz[]</code> tömbnél pedig 
+azt, hogy legyen egy tömb, aminek a tartalma az adott sztring. Emiatt egyébként a két tömb mérete eltérő! A névtelen tömb, 
+amelyik a globális területen van (attól még, hogy van egy pointer, amelyik mutat rá, névtelen!), egy hat karakterből álló tömb, 
+hiszen öt plusz egy lezáró nulla. Az <code>sz[]</code> tömb ezzel szemben tíz karakterből áll, mert akkorának definiáltuk. </p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span><code>sizeof(s)</code> és <code>strlen(s)</code></h2>
+</div>
+
+<table>
+<caption><code>sizeof</code>: változó mérete, <code>strlen()</code>: betűk száma</caption>
+<thead>
+   <tr>
+      <th>definíció<th><code>sizeof(str)</code><th><code>strlen(str)</code>
+   
+</thead>
+<tr>
+  <td><code><em>char str[50]</em> = "hello"</code><td>50<td>5
+
+<tr>
+  <td><code><em>char str[20]</em> = "hello"</code><td>20<td>5
+
+<tr>
+  <td><code><em>char str[]</em> = "hello"</code><td>6<td>5
+
+<tr>
+  <td><code><em>char *str</em> = "hello"</code><td>gépfüggő!<td>5
+
+</table>
+
+<br class="smallskip">
+
+<pre class="brush: c "  >
+int sztring_hossz(char *s) { ... }
+
+printf(&quot;%d&quot;, sztring_hossz(&quot;hello&quot;));</pre>
+
+<div class="csakdoksi">
+
+<p>Ezért nézzük a <strong>sztring méretét az <code>strlen()</code></strong> függvénnyel! A 
+<code>sizeof</code> a tömb vagy a pointer méretét adja.</p>
+
+<p>Az utolsó sorban a pointer mérete látszik – ez géptípusonként más.</p>
+
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<div class="slideheader">
+<h2><span class="oldalszam">22</span>A kupac (heap)</h2>
+</div>
+
+<div class="columns c7030">
+<div>
+<p>Innen foglalódik le az a memóriaterület,
+<em>amit a <code>malloc()</code>-tól kapunk.</em></p>
+
+<pre class="brush: cbub "  >
+int main(void) {
+   int *t;
+   char *p;
+
+   t = (int*) malloc(100*sizeof(int));
+   t[0] = 3;
+   t[1] = 6;
+
+   p = (char*) malloc(20*sizeof(char));
+   strcpy(p, &quot;helló&quot;);
+
+   …</pre>
+</div>
+
+<div>
+<img src="ea08/mem_heap.svg" style="width: 12em;" class="kozep">
+</div>
+</div>
+
+<p class="csakdoksi">Figyeljük meg, hogy a fenti kódban az <code>int *t</code> és a
+<code>char *p</code> lokális változói a függvénynek. Tehát ezek a veremben fognak létrejönni. Egészen addig 
+nem is mutatnak semmilyen memóriaterületre (egészen pontosan: véletlenszerű helyre mutatnak, 
+mert inicializálatlanok), amíg nem adunk nekik értéket. Ez az értékadás mindkét esetben a 
+<code>malloc()</code> hívása után történik meg; a foglalást a <code>malloc()</code> végzi, a 
+pointer megjegyzéséért pedig az értékadások felelnek.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Hibalehetőség: érvénytelen pointerek</h2>
+</div>
+
+<p class="csakdoksi">
+Érvénytelen pointerek (dangling pointer): olyan pointerek, amelyek már megszűnt
+változóra mutatnak.</p>
+
+
+<div class="columns c7030">
+<div>
+<p>Mutató felszabadított memóriaterületre:</p>
+
+<pre class="brush: cbub "  >
+int *ptr = (int*) malloc(100*sizeof(int));
+ptr[2] = 12;
+free(ptr);
+printf(&quot;%d&quot;, ptr[2]); // hibás!!!</pre>
+</div>
+
+<div>
+<img src="ea08/mem_kupacfelszabad.svg" style="width: 12em;" class="kozep">
+</div>
+</div>
+
+<p class="csakdoksi"> A felszabadítás után a <code>ptr</code> érvénytelen pointerré válik. 
+Ilyenek lesznek a programjainkban sokszor, nincsen velük baj; az a baj, ha rajtuk keresztül a 
+már megszűnt változót megpróbáljuk elérni. Könnyen előfordulhat, teszteléskor nem vesszük észre a hibát. Mert ha az a 
+memóriaterület még nem íródott felül, akkor kiolvasva azt az adatot kapjuk, amit látni 
+szeretnénk. </p>
+
+<div class="columns c7030">
+<div>
+<p>Mutató lokális változóra – visszatéréskor megszűnik a változó!!!</p>
+
+<pre class="brush: cbub "  >
+int *fv(void) {
+   int i = 7;
+   return &amp;i; // hibás!!!
+}
+
+int *ptr = fv();</pre>
+</div>
+
+<div>
+<img src="ea08/mem_veremlokalis.svg" style="width: 12em; margin-top: 1em;" class="kozep">
+</div>
+</div>
+
+<div class="csakdoksi">
+
+<p>Ezt sem biztos, hogy észrevesszük tesztelésnél. Az adott memóriaterületen később még 
+<em>lehet,</em> hogy ott lesz az érték, amire számítunk, és akkor látszólag a program helyes. 
+Némely fordítók szerencsére <em>néha</em> felfedezik ezt a hibát. Pl. a gcc kimenete a fenti 
+példára:</p>
+
+<pre class="screenshot">
+proba.c:4:4: warning: function returns address of local variable
+</pre>
+Ugyanezért hibás az előadás elején mutatott <code>beolvas()</code> függvény is.
+A tömb a veremben van, és megszűnik, ha visszatérünk a függvényből, hiába olvastunk
+be akármit a billentyűzetről:
+<pre class="brush: cbub "  >
+char *beolvas(void) {
+   char s[200];
+   gets(s);
+   return s; // hibás!!!
+}</pre>
+<p>Ezek nagyon súlyos programozási hibák.</p>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>Visszatérés dinamikusan foglalt területtel</h2>
+</div>
+
+<p>Ha dinamikusan foglaljuk, a függvényből visszatérés után is
+lefoglalva marad, így átadhatjuk a hívónak:</p>
+
+<div class="columns c7030">
+<div>
+
+<pre class="brush: cbub "  >
+int *beolvas_sokszam(int mennyi) {
+   int *uj;
+   uj = (int*) malloc(mennyi*sizeof(int));
+   …
+   return uj;
+}
+
+int main(void) {
+   int *s;
+
+   s = beolvas_sokszam(5);
+   …
+   free(s); // !</pre>
+</div>
+
+<div>
+<img src="ea08/mem_heap_fuggvenybol.svg" style="width: 13em;" class="kozep">
+</div>
+</div>
+
+<p class="csakdoksi">Így lehet egyszerűen megoldani az előző dián említett problémát. Az a 
+célunk, hogy ne tűnjön el a tömb, ezért átvesszük a memória kezelését a fordítótól. (Saját 
+felelősségre! Mert a felszabadítás is a mi dolgunk.)</p>
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>&hellip; ezek vajon helyesek-e?</h2>
+</div>
+
+<div class="sticky">1.</div>
+<pre class="brush: c "  >
+char *hello(void) {
+    return &quot;hello&quot;;
+}
+printf(&quot;%s&quot;, hello());</pre>
+
+<p class="csakdoksi">Helyes. A sztring globális memóriaterületen van, a függvényből visszatérés 
+után is létezni fog. Szabad hivatkozni arra a memóriaterületre!</p>
+
+
+<div class="sticky">2.</div>
+<pre class="brush: c "  >
+int *hello(void) {
+    static int tomb[5] = { 9, 4, 5, 6, 1 };
+    return tomb;
+}
+printf(&quot;%d&quot;, *hello());</pre>
+
+<p class="csakdoksi">Helyes. A <code>static</code> kulcsszóval megjelölt lokális változó 
+megmarad a függvényből visszatérés után, vagyis az élettartama szempontjából majdnem úgy 
+viselkedik, mintha globális változó lenne. Erről még lesz szó később; memóriakezelés 
+szempontjából a lényeg itt az, hogy mivel megmarad a változó, a visszaadott pointer nem 
+<em>dangling pointer</em> lesz.</p>
+
+<div class="sticky">3.</div>
+<pre class="brush: c "  >
+int *hello(void) {
+    int *tomb = (int*) malloc(10*sizeof(int));
+    tomb[0] = 12;
+    return tomb;
+}
+printf(&quot;%d&quot;, *hello());</pre>
+
+<p class="csakdoksi">Helytelen! Bár megmarad, és szabad hivatkozni, de felszabadítani ki fogja?! 
+Ha nincs elmentve az a pointer, ami hivatkozik a memóriaterületre, akkor nem tudjuk odaadni a 
+<code>free()</code>-nek, és semmi módja nincsen a felszabadításnak! Sőt a függvény minden 
+meghívásakor újabb memóriaterület lesz lefoglalva. Előbb-utóbb a programunk sok száz megabájt 
+memóriát fog magánál tartani!</p>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<h1 class="diacim">Több dimenziós tömbök</h1>
+
+
+
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span>Emlékeztető – több dimenziós tömbök</h2>
+</div>
+
+<div class="columns c6040">
+<div>
+<h3>Több dimenziós tömb</h3>
+<pre class="brush: cbub "  >
+int tomb[3][4]; // magas, széles
+
+tomb[1][2]=9;   // y, x</pre>
+<div class="kozep"><code>széles*magas</code> darab integer!</div>
+</div>
+<div>
+<img src="ea08/ketdimenzios.svg" class="kozep" style="width: 18em;">
+</div>
+</div>
+
+<p class="csakdoksi">A fordító leképezi egydimenziós tömbre, amiben az elemek <em>sorfolytonosan</em> helyezkednek el.
+Így akárhány dimenziós lehet. A tömb mérete <code>szélesség*magasság</code> integernyi.
+Leképezés: <code>tomb1d[y*szélesség+x]</code>.</p>
+
+<br class="smallskip">
+
+<h3>Egy sor a tömbből</h3>
+
+<pre class="brush: cbub "  >
+int osszeg_1d(int *tomb, int meret);
+
+int tomb[3][4]={ {…}, {…}, {…} };   // 3 sor, 4 oszlop
+
+printf(&quot;%d&quot;, osszeg_1d(tomb[1], 4)); // 1. sor: 1D tömb, 4 elemű</pre>
+
+<p>A 2D tömb egyik sora: az egy 1D tömb!</p>
+
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Több dimenziós – átadás függvénynek</h2>
+</div>
+
+<pre class="brush: cbub "  >
+int osszeg_2d(int tomb[3][4]) { // függvény paramétere: pointer!
+   int sum, x, y;
+   sum = 0;
+   for (y = 0; y &lt; 3; ++y)      // fix szélesség és magasság
+      for (x = 0; x &lt; 4; ++x)
+         sum += tomb[y][x];
+   return sum;
+}</pre>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+int osszeg_2d(int  tomb[][4], int magassag);
+int osszeg_2d(int (*tomb)[4], int magassag); // mindkettő jó</pre>
+
+<p>Nem lehet a tömb akármilyen széles! Az <code>y*szélesség+x</code> leképezés
+miatt a fordítónak <em>a típusból ismernie kell a szélességet.</em></p>
+
+<pre class="brush: cbub "  >
+int hibas(int tomb[][], int szeles, int magas); // ez ROSSZ</pre>
+
+<p class="csakdoksi"> Akármelyik formában adjuk át a tömböt, a verembe a függvény számára mindig 
+csak egy pointer kerül! Még a legelső esetben is, ahol mindkét dimenziót kiírjuk. (Annak az 
+esetnek az a furcsasága, hogy a 3-mal a fordító nem is foglalkozik. Annyira nem, hogy akármilyen 
+magas, 4 elem széles <code>int</code> tömbbel hívható az a függvény!)</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<div class="slideheader">
+<h2><span class="oldalszam">29</span>Összetett deklarációk</h2>
+</div>
+
+<p class="csakeloadas"><em>„A deklaráció a használatra hasonlít!”</em> (declaration resembles use)</p>
+
+<p class="csakdoksi">A C a változók, függvények és függvényparaméterek deklarációjakor 
+ugyanazokat a precedenciaszabályokat érvényesíti, amelyeket a programkód elemzésekor is használ. 
+Ebből az következik, hogy a deklarációnál pont ugyanúgy kell megadnunk a tömböket, pointereket, 
+mint ahogyan azokat használjuk. Ezért kell egy tömböt <code>int t[10]</code> alakban megadni: 
+mivel ha a tömb neve <em>mögé</em> tesszük az indexelő operátort, akkor kapjuk meg a benne lévő 
+egész számot; és ezért kell a pointert <code>int *p</code> alakban megadni, mivel a pointer neve 
+elé tett <code>*</code> operátorral tudjuk dereferálni azt, kapva az egész számot.</p>
+
+<table class="eloadaskicsinyit">
+  <caption>Az <code><em>int *</em>valami<em>[4]</em></code> értelmezése: pointerekből álló tömb</caption>
+  <tr><th><code>valami</code><td>egészre mutató pointerekből álló 4 elemű tömb
+  <tr><th><code>valami<em>[4]</em></code><td>egészre mutató pointer
+  <tr><th><code><em>*</em>valami<em>[4]</em></code><td>egy egész
+  <tr><th><code><em>int *</em>valami<em>[4]</em></code><td>a teljes deklaráció
+</table>
+
+<p class="csakdoksi">Az első táblázat <code>int *valami[4]</code> deklarációja azt jelenti, hogy a
+<code>valami</code> nevű változót <code>*valami[i]</code> formában használva egy
+<code>int</code> típushoz jutunk (ahol i valamilyen index). Mivel az indexelő operátor <code>[]</code>
+precedenciája magasabb, mint az indirekció <code>*</code> operátoráé, ez azt jelenti, hogy
+az indexelés vonatkozik a változóra, a <code>*</code> pedig már az indexelés után kapott dologra.
+Vagyis ha a <code>valami</code>-t megindexeljük, akkor kapunk egy dereferálható
+értéket (egy pointert), amit dereferálva pedig egy egész számhoz jutunk. A <code>valami</code>
+így egy tömb kell legyen, ami <code>int*</code> mutatókat tartalmaz: pointerekből álló tömb.</p>
+
+<br class="smallskip">
+
+<table class="eloadaskicsinyit">
+  <caption>Az <code><em>int (*</em>valami<em>)[4]</em></code> deklaráció értelmezése: pointer tömb(ök)re</caption>
+  <tr><th><code>valami</code><td>pointer 4 elemű egész tömb(ök)re
+  <tr><th><code><em>*</em>valami</code><td>4 elemű tömb egészekből
+  <tr><th><code><em>(*</em>valami<em>)[4]</em></code><td>egy egész
+  <tr><th><code><em>int</em> <em>(*</em>valami<em>)[4]</em></code><td>a teljes deklaráció
+</table>
+
+<p class="csakdoksi">A zárójelezéssel tudjuk a precedenciaszabályok „ellenében” módosítani azt,
+hogy mely operátorok mely operandusokra vonatkoznak. A fenti deklaráció azt jelenti, hogy ezt a
+<code>valami</code>-t úgy kell használni, hogy előbb dereferáljuk, utána pedig indexeljük, és
+így kapunk majd egész számot. Szóval ez a <code>valami</code> egy pointer kell legyen egy olyan
+helyre a memóriában, ahol indexelhető dolgok (tömbök) vannak, amiket indexelve egészeket kapunk.
+Ez egy pointer egy négy elemű tömbre, vagy esetleg négy elemű tömbökre (első négy elemű tömb,
+második négy elemű tömb és így tovább.) Ezért a <code>int (*tomb)[4])</code> a függvény
+paramétere az előző dián: a két dimenziós tömb 4 hosszúságú sorairól van szó.</p>
+
+<p class="csakdoksi"> Összetett deklarációk létrehozásához és értelmezéséhez jól használható a
+<em>cdecl</em> nevű program, amely elérhető online verzióban is a
+<a href="http://cdecl.org/">http://cdecl.org/</a> helyen.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>Sztringek tömbje – tömbök tömbje</h2>
+</div>
+
+<div class="columns c7030">
+<div>
+<pre class="brush: cbub "  >
+char sztringek[3][12] = {
+   &quot;hello vilag&quot;,
+   &quot;almafa&quot;,
+   &quot;hexdump!&quot;
+};</pre>
+<p>12 karakteres tömbökből álló tömb.</p>
+</div>
+<div>
+<img src="ea08/mem_tombsztring.svg" style="width: 12em;">
+</div>
+</div>
+
+<br class="smallskip">
+
+<p>A memória bájtjai a <code>sztringek[]</code> tömbnél:</p>
+<pre class="screenshot">
+0000  68 65 6c 6c 6f 20 76 69 6c 61 67 00   hello vilag.
+000c  61 6c 6d 61 66 61 00 00 00 00 00 00   almafa......
+0018  68 65 78 64 75 6d 70 21 00 00 00 00   hexdump!....
+</pre>
+
+<div class="csakdoksi">
+<p>Összetett deklarációt alkotunk akkor is, amikor sztringek tömbjét hozzuk
+létre. Ha egy sztring 12&nbsp;bájtból áll: <code>char sztring[12]</code>,
+akkor a sztringek tömbje valami olyasmi kell legyen, amit ha megindexelünk, akkor
+egy 12&nbsp;bájtos karaktertömböt kapunk: <code>char sztringek[3][12]</code>.
+Természetesen az első indexeléssel a sztringet választjuk ki ebből, egy második
+indexelés adná a karaktert; ezért a deklarációban az első méret a sztringek száma,
+a második pedig a sztringek mérete.</p>
+<p>A típust lépésenként is megadhatjuk a <code>typedef</code> kulcsszó használatával:</p>
+<pre class="brush: c "  >
+typedef char Sztring[12];
+typedef Sztring SztringTomb[3];
+
+SztringTomb sztringek;</pre>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>Sztringek tömbje – pointerek tömbje</h2>
+</div>
+
+<div class="columns c7030">
+<div>
+<pre class="brush: cbub "  >
+char *sztringek[3] = {
+   &quot;hello vilag&quot;,
+   &quot;almafa&quot;,
+   &quot;hexdump!&quot;
+};</pre>
+<p>Pointerekből álló tömb. A sztringek maguk (a tartalom) globális memóriaterületre kerül, és 
+független a pointereket tároló tömbtől!</p>
+</div>
+<div>
+<img src="ea08/mem_tombptr.svg" style="width: 12em;">
+</div>
+</div>
+
+
+<p>A memória bájtjai a <code>sztringek[]</code> tömbnél:</p>
+<pre class="screenshot">
+0000  22 00 00 3c   "..<
+0004  2e 00 00 3c   ...<
+0008  35 00 00 3c   5..<
+</pre>
+
+<p class="csakdoksi">Itt egy olyan típust alkottunk, aminek a használata nagyon hasonló az 
+előzőéhez; megindexelve egy pointert kapunk, ami akár egy nullával lezárt karaktertömbre is 
+mutathat. Ebben az esetben azonban nem egy kétdimenziós tömbről van szó, amely a memóriában 
+sorfolytonosan helyezkedik el, hanem egy olyan tömbről, amely pointereket tartalmaz. Ha 
+megnézzük, mit találunk a memóriában a <code>sztringek</code> változó helyén, akkor ott a 
+szövegeket nem fogjuk megtalálni, csak három darab pointert! (A sztringek ilyenkor globális 
+területre kerülnek.)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="32">
+<div class="slide" id="slide_32">
+<div class="slideheader">
+<h2><span class="oldalszam">32</span>2D dinamikus tömbök – módszerek</h2>
+</div>
+
+<p class="csakdoksi">Nézzük meg, hogyan lehet két dimenziós, dinamikus tömböket létrehozni, 
+amelyeknek a szélessége és a magassága is tetszőlegesen megválasztható! (Ugyanezek a 
+gondolatmenetek általánosíthatóak bármennyi dimenzióra.)</p>
+
+
+<h3>0. módszer: 1D leképezés</h3>
+<button data-diapopup="tobbdim0kodid" class="float">C-ben</button>
+<img src="ea08/tobbdim0.svg" class="kozep" style="width: 18em;">
+
+<p class="csakdoksi">Mi magunk végezzük el a leképezést. Ezzel egyszerűen 
+kikerüljük a problémát. Megold mindent, de sajnos nehézkes használni. (Mindenhol 
+a szorzós képletet kell beírni az indexbe.)</p>
+
+<pre class="brush: cbub "   id="tobbdim0kodid">
+double *szamok;
+
+szamok = (double*) malloc(szelesseg*magassag * sizeof(double));
+
+szamok[y*szelesseg+x] = 3.14;      // szamok[y][x] helyett :(
+
+fv(szamok, szelesseg, magassag);   // fv(double*, int, int)
+
+free(szamok);</pre>
+
+
+<h3>1. módszer: soronkénti foglalás</h3>
+<button data-diapopup="tobbdim1kodid" class="float">C-ben</button>
+<img src="ea08/tobbdim1.svg" style="width: 18em;" class="kozep">
+
+<div class="csakdoksi">
+<img src="ea08/utcak.svg" class="float" style="width: 28em;">
+
+<p>Minden sort külön foglalunk le. Az egyes sorokhoz tartozó pointereket egy pointertömbbe
+tesszük, amelyet szintén dinamikusan foglalunk (hogy a magasság is tetszőleges legyen). Ha így
+teszünk, a lefoglalt tömböt a megszokott módon használhatjuk, két egymás utáni indexeléssel, pl.
+<code>szamok[2][3]</code>. Az első indexelés a pointerek tömbjéből (a rajzon a függőleges)
+kiválaszt egy pointer, a második indexelés pedig már az ezáltal mutatott tömbön történik (a
+rajzon valamelyik vízszintes).</p>
+
+<p>Természetesen a pointerek tömbjét kell előbb foglalni, utána a sorokat; mert az előbbibe
+tesszük be a sorok pointereit. A felszabadításnál ugyanez visszafelé történik: amíg a sorokat
+szabadítjuk fel, addig szükségünk van a pointerekre, ezért a pointerek tömbje lesz az, amit
+legutoljára szabadítunk fel. A módszer hátránya az, hogy sok <code>malloc()</code> hívás kell
+hozzá, ami lassabb, mintha csak egy vagy kettő lenne.</p>
+
+</div>
+
+<pre class="brush: cbub "   id="tobbdim1kodid">
+double **szamok;
+
+/* foglalás */
+szamok = (double**) malloc(magassag * sizeof(double*));
+for (y = 0; y &lt; magassag; ++y)
+   szamok[y] = (double*) malloc(szelesseg * sizeof(double));
+
+/* használat */
+szamok[y][x] = 3.14;
+fv(szamok, szelesseg, magassag); // fv(double**, int, int)
+
+/* felszabadítás */
+for (y = 0; y &lt; magassag; ++y)   // ahány malloc, annyi free
+   free(szamok[y]);
+free(szamok);                    // ezt legutoljára</pre>
+
+<h3>2. módszer: leképezés és pointertömb</h3>
+<button data-diapopup="tobbdim2kodid" class="float">C-ben</button>
+<img src="ea08/tobbdim2.svg" style="width: 18em;" class="kozep">
+
+<p class="csakdoksi">Az öszvér. Az egész tömböt (a „kilapított”, sorfolytonos leképezést) egy
+<code>malloc()</code> hívással foglaljuk, mint a nulladik módszernél. Ezen kívül fogunk
+egy másik tömböt, amely pointerekből áll, mint az első módszernél. Ezek a pointerek a kilapított tömb belsejébe
+mutatnak, mégpedig oda, ahol a két dimenziós tömb leképezett sorainak elejei vannak. Így
+ha megindexeljük a pointerekből álló tömböt (amely a középső a rajzon), egy pointert kapunk,
+amely a kilapított tömb belsejébe mutat; azt megindexelve megkapjuk a keresett elemet.</p>
+
+<p class="csakdoksi">Ez a módszer gyorsabb foglalást eredményez, mint az előző, mert mindössze
+két darab <code>malloc()</code> hívásra van hozzá szükség. A foglalás első lépése a pointertömb
+foglalása, második lépése az elemek tömbjének foglalása, a harmadik lépése pedig a kilapított
+tömb belsejébe mutató pointerek kiszámítása egy ciklusban.</p>
+
+<pre class="brush: cbub "   id="tobbdim2kodid">
+double **szamok;
+
+/* foglalás */
+szamok = (double**) malloc(magassag * sizeof(double*));
+szamok[0] = (double*) malloc(szelesseg*magassag * sizeof(double));
+for (y = 1; y &lt; magassag; ++y)
+   szamok[y] = szamok[0] + y*szelesseg;
+
+/* használat */
+szamok[y][x] = 3.14;
+fv(szamok, szelesseg, magassag); // fv(double**, int, int)
+
+/* felszabadítás */
+free(szamok[0]);                 // ahány malloc, annyi free
+free(szamok);</pre>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="33">
+<div class="slide" id="slide_33">
+<div class="slideheader">
+<h2><span class="oldalszam">33</span>2D dinamikus tömb – melyiket válasszuk?</h2>
+</div>
+
+<img src="ea08/tombtomb.svg" style="width: 22em;" class="kozep">
+<p><em>Táblás játék:</em> állandó a szélesség, így ez egyszerűbb, gyorsabb.</p>
+
+<img src="ea08/sztringtomb.svg" style="width: 22em;" class="kozep">
+<p><em>Sztringek tömbje:</em> a méret eltérő lehet, és külön újrafoglalhatóak!</p>
+
+
+
+</div>
+</section>
+<section id="34">
+<div class="slide" id="slide_34">
+<div class="slideheader">
+<h2><span class="oldalszam">34</span>Többszörös indirekció – mutató mutatóra</h2>
+</div>
+
+<p>A cím szerinti paraméterátadás működése:</p>
+
+<pre class="brush: cbub "  >
+void novel(VALAMI *ptr) { // megnöveli az átvett változót
+   (*ptr)++;
+}</pre>
+
+<br class="smallskip">
+
+<p>A <code>VALAMI</code> típus akár egy mutató is lehet:</p>
+
+<pre class="brush: cbub "  >
+void novel(char **ptr) {
+   (*ptr)++;
+}
+
+char *szoveg = &quot;hello&quot;;
+novel(&amp;szoveg);
+printf(&quot;%s&quot;, szoveg); // „ello”</pre>
+
+<p>Pointerre mutató pointer – a 2D dinamikus tömböknél már használtuk.</p>
+
+
+
+</div>
+</section>
+<section id="35">
+<div class="slide" id="slide_35">
+<div class="slideheader">
+<h2><span class="oldalszam">35</span>Többszörös indirekció – 2D tömb</h2>
+</div>
+
+<p>Írjunk függvényt, amely <em>cím szerint átvett paraméterben</em> adja vissza
+a lefoglalt 2D dinamikus tömbre mutató pointert!</p>
+
+<pre class="brush: cbub "  >
+double **tomb;
+
+foglal(&amp;tomb, 10, 20); // double** változó címe: double***</pre>
+
+<p class="csakdoksi">A <code>tomb</code> változó itt egy pointer. De attól még az csak egy sima 
+változó, amelynek címe is van a memóriában. Ha a típusa <code>double**</code>, akkor a címének 
+típusa <code>double***</code> – és ez lesz az őt cím szerint átvevő függvény paraméterének 
+típusa.</p>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+void foglal(double ***ptomb, int szeles, int magas) {
+   double **uj;
+   int y;
+
+   uj = (double**) malloc(magas*sizeof(double*));
+   for (y = 0; y &lt; magas; ++y)
+      uj[y] = (double*) malloc(szeles*sizeof(double));
+
+   *ptomb = uj; // *ptomb → a double** típusú változó!
+}</pre>
+
+<p class="csakdoksi">A <code>ptomb</code> változó egy pointer a fenti <code>double**</code> 
+típusú változóra. Vagyis ha dereferáljuk: <code>*ptomb</code>, akkor hivatkozni tudunk arra a 
+változóra, amelyet megkaptunk cím szerint. Ide másoljuk be a foglalt pointertömb kezdőcímét, 
+vagyis az <code>uj</code> pointer értékét.</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea08.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

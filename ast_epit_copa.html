@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: A számológép kiegészítése változókkal</title>
+<meta property="og:title" content="InfoC :: A számológép kiegészítése változókkal">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="A szintaxisfás írás folytatása. Ebben egy olyan számológép szerepel, amelyben változókat és értékadást is lehet használni.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="A szintaxisfás írás folytatása. Ebben egy olyan számológép szerepel, amelyben változókat és értékadást is lehet használni.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ast_epit_copa.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">A számológép kiegészítése változókkal</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">A szintaxisfás írás folytatása. Ebben egy olyan számológép szerepel, amelyben változókat és értékadást is lehet használni.</p>
+</div>
+
+<img src="ast_epit_copa/ertekados_kifejezes.svg" style="width: 15em" class="float">
+
+<p>
+A <a href="ast_epit.html">szintaxisfa építésről szóló írásunkban</a> példaként egy egyszerű számológépet írtunk, amivel a négy
+alapműveletből és tetszőleges mélységű zárójelekből álló kifejezést tudtunk
+kiszámolni.
+</p>
+
+<p>
+Most kiegészítjük a számológépet úgy, hogy képesek legyünk változókat
+definiálni és tetszőleges részkifejezések értékét el tudjuk bennük menteni.
+Mindezt továbbra is oly módon, hogy egy szintaxisfát építünk és azt értékeljük
+ki.
+</p>
+
+<p>
+Például az <code>a = 5 + (b = 6)</code> kifejezésből az ábrán látható fát
+fogjuk elkészíteni.
+</p>
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ast_epit_copa.html#1">A változók tárolása</a>
+<li><a href="ast_epit_copa.html#2">A változók lekérdezése</a>
+<li><a href="ast_epit_copa.html#3">Értékadás változóknak</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A változók tárolása</h2>
+</div>
+
+<p>
+Először is azt kell kitalálnunk, hogy hogyan tároljuk el a változóinkat. Egy
+változóról két dolgot kell nyilvántartanunk, a nevét és az aktuális értékét,
+tehát adódik a következő struktúra:
+</p>
+
+<pre class="brush: c "  >
+typedef struct valtozo {
+    char nev[51];
+    double ertek;
+    struct valtozo *kovetkezo;
+} valtozo;</pre>
+
+<p>
+A változóneveket az egyszerűség kedvéért 50 karakterben korlátoztuk. Látható,
+hogy egy egyszeresen láncolt listában szeretnénk a változóinkat nyilvántartani.
+Mivel egy néven csak egy darab változó létezhet, ezért listakezelő
+függvényeinket úgy kell kialakítanunk, hogy valójában egy halmazt valósítsunk
+meg.
+</p>
+
+<p>
+Ennek a részleteibe most nem megyünk bele (a kód része a letölthető programnak,
+a halmaz megvalósítása mindössze 50 sor). Minket most csak az érdekel, hogy
+hogyan fogjuk tudni kezelni ezt az adatszerkezetet.
+</p>
+
+<p>
+Egy függvény segítségével tudjuk majd kezelni a változókat. A
+<code>lekerdez()</code> visszaadja az adott nevű változó értékmezőjének a
+címét. Így, ha csak a változó értékére vagyunk kíváncsiak, akkor egyszerűen
+kiolvassuk az adott címen lévő értéket, de ha szeretnénk, felül is tudjuk írni.
+</p>
+
+<pre class="brush: c "  >
+double *lekerdez(valtozo **valtozok, char const *nev);</pre>
+
+<p>
+A függvény úgy működik, hogy ha egy változó nem szerepel még a halmazban, akkor
+berakja őt és nullára inicializálja. Ezért van szükség kettős indirekcióra a
+halmaz átadásakor, hiszen megváltozhat az adatszerkezet a lekérdezés
+következtében.
+</p>
+
+<p>
+Ezzel a megoldással a "definiálatlan" változók értéke is lekérdezhető és 0-t
+ad. Természetesen, ha elírjuk egy változó nevét, akkor így nem kapunk
+figyelmeztetést, hiszen ekkor egy új változót hozunk létre.
+</p>
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A változók lekérdezése</h2>
+</div>
+
+<p>
+A következő feladatunk az értelmező átalakítása. Először illesszük be a
+nyelvtanunkba a változók lekérdezésének a lehetőségét!
+</p>
+
+<pre>
+kifejezés <strong>::=</strong> összeg
+összeg    <strong>::=</strong> szorzat <strong>(</strong><strong>(</strong>'+' <strong>|</strong> '-'<strong>)</strong> szorzat<strong>)</strong><strong>*</strong>
+szorzat   <strong>::=</strong> tényező <strong>(</strong><strong>(</strong>'*' <strong>|</strong> '/'<strong>)</strong> tényező<strong>)</strong><strong>*</strong>
+tényező   <strong>::=</strong> szám <strong>|</strong> változónév <strong>|</strong> zárójeles 
+zárójeles <strong>::=</strong> '(' kifejezés ')'
+</pre>
+
+<p>
+Ehhez mindössze annyit kell tenni, hogy megengedjük, hogy egy tényező ne csak szám vagy zárójeles kifejezés lehessen, hanem
+változónév is. Szükség lesz természetesen egy változónév szabályra, amely olyan stringekre fog illeszkedni, amelyek
+betűvel kezdődnek és betűvel vagy számmal folytatódnak.
+</p>
+
+<pre class="brush: c "  >
+static int valtozonev(char **szoveg, char *nev) {
+  char *munka = *szoveg;
+  int hossz = 0;
+
+  szokoz(&amp;munka);
+  if (isalpha(munka[hossz++])) {
+    while (isalnum(munka[hossz]) &amp;&amp; hossz &lt; 50) hossz++;
+
+    if (hossz == 50 &amp;&amp; isalnum(munka[hossz])) return 0; /* túl hosszú név nem lehet változó */
+    else {
+      int i;
+      for (i = 0; i &lt; hossz; ++i) nev[i] = munka[i];
+      nev[i] = 0;
+
+      *szoveg = munka + hossz;
+      return 1;
+    }
+  }
+  else return 0;
+}</pre>
+
+<p>
+A függvényünk megpróbál illeszkedni egy változónévre, és ha ez sikerült, akkor a paraméterként
+kapott stringbe beleírja a változó nevét. Arra is ügyel, hogy a változónév ne legyen hosszabb
+a megengedettnél.
+</p>
+
+<p>
+Most már értjük, hogy miért vonatkozik a fenti szabály C-ben is változónevekre: ha kezdődhetnének számmal, akkor
+az értelmező egy számjegyet látva nem tudná eldönteni, hogy az ott egy szám lesz vagy egy változónév.
+</p>
+
+<p>
+A következő megoldandó feladat az, hogy a fában is tudjunk reprezentálni egy
+változólekérdezést. Ehhez egy új szimbólumtípust kell bevezetnünk – ez
+lesz a <code>VALTOZO</code>. A szimbólumunk <code>adat</code> mezőjében pedig
+megjelenik egy új elem: a név.
+</p>
+
+<pre class="brush: c "  >
+typedef enum {MUVELET, SZAM, VALTOZO} szimbolum_tipus;
+
+typedef struct szimbolum {
+    szimbolum_tipus tipus;
+    union {
+        double szam;
+        char muveleti_jel;
+        char nev[51];
+    } adat;
+
+    struct szimbolum *op1, *op2;
+} szimbolum;</pre>
+
+<img src="ast_epit_copa/lekerdezos_kifejezes.svg" style="width: 15em" class="float">
+
+<p>
+Az <code>5+b</code> kifejezés tehát az ábrán látható alakot fogja ölteni. Már csak annyi dolgunk van, hogy
+megoldjuk, hogy a fát kiértékelő függvény képes legyen lekérdezni a hivatkozott változó értékét a változókat
+tároló halmaztól.
+</p>
+
+<p>
+Ehhez ki kell egészítenünk a típus szerint elágazó <code>switch</code>-et a <code>VALTOZO</code> típus
+lekezelésével és természetesen a kiértékelő függvénynek át kell adnunk a halmaz címét:
+</p>
+
+<pre class="brush: c "  >
+double ast_kiertekel(szimbolum *ast, valtozo **valtozok) {
+    if (ast == NULL) return 0.0;
+    else {
+        double op1 = ast_kiertekel(ast-&gt;op1, valtozok), op2 = ast_kiertekel(ast-&gt;op2, valtozok);
+
+        switch (ast-&gt;tipus) {
+            case SZAM:
+                return ast-&gt;adat.szam;
+
+            case VALTOZO:
+                return *lekerdez(valtozok, ast-&gt;adat.nev);
+
+            case MUVELET:
+                switch (ast-&gt;adat.muveleti_jel) {
+                    case '+':
+                        return op1 + op2;
+                    case '-':
+                        return op1 - op2;
+                    case '*':
+                        return op1 * op2;
+                    case '/':
+                        return op1 / op2;
+                }
+
+        }
+
+        return 0.0; //default ágak hiánya miatt
+    }
+}</pre>
+
+<p>
+Most változókat létrehozni és nekik értéket adni még nem tudunk, de lekérdezni őket már igen.
+Valójában már ez is egy hasznos dolog: ilyen módon segíthetjük a számolást konstansok biztosításával.
+Az alábbi kódrészlet mutatja az új <code>main()</code>-t. Látható, hogy <code>valtozok</code>
+néven létrehozunk egy üres halmazt, majd létrehozunk benne két változót "PI" illetve "E" néven.
+Ezeket már most fel tudjuk használni a számításaink során.
+</p>
+
+<pre class="brush: c "  >
+int main(void) {
+  char szoveg[255] = {0};
+  szimbolum *ast = NULL;
+  valtozo *valtozok = NULL;
+  int folytatjuk = 1, i;
+
+  *lekerdez(&amp;valtozok, &quot;PI&quot;) = 3.14159265359;
+  *lekerdez(&amp;valtozok, &quot;E&quot;)  = 2.71828182846;
+
+  do {
+    printf(&quot;? &quot;);
+    fgets(szoveg, 254, stdin);
+
+    if (strstr(szoveg, &quot;kilep&quot;) == szoveg) folytatjuk = 0;
+    else if (kiertekel(szoveg, &amp;ast)) {
+      printf(&quot;Az kifejezés értéke: %g.\n&quot;, ast_kiertekel(ast, &amp;valtozok));
+    }
+    else {
+      printf(&quot;Nem sikerült értelmezni a kifejezést.\n&quot;);
+    }
+
+    ast_torol(ast);
+    ast = NULL;
+  } while (folytatjuk);
+
+  return 0;
+}</pre>
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Értékadás változóknak</h2>
+</div>
+
+<p>
+Az értékadás egy új szabályként fog megjelenni a nyelvtanunkban: 
+</p>
+
+<pre>
+értékadó_kifejezés <strong>::=</strong> <strong>(</strong> változónév '=' <strong>)?</strong> összeg
+</pre>
+
+<p>
+Az értékadás rész (a változónév és az értékadó operátor) opcionális, vagyis egy
+csak számokból álló kifejezés is megfelel a nyelvtanunknak a továbbiakban is.
+</p>
+
+<p>
+Annak érdekében, hogy a kifejezésünkben bárhol szerepelhessen értékadás, be
+kell ezt a szabályt a rekurzív körbe. Ezt úgy tesszük meg, hogy egy zárójeles
+kifejezés ezentúl egy értékadás lesz zárójelek között:
+</p>
+
+<pre>
+értékadó_kifejezés <strong>::=</strong> <strong>(</strong> változónév '=' <strong>)?</strong> összeg
+összeg    <strong>::=</strong> szorzat <strong>(</strong><strong>(</strong>'+' <strong>|</strong> '-'<strong>)</strong> szorzat<strong>)</strong><strong>*</strong>
+szorzat   <strong>::=</strong> tényező <strong>(</strong><strong>(</strong>'*' <strong>|</strong> '/'<strong>)</strong> tényező<strong>)</strong><strong>*</strong>
+tényező   <strong>::=</strong> szám <strong>|</strong> változónév <strong>|</strong> zárójeles 
+zárójeles <strong>::=</strong> '(' értékadó_kifejezés ')'
+</pre>
+
+<p>
+A fenti nyelvtan így már megengedi az ilyen kifejezéseket: <code>a = 5 + (b =
+6)</code>. Az értékadó operátor láncolását (<code>a = b = c = 6</code>) így nem
+tudjuk megoldani, de egy kerülő úton ez is lehetséges: <code>a = (b = (c =
+6))</code>. Ennek a kiküszöbölésével most nem foglalkozunk (bár nem bonyolult).
+</p>
+
+<p>
+A következő feladatunk az, hogy a fában is képesek legyünk reprezentálni az értékadást.
+Ha meggondoljuk ez azt jelenti, hogy el kell tárolnunk a változó nevét és egy kifejezést, amit
+ki kell számolni és az értékét hozzá kell rendelni a változóhoz.
+</p>
+
+<p>
+Ezen túl természetesen meg kell még valósítani az értékadó operátor fő hatását is, tehát az
+értékadó kifejezésnek fel kell venni a másolt értéket – különben a <code>5 + (b = 6)</code>
+alakú kifejezések nem lennének működőképesek.
+</p>
+
+<p>
+A szimbólumok szintjén ez azt jelenti, hogy lesz egy új típusunk, az
+<code>ÉRTÉKADÁS</code>. Azért kell őt bevezetnünk, mert a <code>VÁLTOZÓ</code>
+hatására kilvastuk a változó aktuális értékét és nem írtuk őt egy másik
+kifejezés értékével, tehát nem tehetjük meg, hogy egy olyan értékadó
+szimbólumunk legyen, aminek a bal operandusa egy <code>VÁLTOZÓ</code>, 
+a jobb oldali pedig egy kifejezés, mert így két konstans számot kapna
+az operátorunk és ezzel nem tudna mit kezdeni.
+</p>
+
+<pre class="brush: c "  >
+typedef enum {MUVELET, SZAM, VALTOZO, ERTEKADAS} szimbolum_tipus;
+
+struct szimbolum;
+
+typedef struct ertekadas {
+    char nev[51];
+    struct szimbolum *kifejezes;
+} ertekadas;
+
+typedef struct szimbolum {
+    szimbolum_tipus tipus;
+    union {
+        double szam;
+        char muveleti_jel;
+        char nev[51];
+        ertekadas egy_ertekadas;
+    } adat;
+
+    struct szimbolum *op1, *op2;
+} szimbolum;</pre>
+
+<p>
+Az az érdekes helyzet állt elő, hogy kölcsönös hivatkozásunk van: a <code>szimbolum</code> struktúrának kell,
+hogy legyen egy <code>ertekadas</code> mezője, mert egy szimbólum lehet értékadás. Ugyanakkor az <code>ertekadas</code>
+struktúrának is lesz egy <code>szimbolum</code> mezője, hiszen az értékadáshoz el kell tárolnunk egy kifejezést.
+</p>
+
+<p>
+Az ilyen jellegű problémák gyakran előfordulnak a programozás során és elődeklarációval oldhatjuk meg őket. A 
+</p>
+
+<pre class="brush: c "  >
+struct szimbolum;</pre>
+
+<p>
+sor azt mondja, hogy lesz egy <code>szimbolum</code> nevű struktúránk, amit majd később definiálunk. Ez ahhoz elég, hogy
+a fordító ilyen struktúrára mutató pointereket értelmezni tudjunk. Természetesen, ha megpróbálnánk nem mutató jellegű
+adattagot létrehozni belőle, akkor azt már nem hagyná, hiszen ahhoz a pontos méretét is ismernie kell, amit ez alapján
+a deklaráció alapján még nyilván nem ismerhet.
+</p>
+
+<p>
+Tulajdonképpen két függvényt kell meg-, illetve átírnunk: létre kell hoznunk az új <code>ertekado_kifejezes()</code>-t,
+amivel a nyelvünkbe illesztjük az értékadásokat és módosítanunk kell az <code>ast_kiertekel()</code>-t, hogy képes
+legyen az előírt értékadás elvégzésére.
+</p>
+
+<p>
+Nézzük meg először az új szabályunkat:
+</p>
+
+<pre class="brush: c "  >
+static int ertekado_kifejezes(char **szoveg, szimbolum **ast) {
+  char *munka = *szoveg;
+  char nev[51], kar;
+  int van_ertekadas = 0;
+  szimbolum *kifejezes;
+
+  if (valtozonev(&amp;munka, nev) &amp;&amp; karakter(&amp;munka, &quot;=&quot;, &amp;kar)) {
+    van_ertekadas = 1;
+  }
+  /* Ha nem volt értékadás, vagy nem volt teljes (!), akkor vissza kell állítani a munka pointert: */
+  else munka = *szoveg;
+
+
+  if (osszeg(&amp;munka, &amp;kifejezes)) {
+    if (van_ertekadas) {
+      *ast = uj_ertekadas(nev, kifejezes);
+    }
+    else {
+      *ast = kifejezes;
+    }
+
+    *szoveg = munka;
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}</pre>
+
+<p>
+Egy logikai változóban (<code>van_ertekadas</code>) jegyezzük fel, hogy történt-e értékadás, ugyanis ez opcionális.
+Ez azért fontos, mert máshogyan építjük a fát, ha van és ha nincs.
+</p>
+
+<p>
+Ha nincs, akkor egyszerűen az <code>összeg</code> szabály által szolgáltatott fát adjuk tovább (ilyenkor olyan, mintha
+itt sem lenne ez a szabály). Ha van értékadás, akkor viszont egy új értékadás szimbólumot hozunk létre, ami eltárolja
+a változó nevét és az <code>összeg</code> által visszaadott kifejezésfát.
+</p>
+
+<p>
+A fügvényben lévő első <code>if</code>-nél van egy apróság, aminek azonban nagyon fontos a szerepe. Elsőre azt gondolhatnánk,
+hogy egy hibát követünk itt el, ugyanis egy ÉS-kapcsolat szerepel a feltételben, így előfordulhat, hogy a változónévre
+volt illeszkedés, az értékadó operátorra viszont nem. Akár van változónév, akár nincs, sikertelenség esetén mi mindenképpen
+visszaállítjuk a szöveg-mutatót előre és onnan próbálunk összeget illeszteni.
+</p>
+
+<p>
+Ez a megoldás azért helyes, mert az összeg lehet egy változónév, hiszen egy összeg leegyszerűsödhet egy szorzattá, ami egy tényezővé, ami
+pedig lehet egyetlen egy darab változónév. Ezért nem szabad logikai HAMIS értékkel visszatérnünk, ha egy változónevet találunk értékadó operátor
+nélkül egy <code>értékadó_kifejezés</code> szabály elején.
+</p>
+
+<p>
+Vágezetül csak a kiértékelő függvény maradt. Itt nagyon egyszerű a teendőnk: ki kell értékelni az értékadó szimbólumban eltárolt
+kifejezést és a kapott eredménnyel két feladatunk van: meg kell valósítanunk az értékadó operátor fő- és mellékhatását, vagyis
+el kell tárolnunk az értéket a változóban és vissza is kell adnunk, mint az egész kifejezés értékét:
+</p>
+
+<pre class="brush: c "  >
+double ast_kiertekel(szimbolum *ast, valtozo **valtozok) {
+  if (ast == NULL) return 0.0;
+  else {
+    double op1 = ast_kiertekel(ast-&gt;op1, valtozok), op2 = ast_kiertekel(ast-&gt;op2, valtozok);
+
+    switch (ast-&gt;tipus) {
+      case SZAM:
+        return ast-&gt;adat.szam;
+
+      case VALTOZO:
+        return *lekerdez(valtozok, ast-&gt;adat.nev);
+
+      case MUVELET:
+        switch (ast-&gt;adat.muveleti_jel) {
+          case '+':
+            return op1 + op2;
+          case '-':
+            return op1 - op2;
+          case '*':
+            return op1 * op2;
+          case '/':
+            return op1 / op2;
+        }
+
+      case ERTEKADAS:
+        op1 = ast_kiertekel(ast-&gt;adat.egy_ertekadas.kifejezes, valtozok);
+        *lekerdez(valtozok, ast-&gt;adat.egy_ertekadas.nev) = op1;
+        return op1;
+    }
+
+    return 0.0; //default ágak hiánya miatt
+  }
+}</pre>
+
+<p>
+A teljes kód letölthető <a href="ast_epit_copa/ast_epit_copa.zip">innen</a>.
+</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ast_epit_copa.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: A láthatatlan zongorista</title>
+<meta property="og:title" content="InfoC :: A láthatatlan zongorista">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="A láthatatlan zongorista életre keltése egy kis OpenGL 3D programozással.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="A láthatatlan zongorista életre keltése egy kis OpenGL 3D programozással.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lathatatlan.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">A láthatatlan zongorista</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">A láthatatlan zongorista életre keltése egy kis OpenGL 3D programozással.</p>
+</div>
+
+<p>Az adventi naptárban a hangokhoz és a háromdimenziós grafikához is szerepelt egy-egy
+trilógia, amelyek e témakörök alapjait, igyekeztek bemutatni. Rakjuk össze a kettőt:
+írjunk egy programot, amely zenél, és rajzol is! Keltsük életre a láthatatlan zongoristát,
+aki eljátssza nekünk Mozart Török indulóját, vagy bármit, amit szeretnénk! (Meg aminek a kottáját
+a neten megtaláljuk.)
+
+<div class="columns">
+    <div>
+    <img class="kozep arnyek" src="lathatatlan/zongora.png">
+    </div>
+    <div>
+    <img class="kozep arnyek" src="lathatatlan/billentyuk.png">
+    </div>
+</div>
+
+<p>Ehhez két új dologra lesz szükségünk:
+<ul>
+    <li>Egy olyan programmodulra, amely beolvas egy <em>MIDI</em> fájlt, mert abból lesz a kotta.
+    <li>Egy olyan modulra, amely <em>kirajzol 3D-ben</em> egy zongorát.
+</ul>
+
+<p>A többi adott. A szintetizátor megvan múltkorról. A kettőt szinkronizálni már majdnem gyerekjáték:
+amikor egy hang meg van szólaltatva, akkor a zongora billentyűjét elmozdulva kell kirajzolni.
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lathatatlan.html#1">A MIDI fájlok</a>
+<li><a href="lathatatlan.html#2">A vezérlés és a lejátszás</a>
+<li><a href="lathatatlan.html#3">Az OpenGL könyvtárak</a>
+<li><a href="lathatatlan.html#4">Az OpenGL koordinátarendszerei</a>
+<li><a href="lathatatlan.html#5">A koordinátarendszerek használata</a>
+<li><a href="lathatatlan.html#6">Rajzolás az OpenGL-ben</a>
+<li><a href="lathatatlan.html#7">A forráskód</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A MIDI fájlok</h2>
+</div>
+
+<p>A MIDI a Musical Instrument Digital Interface rövidítése. Ez egy szintetizátorok és egyéb
+digitális hangszerek által használt szabvány: arra való, hogy azok egymással és számítógépekkel
+kommunikálhassanak. A MIDI buszon az eszközök különféle üzeneteket küldenek egymásnak,
+úgymint hangszer kiválasztása, hang megszólaltatása, tempó beállítása stb. Egy fájlformátum is
+része ennek: a <code>.mid</code> fájlokban ezen események vannak rögzítve, a keletkezési
+idejük mellett. Bár gondolhatunk úgy is a MIDI fájlokra, mintha maga a kotta lenne eltárolva
+bennük, de ez nincs így. Szerencsére a fájlokban ennél számunkra sokkal alkalmasabb módon van
+eltárolva a zene: konkrétan az szerepel mindegyik hangra, hogy melyik időpontban szólal meg, és
+melyik időpillanatban hallgat el. Ezeket az eseményeket sorrendben „eljátszva” a fájlban tárolt
+zenét rekonstruálhatjuk, a szintetizátorunk tudásának megfelelő minőségben.
+
+<p>A <code>.mid</code> egy bináris fájlformátum, amelyben ezek az adatok néhány bájtos darabokban,
+<em>chunk</em>-okban tárolódnak. Hogy ennek a részleteibe ne nagyon kelljen belemenni, a
+<a href="http://www.fourmilab.ch/webtools/midicsv/">midicsv</a> programot hívhatjuk segítségül,
+amely szövegfájllá alakítja ezeket. A <a href="lathatatlan/bociboci.mid">Boci, boci tarka</a>
+első pár hangja, amely MIDI formátumban így fest:
+
+<pre class="screenshot">
+00000000 4D 54 68 64 │ 00 00 00 06 │ 00 01 00 01 │ 00 64 4D 54  MThd.........dMT
+00000010 72 6B 00 00 │ 00 3E 00 FF │ 51 03 03 D0 │ 90 00 C0 00  rk...&gt;. Q..А . .
+00000020 00 90 3C 50 │ 32 80 3C 00 │ 32 90 40 50 │ 32 80 40 00  . &lt;P2 &lt;.2 @P2 @.
+00000030 32 90 3C 50 │ 32 80 3C 00 │ 32 90 40 50 │ 32 80 40 00  2 &lt;P2 &lt;.2 @P2 @.
+00000040 32 90 43 50 │ 64 80 43 00 │ 64 90 43 50 │ 64 80 43 00  2 CPd C.d CPd C.
+00000050 64 FF 2F 00 │                                          d /.
+</pre>
+
+<p>A midicsv szöveges formátumában könnyebben olvasható számunkra is:
+
+<pre>
+0, 0, Header, 1, 1, 100         <span class="bubble">fejléc, órajel</span>
+1, 0, Start_track
+1, 0, Tempo, 250000             <span class="bubble">sebesség</span>
+1, 0, Program_c, 0, 0
+1, 0, Note_on_c, 0, 60, 80
+1, 50, Note_off_c, 0, 60, 0
+1, 100, Note_on_c, 0, 64, 80    <span class="bubble">hang megszólaltatása</span>
+1, 150, Note_off_c, 0, 64, 0
+1, 200, Note_on_c, 0, 60, 80    <span class="bubble">hang kikapcsolása</span>
+1, 250, Note_off_c, 0, 60, 0
+1, 300, Note_on_c, 0, 64, 80
+1, 350, Note_off_c, 0, 64, 0
+1, 400, Note_on_c, 0, 67, 80
+1, 500, Note_off_c, 0, 67, 0
+1, 600, Note_on_c, 0, 67, 80
+1, 700, Note_off_c, 0, 67, 0
+1, 800, End_track
+0, 0, End_of_file
+</pre>
+
+<p>Nézzük meg, itt mi mit jelent.
+<ul>
+    <li><code>Start_track</code>, <code>End_track</code>. A MIDI fájl sávokra oszlik, amelyek
+        általában az egyes hangszerek szólamait szokták tárolni. Gyakran egy adott hangszer
+        adatait is több sávra szedik (pl. zongora bal és jobb kéz), ezért a sávokat ömlesztve
+        fogjuk kezelni.
+    <li>Az első szám minden sorban a sáv sorszáma, ahol az esemény keletkezik; a második pedig
+        a keletkezés ideje, mégpedig az <em>órajel</em> sorszáma szerint. (Az órajel szinkronizálja
+        a MIDI buszon összekapcsolt hangszereket.)
+    <li><code>Header</code>. Ez nyitja a fájlt. Egy valamiért lesz fontos nekünk, az itt
+        megadott utolsó szám miatt (100), ugyanis ez mutatja azt, hogy a MIDI fájlban hány
+        órajel tartozik egy zenei negyed ütemhez.
+    <li><code>Tempo</code>. Ez adja meg a zenedarab sebességét, egészen pontosan azt, hogy
+        egy negyed ütem hány mikroszekundum ideig tart. Tehát egyben azt is, hogy hány mikroszekundum
+        időt jelent a <code>Header</code> mezőben megadott számú órajel. Egy MIDI fájlban több
+        <code>Tempo</code> parancs is lehet, mivel a zenedarab sebessége változhat.
+    <li><code>Note_on_c</code>. Hang megszólaltatása. Az utána lévő első szám a csatorna (mivel
+        egy sávon belül is több hang lehet egyszerre), a második a hangmagasság (ahol 60 jelenti
+        a 264 Hz-es C hangot, és ettől fél hangonként megy fel és le), a harmadik pedig a hangerő
+        (0 és 127 között). Gyakran a kikapcsolást is <code>Note_on_c</code>
+        parancs mutatja, méghozzá 0 hangerővel.
+    <li><code>Note_off_c</code>. Hang kikapcsolása. A mellette megadott hangerő lényegtelen.
+</ul>
+
+<p>Tehát ezt a fájlt kell beolvasni, és egy láncolt listát építeni a számunkra fontos parancsokból:
+
+<pre class="brush: c "  >
+typedef enum EsemenyTipus {
+    hangbe, hangki, tempobeallit,
+} EsemenyTipus;
+
+typedef struct Esemeny {
+    EsemenyTipus tipus;
+    /* tempohoz */
+    int tempo;
+    /* hanghoz */
+    int ido;
+    int csatorna;
+    int hangmagassag;
+    int hangero;
+
+    struct Esemeny *kov;
+} Esemeny;</pre>
+
+<p>A beolvasás szinte triviális, egy kis <code>scanf()</code>-elgetés megoldja a
+dolgot. A program egyszeresen láncolt, elején strázsás listát épít. Ebbe a listába
+az eseményeket idő szerint rendezve szúrja be, mivel a fájlban ezek sávonként
+elválasztva szerepelnek. (Még jó, hogy előadáson szerepelt, hogyan kell rendezett listát
+építeni. :P) Lejátszás közben jól fog jönni a rendezett lista, mivel azon az idő
+múlásával együtt kell majd végighaladni.
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A vezérlés és a lejátszás</h2>
+</div>
+
+<p>A lejátszás egyszerű megvalósításához érdemes a szintetizátor kódját átírni, de
+csak éppen hogy: a hangokat itt nem tömbben, hanem listában kell tárolni. Egyszerre
+több hang is megszólalhat, viszont az éppen megszólaltatott hangok száma folyamatosan
+változik. A szintetizátor így a hangok strázsás, egyszeresen láncolt listáját kell
+feldolgozza minden időszelethez. Felharmonikusok mixelgetése helyett most egy egyszerű
+háromszöghullámot használ a program, amelyet az <code>fmod()</code> (fűrészfoghullám)
+függvényből állít elő, egy abszolútérték képzésével:
+
+<pre class="brush: c "  >
+for (iter = sz-&gt;hangok-&gt;kov; iter != NULL; iter = iter-&gt;kov) {
+    Hang *h = iter;
+    double s_ez;
+    double frek = 264 * pow(2, (h-&gt;hangmagassag - 60) * 1.0/12.0);
+    
+    /* felharmonikusok helyett */
+    s_ez = fabs(fmod(frek * h-&gt;t, 1)-0.5) * 4 - 1;
+    ...</pre>
+
+<img class="kozep" src="lathatatlan/haromszog.svg">
+
+<p>Egyébként minden a szokásos. Hang keltésekor a hangok listájába be kell szúrni
+egy új elemet, és indul az ADSR görbe a felfutással.
+A beszúrást a program <code>hang_keres()</code> függvénye csinálja, amely ha
+nem találja a listában a keresett, elvileg már előzőleg megszólaltatott hangot, akkor
+beteszi, és azzal tér vissza. Előbb-utóbb minden hang elér a <code>csend</code> fázisba –
+időnként a listát ki kell takarítani a <code>hang_mar_nem_kell_torol()</code> függvénnyel.
+
+<p>Ezeket a feladatokat a főprogram lejátszást vezérlő része végzi el. Ez létrehoz
+magának egy 20 milliszekundumonként aktiválódó időzítőt, amelynek minden jelére
+a MIDI parancsok listájából a következő adag parancsot végrehajtja.
+Ehhez ki kell számolnia azt is, hogy az eltelt 20 ms hány MIDI órajelnek felel meg.
+Ez a MIDI fájl <code>Header</code> és <code>Tempo</code> parancsaival megadott
+adatok alapján már könnyen megy.
+
+<pre class="brush: c "  >
+int felbontas = 20;
+id = SDL_AddTimer(felbontas, timer, NULL);
+while (!kilep) {
+    SDL_Event ev;
+    SDL_WaitEvent(&amp;ev);
+    
+    switch (ev.type) {
+        case SDL_USEREVENT:
+            SDL_LockAudio();    /* hogy addig ne fusson a masik szal */
+            hang_mar_nem_kell_torol(h);
+            midiorajel += (orajelpernegyed / (tempo/1000.0)) * felbontas;
+            while (l != NULL &amp;&amp; l-&gt;ido &lt; midiorajel) {
+                switch (l-&gt;tipus) {
+                    case tempobeallit:
+                        tempo = l-&gt;tempo;
+                        break;
+                    case hangbe:
+                        ez = hang_keres(h, l-&gt;csatorna, l-&gt;hangmagassag);
+                        ez-&gt;all = felfutas;
+                        ez-&gt;hangero = l-&gt;hangero/128.0;
+                        gombok[l-&gt;hangmagassag].nyomva++;   /* kirajzolonak */
+                        break;
+                    case ...</pre>
+
+<p>A zongorát kirajzoló programrész dolgát megkönnyítendő, ez eltárolja azt is,
+hogy épp melyik billentyű (a MIDI hang sorszámát indexnek használva) van lenyomva.
+
+<p>Figyelni kell arra, hogy a hangot keverő, SDL által visszahívott függvény egy
+külön szálon fut a főprogramtól. (Erről részletesen majd a Programozás alapjai 3. tárgyból lesz szó.)
+Mivel mindkettő a hangok listáján dolgozik, előfordulhat az, hogy amíg a hang előállítása közben
+épp végiglépked a listán a <code>hang_callback()</code> függvény, addig a fenti programrész
+módosítja a listát, például töröl belőle egy elemet.
+Az ilyesmivel szép kis lefagyásokat lehet csinálni, úgyhogy mindenképp
+el kell kerülni. A fenti programrészben a lista módosítása (vagyis a következő néhány MIDI
+parancs feldolgozása) előtt kiadott <code>SDL_LockAudio()</code> hívás azt jelzi az SDL-nek,
+ha épp meghívná a keverő <code>hang_callback()</code> függvényt, akkor még várjon vele
+egy kicsit. Ennek hatása az <code>SDL_UnlockAudio()</code> hívásig tart. Így nem lesz
+gond a lista kezelésével: egyszerre csak az egyik programrész fér hozzá a hangok listájához,
+megvárják egymást, hogy külön tudjanak dolgozni.
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Az OpenGL könyvtárak</h2>
+</div>
+
+<img class="float arnyek" src="lathatatlan/zongora.png">
+
+<p>Nézzük meg jobb oldalt a rajzot: az egész pianínót el kell forgatni, a billentyűit
+mozgatni (forgatni) kell, amikor le vannak nyomva, perspektívát kell számolni és így tovább.
+Lehetne bíbelődni ebben a programban is a négyszögekkel, forgatással, sorbarendezéssel, de
+ezt most hagyjuk: bízzuk a kirajzolást egy megfelelő grafikus környezetre és a videókártyára, az
+<em>OpenGL</em>-en keresztül.
+
+<p>Az OpenGL-es 3D programozásnál először az a furcsa, hogy rengeteg <em>koordinátarendszert</em> használ:
+akármelyik ezzel foglalkozó könyvet nyitjuk ki, mindenféle objektumkoordinátákról,
+világkoordinátákról, normalizált eszközkoordinátákról, vágási koordinátákról, ablakkoordinátákról
+és egyebekről írnak benne. Ha azonban tudjuk, hogy melyik műveletet (a testek forgatását, a nézetet
+meghatározó kamera elhelyezését, a perspektívát) melyik koordinátarendszerben kell elvégezni, akkor
+könnyű a dolgunk. Az egyszerűbb programokban pedig arra sem lesz szükségünk, hogy magunk adjuk meg
+a 4×4-es mátrixokat, amelyek az egyes koordinátarendszerek közötti transzformációkat adják meg,
+hanem ezt a GL (OpenGL) vagy a GLU (OpenGL Utility) függvényei létrehozzák azokat helyettünk.
+
+<p>Az OpenGL ugyanis nem is egy, hanem <em>több függvénykönyvtárból</em> áll. A legalapvetőbb szolgáltatásokat
+a GL könyvtár biztosítja. Ennek kiegészítése a GLU, amely sok mindenben megkönnyíti a programozó
+dolgát: például ad egy olyan függvényt, amelynek segítségével megadhatjuk, hogy a jelenetünkben hol
+legyen a kamera (néző), és melyik pont felé nézzen – ahelyett, hogy nekünk kellene forgatásokkal
+és eltolásokkal a megadott pontba helyezni a megjelenített tárgyakat. A két könyvtár
+szolgáltatásait egy harmadikkal is ki szokták egészíteni: az OpenGL ugyanis csak rajzolni tud,
+ablakot nyitni, billentyűzetet, egeret kezelni nem. A harmadik könyvtár, amelyik ezeket a feladatokat
+ellátja majd, az most is a jól bevált SDL lesz. Na de lássuk ezeket a koordinátarendszereket!
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Az OpenGL koordinátarendszerei</h2>
+</div>
+
+<img src="lathatatlan/objektumkoord.png" class="float">
+
+<p>Nézzük meg, hogyan rajzolódik ki egy kocka a képernyőre!
+
+<p>Először is, a kocka ún. <em>objektumkoordinátákkal</em> rendelkezik. Ezeket az objektumkoordinátákat
+magához a kockához viszonyítjuk. Például azt mondhatjuk, hogy legyen a kocka egyik sarka az origó, és
+legyenek az <code>x</code>, <code>y</code>, <code>z</code> tengelyek ebben a rendszerben párhuzamosak
+a kocka éleivel. Ha a kocka éle <code>1</code> egység hosszú, akkor az előbb kiválasztott
+csúcsával szembeni csúcsának objektumkoordinátái a <code>(1;1;1)</code> számok.
+
+<img src="lathatatlan/vilagkoord.png" class="float arnyek">
+
+<p>Ezt a kockát nagyíthatjuk, kicsinyíthetjük, elforgathatjuk, és eltolhatjuk különböző helyekre a
+térben (modelltranszformáció), sok különálló kockát kapva így. Magukhoz képest ezek mind egyformák, azonban az így kapott
+kockák egészen különböző <em>világkoordinátákkal</em> rendelkeznek. Bármelyik kocka koordinátarendszeréből
+nézve leírhatnánk az összes többiét, de az a rendszer, amit a programunkban használunk, lehet, hogy nem
+igazodik egyikéhez sem.
+
+<p>Van tehát egy jelenetünk a kockákból. Ebbe a jelenetbe belehelyezünk egy kamerát (vagy: magunkat) egy <code>(x;y;z)</code>
+pozícióba, és kiválasztunk egy másik pontot is, amelynek irányába nézünk. A világkoordinátákat
+a szem irányába tolva és forgatva (nézettranszformáció) megkapjuk a <em>nézetkoordinátákat</em>. Mivel
+az OpenGL-nek a világkoordinátákkal semmi dolga nincsen, ezért a modelltranszformációt (a kocka térbeli
+elhelyezését) és a nézettranszformációt (a kamera jelenetbe helyezését) egyetlen egy, összevont
+transzformációval oldja meg. Ez jogos is: mindegy, hogy a kocka jön hozzánk közelebb, vagy mi megyünk
+a kockához közelebb, a látvány ugyanúgy változik.
+
+<img src="lathatatlan/sin.jpg" class="float arnyek">
+
+<p>Ezután jön a további mágia: az általunk megadott térrészt az OpenGL a jelentből kivágja, elvégzi
+rajta a perspektivikus transzformációt, ami által megkapja az ún. <em>normalizált eszközkoordinátákat</em>,
+amelyekkel már egy két dimenzióba lapított képet ír le. Végül az így kapott képet méretezi bele
+a kért ablakunkba a képernyőn, vagyis számolja át az utóbbiakat <em>ablakkoordinátákká</em>. A legelőbb említett
+koordináták igazából nem is három, hanem <em>négy</em> dimenziósak, mert némely műveletek, amelyekre
+vágás és a perspektíva számítása közben szükség van, csak négy dimenzióban végezhetők el helyesen. Hát igen,
+a projektív geometria szabályai mások, mint az euklideszi geometria szabályai: a párhuzamosok igenis
+találkoznak egy pontban.
+
+<p>(A kockákat kirajzoló program kódja is letölthető lentebb.)
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>A koordinátarendszerek használata</h2>
+</div>
+
+<img class="float" src="lathatatlan/vetites.svg" style="width: 28em;">
+
+<p>Hogy fogjuk a fentieket használni a programban? Először is, a program indulásakor egyszer beállítjuk
+a <em>vetítési transzformációt</em>. Ezel adjuk meg azt, hogy milyen széles (hány fokos) a nézőnk látómezeje,
+és azt is, hogy milyen messze van a szemhez legközelebbi, illetve legtávolabbi pont, amelyet
+szeretnénk látni. Ehhez először szólunk az OpenGL-nek, hogy szeretnénk beállítani a vetítési mátrixot (1).
+Utána fogunk egy egységmátrixot (2), és ezt megszorozzuk egy olyan mátrixszal (3), amely a kívánt
+vetítést létrehozza. Az alábbi példában a látószög 35 fokos, a képarány <code>w/h</code> (igazodik
+az ablak méretéhez), a közeli és a távoli vágósík távolsága a szemtől 10 és 300 egység. (Ez utóbbiak
+megadására azért van szükség, mert az OpenGL z-pufferezést használ: minden képponthoz elmenti, hogy
+milyen távoli alakzat látszik ott, és így oldja meg az egymást átfedő alakzatok kirajzolását. Az egyes
+pontokhoz rendelt számérték felbontása azonban véges, és nekünk kell megmondani, mi a legkisebb
+és a legnagyobb érték.)
+
+<pre class="brush: cbub "  >
+int w = 800, h = 600;
+SDL_SetVideoMode(w, h, 0, SDL_OPENGL);
+glMatrixMode(GL_PROJECTION); // 1
+glLoadIdentity();                      // 2
+gluPerspective(35.0, w / (double) h, 10, 300); // 3</pre>
+
+<p>A jelenetek kirajzolásakor pedig beállítjuk a modell- és a nézettranszformációt. Először is
+megadjuk, hogy hol van a szemünk: a <code>(-15;30;60)</code> világkoordinátából nézünk a <code>(0;0;0)</code>
+pontba, méghozzá úgy, hogy a felfelé irányt a <code>(0;1;0)</code> vektor adja meg:
+
+<pre class="brush: c "  >
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+gluLookAt(-15, 30, 60, 0, 0, 0, 0, 1, 0);</pre>
+
+<p>Ezután pedig minden objektum elhelyezése előtt úgy forgatjuk a világot (nem az objektumot!), hogy
+a világ álljon be az objektum által elvárt irányba. Ezt a lehetőséget a zongora billentyűinél fogjuk
+kihasználni. A billentyűk koordinátái a programban úgy vannak megadva, hogy a föld síkjával
+párhuzamosak, és az origóban vannak. A világ eltolása és elforgatása miatt lesz egy zongorabillentyű
+helyett sok, és amiatt lesznek lenyomva is. Ez így néz ki:
+
+<pre class="brush: c "  >
+static void billentyurajzol(double xt, int fekete, double szog) {
+    double w = (fekete ? 0.63 : 0.9) / 2;  /* fel szelesseg */
+    double y = fekete ? 0.6:0;             /* ennyivel van magasabban */
+    double z2 = (fekete ? 3.5 : 5);        /* hosszusag */
+    double magas = 1;                      /* billentyu magassaga */
+    double szin = fekete ? 0.2 : 0.9;
+
+    glPushMatrix();
+    glTranslatef(xt, 0, 0);         /* itt kerulnek a helyukre */
+    glRotated(szog, 1, 0, 0);       /* ettol vannak lenyomodva, x tengely korul forgas */
+    glColor3d(szin, szin, szin);    /* ilyen szinu */
+    teglatest(w, y, 0, -w, y-magas, z2);
+    glPopMatrix();
+}</pre>
+
+<p>Ez a programrész kihasználja, hogy a transzformációs mátrixokat az OpenGL egy veremben tárolja. Az
+aktuálisan használt mátrixról készít egy másolatot, és beteszi azt a verembe (push). A módosítása,
+és a módosított mátrix használata után pedig előveszi az eredetit (pop). Ezt a programokban úgy szokás
+használni (és itt is így működik), hogy minden objektum elmenti a verembe a nézettranszformáció
+mátrixát, utána módosítja azt a saját helyzetnének meghatározásához. Végül a kirajzolás után
+visszaállítja az eredetit, hogy a többi objektum kirajzoló rutinja az eredetiből tudjon kiindulni.
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Rajzolás az OpenGL-ben</h2>
+</div>
+
+<p>„Az OpenGL állapotgép”, szokták mondani mindenhol. Ez láthattuk már az előző példában is:
+a <code>glMatrixMode()</code> függvénnyel előbb megmondjuk, hogy melyik mátrixot szeretnénk módosítani,
+az utána hívott függvények pedig azt a mátrixot (vetítési, modelltranszformációs) fogják változtatni,
+amelyet ezzel kiválasztottunk.
+
+<p>Ez az összes többi függvénynél is így van. A <code>glVertex&hellip;()</code> függvényekkel térbeli
+pontokat adhatunk át az OpenGL-nek. Hogy azokból háromszögek vagy négyszögek lesznek, esetleg csak sima
+szakaszok, az attól függ, hogy előtte a <code>glBegin()</code> függvényt milyen paraméterrel
+hívtuk meg. Ha azt mondjuk, <code>glBegin(GL_TRIANGLES)</code>, háromszögeket kapunk. Ha pedig
+<code>glBegin(GL_QUAD_STRIP)</code>, akkor egy összefüggő, négyszögekből álló csík (szalag)
+csúcsaiként értelmezi a megadott pontokat. Ugyanez a helyzet a színek megadásánál is: mindig az a szín
+van érvényben, amit a legutoljára megadtunk. Ha sok egyforma színű alakzatunk van, akkor ez jelentősen
+gyorsabb lesz ahhoz képest, mintha mindegyiknél egyesével megadnánk a színeket.
+(A <code>glVertex3d()</code> és a <code>glColor3d</code> nevében a <code>3d</code> azt jelenti, hogy
+három darab <code>double</code> paramétere van. Sok OpenGL függvénynek több változata is van: pl. a
+<code>glVertex2f</code> ugyanazt csinálja, mint a <code>glVertex3d()</code>, csak két <code>float</code>
+paramétert vár; a harmadik koordinátát nullának veszi. A <code>glColor3ub()</code>-vel pedig az SDL-ben
+megszokott módon adhatjuk meg a színeket: <code>glColor3ub(255, 255, 255)</code> jelenti a fehéret.)</p>
+
+<p>A program <code>(x1;y1;z1)</code> és <code>(x2;y2;z2)</code> koordinátákkal adott, tengelyekkel párhuzamos
+téglatest kirajzolását elvégző függvénye így néz ki:
+
+<pre class="brush: c "  >
+static void teglatest(double x1, double y1, double z1, double x2, double y2, double z2) {
+    ...
+    glBegin(GL_QUADS);
+    ...
+    glNormal3d(-1, 0, 0);   /* bal */
+    glVertex3d(x1, y1, z1);
+    glVertex3d(x1, y1, z2);
+    glVertex3d(x1, y2, z2);
+    glVertex3d(x1, y2, z1);
+    glNormal3d(1, 0, 0);   /* jobb */
+    glVertex3d(x2, y2, z1);
+    glVertex3d(x2, y2, z2);
+    glVertex3d(x2, y1, z2);
+    glVertex3d(x2, y1, z1);
+    ...
+    glEnd();
+}</pre>
+
+<p>Ez a színt be sem állítja, hanem azt várja a hívótól, hogy az hívja meg helyette az OpenGL
+megfelelő <code>glColor&hellip;()</code> függvényét. Helyette rögtön négyszögrajzoló módba
+vált, és el is kezdi a hat lap koordinátáinak megadását. Egy lap négy csúcsból áll, tehát
+négy <code>glVertex&hellip;()</code> hívás tartozik hozzá. A hívások előtt megadjuk az OpenGL-nek
+a lap, mint felület <em>normálvektorát</em> is – ez egy olyan vektor, amelyik a felületre
+merőleges, és egységnyi hosszú. A téglalap bal oldali lapjának például <code>(x=-1;y=0;z=0)</code>
+a normálvektora, tehát balra mutat. Erre az OpenGL-nek a fények számítása miatt van szüksége.
+
+<p>A rajzolás menete pedig a régebben kirajzolt kép törléséből (<code>glClear()</code>), a testek
+kirajzolásából, és a megrajzolt kép képernyőre másolásából áll. Minden kirajzolás elején 
+letöröljük az addigi rajzot, beállítjuk a nézetet; a végén pedig az <code>SDL_Flip()</code>-hez 
+hasonlóan megjelenítjük az eredményt:
+
+<pre class="brush: c "  >
+/* rajzolas kezdete */
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+gluLookAt(-15, 35, 70, 0, -5, 0, 0, 1, 0);
+
+/* ... rajzolas helye ... */
+
+/* rajzolas vege, mehet a kepernyore */
+SDL_GL_SwapBuffers();</pre>
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>A forráskód</h2>
+</div>
+
+<p>Hát ennyi. Nagyon kis rövid bevezető, szinte inkább csak kedvcsináló a komolyabb, hardveresen
+gyorsított 3D grafikához. Ez az írás teljesen nélkülözte az egész témakör matematikai
+oldalát – a harmadik év Számítógépes grafika és képfeldolgozás c. tárgyában minden részletesen
+szerepelni fog.
+
+<p>A színes kockákat kirajzoló program forráskódja: <a href="lathatatlan/kocka.c">kocka.c</a>. 
+A zongorás kód előtt érdemes ezt tanulmányozni. Linuxon az SDL mellett <code>GL</code> és <code>
+GLU</code> könyvtárakat kell linkelni hozzá:
+
+<pre class="screenshot">
+gcc *.c -o zongora `sdl-config --cflags --libs` -lm -lGL -lGLU
+</pre>
+
+<p>Windowson, Code::Blocksban pedig egy SDL-es projekthez a szokásos SDL_gfx helyett az <code>opengl32</code>
+és a <code>glu32</code> nevűt.
+
+<p>A zongora forráskódja és néhány példa fájl elérhető itt: <a href="lathatatlan/zongora.zip">zongora.zip</a>.
+Aki kedvet kapott, megpróbálkozhat az adventi naptár 3D-s programjainak OpenGL-re átírásával: a síelős és
+a drótvázakat kirajzoló program talán még egyszerűbbé is válik.
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lathatatlan.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

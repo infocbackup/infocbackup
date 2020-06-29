@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 3. hét: egyszerű programok</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 3. hét: egyszerű programok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Egyszerű C programok és vezérlési szerkezeteik. Számok beolvasása és kiírása.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Egyszerű C programok és vezérlési szerkezeteik. Számok beolvasása és kiírása.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy03.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyakcalapok" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 3. hét: egyszerű programok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Egyszerű C programok és vezérlési szerkezeteik. Számok beolvasása és kiírása.</p>
+</div>
+
+
+<p>Ezen a héten már C programokat írunk.</p>
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>A <a href="ea01.html#eabevezeto">bevezető előadás</a>, és 
+    <li>a <a href="ea02.html#eavezerles">vezérlési szerkezetekről szóló előadás</a> anyagának megértése.
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy03.html#1">Másodfokú egyenlet gyökei</a>
+<li><a href="gy03.html#2">Tükörszámok</a>
+<li><a href="gy03.html#3">Háromszög golyókból</a>
+<li><a href="gy03.html#4">Prímtényezős felbontás</a>
+<li><a href="gy03.html#5">Római számok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Másodfokú egyenlet gyökei</h2>
+</div>
+
+<p>Adott egy ax<sup>2</sup>+bx+c=0 alakúra hozott másodfokú egyenlet; határozzuk meg
+a valós gyökeit. Vegyük figyelembe azokat az eseteket, amikor nincsen valós gyök!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A megoldóképlet az alábbi. Arra kell figyelni, hogy ne vonjunk negatív számból négyzetgyököt. 
+A gyökvonás előtt a diszkrimináns vizsgálatával meg kell néznünk, hány valós megoldás lesz.</p>
+
+<img class="kozep" src="gy03/masodfoku.png">
+
+<p>Itt egy nagyobb C kifejezést kapunk, amiben többféle operátor (összeadás, kivonás, szorzás 
+stb.) szerepel. Ezeknek a műveleteknek C-ben ugyanúgy van precedenciája, mint a matematikában. A 
+szorzás pl. magasabb rendű művelet, mint az összeadás. A C nyelv precedencia szabályai 
+összetettebbek; erről majd előadáson lesz szó.</p>
+
+<pre class="brush: c "  >
+#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    double a, b, c;
+    double diszkr;
+
+    printf(&quot;a=&quot;); scanf(&quot;%lf&quot;, &amp;a);
+    printf(&quot;b=&quot;); scanf(&quot;%lf&quot;, &amp;b);
+    printf(&quot;c=&quot;); scanf(&quot;%lf&quot;, &amp;c);
+
+    /* a diszkriminans: bnegyzet - 4ac */
+    diszkr=b*b-4*a*c;
+
+    /* ha &lt;0, 2 komplex gyok lenne */
+    if (diszkr&lt;0) {
+        printf(&quot;Nincs valos gyok!\n&quot;);
+    }
+    else {
+        /* ha pont 0, akkor 1 megoldas van */
+        if (diszkr==0) {
+            printf(&quot;Egy valos gyok: %f\n&quot;, -b/(2*a));
+        }
+        else {
+            /* ha ide elerunk, akkor csak pozitiv lehet */
+            printf(&quot;Ket gyok: %f, %f\n&quot;,
+                (-b+sqrt(diszkr))/(2*a),
+                (-b-sqrt(diszkr))/(2*a));
+        }
+    }
+
+    return 0;
+}</pre>
+
+<p>Az <code>if (diszkr==0)</code> vizsgálat elméletben helyes, gyakorlatban azonban nem előnyös 
+ilyet írni. A kerekítési hibák miatt előfordulhat az, hogy 0-hoz olyan közeli szám adódik, amit 
+már 0-ra kerekít a számítógép. Erről később lesz szó előadáson.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Tükörszámok</h2>
+</div>
+
+<p>A feladat a következő: írjuk ki azokat a háromjegyű számokat, amelyek megegyeznek a 
+tükörképükkel. Például a 121 ilyen, a 123 nem. Rajzoljunk struktogramot a programhoz!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Az okos megoldás itt az, ha rájövünk, hogy végülis ezek a számok úgy alakulnak ki, hogy 
+10-től 99-ig számolunk, és minden szám mellé odaírjuk még egyszer az első számjegyet (pl. 10 
+mellé az 1-et, 101, vagy 57 mellé az 5-öt, 575). Érdemes ehhez két <em>egymásba ágyazott 
+ciklust</em> írni. Az első számjegy nem lehet 0-s, a második, középső viszont igen, erre 
+figyelni kell.</p>
+
+<p>Megfigyelhetjük azt, hogy mindkét ciklus számlálásos jellegű: a külső 1-től 9-ig megy, a belső
+0-tól 9-ig. Az alsó ábra egy nem szabályos, de nagyon szemléletes rajzot tartalmaz. Hasonlítsuk 
+össze a két megoldást áttekinthetőség szempontjából!</p>
+
+<div class="columns c4060">
+<div class="kozep">
+<img src="gy03/struktogramtukor.png" style="width: 8em;" alt="Struktogram a tükörszámok programhoz">
+</div>
+<div>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int a, b;
+
+   a=1;
+   while (a&lt;10) {
+      b=0;
+      while (b&lt;10) {
+         /* aba: tükörszám! */
+         printf(&quot;%d%d%d &quot;, a, b, a);
+         b=b+1;
+      }
+      a=a+1;
+   }
+
+   return 0;
+}</pre>
+</div>
+</div>
+
+
+
+<div class="columns c4060">
+<div class="kozep">
+<img src="gy03/struktogramtukor2.png" style="width: 8em;" alt="Struktogram a tükörszámok programhoz, for ciklussal">
+</div>
+<div>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int a, b;
+   
+   for (a=1; a&lt;=9; a=a+1)
+      for (b=0; b&lt;=9; b=b+1)
+         /* aba: tükörszám! */
+         printf(&quot;%d%d%d &quot;, a, b, a);    
+   
+   return 0;
+}</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Háromszög golyókból</h2>
+</div>
+<pre class="screenshot float">
+  o
+ ooo
+ooooo
+</pre>
+<p>Láttuk az eddigiek során, hogy a képernyőre balról jobbra, fentről lefelé haladva tudunk 
+írni, ahogy a kézírással is. Ebből kiindulva írjunk programot, amely kér a felhasználótól egy 
+számot (n), és utána egy akkora háromszöget rajzol a képernyőre „o” betűkből, hogy annak éppen a 
+megadott számú sora van! Például n=3 esetén az oldalt látható ábra keletkezzen.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A feladat megoldásának kulcsa egy rajz készítése… És annak meghatározása, hogy melyik sorban 
+hány golyó és hány szóköz van. Aki ide eljut, annak nyert ügye van.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int magas;
+    int sor, x;
+
+    printf(&quot;Milyen magas legyen a kupac? &quot;);
+    scanf(&quot;%d&quot;, &amp;magas);
+
+    /* sorok ciklusa */
+    for (sor=0; sor&lt;magas; sor=sor+1) {
+        /* a sor elejen kell valamennyi szokoz */
+        for (x=0; x&lt;magas-sor-1; x=x+1)
+            printf(&quot; &quot;);
+        /* utana valahany darab o */
+        for (x=0; x&lt;sor*2+1; x=x+1)
+            printf(&quot;o&quot;);
+        /* sor vege */
+        printf(&quot;\n&quot;);
+    }
+    
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Prímtényezős felbontás</h2>
+</div>
+
+<pre class="sorsurit1 float">
+ 75│3
+ 25│5
+  5│5
+  1│
+</pre>
+
+<p>Az első gyakorlati órán volt szó az általános iskolában tanult prímtényezős felbontás 
+algoritmusáról. C-ben a <code>%</code> operátorral jelöljük az osztás maradékát (osztandó%osztó 
+&rarr; maradék, pl. <code>9%7</code> értéke <code>2</code>). Írjunk egy programot C-ben, amelyik 
+kér egy számot a felhasználótól, és kiírja a prímtényezős felbontását!</p>
+
+<p>Ha kész van, hasonlítsuk össze azzal a pszeudokóddal, amit az első gyakorlaton írtunk!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A lenti megoldás mindig egy egész sort ír ki, pl. 150|2. Egy kiírás akkor történik meg, 
+amikor az oszthatóságot már megvizsgáltuk, és a maradék nullának adódott. A 150|2 azt jelenti, 
+hogy a 150-et osztjuk el 2-vel; ezért a konkrét osztás előtt írjuk ki a sort, hogy még az osztás 
+előtti szám látszódjon. Így aztán az utolsó sort, amelyben az 1-es van, külön utasítással kell 
+kiírni.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int szam, oszto;
+   
+   printf(&quot;Melyik számot? &quot;);
+   scanf(&quot;%d&quot;, &amp;szam);
+   
+   oszto=2;
+   while (szam&gt;1) {
+      if (szam%oszto==0) { /* ha osztható */
+         printf(&quot;%5d|%d\n&quot;, szam, oszto);
+         szam=szam/oszto;
+      }
+      else
+         oszto=oszto+1;    /* ha nem */
+   }
+   printf(&quot;%5d\n&quot;, 1);
+   
+   return 0;
+}</pre>
+
+<p>Esetleg logikusabb lehet az, ha mindig kiírjuk előre a számot, osztani fogunk, és az 
+oszthatóság vizsgálata után már csak az osztót. Ez is helyes megoldás. Ilyenkor az eredeti számot
+ki kell a ciklus előtt külön. A végén viszont az 1-et nem, mert az a legutolsó osztásnál 
+megjelenik:</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int szam, oszto;
+   
+   printf(&quot;Melyik számot? &quot;);
+   scanf(&quot;%d&quot;, &amp;szam);
+   
+   oszto=2;
+   printf(&quot;%5d|&quot;, szam);
+   while (szam&gt;1) {
+      if (szam%oszto==0) { /* ha osztható */
+         printf(&quot;%d\n&quot;, oszto);
+         szam=szam/oszto;
+         printf(&quot;%5d|&quot;, szam);
+      }
+      else
+         oszto=oszto+1;    /* ha nem */
+   }
+   
+   return 0;
+}</pre>
+
+<p>Érdemes mindkét változat működését végiggondolni, papíron követni
+vagy nyomkövetővel kipróbálva megvizsgálni!</p>
+
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Római számok</h2>
+</div>
+
+<p>Írjunk egy programot, amely kér a felhasználótól egy tízes számrendszerben megadott számot, 
+utána pedig kiírja annak megfelelőjét római számokkal. Pl. 88&rarr;LXXXVIII. Elég csak 99-ig; ha 
+100-at, vagy annál nagyobbat írt be a felhasználó, akkor szóljunk neki, hogy csak 99-ig működik 
+a program.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Rajzoljunk folyamatábrát vagy struktogramot a programhoz! Először írjunk pár példát római 
+számra, és figyeljük meg, milyen sorrendben kell kiírni az egyes értékeket jelző betűket és 
+betűpárokat! Vegyük észre, hogy az XC (90) csak egyszer szerepelhet, míg pl. az X (10) többször 
+is!</p>
+
+
+<div class="columns c6040">
+<div>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int x;
+   
+   printf(&quot;Mi a szám? &quot;);
+   scanf(&quot;%d&quot;, &amp;x);
+   if (x&lt;1)
+      printf(&quot;Pozitiv szamot kerek!\n&quot;);
+   else if (x&gt;99)
+      printf(&quot;Csak 99-ig tudom.\n&quot;);
+   else {
+      if (x&gt;=90) { printf(&quot;XC&quot;); x=x-90; }
+      if (x&gt;=50) { printf(&quot;L&quot;); x=x-50; }
+      if (x&gt;=40) { printf(&quot;XL&quot;); x=x-40; }
+      while (x&gt;=10) { printf(&quot;X&quot;); x=x-10; }
+      if (x&gt;=9) { printf(&quot;IX&quot;); x=x-9; }
+      if (x&gt;=5) { printf(&quot;V&quot;); x=x-5; }
+      if (x&gt;=4) { printf(&quot;IV&quot;); x=x-4; }
+      while (x&gt;=1) { printf(&quot;I&quot;); x=x-1; }
+      printf(&quot;\n&quot;);
+   }
+   
+   return 0;
+}</pre>
+</div>
+<div class="kozep">
+<img src="gy03/struktogramromai.png" style="width: 12em;" alt="Struktogram részlet a római számok programhoz">
+</div>
+</div>
+
+<p class="megjegyzes">Lehetne máshogy is? Mi történne, ha mindenhol ciklust használnánk? Láthatóan mindegyik 
+számjegynél ugyanazt kell csinálni (kiírni és csökkenteni), ezért aztán a program egy nagy 
+sorminta lett. Egy későbbi gyakorlaton majd javítunk ezen, most egyelőre még hiányzik hozzá a 
+megfelelő C nyelvi eszköz.</p>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy03.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

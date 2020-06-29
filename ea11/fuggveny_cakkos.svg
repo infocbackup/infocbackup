@@ -1,0 +1,20 @@
+<svg width="320" height="80" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <line x1="0" y1="40" x2="320" y2="40" stroke="black" />
+  <line x1="320" y1="40" x2="310" y2="35" stroke="black" />
+  <line x1="320" y1="40" x2="310" y2="45" stroke="black" />
+  <line x1="160" y1="0" x2="160" y2="80" stroke="black" />
+  <line x1="160" y1="0" x2="155" y2="10" stroke="black" />
+  <line x1="160" y1="0" x2="165" y2="10" stroke="black" />
+  <line x1="185" y1="35" x2="185" y2="45" stroke="black" />
+  <line x1="155" y1="15" x2="165" y2="15" stroke="black" />
+  <line x1="30" y1="17.9136" x2="0" y2="42.9137" stroke="blue" />
+  <line x1="60" y1="21.0799" x2="30" y2="17.9136" stroke="blue" />
+  <line x1="90" y1="48.3747" x2="60" y2="21.0799" stroke="blue" />
+  <line x1="120" y1="64.9893" x2="90" y2="48.3747" stroke="blue" />
+  <line x1="150" y1="49.7355" x2="120" y2="64.9893" stroke="blue" />
+  <line x1="180" y1="22.0661" x2="150" y2="49.7355" stroke="blue" />
+  <line x1="210" y1="17.2676" x2="180" y2="22.0661" stroke="blue" />
+  <line x1="240" y1="41.4594" x2="210" y2="17.2676" stroke="blue" />
+  <line x1="270" y1="63.7901" x2="240" y2="41.4594" stroke="blue" />
+  <line x1="300" y1="55.7817" x2="270" y2="63.7901" stroke="blue" />
+</svg>

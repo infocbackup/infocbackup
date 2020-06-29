@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Adventi naptár</title>
+<meta property="og:title" content="InfoC :: Adventi naptár">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="InfoC :: Adventi naptár">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="InfoC :: Adventi naptár">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="../modulz/logo_touch.png">
+<link rel="image_src" href="../modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="../modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="../modulz/style/localfonts.css@v10.css">
+<script src="../modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="../index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="../index.html">Kezdőlap</a>
+<li><a href="../nhf.html">Nagy házi feladat</a>
+<li><a href="../elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="../ea01.html">1. hét: bevezetés</a>
+<li><a href="../ea02.html">2. hét: algoritmusok</a>
+<li><a href="../ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="../ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="../ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="../ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../ea09.html">9. hét: láncolt listák</a>
+<li><a href="../ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="../ea12.html">12. hét: bináris fák</a>
+<li><a href="../ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="../ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="../gy02.html">2. hét: algoritmizálás</a>
+<li><a href="../gy03.html">3. hét: egyszerű programok</a>
+<li><a href="../gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="../gy05.html">5. hét: függvények</a>
+<li><a href="../gy06.html">6. hét: származtatott típusok</a>
+<li><a href="../gy07.html">7. hét: mutatók használata</a>
+<li><a href="../gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="../gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="../gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="../gy13.html">13. hét: bináris fák</a>
+<li><a href="../gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="../lab01.html">1. hét: operációs rendszer</a>
+<li><a href="../lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="../lab03.html">3. hét: egyszerű programok</a>
+<li><a href="../lab04.html">4. hét: tömbök</a>
+<li><a href="../lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="../lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="../lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="../lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="../lab11.html">11. hét: láncolt listák</a>
+<li><a href="../lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="../lab13.html">13. hét: bináris fák</a>
+<li><a href="../lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="../f01.html">1. hét: egyszerű programok</a>
+<li><a href="../f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="../f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="../f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="../f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="../f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../f09.html">9. hét: láncolt listák</a>
+<li><a href="../f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="../f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="../f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="../jegyzet.html">Jegyzet és puska</a>
+<li><a href="../fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="../stilus.html">Kódolási stílus</a>
+<li><a href="../tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="../debugmalloc.html">Debugmalloc</a>
+<li><a href="../mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="../nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="../nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="../nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="../orak.html">SVG óra galéria</a>
+<li><a href="../angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="../turing.html">Mit tud a számítógép?</a>
+<li><a href="../bf.html">BF</a>
+<li><a href="../bitturmix.html">Bitturmix</a>
+<li><a href="../labirintus.html">Labirintusok</a>
+<li><a href="../tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../karakterkodolas.html">Karakterkódolások</a>
+<li><a href="../strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="../internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="../sdl.html">SDL grafika</a>
+<li><a href="../sdl_telepito.html">SDL telepítés</a>
+<li><a href="../fa.html">Fák rajzolása</a>
+<li><a href="../lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="index.html@v=10.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="../mondatelemzo.html">Mondatelemző</a>
+<li><a href="../kifejezesek.html">Kifejezések</a>
+<li><a href="../derivalas.html">Deriválás</a>
+<li><a href="../ast_epit.html">AST: szintaxisfák</a>
+<li><a href="../ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="../ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="../advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<div class="float" style="margin-top: 0.25em; margin-bottom: 0;"><a href="../advent.html">&larr; vissza</a></div>
+<h1 class="eloadascim">Adventi naptár</h1>
+<h2>Virtuális kandalló</h2>
+
+<p>Manapság sok játékban realisztikus háromdimenziós pályán ugrándozhatunk a főhősünkkel – a mai 
+gépek és videókártyák számítási teljesítménye mellett ez kivitelezhető. Egykor egy sima forgó 
+kockának a kirajzolása teljesen leterhelte a számítógépeket. Minél lassabb egy számítógép, annál 
+nagyobb kihívás látványos animációkat kirajzolni vele.
+
+<p>A <a href="http://hu.wikipedia.org/wiki/Demoscene">Demoscene</a> szubkultúra programozóinak, 
+grafikusainak, zenészeinek célja, hogy minél látványosabb, érdekesebb ún. demó programokat 
+csináljanak, amelyekkel a programozói és művészi tudásukat mutatják be. A 90-es évek elején, 
+amikor pl. az nVIDIA még sehol nem volt, a demókban már akkor is rengeteg valós időben számolt 
+háromdimenziós animációt lehetett látni. Még régebben különféle effekteket találtak ki, mindig 
+olyanokat, amelyek látványosak voltak, de egyszerűen, kevés számítással elő lehetett állítani 
+őket. Ilyen az ún. plazma effekt, amellyel felhők is rajzolhatóak, de sok demóban lehetett látni 
+animált fraktálokat is.
+
+<div class="kozep">
+    <img src="advent10-plasma.gif" class="arnyek">
+    <img src="advent10-mandelbrot.gif" class="arnyek">
+    <img src="advent10-wavy.gif" class="arnyek">
+</div>
+
+<p>Viszonylag kevés számítással könnyen lehet tüzet is kirajzolni. Ha minden képkockánál az 
+egyes pixelek értékét úgy állítsuk be, hogy azok az alatta lévő pixelek átlagai legyenek (mínusz 
+1, hogy hűlést belevegyük), akkor – valaki erre rájött – pont úgy kinéző animációt kapunk, 
+mintha az tűz lenne. Csak az egyes értékekhez olyan színeket kell társítani, amelyek a tűzre 
+jellemzőek, fekete (sötét) – piros – sárga – fehér (világos).
+
+<img src="advent10-tuzpaletta.png" class="arnyek kozep">
+
+<p>Az alábbi program ilyet rajzol. Hogy tényleg tűz legyen belőle, alulra véletlenszámokat kell 
+berakni. És kész. Virtuális kandalló, hideg téli estékre!
+
+<pre class="brush: c "  >
+#include &lt;string.h&gt;
+#include &lt;SDL.h&gt;
+#include &lt;SDL_gfxPrimitives.h&gt;
+
+
+/* konfig */
+enum { fullscreen = 0 };        /* 0 vagy 1 */
+enum { w = 320, h = 240 };      /* kép méretei */
+
+
+typedef unsigned char Kandallo[h][w];
+
+/* az időzítéshez */
+Uint32 idozit(Uint32 ms, void *param) {
+    SDL_Event ev;
+    ev.type = SDL_USEREVENT;
+    SDL_PushEvent(&amp;ev);
+    return ms;
+}
+
+
+/* kiszamolja a megadott szin indexek kozott az atmenetet. */
+void szineket_kiszamol(SDL_Surface *screen, Uint32 *bajtok) {
+    /* megcsinálja a színátmeneteket */
+    SDL_Color pal[256];
+    struct {
+        int pos;
+        SDL_Color col;
+    } szinek[] = {
+        {  0,       {   0,   0,   0 } },
+        { 16,       {   0,   0,  24 } },
+        { 32,       {   0,   0,   0 } },
+        { 96,       { 255,   0,   0 } },
+        { 192,      { 255, 255,   0 } },
+        { 255,      { 255, 255, 255 } },
+        { -1 }
+    };
+    int i, j;
+    for (i = 0; szinek[i].pos != -1; ++i) {
+        int p1 = szinek[i].pos, p2 = szinek[i+1].pos;
+        SDL_Color c1 = szinek[i].col, c2 = szinek[i+1].col;
+        for (j = p1; j &lt;= p2; j++) {
+            pal[j].r = c1.r + (c2.r - c1.r) * (j - p1) / (p2 - p1);
+            pal[j].g = c1.g + (c2.g - c1.g) * (j - p1) / (p2 - p1);
+            pal[j].b = c1.b + (c2.b - c1.b) * (j - p1) / (p2 - p1);
+        }
+    }
+    /* és egyből át is számolja az adott sdl kép pixelformátumára */
+    for (i = 0; i &lt; 256; ++i) {
+        bajtok[i] = (pal[i].r &gt;&gt; screen-&gt;format-&gt;Rloss &lt;&lt; screen-&gt;format-&gt;Rshift)
+                  | (pal[i].g &gt;&gt; screen-&gt;format-&gt;Gloss &lt;&lt; screen-&gt;format-&gt;Gshift)
+                  | (pal[i].b &gt;&gt; screen-&gt;format-&gt;Bloss &lt;&lt; screen-&gt;format-&gt;Bshift);
+    }
+}
+
+
+void tuz_animacio(SDL_Surface *screen, Kandallo tuz, Uint32 szinek[]) {
+    int x, y;                   /* mindenféle ciklusokhoz */
+
+    /* random az aljára: az égő fadarabok helyett. */
+    /* random hosszúságú, random színű csíkokat rajzol. */
+    x = 0;
+    while (x &lt; w) {
+        int szeles = 3 + rand() % 5, szin = rand() % 256, x1;
+        for (x1 = x; x1 &lt; x + szeles &amp;&amp; x1 &lt; w; ++x1)
+            tuz[h - 1][x1] = szin;
+        x += szeles + 5 + rand() % 5;
+    }
+
+    /* tűz effekt: minden képpont az alatta lévő képpontok átlaga,
+     * és csökken (feketéhez közeledik) minden lépésben. */
+    for (y = 0; y &lt; h; ++y) {
+        int yp = y + 2;
+        if (yp &gt;= h)
+            yp = h - 1;
+        int yp2 = y + 3;
+        if (yp2 &gt;= h)
+            yp2 = h - 1;
+        for (x = 1; x &lt; w - 1; ++x) {
+            /* itt az átlagolás */
+            int res = (tuz[yp2][x] + tuz[yp][x] + tuz[yp][x + 1] + tuz[yp][x - 1]) / 4;
+            /* -1, de csak ha nem csordul túl */
+            if (res &gt; 0)
+                res--;
+            tuz[y][x] = res;
+        }
+    }
+    
+    /* kirajzolás, a régebbi adventiben magyarázott módon, közvetlenül
+     * állítgatva a pixeleket tároló bájtokat. */
+    /* 2x méretűre nagyítja vízszintesen és függőlegesen is a képet. */
+    for (y = 0; y &lt; h; ++y) {
+        Uint32 *sor = (Uint32 *) ((char *) screen-&gt;pixels + y * 2 * screen-&gt;pitch);
+        Uint32 *sor1 = (Uint32 *) ((char *) screen-&gt;pixels + (y * 2 + 1) * screen-&gt;pitch);
+        for (x = 0; x &lt; w; ++x) {
+            Uint32 szin = szinek[tuz[y][x]];
+            sor[x * 2] = szin;
+            sor[x * 2 + 1] = szin;
+            sor1[x * 2] = szin;
+            sor1[x * 2 + 1] = szin;
+        }
+    }
+}
+
+
+int main(int argc, char *argv[]) {
+    SDL_Surface *screen;            /* az ablak */
+    Uint32 szinek[256];             /* színek az sdl pixelformátumában */
+    Kandallo tuz;                   /* a tűz tere */
+    int quit;                       /* eseményvezérelt ciklushoz */
+
+    /* SDL inicializálása, ablak létrehozása */
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+    screen = SDL_SetVideoMode(w * 2, h * 2, 32, fullscreen ? SDL_FULLSCREEN : 0);
+    SDL_WM_SetCaption(&quot;Virtualis kandallo&quot;, &quot;Virtualis kandallo&quot;);
+    szineket_kiszamol(screen, szinek);
+    SDL_AddTimer(20, idozit, NULL);     /* 50 fps */
+    
+    /* fekete képről indulás */
+    memset(tuz, 0, sizeof(tuz));
+
+    quit = 0;
+    while (!quit) {
+        SDL_Event event;
+        SDL_WaitEvent(&amp;event);
+        
+        switch (event.type) {
+            case SDL_QUIT:
+            case SDL_KEYDOWN:
+                quit = 1;
+                break;
+                
+            case SDL_USEREVENT:
+                tuz_animacio(screen, tuz, szinek);
+                SDL_Flip(screen);
+                break;
+        }
+    }
+    
+    SDL_Quit();
+
+    return 0;
+}</pre>
+<nav><div id="tartalom"></div></nav>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="index.html@v=10.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="../index.html"><img src="../modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="../index.html">főoldal</a> · <a href="../elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

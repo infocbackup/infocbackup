@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: SVG óra galéria</title>
+<meta property="og:title" content="InfoC :: SVG óra galéria">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="A szorgalmi feladatként kiadott SVG órák szépségversenye.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="A szorgalmi feladatként kiadott SVG órák szépségversenye.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="orak.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">SVG óra galéria</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> A 2014-es évfolyam · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">A szorgalmi feladatként kiadott SVG órák szépségversenye.</p>
+</div>
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="orak.html#1">A mutatók megforgatása</a>
+<li><a href="orak.html#2">A galéria</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A mutatók megforgatása</h2>
+</div>
+
+
+<p>Az órák egy egyszerű trükkel működőképessé tehetők, mert az SVG-ben lehet transzformációkat 
+(eltolás, forgatás stb.) és animációkat is megadni. Ha a másodpercmutatóra ráteszünk egy olyan 
+forgatás animációt, amelynek a periódusideje 60 másodperc, az ismétlődéseinek száma végtelen, 
+akkor pont úgy fog körbe-körbe járni, ahogy kell neki. Ha pl. adott egy szakasz, amely a mutatót 
+adja:</p>
+
+<pre class="brush: xml "  >
+&lt;line x1=&quot;300&quot; y1=&quot;300&quot; x2=&quot;300&quot; y2=&quot;160&quot; stroke-width=&quot;12&quot; stroke=&quot;#000000&quot;/&gt;</pre>
+
+<p>Akkor abból így lehet forgó mutatót csinálni:</p>
+
+<pre class="brush: xml "  >
+&lt;g&gt;
+    &lt;line x1=&quot;300&quot; y1=&quot;300&quot; x2=&quot;300&quot; y2=&quot;160&quot; stroke-width=&quot;12&quot; stroke=&quot;#000000&quot; /&gt;
+    &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot;
+                      repeatCount=&quot;indefinite&quot; dur=&quot;60s&quot; from=&quot;0 300 300&quot; to=&quot;360 300 300&quot; /&gt;
+&lt;/g&gt;
+</pre>
+
+<p>Tehát be kell tenni egy csoportba <code>&lt;g&gt;</code> (group), és a 
+csoportban megadni az animációt. Ha több alakzatból áll a mutató, akkor 
+mindegyiket ugyanabba a <code>&lt;g&gt;</code>-be kell tenni – viszont mindegyik 
+mutatónak külön <code>&lt;g&gt;</code> kell, mert eltérő sebességgel forognak. A 
+<code>dur</code> (duration) tulajdonság adja meg a periódusidőt, értelemszerűen
+<code>60s</code>, <code>60min</code>, <code>12h</code> a szükséges értékek.</p>
+
+<p>Figyelni kell a forgatás középpontjára is. A <code>from</code> és <code>to
+</code> tulajdonságok adják meg a forgatás adatait: szög, középpont x 
+koordinátája, középpont y koordinátája. A fenti példában az óra középpontja a 
+300,300 pontban van, ezért a mutatókat mozgató transzformációk is akörül forgatnak.</p>
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A galéria</h2>
+</div>
+
+<div class="columns">
+<div class="kozep"><img src="orak/blb1.png"><br>Borbély László Benedek</div>
+<div class="kozep"><img src="orak/bb1.png"><br>Budai Borbála</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/cmp1.png"><br>Csányi Marcell Péter</div>
+<div class="kozep"><img src="orak/cm1.png"><br>Csibi Martin</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/cb1.png"><br>Czap Balázs</div>
+<div class="kozep"><img src="orak/da1.png"><br>Dauner Ágoston</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/dt1.png"><br>Déri Tamás</div>
+<div class="kozep"><img src="orak/emf1.png"><br>Elekes Márton Farkas</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/fz1.png"><br>Fedor Zsombor</div>
+<div class="kozep"><img src="orak/gv1.png"><br>Gáspár Vilmos</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/ga1.png"><br>Gujgiczer Anna</div>
+<div class="kozep"><img src="orak/gg1.png"><br>Gyárfás Gábor</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/hr1.png"><br>Hanusch Róbert</div>
+<div class="kozep"><img src="orak/id1.png"><br>Illés Dániel</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/ig1.png"><br>Iván Gergő</div>
+<div class="kozep"><img src="orak/jm1.png"><br>Jenei Máté</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/jd1.png"><br>Jóni Dániel</div>
+<div class="kozep"><img src="orak/kz1.png"><br>Kárándi Zsolt</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/kb1.png"><br>Kártyás Bálint</div>
+<div class="kozep"><img src="orak/ka1.png"><br>Keserű Ádám</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/kz2.png"><br>Király Zoltán</div>
+<div class="kozep"><img src="orak/kp1.png"><br>Koleszár Patrik</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/ka2.png"><br>Kovács Andor</div>
+<div class="kozep"><img src="orak/kp2.png"><br>Kovács Péter</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/nl1.png"><br>Nagy László</div>
+<div class="kozep"><img src="orak/npg1.png"><br>Nagy Péter Géza</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/ngd1.png"><br>Németh Gergely Dániel</div>
+<div class="kozep"><img src="orak/nl2.png"><br>Németh Luca</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/nt1.png"><br>Nyíri Tamás</div>
+<div class="kozep"><img src="orak/oo1.png"><br>Osman Omar</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/pm1.png"><br>Pércsi Máté</div>
+<div class="kozep"><img src="orak/rj1.png"><br>Rabinovits Jakov</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/ra1.png"><br>Romhányi Ágoston</div>
+<div class="kozep"><img src="orak/sa1.png"><br>Szabó Ákos</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/st1.png"><br>Szántó Tamás</div>
+<div class="kozep"><img src="orak/smv1.png"><br>Szekér Martina Veronika</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/ta1.png"><br>Tóth András</div>
+<div class="kozep"><img src="orak/vd1.png"><br>Varga Domonkos</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/vma1.png"><br>Varga Márton András</div>
+<div class="kozep"><img src="orak/ve1.png"><br>Végh Éva</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/vpi1.png"><br>Veress Péter Imre</div>
+<div class="kozep"><img src="orak/vz1.png"><br>Vincze Zsolt</div>
+</div>
+<div class="columns">
+<div class="kozep"><img src="orak/wa1.png"><br>Wéber Ádám</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="orak.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

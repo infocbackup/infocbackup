@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 13. hét: bináris fák</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 13. hét: bináris fák">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Bináris fák és rekurzív algoritmusaik.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Bináris fák és rekurzív algoritmusaik.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy13.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyakbinarisfa" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 13. hét: bináris fák</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18</p>
+<p class="kivonat">Bináris fák és rekurzív algoritmusaik.</p>
+</div>
+
+
+<p>(Bináris) fák. Az óra célja kettős: egyrészt a fák használatának bemutatása, 
+másrészt a rekurzióval kapcsolatos kérdések újbóli áttekintése. A feladatok 
+mindkét témakörrel foglalkoznak. Tekintsük át a feladatokat a rekurzió 
+szemszögéből is: melyik függvény hogyan oldja meg a problémát fokozatos 
+egyszerűsítésekkel (részfákra bontás) és triviális esetek (levelek, üres fa) 
+feldolgozásával!</p>
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>A <a href="ea12.html#eabinarisfa">bináris fákról szóló előadás</a> anyagának megértése.
+</ul>
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy13.html#1">Típusok</a>
+<li><a href="gy13.html#2">Fák bejárása – adott elemek kiírása</a>
+<li><a href="gy13.html#3">Fa magassága</a>
+<li><a href="gy13.html#4">Egyformák-e? Egymás tükörképei-e?</a>
+<li><a href="gy13.html#5">Fa másolása; másolat tükrösen</a>
+<li><a href="gy13.html#6">Fák bejárása – háromágú fa</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Típusok</h2>
+</div>
+<p>
+Definiáljunk típust a lent megadott adatokat tartalmazó fákhoz! Ezeket
+az adatszerkezeteket a további feladatokban használni fogjuk.
+</p>
+<ul>
+<li>Bináris fa, amely szavakat és azok előfordulásainak számát tárolja.
+<li>Bináris fa, amely tetszőlegesen hosszú neveket és hozzájuk tartozó telefonszámokat tárol.
+(Vigyázat, a telefonszámhoz nem elég egy egész szám, hiába van szám a nevében!)
+<li>Morse kódokat akarunk gyorsan feldolgozni. A kétféle bejövő jel TI és TÁ. Egy
+bináris fában ezt könnyen tárolhatjuk; a bejövő jeltől függően megyünk a fában
+balra (TI) vagy jobbra (TÁ); ha vége van a jelsorozatnak, akkor pedig az adott
+csomópontban tárolt betűt kiolvassuk.
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+typedef struct Szo {
+    char szo[30+1];
+    int elofordulas;
+    
+    struct Szo *bal, *jobb;    /* bal es jobb oldali leszarmazottak */
+} Szo;</pre>
+
+<pre class="brush: c "  >
+typedef struct Nev {
+    char *nev;                 /* tetszőlegesen hosszú név - din. tömb */
+    char szam[21];             /* max. 20 karakteres telefonszám */
+    struct Nev *bal, *jobb;
+} Nev;</pre>
+
+<pre class="brush: c "  >
+typedef struct Morze {
+    char betu;
+    
+    struct Morze *ti, *ta;     /* a kovetkezo jel ti vagy ta lehet */
+} Morze;</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Fák bejárása – adott elemek kiírása</h2>
+</div>
+
+<p>Egy telefonkönyvi adatokat tartalmazó, név szerint rendezett bináris fa ábrázolásához az 
+előző feladatban megadott struktúrát használjuk. Készítsünk egy olyan szabványos ANSI C 
+függvényt, amely paraméterként veszi át a fa gyökerének címét, és kiírja az összes „Nagy” 
+vezetéknevű személyt telefonszámostul ABC sorrendben! A „Nagyító” vezetéknevű személy nem „Nagy” 
+vezetéknevű személy!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Itt használhatjuk az <code>strncmp()</code>-t, amely a két sztringet csak valahányadik 
+karakterig hasonlítja össze. A „Nagy” vezetéknevűek név sztringje úgy kezdődik, hogy „Nagy ”, 
+vagyis tuti egy szóköz van a végén (ez pl. a „Nagyító” névnél nem igaz).</p>
+
+<p>A rendezettség lehetővé tenné, hogy szisztematikusan találjuk meg ezeket; itt ezzel nem 
+foglalkozunk, hanem az egész fát bejárjuk.</p>
+
+<pre class="brush: c "  >
+void nagy_kiir(Nev *gy) {
+    if (gy == NULL) return;
+
+    nagy_kiir(gy-&gt;bal);
+    /* 5 = strlen(&quot;Nagy &quot;) */
+    if (strncmp(&quot;Nagy &quot;, gy-&gt;nev, 5) == 0)
+        printf(&quot;%s %s\n&quot;, gy-&gt;nev, gy-&gt;szam);
+    nagy_kiir(gy-&gt;jobb);
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Fa magassága</h2>
+</div>
+
+<p>Határozzuk meg meg, milyen magas egy bináris fa!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Érdemes abból a meghatározásból kiindulni, hogy <em>a gyökértől legmesszebbi levél távolságát</em> kell meghatározni:</p>
+<ol>
+   <li>Üres fa magassága 0.
+   <li>Vegyük a bal és a jobb részfa magasságát.
+   <li>Válasszuk ki a nagyobbat.
+   <li>Adjunk hozzá egyet (ez a szint).
+</ol>
+
+<pre class="brush: cbub "  >
+typedef struct BinFa {
+    int adat;
+    
+    struct BinFa *bal, *jobb;
+} BinFa;
+
+int magassag(BinFa *gyoker) {
+   int bal, jobb, max;
+
+   if (gyoker==NULL) return 0;      /* 1 */
+
+   bal  = magassag(gyoker-&gt;bal);    /* 2 */
+   jobb = magassag(gyoker-&gt;jobb);
+   /* melyik magasabb? */
+   max  = bal&gt;jobb ? bal : jobb;    /* 3 */
+
+   return max + 1;                  /* 4 */
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Egyformák-e? Egymás tükörképei-e?</h2>
+</div>
+
+<p>Hasonlítsunk össze két fát: egyformák-e? Második feladat: hasonlítsunk össze két fát, hogy 
+egymás tükörképei-e!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Az összehasonlítás a következő módon képzelhető el. A függvény ebben az esetben két fát kap. 
+Ha mind a két fa üres (NULL), akkor igazat kell válaszoljon; két üres fa ugyanis egyforma. Ha az 
+egyik fa üres, a másik meg nem, akkor nem egyformák (legyen bármi is a másikban, ha az első 
+teljesen üres). Ezekkel a NULL pointeres eseteket lerendeztük. Ha egyik fa sem üres, akkor össze 
+kell hasonlítani őket: akkor egyformák, ha a gyökérelemeik egyformák, <em>és</em> a bal részfáik 
+egyformák, <em>és</em> a jobb részfáik egyformák.</p>
+
+<p> Buktató: hogy két fa inorder bejárással ugyanazt a listát adja, nem biztosan jelenti azt, 
+hogy a két fa egyforma! Egy „5” gyökerű fa, aminek a balra leszármazottja „7”, és annak a balra 
+leszármazottja „9”, a 9-7-5 számsort adja inorder bejárva; a „7” gyökerű fa, amelyiknek a bal 
+leszármazottja „9”, a jobb pedig „5”, úgyszint. Pedig az egyik ilyen / alakú, a másik meg ilyen 
+/\.</p>
+
+
+<pre class="brush: c "  >
+int egyforma_e(Fa *egyik, Fa *masik) {
+   if (egyik == NULL &amp;&amp; masik == NULL)  /* ket ures fa egyforma */
+      return 1;
+   if (egyik != NULL &amp;&amp; masik == NULL)  /* ures vs. nem ures -&gt; nem egyforma */
+      return 0;
+   if (egyik == NULL &amp;&amp; masik != NULL)  /* detto */
+      return 0;
+
+   return egyik-&gt;szam == masik-&gt;szam              /* egyforma szam a gyokerben */
+       &amp;&amp; egyforma_e(egyik-&gt;bal, masik-&gt;bal)      /* es egyformak a bal reszfak */
+       &amp;&amp; egyforma_e(egyik-&gt;jobb, masik-&gt;jobb);   /* es a jobb reszfak */
+}</pre>
+
+<p>
+Hogy a két fa egymásnak tükörképe-e, azt ugyanígy lehet ellenőrizni, csak legalul a feltételnél
+a bal részfát a jobbal kell hasonlítani, és fordítva.
+</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Fa másolása; másolat tükrösen</h2>
+</div>
+
+<p>Másoljunk le egy bináris fát! Figyeljünk arra,
+hogy a másolat fa az eredetitől független, ún. mély másolat legyen!
+Készítsünk róla olyan másolatot is, amely az eredetinek a tükörképe!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<img class="float" src="gy13/fa_hibas_masolas.png" style="width: 16em; margin-top: -2em;" alt="Fa másolása hibásan">
+
+<p>A bináris fa lemásolása nem csak abból áll, hogy egy új pointert
+ráállítunk a régi fa gyökerére, és azon keresztül ugyanazt látjuk.
+A másolat egy, az eredetitől teljesen független fa kell legyen,
+függetlenül módosítható, akár törölhető. Emiatt nem elég az,
+hogy <code>Fa *masolat=eredeti</code>, és az sem, hogy a gyökér
+csomópontot lemásoljuk, a pointereivel együtt. Így keletkezne az
+<strong>ábrán látható állapot, amely hibás!</strong>
+</p>
+
+<div class="sticky" style="clear: right;"><img src="modulz/halalfej.png" style="display: block"></div>
+
+<pre>
+Fa *masolat=(Fa *) malloc(sizeof(Fa));
+masolat-&gt;adat=eredeti-&gt;adat;   &larr; idáig még akár jó is lehetne
+<span class="piros">masolat-&gt;bal=eredeti-&gt;bal;     &larr; EZ HIBÁS!</span> 
+<span class="piros">masolat-&gt;jobb=eredeti-&gt;jobb;   &larr; EZ IS HIBÁS!</span>
+</pre>
+
+<p>
+A fa másolása <em>rekurzív:</em> egy <em>másolat</em> csomóponthoz tartozó
+bal és jobb oldali részfa az eredeti csomópont bal és jobb oldali
+részfáinak <em>másolata.</em>
+</p>
+
+<pre class="brush: c "  >
+Fa *masol(Fa *gy) {
+    Fa *m;
+
+    if (gy == NULL) return NULL;    /* ures fa masolata ures fa */
+
+    m = (Fa *) malloc(sizeof(Fa));  /* uj csomopont es adat */
+    m-&gt;adat = gy-&gt;adat;
+
+    m-&gt;bal = masol(gy-&gt;bal);        /* reszfak */
+    m-&gt;jobb = masol(gy-&gt;jobb);
+    
+    return m;
+}</pre>
+
+<p>Tükrözve lemásolni ugyanígy kell. Csak olyankor a bal részfába kerül a jobb oldalinak a 
+másolata, a jobb oldaliba pedig a bal másolata – persze az egyes másolatok is tükrözve kell 
+legyenek, így ahhoz ugyanúgy csak egy függvény kell, amely a fentitől csak a részfák másolásánál 
+különbözik:</p>
+
+<pre class="brush: c "  >
+m-&gt;bal = tukormasol(gy-&gt;jobb);      /* reszfak keresztbe */
+m-&gt;jobb = tukormasol(gy-&gt;bal);</pre>
+
+<p>A fát másoló, tükrözve másoló és összehasonlító programok
+teljes forráskódja letölthető innen: <a href="gy13/famasol.c">famasol.c</a></p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Fák bejárása – háromágú fa</h2>
+</div>
+
+<p>Definiáljunk adatszerkezetet egész számok háromágú fában való tárolásához! Írjunk függvényt, 
+amely paraméterként veszi át egy ilyen elemekből álló fa gyökerének címét, valamint egy egész 
+számot, és megszámolja, hogy hány olyan elem van a fában, amely kisebb a paraméterként kapott 
+számnál (ez a függvény visszatérési értéke)!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Egy fában annyit találunk a megadott keresett elemből, ahány olyan van a bal oldali, plusz a 
+középső, plusz a jobb oldali részfájában; plusz a csomópont saját tartalma alapján 0 vagy 1. Ezt 
+a C kódban is egy sorba írva látható; a legutolsó sorban a kérdőjel-kettőspontos kifejezés 
+kiértékelve 1-et vagy 0-t ad eredményül, ha az adott elem kisebb n-nél, illetve nem.</p>
+
+<p>A háromágú fa feldolgozása semmiben nem tér el a bináris fáétól – ezt is rekurzívan kell csinálni.</p>
+
+<pre class="brush: c "  >
+typedef struct TriFa {
+    int a;
+    struct TriFa *bal, *kozep, *jobb;
+} TriFa;
+
+int kisebb(TriFa *p, int n) {
+    if (p == NULL)
+        return 0;
+    return kisebb(p-&gt;jobb, n)
+           + kisebb(p-&gt;kozep, n)
+           + kisebb(p-&gt;bal, n)
+           + (p-&gt;a&lt;n?1:0);
+}</pre>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy13.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="77.741" width="744.09" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="99 98 402 31.44776">
+ <metadata id="metadata100">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="g4" transform="translate(0 -6.2761)">
+  <path id="rect6" fill="#fff" d="m100 100h40v40h-40z"/>
+  <path id="rect8" d="m100 100h40v40h-40z" stroke="#000" stroke-width="2" fill="none"/>
+ </g>
+ <g id="g10" transform="translate(0 -6.2761)">
+  <path id="line12" d="m140 120h110.26" stroke="#000" stroke-width="2" fill="none"/>
+  <path id="polygon14" d="m250.26 120-2.5-5 10 5-10 5z"/>
+  <path id="polygon16" d="m250.26 120-2.5-5 10 5-10 5z" stroke="#000" stroke-width="2" fill="none"/>
+ </g>
+ <g id="g18" transform="translate(0 -6.2761)">
+  <g id="g20">
+   <path id="rect22" fill="#fff" d="m260 100h20v40h-20z"/>
+   <path id="rect24" d="m260 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g26">
+   <path id="rect28" fill="#fff" d="m280 100h20v40h-20z"/>
+   <path id="rect30" d="m280 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g32">
+   <path id="rect34" fill="#fff" d="m300 100h20v40h-20z"/>
+   <path id="rect36" d="m300 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g38">
+   <path id="rect40" fill="#fff" d="m320 100h20v40h-20z"/>
+   <path id="rect42" d="m320 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+ </g>
+ <g id="g44" transform="translate(0 -6.2761)">
+  <g id="g46">
+   <path id="rect48" fill="#bfbfbf" d="m360 100h20v40h-20z"/>
+   <path id="rect50" d="m360 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g52">
+   <path id="rect54" fill="#bfbfbf" d="m340 100h20v40h-20z"/>
+   <path id="rect56" d="m340 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g58">
+   <path id="rect60" fill="#bfbfbf" d="m380 100h20v40h-20z"/>
+   <path id="rect62" d="m380 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g64">
+   <path id="rect66" fill="#bfbfbf" d="m400 100h20v40h-20z"/>
+   <path id="rect68" d="m400 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+ </g>
+ <g id="g70" transform="translate(0 -6.2761)">
+  <g id="g72">
+   <path id="rect74" fill="#fff" d="m420 100h20v40h-20z"/>
+   <path id="rect76" d="m420 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g78">
+   <path id="rect80" fill="#fff" d="m440 100h20v40h-20z"/>
+   <path id="rect82" d="m440 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g84">
+   <path id="rect86" fill="#fff" d="m460 100h20v40h-20z"/>
+   <path id="rect88" d="m460 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+  <g id="g90">
+   <path id="rect92" fill="#fff" d="m480 100h20v40h-20z"/>
+   <path id="rect94" d="m480 100h20v40h-20z" stroke="#000" stroke-width="2" fill="none"/>
+  </g>
+ </g>
+</svg>

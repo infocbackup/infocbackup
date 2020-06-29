@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Függvényre mutató pointerek, generikus algoritmusok</title>
+<meta property="og:title" content="InfoC :: Függvényre mutató pointerek, generikus algoritmusok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Függvényre mutató pointerek. Generikus adatok és algoritmusok.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Függvényre mutató pointerek. Generikus adatok és algoritmusok.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea13.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="eagenerikus" class="namer"></a>
+<h1 class="eloadascim">Függvényre mutató pointerek, generikus algoritmusok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18</p>
+<p class="kivonat">Függvényre mutató pointerek. Generikus adatok és algoritmusok.</p>
+</div>
+ 
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea13.html#1">NHF szépségverseny 2014</a>
+<li><a href="ea13.html#2"><em>Generikus algoritmusok</em></a>
+<li><a href="ea13.html#3">Menürendszer I. – a feladat</a>
+<li><a href="ea13.html#4">Ismétlés: a függvényhívás menete</a>
+<li><a href="ea13.html#5">Függvényre mutató pointer: a háttérben…</a>
+<li><a href="ea13.html#6">A függvénymutató típus szintaktikája</a>
+<li><a href="ea13.html#7">Menürendszer II. – a mutató típus</a>
+<li><a href="ea13.html#8">Menürendszer III. – a tömb és használata</a>
+<li><a href="ea13.html#9">Generikus (általános) algoritmusok</a>
+<li><a href="ea13.html#10">Az év eleji tételek generikus változata</a>
+<li><a href="ea13.html#11">Állapotgépek függvényre mutató pointerrel</a>
+<li><a href="ea13.html#12"><em>Generikus tárolók</em></a>
+<li><a href="ea13.html#13">Generikus lista – miért?</a>
+<li><a href="ea13.html#14">Generikus lista – az ötlet: <code>void*</code></a>
+<li><a href="ea13.html#15">Generikus lista – a <code>void*</code> használata</a>
+<li><a href="ea13.html#16">Generikus lista – a bejárás általánosítása</a>
+<li><a href="ea13.html#17">A bejárás még erősebb általánosítása</a>
+<li><a href="ea13.html#18">Generikus lista – rendezés</a>
+<li><a href="ea13.html#19">Most akkor hol is vannak a könyvek?</a>
+<li><a href="ea13.html#20"><em>Generikus algoritmusok tömbökön</em></a>
+<li><a href="ea13.html#21">Generikus tömb?</a>
+<li><a href="ea13.html#22">Tömbök generikusan – a pointerek kezelése</a>
+<li><a href="ea13.html#23">Tömbök generikusan – a méret átadása</a>
+<li><a href="ea13.html#24">Tömbök generikusan – az elemek kezelése</a>
+<li><a href="ea13.html#25">Generikus tömbök: <code>stdio</code>, <code>stdlib</code></a>
+<li><a href="ea13.html#26"><code>qsort()</code> és <code>bsearch()</code>: hasonlító függvény</a>
+<li><a href="ea13.html#27"><code>qsort()</code> használata</a>
+<li><a href="ea13.html#28"><code>bsearch()</code> használata</a>
+<li><a href="ea13.html#29">A szokásos hasonlító függvények</a>
+<li><a href="ea13.html#30"><em>Unionok</em></a>
+<li><a href="ea13.html#31">Unionok – a probléma</a>
+<li><a href="ea13.html#32">Unionok – a nyelvi elem</a>
+<li><a href="ea13.html#33">Unionok – az alakzat</a>
+<li><a href="ea13.html#34">Unionok – alakzatok létrehozása</a>
+<li><a href="ea13.html#35">Unionok – SDL események</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>NHF szépségverseny 2014</h2>
+</div>
+
+<img class="kozep arnyek" src="ea13/geloczigergo.jpg" >
+
+<br class="smallskip">
+
+<p class="kozep">Nevezés: <code>infoc@eet.bme.hu</code> címre<br>kb. 640×480 PNG screenshot + néhány mondatos leírás<br></p>
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<h1 class="diacim">Generikus algoritmusok</h1>
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Menürendszer I. – a feladat</h2>
+</div>
+
+<p>Írjunk programot, amelyben menüből választhatjuk ki
+a teendőt!</p>
+
+<div class="columns">
+<div>
+<pre class="screenshot">
+1. Adatbevitel
+2. Módosítás
+3. Keresés
+4. Nyomtatás
+5. Névjegy
+
+Választás: <span class="blink">_</span>
+</pre>
+</div>
+<div>
+<pre class="screenshot">
+1. Összeadás
+2. Szorzás
+3. Hatványozás
+
+0. Kilépés
+
+Melyik? <span class="blink">_</span>
+</pre>
+</div>
+</div>
+
+<div class="kozep"><button data-diapopup="menusormintaid">Sorminta</button></div>
+
+<div id="menusormintaid">
+
+<pre class="brush: cbub "  >
+printf(&quot;Menü\n\n&quot;);
+
+printf(&quot;1. Összeadás\n&quot;);      // sorminta 1.
+printf(&quot;2. Szorzás\n&quot;);
+printf(&quot;3. Hatványozás\n&quot;);
+printf(&quot;0. Kilépés\n&quot;);
+
+scanf(&quot;%u&quot;, &amp;valasztas);</pre>
+
+<pre class="brush: cbub "  >
+if (valasztas&lt;4) {
+   switch (valasztas) {
+      case 1: eredm = osszead(a, b); break;   // sorminta 2.
+      case 2: eredm = szoroz(a, b); break;
+      case 3: eredm = hatvanyoz(a, b); break;
+   }
+   printf(&quot;E = %d\n&quot;, eredm);
+}</pre>
+</div>
+
+<div class="csakdoksi">
+
+<p>A sormintákkal mindig az a baj, hogy nehezen módosítható,
+nehezen karbantartható programkódot eredményeznek.</p>
+
+<p>
+Itt, hogy a <code>switch()</code>, ahol a beírt szám alapján kiválasztjuk
+a teendőt, ne legyen túl áttekinthetetlen, az egyes lépéseket eleve
+függvénybe tettük. Ez jó is – egészen addig, amíg nem kell módosítani
+a menüt. Tegyük fel, hogy a 2-es menüponthoz szeretnénk beszúrni a
+kivonást. A teendők:
+</p>
+<ul>
+    <li>Beszúrunk egy <code>printf()</code>-et az összeadás és a szorzás közé.
+    <li>Ezek után a többit is átszámozzuk (szorzás, hatványozás).
+    <li>A <code>switch()</code> előtti <code>if()</code>-nél átírjuk a számot
+            (amely a menüpontok számával van összefüggésben) 5-re.
+    <li>Beírjuk a <code>switch()</code>-be az új <code>case 2</code>-t.
+    <li>Átszámozzuk a többi <code>case</code>-t is.
+</ul>
+<p>Ennél biztosan kell legyen jobb megoldás is. A menüpontok nevei
+betehetőek tömbbe, és akkor egy ciklussal elvégezhető a kiírás és a beszámozás.
+Vajon a menüpontok maguk, azaz a függvények is betehetőek a tömbbe?
+Ha igen, meg tudjuk szüntetni a második oldali sormintát is!
+</p>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Ismétlés: a függvényhívás menete</h2>
+</div>
+
+<div class="csakeloadas">
+<p>
+    A <em>hívó:</em> paraméterek a verembe, visszatérési érték a veremből.
+    <br>
+    A <em>hívott:</em> kezeli a lokális változóit.
+</p>
+</div>
+
+<div class="columns eloadaskicsinyit">
+<div>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+double negyzet(double a) {
+    return a * a;
+}
+
+int main(void) {
+   double x = negyzet(5.9);
+   double y = sin(6.1);
+
+   printf(&quot;%g&quot;, x + y);
+   return 0;
+}</pre>
+</div>
+<div>
+<img src="ea13/verem.svg" class="kozep" style="height: 18em;">
+</div>
+</div>
+
+<div class="csakdoksi">
+<p><em>A függvényhívás előtt</em> a következő történik:</p>
+<ul>
+   <li>A hívó <code>main()</code> beteszi a verembe a paramétereket.
+   <li>Helyet csinál a visszatérési értéknek is.
+   <li>Meghívja a függvényt, ami által bekerül a verembe a visszatérés címe
+      (vagyis hogy hol kell folytatni a programot a függvényből visszatérvén).
+</ul>
+<p>Minden függvényhíváskor létrejön tehát egy rész a veremben, amely az adott híváshoz tartozik,
+és visszatéréskor megszűnik: ez a <em>keret</em> (stack frame).</p>
+<p><em>A <code>negyzet()</code> függvényben</em> a működés:</p>
+<ul>
+   <li>A paramétereit a veremben találja.
+   <li>A visszatérési értéket a verembe teszi, a megfelelő memóriaterület felülírásával.
+   <li>Amikor visszatér, akkor a hívóhoz ugrik vissza, az eltárolt visszatérési cím alapján.
+</ul>
+<p><em>A függvényhívás után</em> a hívó:</p>
+<ul>
+   <li>A veremben megtalálja a visszatérési értéket. Ezt felhasználja, ha szeretné.
+   <li>Kitörli a veremből az általa betett dolgokat, hiszen azokra már nincsen szükség.
+</ul>
+</div>
+
+<br class="smallskip">
+
+<div class="csakeloadas">
+<p>Mi lenne, ha egy <em>másik</em> függvényt hívnánk meg ugyanolyan kerettel?</p>
+</div>
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Függvényre mutató pointer: a háttérben…</h2>
+</div>
+
+<p>Ha két függvénynek <em>egyforma a fejléce,</em> egyformán kezelik a vermet,
+és ezért <em>kompatibilisek</em> egymással.</p>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+double negyzet(double a);</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+double sin(double alfa);</pre>
+</div>
+</div>
+
+<br class="smallskip">
+
+<div class="sticky">A függvényre<br>mutató pointer.</div>
+<pre class="brush: cbub "  >
+int main(void) {
+  double (*fptr)(double);   // ptr létrehozása
+  double x;
+
+  fptr = negyzet;           // ptr beállítása
+  x = fptr(3);  /* negyzet(3) */
+  fptr = sin;
+  x = fptr(5);  /* sin(5) */
+
+  return 0;
+}</pre>
+
+<p>Megfelelően felépített verem mellett <em>cserélhetők!</em></p>
+
+<div class="csakdoksi">
+<p>Mi is történik itt? Tegyük fel, hogy van egy függvényünk, amelyik
+egy darab <code>double</code> paramétert vár, és egy darab <code>double</code>
+paramétert kap vissza. Ha meghívjuk ezt a függvényt, akkor a hívó felépít
+hozzá egy keretet, amelyben ezeknek az értékeknek meglesz a megfelelő helye.
+A hívott fogja tudni, hogy a verem tetejéhez képest hol találja a paramétereket
+és hova kell tennie a visszatérési értéket. (Ennek technikai részleteiről
+természetesen a fordító gondoskodik.)</p>
+<p>Ha van egy másik függvényünk, amelynek ugyanilyen a prototípusa, akkor
+a hívási keret megfelelő felépítése után meghívhatjuk azt is. Hiszen az a függvény
+a veremben ugyanott fogja keresni az ugyanolyan típusú értékeket. Vagyis
+ha a keretet megfelelően építjük föl, meghívható akár a <code>negyzet()</code>, akár
+a <code>sin()</code> függvény. Ennek pedig semmi akadálya nincs, ha a két függvény
+prototípusa megegyezik.</p>
+<p>Így bevezethetjük a <em>függvényre mutató pointer</em> típust. Ez azt a
+memóriacímet tárolhatja, ahol a függvény található a memóriában. A függvény hívása
+pedig az alábbi módon történhet:</p>
+<ul>
+    <li>Felépítjük a hívási keretet a megfelelő módon.
+    <li>Arra a memóriacímre ugrunk a végrehajtással, amire a pointer hivatkozik.
+    <li>Miután visszatért, a veremből kivesszük a visszatérési értékét, és töröljük
+        a keretet.
+</ul>
+<p>Mivel azt tudni kell, hogy mi legyen a hívási keret felépítése, ezért a
+függvénypointer típusában benne kell legyen az általa hivatkozott függvény prototípusa.
+Ezért néz így ki fent az <code>fptr</code> változó definíciója:</p>
+<pre class="brush: c "  >
+double (*fptr)(double);</pre>
+<p>A jobb oldali zárójel és a benne lévő <code>double</code> mutatja, hogy egy függvényről
+van szó, amelynek egy <code>double</code> paramétere van. A <code>*</code> jelzi, hogy az
+<code>fptr</code> változó egy ilyen függvényre mutat. A bal oldali <code>double</code> pedig
+azt, hogy ha meghívjuk a függvényt, egy <code>double</code>-t kapunk vissza.</p>
+<p>Egy értékre mutató pointernél is a pointer típusából tudja a fordító, hogy
+a dereferálása esetén milyen típusú értéket vehetünk ki a memóriából (pl. <code>int*</code>
+egy egész számra mutat). A függvényre mutató pointereknél ugyanez a helyzet: a pointer típusából
+tudja a fordító, hogy mik a hívott függvény paraméterei és mi a visszatérési értéke. Vagyis hogy
+hogyan kell számára a hívási keretet felépíteni.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>A függvénymutató típus szintaktikája</h2>
+</div>
+
+<p class="csakdoksi">
+Minden függvénynek van egy címe. Ez a cím <em>képezhető</em>,
+<em>elmenthető</em> egy függvénymutató típusú <em>változóba,</em>
+és egy függvénymutató segítségével <em>meghívható a függvény.</em>
+</p>
+
+<p>
+Definiálhatunk változót és típust is:
+</p>
+
+<div class="sticky csakdoksi">Fontos a *-ot és a nevet<br>körbevevő zárójel!</div>
+
+<pre class="brush: cbub "  >
+/* függvénymutató típusú változó */
+VisszaTíp (*változónév)(ParamTíp, ParamTíp…);     // változó
+
+/* függvénymutató típus */
+typedef VisszaTíp (*TípNév)(ParamTíp, ParamTíp…); // típus</pre>
+
+<div class="csakdoksi">
+<p>Ha a függvénymutató változóban a név elé nem tennénk <code>*</code>-ot, akkor
+az nem mutató lenne. Ha pedig nem tennénk az így becsillagozott kifejezést
+zárójelbe, akkor a <code>double&nbsp;*fptr(int)</code> azt jelentené,
+hogy egy <code>fptr</code> nevű függvényt deklarálunk, amely <code>double*</code>-gal tér vissza.
+Amit tehát <strong>fontos megjegyezni:</strong></p>
+<ul>
+   <li><em>zárójel</em> veszi körül a változó nevét a csillaggal,
+   <li>az argumentumoknál <em>csak a típusokat</em> soroljuk fel, vesszővel elválasztva.
+</ul>
+<p>A <code>typedef</code>-et gyakran itt is két sorban írjuk le.
+Először definiáljuk azt a típust, amely egy adott függvényt jelent,
+utána pedig azt a típust, amely egy ilyen függvényre mutat:</p>
+<pre class="brush: c "  >
+typedef int KaraktertEvoFuggveny(char);
+typedef KaraktertEvoFuggveny *FvPtr;</pre>
+<p>Ilyenkor nincsen szükség zárójelezésre sem, mivel a sorok egymás utánisága
+miatt már egyértelmű a fordító számára, hogy a <code>*</code>
+operátor az <code>FvPtr</code>-re értendő, tehát egy olyan típusú pointer
+a definiált típus.</p>
+</div>
+
+
+<br class="smallskip">
+
+<p>Példa:</p>
+
+<pre class="brush: cbub "  >
+void kiir(char *str) { printf(&quot;%s&quot;, str); }</pre>
+
+<pre class="brush: cbub "  >
+typedef void (*fptipus)(char *);
+
+fptipus fptr = kiir;
+fptr(&quot;hello világ&quot;); // fv. hívás operátora: kerek zárójel ( )</pre>
+
+<div class="csakdoksi">
+<p>
+A függvényekre mutató pointerek és a tömbök között <em>szintaktikailag</em> igen nagy a hasonlóság.
+Egy <strong>tömb</strong> és egy <strong>függvény neve önmagában a címét képzi.</strong>
+Az érték eléréséhez
+a tömböknél az <em>indexelő operátorra <code>[]</code>,</em> van szükség,
+a függvényeknél pedig a <em>függvényhívó operátorra <code>()</code>.</em>
+</ul>
+
+<table>
+   <thead>
+   <tr>
+      <th>&nbsp;
+      <th>Kezdőcíme
+      <th>Értéke (eleme / hívása)
+   
+   </thead>
+   <tr>
+      <th>Tömb
+      <td class="kozep"><code>tomb</code>
+      <td class="kozep"><code>tomb[2]</code>
+   
+   <tr>
+      <th>Függvény
+      <td class="kozep"><code>fv</code>
+      <td class="kozep"><code>fv(3)</code>
+   
+</table>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Menürendszer II. – a mutató típus</h2>
+</div>
+
+<p>A menüpontok <em>függvényei:</em></p>
+<div class="columns">
+<div>
+<pre class="brush: c eloadaskicsinyit"  >
+int osszead(int a, int b) {
+   return a + b;
+}
+
+int szoroz(int a, int b) {
+   return a * b;
+}</pre>
+</div>
+<div>
+<pre class="brush: c eloadaskicsinyit"  >
+int hatvanyoz(int a, int b) {
+   int i, eredmeny = 1;
+   for (i = 0; i &lt; kitevo; ++i)
+      eredmeny *= a;
+
+   return eredmeny;
+}</pre>
+</div>
+</div>
+
+<p class="csakdoksi">
+Vagyis minden függvény <em>megkap két számot és elvégez rajtuk egy műveletet,</em> aminek az eredményét a visszatérési értékben közli.
+</p>
+
+<br class="smallskip">
+
+<p>Ezekre a függvényekre egy ilyen pointer tud mutatni:</p>
+
+<pre class="brush: c "  >
+typedef int (*MenuFv)(int, int);</pre>
+
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>Menürendszer III. – a tömb és használata</h2>
+</div>
+
+<div class="columns eloadaskicsinyit">
+<div>
+<pre class="brush: c "  >
+typedef int (*MenuFv)(int, int);
+
+typedef struct {
+   char const *nev;
+   MenuFv pfv;
+} MenuPont;</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+MenuPont menupontok[] = {
+   { &quot;Összeadás&quot;, osszead },
+   { &quot;Szorzás&quot;, szoroz },
+   { &quot;Hatványozás&quot;, hatvanyoz },
+   { NULL, NULL }   /* végjel */
+};</pre>
+</div>
+</div>
+
+<p class="csakdoksi"> Mivel <em>mutatókat tárolnak,</em> ezért utolsó elemnek betehető egy
+<em>NULL</em> érték, ami jelzi a végét – így biztonságosan kezelhető. Ez egy végjel: amikor egy
+ciklus fut a tömbön, a tömb <em>tartalma</em> alapján tudni fogja, hol van a vége. Nem kell majd
+külön szerepelnie a programban a tömbméret megadásának sem. Ezt a trükköt már rengetegszer
+használtuk.</p>
+
+<br class="smallskip">
+
+<p class="csakdoksi">
+A menüpontok <em>kiírása:</em>
+</p>
+
+<div class="sticky">menü kiírása<br>és a hívás</div>
+<pre class="brush: cbub eloadaskicsinyit"  >
+for (i = 1; menupontok[i-1].nev != NULL; ++i)
+   printf(&quot;%d. %s\n&quot;, i, menupontok[i-1].nev);
+
+meret = i; /* a for() végén i = tömb mérete */</pre>
+
+<p class="csakdoksi">
+A for ciklus indexváltozójának utolsó értéke a NULL elem indexe, vagyis a <em>tömbben lévő értékes elemek száma.</em> Ezzel az értékkel tudjuk <em>ellenőrizni,</em> hogy a felhasználó által bevitt menüpont értéke <em>érvényes-e.</em>
+</p>
+
+<p class="csakdoksi">
+A kiválasztott menüpont <em>végrehajtása:</em>
+</p>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+if (0 &lt; valasztas &amp;&amp; valasztas &lt; meret) {
+   eredmeny = menupontok[valasztas-1].pfv(a, b); // függvénypointer
+   printf(&quot;Eredmény: %d\n&quot;, eredmeny);
+}
+else
+   printf(&quot;Nincs ilyen menüpont\n&quot;);             // ha rossz az index</pre>
+
+<div class="csakdoksi">
+<p>A fenti kifejezés működése részletesen:</p>
+<table>
+<thead>
+  <tr><th>Kifejezés<th>típus
+</thead>
+  <tr><th><code>menupontok</code><td>struktúrák tömbje, a menüpontok leírása
+  <tr><th><code>menupontok[index]</code><td>egy struktúra, menüpont leírása
+  <tr><th><code>menupontok[index].fv</code><td>egy függvényre mutató pointer
+  <tr><th><code>menupontok[index].fv(2.6, 3)</code><td>2.6, 3 paraméterekkel meghívva az egyik függvény
+</table>
+
+
+<p>Amit csináltunk:</p>
+<ul>
+   <li>a <em>függvénymutatókat</em> tároljuk egy <em>tömbben,</em>
+   <li>a menüpontok <em>leírás</em>át is tároltuk a <em>tömbben,</em>
+   <li>mivel ezek összetartoztak, páronként egy <em>struktúrába</em> kerültek.
+</ul>
+
+<p>Ennek a megoldásnak az előnye az, hogy</p>
+<ul>
+   <li>egy <em>új menüpont hozzáadása nagyon egyszerű,</em> csak a tömböt kell módosítani
+   <li>a <em>működés automatizált,</em>
+   <li>könnyű <em>hibatűrő</em> programkódot készíteni.
+</ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<div class="slideheader">
+<h2><span class="oldalszam">9</span>Generikus (általános) algoritmusok</h2>
+</div>
+
+<p class="csakdoksi">Mivel a függvények <em>értékként kezelhetőek,</em> és paraméterként
+adhatóak át, egyes algoritmusok működése megfogalmazható általánosságban is.</p>
+
+<p>Mennyi a valószínűsége annak, hogy&hellip;</p>
+
+<div class="columns c3">
+<div><img src="ea13/flip.png" class="kozep" style="height: 10em;"></div>
+<div><img src="ea13/kor.png" class="kozep" style="height: 10em;"></div>
+<div><img src="ea13/kocka.png" class="kozep" style="height: 10em;"></div>
+</div>
+
+
+<ul class="csakdoksi">
+    <li>hogy kockával 6-ost dobunk? (1/6)
+    <li>hogy fejet vagy írást dobunk? (1/2)
+    <li>hogy egy (-1&hellip;1; -1&hellip;1) véletlenszerűen
+        választott pont az egységkörbe esik? (&pi;/4)
+    <li>&hellip; mennyi a &pi; értéke?!
+</ul>
+
+<br class="smallskip">
+
+<p><em>Monte-Carlo-módszer:</em> végezzük el a „kísérletet” 1000-szer, és számoljuk meg, hányszor sikerült!</p>
+
+<div class="kozep">
+    <button data-diapopup="fejvagyirasid">fej vagy írás?</button>
+    <button data-diapopup="montecarloid">montecarlo()</button>
+    <button data-diapopup="montecarlohivasid">megoldások</button>
+</div>
+
+<div id="fejvagyirasid">
+<p>Fej vagy írás, melyiknek hány százalék
+a valószínűsége? <span class="csakdoksi">Írjunk egy függvényt, amely generál ezer darab
+0 (fej) vagy 1 (írás) értékű véletlenszámot, és megnézi, hogy
+mekkora arányban lettek nullák</span>:</p>
+<pre class="brush: c "  >
+double fejvagyiras(void) {
+    int i, h;
+    h = 0;
+    for (i = 0; i &lt; 1000; ++i)
+        if (rand()%2 == 0)
+            h += 1;
+    return h / 1000.0;   /* egész osztást elkerülni! */
+}</pre>
+<p>Ennek a visszatérési értéke 0,5 körül lesz.</p>
+</div>
+
+<div id="montecarloid">
+<p class="csakdoksi">Ha a kockával hatosokra vagyunk kíváncsiak,
+ugyanerre a függvényre van szükség, csak a feltétel más. Ha az
+egységkörbe eső pontokra, akkor is. Általánosítsuk ezért! Az
+elvégzendő „kísérletet” vegyük át paraméterként! A kísérletnek,
+mint függvénynek bemenő adata nincsen (<code>void</code> paraméterű),
+a visszatérési értéke egy logikai igaz/hamis érték (<code>int</code>
+típus).</p>
+
+<p>A kísérlet függvényre mutató pointer típusa:</p>
+<pre class="brush: c "  >
+int (*kiserlet)(void);</pre>
+
+<br class="smallskip">
+
+<p>A <code>montecarlo()</code> függvény:</p>
+<pre class="brush: c "  >
+double montecarlo(int (*kiserlet)(void)) {
+    int i, h;
+    h = 0;
+    for (i = 0; i &lt; 1000; ++i)
+        if (kiserlet())
+            h += 1;
+    return h / 1000.0;   /* egész osztást elkerülni! */
+}</pre>
+<p>Ez meghívja ezerszer a paraméterként kapott függvényt, és megszámolja,
+hányszor adott vissza igazat.</p>
+</div>
+
+<div id="montecarlohivasid">
+<p>Példa kísérlet függvény: mekkora a valószínűsége annak,
+hogy a (0&hellip;1; 0&hellip;1) véletlenszerűen választott
+pont az egységkörbe esik?</p>
+
+<pre class="brush: c "  >
+int egysegkorbe(void) {
+    double x = rand()/(double) RAND_MAX;
+    double y = rand()/(double) RAND_MAX;
+    return x*x + y*y &lt; 1;
+}</pre>
+
+<br class="smallskip">
+
+<p>A <code>montecarlo()</code> hívásai a fenti feladatok megoldására:</p>
+<pre class="brush: c "  >
+printf(&quot;fej: %g%%\n&quot;, 100.0 * montecarlo(fejvagyiras));
+printf(&quot;hatos: %g%%\n&quot;, 100.0 * montecarlo(hatostdobunk));
+printf(&quot;korbe: %g%%\n&quot;, 100.0 * montecarlo(egysegkorbe));
+printf(&quot;pi: %g\n&quot;, 4 * montecarlo(egysegkorbe));</pre>
+<p class="csakdoksi">Az utolsó sor a &pi; becslését adja a Monte-Carlo-módszerrel. A
+<code>montecarlo(egysegkorbe)</code> hívás megmondja, hogy a (0&hellip;1; 0&hellip;1)
+tartományban generált véletlen számpárok hány százaléka esik a körbe. A negyedkör
+területe <code>r<sup>2</sup>&pi;/4</code>=<code>&pi;/4</code>, szemben a
+vizsgált négyzet területével, ami kereken 1, tehát a valószínűség &pi;/4, vagyis
+a négyszerese &pi;-t kell adja.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span>Az év eleji tételek generikus változata</h2>
+</div>
+
+<div class="csakdoksi">
+<p>Tételek a félév eleji anyagból – ezek mind <em>generikus</em> algoritmusok:</p>
+<ul>
+   <li><em>Számlálás tétele:</em> adott tulajdonságú elemek darabszáma
+   <li><em>Maximumkeresés tétele:</em> legvalamilyenebb elem megkeresése
+   <li>…
+</ul>
+</div>
+
+<div class="sticky">generikus<br>számlálás</div>
+<pre class="brush: cbub eloadaskicsinyit"  >
+int szamlal(long *tomb, int meret, int (*tul)(long)) {
+   int i, db;
+   db = 0;
+   for (i = 0; i &lt; meret; ++i)
+      if (tul(tomb[i]))     // adott tulajdonságú?
+         ++db;
+   return db;
+}</pre>
+
+<p class="csakdoksi">A program forráskódja is így nagyon szemléletes.
+Akárhány függvényt írhatunk, amelyek tulajdonságokat vizsgálnak.
+Ezek a <em>predikátumok:</em></p>
+<div class="sticky">predikátumok</div>
+<pre class="brush: c eloadaskicsinyit"  >
+int negativ(long x) {
+   return x &lt; 0;
+}
+
+int paros(long x) {
+   return x%2 == 0;
+}</pre>
+
+<p class="csakdoksi">A függvényeket pedig egyszerűen paraméterként átadjuk:</p>
+<pre class="brush: c eloadaskicsinyit"  >
+long tomb[10] = {………};
+printf(&quot;%d negativ van.\n&quot;, szamlal(tomb, 10, negativ));
+printf(&quot;%d   paros van.\n&quot;, szamlal(tomb, 10, paros));</pre>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span>Állapotgépek függvényre mutató pointerrel</h2>
+</div>
+
+<div class="csakdoksi">
+<p>A „C milliomos” játék állapotgráfja:</p>
+</div>
+
+<div id="loimallapotimgid">
+<img src="ea13/loimallapot.svg" class="kozep" style="width: 27em;">
+</div>
+
+<div class="csakdoksi">
+<p>Ez vezérli a játékot. (Az összes nem 
+specifikált átmenet hibásnak számít: pl. a kérdésfeltevés állapotban 
+nem érkezhet „vissza” típusú esemény.) A tevékenységeket 
+függvényekbe téve az állapotgépet lekódolhatjuk úgy is, hogy a 
+tevékenységtábla függvényre mutató pointereket tartalmaz!</p>
+</div>
+
+<button class="float" data-diapopup="loimallapotimgid">állapotgráf</button>
+<button class="float" data-diapopup="fvptrallapotgepid">program</button>
+
+<pre class="brush: c "  >
+typedef struct AllapotPont {
+    void (*tevekenyseg)(void);
+    Allapot kovetkezo;
+} AllapotPont;</pre>
+
+<br class="smallskip">
+
+<p>Események: új játék, válasz, segítség, következő, helyezések, vissza.</p>
+
+<pre class="brush: c "  >
+/* tabla[állapot][eseménytípus] */
+AllapotPont tabla[4][6] = {
+    /* jatekszabaly */
+    { { uj_jatek_fv, kerdes }, { NULL, 0 }, { NULL, 0, },
+      { NULL, 0, }, { dicsoseg_fv, dicsoseg }, { NULL, 0 } },
+    { }, /* dicsoseg */
+    { }, /* kerdes */
+    { }, /* valasz */
+};</pre>
+
+<div id="fvptrallapotgepid">
+
+<p>Az állapotgépet kezelő program:</p>
+
+<pre class="brush: c "  >
+Esemeny esemeny;
+Allapot allapot;
+
+while ((esemeny = uj_esemenyre_var()) != -1) {
+    /* hibás (érvénytelen) esemény? */
+    if (tabla[allapot][esemeny].tevekenyseg == NULL)
+        break;
+        
+    /* meghívjuk az adott tevékenység függvényét */
+    tabla[allapot][esemeny].tevekenyseg();
+    
+    /* lépünk a következő állapotba */
+    allapot = tabla[allapot][esemeny].kovetkezo;
+}</pre>
+</div>
+
+<p class="csakdoksi">Hogy ne legyen túl sok állapotunk,
+a tevékenységeket érdemes paraméterezni. Például a kérdést
+mutató tevékenységnek paramétere lehet az, hogy kért-e a játékos
+segítséget, vagy nem – így nem kell mindenféle segítséghez külön
+állapotot létrehozni.</p>
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<h1 class="diacim">Generikus tárolók</h1>
+
+
+
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>Generikus lista – miért?</h2>
+</div>
+
+<p>Akármit teszünk a listába, a módszer ugyanaz:</p>
+<ul>
+    <li>Struktúra, benne <code>ListaElem*</code> pointer
+    <li>Ugyanúgy működik a bejárás, beszúrás, törlés, …
+</ul>
+
+<p class="csakdoksi">Tegyük fel, hogy írunk egy programot, amelyben
+szükség van könyvek listájára, szerzők listájára és egész számok
+listájára. Emiatt három listát kellene implementálni? Hiszen nem
+különböznek a listák semmiben, csak a tárolt adatban!</p>
+
+<br class="smallskip">
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+typedef struct ListaElem {
+    …
+    … // kedvenc adataink
+    …
+
+    struct ListaElem *kov;
+} ListaElem;</pre>
+</div>
+
+<div>
+<pre class="brush: cbub "  >
+ListaElem *iter = eleje;
+while (iter != NULL) {
+    …
+    … // kedvenc műveletünk
+    …
+    iter = iter-&gt;kov;
+}</pre>
+</div>
+</div>
+
+<br class="smallskip">
+
+<p class="csakdoksi"> <em>Gond:</em> egy típusos nyelvben hogyan kezelhetünk adatokat,
+amelyeknek nem ismerjük a típusát?! A fordítónak mindenképp meg kellene mondanunk, hogy mit
+teszünk a struktúrába. Különben hogy hivatkozunk rá, honnan tudja, hogy mennyi memóriát kell
+foglalni, honnan tudja, hogy mennyi <code>sizeof(ListaElem)</code>? Az egyes feldolgozott
+listaelemeken végzett műveletet talán valahogy megoldhatnánk egy paraméterként átvett
+függvénnyel, de ha azt se tudjuk, hogy milyen adat van a listaelemben, akkor mi lesz az átvett
+függvény paramétere? Egész szám, könyv, szerző neve?</p>
+
+<p>El kellene választani a lista algoritmusait a saját adatokhoz tartozó feladatainktól, és az 
+adatszerkezetet a tárolt adatoktól. De hogyan?</p>
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>Generikus lista – az ötlet: <code>void*</code></h2>
+</div>
+
+<p>A C-ben nincs olyan típus, ami bármilyen adatot tartalmazhat. Viszont van
+olyan <em>mutató,</em> ami <em>tetszőleges adatra mutathat:</em> a <strong><code>void*</code></strong>!</p>
+<div class="sticky">Ismerős?</div>
+<pre class="brush: c "  >
+void *malloc(size_t meret);
+free(void *ptr);</pre>
+
+<br class="smallskip">
+
+<p><strong>Ötlet:</strong> <em>ne tegyük</em> az adatot a struktúrába, ott csak egy pointer legyen rá!</p>
+
+<pre class="brush: cbub "  >
+/* generikus listaelem */
+typedef struct GenerikusLE {
+    void *adat; // !
+    struct GenerikusLE *kov;
+} GenerikusLE;</pre>
+
+<p>Meglátjuk: ez megoldja az algoritmusok és az adatok szétválasztását is.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>Generikus lista – a <code>void*</code> használata</h2>
+</div>
+
+<p>Tegyük fel, hogy a <code>void*</code> mutatók könyvekre mutatnak.</p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+typedef struct GenerikusLE {
+    void *adat;
+    struct GenerikusLE *kov;
+} GenerikusLE;</pre>
+</div>
+<div>
+<img src="ea13/generikus.svg" class="kozep" style="width: 18.5em;">
+</div>
+</div>
+
+<p>Az adatok kiírása:</p>
+
+<div class="sticky">Explicit<br>cast kell!<br>De miért?</div>
+<pre class="brush: cbub "  >
+GenerikusLE *iter;
+for (iter = eleje; iter != NULL; iter = iter-&gt;kov) {
+    Konyv *ez = (Konyv *) iter-&gt;adat; // !
+    printf(&quot;Szerző: %s\nCím: %s\nKiadás éve: %d\n\n&quot;,
+           ez-&gt;szerzo, ez-&gt;cim, ez-&gt;kiadas);
+}</pre>
+
+<p class="csakdoksi">Mivel mi tudjuk, hogy úgy építettük fel
+a listát, a benne lévő <code>adat</code> pointerek <code>Konyv</code>
+struktúrákra mutatnak, megengedhetjük magunknak, hogy <code>Konyv*</code>
+mutatókká alakítjuk (cast-oljuk) őket bejáráskor. Ezt meg is kell tennünk,
+mert a <code>void*</code> mutatóval az adatot nem tudjuk elérni.
+A könyvre mutató pointert dereferálva viszont már elérjük a könyv adatait.
+Miért nem tudja ezt a fordító megtenni? Mert amikor az eredeti <code>Konyv*</code>
+pointert betettük a listába, <code>void*</code>-gá konvertáltuk a típusát.
+Vagyis ott eldobtuk az információt, hogy az a pointer egy könyvre mutat!</p>
+
+<p>&hellip; és ha nem kiírni akarunk, hanem valami mást?</p>
+
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Generikus lista – a bejárás általánosítása</h2>
+</div>
+
+<p>Végezzünk el <em>valamilyen</em> műveletet minden listaelemen:</p>
+<pre class="brush: cbub "  >
+void for_each(GenerikusLE *eleje, void (*fv)(void *)) { // !
+    GenerikusLE *iter;
+    for (iter = eleje; iter != NULL; iter = iter-&gt;kov)
+        fv(iter-&gt;adat); // !
+}</pre>
+
+<p class="csakdoksi">Ezt a műveletet sok programozási nyelvben és a szakirodalomban is <em>for
+each</em>-nek nevezik.</p>
+
+<p class="csakdoksi"><code>void (*fv)(void *)</code>: a mutatott <code>fv()</code> függvény <em>valamit</em> csinál
+majd a <em>valamilyen</em> adaton, amire a <code>void*</code> pointer mutat.</p>
+
+<p>A függvény használata:</p>
+<pre class="brush: cbub "  >
+void konyv_kiir(void *v) { // !
+    Konyv *ez = (Konyv *) v;
+    printf(&quot;Szerző: %s\nCím: %s\nKiadás éve: %d\n\n&quot;,
+           ez-&gt;szerzo, ez-&gt;cim, ez-&gt;kiadas);
+}</pre>
+
+<pre class="brush: cbub "  >
+GenerikusLE *konyveim = …………;
+for_each(konyveim, konyv_kiir); // !</pre>
+
+<div class="csakdoksi">
+<p>A listát bejáró függvény egy olyan feldolgozó függvényt vár, amelynek
+át tudja adni a számára ismeretlen típusra mutató pointert, az <code>iter-&gt;adat</code>-ot,
+ami <code>void*</code> típusú. Ezért az általa átvett függvény paramétere is
+<code>void*</code>.</p>
+
+<p>A könyv adatait kiíró függvényt ezért ennek az elvárásnak megfelelve
+kell megírni: a függvény nem vehet át <code>Konyv*</code>-ot, hanem csak <code>void*</code>-ot.
+Mivel ez a függvény viszont ismeri a típust, tudja, hogy ott egy könyv struktúra van,
+a mutató típusát átalakíthatja <code>Konyv*</code>-gá, ahogyan az előző dián is szerepelt.</p>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<div class="slideheader">
+<h2><span class="oldalszam">17</span>A bejárás még erősebb általánosítása</h2>
+</div>
+
+<p class="csakeloadas">Mi a helyzet, ha adatot is kell átadni?</p>
+
+<p class="csakdoksi">Tegyük fel, hogy a bejárásban egyéb paraméterre van 
+szükségünk. Például arra, hogy melyik fájlba kell írni az adatokat. Vagy egy 
+másik listára, ahova át kell másolni a könyvek adatait. Vagy egy számlálóra, mert 
+meg szeretnénk számolni, hány 2012-ben kiadott könyv van a listában. A sokféle 
+típusú „egyéb paraméter” problémáját megoldhatjuk ugyanazzal a trükkel, mint 
+eddig: a listát bejáró függvény átvesz egy <code>void*</code> mutatót a 
+bejáráshoz tartozó adatra  (legyen az bármi, nem foglalkozik vele!), és ezt a 
+paramétert a könyv mellett átadja a bejáráskor meghívott függvénynek.</p>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+void for_each_param(GenerikusLE *eleje,
+                    void (*fv)(void *, void *), void *param) {
+    GenerikusLE *iter;
+    for (iter = eleje; iter != NULL; iter = iter-&gt;kov)
+        fv(iter-&gt;adat, param);
+}</pre>
+
+<p class="csakdoksi">Tehát úgy módosítjuk a bejáró függvényt, hogy
+az általa átvett feldolgozó függvénynek nem egy, hanem két paramétere
+kell legyen. Az első paraméterben meg fogja adni a feldolgozandó
+elemet, a második paraméterként pedig azt a <code>param</code>
+adatot,  amelyet a függvény mellé kapott. Erről a <code>param</code>
+adatról ugyanúgy nem tud semmit, mint a feldolgozott listaelemekről.
+Az az <code>fv()</code> függvény dolga, hogy mit kell csinálni
+a listaelemmel (<code>iter-&gt;adat</code>) és ezzel (<code>param</code>).
+A hívó tetszőlegesen, a saját céljaira használhatja.</p>
+
+<br class="smallskip">
+
+<p class="csakdoksi">A függvény használata:</p>
+<pre class="brush: cbub eloadaskicsinyit"  >
+void konyv_kiir_fajlba(void *konyvv, void *fajlv) {
+    Konyv *konyv = (Konyv *) konyvv;
+    FILE *fajl = (FILE *) fajlv;
+    fprintf(fajl, &quot;Szerző: %s\nCím: %s\nKiadás éve: %d\n\n&quot;,
+           konyv-&gt;szerzo, konyv-&gt;cim, konyv-&gt;kiadas);
+}</pre>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+FILE *fp = fopen(&quot;konyvek.txt&quot;, &quot;wt&quot;);
+for_each_param(konyveim, konyv_kiir_fajlba, (void *) fp); // !
+fclose(fp);</pre>
+
+<p class="csakdoksi">
+A használathoz megnyitunk egy fájlt, és meghívjuk az új <code>for_each_param()</code>
+függvényt. Az a függvény be fogja járni a listát, és az összes eltárolt könyvre
+meg fogja hívni a <code>konyv_kiir_fajlba()</code> függvényt, mégpedig úgy,
+hogy első paramétereként átadja neki a könyvet, második paramétereként pedig
+a fájlt.
+</p>
+
+<div class="csakdoksi">
+<p>Ha meg szeretnénk számolni a 2000 és 2010 között kiadott könyveket, akkor
+a meghívott függvény segédadata egy egész számra mutató pointer lesz:</p>
+<pre class="brush: cbub eloadaskicsinyit"  >
+void konyv_szamlal_2000_2010(void *konyvv, void *szamlalov) {
+    Konyv *konyv = (Konyv *) konyvv;
+    int *szamlalo = (int *) szamlalov;
+    if (konyv-&gt;kiadas&gt;=2000 &amp;&amp; konyv-&gt;kiadas&lt;=2010)
+        *szamlalo += 1;
+}</pre>
+<p>A függvény hívása pedig:</p>
+<pre class="brush: cbub eloadaskicsinyit"  >
+int sz = 0;
+for_each_param(konyveim, konyv_szamlal_2000_2010, (void *) &amp;sz);</pre>
+<p>A <code>void *</code> mutatót bármire használhatjuk. Ha nem csak egy,
+hanem több adatot is át kell adni paraméterként, semmi gond: betesszük
+azokat egy struktúrába, és arra adjuk a mutatót!</p>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>Generikus lista – rendezés</h2>
+</div>
+
+<button class="float" data-diapopup="rendezeselottutanid">rendezés</button>
+<button class="float" data-diapopup="rendezesszempont">sorrend</button>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+void lista_rendez(GenerikusLE *eleje,
+                  int (*kisebb)(void const *, void const *)) {
+    GenerikusLE *i, *j, *min;
+
+    if (eleje == NULL || eleje-&gt;kov == NULL)    /* rövid? */
+        return;
+    for (i = eleje; i-&gt;kov != NULL; i = i-&gt;kov) {
+        min = i;
+        for (j = i-&gt;kov; j != NULL; j = j-&gt;kov)
+            if (kisebb(j-&gt;adat, min-&gt;adat))  // kisebb? a fv megmondja!
+                min = j;
+        if (i != min) {
+            void *temp = min-&gt;adat;
+            min-&gt;adat = i-&gt;adat;
+            i-&gt;adat = temp;
+        }
+    }
+}</pre>
+
+<div class="csakdoksi">
+<p>A generikus rendező függvény rendezi a generikus listát. Az érdekessége, hogy
+semmit nem tud az adatokról, sem arról, hogy hogyan kell összehasonlítani azokat.
+Csak lát két pointert, amelyre meghívja a paraméterként kapott hasonlító függvényt;
+utána pedig a hasonlító függvény visszatérési értéke alapján eldönti, hogy meg
+kell-e cserélni a két elemet, vagy nem. Így tetszőleges típusú adatokra, és
+tetszőleges rendezési szempontokra is használható! Hiszen ha olyan összehasonlító
+függvényt adunk neki, amely nem <code>egyik&lt;masik</code> esetén, hanem <code>egyik&gt;masik</code>
+esetén ad igaz értéket, éppen ellenkező sorrendbe fog rendezni.</p>
+<p>A rendezés pedig nagyon gyors, mert a függvénynek nem az adatokat kell
+cserélgetnie a memóriában (nem a könyv struktúrák fognak elmozdulni a helyükről), hanem
+csak a pointereket. Éppen ezért nem változik a lista eleje mutató sem: csak
+a lista adattagjai változnak, de azok is most csak a pointerek.</p>
+</div>
+
+<div id="rendezeselottutanid">
+<div class="csakeloadas">
+<p>A rendezés csak a pointereket cseréli:</p>
+</div>
+<br class="smallskip">
+<div class="columns">
+<div>
+<img src="ea13/generikus.svg" style="width: 18em;" class="kozep">
+<div class="kozep">Rendezés előtt</div>
+</div>
+<div>
+<img src="ea13/generikus_rendez.svg" style="width: 18em;" class="kozep">
+<div class="kozep">Rendezés után</div>
+</div>
+</div>
+</div>
+
+<div id="rendezesszempont">
+<p>Ábécébe rendezés, szerző, azon belül cím szerint:</p>
+<pre class="brush: cbub eloadaskicsinyit"  >
+int abecerend_kisebb(void const *v1, void const *v2) {
+    Konyv const *k1 = (Konyv const *) v1;
+    Konyv const *k2 = (Konyv const *) v2;
+    int er;
+
+    er = strcmp(k1-&gt;szerzo, k2-&gt;szerzo);
+    if (er &lt; 0) return 1;
+    if (er &gt; 0) return 0;
+    er = strcmp(k1-&gt;cim, k2-&gt;cim);
+    return er &lt; 0;
+}</pre>
+
+<div class="csakdoksi">
+<p>A fenti függvény két könyvet hasonlít össze ábécébe rendezéshez. Igazzal tér 
+vissza, ha a <code>v1</code> pointer által mutatott könyv „kisebb”, mint a 
+<code>v2</code> könyv, azaz előrébb kell legyen az ábécé rendben.</p>
+<p>Az összehasonlításhoz előbb megnézi a szerzőt. Ha <code>k1</code> szerzője 
+előrébb van, mint <code>k2</code>, akkor egyértelmű, hogy <code>k1, k2</code> 
+kell legyen a sorrend. Ha hátrébb, akkor pedig egyértelmű a <code>k2, k1</code> 
+sorrend, ezért hamissal tér vissza (jelezve, hogy nem előrébb van, hanem hátrébb).
+Ha a két szerző egyforma, akkor ugyanígy vizsgálja a címeket.</p> <p>Ezt a 
+függvényt is arra szánjuk, hogy a generikus lista algoritmusainak adhassuk, ezért 
+a paraméterek <code>void*</code>-ok. A változtatás az előzőekhez képest annyi, 
+hogy itt a függvény <code>void const *</code>-okat vett át, jelezve, hogy nem 
+fogja az adatokat változtatni, csak vizsgálni; továbbá van visszatérési értéke 
+is, egy logikai érték.</p>
+</div>
+
+<br class="smallskip">
+
+<p>Így kell használni:</p>
+
+<pre class="brush: c "  >
+lista_rendez(konyveim, abecerend_kisebb);</pre>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Most akkor hol is vannak a könyvek?</h2>
+</div>
+
+<div class="csakeloadas">
+<p>A <code>void*</code> csak pointer, az <em>nem tárol</em> könyvet. A könyvek
+adatai máshol kell legyenek, nem férnek a struktúrába!</p>
+</div>
+
+<p class="csakdoksi">Ha a <code>void*</code> csak pointer (márpedig az :D),
+az azt jelenti, hogy a könyvek adata nem tárolódhat a listaelemeken belül.
+Vagyis valahol lennie kell egy másik memóriaterületnek (vagy memóriaterületeknek),
+ahol a tényleges adatok tárolódnak.</p>
+<br class="smallskip">
+
+<div class="columns">
+<div>
+<img src="ea13/generikus_tombben.svg" style="width: 16em;" class="kozep">
+<div id="konyveimtombbenid">
+<pre class="brush: c "  >
+GenerikusLE *konyveim = NULL;
+Konyv kt[10];
+
+konyveim = beszur(konyveim, (void*)(kt+0));
+konyveim = beszur(konyveim, (void*)(kt+1));
+konyveim = beszur(konyveim, (void*)(kt+2));
+.....
+konyveim = beszur(konyveim, (void*)(kt+9));
+
+/* a könyvek nem a listában vannak! */
+felszabadit(konyveim);</pre>
+</div>
+<div class="kozep"><button data-diapopup="konyveimtombbenid">tömb: kódban</button></div>
+</div>
+<div>
+<img src="ea13/generikus.svg" style="width: 16em;" class="kozep">
+<div id="konyveimmallocid">
+<pre class="brush: c "  >
+GenerikusLE *konyveim = NULL;
+Konyv *k;
+
+k = (Konyv *) malloc(sizeof(Konyv));
+konyveim = beszur(konyveim, (void*) k);
+k = (Konyv *) malloc(sizeof(Konyv));
+konyveim = beszur(konyveim, (void*) k);
+
+/* a könyvek a listá&quot;ban&quot; vannak! */
+for_each(konyveim, free);
+felszabadit(konyveim);</pre>
+</div>
+<div class="kozep"><button data-diapopup="konyveimmallocid">malloc: kódban</button></div>
+</div>
+</div>
+
+<br class="smallskip">
+
+<div class="csakeloadas">
+<p>Fontos: kié a tárolás felelőssége?</p>
+</div>
+
+<p class="csakdoksi">Elképzelhető például az, hogy van valahol egy könyvek
+tömbje, és annak elemeire mutat a generikus lista. Így listaként tudjuk kezelni
+azokat, ami jól jön pl. az előbb bemutatott rendezésnél. Viszont nem tudjuk
+kihasználni a listák igazi előnyét, nevezetesen azt, hogy dinamikusan foglalhatóak
+az elemeik.</p>
+<p class="csakdoksi">A másik megoldás az lehet, ha a dinamikusan foglalt listaelemek
+mellé még külön dinamikusan foglaljuk a könyv struktúrákat. Ilyenkor a listában
+tárolt könyv hivatkozások egyben a dinamikusan foglalt memóriaterületek hivatkozásai
+is! Vagyis ha a listát felszabadítjuk, akkor fel kell szabadítani a könyveket,
+míg a tömbös példa esetén nem volt <code>malloc()</code>, ezért nem kell <code>free()</code>
+sem. Ilyenkor a lista felelőssége a könyvek tárolása, az előbbi esetben pedig nem!
+A könyvek felszabadítása egyébként könnyedén megoldható a <code>for_each()</code>
+függvénnyel, hiszen éppen olyan a fejléce, mint ami nekünk kell: <code>void(*)(void*)</code>.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<h1 class="diacim">Generikus algoritmusok tömbökön</h1>
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>Generikus tömb?</h2>
+</div>
+
+<p class="csakdoksi">Vajon lehet olyan függvényt írni, ami bármilyen tömbön működik?</p>
+
+<p>A pointer aritmetikához ismerni kell a típust:</p>
+
+<pre class="brush: cbub "  >
+int tomb[] = {9, 3, 5, 76, 1, 45, 87}, *pi;
+
+tomb[3] = 7;
+*(tomb+3) = 7;  // ugyanaz
+
+pi = &amp;tomb[3];
+pi = tomb+3;    // ugyanaz</pre>
+
+<br class="smallskip">
+
+<img src="ea13/04.svg" class="float" style="width: 18em;">
+
+<p>A fordító figyelembe veszi a cím számításánál!</p>
+<p>Azonban ez <em>void *</em> esetén nem működhet.</p>
+
+<div class="csakdoksi">
+<p>Amikor az adatok tömbben vannak, a pointer típusának nem csak egy,
+hanem két szerepe is van. Azon felül, hogy ez ad információt arról,
+hogy az adott típust hogyan kell kezelni (nyilván más egy <code>int</code>
+és egy <code>struct Konyv</code>), a típus ismerete a tömbelemek
+címének kiszámításakor is fontos. Innen tudja a fordító azt, hogy mekkora
+egy tömbelem, vagyis a következő elemre lépéshez hány bájtot kell
+ugrani a memóriában. Ezt az információt mindig figyelembe veszi, amikor
+egy tömbelemet indexelünk, vagy a címét számítjuk.</p>
+<p>Ha a tömb elejére mutató pointert <code>void*</code>-gá konvertáljuk,
+akkor nem csak a tömb tartalma válik ismeretlenné, hanem az is, hogy
+az egyes tömbelemek hol helyezkednek el. Míg a generikus lista függvényei
+számára ismert volt, hogyan érje el az egyes adatok pointereit (mert
+az adatszerkezetet adó <code>struct GenerikusLE</code> mindig ugyanaz),
+tömbnél ez nem működhet. A tömb elejére mutató <code>void*</code>
+pointer nem ad semmilyen információt a tömbelemekről.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<div class="slideheader">
+<h2><span class="oldalszam">22</span>Tömbök generikusan – a pointerek kezelése</h2>
+</div>
+
+<p>Egy <code>char*</code> típusú mutatót használva <em>bájtonként</em> lépkedhetünk.<br>
+A <code>sizeof</code> pedig megmondja egy típusról, <em>hány bájtos.</em> <code>char</code>=bájt!</p>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int tomb[5] = { 11, 22, 33, 44, 55 }, i;
+    
+    void *tombvoidp = (void *) tomb;
+    for (i = 0; i&lt;5; ++i) {
+        char *tombeleje = (char *) tombvoidp;       // char=bájt!
+        char *elemcime = tombeleje + i*sizeof(int);
+        int *elem = (int *) elemcime;               // újra int
+        printf(&quot;%d &quot;, *elem);
+    }
+    
+    return 0;
+}</pre>
+
+<p class="csakdoksi">Ahhoz, hogy a mutató aritmetika működjön, a mutatót típussal kell
+ellátni, hiszen ilyenkor az adott típus méretével tolja el a címet. Ha <code>char*</code>
+típusúvá alakítjuk a pointert, akkor bájtonként tudunk lépni, mivel <code>sizeof(char)=1</code>,
+definíció szerint. Ez nem azt jelenti, hogy ott karakterek vannak! Csak másképp nem tudjuk
+megfogalmazni, amit szeretnénk. (Egyes fordítók megengedik azt, hogy <code>void*</code>
+mutatókon használjunk pointer aritmetikát, de ez nem szabványos, úgyhogy inkább
+kerüljük az ilyesmit!)</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Tömbök generikusan – a méret átadása</h2>
+</div>
+
+<p class="csakdoksi"> A probléma megoldható, mégpedig úgy, ha egy generikus tömböt feldolgozó
+algoritmusnak nem csak a tömb kezdőcímét (most <code>void*</code> formában!) és a tömb méretét
+adjuk át, hanem megmondjuk neki az egyes tömbelemek méretét is! Erre nincsen trükkös megoldás,
+egyszerűen közölni kell ezt a számot is az algoritmussal.</p>
+
+<p class="csakdoksi">Nem véletlen, hogy a <code>malloc()</code> függvénynek 
+paraméterként kellett adni a méretet. Ugyanígy, az <code>fread()</code> és 
+<code>fwrite()</code> függvények is meg kell kapják fájlba írt / fájlból olvasott 
+tömb elemszámát <em>és az elemek méretét.</em></p>
+
+<p>
+Az algoritmussal <em>közölni kell:</em>
+<ul>
+   <li>a tömb kezdőcímét: <code>void*</code>, a tömb elemeinek a számát: <code>db</code>,
+   <li>és egy elem méretét: <code>meret</code>. <span class="bubble">!</span>
+</ul>
+</p>
+
+<img src="ea13/05.svg" style="width: 18em;" class="kozep">
+
+<br class="smallskip">
+
+<div class="sticky">Ismerős?</div>
+<pre class="brush: c "  >
+fwrite(void *ptr, size_t meret, size_t db, FILE *fp);</pre>
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>Tömbök generikusan – az elemek kezelése</h2>
+</div>
+
+<p>Egy függvény így lépdelhet végig egy <code>void*</code> tömbön:</p>
+
+<pre class="brush: cbub "  >
+void for_each_tomb(void *t, int db, int elemmeret, 
+                   void (*muvelet)(void *)) {
+   int i;
+   char *bajtptr = (char *) t;  // csak sizeof(char) miatt!
+   for (i = 0; i &lt; db; ++i) {
+      muvelet((void *) bajtptr);
+      bajtptr += elemmeret;     // léptetés
+   }
+}</pre>
+
+<p>A <code>for_each_tomb()</code> használata egy tömb minden elemének a kiírására.</p>
+
+<pre class="brush: c "  >
+void int_kiir(void *vp) { printf(&quot;%d &quot;, *(int *)vp); }
+
+int tomb[] = { 68, 12, 125, 97, 56 };
+for_each_tomb(tomb, 5, sizeof(int), int_kiir);</pre>
+
+
+
+<div class="csakdoksi">
+<p>Komplexebb példa: egy <em>adott feltételt leginkább kielégítő</em> elem 
+keresése. (Legkisebb, legnagyobb, legzöldebb, …) </p>
+
+<pre class="brush: cbub "  >
+void *leg_keres(void *tomb, int db, int meret, 
+                int (*kisebb)(void const *, void const *)) {
+   int i;
+   char *ptr, *eredmeny;         // csak sizeof=1 miatt char!
+
+   eredmeny = (char *)tomb;      // első
+   ptr = (char *)tomb + meret;
+   for (i = 1; i &lt; db; ++i) {
+      if (kisebb((void *) ptr, (void *) eredmeny))
+         eredmeny = ptr;         // többi
+     ptr += meret;
+   }
+
+   return eredmeny;
+}</pre>
+
+<p>A legkisebb elem megkeresése egy tömbben:</p>
+
+<pre class="brush: c "  >
+int kisebb_e(void const *vp1, void const *vp2) {
+   int const *psz1 = (int const *)vp1,
+             *psz2 = (int const *)vp2;
+   return *psz1 &lt; *psz2;
+}
+
+int main(void) {
+   int tomb[5] = {68, 12, 125, 97, 56};
+
+   lk = *((int*)leg_keres(tomb, 5, sizeof(int), kisebb_e));
+   printf(&quot;Legkisebb elem: %d&quot;, lk);
+   return 0;
+}</pre>
+
+<pre class="screenshot">
+Legkisebb elem: 12
+</pre>
+
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>Generikus tömbök: <code>stdio</code>, <code>stdlib</code></h2>
+</div>
+
+<p>A <code>void *</code> technika <em>olyan hasznos,</em> hogy a <em>C könyvtár</em> is alkalmazza:</p>
+
+<pre class="brush: c "  >
+/* fájlkezelés */
+fwrite(void const *ptr, size_t meret, size_t db, FILE *fp);
+fread(void *ptr, size_t meret, size_t db, FILE *fp);</pre>
+
+<pre class="brush: c "  >
+/* dinamikus memóriakezelés */
+void *malloc(size_t meret);
+free(void *ptr);</pre>
+
+<pre class="brush: c "  >
+/* gyorsrendezés, bináris keresés */
+void qsort(void *tomb, size_t db, size_t meret,
+           int (*hasonlit)(void const *, void const *));
+void *bsearch(void const *key, void const *tomb,
+              size_t db, size_t meret,
+              int (*hasonlit)(void const *, void const *));</pre>
+   
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<div class="slideheader">
+<h2><span class="oldalszam">26</span><code>qsort()</code> és <code>bsearch()</code>: hasonlító függvény</h2>
+</div>
+
+<p>
+A <code>qsort()</code> és <code>bsearch()</code> utolsó argumentuma egy
+<em>hasonlító függvény,</em> aminek C-ben szabványos visszatérési értéke van:
+</p>
+
+<div class="sticky">mint a<br><code>strcmp()</code></div>
+<pre>
+hasonlit(a,b) =
+   <em>negatív:</em> ha <em>a &lt; b</em>
+   <em>  nulla:</em> ha <em>a == b</em>
+   <em>pozitív:</em> ha <em>a &gt; b</em>
+</pre>
+
+
+<p>Például egy hasonlító függvény <code>int</code> típusú elemekre:</p>
+
+<pre class="brush: c "  >
+int hasonlit_int(void const *vp1, void const *vp2) {
+   int const *sz1 = (int const *) vp1;
+   int const *sz2 = (int const *) vp2;
+
+   if (*sz1 &gt; *sz2) return 1;
+   if (*sz1 &lt; *sz2) return -1;
+   return 0;
+}</pre>
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span><code>qsort()</code> használata</h2>
+</div>
+
+<p>Egy tömb rendezése <em>qsort</em> segítségével:</p>
+
+<pre class="brush: cbub "  >
+#include &lt;stdlib.h&gt;
+
+int main(void) {
+   int t[6] = {23, 119, 47, -2, 54, 86};
+
+   for_each_tomb(t, 6, sizeof(int), int_kiir);
+   printf(&quot;\n&quot;);
+   qsort(t, 6, sizeof(int), hasonlit_int);
+   for_each_tomb(t, 6, sizeof(int), int_kiir);
+   printf(&quot;\n&quot;);
+
+   return 0;
+}</pre>
+
+<pre class="screenshot">
+23 119 47 -2 54 86
+-2 23 47 54 86 119
+</pre>
+
+<p class="csakdoksi">A <code>qsort()</code> tehát követi a fent leírtakat:
+mivel generikus, tömbökön dolgozó algoritmus, ezért meg kell adni neki
+a tömb elejére mutató pointert (<code>void*</code> típussal), a tömb
+elemszámát és az egyes elemek méretét is. A negyedik paramétere az összehasonlító
+függvény, amelyet meg fogja hívni minden elempárra, amit a rendezés közben
+össze kell hasonlítania.</p>
+
+<p class="csakdoksi">A <code>void*</code>-ként átadott mutatót lehetne
+<code>(void *) t</code> formában írni, kiemelve azt, hogy ott egy mutató
+konvertálásról van szó, de ezt nem szokás megtenni. A pointerek konverziója
+<code>void *</code>-ra, típus nélküli pointerre a C nyelvben automatikus,
+éppen ezek miatt az algoritmusok miatt.</p>
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span><code>bsearch()</code> használata</h2>
+</div>
+
+<p>Keresés a <em>bsearch</em> segítségével:</p>
+
+<pre class="brush: cbub "  >
+int t[] = {23, 119, 47, -2, 54, 86};
+
+/* bináris keresés csak rendezett tömbökön */
+qsort(t, 6, sizeof(int), hasonlit_int);
+
+int minta = 47;
+int *talalt;
+talalt = (int *) bsearch(&amp;minta, t, 6, sizeof(int), hasonlit_int);
+
+if (talalt != NULL)
+   printf(&quot;Megtaláltam, itt van: %p\n&quot;, talalt);
+else
+   printf(&quot;Nincs a tömbben.\n&quot;);</pre>
+
+<p>Adni kell neki egy mintát: hogy néz ki az az elem, amit keresünk.</p>
+
+<p class="csakdoksi">Hogy ugyanazt a hasonlító függvényt lehessen használni,
+mint amit a <code>qsort()</code>-hoz is, a <code>bsearch()</code> úgy van
+megadva, hogy egy mintát is vár tőlünk: első paramétere egy olyan elemre
+mutató pointer kell legyen, amely egy mintául szolgál a kereséshez. Innen
+fogja tudni, hogy néz ki az az elem, amit keresnie kell. A hasonlító függvény
+pedig megmondja neki, hogy a tömbben előre, hátra kell mozogni, esetleg
+megtalálta az adott elemet. Ne feledjuk, bináris keresésről van szó,
+és ezért a tömbnek rendezettnek kell lennie!</p>
+
+<p class="csakdoksi">A visszatérési érték is ahhoz hasonló, mint amit
+megszoktunk: <code>NULL</code> pointer akkor, ha nincs meg az elem. Ha
+megvan, akkor pedig egy nem <code>NULL</code> értékű pointer a találatra.</p>
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<div class="slideheader">
+<h2><span class="oldalszam">29</span>A szokásos hasonlító függvények</h2>
+</div>
+
+<div class="columns">
+<div>
+<pre>
+kisebb(a, b)
+
+    a &lt; b &rarr; logikai igaz
+    a = b &rarr; logikai hamis
+    a &gt; b &rarr; logikai hamis
+</pre>
+<p class="kozep">„kisebb” (less) konvenció</p>
+
+<br class="smallskip">
+
+<pre class="brush: c "  >
+
+
+return a &lt; b;
+
+</pre>
+
+</div>
+<div>
+<pre>
+hasonlit(a, b)
+
+    a &lt; b &rarr; negatív szám
+    a = b &rarr; nulla
+    a &gt; b &rarr; pozitív szám
+</pre>
+<p class="kozep">„strcmp” konvenció</p>
+
+<br class="smallskip">
+
+<pre class="brush: c "  >
+if (a &lt; b)
+    return -1;
+if (a &gt; b)
+    return +1;
+return 0;</pre>
+</div>
+</div>
+
+<p class="csakdoksi">A „kisebb” visszatérési értéke butábbnak tűnik, mint az 
+„strcmp” konvencióban használt. De nem az, csinálható belőle „nagyobb” is (a 
+paraméterek megcserélésével), és csinálható belőle „egyenlő” is: 
+<code>a==b</code> akkor igaz, ha <code>!(a&lt;b) && !(b&lt;a)</code>, mert ha se 
+nem kisebb, se nem nagyobb, csak egyenlőek lehetnek.</p>
+
+
+
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<h1 class="diacim">Unionok</h1>
+
+
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>Unionok – a probléma</h2>
+</div>
+
+<img class="float" style="width: 7em;" src="ea13/alakzatok.svg">
+
+<p>Előfordul, hogy egy <em>stuktúrában többféle, nagyon 
+hasonló elemet</em> szertetnénk tárolni, pl. alakzatokat.</p>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+typedef struct Koord { int x, y; } Koord;
+
+typedef struct Alakzat {
+   Koord p;
+   int szin;
+
+   int sugar;    // körhöz
+   
+   int sz, m;    // téglalaphoz
+   
+   int db;       // sokszöghöz
+   Koord *t;
+} Alakzat;</pre>
+
+<p>Megtehetnénk, hogy <em>beletesszük</em> a struktúrába az <em>összesféle adattagot.</em></p>
+
+<p class="csakdoksi">Azon túl, hogy ez <em>pazarló</em> megoldás, 
+veszélyforrást is rejt a sok <em>értelmetlen adat.</em></p>
+
+
+
+
+
+</div>
+</section>
+<section id="32">
+<div class="slide" id="slide_32">
+<div class="slideheader">
+<h2><span class="oldalszam">32</span>Unionok – a nyelvi elem</h2>
+</div>
+
+<p class="csakdoksi">A <code>union</code> szintaktikailag olyan, mint a <code>struct</code>, de 
+<em>a tagok átlapolódnak.</em> A tagok elérése is úgy történik, mint a struktúráknál: 
+<em>a <code>.</code> operátorral:</em></p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+union {
+   double d;
+   int i;
+} valt;</pre>
+</div>
+<div>
+<pre class="brush: cbub "  >
+valt.i = 19;
+printf(&quot;%g\n&quot;, valt.i);
+valt.d = 3.14;
+printf(&quot;%d\n&quot;, valt.d);</pre>
+</div>
+</div>
+
+<img src="ea13/union.svg" class="kozep" style="width: 22em;">
+
+<p>
+<strong>Fontos:</strong> a union mezői <em>azonos memóriaterületen</em> helyezkednek el.
+Mindig <strong>csak az egyik</strong> érvényes és értelmes!
+</p>
+
+<p class="csakdoksi">Ez azt jelenti, hogy ha a fenti <code>valt</code> változó
+<code>valt.i</code> tagjában tárolunk értéket, akkor a <code>valt.d</code>-ben nem
+tárolhatunk adatot, és azt olvasva értelmetlen számot kapunk (írva pedig elveszítjük
+<code>valt.i</code>-t). Fordítva ugyanez: ha a <code>valt.d</code> értelmes adat,
+akkor <code>valt.i</code>-t nem használhatjuk.</p>
+
+
+</div>
+</section>
+<section id="33">
+<div class="slide" id="slide_33">
+<div class="slideheader">
+<h2><span class="oldalszam">33</span>Unionok – az alakzat</h2>
+</div>
+
+<p class="csakdoksi">De nekünk nem is kell más, mert az alakzat mindig csak egyféle
+lehet! Betesszük ezért az alakzat struktúrájába a közös adattagokat, amelyek
+mindenféle alakzatra érvényesek (pl. pozíció, szín), és egy felsorolt típust, amely
+az alakzat típusát mutatja. Az egyes alakzatfajtákra nézve <em>speciális</em> adattagokat
+pedig betesszük egy <code>union</code>-ba.</p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+typedef enum AlakzatFajta {
+    kor, teglalap, sokszog
+} AlakzatFajta;
+
+typedef struct KorAdat {
+   int r;
+} KorAdat;
+
+typedef struct TeglalapAdat {
+   int sz, m;
+} TeglalapAdat;
+
+typedef struct SokszogAdat {
+   int db;
+   Koord *t;
+} SokszogAdat;</pre>
+</div>
+<div>
+<pre class="brush: cbub "  >
+/* bármilyen fajta alakzat */
+typedef struct Alakzat {
+   /* a típusát mutatja meg */
+   AlakzatFajta fajta;
+    
+   /* közös (általános) */
+   Koord p;
+   int szin;
+
+   /* speciális */
+   union {
+      KorAdat kor;
+      TeglalapAdat teglalap;
+      SokszogAdat sokszog;
+   } spec;
+} Alakzat;</pre>
+</div>
+</div>
+
+<p class="csakdoksi">A körnek csak egy speciális adata van (a surgár), míg a téglalapnak és a sokszögnek
+kettő (a méretek, illetve a dinamikus tömb). Az utóbbiakat egy struktúrába kell tennünk,
+mert azoknak nem szabad átfedniük egymást. A kör/téglalap/sokszög adattagok viszont
+átfedhetik egymást, mert csak az egyiket használjuk.</p>
+
+
+
+
+</div>
+</section>
+<section id="34">
+<div class="slide" id="slide_34">
+<div class="slideheader">
+<h2><span class="oldalszam">34</span>Unionok – alakzatok létrehozása</h2>
+</div>
+
+<pre class="brush: cbub "  >
+Alakzat rajz[2];
+
+rajz[0].fajta = kor;         // kör, (5;8), r=10
+rajz[0].p.x = 5;   rajz[0].p.y = 8;
+rajz[0].spec.kor.r = 10;
+
+rajz[1].fajta = teglalap;    // téglalap, (6;9), 10×12
+rajz[1].p.x = 6;   rajz[0].p.y = 9;
+rajz[1].spec.teglalap.sz = 10;
+rajz[1].spec.teglalap.m = 12;</pre>
+
+<pre class="brush: cbub "  >
+for (i = 0; i &lt; 2; ++i)
+    switch (rajz[i].fajta) {
+        case kor: .......; break;
+        case teglalap: .......; break;
+        .......
+    }</pre>
+
+<p class="csakdoksi">Az alakzatnak így a fajtán, a <code>p</code> ponton
+és a színen kívül még egy adattagja lesz, ez a <code>spec</code> nevű adattag.
+Ez a <code>union</code>, amelyen belül az alakzat fajtájától függően vagy
+a <code>kor</code>, a <code>teglalap</code> vagy a <code>sokszog</code>
+tagot használjuk. Mivel ezek maguk is struktúrák, bármennyi és bárhány
+féle adatot tehetünk beléjük, ami egy körhöz, egy téglalaphoz vagy
+bármi máshoz tartozik.</p>
+
+<p class="csakdoksi">A megoldás rákfenéje a <code>switch()</code>, ami
+előjön minden helyen, ahol alakzatokat dolgozunk fel. Ehelyett
+rakhatnánk függvényre mutató pointert minden alakzatba. Igazán szép
+megoldás erre C++-ban lesz – a következő félévben. Az a nyelv
+<em>objektumorientált,</em> és kifejezetten támogatja az ilyen
+jellegű megoldásokat.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="35">
+<div class="slide" id="slide_35">
+<div class="slideheader">
+<h2><span class="oldalszam">35</span>Unionok – SDL események</h2>
+</div>
+
+<button class="float" data-diapopup="sdlunionrajzid">rajz</button>
+
+<p>Az SDL <em>grafikus program</em> értesítést kap az eseményekről:</p>
+<ul>
+    <li><em>Egér</em> mozgatás, egér kattintás, &hellip;
+    <li><em>Billentyű</em> megnyomás, elengedés, &hellip;
+    <li><em>Ablak</em> átmérezetés, bezárás, &hellip;
+</ul>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+typedef struct {
+  Uint8 type;
+  Uint8 state;
+  SDL_keysym keysym;
+} SDL_KeyboardEvent;
+
+typedef struct {
+  Uint8 type;
+  Uint8 state;
+  Uint16 x, y;
+  Sint16 xrel, yrel;
+} SDL_MouseMotionEvent;</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+typedef union {
+  Uint8 type;
+  
+  SDL_KeyboardEvent key;
+  SDL_MouseMotionEvent motion;
+  SDL_MouseButtonEvent button;
+  SDL_ResizeEvent resize;
+  SDL_QuitEvent quit;
+  
+  … … …
+  
+} SDL_Event;</pre>
+</div>
+</div>
+
+<p class="csakdoksi">Hoppá! Miért tehetjük meg azt, hogy a <code>type</code>,
+az esemény típusát megadó adattagot egy <code>union</code>-ba helyezzük az
+esemény struktúrákkal? Akkor az esemény struktúrák nem csak egymást fogják
+átfedni, hanem a <code>type</code> adattagot is!</p>
+<p class="csakdoksi">Ezért van minden típusú eseményhez tartozó
+struktúra, <code>SDL_KeyboardEvent</code>, <code>SDL_MouseMotionEvent</code>
+stb. elején megismételve a <code>type</code> adattag. A struktúráknál
+garantált az, hogy a legelejére helyezett első adattag az egész struktúra
+memóriaképének az elején, azaz a struktúra kezdetétől nulladik bájton
+fog kezdődni. Szóval ha ezeket az adattagokat helyezzük egymásra a
+<code>union</code>-be, bárhonnan is nézzük, a <code>type</code> tartalma
+értelmes lesz:</p>
+
+<div id="sdlunionrajzid">
+<img class="kozep" src="ea13/sdlunion.svg" style="width: 22em;">
+</div>
+
+<p class="csakdoksi">
+Nem vétünk hibát, bármelyik struktúra <code>type</code>-ját érjük el.
+Akármelyiken keresztül beállítható az egész <code>union</code> type
+adattagja is.
+</p>
+
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea13.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

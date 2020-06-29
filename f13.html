@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: 13. hét: generikus algoritmusok</title>
+<meta property="og:title" content="InfoC :: 13. hét: generikus algoritmusok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Gyakorlófeladatok a 13. előadás anyagához kapcsolódóan.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Gyakorlófeladatok a 13. előadás anyagához kapcsolódóan.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<script>infoc.onloads.push(function(){ h3toid(); });
+</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="f13.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">13. hét: generikus algoritmusok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Nagy Gergely, Pohl László · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Gyakorlófeladatok a 13. előadás anyagához kapcsolódóan.</p>
+</div>
+
+
+<p>Ezen az oldalon rengeteg feladat található a gyakorláshoz. Egy részük megoldással együtt, míg 
+a többi anélkül. A gyakorlófeladatok megoldásához elvileg elegendő az az ismeretanyag, amely az előadáson 
+szerepelt. Természetesen a megoldás kitalálásához szükség lehet arra a rálátásra és 
+tapasztalatra, amit a gyakorlatok és a laborok adnak. A feladatok témakörök szerinti 
+csoportosítása viszont ettől függetlenül az előadást követi.</p>
+
+<p>Felhívjuk a figyelmed arra, hogy a megoldások olvasgatása lényegében nulla 
+tapasztalatot és gyakorlatot ad, így az eredményes számonkérésekhez nem tud hozzásegíteni! A 
+megoldásokat akkor nézd csak meg, ha a saját megoldás elkészítése közben elakadsz.
+Lásd <a href="tanacsok.html">itt</a>.</p>
+
+
+<h3>Függvénypointerek tömbje</h3>
+<div class="sticky">Vizsga beugró volt</div>
+<p>Definiálj olyan 3 elemű tömböt, amely olyan mutatókat tartalmaz, melyek a fenti feladat 
+függvényére mutathatnak! </p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+/* így néz ki a függvény, amiről szó van */
+int fv(int *t, int meret);
+
+/* így néz ki egy, a fenti típusú függvényre mutató pointer */
+/* a neve lesz a pointer neve; elé csillag, és zárójelbe. */
+int (*pfv)(int *t, int meret);
+
+/* ha ezekből kell egy 3 elemű tömb, akkor nem egy pfv pointer
+   van, hanem egy három elemű tpfv tömb. a paraméterek nevei
+   természetesen itt is, és eggyel feljebb is elhagyhatóak,
+   vagyis mindkét lenti sor egyformán jó. */
+
+int (*tpfv[3])(int *t, int meret);          /* &lt;- ez a megoldás */
+int (*tpfv[3])(int *, int);                 /* &lt;- vagy ez is jó */</pre>
+
+<p>Ugyanúgy kell mindent deklarálni, ahogy használni fogjuk! <code>tpfv</code> az egy tömb, amit 
+ha megindexelünk <code>[3]</code>, akkor kapunk egy pointert <code>*</code>, ami egy <code>(int 
+*, int)</code> paraméterű függvényre mutat, amit meghívva egy <code>int</code> a visszatérési 
+értéke.</p>
+
+<p>A <code>(*pfv)</code> köré azért kell a zárójel, mert nélküle <code>int *</code> pointerrel 
+visszatérő függvény lenne, nem pedig pedig függvényre mutató pointer:</p>
+
+<pre class="brush: c "  >
+int *fv(int*, int);         /* int* függvény */
+int (*pfv)(int*, int);      /* int függvényre mutató ptr */</pre>
+
+</div>
+</div>
+
+
+
+
+<h3>foreach()</h3>
+<p>Írj függvényt, amely átvesz egy <code>int</code> típusú elemekből álló tömböt, annak méretét, 
+valamint egy olyan függvényt, amely egy <code>int</code> paramétert vár és visszatérési értéke 
+<code>void</code>. A megírandó függvény járja végig a tömböt és minden elemére hívja meg a 
+paraméterként átvett függvényt!</p>
+
+
+<h3><code>qsort()</code> valós számok tömbjére</h3>
+<p>A <code>qsort()</code> könyvtári függvény generikus, segítségével bármilyen típusú adatok 
+rendezhetőek a quicksort algoritmussal. A rendezéshez az adott, általunk használt adattípushoz 
+készítenünk kell egy összehasonlító függvényt. Készíts egy olyan függvényt, amelyik 
+<code>double</code> típusú számok összehasonlításához használható a <code>qsort()</code>-hoz. 
+Mutasson példát, hogyan kell használni a függvényt!</p>
+
+
+
+<h3><code>qsort()</code> pontok tömbjére</h3>
+<p>Adott a következő, pontok koordinátáit tároló rekord:
+<pre class="brush: c "  >
+struct pont {
+    double x;
+    double y;
+};</pre>
+<p>Egy ilyenekből álló tömböt szeretnénk rendezni úgy, hogy az origótól lévő távolságuk szerint 
+növekvő sorrendben legyenek. A rendezéshez a <code>qsort()</code> könyvtári függvényt használjuk. 
+Írd meg az ennek negyedik paraméterében használható összehasonlító függvényt.</p>
+
+
+
+<h3>Sztringek visszafelé</h3>
+<p>Írj összehasonlító függvényt a <code>qsort()</code> számára, amellyel sztringek visszafelé 
+(csökkenő) sorrendbe rendezhetőek! Mi erre a legegyszerűbb megoldás?</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>A <code>strcmp()</code> visszatérési értéke pozitív vagy negatív,
+nagyobb vagy kisebb sztring esetén. Ezt negálva megfordul a sorrend:</p>
+<pre class="brush: c "  >
+int strcmp_neg(void const *pa, void const *pb) {
+    return -1 * strcmp((char const *) pa, (char const *) pb);
+}</pre>
+<p>Még rövidebb megoldáshoz jutunk, ha fordítva adjuk neki a paramétereket,
+hiszen ha <code>a&lt;b</code>, akkor <code>b&gt;a</code>:</p>
+<pre class="brush: c "  >
+int strcmp_neg(void const *pa, void const *pb) {
+    return strcmp((char const *) pb, (char const *) pa);
+}</pre>
+</div>
+</div>
+
+
+
+<h3>Numerikus integrálás</h3>
+<p>Tekintsünk egy valós, egyváltozós függvényt, például:
+<pre class="brush: c "  >
+double fv(double x) {
+    return x*x + 2*x + 5;
+}</pre>
+
+<p>Írj C függvényt, amelyik trapéz-módszerrel numerikus integrálást végez. Visszatérési értéke 
+legyen az integrál értéke; paraméterei az integrálandó függvény, az intervallum és a lépésköz.</p>
+
+
+<h3>Egyenlet megoldása</h3>
+<p>Készíts függvényt, ami egy folytonos függvény nullahelyét megkeresi egy adott intervallumban, 
+intervallumfelezéssel. A függvény paraméterként kapja az intervallumot, amelyben keres, és a 
+függvény pointerét. Építsen be egy hibahatárt, amelyen belül a nullahelyet megtaláltnak tekinti. 
+A függvény a nullahely valós értékével térjen vissza.</p>
+
+
+<h3>Generikus lista és fa</h3>
+
+<p>A láncolt lista és a bináris fa példák olyan adatszerkezetekre, amelyekre minden programnak 
+szüksége lehet. Ezek kezelésének módja (például listaelem beszúrása) független attól, hogy 
+milyen adatokat tartalmaznak.</p>
+
+<p>Deklarálj olyan listát, amely típus nélküli mutató segítségével tetszőleges adatot képes 
+tárolni! Írj függvényeket, amelyek a lista elejére, végre fűznek egy elemet, illetve egy 
+megadott elemet törölnek a listából!</p>
+
+<p>Végezd el ugyanezt bináris fára is! A beszúráskor végzendő összehasonlításhoz vegyél át egy 
+függvényt, amely összehasonlítja a két beszúrandó adatot, és amelynek a visszatérési értéke 
+hasonlít az <code>strcmp()</code>-éhez!</p>
+<nav><div id="tartalom"></div></nav>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="f13.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

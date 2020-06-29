@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Az algoritmusok elemei</title>
+<meta property="og:title" content="InfoC :: Az algoritmusok elemei">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Algoritmusok elemei: vezérlési szerkezetek, if, while, for.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Algoritmusok elemei: vezérlési szerkezetek, if, while, for.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+<script src="ea02/pszeudo.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea02.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="eavezerles" class="namer"></a>
+<h1 class="eloadascim">Az algoritmusok elemei</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Algoritmusok elemei: vezérlési szerkezetek, if, while, for.</p>
+</div>
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea02.html#1">Emlékeztető: C program</a>
+<li><a href="ea02.html#2">A(z imperatív) programok működése</a>
+<li><a href="ea02.html#3"><em>A vezérlési szerkezetek</em></a>
+<li><a href="ea02.html#4">Elemi lépések</a>
+<li><a href="ea02.html#5">Szekvencia: egymás utáni lépések</a>
+<li><a href="ea02.html#6">Szekvencia: szám négyzete</a>
+<li><a href="ea02.html#7">Programok egynél több lépésből – hogyan?</a>
+<li><a href="ea02.html#8">Programvezérlés: lehetőségek</a>
+<li><a href="ea02.html#9">Elágazás: feltételes végrehajtás</a>
+<li><a href="ea02.html#10">Elágazás: páros vagy páratlan</a>
+<li><a href="ea02.html#11">Elágazás: pozitív, nulla vagy negatív</a>
+<li><a href="ea02.html#12">Ciklus: számok 1-től 10-ig</a>
+<li><a href="ea02.html#13">Ciklus: folyamatábra és struktogram</a>
+<li><a href="ea02.html#14">Ciklus: számok kiírása</a>
+<li><a href="ea02.html#15">Ciklus: Hérón módszere – feladat</a>
+<li><a href="ea02.html#16">Ciklus: Hérón módszere – megoldás</a>
+<li><a href="ea02.html#17">Ciklusok: tudnivalók</a>
+<li><a href="ea02.html#18">Ciklusszervezés: áttekinthetőség!</a>
+<li><a href="ea02.html#19">Ciklus: számlálásos változat</a>
+<li><a href="ea02.html#20">Vezérlési szerkezetek: összefoglalás</a>
+<li><a href="ea02.html#21">Vezérlési szerkezetek kombinációja</a>
+<li><a href="ea02.html#22"><em>C forráskódok</em></a>
+<li><a href="ea02.html#23">Szintaxis (syntax)</a>
+<li><a href="ea02.html#24">EBNF: Extended Backus-Naur Form</a>
+<li><a href="ea02.html#25">A C nyelv elemei</a>
+<li><a href="ea02.html#26">Utasítások fajtái a C nyelvben</a>
+<li><a href="ea02.html#27">Kifejezés utasítások</a>
+<li><a href="ea02.html#28">Változódefiníciók</a>
+<li><a href="ea02.html#29">Vezérlési szerkezet: <code>if()</code> elágazás</a>
+<li><a href="ea02.html#30">Vezérlési szerkezet: <code>while()</code> ciklus</a>
+<li><a href="ea02.html#31">Elöltesztelő ciklus: Hérón módszere (példa)</a>
+<li><a href="ea02.html#32">Vezérlési szerkezet: <code>for()</code> ciklus</a>
+<li><a href="ea02.html#33"><code>while()</code> és <code>for()</code> ciklus: összehasonlítás</a>
+<li><a href="ea02.html#34">A kód tördelése – „indentálás”</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Emlékeztető: C program</h2>
+</div>
+
+<div class="columns c6040">
+<div>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    double a, b, osszeg;
+
+    printf(&quot;Összeadó\n\n&quot;);
+    printf(&quot;a = &quot;);
+    scanf(&quot;%lf&quot;, &amp;a);
+    printf(&quot;b = &quot;);
+    scanf(&quot;%lf&quot;, &amp;b);
+    printf(&quot;\n&quot;);
+
+    osszeg = a+b;
+    printf(&quot;a+b = %f\n&quot;, osszeg);
+
+    return 0;
+}</pre>
+</div>
+<div>
+<pre class="screenshot">
+Összeadó
+
+a = 1.2
+b = 2.5
+
+a+b = 3.700000
+</pre>
+<p>
+A program kér két számot, és kiírja az összegüket.
+</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A(z imperatív) programok működése</h2>
+</div>
+
+<blockquote>
+    <h3>Mit csinál a program?</h3>
+    <ul>
+        <li>A program <em>kifejezésekkel</em> kiszámol <em>értékeket</em>.
+        <li>Ezeket eltárolhatja <em>változókba</em> vagy kiírhatja a <em>kimenetére</em>.
+        <li>A számítások sorrendjét a <em>vezérlési szerkezetek</em> adják meg.
+    </ul>
+</blockquote>
+
+<br class="smallskip">
+
+<pre class="kozep boxdrawing" style="line-height: 1; width: 10ex;">
+3211 │ 13
+&nbsp;247 │ 13
+&nbsp;&nbsp;19 │ 19
+&nbsp;&nbsp;&nbsp;1 │ &nbsp;&nbsp;
+</pre>
+
+<p class="csakdoksi">Például egy prímtényezős felbontás algoritmusában nem mondhatjuk
+azt, hogy „oszd el a számot a legkisebb prímszámmal”. Legalábbis amíg nem mondtuk meg azt,
+nem raktuk össze kiértékelésekből és értékadásokból, hogy hogyan lehet <em>megkeresni</em>
+a legkisebb prímszámot, ami osztja a bal oldalit.</p>
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<h1 class="diacim">A vezérlési szerkezetek</h1>
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Elemi lépések</h2>
+</div>
+
+<h3>Elemi lépések, műveletek a számítógépen</h3>
+<ul>
+  <li>Kiírunk valamit a képernyőre
+  <li>Adatot kérünk a felhasználótól
+  <li>Kiszámolunk valamit
+  <li>Értéket adunk egy változónak
+  <li>…
+</ul>
+
+<br class="smallskip">
+
+<h3>Egyszerű program</h3>
+
+<pre>
+PROGRAM
+    KIÍR: "Helló, világ!" <span class="bubble">egyetlen elemi lépés</span>
+PROGRAM VÉGE
+</pre>
+
+<p class="csakdoksi">A legegyszerűbb program egyetlen elemi lépésből áll, egyetlen
+tevékenységből. Az egy lépésből megoldható feladatoknál persze szinte mindegyik
+bonyolultabb. Ha több lépésünk van, meg kell mondanunk, <em>milyen sorrendben</em>
+szeretnénk azokat a lépéseket elvégezni.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Szekvencia: egymás utáni lépések</h2>
+</div>
+
+<div class="columns">
+<div>
+    <img class="kozep" src="ea02/folyamatszekv.svg" style="width: 7em;" alt="Szekvencia folyamatábrán">
+    <div class="kozep">folyamatábra (flow chart)</div>
+</div>
+<div>
+    <img class="kozep" src="ea02/struktogramszekv.svg" style="width: 7em;" alt="Szekvencia struktogramon">
+    <div class="kozep">struktogram (structogram)</div>
+</div>
+</div>
+
+<p class="csakdoksi">A programok vezérlési szerkezetét grafikusan is megadhatjuk.
+A folyamatábra és a struktugram ennek két elterjedt módja. A folyamatábrán
+a nyilak mutatják a lépések sorrendjét, a struktogramon pedig fentről lefelé
+kell haladni, mint egy forráskódban.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Szekvencia: szám négyzete</h2>
+</div>
+
+<h3>Program</h3>
+
+<pre>
+<button id="szekvkovetkezo" class="float">léptet</button>PROGRAM
+<span class="sor" id="szekv1">    KIÍR: "Kérem a számot!"    </span>
+<span class="sor" id="szekv2">    BEOLVAS: a    </span>
+<span class="sor" id="szekv3">    a = a·a    </span>
+<span class="sor" id="szekv4">    KIÍR: a    </span>
+PROGRAM VÉGE
+</pre>
+
+<br class="smallskip">
+
+<h3>Működés</h3>
+<div class="columns c2080">
+<div>
+<pre>
+
+a: <span id="szekva"></span>
+
+</pre>
+</div>
+<div>
+<pre class="screenshot" id="szekvscreenshot">
+
+
+
+</pre>
+</div>
+</div>
+
+<p class="csakdoksi">Mire használjuk itt a változót? Arra, hogy megjegyezzük
+a felhasználótól származó értéket – és később a négyzetét.</p>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Programok egynél több lépésből – hogyan?</h2>
+</div>
+
+<img class="float" src="ea02/spagetti.png" style="width: 12.5em;" alt="Spagetti kód">
+
+<br class="smallskip">
+
+<p>A gyakorlaton szerepeltek algoritmusok: prímtényezős felbontás, rendezés, számlálás…</p>
+<ul>
+    <li>A pszeudokódot szabadosan adtuk meg:
+       <ul>
+           <li>Beszámoztuk a sorokat
+           <li>„Ugorj az 5. sorra”
+           <li>„Ha x&lt;7, folytasd a 14. sornál”…
+       </ul>
+    
+    <li>Az ilyet úgy hívják, <em>spagetti kód</em>
+    <li>Az ugrásoktól <em>áttekinthetetlen</em> lesz a program
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>Programvezérlés: lehetőségek</h2>
+</div>
+
+<blockquote>
+<h3>Strukturált programok (structured programs)</h3>
+<ul>
+    <li>Amelyek <em>szekvenciából,</em> <em>elágazásból</em> és <em>ciklusból</em> épülnek fel
+    <li>Matematikailag bizonyított: minden megoldható így
+    <li>Tapasztalat: sokkal jobban, mint spagetti kóddal!
+</ul>
+</blockquote>
+
+<br class="smallskip">
+
+<img class="float" src="ea02/folyamatfeltetel.svg" style="height: 10em;" alt="Feltétel folyamatábrán">
+
+<p><em>Programvezérlés</em> (control flow): az utasítások végrehajtásának sorrendje</p>
+<ul>
+    <li class="csakeloadas"><em>Vezérlési szerkezetek</em> (control structure)
+    <li class="csakdoksi">Alapvetően egymás után, de ez megváltoztatható <em>vezérlési szerkezetekkel</em> (control structure)
+    <li class="csakeloadas"><em>Vezérlésátadó utasítások</em> (control flow statement)
+    <li class="csakdoksi">Speciális programbeli utasítások tartoznak hozzájuk: ezek a <em>vezérlésátadó utasítások</em> (control flow statement)
+</ul>
+
+<p class="csakdoksi">
+A vezérlési szerkezetek lényege az, hogy valamilyen döntés (egy feltétel teljesülése)
+alapján máshol folyatódik általuk a program végrehajtása – nem a pszeudokódban következő utasításnál.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<div class="slideheader">
+<h2><span class="oldalszam">9</span>Elágazás: feltételes végrehajtás</h2>
+</div>
+
+<p><em>Feladat: </em>Írjunk programot, amely kér egy számot a felhasználótól.<br>
+Mondja meg, hogy páros-e vagy nem.</p>
+
+<br class="smallskip">
+
+<p>A programsorok végrehajtása <em>feltételhez (igazságértékhez) köthető.</em>
+
+<div class="columns">
+<div>
+    <img class="kozep" src="ea02/folyamatfeltetel.svg" style="height: 10em;" alt="Feltétel folyamatábrán">
+</div>
+<div>
+    <img class="kozep" src="ea02/struktogramfeltetel.svg" style="height: 10em;" alt="Feltétel struktogramon">
+</div>
+</div>
+
+<br class="smallskip">
+
+<p class="csakeloadas"><em>Fogalmak:</em> elágazás (conditional), feltétel (condition, predicate), igaz ág (consequent), hamis ág (alternative).</p>
+
+<dl class="csakdoksi">
+    <dt>Elágazás</dt><dd>Az egész vezérlési szerkezet, amelyben egy bizonyos programrészlet végrehajtását feltételhez köthetjük.</dd>
+    <dt>Feltétel</dt><dd>A logikai kifejezés, amelynek igaz/hamis voltától függ, hogy végrehajtódik-e az adott programrészlet.
+        Ez egy ún. <em>igazságértékre alapozott</em> választás.</dd>
+    <dt>Igaz ág, következmény</dt><dd>Az a programrészlet, amely akkor hajtódik végre, ha a feltétel igaz volt.</dd>
+    <dt>Hamis ág, „else” ág</dt><dd>Ez akkor hajtódik végre, ha a feltétel hamis volt.</dd>
+</dl>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span>Elágazás: páros vagy páratlan</h2>
+</div>
+
+<h3>Program</h3>
+
+<pre>
+<button id="feltbkovetkezo" class="float">léptet</button>PROGRAM
+<span class="sor" id="feltb1">    BEOLVAS: szam    </span>
+<span class="sor" id="feltb2">    HA szam/2 maradéka 0, AKKOR    </span>
+<span class="sor" id="feltb3">        KIÍR: "páros"    </span>         <span class="bubble">ha teljesül</span>
+    EGYÉBKÉNT
+<span class="sor" id="feltb4">        KIÍR: "páratlan"    </span>     <span class="bubble">ha nem teljesül</span>
+    FELTÉTEL VÉGE
+PROGRAM VÉGE
+</pre>
+
+<br class="smallskip">
+
+<h3>Működés</h3>
+
+<div class="columns c2080">
+<div>
+<pre>
+
+szam: <span id="feltba"></span>
+
+</pre>
+</div>
+<div>
+<pre class="screenshot" id="feltbscreenshot">
+
+
+
+</pre>
+</div>
+</div>
+
+<p class="csakdoksi">A szám/2 maradékának vizsgálata után a program végrehajtása
+az elágazás igaz vagy hamis ágában folytatódik. Így a kettő közül mindig
+csak az egyik felirat íródik ki.</p>
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span>Elágazás: pozitív, nulla vagy negatív</h2>
+</div>
+
+<p class="csakdoksi">Ez a programrész megnézi, hogy egy szám pozitív, nulla vagy negatív.
+Mire jó ez? Pl. egy másodfokú egyenlet diszkussziójához használható. Ha a diszkrimináns pozitív,
+két valós megoldás van. Ha nulla, akkor csak egy. Ha negatív, egy sem.</p>
+
+<div class="columns">
+
+<div>
+<img src="ea02/poznullaneg.svg" class="kozep" style="width: 15em;" alt="Pozitív, nulla, negatív: folyamatábra">
+</div>
+
+<div>
+<pre style="line-height: 1.2;">
+<button id="feltckovetkezo" class="float">léptet</button>PROGRAM
+<span class="sor" id="feltc1">    BEOLVAS: szam    </span>
+
+<span class="sor" id="feltc2">    HA szam &gt; 0, AKKOR    </span>
+<span class="sor" id="feltc3">        KIÍR: "pozitív"    </span>
+    FELTÉTEL VÉGE
+
+<span class="sor" id="feltc4">    HA szam = 0, AKKOR    </span>
+<span class="sor" id="feltc5">        KIÍR: "nulla"    </span>
+    FELTÉTEL VÉGE
+
+<span class="sor" id="feltc6">    HA szam &lt; 0, AKKOR    </span>
+<span class="sor" id="feltc7">        KIÍR: "negatív"    </span>
+    FELTÉTEL VÉGE
+PROGRAM VÉGE
+</pre>
+
+</div>
+
+</div>
+
+<pre class="screenshot" id="feltcscreenshot">
+
+
+</pre>
+
+<p class="csakdoksi">Az elágazásoknál fontos látni azt, hogy akár teljesül a 
+feltétel, akár nem, a program folytatása mindenképp az elágazás utáni műveletnél 
+lesz. A folyamatábra jól mutatja azt a pontot, ahol újra összeérnek a nyilak.</p>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<div class="slideheader">
+<h2><span class="oldalszam">12</span>Ciklus: számok 1-től 10-ig</h2>
+</div>
+
+
+<p>
+<em>Feladat:</em> írjunk programot, amelyik növekvő sorban kiírja a számokat.
+</p>
+
+<div class="sticky">sorminta<br>:-(</div>
+<pre class="editable">
+KIÍR: 1
+KIÍR: 2
+KIÍR: 3
+…
+KIÍR: 8
+KIÍR: 9
+KIÍR: 10
+</pre>
+
+<br class="smallskip">
+
+<h3>Probléma</h3>
+
+<ul>
+    <li>Egyrészt: kipontozás? Ez nem szép megoldás.
+        <button data-diapopup="sormintadiv">Sorminta!</button>
+    <li>Másrészt: mi van akkor, ha a felhasználó kellene megmondja, meddig kellenek a számok?
+        <em>A program forráskódja nem függhet a bemenetétől!</em>
+</ul>
+
+<div id="sormintadiv">
+    <br class="smallskip">
+    <img class="kozep arnyek" src="ea02/sorminta.jpg" style="width: 26em;" alt="Sorminták – máshol tök jó, programozásban ne">
+    <div class="kozep">A programozásban inkább ne!</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>Ciklus: folyamatábra és struktogram</h2>
+</div>
+
+<p>
+<em>Ciklus (loop):</em> programrész ismétlése, amíg egy feltétel fennáll
+</p>
+
+<div class="columns">
+<div>
+    <img class="kozep" src="ea02/folyamatciklus.svg" style="height: 16em;" alt="Ciklus folyamatábrán">
+</div>
+<div>
+    <img class="kozep" src="ea02/struktogramciklus.svg" style="height: 16em;" alt="Ciklus struktogramon">
+</div>
+</div>
+
+<p class="csakeloadas"><em>Fogalmak:</em> ciklusmag (loop body), ciklusfeltétel (loop condition), iteráció (iteration), ciklusváltozó (iterator).</p>
+
+<dl class="csakdoksi">
+    <dt>Ciklusmag, ciklustörzs</dt><dd>Az ismételt utasítás(ok).</dd>
+    <dt>Ciklusfeltétel</dt><dd>A kifejezés igaz/hamis értéke alapján eldől, hogy végrehajtódik-e a ciklus törzse.</dd>
+    <dt>Iteráció</dt><dd>A ciklustörzs egy végrehajtása a program futása közben.</dd>
+    <dt>Ciklusváltozó, iterátor</dt><dd>A ciklust vezérlő változó, ha van ilyen (ebben a példában az <code>i</code>).</dd>
+    <dt>Elöltesztelő ciklus (pre-test loop)</dt><dd>A feltételt a ciklustörzsbe lépés <em>előtt</em> ellenőrizzük.</dd>
+</dl>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>Ciklus: számok kiírása</h2>
+</div>
+
+<pre>
+<button id="ciklakovetkezo" class="float">léptet</button>PROGRAM
+<span class="sor" id="cikla1">    KIÍR: "Meddig írjam ki?"    </span>
+<span class="sor" id="cikla2">    BEOLVAS: n    </span>
+
+<span class="sor" id="cikla3">    i = 1    </span>
+<span class="sor" id="cikla4">    CIKLUS AMÍG i ≤ n    </span>
+<span class="sor" id="cikla5">        KIÍR: i    </span>
+<span class="sor" id="cikla6">        i = i+1    </span>
+    CIKLUS VÉGE
+
+<span class="sor" id="cikla7">    KIÍR: "."    </span>
+PROGRAM VÉGE
+</pre>
+
+<div class="columns c7030">
+<div>
+<pre class="screenshot" id="ciklascreenshot">
+
+
+</pre>
+</div>
+<div>
+<pre>
+i: <span id="ciklai"></span>
+n: <span id="ciklan"></span>
+</pre>
+</div>
+</div>
+
+<p class="csakdoksi">Itt mire jó a változó? Azzal tudjuk elérni azt, hogy a ciklus törzsében 
+lévő kiírás utasítás mindig más számot írjon a képernyőre! Azzal számoljuk, hogy éppen hol 
+tartunk.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>Ciklus: Hérón módszere – feladat</h2>
+</div>
+
+<p><em>Feladat:</em> számoljuk ki a felhasználó által megadott szám négyzetgyökét Hérón 
+módszerével (babilóniai módszer).</p>
+
+<br class="smallskip">
+
+<h3>A módszer</h3>
+<p>Adott: szám; keressük: gyök<sup>2</sup>=szám.</p>
+<ul>
+    <li>Tippelünk egy gyököt!
+    <li>A megoldás valahol <em>tipp és szám/tipp között</em> van.
+        <br><span class="csakdoksi">(Miért? Mert Ha tipp&lt;gyök, akkor szám/tipp&gt;gyök.
+            Ha pedig tipp&gt;gyök, akkor szám/tipp&lt;gyök. A tipp=gyök esetben adódik
+            tipp és szám/tipp pont egyenlőnek.)</span>
+    
+    <li>Ezért az új tipp legyen (tipp&nbsp;+&nbsp;szam/tipp)/2.
+        <br><span class="csakdoksi">(Ez is a kettő között van, tehát jobb tipp kell legyen,
+        mint az előbbi.)</span>
+    <li>Ezt ismételgessük, amíg a különbség kellően kicsi nem lesz!
+</ul>
+
+<img class="kozep" src="ea02/szamegyenes.svg" style="width: 22em;" alt="Hérón módszere számegyenesen">
+
+<p class="megjegyzes csakdoksi">Ezt a módszert alexandriai Hérón találta ki – 
+ugyanaz a Hérón, aki a háromszög területének kiszámítására használható képletet 
+is. Ugyanazt elmondhatjuk tehát a programozásról, mint sok másik tudományról:
+„már a régi görögök is”.</p>
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Ciklus: Hérón módszere – megoldás</h2>
+</div>
+
+<pre>
+<button id="ciklbkovetkezo" class="float">léptet</button>PROGRAM
+<span class="sor" id="ciklb1">    szam = 2    </span>
+<span class="sor" id="ciklb2">    tipp = 1    </span>
+<span class="sor" id="ciklb3">    CIKLUS AMÍG |tipp - szam/tipp| &gt; 0.001    </span>
+<span class="sor" id="ciklb4">        tipp = (tipp + szam/tipp)/2    </span>
+    CIKLUS VÉGE
+<span class="sor" id="ciklb5">    KIÍR: "A keresett gyök: ", tipp    </span>
+PROGRAM VÉGE
+</pre>
+
+<br class="smallskip">
+
+<div class="columns c6040">
+<div>
+<img class="kozep" src="ea02/gyokvonas.svg" style="width: 12em;" alt="Hérón módszere - közelítés">
+</div>
+<div>
+<pre>
+szam:      <span id="ciklbszam"></span>
+tipp:      <em><span id="ciklbtipp"></span></em>
+
+szam/tipp: <em><span id="ciklbszampertipp"></span></em>
+különbség: <span id="ciklbtippminusz"></span>
+átlag:     <span id="ciklbatlag"></span>
+</pre>
+</div>
+</div>
+
+<p class="csakdoksi">A végrehajtás a ciklus belsejébe ugrik, ha a tipp nem elég jó.
+A finomítás után pedig visszaugrik a ciklusfeltétel ellenőrzésére: mivel a finomítás
+által a tipp megváltozott, az „elég jó-e már?” vizsgálat eredménye is hamis értékről
+igaz értékre változhatott!</p>
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<div class="slideheader">
+<h2><span class="oldalszam">17</span>Ciklusok: tudnivalók</h2>
+</div>
+
+<img src="ea02/folyamatciklusfekete.svg" class="float" style="width: 8em;" alt="Egy ciklus folyamatábrája">
+
+<br class="smallskip">
+
+<h3>Ciklusfeltételek</h3>
+<ul>
+    <li>A ciklus <em>bennmaradási feltétele</em> logikai kifejezés
+    <li><em>Újra és újra kiértékelődik</em> minden iterációban
+    <li class="csakdoksi">Ha teljesül, végrehajtódik a törzs, ha nem, a ciklus után folytatódik a program
+</ul>
+
+<br class="smallskip">
+
+<h3>Hányszor hajtódnak végre?</h3>
+<ul>
+    <li>Ahányszor a <em>feltétel</em> teljesül.
+    <li>Ez lehet 0 is: a törzs egyszer sem hajtódik végre
+    <li>A feltétel előbb-utóbb hamissá kell váljon, különben <em>végtelen ciklus</em> (infinite loop) keletkezik
+</ul>
+
+<p class="csakdoksi">A feltétel hamissá kell váljon előbb-utóbb: praktikusan ez azt is jelenti,
+hogy a ciklusváltozónak, ha van, az egyes iterációk között változnia kell.
+Különben ugyanaz marad az értéke, és a ciklus feltételének igazságértéke
+sem fog változni! Ha nincs olyan utasítás a ciklusban, amely a ciklusváltozó
+értékét változtatja, az gyanús.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>Ciklusszervezés: áttekinthetőség!</h2>
+</div>
+
+<p>Számok kiírása 1-től 10-ig:</p>
+<div class="columns">
+<div>
+<pre>
+<strong>i = 1</strong>
+
+CIKLUS AMÍG <strong>i ≤ 10</strong>
+
+    KIÍR: i
+
+    <strong>i = i+1</strong>
+
+CIKLUS VÉGE
+</pre>
+<div class="kozep">jól megírt</div>
+</div>
+<div>
+<pre>
+<strong>i = 0</strong>  <span class="bubble"><span class="mono">:(</span></span>
+
+CIKLUS AMÍG <strong>i ≤ 9</strong>  <span class="bubble"><span class="mono">:(</span></span>
+
+    <strong>i = i+1</strong>
+
+    KIÍR: i  <span class="bubble"><span class="mono">:(</span></span>
+
+CIKLUS VÉGE
+</pre>
+<div class="kozep">rossz, követhetetlen</div>
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>Ha áttekinthetően szeretnénk ciklust írni, akkor érdemes a bal oldalt látható sémát megtartani. Az ismérvek:</p>
+<ul>
+    <li>A ciklus előtt <em>közvetlenül</em> a ciklusváltozó inicializálása szerepel.
+        Ez lesz az első iterációban az értéke, tehát ez az első feldolgozott elem.
+    <li>A ciklustörzsben <em>elöl</em> a teendők szerepelnek. Mivel ez elöl van, ezért
+        a ciklusváltozó értéke az első iterációban éppen a cikluson kívül beállított
+        érték, vagyis az első elem! (Különben a ciklusváltozót olyan értékre kellene
+        inicializálni, amit aztán nem dolgozunk fel, ahogyan az a bal oldalon is látszik.)
+    <li>A ciklustörzs <em>végén</em> az utasítás, amely lép a következő elemre.
+        Ez változtatja a ciklusváltozót.
+        Utána már nem írunk semmit, hiszen akkor egy iteráción belül
+        némely utasítások még a régi, némelyek pedig már az új értékére vonatkoznának.
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Ciklus: számlálásos változat</h2>
+</div>
+
+
+<div class="columns c4060">
+
+<div>
+<h3>„Amíg” (while) ciklus</h3>
+
+<pre>
+<strong>i = 1</strong>
+CIKLUS AMÍG <strong>i ≤ 10</strong>
+    KIÍR: i
+    <strong>i = i+1</strong>
+CIKLUS VÉGE
+</pre>
+</div>
+
+<div>
+<h3>Számlálásos ciklus</h3>
+
+<pre>
+
+CIKLUS <strong>i = 1</strong>-től, <strong>i ≤ 10</strong>-ig, <strong>+1</strong>-esével
+    KIÍR: i
+
+CIKLUS VÉGE
+</pre>
+</div>
+
+</div>
+
+<ul>
+<li>Ez nagyon gyakori fordulat
+<li>Az <em>áttekinthetőség, olvashatóság</em> miatt alkalmazzuk
+<li>Rávezet, hogy átgondoljuk: <em>honnan, hova, hogyan</em>
+<li>„<em>i</em> minden értékére… <em>1</em>-től <em>10</em>-ig <em>1</em>-esével… csináljuk ezt…”
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<div class="slideheader">
+<h2><span class="oldalszam">20</span>Vezérlési szerkezetek: összefoglalás</h2>
+</div>
+
+<table>
+    <thead>
+        <tr><th>szerkezet<th>használat<th>pszeudokód
+    </thead>
+    <tr><th>szekvencia<td>Egymás utáni utasítások.<td>utasítás1<br>utasítás2<br>utasítás3
+    <tr><th>elágazás<td>Feltételhez között végrehajtás.<br>0-szor vagy 1-szer.<td>HA&nbsp;feltétel,&nbsp;AKKOR<br>&nbsp;&nbsp;&nbsp;utasítás<br>FELTÉTEL VÉGE
+    <tr><th>ciklus<td>Ismétlés.<br>0-tól ∞-ig akárhányszor.<td>CIKLUS&nbsp;AMÍG&nbsp;feltétel<br>&nbsp;&nbsp;&nbsp;utasítás<br>CIKLUS VÉGE
+</table>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>Vezérlési szerkezetek kombinációja</h2>
+</div>
+
+<p><em>Feladat:</em> írjunk programot, amelyik kér egy valós számot a felhasználótól,
+és Hérón módszerével kiszámolja a gyökét.</p>
+
+<p class="csakdoksi">Tudjuk, hogy negatív számnak nincsen gyöke a valós számok
+körében. Ez nem csak definíciós kérdés, hanem a programunkat is érinti. Ugyanis
+ha Hérón algoritmusa negatív számot kap, akkor ide-oda ugrál pozitív és negatív
+tippek között. Így végtelen ciklus keletkezik: a program soha nem áll le.
+Ezért a felhasználótól kapott számot az algoritmus futtatása előtt ellenőrizni
+kell. Ha negatív, akkor nincs gyök, és ezt jelenzni kell. Ha nem, akkor
+indulhat a számítás.</p>
+
+<p class="csakdoksi">A bemeneti adatok érvényességi köre része kell legyen
+a specifikációnak! Jelen esetben például meg kell mondani azt, hogy a program
+egy valós számot kell kérjen (ez a bemenet), amelynek a gyökét fogja meghatározni
+(ez a kimenet), de <em>a beolvasott szám nem lehet negatív.</em></p>
+
+<div class="sticky">figyel, hogy<br>ne legyen<br>negatív</div>
+<pre>
+PROGRAM
+    KIÍR: "Melyik szám gyöke?"
+    BE: szam
+    HA szam &lt; 0, AKKOR
+        KIÍR: "A szám ne legyen negatív!"
+    EGYÉBKÉNT
+        tipp = 1
+        CIKLUS AMÍG |tipp - szam/tipp|&gt;0.001
+            tipp = (tipp + szam/tipp)/2
+        CIKLUS VÉGE
+        KIÍR: "A keresett gyök: ", tipp
+    FELTÉTEL VÉGE
+PROGRAM VÉGE
+</pre>
+
+<p class="csakdoksi">A vezérlési szerkezetek tetszőleges mélységben egymásba ágyazhatóak (to be 
+nested). A lenti program egy szekvenciát tartalmaz, amelynek része a szám beolvasása és egy 
+feltétel. A feltétel hamis ágában egy újabb szekvencia van, amely egy ciklust is tartalmaz.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<h1 class="diacim">C forráskódok</h1>
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Szintaxis (syntax)</h2>
+</div>
+
+<h3>Nyelvtani szabályok</h3>
+<ul>
+    <li>Összefoglaló nevük: <em>szintaxis</em>
+    <li>Minden nyelvben van, pl. magyarban is:
+       <ul>
+           <li>megtanul, tanuld meg!, meg kell tanulni &larr; helyes
+           <li><span class="athuzott">megkell tanulni</span> &larr; hibás
+       </ul>
+    
+    <li>A forráskód meg kell feleljen az összes szabálynak
+</ul>
+
+<br class="smallskip">
+
+<h3>Szintaktikai hibák</h3>
+
+<pre class="brush: cbub "  >
+int x, a, b, c;
+
+printf(&quot;Az eredmény:&quot;)  // lemaradt pontosvessző
+
+printf(&quot;%d\n&quot;, y);      // y: ismeretlen változó
+
+x = 2*(a+b+c;           // lemaradt bezáró zárójel</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<a id="eaebnf" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>EBNF: Extended Backus-Naur Form</h2>
+</div>
+
+<p>EBNF: formalizmus a szintaxis leírására.</p>
+<table class="eloadaskicsinyit">
+    <thead>
+        <tr><th>Jelölés<th>Jelentés<th>Példa
+    </thead>
+    <tr><th>=<td>definíció<td rowspan="3">névelő = 'egy';
+    <tr><th>;<td>definíció vége
+    <tr><th>' '<td>szöveg
+    <tr><th>|<td>„vagy”<td>számjegy = '0' | '1' | …
+    <tr><th>,<td>összefűzés<td>negatív = '-', szám;
+    <tr><th>[ ]<td>elhagyható<td>pozitív = ['+'], szám
+    <tr><th>{ }<td>ismétlés<td>szó = betű, { betű };
+</table>
+
+<br class="smallskip">
+
+<div class="sticky eloadaskicsinyit">Példa: pozitív<br>egész szám</div>
+
+<pre>
+szám = nemnulla, { számjegy };
+nemnulla = '1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9';
+számjegy = '0' | nemnulla;
+</pre>
+
+<ul class="csakdoksi">
+    <li>Akárhány számjegyből állhat, nem kezdődhet nullával.
+    <li>Helyes: 98, 54079, 43, 1, 112.
+    <li>Helytelen: 1ax, abcd, s98, 012.
+</ul>
+
+<p class="csakdoksi">EBNF leírást használnak a programozók is, akik egy nyelvet használnak, és 
+szintaxisát szeretnék megérteni. De ebből dolgoznak azok is, akik a fordítóprogramot írják: ha 
+matematikai precizitással adottak a nyelvtani szabályok, akkor a nyelv minden mondatát könnyű 
+értelmezni. Ezzel még fogunk foglalkozni.</p>
+
+<p class="csakdoksi">A C nyelv összes nyelvtani szabálya kb. 5 oldalnyi EBNF-fel leírható. De 
+ezt most nem fogjuk megtenni.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>A C nyelv elemei</h2>
+</div>
+
+<table class="eloadaskicsinyit">
+    <thead>
+        <tr><th>Név<th>Példa<th>Használat
+    </thead>
+
+    <tr><th>kulcsszó<br>(keyword)<td><code>int, double, return</code><td>a nyelv része, valamilyen speciális jelentése van
+    <tr><th>azonosító<br>(identifier)<td><code>x, terulet</code><td>valami neve, pl. változóé
+    <tr><th>operátor<br>(operator)<td><code>* + /</code><td>számítási művelet
+    <tr><th>blokk<br>(block)<td><code>{ }</code><td>több utasítás, csoportosítás
+    <tr><th>megjegyzés<br>(comment)<td><code>/*&nbsp;&nbsp;*/</code><td>programozóknak szóló, megértést könnyítő szöveg
+    <tr><th>szám<br>(numeric)<td><code>12, 6.0e23</code><td>egész és valós számok
+    <tr><th>sztring<br>(string)<td><code>"helló,&nbsp;világ\n"</code><td>szöveg
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<div class="slideheader">
+<h2><span class="oldalszam">26</span>Utasítások fajtái a C nyelvben</h2>
+</div>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+int x;
+
+double pi = 3.14159265;</pre>
+<div class="kozep">változódefiníció</div>
+</div>
+<div>
+<pre class="brush: c "  >
+x = y+z;
+
+printf(&quot;x = %d\n&quot;, x);</pre>
+<div class="kozep">kifejezés utasítás</div>
+</div>
+</div>
+
+<br class="smallskip">
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+{
+    printf(&quot;Helló!&quot;);
+    return 0;
+}</pre>
+<div class="kozep">utasításblokk</div>
+</div>
+<div>
+<pre class="brush: c "  >
+if (x &lt; 0)
+    printf(&quot;Negatív&quot;);
+else
+    printf(&quot;Nem negatív&quot;);</pre>
+<div class="kozep">vezérlési szerkezet</div>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span>Kifejezés utasítások</h2>
+</div>
+
+<p>C-ben:</p>
+
+<pre>kifejezés;</pre>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+printf(&quot;Helló, világ!\n&quot;);
+
+x = 3;
+printf(&quot;x + 1 = %d\n&quot;,            // több sorba is írható
+       x + 1);
+
+printf(&quot;A négyzet oldalhossza?\n&quot;);
+scanf(&quot;%lf&quot;, &amp;a);
+printf(&quot;Átló = %f\n&quot;, a*sqrt(2)); // négyzetgyök (square root)</pre>
+
+<ul>
+    <li>A kifejezések literálisokból (szöveg, szám), változókból és operátorokból állnak.
+    <li>A kifejezés utasításokat pontosvessző zárja.
+</ul>
+
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Változódefiníciók</h2>
+</div>
+
+<p>Egy vagy több változó definíciója „kvázi EBNF”-ben:<p>
+<pre>típus név [=kezdeti érték] {, név [=kezdeti érték]};</pre>
+
+<br class="smallskip">
+
+<p>Példák C-ben:<p>
+
+<pre class="brush: cbub "  >
+int x = 3;                // x nevű egész, kezdeti értéke 3
+
+double f_1 = 0, f_2 = 0;  // két valós, f_1 és f_2
+
+int szam, SZAM;           // inicializálatlanok. ez két különböző!</pre>
+
+<div class="sticky eloadaskicsinyit"><span style="font-size: 2em">_</span><br>alulvonás<br>underscore</div>
+<ul>
+<li>A változó neve tartalmazhat betűket, számokat és <code>_</code>&nbsp;(alulvonás) karaktert.
+<li>Számmal nem kezdődhet, és a betűk is csak az angol ábécé betűi lehetnek.
+</ul>
+
+<p class="csakdoksi">Egy változónak adhatunk kezdeti értéket (rögtön a 
+definíciójakor). Ezt <em>inicializálásnak</em> is hívjuk, és pontosan ugyanaz, 
+mint az értékadás. (Értéket többször is kaphat.) A változókat nem kötelező 
+inicializálni, azonban figyelni kell arra, hogy ne használjuk az értéküket addig, 
+amíg nem adtunk nekik először.</p>
+
+<p class="csakdoksi megjegyzes">Változóknak ne adjunk alulvonás (underscore) karakterrel
+<em>kezdődő</em> nevet, mert ezek a fordító számára vannak fenntartva! Máshol viszont
+lehet benne ilyen.</p>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<div class="slideheader">
+<h2><span class="oldalszam">29</span>Vezérlési szerkezet: <code>if()</code> elágazás</h2>
+</div>
+
+<pre>
+if (feltétel)
+    utasítás;
+[ else
+    utasítás; ]
+</pre>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+if (x &gt; 0)                     // a feltétel zárójelben
+   printf(&quot;pozitív!\n&quot;);
+else
+   printf(&quot;nem pozitív.\n&quot;);   // hamis ág (elmaradhat)</pre>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+if (x &lt; 0) {                 // több utasítás: { } között
+   x = -x;
+   printf(&quot;x negatív volt.\n&quot;);
+}                            // itt nem kell pontosvessző</pre>
+
+<p class="csakdoksi">
+Ha a feltétel következményében vagy hamis ágában több utasítás
+is van, az egy szekvencia, ami C-ben utasításblokként jelenik meg.
+Ezért kellenek a kapcsos zárójelek. Ha csak egyetlen
+utasítás van, akkor nincsen rájuk szükség, de nem is hiba
+kiírni őket.
+</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>Vezérlési szerkezet: <code>while()</code> ciklus</h2>
+</div>
+
+<div class="sticky">elöltesztelő<br>ciklus</div>
+
+<pre>
+while (feltétel)
+    utasítás;
+</pre>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+while (x &gt; 0)            // a feltétel zárójelben
+    x = x-1;</pre>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+while (x &gt; 0) {          // több utasítás: { } között
+    printf(&quot;x = %d\n&quot;, x);
+    x = x-1;
+}</pre>
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>Elöltesztelő ciklus: Hérón módszere (példa)</h2>
+</div>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void) {
+    double szam, tipp;
+
+    printf(&quot;Melyik szám gyöke? &quot;);
+    scanf(&quot;%lf&quot;, &amp;szam);
+
+    tipp = 1;
+    while (fabs(tipp - szam/tipp) &gt; 0.001) // |tipp-szam/tipp|
+        tipp = (tipp + szam/tipp)/2;
+
+    printf(&quot;%f gyöke %f.\n&quot;, szam, tipp);
+
+    return 0;
+}</pre>
+
+
+
+
+</div>
+</section>
+<section id="32">
+<div class="slide" id="slide_32">
+<div class="slideheader">
+<h2><span class="oldalszam">32</span>Vezérlési szerkezet: <code>for()</code> ciklus</h2>
+</div>
+
+<div class="sticky">számlálásos<br>ciklus</div>
+
+<pre>
+for (innentől; idáig; így)
+    utasítás;
+</pre>
+
+<br class="smallskip">
+
+<pre class="screenshot float">
+1 2 3 4 5
+</pre>
+
+<pre class="brush: cbub "  >
+for (x = 1; x &lt;= 5; x = x+1) // pontosvesszők!
+    printf(&quot;%d &quot;, x);</pre>
+
+<p>„<em>for</em> every value of x from <em>(x=1; </em> to <em>x&lt;=5;</em> step by <em>x=x+1)</em>”</p>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="33">
+<div class="slide" id="slide_33">
+<div class="slideheader">
+<h2><span class="oldalszam">33</span><code>while()</code> és <code>for()</code> ciklus: összehasonlítás</h2>
+</div>
+
+<p>A két kódrészlet pontosan ugyanazt csinálja. <span class="csakdoksi">Mindig azt érdemes írni, amelyik <em>áttekinthetőbb</em>. A gépnek mindegy, nekünk számít!</span></p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+/* számok egytől tízig */
+
+for (x = 1; x &lt;= 10; x = x+1)
+    printf(&quot;%d &quot;, x);
+</pre>
+</div>
+
+<div>
+<pre class="brush: cbub "  >
+x = 1;
+while (x &lt;= 10) {
+    printf(&quot;%d &quot;, x);
+    x = x+1;
+}</pre>
+</div>
+
+</div>
+
+<br class="smallskip">
+
+<div class="sticky eloadaskicsinyit" style="width: 14em">
+„A programok írásakor mindig figyeljük arra, hogy emberek olvassák majd azt. Az mellékes, hogy gépek hajtják végre.”
+<br>
+– Harold Abelson, Gerald Jay Sussman
+</div>
+
+<p class="megjegyzes csakdoksi"> Érdekesség: <a 
+href="http://en.wikipedia.org/wiki/Hal_Abelson">Harold Abelson</a> az MIT egyetem professzora, a 
+Creative Commons és a Free Software Foundation alapítványok egyik alapító tagja. (Az utóbbi 
+alapítványhoz tartozik a GNU projekt, amely keretében a Linux rendszert is fejlesztik. Ez az 
+androidos okostelefonok alapja.) Társszerzője a
+<a href="http://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs">Structure 
+and Interpretation of Computer Programs</a> könyvnek, amelyből a fenti gondolat is származik. </p>
+
+<div class="kozep"><button data-diapopup="szorzotablakod">Szorzótábla</button></div>
+
+<div id="szorzotablakod">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int y;
+
+    for (y = 1; y &lt;= 5; y = y+1) {
+        int x;
+
+        for (x = 1; x &lt;= 5; x = x+1)
+            printf(&quot;%3d&quot;, x * y);
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}</pre>
+</div>
+
+<p class="csakdoksi">Példa: a szorzótábla kirajzolása két ciklussal. Kívül a sorok ciklusa 
+(<code>y</code>, öt iteráció), és azon belül soronként öt szám (<code>x</code>, öt iteráció 
+soronként) és egy újsor karakter. Az <code>x</code> változó csak a belső ciklushoz van, így azt 
+érdemes belül definiálni, mert csak ott használjuk. A változódefiníció szabályait viszont ott is 
+betartjuk: a blokkok elejére kerül a definíció, és utána az utasítások.</p>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="34">
+<div class="slide" id="slide_34">
+<a id="indentalas" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">34</span>A kód tördelése – „indentálás”</h2>
+</div>
+
+<pre class="brush: cbub sorsurit115"   id="egyiptomikod">
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void) {
+│   double szam;
+│
+│   printf(&quot;Szám: &quot;);
+│   scanf(&quot;%lf&quot;, &amp;szam);
+│   if (szam &lt;= 0) {
+│   └─  printf(&quot;Pozitív kell legyen!\n&quot;);
+│   } else {
+│   │   double tipp = 1;
+│   │   while (fabs(tipp-szam/tipp) &gt; 0.001) {
+│   │   └─  tipp = (tipp + szam/tipp)/2;
+│   │   }
+│   └─  printf(&quot;%f gyöke %f.\n&quot;, szam, tipp);
+│   }
+│
+└─  return 0;
+}</pre>
+
+<div class="csakdoksi">
+<p>Ez a program a vezérlési szerkezetek rész végén bemutatott négyzetgyökszámoló
+C nyelvű változata. Három dolgot kell megfigyelni rajta:</p>
+<ol>
+    <li>A kód tördelése. Az egyes vezérlési szerkezetek belsejében
+        lévő utasítások beljebb kezdődnek (indent). A programon
+        belüli utasítások is, ahogyan az <code>if()</code>-en
+        belüliek és a cikluson belüliek is. Ez <em>nagyban</em>
+        megkönnyíti a program áttekintését.
+    <li>A kapcsos zárójelek <code>{}</code> használata. Ha egy vezérlési
+        szerkezeten belül csak egy utasítás van (mint pl. az
+        <code>if()</code> igaz ágában vagy a ciklusban), akkor
+        nem szükséges köré kapcsos zárójelet tenni. Azonban
+        nem is lenne hiba sem, sőt talán attól is áttekinthetőbb
+        kicsit a program. (Sokan azt vallják, jobb úgy használni.)
+        A szintaktikai szabályok bemutatása miatt a fenti program
+        a minimális számú kapcsos zárójelet tartalmazza.
+    <li>Változódefiníció utasításblokk elején. A C megengedi azt, hogy
+        bármely utasításblokk elején változót hozzunk létre. Az a változó
+        azonban csak az adott utasításblokkban fog élni.
+        Jelen esetben a <code>tipp</code> nevű változó ilyen.
+        Csak akkor van rá szükség, ha nem negatív számot kapott a program,
+        és el kell végezni a számítást.
+</ol>
+</div>
+
+<img class="kozep arnyek" src="ea02/egyiptomi.jpg" style="width: 15em;" alt="Egyiptomi zárójelezés" onclick="this.src='egyiptomi2.jpg'">
+<div class="kozep csakdoksi">Klikk a képre!</div>
+
+<div class="kozep"><button data-diapopup="egyiptomikod">Egyiptomi zárójelezés</button></div>
+
+<p class="csakdoksi megjegyzes">Hogy ki pontosan hova helyezi el a nyitó és záró kapcsos 
+zárójeleket, hova tesz szóközöket a műveleti jelek köré stb. – ez ízlés kérdése. Rengeteg stílus 
+alakult ki, amelyek közül a tananyagban az ún.
+<a href="http://en.wikipedia.org/wiki/Indent_style#K.26R_style">K&amp;R stílust</a> fogjuk 
+használni. (Persze itt-ott ettől eltérünk, főleg ha ezt az előadásban a dia szűkös mérete 
+kényszeríti.) Ezt a stílust tréfásan egyiptomi zárójelezésnek is szokták nevezni, a kapcsos 
+zárójelek elhelyezése miatt.</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea02.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

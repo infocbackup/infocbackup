@@ -1,0 +1,19 @@
+function trclick(tr) {
+   for (var node=tr.parentNode.firstChild; node!=null; node=node.nextSibling) {
+      if (node.className==null)
+         continue;
+      classt_levesz(node, "aktiv");
+   }
+   classt_feltesz(tr, "aktiv");
+}
+
+function pluszegy(nev) {
+   item = $(nev);
+   item.innerHTML = +item.innerHTML + 1;
+}
+
+function nullaz(nev) {
+   item = $(nev);
+   item.innerHTML = '0';
+}
+

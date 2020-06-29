@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Dinamikus adatszerkezetek II. – Bináris fák</title>
+<meta property="og:title" content="InfoC :: Dinamikus adatszerkezetek II. – Bináris fák">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Dinamikus adatszerkezetek II.: bináris fák. Többszörös indirekció. Néhány szó a hash táblákról.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Dinamikus adatszerkezetek II.: bináris fák. Többszörös indirekció. Néhány szó a hash táblákról.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="ea12/fa.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+<script src="ea12/fa.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea12.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="eabinarisfa" class="namer"></a>
+<h1 class="eloadascim">Dinamikus adatszerkezetek II. – Bináris fák</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Dinamikus adatszerkezetek II.: bináris fák. Többszörös indirekció. Néhány szó a hash táblákról.</p>
+</div>
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea12.html#1">Félév végén...</a>
+<li><a href="ea12.html#2">Ismétlés – láncolt lista</a>
+<li><a href="ea12.html#3"><em>A bináris fák és algoritmusaik</em></a>
+<li><a href="ea12.html#4">A bináris keresőfa: rendezett tárolás</a>
+<li><a href="ea12.html#5">A fa reprezentációja C nyelven</a>
+<li><a href="ea12.html#6">Keresés a fában: O(log n)</a>
+<li><a href="ea12.html#7">A fa bejárása I. – rekurzió</a>
+<li><a href="ea12.html#8">A fa bejárása II. – algoritmus</a>
+<li><a href="ea12.html#9">A fa bejárása III. – inorder bejárás fordítva</a>
+<li><a href="ea12.html#10">A postorder bejárás – fa felszabadítása</a>
+<li><a href="ea12.html#11">A preorder bejárás I.</a>
+<li><a href="ea12.html#12">A preorder bejárás II.</a>
+<li><a href="ea12.html#13">Műveletek fákon – általában</a>
+<li><a href="ea12.html#14">Műveletek – fák elemszáma</a>
+<li><a href="ea12.html#15">Műveletek – levelek száma</a>
+<li><a href="ea12.html#16">Műveletek – elemek adott szinten</a>
+<li><a href="ea12.html#17">Keresőfa építése</a>
+<li><a href="ea12.html#18">Példa – szavak statisztikája</a>
+<li><a href="ea12.html#19">Fák alkalmazásai – hierarchia</a>
+<li><a href="ea12.html#20">Fák alkalmazásai – további alakok</a>
+<li><a href="ea12.html#21">Fák alkalmazásai – hatékonyság</a>
+<li><a href="ea12.html#22"><em>Kettős indirekcó</em></a>
+<li><a href="ea12.html#23">Indirekció – cím szerinti paraméterátadás</a>
+<li><a href="ea12.html#24">Kettős indirekció: lista építése – használat</a>
+<li><a href="ea12.html#25">Kettős indirekció: lista építése</a>
+<li><a href="ea12.html#26">Kettős indirekció – lista végéhez fűzés</a>
+<li><a href="ea12.html#27">Kettős indirekció – lista végéhez fűzés 2.0</a>
+<li><a href="ea12.html#28">Kettős indirekció – keresőfa építése</a>
+<li><a href="ea12.html#29"><em>Hash táblák</em></a>
+<li><a href="ea12.html#30">A tanult adatszerkezetek</a>
+<li><a href="ea12.html#31">A hasító táblázatok röviden</a>
+<li><a href="ea12.html#32">A hasító függvény</a>
+<li><a href="ea12.html#33">Ütközések kezelése – egymás után téve</a>
+<li><a href="ea12.html#34">Ütközések kezelése – láncolt listával</a>
+<li><a href="ea12.html#35">Hash tábla – további felhasználások</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Félév végén...</h2>
+</div>
+
+<h3>13. heti laborok</h3>
+<ul>
+    <li><strong>Nagy HF beadás</strong> és bemutatás
+</ul>
+
+<br class="smallskip">
+
+<h3>2. nagy ZH</h3>
+<ul>
+    <li><strong>Jelentkezés</strong> a portálon
+    <li>Szokásos +2 pont
+    <li>Régen vizsga volt, de a feladatok hasonlóak lesznek
+</ul>
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Ismétlés – láncolt lista</h2>
+</div>
+
+<img src="ea12/01.svg" style="width: 20em;" class="kozep" alt="Duplán láncolt lista">
+
+<br class="smallskip">
+
+<ul class="elony">
+    <li> Előnyük: nagyon gyors és egyszerű a méretüket megváltoztatni.
+    <span class="csakdoksi">Így alkalmasak dinamikusan
+    változó számú adat kezelésére.</span>
+</ul>
+<ul class="hatrany">
+    <li>Hátrányuk: csak lineáris keresés valósítható meg bennük.
+</ul>
+
+<br class="smallskip">
+
+<p>Az ideális az lenne, ha olyan adatszerkezetünk lenne, ami</p>
+<ul>
+   <li>gyorsan nyújtható, mint egy láncolt lista,
+   <li>gyors keresést biztosít, mint egy rendezett tömb (bináris keresés).
+</ul>
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<h1 class="diacim">A bináris fák és algoritmusaik</h1>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>A bináris keresőfa: rendezett tárolás</h2>
+</div>
+
+<div class="sticky forog"><img style="display: block; width: 8em;" src="ea12/fa.svg"></div>
+<p>Minden elemnek <em>két gyereke</em> lehet:</p>
+<ul>
+   <li>az elemtől <em>balra a nála kisebb,</em> (kisebbek!)
+   <li>tőle <em>jobbra a nála nagyobb</em> (nagyobbak!)
+</ul>
+
+<p class="csakdoksi">Figyeljük meg, hogy a fenti szabály nem csak a közvetlen
+gyermekekre igaz! Például az 5-től balra található elemek a 3, 4, 1, 2 mind
+kisebbek nála. Az a tény, hogy ha egy állítás igaz egy elem bal/jobb oldali
+gyermekére, akkor az igaz az összes az elemtől balra/jobbra elhelyezkedő elemre,
+egy nagyon fontos tulajdonsága a bináris fáknak.</p>
+
+<div class="fa" id="fabemutat"></div>
+<div class="facaption" id="fabemutatcapt"></div>
+
+<div class="kozep">
+   <button onclick="infoc.faea.fabemutat.gyokerszines('gyökér: a fa kiindulópontja')">gyökér</button>
+   <button onclick="infoc.faea.fabemutat.szulogyerekszines('szülő és gyerekek')">szülő+gyerek</button>
+   <button onclick="infoc.faea.fabemutat.szuloleszarmazottszines('szülő és leszármazottak')">leszármazott</button>
+   <button onclick="infoc.faea.fabemutat.levelszines('levelek: a fa „legalsó” elemei')">levél</button>
+   <button onclick="infoc.faea.fabemutat.reszfaszines('<span class=\'kek\'>bal</span>- és <span class=\'piros\'>jobb</span>oldali részfák')">részfa</button>
+   <button onclick="infoc.faea.fabemutat.baljobbszomszedszines('fa gráf:  <span class=\'kek\'>bal,</span> <span class=\'piros\'>jobb</span> és <span class=\'kesz\'>szülő</span> szomszédok')">szomszéd</button>
+</div>
+
+<div class="csakdoksi">
+<p>A fa elemeinek megnevezéséhez a családfa analógiáját szoktuk használni.
+Minden csomópontból maximum két nyíl indul ki, a csomópont két <em>gyereke</em>
+felé. A csomópont maga ilyenkor a <em>szülő</em> csomópont. <em>Leszármazottaknak</em>
+nevezzük egy csomópont összes gyerekét, azok gyerekeit stb. (Vagyis a gyerekek
+a közvetlen leszármazottak.)</p>
+
+<p>A fa <em>gyökerének</em> a szerkezet kezdőpontját nevezzük. Ez egy olyan elem,
+amelyiknek nincsen már szülője. A fa <em>levelei</em> azok a csomópontok,
+amelyeknek nincsen gyerekük. A fa <em>rekurzív adatszerkezet:</em> egy elem bal
+oldali szomszédja is egy <em>részfa,</em> jobb oldali is egy részfa. Ezeknek
+természetesen további részfáik lehetnek.</p>
+
+<p>A fa csomópontjainak megnevezéséhez használjuk a gráfelméletből vett szavakat
+is. A fa egy <em>gráf:</em> <em>csúcsokból</em> áll, amelyeket <em>élek</em>
+kötnek össze. Két elem között csak egy út létezik – nincs kör a fában. Az élek
+irányítottak, a nyíl egy elemtől a másikra mutat, visszafelé nem.</p>
+
+<p>Egy csomópont <em>szomszédai</em> azok, amelyek egy éllel össze vannak kötve
+(vagyis az adott csomópont szülője és két gyereke). A bal oldali gyereket így
+nevezhetjük bal oldali szomszédnak, a jobb oldali gyereket pedig jobb oldali
+szomszédnak. Ilyen értelemben a szülő is szomszéd. </p>
+
+
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>A fa reprezentációja C nyelven</h2>
+</div>
+
+<pre class="brush: cbub float"  >
+typedef struct BinFa {
+   …    // tetszőleges adat
+   struct BinFa *bal, *jobb;
+} BinFa;</pre>
+
+<p> A fa egy csúcsát egy struktúra írja le, amelyben az adatokon túl van két
+ugyanilyen strukúrára mutató pointer: a bal, illetve jobb gyermek címei. </p>
+
+<img src="ea12/binfa_pointer.svg" class="kozep" style="width: 28em;">
+
+
+<p class="csakdoksi">Érdekesség: nyelvi szinten nem látszik a különbség egy
+duplán láncolt lista és egy bináris fa között. A különbség abban áll, hogy másra
+használjuk az adatok mellé tett két pointert.</p>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Keresés a fában: O(log n)</h2>
+</div>
+
+<div class="csakdoksi">
+<p>Az algoritmus:</p>
+<ol>
+   <li>a <em>gyökér elemtől</em> indulunk,
+   <li>ha az <em>aktuális elem</em> nem létezik, akkor nincs a fában a keresett,
+   <li>összehasonlítjuk a keresett elemmel:
+      <ul>
+         <li>ha pont az, akkor végeztünk,
+         <li>ha nagyobb, akkor balra megyünk tovább,
+         <li>ha kisebb, akkor jobbra megyünk tovább;
+      </ul>
+   
+   <li>folytatjuk a 2. ponttól.
+</ol>
+<p>Elvileg minden lépésben feleződik a még megvizsgálandó elemek száma, tehát a keresés O(log<sub>2</sub>n) időben fut le.</p>
+</div>
+
+<div class="sticky">Tudjuk, merre<br>kell menni!</div>
+<pre class="brush: c "  >
+BinFa *keres(BinFa *gyoker, int adat) {
+   BinFa *mozgo = gyoker;
+   while (mozgo != NULL &amp;&amp; mozgo-&gt;adat != adat) {
+      if (adat &lt; mozgo-&gt;adat) mozgo = mozgo-&gt;bal;
+      else mozgo = mozgo-&gt;jobb;
+   }
+   return mozgo;
+}</pre>
+
+
+<div class="csakdoksi">
+<p>A while ciklussal addig megyünk, amíg a „mozgo” NULL nem lesz, és még nem találtuk meg a keresett elemet.
+A „mozgo” NULL lehet, mert:
+</p>
+  <ul>
+     <li>a fa még üres és egy NULL pointert kaptunk argumentumként,
+     <li>a legutóbbi összehasonlítást egy levélben végeztük és továbbindultunk egy nemlétező gyermek felé.
+  </ul>
+<p>A logikai rövidzár miatt az while ciklus fejében az ÉS kapcsolat második fele már nem értékelődik ki, ha „mozgo” értéke NULL. Ez nagyon fontos, hiszen egy NULL pointeren a <code>mozgo-&gt;adat</code> kifejezés futási idejű hibát okozna. A logikai rövidzárat pontosan az ilyen jellegű kifejezések miatt vezették be a nyelvbe.</p>
+
+<p>A lehetséges visszatérési értékek:
+<ul>
+  <li>NULL, mert a fa üres volt és rögtön az első iteráció kilépett a while ciklusból,
+  <li>NULL, mert az elemet nem találta meg és egy levél nemlétező gyermekén állt meg a ciklus,
+  <li>a megtalált elem címe.
+</ul>
+</div>
+
+
+<br class="smallskip">
+
+<div class="columns c3">
+<div><div class="kozep">a. megvan</div><img src="ea12/08.svg" style="width: 10em;" class="kozep"></div>
+<div><div class="kozep">b. nincs  benne</div><img src="ea12/07.svg" style="width: 10em;" class="kozep"></div>
+<div><div class="kozep">c. üres fa</div><img src="ea12/06.svg" style="width: 4em;" class="kozep"></div>
+</div>
+
+<div class="csakdoksi">
+<p>A keresés lehetséges eredményei:</p>
+<ol style="list-style-type: lower-alpha">
+   <li>megtaláljuk a keresett elemet, visszatérés az elem címével.
+   <li>nincs a fában a keresett elem (pl. 10), visszatérési érték: NULL,
+   <li>a fa üres, a visszatérési érték: NULL,
+</ol>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>A fa bejárása I. – rekurzió</h2>
+</div>
+
+
+<pre class="brush: cbub float"  >
+struct BinFa {
+   int szam;
+   struct BinFa *bal, *jobb;
+};</pre>
+
+<p>
+A fa bejárása rekurzió nélkül csak nehézkesen oldható meg.
+<br>
+Ha kihasználjuk, hogy a <em>fa egy rekurzív adatszerkezet,</em> akkor egyszerű feladat!
+</p>
+
+<br class="smallskip">
+
+<div class="fa" id="fabejar1"></div>
+<div class="facaption" id="fabejar1capt"></div>
+
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>A fa bejárása II. – algoritmus</h2>
+</div>
+
+<div class="sticky">bal–gyökér–jobb</div>
+
+<p><em>Feladat:</em> írjuk ki a fában tárolt számokat!</p>
+
+<br class="smallskip">
+
+<ol class="csakdoksi">
+   <li>Járjuk be az aktuális elem <em>bal</em> részfáját,
+   <li>Írjuk ki az aktuális csúcsban tárolt számot,
+   <li>Járjuk be az aktuális elem <em>jobb</em> részfáját.
+</ol>
+
+
+<div class="fa" id="fabgj"></div>
+<div class="facaption" id="fabgjcapt">&nbsp;</div>
+
+<div class="kozep">
+<button onclick="infoc.faea.fabgj.kovetkezo()">lép</button>
+<button onclick="infoc.faea.fabgj.vegig()">végig</button>
+<button data-diapopup="sorban_kiir">C kód</button>
+</div>
+
+<div id="sorban_kiir">
+
+<p>A rekurzióban az a szép, hogy a leírás C-ben is egyszerű: </p>
+
+<pre class="brush: cbub "  >
+void sorban_kiir(BinFa *gyoker) {
+   if (gyoker == NULL)   // leállási feltétel
+      return;
+
+   sorban_kiir(gyoker-&gt;bal);     // 1
+   printf(&quot;%d &quot;, gyoker-&gt;adat);     // 2
+   sorban_kiir(gyoker-&gt;jobb);    // 3
+}</pre>
+
+<p>Leállási feltétel: üres részfához értünk:</p>
+<ul>
+   <li>Vagy az egész fa üres,
+   <li>Vagy az adott részfa üres!
+</ul>
+<p>A függvény meghívódik az üres részfákra is!</p>
+</div>
+
+<div class="csakdoksi megjegyzes">
+<p>Megtehetnénk, hogy a rekurzív hívások előtt ellenőrizzük, hogy van-e valami az
+adott részfában, pl.:</p>
+<pre class="brush: c "  >
+if (gyoker-&gt;bal != NULL)
+   sorban_kiir(gyoker-&gt;bal);</pre>
+
+<p>Ettől azonban hosszabb lesz a kód, hiszen a függvény első sorában
+mindenképpen kell ellenőrizni, hogy a gyökér pointer <code>NULL</code> vagy nem
+<code>NULL</code>. Az egész fa is lehet üres, és az üres fa is fa, amelyre
+a függvény hívható.</p>
+
+</div>
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<div class="slideheader">
+<h2><span class="oldalszam">9</span>A fa bejárása III. – inorder bejárás fordítva</h2>
+</div>
+
+<div class="sticky">jobb–gyökér–bal</div>
+
+<p class="csakdoksi">
+A megismert algoritmust <em>inorder bejárásnak</em> nevezik, ugyanis a fa elemein növekvő sorrendben hajtja végre a művelet.
+</p>
+
+<p>Megcserélve a bal és a jobb részfa bejárását, csökkenő a sorrend:</p>
+
+<ol class="csakdoksi">
+   <li>Járjuk be a elem <em>jobb</em> részfát (nagyobb elemek),
+   <li>Dolgozzuk fel az aktuális elemet,
+   <li>Járjuk be a <em>bal</em> részfát (kisebb elemek).
+</ol>
+
+<br class="smallskip">
+
+
+<div class="fa" id="fajgb"></div>
+<div class="facaption" id="fajgbcapt">&nbsp;</div>
+
+<div class="kozep">
+<button onclick="infoc.faea.fajgb.kovetkezo()">lép</button>
+<button onclick="infoc.faea.fajgb.vegig()">végig</button>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span>A postorder bejárás – fa felszabadítása</h2>
+</div>
+
+<p class="csakdoksi"> Ha egy teljes fát szeretnénk felszabadítani, vigyázni kell:
+nehogy magunk alatt vágjuk a fát, azaz nehogy elveszítsük a hozzáférést elemekhez.
+Felszabadításkor mindig leveleket szabad csak törölni. Olyan bejárásra
+van szükség, amely először a leveleket járja be, majd azokat az elemeket, amik a
+korábbi levelek felszabadítása után levéllé válnak és így tovább.</p>
+
+<img src="ea12/lancfuresz.svg" style="width: 8em;" class="float">
+
+<div class="sticky clear">bal–jobb–gyökér</div>
+
+<p>Csak leveleket szabad felszabadítani!</p>
+
+<ol class="csakdoksi">
+   <li>Járjuk be az aktuális elem részfáitt,
+   <li>Szabadítsuk fel az aktuális elemet.
+</ol>
+
+<br class="smallskip">
+
+<div class="fa torol" id="fabjg"></div>
+<div class="kozep">
+<button onclick="infoc.faea.fabjg.kovetkezo()">lép</button>
+<button onclick="infoc.faea.fabjg.vegig()">végig</button>
+<button data-diapopup="felszabadit">C kód</button>
+</div>
+
+<div id="felszabadit">
+<p>Előbb a részfákat felszabadítjuk, utána mehet az aktuális elem is:</p>
+<pre class="brush: cbub "  >
+void felszabadit(BinFa *gyoker) {
+   if (gyoker == NULL)   // leállási feltétel
+      return;
+
+   felszabadit(gyoker-&gt;bal);     // 1
+   felszabadit(gyoker-&gt;jobb);       // 2
+   free(gyoker);                 // 3
+}</pre>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span>A preorder bejárás I.</h2>
+</div>
+
+<p>Tegyük fel, hogy van egy fa a memóriában, amit szeretnénk fájlba menteni, majd onnan visszaállítani!</p>
+
+<br class="smallskip">
+
+<p>Ha ezt az inorder bejárással tennénk:</p>
+
+<div class="columns">
+<div>
+<img src="ea12/02.svg" class="kozep" style="height: 8em;">
+<div class="kozep">1, 2, 3, 4, &hellip;</div>
+</div>
+<div>
+<img src="ea12/09.svg" class="kozep" style="height: 8em;">
+<div class="kozep">1, 2, 3, 4, &hellip;</div>
+</div>
+</div>
+
+<p class="csakdoksi">A fájlban sorrendben lesznek az elemek, az újra felépített
+fába rendezetten, a legkisebb elemtől kezdve szúrjuk be az elemeket. Ez azt
+jelenti, hogy az „1” lesz a gyökér, és minden további elem nagyobb, mint az
+előző, tehát a fa egy láncolt listává degradálódik. Így a keresés már nem
+logaritmikus időben fut!</p>
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<a id="fajlbair" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">12</span>A preorder bejárás II.</h2>
+</div>
+
+<div class="sticky">gyökér–bal–jobb</div>
+
+<p>A preorder bejárás lényege: a gyökeret vesszük előre!</p>
+
+<ol class="csakdoksi">
+   <li>Vegyük sorra az aktuális elemet,
+   <li>Járjuk be az aktuális elem bal részfáját,
+   <li>Járjuk be az aktuális elem jobb részfáját.
+</ol>
+
+<br class="smallskip">
+
+<div class="fa megjelenik" id="fagbj"></div>
+<div class="facaption" id="fagbjcapt">&nbsp;</div>
+<div class="kozep">
+<button onclick="infoc.faea.fagbj.kovetkezo()">lép</button>
+<button onclick="infoc.faea.fagbj.vegig()">végig</button>
+<button data-diapopup="fajlba_kiir">C kód</button>
+</div>
+
+<div id="fajlba_kiir">
+
+<p>A fájl pointerét, amelybe írjuk az adatokat, természetesen
+át kell adni paraméterként mindenhol:</p>
+
+<pre class="brush: cbub "  >
+void fajlba_kiir(BinFa *gyoker, FILE *fajl) {
+   if (gyoker == NULL)   // leállási feltétel
+      return;
+
+   fprintf(fajl, &quot;%d &quot;, gyoker-&gt;adat); // 1
+   fajlba_kiir(gyoker-&gt;bal, fajl);         // 2
+   fajlba_kiir(gyoker-&gt;jobb, fajl);    // 3
+}</pre>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>Műveletek fákon – általában</h2>
+</div>
+
+<div class="sticky"><img style="display: block; width: 8em;" src="ea12/fa.svg"></div>
+
+<p>Sokféle kérdés feltehető egy fával kapcsolatban:</p>
+<ul>
+   <li>Hány eleme van? Hány levele van? Milyen magas?
+   <li>Mekkora egy adott szintjén lévő elemek száma?
+   <li>Hányadik szintig van teljesen betöltve?
+</ul>
+
+<p class="csakdoksi">A fenti feladatokat rekurzív algoritmusokkal lehet könnyen megoldani.</p>
+
+<br class="smallskip">
+
+<blockquote>
+<h3>A megoldás sémája</h3>
+<ol>
+   <li>A feladatot megoldjuk a bal részfára (rekurzív hívás)
+   <li>A feladatot megoldjuk a jobb részfára (rekurzív hívás)
+   <li>Számbavesszük az aktuális elemet
+</ol>
+</blockquote>
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>Műveletek – fák elemszáma</h2>
+</div>
+
+<p><em>Feladat:</em> számoljuk meg, hogy hány eleme van egy fának!</p>
+<ol class="csakdoksi">
+   <li>Ha üres a fa (<code>NULL</code> pointert kaptunk), térjünk vissza 0-val!
+   <li>Különben vegyük az aktuális elem bal részfájának az elemszámát!
+   <li>Adjuk hozzá a jobb részfa elemszámát!
+   <li>Adjunk hozzá 1-et (aktuális elem)! Térjünk vissza így.
+</ol>
+
+<br class="smallskip">
+
+<div class="sticky">A levelek gyerekeire<br>is <span class="bubble">1</span> fut le!</div>
+
+<pre class="brush: cbub "  >
+int elemszam(BinFa *gyoker) {
+   if (gyoker == NULL) return 0; // 1
+
+   return elemszam(gyoker-&gt;bal)  // 2
+        + elemszam(gyoker-&gt;jobb)    // 3
+        + 1;                     // 4
+}</pre>
+
+<br class="smallskip">
+<p class="csakeloadas">Elv: amennyi a bal, plusz a jobb oldalon, meg még a gyökér.</p>
+
+<div class="csakdoksi">
+<p>Valójában az történik, hogy a <code>return</code> utáni kifejezésben bejárjuk a fát.</p>
+<p>Ha üres fára hívjuk meg a függvényt, akkor 0-val tér vissza. De ez nem csak akkor történik,
+amikor az egész fa üres, hanem minden nem létező gyermeknél, sőt egy levélelemnél kétszer is,
+mert annak bal és jobb pointere is NULL pointer.</p>
+<p>Ezért tér vissza egy levélnél 1-gyel a függvény. A levélben a 2-es hívás visszatér 0-val
+(mert a bal pointere NULL), a 3-as hívás is visszatér 0-val (mert jobb oldali gyermeke sincs a levélnek),
+és ehhez a 0+0-hoz adunk még egyet, ami a levél maga.</p>
+<p>Bármelyik másik részfában hasonlóan történik a számlálás; előbb az adott csomópont bal
+oldali részfájának elemeit számoljuk meg, majd a jobb oldali részfájának elemeit, végül pedig
+hozzáadunk 1-et, mert a vizsgált csomópont egy elemnek számít.</p>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>Műveletek – levelek száma</h2>
+</div>
+
+<p><em>Levelek száma:</em> hasonló, de feltételhez kell kötni a számlálást:</p>
+<ol class="csakdoksi">
+   <li>Ha üres a fa (NULL pointert kaptunk), térjünk vissza 0-val!
+   <li>Ha az aktuális elem levél, térjünk vissza 1-gyel!
+   <li>Különben vegyük az aktuális elem bal részfájában a levelek számát,
+       adjuk hozzá a jobb részfa leveleinek számát, térjünk ezzel vissza!
+</ol>
+
+<pre class="brush: cbub "  >
+int levelszam(BinFa *gyoker) {
+   if (gyoker == NULL) return 0;          // 1
+
+   if (gyoker-&gt;bal == NULL &amp;&amp; gyoker-&gt;jobb == NULL) // 2
+      return 1;
+
+   return levelszam(gyoker-&gt;bal)          // 3
+        + levelszam(gyoker-&gt;jobb);
+}</pre>
+
+<br class="smallskip">
+
+<p class="csakeloadas">Elv: ha ennek nincs gyereke, akkor levél, tehát 1.</p>
+
+<div class="csakdoksi">
+<p>
+Itt is bejárjuk a fát.</p>
+<ul>
+   <li>Ha egy levélhez jutunk, akkor egyet adunk vissza, hiszen neki már nem lehetnek gyermekei, ahonnan egyéb érték érkezhetne. Ilyenkor függvényhívásra sincs már szükség (hiszen nincsenek részfák, amelyekben számolni kellene bármit is).
+   <li>Ha nem levélen állunk, akkor megszámláljuk a bal részfában a leveleket (rekurzívan meghívjuk a függvényt a bal gyermekre, majd ugyanezt megtesszük a jobb részfában és a kettő összegével térünk vissza.
+   <li>Üres fa, vagy nemlétező gyermek esetén 0-val térünk vissza.
+</ul>
+
+<p>
+Figyeljük meg, hogy csak akkor nem hívjuk meg a gyermekekre a függvényt, ha levélben vagyunk. Olyankor ha csak az egyik gyermek NULL, meghívjuk rá, tehát ilyenkor is az (1) feltétel fut le.
+</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Műveletek – elemek adott szinten</h2>
+</div>
+
+
+<p><em>Feladat:</em> adott szinten hány elem van?</p>
+
+<img src="ea12/binfa_szint.svg" class="kozep" style="width: 12em;">
+
+<ol class="csakdoksi">
+   <li>Üres fa esetén a visszatérési érték 0.
+   <li>Ha az átvett szint értéke 0, akkor azt a szintet kell megszámolni: visszatér 1-gyel.
+   <li>Különben megszámolja a bal és jobb részfában a megfelelő elemeket. Ehhez a szintet eggyel csökkentve hívja magát.
+</ol>
+
+<pre class="brush: cbub "  >
+int szint_elemei(BinFa *gyoker, int szint) {
+   if (gyoker == NULL) return 0;   // 1
+   if (szint == 0) return 1;   // 2
+
+   return szint_elemei(gyoker-&gt;bal,  szint-1)  // 3
+        + szint_elemei(gyoker-&gt;jobb, szint-1);
+}</pre>
+
+<p class="csakdoksi">
+A fontos mozzanat itt az, hogy ennek a függvénynek nem csak, hogy van egy paramétere,
+de azt a paramétert a rekurzióban változtatja is. Hogy hány csúcs van az ötödik szinten,
+ahhoz azt kell összeadni, hogy hány csúcs van a bal és a jobb oldali részfában a negyedik
+szinten. Az ő gyökerükhöz képest negyedik szinten!
+</p>
+<p class="csakdoksi">
+Az algoritmus hasonló a levelek számának meghatározásához: az adott szinten „elvágjuk a fát”, az ott található elemeket levélnek tekintjük,
+mélyebbre már nem megyünk. Az adott szintre visszaszámlálással jutunk, amikor a szint értéke 0, akkor regisztráljuk, hogy találtunk egy elemet (és nem nézzük tovább a gyerekeket).
+</p>
+
+
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<div class="slideheader">
+<h2><span class="oldalszam">17</span>Keresőfa építése</h2>
+</div>
+
+
+<p>Rekurzívan könnyű az új elem hozzáadása a keresőfához:</p>
+<img class="kozep csakeloadas" style="width: 12em;" src="ea12/binfa_epit.svg">
+<ul class="csakdoksi">
+    <li>Ha a fa üres, akkor gyökér lesz az új.
+    <li>Ha a gyökérnél kisebb az új, a bal oldali részfába kell beszúrni.
+    <li>Ha a gyökérnél nagyobb, a jobb oldaliba.
+    <li>Amúgy pedig már benne van.
+</ul>
+
+<br class="smallskip">
+
+<p>Csakhogy közben változhat a fa gyökere pointer!</p>
+
+<p class="csakdoksi">Ez ugyanúgy probléma, mint a láncolt listába beszúráskor. Ott is a mellékhatás volt
+a lényeg, hogy változik a lista, és itt is az: változik a fa. Ezt a problémát megoldhatjuk a
+listáknál megismert módszerrel: mindig visszatérünk a fa gyökerét mutató pointerrel, és a hívóra bízzuk,
+hogy írja ezt be az azt tároló változóba.</p>
+
+<button class="float" data-diapopup="keresofaepitc">Beszúró függvény</button>
+
+<pre class="brush: c "  >
+BinFa *gyoker = NULL;
+
+gyoker = beszur(gyoker, 5);
+gyoker = beszur(gyoker, 2);
+gyoker = beszur(gyoker, 7);</pre>
+
+<p class="csakdoksi">Megoldás: térjünk vissza vele, mint a listáknál.</p>
+
+
+<pre class="brush: cbub "   id="keresofaepitc">
+BinFa *beszur(BinFa *gyoker, int adat) {
+    if (gyoker == NULL) {                        // üres?
+        BinFa *uj = (BinFa*) malloc(sizeof(BinFa));
+        uj-&gt;bal = uj-&gt;jobb = NULL;    /* levél lesz */
+        uj-&gt;adat = adat;
+        return uj;     /* vissza kell térni vele! */
+    }
+
+    if (adat &lt; gyoker-&gt;adat)                // kisebb?
+        gyoker-&gt;bal = beszur(gyoker-&gt;bal, adat);
+    else if (adat &gt; gyoker-&gt;adat)                // nagyobb?
+        gyoker-&gt;jobb = beszur(gyoker-&gt;jobb, adat);
+    else
+        ; /* benne van */
+
+    return gyoker;
+}</pre>
+
+<div class="csakdoksi">
+<p>Fontos végiggondolni, mi történik az egyes mutatókkal. Tegyük
+fel, hogy a függvényt a következő formában hívták meg:</p>
+<pre class="brush: c "  >
+gyoker = beszur(gyoker, 5);</pre>
+<ul>
+    <li>Ha a fa üres, akkor <code>gyoker=NULL</code>. Ilyenkor az 1-es
+        feltétel igaz lesz, és keletkezik egy új elem. A paraméterként kapott
+        gyökér pointert, amely egy lokális változó, felülírjuk az új elem
+        címével. Végülis pedig majd visszatérünk ezzel, és az eredeti gyökér
+        mutatót a hívás után az értékadás fogja átállítani.
+        
+    <li>Ha a fa nem üres, akkor a gyökerében van egy elem. Ennek értékétől függ,
+        hogy az új elemet a bal vagy a jobb oldali részfába kell szúrni. Ha
+        a gyökérnél kisebb a beszúrandó, oda kell kerülnie (2).
+    <li>Ha a jobb oldali részfába kerül az elem, akkor ugyanez a helyzet.
+    <li>Ha se nem kisebb, se nem nagyobb, akkor a gyökérelemben azt látjuk, amit
+        amúgy is be kell szúrni. Ilyenkor simán visszatérünk, nincs teendő, hiszen
+        az elem már szerepel a fában. A gyökér pointer változatlan.
+</ul>
+<p>Fontos mozzanat az utolsó: hogy visszatérünk a változatlan gyökér pointerrel.
+A hívó ugyanis az értékadást mindenképpen elvégzi, és ilyenkor azt kell biztosítani,
+hogy a teljes fa gyökér pointere ne változzon – ehhez pedig egyszerűen visszaadjuk
+ugyanazt a gyökér pointert, amit kaptunk.</p>
+<p>Ha a gyökér létezik, és annak a bal oldali részfájába szúrunk be, akkor hasonlóan
+megy minden. Ha ott <code>NULL</code> pointer van, akkor az felülíródik. Ha nem
+<code>NULL</code>, akkor az ott meghívott függvény változatlan <code>gyoker</code>
+pointerrel tér vissza, azaz az értékadásból
+<code>gyoker-&gt;bal=gyoker-&gt;bal</code> lesz végül. Minden helyen ez lesz
+a helyzet, kivétel ott, ahol valamelyik részfa üres fa!</p>
+<p>Ebből következik a függvény hívásának módja a függvény belsejében is.
+Ha azt mondtuk, hogy a függvényt így kell használni:</p>
+<pre class="brush: c "  >
+gyoker = beszur(gyoker, 5);</pre>
+<p>Akkor a bal oldali részfába beszúrásnál ezt kell írnunk:</p>
+<pre class="brush: c "  >
+gyoker-&gt;bal = beszur(gyoker-&gt;bal, 5);</pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>Példa – szavak statisztikája</h2>
+</div>
+
+<p>
+<em>Feladat:</em> készítsünk beolvasott szavakról statisztikát! Melyik, hányszor szerepel?
+</p>
+
+<br class="smallskip">
+
+<pre class="screenshot float">
+kutya 2
+cica 6
+mérési 4
+hiba 1
+</pre>
+
+<p class="csakdoksi"><em>Megoldás:</em> sorban haladunk a fájl szavain; ha az
+aktuális szó még nincs benne a fában, akkor betesszük és a darabszámot 1-re
+állítjuk; Ha már benne van, akkor megnöveljük a darabszámot.</p>
+
+<p class="csakdoksi">A fák ideálisak erre a feladatra, hiszen gyors a
+beszúrás és az „eleme-e” művelet. Bónusz: ábécé rendben kapjuk meg
+az eredményt. A feladathoz szükséges adatstruktúra:</p>
+
+<pre class="brush: c "  >
+typedef struct SzoStat {
+   char szo[51];
+   int db;
+   struct SzoStat *bal, *jobb;
+} SzoStat;</pre>
+
+<button class="float clear" data-diapopup="szostatmain">főprogram</button>
+
+<button class="float clear" data-diapopup="szostatbeszur">faépítés</button>
+
+<div class="sticky clear">Letölthető:<br><a href="ea12/szostat.c">szostat.c</a></div>
+
+<img src="ea12/10.svg" class="kozep" style="width: 20em">
+
+<p class="csakdoksi">A szabványos bemeneten érkező szöveg statisztikájának az elkészítése:</p>
+<div class="sticky csakdoksi">Kihasználjuk, hogy<br>a <code>scanf %s</code><br>whitespace-ig olvas</div>
+
+<pre class="brush: cbub "   id="szostatmain">
+int main(void) {
+   SzoStat *fa = NULL; // üres fa
+   char szo[51];
+
+   while (scanf(&quot;%s&quot;, szo) == 1)
+      fa = beszur(fa, szo);
+
+   kiir(fa);
+   felszabadit(fa);
+
+   return 0;
+}</pre>
+
+
+
+<p class="csakdoksi"> A szükséges módosítás a beszúró algoritmuson:
+le kell kezelni azt az esetet, amikor az elem már benne van a
+fában, és <code>strcmp()</code>-vel kell végezni a sztringek
+összehasonlítását.</p>
+
+<pre class="brush: cbub eloadaskicsinyit"   id="szostatbeszur">
+SzoStat *beszur(SzoStat *gyoker, char *szo) {
+    int er;
+
+    if (gyoker == NULL) {
+        SzoStat *uj = (SzoStat*) malloc(sizeof(SzoStat));
+        strcpy(uj-&gt;szo, szo);
+        uj-&gt;db = 1;
+        uj-&gt;bal = uj-&gt;jobb = NULL;
+        return uj;     /* vissza kell térni vele! */
+    }
+    er = strcmp(szo, gyoker-&gt;szo);
+    if (er &lt; 0)
+        gyoker-&gt;bal = beszur(gyoker-&gt;bal, szo);
+    else if (er &gt; 0)
+        gyoker-&gt;jobb = beszur(gyoker-&gt;jobb, szo);
+    else
+        gyoker-&gt;db++;
+
+    return gyoker;
+}</pre>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Fák alkalmazásai – hierarchia</h2>
+</div>
+
+<div class="columns">
+   <div>
+      <img src="ea12/binfa_kifejezes.svg" style="width: 12em;" class="kozep">
+      <div class="kozep">Hierarchia tárolása.<br>Műveletek, pl. (2+3)*5.<br>Nincs szükség zárójelezésre!</div>
+   </div>
+   <div>
+      <img src="ea12/binfa_morze.svg" style="width: 12em;" class="kozep">
+      <div class="kozep">Dekódoló fa.<br>Morze: ti = balra, tá = jobbra.</div>
+   </div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<div class="slideheader">
+<h2><span class="oldalszam">20</span>Fák alkalmazásai – további alakok</h2>
+</div>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+struct TriFa {
+   …
+
+   struct TriFa *bal,
+                *kozep,
+                *jobb;
+};</pre>
+</div>
+<div>
+<img src="ea12/nary_tree.svg" style="width: 14em;" class="kozep">
+<div class="kozep">háromágú fa</div>
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>Az elvek ugyanazok, mint a bináris fánál. Pl. elemek száma:</p>
+<ol>
+   <li>Ha NULL pointer, akkor 0.
+   <li>Egyébként be kell járni az összes részfát.
+   <li>Az elemek száma azok elemszámának összege + 1.
+</ol>
+</div>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+struct BinFa {
+   …
+
+   struct BinFa *szulo;
+   struct BinFa *bal, *jobb;
+};</pre>
+</div>
+<div>
+<img src="ea12/binfa_szulo.svg" style="width: 12em;" class="kozep">
+<div class="kozep">szülőkre mutató pointerrel</div>
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>Így egyszerűbb:</p>
+<ul>
+   <li>Iteratív bejárás „jobbra tapogatózva”
+   <li>Törlés
+</ul>
+
+<p>Érdemes megfigyelni: nyelvileg nem különbözik a két struktúra egymástól. Csak máshogyan
+használjuk a pointereket!</p>
+
+<p>A bináris fából törlés sem triviális művelet – főleg, ha a törlendő csúcsnak bal és jobb
+oldali szomszédja is van. Ilyenkor a fát át kell rendezni, ha a keresőfa tulajdonságot meg
+szeretnénk tartani. Ezzel is az Algoritmuselmélet tárgy fog foglalkozni.</p>
+
+</div>
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>Fák alkalmazásai – hatékonyság</h2>
+</div>
+
+<div class="sticky">B-fák, AVL-fák, …<br>„Algoritmuselmélet” tárgy</div>
+
+<p><em>Kiegyensúlyozott fa:</em> bármely csúcspont részfáinak magassága közötti
+különbség legfeljebb egy. (A bal oldali nem ilyen.)</p>
+
+<br class="smallskip">
+
+<img src="ea12/binfa_egyensuly.svg" style="width: 30em;" class="kozep">
+
+<p class="csakdoksi">Ha a fa nem kiegyensúlyozott, akkor a keresés lassabb. Az
+ebben az előadásban bemutatott faépítő algoritmusok nem kiegyensúlyozott fát
+építenek. Az általuk épített fa kiegyensúlyozottsága attól függ, mennyire
+érkeznek szerencsésen a beszúrandó adatok. A kiegyensúlyozott építéshez
+összetettebb algoritmusok szükségesek – ezeket majd az Algoritmuselmélet nevű
+tárgy fogja bemutatni.</p>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<h1 class="diacim">Kettős indirekcó</h1>
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Indirekció – cím szerinti paraméterátadás</h2>
+</div>
+
+<p class="csakdoksi">C-ben csak érték szerinti paraméterátadás van. A függvények
+a paraméterek <em>másolatát</em> kapják.</p>
+
+<p>A cím szerinti paraméterátadás megoldható pointerrel:</p>
+
+<div class="columns c7030">
+<div>
+<pre class="brush: cbub "  >
+void novel(int *pi) {
+    (*pi)++;       // a mutatott integert
+}
+
+
+int x = 5;
+novel(&amp;x);         // x-re mutat
+
+printf(&quot;%d&quot;, x);</pre>
+</div>
+<div>
+<img src="ea12/indirekcio.svg" class="kozep" style="width: 8em;">
+</div>
+</div>
+
+<br class="smallskip">
+
+<p>A listás, fás algoritmusaink megváltoztatják a lista eleje, fa gyökere mutatót.
+Ötlet: azt ugyanígy kellene átadni!</p>
+
+<div class="csakdoksi">
+<p>Ez azért lehetséges, mert a pointer ugyanolyan változó, mnint a többi. Vegyük példának a
+lenti függvényt. Ez két VALAMI-t cserél meg. Hogy a cseréket el tudja végezni, a függvény nem
+érték szerint várja a paramétereit (azaz a változók másolatát), hanem cím szerint (pointereket
+az eredeti változókra). A kódban VALAMI helyére bármilyen típust beírhatunk: kapunk egy
+függvényt, amely két adott típusú dolgot kell megcserélni.</p>
+
+<div class="sticky">p1: mutató egy VALAMI-re<br>*p1: egy VALAMI</div>
+<pre class="brush: c "  >
+void csere(VALAMI *p1, VALAMI *p2) {
+   VALAMI temp = *p1;
+   *p1 = *p2;
+   *p2 = temp;
+}</pre>
+
+<p>Ha két <code>int</code>-et szeretnénk cserélni, akkor a VALAMI helyre <code>int</code>-et
+írunk. Ha két <code>int*</code>-ot, akkor a VALAMI helyére <code>int*</code> kerül.</p>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+void int_csere(int *p1, int *p2) {
+   int temp = *p1;
+   *p1 = *p2;
+   *p2 = temp;
+}
+
+int x = 29; int y = 17;
+int_csere(&amp;x, &amp;y); /* x=17, y=29 */</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+void ptr_csere(int **p1, int **p2) {
+   int *temp = *p1;
+   *p1 = *p2;
+   *p2 = temp;
+}
+
+int *px = &amp;x; int *py = &amp;y;
+ptr_csere(&amp;px, &amp;py); /* px=&amp;y, py=&amp;x */</pre>
+</div>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>Kettős indirekció: lista építése – használat</h2>
+</div>
+
+<p>Eddig a listák építésekor a visszaadott mutatót bemásoltuk a változóba:</p>
+<pre class="brush: c "  >
+ListaElem *eleje = NULL;
+
+eleje = elore_beszur(eleje, 2);
+eleje = elore_beszur(eleje, 3);</pre>
+
+<br class="smallskip">
+
+<p>A mostani tervünk: <em>adjuk át cím szerint,</em> rábízva a változtatást!</p>
+<div class="sticky">Sokkal jobb<br>megoldás!</div>
+<pre class="brush: c "  >
+ListaElem *eleje = NULL;
+
+elore_beszur_ptr(&amp;eleje, 2);
+elore_beszur_ptr(&amp;eleje, 3);</pre>
+
+<p>A nagy előny: így <em>nem lehet kifelejteni</em> az értékadást!</p>
+
+<div class="csakdoksi">
+<p>Figyeljük meg a használatok közötti különbséget! Az utóbbi megoldás
+kényelmetlennek tűnik, mert mindig ki kell tenni a címképző operátort. Viszont
+éppen ez az előnye! A lista eleje pointert tároló változó címe nem
+<code>Lista*</code>, hanem <code>Lista**</code> típusú adat; ha lefelejtjük a
+címképző operátort, a fordító szólni fog<sup>*</sup>, hiszen rossz típusú
+pointert adunk a függvénynek! A pointerrel visszatérős megoldásnál viszont nem
+szól, hiszen teljesen szokásos és elfogadott dolog az, ha egy függvény
+visszatérési értékét nem használjuk semmire. Egyébként az utóbbi megoldással
+felszabadult a visszatérési érték is, amit bármire használhatunk.</p>
+<p class="megjegyzes"><sup>*</sup> A rendes fordítók szólnak.</p>
+</div>
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>Kettős indirekció: lista építése</h2>
+</div>
+
+<p>A <em>lista elejére</em> beszúró függvény a múltkori módon:</p>
+
+<pre class="brush: cbub "  >
+ListaElem *elore_beszur(ListaElem *eleje, int adat) {
+   ListaElem *uj = (ListaElem*) malloc(sizeof(ListaElem));
+   uj-&gt;adat = adat;
+   uj-&gt;kovetkezo = eleje;
+   return uj;
+}</pre>
+
+<button class="float" data-diapopup="listabeszurasid">Beszúrás</button>
+
+<br class="smallskip">
+
+<p>A másik változata, ami az „eleje” pointer címét veszi át:</p>
+
+<pre class="brush: cbub "  >
+void elore_beszur_ptr(ListaElem **peleje, int adat) { // !
+   ListaElem *uj = (ListaElem*) malloc(sizeof(ListaElem));
+   uj-&gt;adat = adat;
+   uj-&gt;kovetkezo = *peleje; // *peleje – az első elem címe
+   *peleje = uj;
+}</pre>
+
+<div id="listabeszurasid">
+<p>A függvénynek meg kell tudnia változtatni a lista eleje mutatót:</p>
+<br class="smallskip">
+<img src="ea12/listaeleje.svg" style="width: 28em;" class="kozep">
+<br class="smallskip">
+<pre class="brush: cbub csakeloadas"  >
+uj-&gt;kovetkezo = *peleje;
+*peleje = uj;</pre>
+
+</div>
+
+<div class="csakdoksi">
+<p>A függvény belsejében:</p>
+<dl>
+   <dt><code>peleje</code></dt>
+      <dd>Annak a változónak a címe, amely a lista elejét tárolja. Ez
+         képződik a hívás helyén, amikor ott azt írjuk, hogy
+         <code>&amp;eleje</code>. Ez a <code>main()</code>
+         lokális váltózójának <em>címe.</em></dd>
+   <dt><code>*peleje</code></dt>
+      <dd>A lista elejének (első elemének, vagyis az első struktúrának) címe. Ez a hívó
+         változójának <em>értéke.</em></dd>
+   <dt><code>**peleje</code></dt>
+      <dd>Ez lenne a lista első eleme maga (a struktúra), de most nem használjuk.</dd>
+</dl>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<div class="slideheader">
+<h2><span class="oldalszam">26</span>Kettős indirekció – lista végéhez fűzés</h2>
+</div>
+
+<p>Beszúrás <em>lista végére,</em> és az „eleje” mutató címének átvétele:</p>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+void vegere(ListaElem **peleje, int adat) {
+   ListaElem *uj = (ListaElem*) malloc(sizeof(ListaElem));
+   uj-&gt;adat = adat;
+   uj-&gt;kov = NULL;
+
+   if (*peleje == NULL)
+      *peleje = uj;     // eleje ptr változik
+   else {
+      ListaElem *mozog;
+      for (mozog = *peleje; mozog-&gt;kov != NULL; mozog = mozog-&gt;kov)
+         ; /* üres ciklus */
+      mozog-&gt;kov = uj;  // az utolsó „következő”-je változik
+   }
+}</pre>
+
+<p>Vegyük észre: van valahol egy <code>ListaElem*</code> mutató, amit be kell
+állítani. <span class="csakdoksi">Vagy az utolsó elemben (az egyik listaelemen belül), vagy kívül, a hívónál (nem listaelemben)!</span></p>
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span>Kettős indirekció – lista végéhez fűzés 2.0</h2>
+</div>
+
+<p class="csakdoksi">Egy lehetséges módosított algoritmushoz az előző
+felismerés adja az ötletet – nevezetesen az, hogy a lista végére szúrás
+azt jelenti, hogy meg kell keresni a lista végén azt a <code>NULL</code> pointert,
+amelyik lezárja azt. Mindegy, hogy ez a lista végi elemben van, vagy a lista
+eleje pointer a <code>NULL</code> (üres lista esetén) – a feladat az,
+hogy felülírjuk azt a mutatót az új elem címével.</p>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+void vegere(ListaElem **peleje, int adat) {
+   ListaElem **pmozgo, *uj;
+
+   pmozgo = peleje;        // pointer megkeresése
+   while (*pmozgo != NULL)
+      pmozgo = &amp;(*pmozgo)-&gt;kov; // !
+
+   uj = (ListaElem*) malloc(sizeof(ListaElem)); // új elem
+   uj-&gt;adat = adat;
+   uj-&gt;kov = NULL;
+   *pmozgo = uj;           // a megtalált NULL pointer felülírása
+}</pre>
+
+<img src="ea12/listavegere_kettos.svg" style="width: 32em;" class="kozep">
+
+<p class="csakdoksi">A függvény elején a ciklus ezért ezt teszi: megkeresi
+azt a <code>NULL</code> pointert. A <code>pmozgo</code> pointer ennek
+a pointernek a címét tárolja. Először a lista eleje pointerre mutat,
+utána pedig minden lépésben a mutatott listaelem következő pointerére
+állítjuk át. Fontos az indirekciók számában a különbség: a <code>pmozgo</code>
+pointer itt nem a listaelemre mutató pointer, hanem a listaelemre mutató
+pointerre mutató pointer. Vagyis a listaelem címét tároló változó címe.
+Így először a hívó <code>eleje</code> pointerének címét tárolja, utána
+az első listaelem <code>kov</code> pointerének címét stb. Ezért van szükség
+a címképző operátorra is a ciklustörzsben: <code>*pmozgo</code> a listaelemre
+mutató pointer, <code>(*pmozgo)-&gt;kov</code> az abban tárolt „következő”
+pointer, <code>&amp;(*pmozgo)-&gt;kov</code> pedig annak a címe.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Kettős indirekció – keresőfa építése</h2>
+</div>
+
+<p class="csakdoksi">A keresőfába beszúráshoz meg kell keresni
+azt, hogy hol kell legyen a beszúrandó elemre mutató pointer.
+Ha a fa üres lenne, akkor a legfelső, azaz a gyökérpointert
+kellene úgy módosítani, hogy az az új elemre mutasson. Ha a 0-t szeretnénk beszúrni,
+akkor az 1-es csomópont <code>bal</code> pointerét (amely jelenleg <code>NULL</code>
+pointer) kell úgy módosítani, hogy az az új elemre mutasson. Ha a 4-est keressük,
+az benne van a fában – a 3-as csomópont <code>jobb</code> pointere az, amely
+rá mutat, és ilyenkor a beszúráshoz nem kell tenni semmit.</p>
+
+<p>Azt keressük, hogy <em>hol az a pointer, amely majd mutat rá.</em>
+<br>Ez valamelyik csomópont bal/jobb pointere, vagy a gyökér pointere.</p>
+
+<img src="ea12/binfa_pointer_keres_pmozgo.svg" style="width: 28em;" class="kozep">
+
+
+<div class="kozep">
+<button data-diapopup="beszurokeres">pointer megkeresése</button>
+<button data-diapopup="beszur">beszúrás a fába</button>
+</div>
+
+<p class="csakdoksi">Ha van egy ilyen keresőalgoritmusunk, amely nem a keresett elemre mutató
+pointert adja vissza, hanem a keresett elemre mutató pointer címét,
+akkor könnyű a beszúrás. Ha nincs meg a keresett elem, ez akkor is
+értékes választ ad: a visszaadott pointer egy olyan pointerre mutat,
+amely értéke <code>NULL</code>, de ott kellene legyen a keresett elemre
+mutató pointer. A beszúrás:</p>
+
+<pre class="brush: cbub "   id="beszur">
+/* új csomópontot szúr a keresőfába.
+ * A gyökerpointert cím szerint veszi át. */
+void beszur(BinFa **pgyoker, int adat) {
+   /* megkeresi a helyét */
+   BinFa **ptr = beszurashoz_keres(pgyoker, adat);
+
+   if (*ptr == NULL) {                   // ha még nincs
+      BinFa *uj = (BinFa*) malloc(sizeof(BinFa));
+      uj-&gt;adat = adat;
+
+      uj-&gt;bal = uj-&gt;jobb = NULL;
+      *ptr = uj;                         // beszúrás
+   }
+}</pre>
+
+<div class="csakdoksi">
+<p>
+A <code>*ptr=uj;</code> kifejezés
+</p>
+<ul>
+   <li>üres fa esetén a függvényen kívüli, a fa gyökerére mutató pointert változtatja meg,
+   <li>nem üres fában valamelyik csomópont <code>bal</code> vagy <code>jobb</code> mutatóját változtatja meg, amely eddig <code>NULL</code> értékű volt, és ahová új levélként bekerül a beszúrandó elem.
+</ul>
+<p>Fontos, hogy ez a beszúró függvény cím szerint vegye át a gyökér címét is: <code>BinFa **pgyoker</code>.
+Ha egy teljesen üres fába szúrunk be elemet, akkor az meg kell változzon:</p>
+<pre class="brush: c "  >
+BinFa *gyoker = NULL;
+beszur(&amp;gyoker, 5);</pre>
+<p>Ugyanezért kell a kereső algoritmusnak is cím szerint átadni a pointert:
+ha a fa üres, a kereső algoritmus a gyökérelem pointer címével kell visszatérjen
+(annak címével amely egyelőre még <code>NULL</code>, és az ebben a példában
+az egész, üres fa gyökere).</p>
+</div>
+
+<p class="csakdoksi">A kettős indirekció a keresésben:</p>
+
+<pre class="brush: c "   id="beszurokeres">
+/* Megkeresi az adott elem (leendő) helyét a fában.
+ * Egy olyan címet ad vissza, ahol a leendő elem címének
+ * kell tárolódnia, vagy ahol a megtalált elem címe tárolódik. */
+BinFa **beszurashoz_keres(BinFa **pgyoker, int adat) {
+   BinFa **pmozgo = pgyoker;
+
+   while (*pmozgo != NULL &amp;&amp; (*pmozgo)-&gt;adat != adat) {
+      if (adat &lt; (*pmozgo)-&gt;adat)
+         pmozgo = &amp;(*pmozgo)-&gt;bal;
+      else
+         pmozgo = &amp;(*pmozgo)-&gt;jobb;
+   }
+
+   return pmozgo;
+}</pre>
+
+<p class="csakdoksi">Mivel mutatók címével tér vissza, azok értékét felül tudjuk írni.</p>
+
+<div class="csakdoksi megjegyzes">
+<p>Emlékeztetőül itt a kétszeres indirekció nélküli keresés.
+Érdemes összehasonlítani – lényegében annyi a különbség, hogy egyikben
+mindenhol <code>mozgo</code> van, másikban mindenhol <code>*pmozgo</code>.
+Ahol a lentiben konkrét érték van (<code>mozgo</code>), ott a fentiben cím, amelyet
+dereferálni kell (<code>*pmozgo</code>). Ahova a lentiben konkrét érték kerül (<code>mozgo=</code>),
+oda a fentiben cím kell (<code>pmozgo=</code>), ezért címet kell képezni (<code>pmozgo=&...</code>).
+</p>
+<pre class="brush: c "  >
+BinFa *keres(BinFa *gyoker, int adat) {
+   BinFa *mozgo = gyoker;
+
+   while (mozgo != NULL &amp;&amp; mozgo-&gt;adat != adat) {
+      if (adat &lt; mozgo-&gt;adat)
+         mozgo = mozgo-&gt;bal;
+      else
+         mozgo = mozgo-&gt;jobb;
+   }
+
+   return mozgo;
+}</pre>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<h1 class="diacim">Hash táblák</h1>
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>A tanult adatszerkezetek</h2>
+</div>
+
+<img src="ea12/tomblistafa.svg" style="width: 28em;" class="kozep">
+
+<br class="smallskip">
+
+<div class="csakdoksi">
+<p>Eddig az alábbi adatszerkezetekkel ismerkedtünk meg:</p>
+<ul>
+   <li>tömbök,
+   <li>láncolt listák,
+   <li>bináris fák.
+</ul>
+<p>Mindnek megvannak az előnyei és a hátrányai. Alaposan ismerni kell a felépítésüket,
+működésüket, algoritmusaikat ahhoz, hogy képesek legyünk eldönteni, egy adott feladathoz melyik
+illik a legjobban.</p>
+</div>
+
+
+<table class="adatsz">
+<thead>
+    <tr><th>&nbsp;<th>Elérés<th>Keresés<th>Beszúrás<th>Törlés
+</thead>
+<tr><th>Tömb<td>1<td>n<td>n<td>n
+<tr><th>Lista<td>n<td>n<td>1<td>1
+<tr><th>Fa<td>log n<td>log n<td>log n<td>log n
+</table>
+
+<div class="csakdoksi">
+<h3>Tömb</h3>
+<p><em>Mikor használjuk:</em> ha az adatok száma keveset változik és kritikus a
+rendkívül gyors adatelérés. A rendezett tömbök esetén lehetséges bináris keresés
+(O(log n) lépésszámmal), de a rendezés költséges művelet.</p>
+<p>Előnyök:</p>
+<ul class="elony">
+   <li>gyors, tetszőleges sorrendű adatelérés (a leggyorsabb),
+   <li>csak annyi helyet foglalnak el a memóriában, amennyi a hasznos adat,
+   <li>hatékony rendező algoritmusok léteznek tömbökre.
+</ul>
+<p>Hátrányok:</p>
+<ul class="hatrany">
+   <li>az átméretezésük költséges – gyakran változó mennyiségű adathoz nem alkalmasak,
+   <li>a feltöltés közbeni rendezésük költséges.
+</ul>
+
+<h3>Láncolt lista</h3>
+<p class="csakdoksi"><em>Mikor használjuk:</em> ha az adatok száma gyakran
+változik és a keresés nem időkritikus, vagy nem is kell keresni (pl. ha mindig a
+feltöltés (fordított) sorrendjében van szükség az elemekre: vermek, sorok).</p>
+<p>Előnyök:</p>
+<ul class="elony">
+   <li>egyszerű bővíthetőség (rendezetlennél a leggyorsabb),
+   <li>egyszerű törlés (nem kell mozgatni az elemeket),
+   <li>egyszerű (bár nem a leghatékonyabb) rendezve építés.
+</ul>
+<p>Hátrányok:</p>
+<ul class="hatrany">
+   <li>az elemek csak lineárisan kereshetőek.
+</ul>
+
+<h3>Bináris fa</h3>
+<p class="csakdoksi"><em>Mikor használjuk:</em> ha az adatok száma gyakran
+változik és a fontos rendezettség, illetve a gyors keresés. Előnyös halmazok,
+asszociatív tömbök (sztring alapján „indexelhető”) megvalósítására.</p>
+<p>Előnyök:</p>
+<ul class="elony">
+   <li>egyszerű bővíthetőség (a rendezettnél a leggyorsabb),
+   <li>egyszerű és hatékony rendezve építés,
+   <li>nagyon gyors keresés (kb. a tömbök sebességével megegyező).
+</ul>
+<p>Hátrányok:</p>
+<ul class="hatrany">
+   <li>egy elem törlése bonyolult feladat (át kell rendezni a fát).
+</ul>
+
+</div>
+
+<br class="smallskip">
+
+<h3>Hogyan lehetne O(1) lépésben keresni?</h3>
+<p>Honnan tudjuk, hogy hol keressük? Onnan, hogy <em>tudjuk, hova raktuk!</em></p>
+
+
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>A hasító táblázatok röviden</h2>
+</div>
+
+<img src="ea12/hash.svg" style="width: 16em;" class="kozep">
+
+<p class="csakdoksi">A hasító táblázatok (hash table) ötlete az, hogy foglalunk
+egy nagy tömböt, amelybe az adatokat tesszük, és kitalálunk egy olyan függvényt,
+amely a tárolandó adatokat (értékek, pl. telefonszám) a keresés kulcsa (pl. név)
+szerint szétszórja a tömbben (to&nbsp;hash = összekever, összezagyvál).
+Így bármikor, ha adott a kulcs,
+akkor a függvény megmondja a tömbindexet, és egyből, keresés nélkül látjuk is az
+elemet.</p>
+
+<p class="csakdoksi">Láthatóan így a hash() függvény gyorsaság fogja meghatározni
+a keresés idejét: ha az visszatért, onnan már csak egy tömbindexelés van hátra,
+és megtaláltuk az adatot.</p>
+
+<h3 class="csakdoksi">A használat <em>elve:</em></h3>
+<pre class="brush: cbub "  >
+Adat hash_tabla[MERET]; // a hash tábla: tömb
+
+printf(&quot;Telefon: %s\n&quot;, hash_tabla[hash(&quot;Taz&quot;)].telszam);</pre>
+
+
+
+
+</div>
+</section>
+<section id="32">
+<div class="slide" id="slide_32">
+<div class="slideheader">
+<h2><span class="oldalszam">32</span>A hasító függvény</h2>
+</div>
+
+<p>A kulcsot le kell képezni a <code>0 … MÉRET-1</code> tartományra.
+Példa hash függvények (nem túl jók):</p>
+
+<pre class="brush: c eloadaskicsinyit"  >
+int egesz_hash(int i) {
+   return i % MERET;
+}</pre>
+<pre class="brush: c eloadaskicsinyit"  >
+int sztring_hash(char *nev) {
+   return ((nev[0]-'A')*26+(nev[1]-'a')) % MERET;
+}</pre>
+
+<br class="smallskip">
+
+<p>Ütközések: ha két kulcs ugyanoda „hashelődik”:</p>
+
+<pre class="brush: c "  >
+kulcs % MÉRET == (kulcs + MÉRET) % MÉRET</pre>
+<p>Pl. a fenti függvénnyel Taz és Tapsi Hapsi.</p>
+
+
+
+</div>
+</section>
+<section id="33">
+<div class="slide" id="slide_33">
+<div class="slideheader">
+<h2><span class="oldalszam">33</span>Ütközések kezelése – egymás után téve</h2>
+</div>
+
+<img src="ea12/halmaz.svg" style="width: 18em" class="kozep">
+
+<p>Az ütköző adatokat egymás után helyezhetjük el a táblában.</p>
+
+<p class="csakdoksi">Így az adatok elcsúszhatnak a
+helyükről. Az egymás utániaknál, ahol nem üres, lineárisan kell keresünk. Ez a törlésnél
+problémás: meg kell maradnia a törölt elemnek (különben megállna a keresés az üres elemnél), így
+nem szabad törölni, csak megjelölni, hogy törölt az elem. A tábla így szép lassan töredezetté
+válik, és időnként karbantartást igényel.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="34">
+<div class="slide" id="slide_34">
+<div class="slideheader">
+<h2><span class="oldalszam">34</span>Ütközések kezelése – láncolt listával</h2>
+</div>
+
+<p>Az ütköző elemeket láncolt listába tesszük:</p>
+
+<img src="ea12/hash_lista.svg" style="width: 25em" class="kozep">
+
+<button class="float" data-diapopup="lancolthashkod" style="margin: 0">C kód</button>
+
+<p>Kevés ütköző elem &rarr; néhány elem a listákban. Gyors keresés!</p>
+
+
+<div id="lancolthashkod">
+<p>Az adatszerkezet:</p>
+<pre class="brush: c "  >
+typedef struct ListaElem {
+    char nev[51];
+    char telefonszam[20];
+    struct ListaElem *kovetkezo;
+} ListaElem;
+
+ListaElem *hashtabla[MERET];  /* listák tömbje */</pre>
+
+<p>A használata:</p>
+<pre class="brush: c "  >
+char keresett[] = &quot;Tapsi Hapsi&quot;;
+index = hash(keresett);
+talalt = listakeres(hashtabla[index], keresett);
+if (talalt != NULL)
+    printf(&quot;Telefonszáma: %s\n&quot;, talalt-&gt;telefonszam);
+else
+    printf(&quot;Nincs ilyen név!\n&quot;);</pre>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="35">
+<div class="slide" id="slide_35">
+<div class="slideheader">
+<h2><span class="oldalszam">35</span>Hash tábla – további felhasználások</h2>
+</div>
+
+<img class="float" src="ea12/hash-elosztott.svg" style="width: 17em;">
+
+<h3>Google keresés?</h3>
+<ul>
+    <li>Kulcs = keresett szó
+    <li>Érték = weboldalak listája
+    <li>Az ütközés természetes: egy szó több helyen
+        megtalálható
+</ul>
+
+<br class="smallskip">
+
+<h3>Fájlcserélő: elosztott tábla</h3>
+<ul>
+    <li>Kulcs = fájlnév, érték = fájl (vagy hivatkozás a fájlra)
+    <li>Hasító függvény kimenete: mely gépen tároljuk az adatot
+    <li>Pl. BitTorrentnél: fájl darabjai kinél találhatóak meg
+</ul>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea12.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

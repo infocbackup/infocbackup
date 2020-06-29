@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: A paraméteres kifejezések ismételt kiértékelése a számológépben</title>
+<meta property="og:title" content="InfoC :: A paraméteres kifejezések ismételt kiértékelése a számológépben">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="A szintaxisfás trilógia befejező része – függvények építése.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="A szintaxisfás trilógia befejező része – függvények építése.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ast_epit_parameteres.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">A paraméteres kifejezések ismételt kiértékelése a számológépben</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">A szintaxisfás trilógia befejező része – függvények építése.</p>
+</div>
+
+
+<p>
+A szintaxis fákkal foglalkozó korábbi írásokban
+(<a href="ast_epit.html">Szintaxis fák</a>,
+<a href="ast_epit_copa.html">Változók használata</a>)
+felépítettünk egy számológép programot, ami a beolvasott matematikai
+kifejezéseket egy szintaxisfává alakítja, majd kiértékeli.
+</p>
+
+<p>
+A program a második írás végére már képessé vált változók kezelésére és ehhez
+kapcsolódóan belekerült az értékadó operátor, amely nagyon hasonlóan működött a
+C nyelvben megtalálhatóhoz.  Az egyetlen különbség az volt, hogy nem volt
+láncolható, tehát az <code>a = b = c = 5</code> alakú kifejezéseket nem tudta
+kiértékelni.
+</p>
+
+<p>
+Egy másik hiányossága volt a bemutatott számológépnek, hogy nem tudta
+visszahívni a beírt paraméteres kifejezéseket.  Pedig nagyon hasznos lehet egy összetett
+kifejezés újraszámolása megváltozott változóértékekkel. Ehhez mindössze annyit
+kell tenni, hogy el kell menteni a szintaxisfa gyökerének a címét egy tárolóba.
+</p>
+
+<p>
+Jelen írásban a fenti két problémára keresünk megoldást és közben áttekintünk
+egy-két újabb nyelvészeti érdekességet.
+</p>
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ast_epit_parameteres.html#1">A láncolható értékadó operátor</a>
+<li><a href="ast_epit_parameteres.html#2">A láncolható értékadó operátor kódja</a>
+<li><a href="ast_epit_parameteres.html#3">A paraméteres kifejezések ismételt végrehajtása</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A láncolható értékadó operátor</h2>
+</div>
+
+<p>
+A számológépünk legutóbbi verziója által felismert nyelvtan a következőképpen néz ki:
+</p>
+
+<pre>
+értékadó_kifejezés <strong>::=</strong> <strong>(</strong> változónév '=' <strong>)?</strong> összeg
+összeg    <strong>::=</strong> szorzat <strong>(</strong><strong>(</strong>'+' <strong>|</strong> '-'<strong>)</strong> szorzat<strong>)</strong><strong>*</strong>
+szorzat   <strong>::=</strong> tényező <strong>(</strong><strong>(</strong>'*' <strong>|</strong> '/'<strong>)</strong> tényező<strong>)</strong><strong>*</strong>
+tényező   <strong>::=</strong> szám <strong>|</strong> változónév <strong>|</strong> zárójeles 
+zárójeles <strong>::=</strong> '(' értékadó_kifejezés ')'
+</pre>
+
+<p>
+A láncolás itt azért nem tud működni, mert az értékadás (<code>változónév
+'='</code>) egy opcionális elem, tehát vagy egyszer, vagy egyszer sem fordul
+elő, utána pedig egy <code>összeg</code> következik. Az <code>összeg</code>
+leegyszerűsödhet a <code>szorzat</code>on és <code>tényező</code>n keresztül
+egy zárójeles kifejezéssé, ami pedig lehet egy újabb értékadás, de ekkor már
+zárójelek között.
+</p>
+
+<p>
+Tehát a fenti nyelvtan az értékadó operátor láncolását az következő alakban
+tudta értelmezni: <code>a = (b = (c = 5))</code>.
+</p>
+
+<p>
+Először tehát azt kell kitalálnunk, hogy miként tudnánk a nyelvtanunkban
+megfogalmazni azt, hogy tetszőleges számú értékadás állhat egymás után.
+</p>
+
+<p>
+Erre két megoldás is létezik. Az első – a nyelvtan szintjén egyszerűbb
+– az, hogy az értékadás opcionalitását lecseréljük tetszőleges számú
+ismétlődésre. Ez azt jelenti, hogy a kérdőjelet csillagra cseréljük:
+</p>
+
+<pre>
+értékadó_kifejezés <strong>::=</strong> <strong>(</strong> változónév '=' <strong>)*</strong> összeg
+összeg    <strong>::=</strong> szorzat <strong>(</strong><strong>(</strong>'+' <strong>|</strong> '-'<strong>)</strong> szorzat<strong>)</strong><strong>*</strong>
+szorzat   <strong>::=</strong> tényező <strong>(</strong><strong>(</strong>'*' <strong>|</strong> '/'<strong>)</strong> tényező<strong>)</strong><strong>*</strong>
+tényező   <strong>::=</strong> szám <strong>|</strong> változónév <strong>|</strong> zárójeles 
+zárójeles <strong>::=</strong> '(' értékadó_kifejezés ')'
+</pre>
+
+<p>
+Így továbbra is meg lehet értékadás nélküli kifejezéseket adni, hiszen a
+<code>*</code> operátor megengedi a 0-szor való előfordulást is – ahogy
+ez az <code>összeg</code> és a <code>szorzat</code> esetén is történik.
+</p>
+
+<p>
+Van ettől elvben is különböző megoldás erre a problémára: azt mondjuk, hogy
+az értékadó_kifejezés egy opcionális értékadásból és egy összegből áll, az
+összeg pedig egy értékadó kifejezés VAGY két szorzat összege:
+</p>
+
+<pre>
+értékadó_kifejezés <strong>::=</strong> <strong>(</strong> változónév '=' <strong>)?</strong> összeg
+összeg    <strong>::=</strong> értékadó_kifejezés <strong>|</strong> <strong>(</strong> szorzat <strong>(</strong><strong>(</strong>'+' <strong>|</strong> '-'<strong>)</strong> szorzat<strong>)</strong><strong>*</strong> <strong>)</strong>
+szorzat   <strong>::=</strong> tényező <strong>(</strong><strong>(</strong>'*' <strong>|</strong> '/'<strong>)</strong> tényező<strong>)</strong><strong>*</strong>
+tényező   <strong>::=</strong> szám <strong>|</strong> változónév <strong>|</strong> zárójeles 
+zárójeles <strong>::=</strong> '(' értékadó_kifejezés ')'
+</pre>
+
+<p>
+Így tehát az értékadó kifejezés tartalmazhat egy értkadást, majd egy összeg
+következik, amely újból lehet egy értékadás plusz egy összeg. Így
+tulajdonképpen rekurzív módon tetszőleges számú ismétlődést tudtunk megadni.
+</p>
+
+<p>
+Amikor végeszakad a láncolásnak, tehát mondjuk az <code>a = b = c = 5</code>
+kifejezésben eljutunk az <code>5</code>-ig, ott az összeg szabályban az
+értékadó_kifejezés már nem fog illeszkedni és ekkor megpróbálja a
+<code>szorzat</code>ot illeszteni, ami sikerül is, hiszen az a
+<code>tényező</code>n keresztül le tud <code>szám</code>má egyszerűsödni.
+</p>
+
+<p>
+Az eredeti jelölésrendszerben, amit formális nyelvtanok leírására használtak
+(BNF) nem szerepeltek a <code>?</code>, <code>*</code> és <code>+</code>
+operátorok. Mindent a fent látott, rekurzív módon adtak meg.
+</p>
+
+<p>
+Vegyük észre, hogy a kétféle módszer tulajdonképpen ugyannak a problémának az
+iteratív (cikluson alapuló) illetve rekurziv megoldása. Általánosságban is azt
+mondtuk, hogy a problémáinkra léteznek iteratív és rekurzív megoldások és
+mindig az aktuális problémához jobban illő, arra hatékonyabb megoldást adó
+változatot érdemes használnunk.
+</p>
+
+<p>
+Mi most az utóbbit fogjuk választani, mert a programkódunk egyszerűbb lesz,
+ugyanakkor szembetaláljuk magunkat egy problémával, ami pedig gyakorta előkerül
+komplexebb nyelvtanokban, ezért érdemes néhány szót szólni róla.
+</p>
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A láncolható értékadó operátor kódja</h2>
+</div>
+
+<p>
+A megvalósítandó nyelvtanunkban csak az <code>összeg</code> szabály
+módosult, tehát csak a neki megfelelő kódot kell megváltoztatnunk.
+</p>
+
+<p>
+A kódolás előtt még bele kell gondolni abba, hogy a szintaxisfa hogyan fog
+felépülni. Ha egy pillantást vetünk az <code>értékadó_kifejezés</code> kódjára,
+láthatjuk, hogy az értékadó szimbólum "gyermeke" az a kifejezésfa, amit az
+<code>összeg</code> szabály épít fel és ad át az
+<code>értékadó_kifejezés</code>nek:
+</p>
+
+<img src="ast_epit_parameteres/lancolt_ertekados_kifejezes.svg" style="width: 10em" class="float">
+
+<pre class="brush: c "  >
+    ...
+
+    if (valtozonev(&amp;munka, nev) &amp;&amp; karakter(&amp;munka, &quot;=&quot;, &amp;kar)) {
+        van_ertekadas = 1;
+    }
+    else munka = *szoveg;
+
+
+    if (osszeg(&amp;munka, &amp;kifejezes)) {
+        if (van_ertekadas) {
+            *ast = uj_ertekadas(nev, kifejezes);
+        }
+
+    ...</pre>
+
+<p>
+Ha tehát az <code>összeg</code> szabály egy <code>értékadó_kifejezés</code>
+által alkotott fával is vissza tud majd térni, akkor az <code>a = b = 5</code>
+alak úgy fog kiértékelődni, hogy az <code>értékadó_kifejezés</code> feldolgozza
+az <code>a =</code> szövegrészletet, majd a további részeket átadja az
+<code>összeg</code>nek, ami ismét megpróbálja értékadásként értelmezni. A
+másodjára meghívott <code>ertekado_kifejezes</code> előállítja a <code>b =
+5</code> kifejezésnek megfelelő részfát, amit az elsőnek meghívott
+<code>ertekado_kifejezes</code> el fog menteni, mint a létrehozott
+<code>ertekadas</code> szimbólum kifejezése. Így jön létre az ábrán látható
+szintaxisfa.
+</p>
+
+<p>
+A kiértékelés helyesen fog működni, hiszen az <code>a =</code> szimbólum
+lekérdezi az általa tárolt kifejezés értékét. Ez a kifejezés a <code>b =
+5</code>, ami a kiértékelés során egyfelől eltárolja a <code>b</code>
+változóban az 5-ös értéket, másfelől vissza is adja ezt, tehát az <code>a
+=</code> kifejezés is 5-öt kap értékül.
+</p>
+
+<p>
+Valósítsuk meg a nyelvtanunk által előírt működést az <code>osszeg</code>
+függvényben!  Tulajdonképpen mindössze annyit kell tennünk, hogy megpróbáljuk a
+szöveget értékadó kifejezésként értelmezni. Ha sikerült, akkor a visszaadott
+részfa lesz a visszatérési értékünk, hiszen a kapott értékadó kifejezést így
+tudjuk hozzáláncolni a korábbihoz. Ha pedig nem sikerült, akkor két szorzat
+összegét próbáljuk illeszteni – ahogy azt tettük eddig is:
+</p>
+
+<pre class="brush: c "  >
+static int osszeg(char **szoveg, szimbolum **ast) {
+  ...
+
+  szokoz(&amp;munka);
+  
+  if (ertekado_kifejezes(&amp;munka, ast)) {
+    *szoveg = munka;
+    return 1;
+  }
+
+  if (szorzat(&amp;munka, &amp;op1)) {
+    while (karakter(&amp;munka, &quot;+-&quot;, &amp;kar)) {
+      if (szorzat(&amp;munka, &amp;op2)) {
+        uj = uj_muvelet(kar);
+        uj-&gt;op1 = op1;
+        uj-&gt;op2 = op2;
+
+        op1 = uj;
+      }
+      else return 0;
+    }
+
+    if (uj == NULL) *ast = op1;
+    else *ast = uj;
+    
+    *szoveg = munka;
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}</pre>
+
+<p>
+Ha megpróbáljuk így futtatni a programunkat, akkor végtelen rekurzióba kerül és a stack
+beteltekor az operációs rendszer leállítja. Próbáljuk meg megfejteni a hiba okát!
+</p>
+
+<p>
+Ehhez a nyelvtanhoz kell visszanyúlnunk.
+</p>
+
+<pre>
+értékadó_kifejezés <strong>::=</strong> <strong>(</strong> változónév '=' <strong>)?</strong> összeg
+összeg    <strong>::=</strong> értékadó_kifejezés <strong>|</strong> <strong>(</strong> szorzat <strong>(</strong><strong>(</strong>'+' <strong>|</strong> '-'<strong>)</strong> szorzat<strong>)</strong><strong>*</strong> <strong>)</strong>
+szorzat   <strong>::=</strong> tényező <strong>(</strong><strong>(</strong>'*' <strong>|</strong> '/'<strong>)</strong> tényező<strong>)</strong><strong>*</strong>
+tényező   <strong>::=</strong> szám <strong>|</strong> változónév <strong>|</strong> zárójeles 
+zárójeles <strong>::=</strong> '(' értékadó_kifejezés ')'
+</pre>
+
+<p>
+Próbáljuk meg végigkövetni, hogy mi történik az „<code>a = b = 5</code>”
+szövegrészlet elemzésekor!  Az elemző meghívja az
+<code>ertekado_kifejezes()</code> függvényt, ami ráilleszt az „<code>a =</code>”
+szövegrészletre, majd meghívja az <code>osszeg()</code> függvényt. Ő ismét
+meghívja az <code>ertekado</code> függvényt, ami megtalálja az újabb értékadást
+– a „<code>b =</code>” részletet és a maradékra meghívja az
+<code>osszeg()</code>-et, ami természetesen azzal kezd, hogy meghívja az
+<code>ertekado_kifejezes()</code>-t.  Ez utóbbi már nem talál tovább
+értékadást, így rögtön meghívja az <code>osszeg()</code>-et, ami az
+<code>ertekado_kifejezes()</code>-t és így tovább, amíg csak be nem telik a
+függvényhívási stack.
+</p>
+
+<p>
+A problémát a programkód szintjén tulajdonképpen az okozza, hogy nincs
+báziskritériuma a rekurziónak, tehát nincs olyan feltétel, ami leállítaná a két
+függvény kölcsönös hívását.
+</p>
+
+<p>
+A megoldást az jelentené, ha az <code>osszeg</code> csak akkor hívná meg az
+<code>ertekado_kifejezes()</code>-t, ha tényleg szükség van rá, tehát tényleg egy
+következő értékadás szerepel a kifejezésünkben és nem egy összeg.
+</p>
+
+<p>
+Az első ötletünk az lehet, hogy cseréljük fel a két vizsgálatot, először
+próbáljunk összeget találni és ha az nem sikerült, akkor nézzük meg, hogy nem
+egy értékadással van-e dolgunk. Itt észrevehetjük azt, hogy bár a
+VAGY-kapcsolatban elvben felcserélhetőek az operandusai, hiszen a kifejezés
+értéke a sorrendtől teljesen független, de a nyelvtanok esetében (és a C
+nyelvben a logikai rövidzár miatt) ez mégsincs így.
+</p>
+
+<p>
+Az elgondolásunk azonban nem jó eredményre vezet, az „<code>a = b = 5</code>”
+kifejezésünk „<code>a = b</code>”-ként lesz értelmezve a végén lévő „<code>=
+5</code>”-tel pedig nem tud mit kezdeni az értelmező. Ennek az az oka, hogy
+ebben az esetben a <code>ertekado_kifejezes()</code> az „<code>a =</code>”-ig
+jut el, majd a további részt az <code>osszeg()</code>-re bízza, ami pedig
+először <code>szorzat</code>ként próbálja meg értelmezni a fennmaradó szöveget.
+A <code>szorzat</code> a <code>tényező</code>n keresztül le tud egyszerűsödni
+<code>változónév</code>vé, ami sikeresen illeszkedik a „<code>b</code>”-re és
+ezen a ponton félrecsúszik az értelmezik, hiszen az értelmező a fennmaradó
+részben először <code>*</code>-ot vagy <code>/</code>-t, majd <code>+</code>-t
+vagy <code>-</code>-t keres és amikor egyiket sem találja, akkor úgy dönt, hogy
+egy egytagú összeggel volt dolga és itt befejeződik a kifejezés.
+</p>
+
+<p>
+A nyelvtanunk tehát helyes, az értelmezőnk azonban nem tudja feldolgozni a
+kifejezést.  Más irányban kell elindulnunk. Azt mondtuk, hogy csak akkor
+szabadna meghívni az <code>osszeg()</code>-ből a
+<code>ertekado_kifejezes()</code>-t, ha biztosak vagyunk benne, hogy egy
+értékadás következik. Tegyünk így!
+</p>
+
+<p>
+Tipikus technika az értelmezők írásakor, hogy "csalunk" és előreolvasunk a
+szövegben.  Ha biztosan értékadás következik, akkor megpróbálhatunk értékadást
+értelmezni!
+</p>
+
+<p>
+Azt már láttuk, hogy az értelmező függvényeket, amik rekurzív hívásokat
+hajtanak végre és módosítják a szintaxisfát, csak óvatosan szabad meghívni,
+hiszen olyan módosításokat vihetnek végbe, amik vakvágányra vihetik az
+elemzést.
+</p>
+
+<p>
+Ugyanakkor vannak egyszerű szövegelemző függvényeink is, amelyek nem hívnak
+további elemző függvényeket, tulajdonképpen nem a szimbólumok szintjén
+dolgoznak, hanem egy adott szimbólumot próbálnak felismerni a karakterek
+szintjén. Az ilyen funkcionalitást szoktuk átfogóan <em>lexernek</em> hívni
+szemben az értelmező, <em>parser</em> függvényekkel.
+</p>
+
+<p>
+Lexer függvényeket tehát bátran hívhatunk, hiszen azok csupán a munka pointert
+állítják el, ami könnyedén vissza tudunk állítani, ha nem volt illeszkedés.
+</p>
+
+<p>
+Az egy értékadás (változónév és '=' karakter) előreolvasó <code>osszeg()</code>
+tehát a következőképpen néz ki:
+</p>
+
+<pre class="brush: c "  >
+static int osszeg(char **szoveg, szimbolum **ast) {
+  char *munka = *szoveg, *eloreolvaso;
+  char kar, vnev[51];
+  szimbolum *op1, *op2, *uj = NULL;
+
+  szokoz(&amp;munka);
+  
+  eloreolvaso = munka;
+  if (valtozonev(&amp;eloreolvaso, vnev) &amp;&amp; karakter(&amp;eloreolvaso, &quot;=&quot;, &amp;kar)) {
+    if (ertekado_kifejezes(&amp;munka, ast)) {
+      *szoveg = munka;
+      return 1;
+    }
+  }
+
+  if (szorzat(&amp;munka, &amp;op1)) {
+    while (karakter(&amp;munka, &quot;+-&quot;, &amp;kar)) {
+      if (szorzat(&amp;munka, &amp;op2)) {
+        uj = uj_muvelet(kar);
+        uj-&gt;op1 = op1;
+        uj-&gt;op2 = op2;
+
+        op1 = uj;
+      }
+      else return 0;
+    }
+
+    if (uj == NULL) *ast = op1;
+    else *ast = uj;
+    
+    *szoveg = munka;
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}</pre>
+
+<p>
+Látható, hogy mivel az előreolvasás során elállított pointer értéke minket nem
+érdekel, ezért látrehozunk egy ideiglenes változót (<code>eloreolvaso</code>),
+amit a két lexer függvénynek (<code>valtozonev</code> és <code>karakter</code>)
+adunk át, de az értékét sehol másutt nem használjuk fel. Ez azért lehetséges,
+mert ha sikeres volt az előreolvasás, akkor a stringet a kezdeti pozíciótól
+kezdve adjuk át az <code>ertekado_kifejezes()</code>-nek, ha pedig nem akkor a
+<code>szorzat()</code> kapja meg, szintén az eredeti pozíciótól.
+</p>
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A paraméteres kifejezések ismételt végrehajtása</h2>
+</div>
+
+<p>
+Gyakori számítási feladatokban, hogy ugyanazt a kifejezést (pl. másodfokú
+egyenlet megoldóképlete) szeretnénk kiértékeli különböző változóértékekkel.
+Hasznos lenne tehát, ha erre képes lenne a programunk.
+</p>
+
+<p>
+Igazából programozói szempontból ez a feladat nem jelent kihívást. Minden
+kiértékelés során előáll a szintaxisfa, ami változóhivatkozásokat tárol és nem
+konkrét változóértékeket, így ha egy későbbi időpontban meghívjuk a fát
+kiértékelő függvényt (<code>ast_kiertekel()</code>), akkor az a változók
+aktuális értékét fogja használni.
+</p>
+
+<p>
+Mindössze annyit kell tehát tennünk, hogy eltároljuk a szintaxisfákat és visszahívhatóvá
+tesszük őket.
+</p>
+
+<p>
+Ehhez két dolgot kell még biztosítanunk. Az első, hogy valahogyan hivatkozhatóvá
+kell tennünk a paraméteres kifejezéseket. Ennek a legegyszerűbb módja az, hogy megszámozzuk őket.
+Itt csak arra kell vigyáznunk, hogy egy kifejezést csak akkor tároljunk el és ezzel
+együtt a számlálót csak akkor növeljük, ha sikeres volt a kiértékelés. Tehát csak
+helyes fákat mentünk el, így az újbóli kiértékeléskor hibakezeléssel már nem kell
+törődnünk.
+</p>
+
+<p>
+A másik dolog egy kényelmi szolgáltatás. A visszahívott kifejezés szövegét illik
+kiírni, hogy könnyebb legyen a számításokat áttekinteni. Ez nem triviális
+feladat, ugyanis a fában a felépítés tárolja a kiértékelési sorrendet, tehát a
+zárójelek egészen absztrakt és nehezen visszafejthető módon vannak jelen. Az
+eredetileg beírt szöveget tehát meglehetősen nehéz lenne visszanyerni a
+szintaxifából. Éppen ezért ezzel meg sem próbálkozunk. Ehelyett, vállalva, hogy
+egy kicsit terheljük a memóriát, eltároljuk a kifejezéseink szövegét is, bár
+azokat többé nem értékeljük ki, mindössze arra használjuk őket, hogy
+megjelenítsük az kifejezést, amikor a hozzá tartozó szintaxisfát újból
+kiértékeljük.
+</p>
+
+<p>
+Így az adatszerkezetünk a következképpen néz ki:
+</p>
+
+<pre class="brush: c "  >
+typedef struct kifejezesek {
+  char szoveg[255];
+  szimbolum *ast; 
+  struct kifejezesek *kovetkezo;
+} kifejezesek;</pre>
+
+<p>
+A tárolás pedig egy láncolt listában történik. A visszahíváskor a <code>ismetel</code>
+utasítás után beírt sorszámnak megfelelő listaelemet keressük meg.
+</p>
+
+<p>
+A teljes kód letölthető <a href="ast_epit_parameteres/ast_parameteres.zip">innen</a>.
+</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ast_epit_parameteres.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Operátorok, struktúrák</title>
+<meta property="og:title" content="InfoC :: Operátorok, struktúrák">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="A switch(), continue és break vezérlési utasítások. Operátorok és kiértékelési szabályok. Struktúrák.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="A switch(), continue és break vezérlési utasítások. Operátorok és kiértékelési szabályok. Struktúrák.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea05.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Operátorok, struktúrák</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.19</p>
+<p class="kivonat">A switch(), continue és break vezérlési utasítások. Operátorok és kiértékelési szabályok. Struktúrák.</p>
+</div>
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea05.html#1">Múltkor: miért használunk függvényeket?</a>
+<li><a href="ea05.html#2"><em>Újabb vezérlési szerkezetek</em></a>
+<li><a href="ea05.html#3">Hátultesztelő ciklus</a>
+<li><a href="ea05.html#4">Spagetti ciklus? <code>break</code> és <code>continue</code></a>
+<li><a href="ea05.html#5">Esetszétválasztás: <code>switch()</code></a>
+<li><a href="ea05.html#6"><em>Operátorok</em></a>
+<li><a href="ea05.html#7">Operátorok: precedencia és asszociativitás</a>
+<li><a href="ea05.html#8">Polimorfizmus és konverziók</a>
+<li><a href="ea05.html#9">Operátorok: érték és mellékhatás</a>
+<li><a href="ea05.html#10">Operátorok mellékhatásai</a>
+<li><a href="ea05.html#11">Feltételes kiértékelés: a <code>?:</code> operátor</a>
+<li><a href="ea05.html#12">A <code>++</code> és <code>--</code> értékadó operátorok</a>
+<li><a href="ea05.html#13">A ++ és -- tipikus használata</a>
+<li><a href="ea05.html#14">A rövidzár tulajdonság</a>
+<li><a href="ea05.html#15">A vessző operátor</a>
+<li><a href="ea05.html#16">Függvény paramétereinek kiértékelése</a>
+<li><a href="ea05.html#17">Mik azok a kiértékelési pontok?</a>
+<li><a href="ea05.html#18"><em>Struktúrák</em></a>
+<li><a href="ea05.html#19">Emlékeztető: típusok</a>
+<li><a href="ea05.html#20">Hogyan tároljunk törteket?</a>
+<li><a href="ea05.html#21">Struktúrák létrehozása</a>
+<li><a href="ea05.html#22">Használhatom, ahogy egy „sima” változót?</a>
+<li><a href="ea05.html#23">Struktúrák kezdeti értéke</a>
+<li><a href="ea05.html#24">A <code>typedef</code> kulcsszó</a>
+<li><a href="ea05.html#25">Típusok láthatósága: lokális és globális</a>
+<li><a href="ea05.html#26">Törtes példa: komplex feladat</a>
+<li><a href="ea05.html#27"><em>(Többszörösen) összetett adatok</em></a>
+<li><a href="ea05.html#28">Struktúrák vs. tömbök I. Mit jelent?</a>
+<li><a href="ea05.html#29">Struktúrák vs. tömbök II.</a>
+<li><a href="ea05.html#30">Sztringek és kétdimenziós tömbök</a>
+<li><a href="ea05.html#31">Többszörös összetétel: definíciók</a>
+<li><a href="ea05.html#32">Többszörös összetétel: geometria példa</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Múltkor: miért használunk függvényeket?</h2>
+</div>
+
+<h3>Függvények</h3>
+<ul>
+   <li>Az alprogramok <em>nevet</em> kapnak: <code><em>prim()</em></code>
+   <li><em>Bemenettel, kimenettel</em> rendelkeznek: <code><em>int</em> prim(<em>int szam</em>);</code>
+   <li><em>Építőkőként</em> használhatóak (absztrakció): <code>if (<em>prim(i)</em>) …</code>
+</ul>
+
+<br class="smallskip">
+
+<h3>Felülről lefelé tervezés</h3>
+<pre class="brush: cbub "  >
+for (i = SZÁMJEGYEK_SZÁMA…-1; i &gt;= 0; i -= 1) // ciklus visszafelé
+   printf(&quot;%c&quot;, N_EDIK_SZÁMJEGY…);</pre>
+<p>Ha vannak ilyen függvényeink, nem is olyan nehéz feladat!</p>
+
+
+
+
+
+
+
+
+
+
+<div class="csakdoksi">
+<p>
+A programnyelvek általában háromféle eszközt adnak a kezünkbe, amelyekkel
+a programunkat felépíthetjük:
+</p>
+<ul>
+   <li>Primitívek – az alapvető építőkövek
+   <li>Kombináció – hogyan lehet belőlük építkezni
+   <li><em>Absztrakció</em> – hogyan kezelhető az építmény építőkőként
+</ul>
+<p>Primitívnek számít például egy összeadás. Kombinációnak egy kifejezés: <code>3+4+5</code>,
+ebben több összeadást is kombináltunk. Absztrakciónak egy függvény.
+Primitív adatnak egy beépített típus, pl. egy egész szám. Az adatok kombinációjáról már
+beszéltünk (lásd: tömbök), absztrakciójáról viszont eddig még nem nagyon volt szó – egészen a mostani előadásig.
+Előbb nézzünk még néhány kombinációs lehetőséget.</p>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<h1 class="diacim">Újabb vezérlési szerkezetek</h1>
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Hátultesztelő ciklus</h2>
+</div>
+<p>A ciklusmagot egyszer biztosan le kell futtatni?</p>
+
+<br class="smallskip">
+
+<div class="columns">
+<div>
+    <img class="kozep" src="ea05/folyamathatultesztelo.svg" style="height: 12em;" alt="Hátultesztelő ciklus a folyamatábrán">
+</div>
+<div>
+    <img class="kozep" src="ea05/struktogramhatultesztelo.svg" style="height: 12em;" alt="Hátultesztelő ciklus struktogramon">
+</div>
+</div>
+
+<p class="csakdoksi">Előfordul, hogy egy ciklus törzsét legalább egyszer biztosan
+le akarunk futtatni, vagy hogy a ciklus feltételének nincs értelme, amíg legalább
+egyszer a törzse le nem futott. A <em>hátultesztelő ciklusban</em> a ciklusfeltétel ellenőrzése a
+ciklusmag <em>után</em> történik. Emiatt a ciklusmag <em>legalább egyszer</em>
+végrehajtódik, tehát az első végrehajtás a <em>feltételtől függetlenül</em>
+megtörténik. A forráskódban is a feltétel alul van. Ez emlékeztet arra, hogy
+csak a ciklusmag után ellenőrzi:</p>
+
+<div class="columns">
+
+<div>
+<pre class="brush: c "  >
+do
+   utasítás;
+while (feltétel);</pre>
+</div>
+
+<div>
+<pre class="brush: c "  >
+do {
+   utasítások…
+} while (feltétel);</pre>
+</div>
+
+</div>
+
+
+<div class="kozep"><button data-diapopup="lottodivid">Példa: lottósorsolás</button></div>
+
+<div id="lottodivid">
+
+<p>Példa: 5 darab lottószám – amikor kitalálunk egy újat, megnézzük,
+volt-e már. Ha igen, újra megpróbáljuk.</p>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+int szamok[5];
+
+for (i = 0; i &lt; 5; i += 1) {  // 5 darab szám kell
+   do {
+      szamok[i] = rand()%90 + 1;
+
+      mar_van = 0;            // van már ilyen?
+      for (j = 0; j &lt; i; j += 1)
+         if (szamok[j] == szamok[i])
+            mar_van = 1;
+   } while (mar_van);         // ha van, újra!
+}</pre>
+
+<div class="csakdoksi">
+
+<p>Természetesen a fenti programot egy pillanat
+alatt át lehetne írni elöltesztelő ciklusra. Ha elöl
+lenne a <code>mar_van</code> tesztelése, csak annyit kellene
+tenni, hogy azt a ciklusba belépés előtt IGAZ-ra állítjuk;
+mert akkor először biztosan bemegyünk a ciklus belsejébe:</p>
+
+<pre class="brush: c "  >
+mar_van = 1;
+while (mar_van) {
+    szamok[i] = rand()%90+1;
+
+    mar_van = 0;         /* nezzuk meg, van-e ilyen */
+    for (j = 0; j &lt; i; j += 1)
+        if (szamok[j] == szamok[i])
+            mar_van = 1;
+}</pre>
+
+<p>Mi a különbség a kettő között? Az, hogy itt praktikusabb a hátultesztelő, mert egy számot
+biztosan kell sorsolnunk. Még egy különbség van: az elöltesztelőnél kvázi trükközni kell, hogy
+először bemenjünk a ciklusba, és emiatt tartalmaz egy furcsa kódsort. Az oda nem illő sor a
+ciklus előtti <code>mar_van=1</code> – ez valami olyasmit állít, ami nem igaz. Hogy állíthatjuk
+azt, hogy <em>már</em> van olyan szám, ha <em>még</em> nem is sorsoltunk?</p>
+
+<p>
+A teljes program a lottószámok generálására letölthető innen: <a href="ea05/lotto.c">lotto.c</a>.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Spagetti ciklus? <code>break</code> és <code>continue</code></h2>
+</div>
+
+<h3>Ciklus megszakítása: <code>break</code></h3>
+<div class="sticky"><code>break</code></div>
+<pre class="brush: c sorsurit11"  >
+ while (keresés…) {
+     …
+     if (megvan)
+┌───   break;
+│    …
+│}
+└&gt;</pre>
+
+
+<h3>Ciklus folytatása, ciklustörzs kihagyása: <code>continue</code></h3>
+<div class="sticky"><code>continue</code></div>
+<pre class="brush: c sorsurit11"  >
+┌─&gt; while (vannak feldolgozandó elemek…) {
+│     …
+│     if (a mostani elem nem kell)
+└───     continue;
+
+      …
+    }</pre>
+
+<p class="csakdoksi">Ezek az utasítások nem strukturált vezérlési szerkezeteket
+eredményeznek. Vagyis nem felelnek meg sem a szekvenciának, sem a ciklusnak, sem
+az elágazásnak. Csak nagyon indokolt esetben használjuk őket! A <code>break</code>
+és <code>continue</code> használatára egész félévben gyakorlatilag nem fogunk más
+példát mutatni. Legyen az egész félév összes programja példa inkább arra, hogy
+nagyon jól meg lehet lenni <code>break</code> és <code>continue</code> nélkül is.
+(És főleg <code>goto</code> nélkül!) Ezek amúgy használhatóak <code>for()</code> ciklussal
+is. Vigyázat, a következő iteráció a <code>for()</code> ciklus esetében azt jelenti,
+hogy a ciklus fejlécében megadott műveletet, az utótevékenységet még végrehajtja!</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<a id="easwitch" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Esetszétválasztás: <code>switch()</code></h2>
+</div>
+
+<div class="columns">
+<div>
+<pre class="screenshot">
+1. Adatbevitel
+2. Módosítás
+3. Kimutatás
+…
+0. Kilépés
+
+Választás: <span class="blink">_</span>
+</pre>
+<pre class="brush: c "  >
+if (valasztott==1) {
+    …
+} else if (valasztott==2) {
+    …
+} else {
+    …
+}</pre>
+</div>
+<div>
+<img src="ea05/folyamatswitch.svg" style="width: 14em;" class="kozep">
+</div>
+</div>
+
+<div class="kozep"><button data-diapopup="switchid">C-ben: <code>switch()</code></button></div>
+
+<p class="csakdoksi">A sorozatos <code>if …; else if …</code> kiváltására használható a <code>switch()</code>.
+Az <code>if()</code> <em>igazságértékre alapozott választás</em> helyett ezzel ún. <em>többszörös választás</em>
+vezérlési szerkezetet lehet megadni a programkódban.</p>
+
+<p class="csakdoksi">Például amikor megkérdezzük a felhasználót, szeretne-e törölni egy fájlt, ötféle választ
+adhat: kicsi és nagy I betű, kicsi és nagy N betű, vagy valami más:</p>
+
+<pre class="brush: cbub "   id="switchid">
+printf(&quot;Töröljem a fájlt? (I)gen vagy (n)em? &quot;);
+scanf(&quot; %c&quot;, &amp;valasz);
+
+switch (valasz) {
+    case 'I': /* kis- és nagybetű is jó */
+    case 'i':
+        printf(&quot;Igent válaszoltál, törlöm!\n&quot;);
+        break;                             // kiugrás
+
+    case 'N':
+    case 'n':
+        printf(&quot;Nemet válaszoltál, meghagyom.\n&quot;);
+        break;
+
+    default:
+        printf(&quot;Érvénytelen válasz!\n&quot;);
+        break;
+}</pre>
+
+<div class="csakdoksi">
+
+<p class="megjegyzes">A fenti <code>scanf()</code>-ben a <code>%c</code> előtti
+szóköz szándékos. Ez annyit tesz, hogy a karakter beolvasása előtt kapott összes
+szóköz, újsor és tabulátor (whitespace) karaktert eldobja.</p>
+
+<p>A <code>switch()</code> szerkezeten belül az egyes értékekhez tartozó, több
+utasításból álló kódot nem kell utasításblokkba tenni. Az egész egyetlen egy,
+nagy utasítás blokk, amelynek belépési és kilépési pontjait a <code>case</code>-ek
+és a <code>break</code>-ek adják meg. Fogalmazhatunk így is: a <code>
+case</code> kulcsszavakkal jelölt helyek a <code>switch()</code> utasításon
+belüli utasításszekvenciába <em>belépési pontok.</em> Amelyiknek megfelel a
+kifejezés értéke, oda ugrik a végrehajtás. Ha nem teszünk <code>break</code>-et
+az utasítások után, akkor a végrehajtás továbbmegy a következő belépési pontnál
+található utasításokra, és végrehajtódnak azok is! (Ennek az angol neve:
+fall-through.) Ezt használjuk ki akkor, amikor több <code>case</code>-t írunk
+egymás után: fent a <code>case 'I'</code> után nincs utasítás, de
+<code>break</code> sincs.</p>
+
+<p>Emiatt szokás az esetek 99%-ában így használni a <code>switch()</code> szerkezetet.
+Minden csoportban előbb a <code>case</code>-ek segítségével felsorolt
+lehetőségek, utána az utasítások, végül a <code>break</code>:
+
+<pre class="brush: cbub sorsurit11"  >
+switch (kifejezés) {
+    case érték1:      // ha érték1 vagy érték2, kezdd itt
+    case érték2:
+        …
+        break;        // ugorj ki itt
+
+    case érték4:      // ha érték 4, akkor itt kezdd
+        …
+        …
+        …
+        break;        // és itt ugorj ki
+
+    default:          // ha egyik sem (opcionális)
+        …
+        break;
+}
+</pre>
+
+<p>A <code>switch()</code> lehetőségei korlátozottabbak annál, mint ami egy
+<code>if() – else</code> sorozattal kifejezhető. A legfontosabb megkötés az, hogy
+a <code>case</code> kulcsszavaknál megadott értékek csak egész típusúak lehetnek
+(ide értve természetesen a karaktereket is, mert azok is egész számok). A
+<code>switch()</code> fejlécében használt kifejezésnek is egész számra kell
+kiértékelődnie, ez a C nyelvben kötelező. A <code>default</code> ág viszont
+elhagyható.</p>
+
+<p>A <code>switch()</code> szerkezettel a legegyszerűbb menürendszert is elkészíthetjük a programunkban. Ebben a felhasználó a 
+menü sorszámának beírásával választ. A <code>switch()</code> belsejében meghívódik a sorszámnak megfelelő függvény. Az egyes 
+tevékenységekhez tartozó programkódok sem keverednek így össze, mindegyik külön függvényben van. A visszatérésük után a ciklusban 
+újból kiíródik a menü, és újra választhat a felhasználó:</p>
+
+<pre class="brush: cbub "  >
+void adatbevitel(void) {    // első menüpont teendői
+    /* ... */
+    return;
+}
+
+void kereses(void) {        // második menüpont teendői
+    /* ... */
+    return;
+}
+
+int main(void) {
+    do {
+        printf(&quot;1. Adatbevitel\n&quot;);     // menü kiírása
+        printf(&quot;2. Keresés\n&quot;);
+        printf(&quot;0. Kilépés\n&quot;);
+        /* ... */
+        switch (valasztas) {            // a beírt szám alapján
+            case 1:
+                adatbevitel();
+                break;
+            case 2:
+                kereses();
+                break;
+        }
+    } while (valasztas != 0);
+    
+    return 0;
+}</pre>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<a id="eaoperatorok" class="namer"></a>
+<h1 class="diacim">Operátorok</h1>
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Operátorok: precedencia és asszociativitás</h2>
+</div>
+
+<div class="sticky csakeloadas">C puska!</div>
+<h3>Operátorok: a kifejezések építőkockái</h3>
+<ul>
+   <li>Pl. matematikai műveletek <em>jelei:</em> +, -, *, /
+   <li><em>Operandusok:</em> amiken a műveletet végzik
+</ul>
+
+<br class="smallskip">
+
+<div class="sticky csakdoksi">Precedenciák,<br>asszociativitás:<br>lásd a két<br>oldalas <a href="jegyzet.html">C puskát</a>!</div>
+<h3>Mik az operandusok? – Szabályok</h3>
+<ul>
+   <li>Több is lehet: <code>a = <em>-x</em>;</code> unáris (unary), <code>b = <em>x-y</em>;</code> bináris (binary), azaz egy- és kétoperandusú
+
+   <li><em>Precedencia:</em> különfélék „erőssége”, pl. <code>5+2*3 = 5+(2*3)</code>
+   
+   <li><em>Asszociativitás:</em> egyformák csoportosítása, pl. <code>a/b/c = (a/b)/c</code>
+        </ul>
+</ul>
+
+<p class="csakdoksi">Az operátorok precedenciája és asszocivitása tehát nem azt
+határozza meg, hogy egy nagyobb kifejezés melyik részkifejezését értékeli ki
+<em>időben</em> előbb a program, hanem csak azt mondják meg, hogy melyik operátornak mi az operandusa.
+Pl. egy <code>a*b+c*d</code> kifejezésben mindegy is, hogy előbb az <code>a*b</code>
+vagy a <code>c*d</code> részkifejezést értékeljük ki. Ellenben az <code>a/b/c</code>
+kifejezés egészen mást jelentene, ha az osztás jobbról balra lenne asszociatív, mert
+akkor <code>a/(b/c)</code>-t értenénk alatta, ami viszont nem ugyanazt az eredményt adja.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>Polimorfizmus és konverziók</h2>
+</div>
+
+<p>Előfordulhat az, hogy egy operátor többféleképp működhet?</p>
+
+<br class="smallskip">
+
+<pre class="brush: cbub float"  >
+int a = 5, b = 2;
+double c = 5, d = 2;
+double x;
+
+x = a / b;
+printf(&quot;%g\n&quot;, x); // 2
+x = c / d;
+printf(&quot;%g\n&quot;, x); // 2.5
+
+x = (double)a / b;
+printf(&quot;%g\n&quot;, x); // 2.5
+x = a / (double)b;
+printf(&quot;%g\n&quot;, x); // 2.5</pre>
+
+<h3>Polimorfizmus (többalakúság)</h3>
+
+<p class="csakdoksi">Az operátorok jelentése függhet az operandusok típusától:</p>
+<ul>
+   <li><code>a/b</code>: osztás. Ha <code>a</code> és <code>b</code> is <code>int</code>, egész osztás, ami lefelé kerekít!
+   <li>Ha bármelyik lebegőpontos, az eredmény is az.
+</ul>
+
+<p class="csakdoksi">Az egész osztás sok esetben hasznos. Lásd a bankautomatás
+feladatot: ha az a kérdésünk, hogy 5500 Ft kifizetéséhez hány ezresre van szükségünk.
+<code>5500/1000</code>&nbsp;=&nbsp;5 darab ezres, és <code>5500%1000</code>&nbsp;=&nbsp;500 Ft a maradék, amelyet
+máshogy kell megoldanunk, nem ezresekkel.</p>
+
+<p class="csakdoksi">Ha valamelyik operandus valós, a másik automatikusan valóssá konvertálódik.
+Automatikus konverzió egyéb
+esetekben is történik. Pl. <code>short+int</code> összeadás esetén a
+<code>short</code> típusú operandus a nagyobb ábrázolási tartományú
+<code>int</code> típusúvá konvertálódik. Ugyanígy,
+<code>int+long</code> esetén az összeadás előtt az <code>int</code>
+konvertálódik automatikusan, az <code>5+2.3</code> kifejezésben pedig
+az <code>5</code>-ből lesz <code>5.0</code>. Mindig a nagyobb ábrázolási tartomány
+felé történik az automatikus konverzió, hogy ne amiatt legyen adatvesztés
+vagy túlcsordulás.</p>
+
+<h3>Kézi konverzió (cast)</h3>
+<ul>
+   <li>Ha két <code>int</code> van, de lebegőpontos osztást szeretnénk,
+      jelezni kell
+   <li><em>Konverziós (cast) operátort</em> használva: <code>(double) x</code>
+</ul>
+
+<p class="csakdoksi">Fontos megfigyelni, hogy jobb oldalt látható kódban az <code>x=a/b</code> kifejezésben
+az eredmény még így is <code>2</code>, hogy utána azt a <code>double&nbsp;x</code>
+változóba másoljuk! Az értékadás egy újabb operátor, amelynek az osztás eredményébe
+már nincsen „beleszólása”. Az osztás egész/nem egész jellege nem azon múlik, hogy az
+elvégzése <em>után</em> mit csinálunk az eredménnyel! Ha az osztás valamelyik operandusát
+lebegőpontos számmá alakítjuk azáltal, hogy elé a <code>(double)</code> operátort
+írjuk, már nem egész osztás fog történni. A konverziós operátorok nagyon magas
+precedenciájúak: mindig közvetlenül arra az értékre vonatkoznak, amelyek elé írjuk őket.</p>
+
+<p class="csakdoksi">A konverzió segítségével más típusúvá alakítható egy érték. Egy lebegőpontos
+érték elé <code>(int)</code>-et írva egésszé alakítható az, természetesen a törtrészt
+elveszítve. Számtani műveletek esetén ritkán kell kézi konverziót alkalmazni. Más típusoknál, a
+mutatóknál, amelyek egy későbbi előadáson fognak szerepelni, nagyobb szerepet kapnak a
+konverziók. De ezekről majd később.</p>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<div class="slideheader">
+<h2><span class="oldalszam">9</span>Operátorok: érték és mellékhatás</h2>
+</div>
+
+<h3>Emlékeztető: függvények értéke és mellékhatása</h3>
+<pre class="brush: cbub "  >
+int szovegelos_osszeg(int a, int b) {
+    printf(&quot;Összeadom: %d és %d\n&quot;, a, b); // mellékhatás
+
+    return a + b;                          // érték
+}</pre>
+<ul>
+   <li>Érték: a függvényhívás kifejezésnek <em>értéke van</em>
+   <li>Mellékhatás: <em>minden változás</em>, aminek nyoma van, pl. kiír valamit
+</ul>
+
+<br class="smallskip">
+
+<h3>Operátoroknál</h3>
+
+<ul>
+   <li><em>Érték:</em> a kifejezésnek <em>értéke van</em>, amellyel helyettesítődik
+   <li><em>Mellékhatás:</em> történhet más is, pl. megváltozik egy változó értéke
+</ul>
+
+<p class="csakdoksi">Ne feledjük, hogy a mellékhatás a programozásban nem jelent
+rosszat. A <code>printf()</code> függvényt épp a mellékhatása miatt használjuk.</p>
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span>Operátorok mellékhatásai</h2>
+</div>
+
+<h3>Összeadás, <code>a + b</code></h3>
+
+<ul>
+   <li><em>Érték:</em> az összeg, <em>mellékhatás:</em> nincs
+</ul>
+
+<br class="smallskip">
+
+<h3>Értékadás, <code>a = b</code></h3>
+
+<ul>
+   <li><em>Mellékhatás:</em> <code>b</code> értéke <code>a</code>-ba másolódik
+   <li><em>Érték:</em> az egész <code>a = b</code> kifejezés értéke a másolt érték
+   <li>Balérték=jobbérték (lvalue=rvalue).<br>
+        <em>Jobbérték:</em> ami kiértékelhető, <em>balérték:</em> aminek érték adható.
+</ul>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+a = b = 1;
+
+a = (b = 1);  // ugyanazok
+b = 1; a = b;</pre>
+</div>
+
+<div>
+<pre class="brush: cbub "  >
+a = b;
+printf(&quot;%d&quot;, a);
+
+printf(&quot;%d&quot;, a = b); // neeeee</pre>
+</div>
+</div>
+
+
+<p class="csakdoksi">Vegyük észre, hogy a mellékhatással nem
+rendelkező operátorokkal leírt képletek mindig ugyanazt az eredményt
+adják! <code>5*2+4</code> mindig 14 lesz; míg pl.
+<code>a+=1</code>-ről ez nem mondható el, hiszen többször egymás
+után kiértékelve mindig más eredményt kapunk. Az <code>=</code>
+operátort a mellékhatása miatt használjuk, az értékével ritkán
+törődünk. Az utóbbi viszont lehetővé teszi a láncolt értékadást: pl.
+az <code>a=b=c=0</code> kifejezés mindhárom változót nullázza. Akár
+kifejezőbb is lehet, mint külön leírni mind a három nullázást.</p>
+
+<p class="csakdoksi">Az értékadás kifejezés értéke miatt olyanokat is lehet írni, mint a
+fenti <code>printf</code> – de nem érdemes. Az ilyesmi csak zavart okoz. Bár a
+fordító által készített gépi kód úgyis teljesen ugyanaz lesz, inkább kerüljük a
+felesleges tömörítést! Jobb külön, két sorba leírni a két, egymástól logikailag
+független teendőt (értékadás, kiírás).</p>
+
+<p class="csakdoksi">A balérték, jobbérték kifejezéseket ismerni kell, mert a
+fordító hibaüzeneteiben gyakran megjelennek. Például az <code>5=6</code>
+kifejezésre az „lvalue required as left operand of assignment” jelzést kapjuk,
+vagyis hogy az értékadás bal operandusaként egy balérték kell szerepeljen.
+Ugyanígy helytelen emiatt az <code>5=a</code> kifejezés is.</p>
+
+<p class="csakdoksi">A fentiek érvényesek az összes kombinált értékadó
+operátorra is: <code>+=</code>, <code>-=</code>, <code>|=</code>, <code>&gt;&gt;=</code> stb.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span>Feltételes kiértékelés: a <code>?:</code> operátor</h2>
+</div>
+
+
+<h3>A „3 operandusú operátor” (ternary operator)</h3>
+<ul>
+   <li>Formája: <code>feltétel ? igaz_kif : hamis_kif</code>
+   <li>Értéke: mint Excel-ben a <code>HA()</code> függvény, ha igaz a feltétel, <code>igaz_kif</code>, különben <code>hamis_kif</code>
+</ul>
+
+<br class="smallskip">
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+if (x &lt; 0)
+    y = -x;
+else
+    y = x;</pre>
+helyett:
+<pre class="brush: c "  >
+y = x&lt;0 ? -x : x;</pre>
+<div>abszolút érték</div>
+</div>
+<div>
+<pre class="brush: cbub "  >
+if (a &gt; b)
+    nagyobb = a;
+else
+    nagyobb = b;</pre>
+helyett:
+<pre class="brush: c "  >
+nagyobb = a&gt;b ? a : b;</pre>
+<div>a nagyobbik</div>
+</div>
+</div>
+
+<p class="csakdoksi">Ezt az operátort kérdőjel–kettőspont operátornak, vagy feltételes
+operátornak szokás nevezni. Néha, főleg angol nyelvű szakirodalomban három operandusú
+operátornak is nevezik, mivel ez az egyetlen, amelyiknek három operandusa van.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<div class="slideheader">
+<h2><span class="oldalszam">12</span>A <code>++</code> és <code>--</code> értékadó operátorok</h2>
+</div>
+
+<div class="csakdoksi">
+<p>A <code>++</code> és <code>--</code> operátorokat inkremens (increment) és dekremens (decrement)
+operátoroknak nevezzük, és az értékadó operátorok közé tartoznak.
+Jelentésük „következő” és „előző”. Mindkét operátornak két változata van,
+egy <em>poszt</em> (post) és egy <em>pre</em> forma. A kettőt az különbözteti meg, hogy az
+operátort a változó neve elé vagy mögé írjuk: az <code>a++</code> kifejezés a <em>posztinkremens</em> operátort, a
+<code>++a</code> pedig a <em>preinkremenst</em> használja.
+</p>
+
+<p>A mellékhatása mindkét alaknak ugyanaz. A <code>++a</code> és az
+<code>a++</code> kifejezés is megnöveli az <code>a</code> változót eggyel. De míg
+a posztinkremens kifejezés értéke még <em>régi, növelés előtti állapotot</em>
+mutatja (poszt, kiértékelés után növelés), a preinkremensnél a kifejezés értéke a
+<em>már megnövelt értékkel</em> lesz egyenlő (pre, azaz kiértékelés előtt
+növelés). Ezt onnan lehet megjegyezni, hogy a posztinkremensnél: <code>a++</code>
+az operátor a változó neve <em>után</em> van, vagyis előbb vesszük az értékét, és
+később növeljük, a preinkremensnél a változó neve <em>előtt</em>.</p>
+
+<p>Ennek megfelelően, ha a kifejezések értékét is használjuk, a két forma eltérően
+írható át külön utasításokra:</p>
+
+<div class="columns">
+<div>
+<h3>Preinkremens kifejezés kifejtve</h3>
+<pre class="brush: cbub "  >
+/* tömören */
+a = 5;
+printf(&quot;%d&quot;, ++a);  /* 6-ot ír ki */
+
+/* részletesen */
+a = 5;
+a += 1;            // előre megnöveli
+printf(&quot;%d&quot;, a);</pre>
+</div>
+<div>
+<h3>Posztinkremens kifejezés kifejtve</h3>
+<pre class="brush: cbub "  >
+/* tömören */
+a = 5;
+printf(&quot;%d&quot;, a++);  /* 5-öt ír ki */
+
+/* részletesen */
+a = 5;
+printf(&quot;%d&quot;, a);
+a += 1;            // csak utólag nő</pre>
+</div>
+</div>
+
+
+<p>A dekremens párjaik ugyanígy működnek. Az alábbi programot csak ki kell próbálni, mindent megmutat:</p>
+</div>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int a;
+
+    a = 5;
+    printf(&quot;előtte: %d\n&quot;, a);
+    printf(&quot;értéke: %d\n&quot;, ++a);
+    printf(&quot;utána: %d\n&quot;, a);
+    printf(&quot;\n\n&quot;);
+
+    a = 5;
+    printf(&quot;előtte: %d\n&quot;, a);
+    printf(&quot;értéke: %d\n&quot;, a++);
+    printf(&quot;utána: %d\n&quot;, a);
+
+    return 0;
+}</pre>
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>A ++ és -- tipikus használata</h2>
+</div>
+
+<h3>Ciklusban vagy önmagában</h3>
+<div class="sticky">i = i+1;<br>i += 1;<br>++i;</div>
+<pre class="brush: c "  >
+for (i = 0; i &lt; 100; ++i)
+   …</pre>
+<p>Nem használjuk az értékét. Itt mindegy, melyik formát írjuk.</p>
+
+<br class="smallskip">
+
+<h3>Tömb feltöltése</h3>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+szamok[db++] = szam_beolvas();</pre>
+</div>
+<div>
+<table class="tomb">
+    <tr><th>0.<th>1.<th>2.<th>3.<th>4.
+    <tr><td>12<td>43<td><td><td>
+</table>
+</div>
+</div>
+<p>Posztfix: a darabszám régi értéke az index; oda beírjuk, <em>utána</em> növeljük.
+<br>
+Pl. ha <code>db = 2</code>, az új elem <code>szamok[2]</code> helyre kerül, utána <code>db = 3</code> lesz.</p>
+
+<p class="csakdoksi">
+Ami pont stimmel, hiszen az 5 elem a <code>szamok[0]…szamok[4]</code> helyeken van.
+Vegyük észre: kényelmes dolog, hogy 0-tól számozódnak a tömbindexek!
+</p>
+
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>A rövidzár tulajdonság</h2>
+</div>
+
+<p>Vajon mindig kiszámolja a program, amit egy kifejezésben írunk?</p>
+
+<br class="smallskip">
+
+<h3>A logikai <code>&amp;&amp;</code>, <code>||</code> rövidzár tulajdonsága</h3>
+<p class="csakdoksi">Ha a bal oldal alapján eldől az eredmény, a jobb ki sem értékelődik!</p>
+<ul>
+    <li><code>A &amp;&amp; B</code>: ha A=HAMIS, nem számít B, az egész biztosan HAMIS
+    <li><code>A || B</code>: ha A=IGAZ, a kifejezés értéke biztosan IGAZ
+    <li>Ha <em>kiderül az elsőből</em> az eredmény, a másodikat nem értékeli ki
+        <pre class="brush: cbub "  >
+if (b != 0 &amp;&amp; a/b &gt; 3)  // elkerüljük a 0-val osztást!</pre>
+</ul>
+
+<br class="smallskip">
+
+<h3>A <code>?:</code> feltételes operátor rövidzár tulajdonsága</h3>
+<pre class="brush: cbub "  >
+z = x&gt;y ? x++ : y++;        // neeee</pre>
+
+<p class="csakdoksi">A rövidzár tulajdonság olykor hasznos, de mellékhatásokkal kombinálva veszélyes, mert áttekinthetetlen, 
+érthetetlen programokhoz vezet. Ilyen a fenti is. Első ránézésre úgy tűnik, hogy mindkét változó értéke megnő eggyel.
+De ez nem igaz, hanem a kettő közül csak a nagyobbik fog nőni, mert <code>x&gt;y</code> esetén csak az <code>x++</code>, amúgy
+csak az <code>y++</code> kifejezés értékelődik ki, és csak annak a mellékhatása történik meg.
+Lehetőleg kerüljük az ilyesmit, <em>ne írjunk ilyeneket!</em> Ne használjunk olyan kifejezést a rövidzár
+tulajdonsággal rendelkező operátorok operandusaként, amelynek mellékhatása van!</p>
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>A vessző operátor</h2>
+</div>
+<p>Több kifejezés egymás utáni végrehajtása egy kifejezésben; értéke az utolsó kifejezés értéke.
+Leggyakrabban <code>for</code> ciklus fejlécében:</p>
+<div class="sticky">erőltetett<br>példa</div>
+<pre class="brush: cbub "  >
+unsigned int i, j;
+
+for (i = 0, j = 1; i &lt; 4; i++, j &lt;&lt;= 1)
+    printf(&quot;Kettő %u. hatványa: %u\n&quot;, i, j);</pre>
+<pre class="screenshot">
+Kettő 0. hatványa: 1
+Kettő 1. hatványa: 2
+Kettő 2. hatványa: 4
+Kettő 3. hatványa: 8
+</pre>
+
+<br class="smallskip">
+
+<p><strong>Vigyázat:</strong> <br class="csakdoksi"> 1. függvényhívás paraméterei: az nem vessző operátor!
+<br>2. Logikai ÉS, VAGY operátorok helyett ne használjuk: mást jelent!</p>
+
+<div class="csakdoksi megjegyzes">
+<p>Tipikus hiba ciklusfeltételbe vesszőt írni valamelyik logikai operátor helyett:</p>
+<pre class="brush: cbub "  >
+while (oszto &lt; szam, !vanoszto) {   // HIBÁS!
+    ...
+}</pre>
+<p>Ez a C számára <em>nem azt jelenti,</em> hogy „amíg osztó kisebb számnál ÉS nincs osztó”,
+hanem azt, hogy „amíg nincs osztó”. A vessző operátor kiértékeli a bal oldali részkifejezést
+(szám és osztó összehasonlítása), utána <em>ezt eldobja,</em> és a ciklus feltételének a
+<code>!vanoszto</code> értékét tekinti. Tehát <code>oszto&gt;=szam</code> esetén is
+fut tovább a ciklus!</p>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Függvény paramétereinek kiértékelése</h2>
+</div>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int egy() {
+    printf(&quot;egy\n&quot;);
+    return 1;
+}
+
+int ketto() {
+    printf(&quot;ketto\n&quot;);
+    return 2;
+}
+
+int main(void) {
+    printf(&quot;%d %d\n&quot;, egy(), ketto());
+
+    return 0;
+}</pre>
+
+<div class="csakdoksi">
+<p>Ez a program a fentieket szemlélteti. A kimenet például ez lehet:</p>
+<pre class="screenshot">
+ketto
+egy
+1 2
+</pre>
+
+<p>A <code>main()</code> <code>printf()</code> függvényhívása előtt elő kell
+állítani annak paramétereit. Itt a program  előbb a jobb oldali paramétert
+értékelte ki, ezért íródott ki előbb a <code>ketto</code> szöveg. Vegyük észre,
+hogy itt is egy mellékhatással állunk szemben; a <code>ketto()</code> függvény
+mellékhatása a képernyőre írás! Mivel a függvény paramétereinek kiértékelési
+sorrendjét a fordító szabadon megválaszthatja, a mellékhatások esetleg a nem várt
+sorrendben történhetnek meg. A számjegyek azonban biztosan <code>1 2</code>
+sorrendben fognak látszani, mert azok sorrendjét a <code>printf()</code>-nek adott
+paraméterek sorrendje határozza meg, nem pedig a paraméterek kiszámolásának
+sorrendje.</p>
+
+<p>A fenti példa alapján látható, miért veszélyes egy ilyen programrész:</p>
+<pre class="brush: c "  >
+/* beolvas egy számot a billentyűzetről */
+int beolvas(void);
+
+/* kivonás */
+printf(&quot;A különbség: %d&quot;, beolvas()-beolvas());</pre>
+<p>Nem tudhatjuk, hogy a bal vagy a jobb oldali <code>beolvas()</code> fog
+először meghívódni, vagyis hogy a program a kisebbítendőt vagy a kivonandót kéri
+először. Ezt úgy lehet javítani, hogy külön kiértékelési pontokat vezetünk be:</p>
+<pre class="brush: c "  >
+a = beolvas();  /* kiértékelési pont! */
+b = beolvas();  /* ez is! */
+printf(&quot;A különbség: %d&quot;, a-b);</pre>
+<p>Így már biztosan az első beírt szám a kisebbítendő és a második a kivonandó.</p>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<div class="slideheader">
+<h2><span class="oldalszam">17</span>Mik azok a kiértékelési pontok?</h2>
+</div>
+
+<blockquote>
+<h3>A mellékhatások <em>kiértékelési pontokig</em> (sequence point) érvényesülnek.</h3>
+<ul>
+    <li>Utasítás végén: <code>;</code> vagy <code>}</code>
+    <li><code>if</code>, <code>while</code>, <code>for</code> feltétele után
+    <li>Néhány operátornál menet közben: <code>?:</code> és <code>&amp;&amp;</code> és <code>||</code> és a <code>,</code>
+    <li>Függvényhívás előtt az összes paraméter kiértékelődik
+</ul>
+</blockquote>
+
+<br class="smallskip">
+
+<h3>„A szabvány által nem definiált”</h3>
+<ul>
+   <li>A kiértékelési pontok között a <em>mellékhatások sorrendje kötetlen!</em>
+   <li>A függvényparaméterek kiértékelési sorrendje kötetlen
+   <li class="csakdoksi">Ha kell, több utasításba szedéssel, segédváltozók használatával
+       kényeszeríthetjük a sorrendet.
+   <li>Helytelen: <code>a = a++;</code>
+   <li>Viszont helyes: <code>while (scanf("%c", &amp;c) == 1 &amp;&amp; c != '\n')</code>
+</ul>
+
+<div class="csakdoksi">
+<p>
+<em>Ne írjunk olyan kódot, ahol többször használjuk egy változó értékét, amelyre mellékhatás is van!</em>
+Be kell tartani a következő szabályokat:</p>
+<ul>
+   <li>Ne zsúfoljunk egy kifejezésbe több mellékhatással rendelkező műveletet!
+   <li>Ne keverjük a mellékhatással rendelkező és a rövidzáras operátorokat!
+   <li>Ne tegyünk az <code>if</code>, <code>while</code>… utasítások
+      feltételébe fölöslegesen mellékhatás kifejezést!
+</ul>
+
+<p>Ilyenekre úgysem lesz szükség programozás közben. Ha mégis megsértjük ezeket a
+szabályokat, nemcsak azt kockáztatjuk, hogy követhetetlen és olvashatatlan lesz a
+programunk, hanem azt is, hogy egyszerűen nem fog működni. Különböző fordítók (de
+még akár ugyanaz a fordító is, más beállítások mellett) másképpen fogják
+értelmezni a kódot! Ettől nem rossz a C. Sőt emiatt lehet gyors, és emiatt van
+minden elképzelhető fajta számítógépre C fordító. Csak be kell tartanunk a
+játékszabályokat.</p>
+
+<div class="megjegyzes">
+<p>A fentiek miatt nemcsak értelmetlen, hanem még hibás is az <code>a = a++;</code> utasítás.
+Ez nem csak amiatt rossz, mert a <code>++</code> operátornak amúgy is van
+mellékhatása (az már amúgy is megváltoztatja az <code>a</code> változót), hanem
+mert nem lehet megmondani, mi lesz az eredménye. Itt egy kifejezésen belül,
+tehát ugyanazon kiértékelési pont előtt az <code>a</code> változót két mellékhatás
+is érinti. Az egyik az értékadó operátor mellékhatása, a másik pedig a posztinkremens
+operátoré. Ezekről nem lehet tudni, hogy milyen sorrendben fognak megtörténni. Ha
+előbb az értékadás történik meg, utána az inkrementálás, akkor <code>a</code> értéke
+megnő eggyel. Ha előbb az inkrementálás, és csak utána az értékadás, akkor <code>a</code>
+értéke nem változik, mivel a posztinkremens kifejezés értéke a változó növelés
+előtti értéke.</p>
+<p>A kiértékelési pontok ismeretében már azt is könnyű megmagyarázni, miért
+csinálja ugyanazt az alábbi két programrész (gyakori félreértés, hogy más számokat
+eredményeznek):</p>
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+for (i = 1; i &lt;= 10; i++)
+    printf(&quot;%d &quot;, i);</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+for (i = 1; i &lt;= 10; ++i)
+    printf(&quot;%d &quot;, i);</pre>
+</div>
+</div>
+<p>Hiába van posztinkremens az egyik, preinkremens a másik ciklusban, mind a kettő 1-től
+10-ig írja ki a számokat. Ez azért van, mert az utasítások mindkét esetben
+önmagukban állnak, két kiértékelési pont között. Az egyik kiértékelési pont a ciklustörzs
+vége után van (akkor fog végrehajtódni az <code>i++</code> vagy a <code>++i</code>), a másik
+kiértékelési pont pedig a ciklusfeltétel ellenőrzése előtt (mire ott az <code>i</code> változó
+értékét vizsgálja majd, addigra a mellékhatás biztosan megtörténik).</p>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<a id="eastrukturak" class="namer"></a>
+<h1 class="diacim">Struktúrák</h1>
+
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Emlékeztető: típusok</h2>
+</div>
+
+<div class="sticky">Ismétlés<br>(1. előadás)</div>
+<blockquote><p><em>Típus:</em> értékkészlet és hozzá tartozó műveletek.</p></blockquote>
+
+<br class="smallskip">
+
+<p>Egyszerű, beépített típusok:</p>
+<ul>
+   <li>Egész számok: <code>int</code>, <code>long int</code> stb.
+   <li>Lebegőpontos számok: <code>float</code>, <code>double</code>
+   <li>Karakterek: <code>char</code>
+   <li>Logikai: <code>int</code>
+</ul>
+
+<p>Összetett, származtatott típusok:</p>
+<ul>
+   <li><em>Tömb:</em> egyforma típusú elemek sorszámozott tárolója
+        <ul>
+       <li>Pl. <code>int t[10]</code> &rarr; <code>t[0]</code>…<code>t[9]</code>, 10 darab egész szám
+       <li>Speciális tömb a sztring: karakterek végjeles sorozata
+       </ul>
+   
+   <li><em>Struktúra:</em> összetartozó adatok – erről lesz most szó.
+</ul>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<div class="slideheader">
+<h2><span class="oldalszam">20</span>Hogyan tároljunk törteket?</h2>
+</div>
+<h3>Racionális számok</h3>
+
+<p class="csakdoksi">Tegyük fel, hogy egy olyan programot kell készítenünk, amely
+racionális számokkal dolgozik. Hogy ezeket pontosan tudjuk tárolni, a lebegőpontos
+tárolás ötletét elvetjük: mindig külön tároljuk a számlálót és a nevezőt, két
+egész típusú változóban. Ahogy írjuk a programot, azonban egyre bonyolultabb
+kifejezéseink lesznek; egyre nehezebb lesz követni, hogy melyik törtes
+műveletet mely változókon kell elvégezni. Pl. az alábbi művelet:</p>
+
+<pre class="boxdrawing" style="line-height: 0.65;">
+┌ a   c ┐   ┌ e   g ┐   ad+cb   eh+gf   (ad+cb)(eh+gf)
+  ─ + ─   ·   ─ + ─   = ───── · ──── = ──────────────
+└ b   d ┘   └ f   h ┘     bd     fh         bdfh
+</pre>
+
+<div class="sticky">Mi tartozik<br>össze?!</div>
+
+<p class="csakdoksi">Kódban ez így nézne ki:</p>
+
+<pre class="brush: cbub "  >
+i = (a*d+c*b)*(e*h+g*f);
+j = b*d*f*h;</pre>
+
+<br class="smallskip">
+
+<p><span class="csakdoksi">Még ha be is vezetünk valami konvenciót a jelölésre (pl. <code>asz</code> és <code>an</code>
+az <code>a</code> tört számlálója és nevezője), akkor is elég reménytelennek tűnik a helyzet.</span>
+Két tört számlálója és nevezője – ez se sokkal jobb: </p>
+
+<pre class="brush: cbub "  >
+int asz, an, bsz, bn; // a és b tört, számlálók és nevezők</pre>
+
+
+<p>Mi hiányzik nekünk? Az adat absztrakciója! <span class="csakdoksi">
+Az hiányzik, hogy az adattípusokból ugyanúgy tudjunk építkezni,
+ahogyan az algoritmusoknál a függvényekkel is tettük. Legyen olyan
+nyelvi elem, amely segítségével több összetartozó adatot egységként
+kezelhetünk, és néven is nevezhetjük az így kialakult adatcsomagot.</span></p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>Struktúrák létrehozása</h2>
+</div>
+
+<div class="columns">
+<div>
+<h3>Definíció szintaxisa</h3>
+<pre class="c">
+struct <strong>név</strong> { <span class="bubble">definíció</span>
+   <strong>T1</strong> mező1, mező2, …;
+   <strong>T2</strong> mező3;
+   …
+};           <span class="bubble">pontosvessző!</span>
+</pre>
+</div>
+<div>
+<h3>Definíció és példányosítás</h3>
+<pre class="brush: cbub "  >
+struct Pont {
+    double x, y;
+};
+
+struct Pont p1, p2;</pre>
+</div>
+</div>
+
+<p class="csakdoksi">Az egyes mezők deklarációjának
+szintaktikája megegyezik a változók deklarációinak szintaktikájával: <code>Típus&nbsp;név;</code>.
+Csak itt nem változó lesz belőlük, hanem egy struktúra adattagjai lesznek.
+T1, T2… bármilyen, már létező típusok lehetnek. A struktúra neve is bármi lehet, ami még nem foglalt.
+Hasonlóan, a mezők különböző nevűek kell legyenek – azonban az megengedett, hogy különböző struktúrák
+ugyanolyan mezőneveket tartalmazzanak. Pl. a Pont2D struktúra mezői lehetnek x és y, a Pont3D struktúra
+mezői pedig x, y és z.</p>
+
+<br class="smallskip">
+
+<h3>Mezőkre (adattagokra) hivatkozás</h3>
+
+<pre class="screenshot float">
+p pont: (3;6)
+</pre>
+
+<pre class="brush: cbub "  >
+struct Pont p;
+
+p.x = 3;  // az x koordinátája legyen 3
+p.y = 6;
+
+printf(&quot;p pont: (%f;%f)&quot;, p.x, p.y);</pre>
+
+<p class="csakdoksi">A struktúra <strong>mezőkből</strong> áll, más néven: <em>tagok</em> vagy adattagok (member).
+Adott mezőre ponttal hivatkozunk: változó.mezőnév. Pl.
+<strong><code>p.x</code> jelentése: a <code>p</code> pont x koordinátája.</strong>
+Ebben <code>p</code> típusa <code>struct Pont</code>, <code>p.x</code> típusa pedig <code>double</code>.
+Egy adattag teljesen ugyanúgy tud viselkedni, mint bármelyik másik változó: érték adható neki, kifejezésekben
+szerepelhet, <code>printf()</code> kiírja, <code>scanf()</code> beolvassa. Sajnos ez utóbbi
+függvények a struktúrát, mint egészt, nem tudják kezelni.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<div class="slideheader">
+<h2><span class="oldalszam">22</span>Használhatom, ahogy egy „sima” változót?</h2>
+</div>
+<h3>Értékadás</h3>
+<pre class="brush: cbub "  >
+struct Pont p1, p2;
+p1 = p2;</pre>
+
+<p class="csakdoksi">A struktúra értékadás minden mezőt másol: a fenti példában <code>p1.x=p2.x; p1.y=p2.y;</code>.</p>
+
+<br class="smallskip">
+
+<h3>Függvény paramétere, visszatérési értéke</h3>
+<pre class="brush: cbub "  >
+/* megadja a pont origótól mért távolságát */
+double origo_tavolsag(struct Pont p) {
+    return sqrt(p.x*p.x + p.y*p.y);
+}
+
+/* megadja a szakaszfelezőt */
+struct Pont szakaszfelezo(struct Pont p1, struct Pont p2);
+
+struct Pont a;
+printf(&quot;%f&quot;, origo_tavolsag(a));</pre>
+
+<p class="csakdoksi">Struktúra lehet függvény paramétere és visszatérési
+értéke is. A paraméterátadás szabályai ugyanazok, mint az egyszerű típusoknál:
+ha változót adunk át, akkor a függvény csak a változó értékét fogja látni,
+az eredeti változót nem. Tehát nem tudja megváltoztatni azt.</p>
+
+
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Struktúrák kezdeti értéke</h2>
+</div>
+
+<div class="sticky">inicializálás<br>!=<br>értékadás!</div>
+<h3>Struktúrák inicializálása</h3>
+
+<pre class="brush: cbub "  >
+struct Pont {
+    double x, y;
+};
+
+struct Pont p1 = { 2, 5 };   // inicializálás: p.x←2 és p.y←5</pre>
+
+<p>Az egyes értékek a <em>definíció sorrendje</em> szerint meghatározott
+módon kerülnek a mezőkbe. Vigyázni kell, ha megváltoztatjuk a sorrendet!</p>
+
+<p class="csakdoksi">Nagyon fontos megérteni az értékadás és az inicializálás
+közötti különbséget. Az inicializálás azt jelenti, hogy egy éppen definiálás
+alatt lévő változónak megadjuk a kezdeti értékét; az értékadás pedig az, hogy
+egy már létező, régebben létrejött változónak adunk valami új értéket.
+A kettő nem ugyanaz, csak mindkettőt szintaktikailag az egyenlőségjellel
+kell jelezni.</p>
+
+<br class="smallskip">
+
+<div class="megjegyzes">
+<h3>C99-ben (sajnos nem minden fordító eszi)</h3>
+<pre class="brush: c "  >
+struct Pont p2 = { .x = 2, .y = 5 };    /* inicializálás */
+
+p2 = (struct Pont) { 2, 5 };            /* értékadások */
+p2 = (struct Pont) { .x = 2, .y = 5 };</pre>
+
+<p class="csakdoksi">A C nyelv újabb (C99 szabvány utáni) változataiban ilyet is lehet írni.
+Sajnos ezt nem minden fordító támogatja. Sőt, C++-ban ez teljesen szabálytalan, úgyhogy ne
+ezt szokjuk meg; csak azért szerepel itt, ha találkoztok vele valahol, tudjátok, mit jelent.
+A fenti inicializálás egyébként kiváltható a <code>.x</code> és <code>.y</code> nélküli formával,
+ahol a definíció sorrendjét használjuk; a lentebbi értékadások pedig a mezőknek
+egyesével értékadással:</p>
+
+<pre class="brush: c csakdoksi"  >
+p2.x = 2;
+p2.y = 5;</pre>
+</div>
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>A <code>typedef</code> kulcsszó</h2>
+</div>
+
+<p>A <code>typedef</code> kulcsszóval egy típusnak adhatunk új nevet:</p>
+
+<pre class="brush: cbub "  >
+typedef int Egesz; // meglévő név és új név
+typedef char Betu;
+
+Egesz x;           // x egész, vagyis int
+Betu b;</pre>
+
+<p class="csakdoksi">A <code>typedef</code> kulcsszóval egy meglévő típusnak
+adhatunk egy új nevet. Olyan nevet érdemes adni, amelyik számunkra beszédesebb és
+jobban kifejezi az adott típus szerepét. Itt is hasonló a szintaktika, mint a
+változó deklarációjánál: előbb a típus, utána a név. Csak a névből nem változó
+neve lesz, hanem a típusnak egy másik neve.</p>
+
+<br class="smallskip">
+
+<p>Struktúráknál gyakran használjuk:</p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+struct Pont {
+    double x, y;
+};
+typedef struct Pont Pont;
+
+Pont p;</pre>
+</div>
+<div>
+<pre class="brush: cbub "  >
+typedef struct Pont {
+    double x, y;
+} Pont;
+
+
+Pont p;</pre>
+</div>
+</div>
+
+<p>Mindkét forma ugyanazt jelenti.</p>
+
+<div class="csakdoksi">
+<p>A struktúrák esetén leginkább arra használjuk, hogy spórolni
+lehessen a gépeléssel: <code>typedef struct Pont Pont</code>
+után nem kell mindig kiírni, hogy <code>struct Pont</code>, elég
+annyit, hogy <code>Pont</code>. Lustaság, fél egészség. A jobb oldalt látható
+szintaktikával a struktúra definíciója és az új név megadása
+összevonható. Ilyenkor a sturktúrának nem is lenne kötelező
+nevet adni, vagyis az első <code>Pont</code> szó elhagyható lenne.
+Ilyennel is gyakran találkozni C programokban. A struktúra
+maga ilyenkor névtelen (anonymous structure):</p>
+<pre class="brush: c "  >
+typedef struct {
+    double x, y;
+} Pont;</pre>
+<p>A struktúra neve (Pont), és a <code>typedef</code> segítségével adott
+név nem kötelezően egyforma. De ha nem így teszünk, csak összevisszaságot
+okozunk vele, úgyhogy érdemes úgy megadni, hogy egyformák legyenek.</p>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>Típusok láthatósága: lokális és globális</h2>
+</div>
+
+<p>A típusokat általában <em>globálisan</em> adjuk meg: mindenhol látszódjanak.</p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+/* globálisan */
+typedef struct Tort {
+    int szaml, nev;
+} Tort;
+
+
+int fuggveny() {
+    Tort t1, t2; // látható
+}
+
+int masik_fuggveny() {
+    Tort b;   // ez is
+}</pre>
+</div>
+
+<div>
+<pre class="brush: cbub "  >
+/* lokálisan */
+int fuggveny() {
+    typedef struct Tort {
+        int szaml, nev;
+    } Tort;
+
+    Tort t1, t2; // látható
+}
+
+/* Ez így HIBÁS! */
+int masik_fuggveny() {
+    Tort t;   // ismeretlen!
+}</pre>
+</div>
+</div>
+
+<p class="csakdoksi"> A saját típusainkat definiálhatjuk <em>lokálisan</em> és
+<em>globálisan</em>. A típusok általában azért globálisak, mert a programunk
+adatai azokon belül több helyen is előkerülnek. Vagyis több függvényben is. Ennek
+ellenére természetesen lehetséges az, hogy egy adott típus csak egy függvényen
+belül létezik. Ha csak ott használjuk, akkor érdemes lokálisan megadni, mert
+akkor követhetőbb a program mások számára.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<div class="slideheader">
+<h2><span class="oldalszam">26</span>Törtes példa: komplex feladat</h2>
+</div>
+
+<div class="sticky mono" style="font-size: 2em; line-height: 0.55;">2<br>─<br>3</div>
+<h3>Racionális számok</h3>
+<p>Feladat: a C nyelv nem tartalmaz tört típust. Hozzunk létre egyet! Írjuk meg
+az ezeket összeadni, szorozni, kiírni tudó programrészeket!</p>
+
+<br class="smallskip">
+
+<h3>Megoldás</h3>
+<div class="sticky">A teljes<br>megoldás:<br><a href="ea05/tort.c">tort.c</a></div>
+<ul>
+   <li><strong>Ez új típus!</strong> Saját értékkészlet és műveletek!
+   <li>Összetartozó adatok is. Ezért ez egy <em>struktúra</em> lesz!<br>
+   <li>A műveletek pedig <em>függvények.</em>
+</ul>
+
+<br class="smallskip">
+
+<div class="kozep">
+    <button data-diapopup="strukturadivid">Struktúra</button>
+    <button data-diapopup="kiirasdivid">Kiírás</button>
+    <button data-diapopup="valosertekdivid">Valós érték</button>
+    <button data-diapopup="osszeadasdivid">Összeadás</button>
+    <br class="smallskip">
+    <button data-diapopup="tesztdivid">Teszt</button>
+    <button data-diapopup="egyszerusitesdivid">Egyszerűsítés</button>
+    <button data-diapopup="muveletekdivid">Műveletek</button>
+    <button data-diapopup="beolvasasdivid">Beolvasás</button>
+</div>
+
+<div id="strukturadivid">
+<h3>A törtek struktúrája</h3>
+
+<pre class="brush: cbub "  >
+typedef struct Tort { // függvényen kívül: globális
+    int szaml, nev;
+} Tort;
+
+int main(void) {
+    Tort t1;           // a typedef miatt elég annyi, hogy Tort
+
+    t1.szaml = 1;      // 1/2
+    t1.nev = 2;
+
+    return 0;
+}</pre>
+<p>Mivel a struktúrát több függvény is használja, globálisan definiáljuk.</p>
+</div>
+
+
+
+<div id="kiirasdivid">
+<h3>Tört kiírása</h3>
+
+<p>A <code>printf()</code> nem ismeri a tört típust, ezért
+a kiírást nekünk kell megoldanunk. Ezt szeretnénk:</p>
+
+<pre class="brush: cbub "  >
+Tort t1;
+
+t1.szaml = 2;
+t1.nev = 3;
+tort_kiir(t1); // 2/3 jelenjen meg</pre>
+
+<p>A függvény <em>nem tér vissza semmivel,</em> csak kiírja a törtet.</p>
+
+<pre class="brush: cbub "  >
+/* Kiírja a törtet számláló/nevező alakban */
+void tort_kiir(Tort t) {
+    printf(&quot;%d/%d&quot;, t.szaml, t.nev);
+}</pre>
+</div>
+
+
+
+
+
+
+<div id="valosertekdivid">
+<h3>Tört valós értéke</h3>
+
+<p>Szükségünk lehet a tizedes törtre is:</p>
+<pre class="brush: cbub "  >
+Tort x = {2, 3};
+
+printf(&quot;%f\n&quot;, tort_valos(x)); // 0.666667</pre>
+
+<p>A függvény egy törtből csinál <code>double</code> típusú lebegőpontos számot.</p>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+/* Visszatér a tört lebegőpontos értékével */
+double tort_valos(Tort t) {
+    return (double)t.szaml / t.nev;
+}</pre>
+
+<p>Vigyázni: ne egész osztást végezzünk! Különben 1/2 = 0.</p>
+</div>
+
+
+
+
+
+
+
+
+<div id="osszeadasdivid">
+<h3>Törtek összeadása</h3>
+
+<pre class="brush: cbub "  >
+osszeg = tort_osszead(a, b);</pre>
+
+<br class="smallskip">
+
+
+<p>A szorzat lehet közös nevező. Két törtet összegző függvény:</p>
+
+<pre class="sticky boxdrawing" style="line-height: 0.7; text-align: left;">
+a   c   ad+cb
+─ + ─ = ─────
+b   d     bd
+</pre>
+
+<pre class="brush: cbub "  >
+/* visszatér a két tört összegével */
+Tort tort_osszead(Tort t1, Tort t2) {
+    Tort uj;
+
+    uj.szaml = t1.szaml*t2.nev + t2.szaml*t1.nev;
+    uj.nev = t1.nev*t2.nev;
+
+    return uj;
+}</pre>
+
+</div>
+
+
+
+
+
+<h3 class="csakdoksi">Törtek összeadása – eredmény?!</h3>
+
+<p class="csakdoksi">Itt tartunk most:</p>
+
+<div id="tesztdivid">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+typedef struct Tort {
+    int szaml, nev;
+} Tort;
+
+void tort_kiir(Tort t);
+Tort tort_osszead(Tort t1, Tort t2);
+
+int main(void) {
+    Tort x={1, 2}, y={1, 4};
+
+    tort_kiir(tort_osszead(x, y));
+
+    return 0;
+}
+
+void tort_kiir(Tort t) {
+    printf(&quot;%d/%d&quot;, t.szaml, t.nev);
+}
+
+Tort tort_osszead(Tort t1, Tort t2) {
+    Tort uj;
+
+    uj.szaml = t1.szaml*t2.nev
+             + t2.szaml*t1.nev;
+    uj.nev = t1.nev*t2.nev;
+
+    return uj;
+}</pre>
+
+<div class="csakdoksi">
+<p>A program futási eredménye:</p>
+<pre class="screenshot">
+6/8
+</pre>
+<p>Ez helyes is, és nem is. Helyes, mert 6/8 az 3/4, és az összeg tényleg annyi.
+De lehetne jobb is, ha a program egyszerűsíteni is tudna.</p>
+</div>
+
+</div>
+
+
+
+<div id="egyszerusitesdivid">
+<h3>Tört létrehozása – egyszerűsítve!</h3>
+
+<pre class="brush: cbub "  >
+x = tort_letrehoz(50, 100); // 1/2</pre>
+
+<p class="csakdoksi">Nagyon fontos itt a függvény filozófiája. A két egész szám összerakva nem
+csak egyszerűen két egész szám együtt, hanem egy tört. Speciálisabb, mint egy sima számpár.
+Ezért amikor egy törtet „építünk”, azaz létrehozunk két egész számból, akkor el kell végeznünk
+egy egyszerűsítést rajta. Az egyszerűsített tört egyenértékű az összes bővített változatával.
+Innentől kezdve, hogy ez a függvényünk megvan, mindig ezt fogjuk használni akkor, amikor egy
+számlálóból és egy nevezőből létrehozunk egy törtet. Így minden törtünk egyszerűsítve lesz! Sőt
+aki a törtes függvényeinket használja, annak is azt javasoljuk, hogy minden törtet ezzel a
+függvénnyel hozzon létre, ne pedig struktúra inicializálással vagy pedig „kézi” értékadással
+külön a számlálónak és a nevezőnek. Így neki sem kell törődnie majd az egyszerűsítéssel.</p>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+/* Törtet hoz létre, egyszerűsítve */
+Tort tort_letrehoz(int szaml, int nev) {
+    Tort uj;
+    int a = szaml, b = nev;
+    while (b!=0) {      // Euklidész
+        int t = b; b = a%b; a = t;
+    }
+    uj.szaml = szaml/a;
+    uj.nev = nev/a;   // legnagyobb közös osztó = a
+    return uj;
+}</pre>
+
+<p class="csakdoksi">Az euklidészi algoritmus megkeresi két szám
+legnagyobb közös osztóját. Ezzel osztva a számlálót és a nevezőt
+megkapjuk az egyszerűsített törtet.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="csakdoksi">
+<h3>Törtek összeadása és szorzása – most már helyesen</h3>
+
+</div>
+
+
+
+<div id="muveletekdivid">
+
+<pre class="brush: cbub "  >
+/* műveletek törtekkel */
+osszeg = tort_osszead(a, b);
+szorzat = tort_szoroz(a, b);</pre>
+
+<p class="csakdoksi">Az összeadást és a szorzást megvalósító függvények:</p>
+<pre class="brush: cbub "  >
+/* Visszatér a törtek összegével. */
+Tort tort_osszead(Tort t1, Tort t2) {
+   return tort_letrehoz(t1.szaml*t2.nev + t2.szaml*t1.nev,
+                        t1.nev*t2.nev);
+}</pre>
+
+<pre class="sticky mono" style="line-height: 0.7">
+a c   ac
+─·─ = ──
+b d   bd
+</pre>
+
+<pre class="brush: cbub "  >
+/* Visszatér a törtek szorzatával. */
+Tort tort_szoroz(Tort t1, Tort t2) {
+    return tort_letrehoz(t1.szaml*t2.szaml,
+                         t1.nev*t2.nev);
+}</pre>
+
+<p class="csakdoksi">Az összeadás most már elvégzi az egyszerűsítést
+is, hiszen a törtet létrehozó függvény tartalmazza azt is. Egyszerűbb
+lett a függvény, hiszen a lokális változóra sincsen már szükség. Amit
+a <code>tort_letrehoz()</code> visszaad, azt passzolja is tovább a
+hívónak. A szorzás ugyanígy működik programozásilag, és a többi művelet:
+kivonás, osztás sem különböző.</p>
+
+</div>
+
+
+
+
+<div id="beolvasasdivid">
+<h3>Tört beolvasása</h3>
+
+<p>Olvassunk be egy törtet a billentyűzetről:</p>
+<pre class="screenshot float">
+Írd be a törtet:
+6/8<span class="blink">_</span>
+</pre>
+<pre class="brush: c "  >
+Tort t;
+
+t = tort_beolvas();</pre>
+
+<br class="smallskip">
+
+<pre class="brush: c "  >
+/* beolvas egy törtet a billentyűzetről, és visszaadja */
+Tort tort_beolvas(void) {
+    int szam, nev;
+    scanf(&quot;%d / %d&quot;, &amp;szam, &amp;nev);
+    return tort_letrehoz(szam, nev);
+}</pre>
+
+<p>Mi történik, ha nem számot ír be? Ha 0 nevezőt ad?</p>
+
+</div>
+
+
+
+<div class="csakdoksi">
+<p>
+Kérdés, mit csináljunk akkor, ha a billentyűzetről nem érvényes adat érkezik.
+Akár nincs a két szám között törtvonal, akár a felhasználó nem számot ír be,
+akár nullát ad meg nevezőnek – sok okból lehet helytelen az adat.
+Ha a függvényt a fenti formában írjuk meg, akkor mindenképpen vissza kell térnünk
+egy törttel (hiszen ez a függvény visszatérési értéke). Na de mi legyen ez a tört
+hiba esetén? 1/1? 0/0?
+Valamilyen módon a hibát jó lenne jelezni. 1/1 nem lehet a visszatérési érték,
+mert az egy helyes tört. A 0/0 talán jobb ötlet lenne.
+</p>
+<p>
+A probléma igazából onnan
+gyökerezik, hogy a függvénynek nem egy, hanem két eredményt kell előállítania.
+Egy hibakódot (sikerült vagy nem sikerült), és magát a törtet. A fenti függvénynek pedig csak egy
+visszatérési értéke van.
+</p>
+<p>
+A következő előadáson bemutatott módszerrel lehetségessé válik majd több visszatérési
+érték adása egy függvényből. Tulajdonképpen a <code>scanf()</code> is ezt teszi:
+</p>
+<pre class="brush: c "  >
+int siker_db;
+double szam;
+
+siker_db = scanf(&quot;%lf&quot;, &amp;szam);</pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<h1 class="diacim">(Többszörösen) összetett adatok</h1>
+
+
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Struktúrák vs. tömbök I. Mit jelent?</h2>
+</div>
+
+<img class="float" src="ea05/konyv.svg" style="width: 8em;" alt="Könyv: struktúra">
+
+<p><strong>Struktúrába</strong> <em>egy dolog összetartozó adatait</em> tesszük.
+  <ul>
+     <li><em>Különálló, új típus,</em> saját műveletekkel
+     <li>Pl. egy könyv adatai: cím, szerző, oldalszám
+  </ul>
+
+<br class="smallskip">
+
+<img class="float" src="ea05/konyvek.svg" style="width: 8em;" alt="Könyvek: tömb">
+
+<p><strong>Tömbben</strong> <em>több egyforma dolog</em> adatait tároljuk.
+  <ul>
+     <li><em>Ez csak egy tároló</em> azonos szerepű dolgok számára.
+     <li>Egy tömbbe kerülő dolgoknak nem feltétlenül van közük egymáshoz!
+     <li>Pl. könyvek katalógusa
+  </ul>
+
+<br class="smallskip">
+
+<p>Elfajulások lehetségesek: létezhet egy elemű struktúra vagy tömb is. Alma, körte, az, a: ezek
+szavak, még az „a” névelő is, hiába egy betűs!</p>
+
+<div class="csakdoksi">
+
+<p>Ne feledjük: a típus egy értékkészlet és műveletek együttese. Egy dátum struktúra
+létrehozásával egy új típust hozunk létre, amelyen új műveletek értelmezhetőek. Pl. ki lehet
+számolni két dátum között a különbséget napokban. Ez kizárólag csak a dátumokon értelmezett
+művelet (év, hónap, nap), nem pedig az összes háromelemű, egészekből álló tömbön!</p>
+
+<p>Ha az összetartozó adatok különböző típusúak (pl. a név karaktersor, a dátum pedig egész
+számokból áll), akkor biztonsan struktúráról van szó. Ha egyformák a típusok, gyakran akkor is.
+Balgaság a tört számlálóját és nevezőjét nem struktúrával, hanem egy kételemű tömbbel megadni.
+Úgyszint egy év, hónap, napból álló dátum is inkább struktúra, bár mindegyik eleme egész szám. A
+tömb választása azt is éreztetné, hogy az év, hónap, nap felcserélhetőek, ami nem igaz. Egy
+névsor elemei, amelyet tömbben tárolunk, viszont igen: sorba rendezhetőek az emberek név,
+születési évszám, magasság stb. szerint is.</p>
+
+<p>És még egy dolog, amit ne felejtsünk el: nem azért használunk tömböt vagy struktúrát, mert
+sok adattal dolgozunk, hanem azért, mert <em>az adatoknak közük van egymáshoz!</em> A tört
+számlálóját és nevezőjét is betettük egy struktúrába, pedig csak két elemről van szó. Ugyanígy,
+egy három betűből álló szó is tömb a programozás szempontjából. Sőt ha egyszer eldöntjük, hogy a
+szavakat karaktertömbökben tároljuk, akkor még az „a” névelő is egy tömb, az is egy szó! Mondhatjuk, hogy ha
+valamilyen adatoknak a tömbbe vagy struktúrába tevése által megszűnik a programkódban a
+„sorminta” (pl. <code>a1=b1; a2=b2; a3=b3;</code> helyett <code>a=b</code> lesz a struktúra
+értékadás által), akkor jó úton járunk. Ha „sorminta” van a programunkban, akkor pedig
+valószínűleg rossz úton. Az összetett típusokban az adataink közötti összefüggéseket rögzítjük,
+és ez kihatással van a programkód felépítésére is: annak áttekinthetőségére, egyszerűségére és
+legfőképp minőségére.</p>
+
+<div class="megjegyzes">
+<p>Néha van olyan eset, amikor nem teljesen egyértelmű, hogy strukturáról vagy tömbről van szó,
+ilyen a sok dimenziós tér esete is. Ha mindegyik komponenst kiírjuk, akkor rengeteg mezőnév
+keletkezik, amelyeket meg kell jegyeznünk. Ha tömböt használunk helyette, akkor az egyes
+komponenseket ciklussal dolgozhatjuk fel.</p>
+
+<pre class="brush: cbub "  >
+struct Pont10D {
+   int x, y, z, a, b, c, d, e, f, g; // struktúra ennyi névvel?
+};
+
+int koord[10];                       // vagy inkább tömb?</pre>
+
+<p>A problémára talán a legjobb megoldás ez:</p>
+
+<pre class="brush: cbub "  >
+struct Pont10D {
+   int koord[10];
+};</pre>
+
+<p>Így ciklussal is fel lehet dolgozni a komponenseket, ugyanakkor egy
+<code>Pont10D</code> struktúrát lehet értékül adni, és függvénynek paraméterként
+is.</p>
+
+</div>
+
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<div class="slideheader">
+<h2><span class="oldalszam">29</span>Struktúrák vs. tömbök II.</h2>
+</div>
+
+<div class="columns">
+<div>
+<h3>Értékadás</h3>
+<pre class="brush: cbub "  >
+struct Pont {
+   double x, y;
+};
+struct Pont a, b;
+a = b;           // OK!</pre>
+<br>
+<h3>Függvény visszatérési értéke</h3>
+<pre class="brush: cbub "  >
+struct Pont origo(void) {
+    struct Pont pont = {0, 0};
+
+    return pont;  // OK!
+}</pre>
+</div>
+
+<div>
+<br>
+<pre class="brush: cbub "  >
+int t1[100];
+int t2[100];
+
+
+t1 = t2;   // Hibás!</pre>
+<h3>&nbsp;</h3>
+<br>
+<pre class="brush: cbub "  >
+????? nullatomb(void) {
+    int t[100] = {0};
+    
+    return t;   // Hibás!
+}</pre>
+</div>
+</div>
+
+<p class="csakdoksi">Az értékadás a struktúrák között működik C-ben, a tömbök között nem.
+A függvényből visszatérés struktúrával működik C-ben, a tömbbel nem. Mindez azért van, mert
+a C nyelv szabályai szerint struktúrát lehet értékadással másolni, tömböt viszont nem.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>Sztringek és kétdimenziós tömbök</h2>
+</div>
+
+<h3>Szövegek reprezentálása: karaktertömb</h3>
+
+<pre class="brush: cbub "  >
+char str[100] = &quot;hello&quot;;
+printf(&quot;A szöveg: [%s].&quot;, str); // A szöveg: [hello].</pre>
+
+<p class="csakdoksi"> A szöveg karakterek sorozata: <em>sztring</em> (string),
+más néven karakterlánc. C-ben nincs külön típus, hanem <em>karakterek
+tömbjeként</em> adjuk meg. Mivel tömbről van szó, a méretét meg kell mondanunk
+előre. Az <code>=</code> értékadás operátor sem használható rajta. Következő
+előadáson részletesen szerepelni fog. </p>
+
+<br class="smallskip">
+
+<h3>Kétdimenziós tömb: tömbök tömbje</h3>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+double matrix[5][6];
+matrix[sor][oszlop] = 3.14;</pre>
+<img class="kozep" src="ea05/matrix.svg" style="height: 9em;" alt="2D tömb: mátrix">
+<p class="csakdoksi">Itt egy 5×6-os táblázatot adunk meg: 5 sor × 6 oszlop.</p>
+</div>
+
+<div>
+<pre class="brush: cbub "  >
+char tictactoe[3][3];
+tictactoe[0][2] = 'o';</pre>
+<img class="kozep" src="ea05/amoba.svg" style="height: 9em;" alt="2D tömb: tic-tac-toe játék">
+<p class="csakdoksi">A tic-tac-toe játékhoz egy 3 × 3 játéktér kell.</p>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>Többszörös összetétel: definíciók</h2>
+</div>
+
+<p>Többszörösen összetett adatok esetén a definíciók sorrendjére
+figyelni kell: csak a már definiált típusokból lehet építkezni.</p>
+
+<pre class="brush: cbub "  >
+struct Datum { int ev, honap, nap; };
+struct Ember {
+   char nev[100];
+   char lakcim[150];
+   struct Datum szuletes;
+};
+
+struct Ember Rowling, Galbraith;
+Galbraith = Rowling;           // Ez így jó, a tömbök is másolódnak!</pre>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+typedef struct Pont { int x, y; } Pont;
+Pont hatszog[6];</pre>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="32">
+<div class="slide" id="slide_32">
+<div class="slideheader">
+<h2><span class="oldalszam">32</span>Többszörös összetétel: geometria példa</h2>
+</div>
+
+<p>Típusok:</p>
+<pre class="brush: cbub "  >
+typedef struct Pont {      // egy pont a síkban
+   double x, y;
+} Pont;
+
+typedef struct Szakasz {
+   Pont eleje, vege;       // szakasz két pont között
+} Szakasz;
+
+typedef struct Kor {       // középpont és sugár
+   Pont kozeppont;
+   double sugar;
+} Kor;</pre>
+
+<p>Művelet példa:</p>
+<pre class="brush: cbub "  >
+/* igazzal tér vissza, ha egy pontban metszik egymást */
+int metszi_e(Szakasz sz1, Szakasz sz2);</pre>
+
+
+
+
+
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea05.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

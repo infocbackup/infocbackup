@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Az SDL telepítése</title>
+<meta property="og:title" content="InfoC :: Az SDL telepítése">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Az SDL grafikus könyvtár telepítése Windowson, Linuxon és Mac OS X-en.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Az SDL grafikus könyvtár telepítése Windowson, Linuxon és Mac OS X-en.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="sdl_telepito.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Az SDL telepítése</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Az SDL grafikus könyvtár telepítése Windowson, Linuxon és Mac OS X-en.</p>
+</div>
+
+<p>Az SDL telepítéséhez két dolgot kell tenni. Először is, fel kell telepíteni az SDL fájljait
+valamilyen operációs rendszer specifikus módon. Utána pedig be kell állítani a fejlesztőkörnyezetet,
+hogy megtalálja azokat. Alább megtaláltok minden szükséges fájlt Windows-hoz
+és Mac OSX-hez is (Linuxon automatikus a dolog).</p>
+
+<img src="sdl_telepito/project.png" class="kozep arnyek">
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="sdl_telepito.html#1">Windows + Code::Blocks</a>
+<li><a href="sdl_telepito.html#2">Linux + Code::Blocks</a>
+<li><a href="sdl_telepito.html#3">Windows + Visual Studio</a>
+<li><a href="sdl_telepito.html#4">Mac OS X</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Windows + Code::Blocks</h2>
+</div>
+
+<p>Az SDL fájljai innen tölthetőek le:
+<a href="sdl_telepito/sdl-1.2.14.infoc.zip">SDL-1.2.14.infoc.zip</a>.
+Ezt ki kell csomagolni valahova. Van benne egy <code>SDL-1.2.14</code> nevű mappa.
+Azon belül három további mappát lehet találni: <code>bin</code>, <code>include</code> és <code>lib</code>.
+
+<ul>
+     <li>A <code>bin</code>-ben lévő fájlokat be kell másolni a <code>C:\Program Files\CodeBlocks\MinGW\bin</code> mappába.
+     <li>Az <code>include</code> teljes tartalmát a <code>C:\Program Files\CodeBlocks\MinGW\include</code> mappába.
+     <li>Ugyanígy a harmadikat, a <code>lib</code> tartalmát a <code>C:\Program Files\CodeBlocks\MinGW\lib</code> helyre.
+</ul>
+
+<p>Ha ez kész, akkor a Code::Blocks menüjéből ki kell választani a „Settings/Global variables…” 
+menüpontot. A „Current Set”-nél a „default”-ot, lentebb a „Current Variable”-nél az „sdl”-t. (Ha 
+nincs, akkor a „Current Variable”-lel egy sorban lévő „New” gombra kattintva létrehozható.) A 
+„base” mezőben meg kell adni a <code>C:\Program Files\CodeBlocks\MinGW</code> mappát.</p>
+
+<img class="kozep" src="sdl_telepito/sdl-valtozo.png" alt="Az SDL változó beállítása">
+
+<p>Ahhoz, hogy megjelenjen a projektek között az InfoC SDL projekt, még néhány teendő van. A <a 
+href="sdl_telepito/codeblocks_wizard-1312.zip">codeblocks_wizard-1312.zip</a>
+csomagban található fájlokat a <code>C:\Program Files\CodeBlocks\share\CodeBlocks\templates\wizard</code>
+mappába kell másolni úgy, hogy az ott 
+lévő, eredeti <code>config.script</code> nevű felülíródjon. Ha sikerült a dolog, a Code::Blocks 
+újraindítása után a „New Project” menüpontnál megjelenik az InfoC SDL projekttípus.</p>
+
+<div class="kicsinyit">
+<p>Régebbi verziókhoz:</p>
+<ul>
+    <li><a href="sdl_telepito/codeblocks_wizard-1005.zip">codeblocks_wizard-1005.zip</a>
+    <li><a href="sdl_telepito/codeblocks_wizard-1211.zip">codeblocks_wizard-1211.zip</a>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Linux + Code::Blocks</h2>
+</div>
+
+<p>Ez sokkal egyszerűbb, mint a fenti. Az SDL könyvtárak csomagból elérhetőek és automatikusan
+telepíthetőek. Ubuntun csak ennyit kell beírni egy parancssorba:</p>
+
+<pre class="screenshot">
+sudo apt-get install libsdl1.2-dev libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev
+</pre>
+
+<p>Ezután <a href="sdl_telepito/codeblocks_wizard-1312.zip"> 
+codeblocks_wizard-1312.zip</a> csomagban található fájlokat (rendszergazdai jogokkal) az
+<code>/usr/share/codeblocks/templates/wizard</code> mappába kell másolni, az 
+eredeti <code>config.script</code> fájlt felülírva. (Régebbi verziókhoz: lásd a fentebbi linkeket.)</p>
+
+<div class="megjegyzes">
+<p><em>Fordítás parancssorból.</em> Jár az SDL-hez egy parancssori szkript, amely kiírja, hogy milyen paraméterek 
+szükségesek a fordítóprogram számára. Ez az <code>sdl-config</code>. Ennek kimenete a szükséges 
+opciók listája, amelyet a fordítónak a parancssorból át tudunk adni, a <code>`</code> (backtick) 
+jellel. A <code>hello.c</code> SDL-es programunk lefordításához ennyit kell tenni parancssorból:</p>
+
+<pre class="screenshot">
+gcc hello.c -o hello `sdl-config --cflags --libs` -lSDL_gfx -lSDL_ttf -lSDL_image -lSDL_mixer
+</pre>
+
+<p>Ez az alap SDL mellett a többi függvénykönyvtárat is a programhoz linkeli.</p>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Windows + Visual Studio</h2>
+</div>
+
+<p>Gyurácz Kristóf összeállított egy csomagot, amellyel az SDL használható
+a Visual Studio környezetben is. A szükséges fájlok letölthetők innen:
+<a href="sdl_telepito/sdl_vs.zip">SDL_VS.zip</a>,
+a telepítési leírás:
+<a href="sdl_telepito/sdl_vs_install.pdf">SDL_VS_install.pdf</a>.
+</p>
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Mac OS X</h2>
+</div>
+
+<p>Szalai Albin készített egy installert, amely letölthető innen:
+<a href="sdl_telepito/sdl_macosx_installer.dmg">SDL_MacOSX_installer.dmg</a>.
+(32 bites OSX Lion és 64 bites OSX Mountain Lion verziókkal tesztelve.)
+A fájlban van egy <code>OLVASSEL.rtf</code> nevű írás, amely bemutatja a használatot.</p>
+
+
+
+
+
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="sdl_telepito.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Labor, 10. hét: rekurzió és állapotgépek</title>
+<meta property="og:title" content="InfoC :: Labor, 10. hét: rekurzió és állapotgépek">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Állapotgépek kódolása C nyelven, switch() szerkezettel. Rekurzió nyomkövetése, egyszerű rekurzív függvények írása.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Állapotgépek kódolása C nyelven, switch() szerkezettel. Rekurzió nyomkövetése, egyszerű rekurzív függvények írása.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lab10.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Labor, 10. hét: rekurzió és állapotgépek</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Pohl László, Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Állapotgépek kódolása C nyelven, switch() szerkezettel. Rekurzió nyomkövetése, egyszerű rekurzív függvények írása.</p>
+</div>
+
+
+
+<p>Felkészülés a laborra:</p>
+<ul>
+    <li>A <a href="ea05.html#easwitch"><code>switch()</code> szerkezetről tanultak</a> átismétlése.
+    <li>A <a href="lab01.html#labparancssor">parancssorról tanultak</a> átismétlése.
+    <li>Az <a href="ea06.html#eaallapotgep">állapotgépekről szóló előadás</a> és a
+        <a href="gy08.html#gyakallapotgepek">hozzá tartozó gyakorlat</a> átismétlése.
+    <li>A <a href="ea07.html#earekurzio">rekurzióról szóló előadás</a> és a
+        <a href="gy08.html#gyakrekurzio">hozzá tartozó gyakorlat</a> átismétlése.
+</ul>
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lab10.html#1">Kommentszűrő</a>
+<li><a href="lab10.html#2">A kommentek aránya</a>
+<li><a href="lab10.html#3">Fibonacci</a>
+<li><a href="lab10.html#4">Tömb előre és hátra</a>
+<li><a href="lab10.html#5">Számrendszer váltó</a>
+<li><a href="lab10.html#6">További feladatok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Kommentszűrő</h2>
+</div>
+
+<p>Írj programot, amely a szabványos bemenetről olvas karaktereket fájl vége jelig! A szabványos
+bemeneten keresztül egy C program érkezik. A program szűrje ki a /* és */ közötti megjegyzéseket
+a szabványos bemeneten érkező szövegből, és a megjegyzések nélküli szöveget írja a szabványos
+kimenetre!</p>
+
+<ol style="list-style-type: lower-alpha;">
+    <li>Tervezz állapotgépes modellt a feladat megoldására! Készíts állapottáblát és
+    tevékenységtáblát, valamint állapotgráfot! A hallgatók önálló próbálkozása után csoport
+    beszélje meg a megoldást a laborvezetővel!
+
+        <div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+        <p>Ha nem megy, nézd meg az előadás diáit, az
+        <a href="ea06.html#allapottabla">állapotgéphez kapcsolódó részt</a>! A
+        szűrőnek négy állapota lesz: alap, csillagra vár a '/'
+        után, megjegyzésben van, '/'-re vár a '*' után.</p>
+        </div>
+</div>
+
+    <li>A terv alapján írd meg a feladatot megoldó C nyelvű programot! Próbáld ki
+    billentyűzetről!
+
+    <li>Mentsd el úgy a programodat, hogy vannak benne /* megjegyzések */ is. Nyiss egy
+    parancssori ablakot, és keresd meg benne a futtathatót (.exe)! Irányítsd át a szabványos
+    bemenetet a második laboron tanult módon úgy, hogy a programod a <em>saját maga forráskódját</em>
+    kapja bemenetként! Ellenőrizd, hogy helyesen eltűnnek-e belőle a megjegyzések!
+
+    <li>Próbáld ki az átirányítást fájlból fájlba is: a <code>main.c</code> fájlból keletkezzen
+    <code>komment_nelkul.c</code> fájl!
+</ol>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    typedef enum Allapot { alap, per, komm, csill } Allapot;
+
+    int c; /* Beolvasott karakter */
+    Allapot all = alap; /* Alapállapotról indulunk */
+    while ((c=getchar()) != EOF) {   /* Fájl végéig olvasunk */
+        switch (all) {
+            case alap:               /* Ha alapállapotban vagyunk */
+                if (c=='/') all=per; /* Jött egy per, talán komment lesz -&gt; nem írjuk ki */
+                else putchar(c);     /* Egyébként kiírjuk ami jött */
+                break;
+            case per:                          /* Már jött egy perjel */
+                if (c=='*') all=komm;          /* Ha csillag jön, kommentben vagyunk */
+                else if (c=='/') putchar('/'); /* Ha mégegy perjel jött,
+                                                * akkor az előzőt kiírjuk,
+                                                * és maradunk ebben az állapotban */
+                else {                         /* Ha valami más jött, akkor kiírjuk
+                                                * az előző perjelet, az aktuális karaktert */
+                    putchar('/');              /* és visszamegyünk alapállapotba */
+                    putchar(c);
+                    all=alap;
+                }
+                break;
+            case komm:                 /* Ha kommentben vagyunk */
+                if (c=='*') all=csill; /* Csillagot figyeljük és nem írunk ki semmit */
+                break;
+            case csill:                     /* Ha jött egy csillag a kommentben */
+                if (c=='/') all=alap;       /* Perjel esetén vége -&gt; Alapállapot */
+                else if (c=='*') all=csill; /* Csillag esetén nincs teendő */
+                else all=komm;              /* Egyéb: vissza a komment állapotba */
+                break;
+        }
+    }
+
+    /* Ha véget ért a bemenet, elvileg alapállapotban kell lennünk, mert
+     * a forráskód nem végződhet bezáratlan kommenttel. Esetleg lehetséges,
+     * hogy egy perjel volt a végén, az viszont nem a komment vége, hanem
+     * egy osztás: írjuk ki! */
+    if (all==per)
+        putchar('/');
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A kommentek aránya</h2>
+</div>
+
+<p>Azt mondják, egy szépen megírt program forráskódjának 30%-a megjegyzés. (A missziókritikus
+programokban, pl. a NASA űrhajót irányító programjában ez sokkal több lehet!) Módosítsd úgy
+a programodat, hogy a forráskód beolvasása közben meghatározza ezt az arányt is! A kiírás
+tevékenységek így kiegészülnek a számlálással is.</p>
+
+<p>A most megírt programod hány százaléka komment?</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<p>Tedd el magadnak a most megírt programot. Jól fog jönni a nagy házi feladatod kódja minőségének
+számszerűsítéséhez. :D Később módosíthatod úgy is a programot, hogy maga tudja megnyitni a fájlokat,
+ne pedig a szabványos bemenet átirányításával kelljen megadni neki azokat.</p>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Fibonacci</h2>
+</div>
+
+<p>A Fibonacci-sorozat elemeit a következő egyszerű algoritmus adja: F<sub>0</sub>=0,
+F<sub>1</sub>=1, F<sub>n</sub>=F<sub>n-1</sub>+F<sub>n-2</sub>. Írj rekurzív függvényt, amely
+kiszámítja ennek <code>n</code>-edik elemét! Próbáld ki a függvényt <code>n=40</code>-re! Mit
+tapasztalsz? (Ötlet: figyeld meg az előző előadás ide vonatkozó diáját.)</p>
+
+<p>Kövesd függvény működését a fejlesztőkörnyezet nyomkövetőjében (debugger)! Indítsd el a
+programot, és figyeld a működést <code>n=5</code> esetén. Esetleg használhatsz a programba írt
+nyomkövetést is: pl. minden <code>fib()</code> függvényhívás esetén írja ki a függvény a
+paraméterként kapott <code>n</code> értéket.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+ /* Fibonacci sorozat */
+int fib(int n) {
+    if (n == 0) return 0;  /* 0. elem a 0  &lt;- ezek a rekurzió */
+    if (n == 1) return 1;  /* 1. elem az 1 &lt;- leállító feltételei */
+
+    return fib(n-1) + fib(n-2);  /* n-edik elem az előző kettő összege */
+}
+
+int main(void) {
+    int i;
+    for (i = 0; i &lt; 40; i++)
+        printf(&quot;%d\n&quot;, fib(i));
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Tömb előre és hátra</h2>
+</div>
+
+<p>Írj a) iteratív b) rekurzív függvényt, amely kiírja egy tömb elemeit x) előrefelé y)
+hátrafelé. Vegye át mindegyik függvény paraméterként a kiírandó tömböt és annak méretét! Hozz
+létre a főprogramban egy tíz és egy öt elemű, egész értékekkel feltöltött tömböt. Hívd meg a
+függvényeket a tömbökre!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void tomb_kiir_elore(int t[], int n) {
+    if(n &gt; 0) {                    /* Ha van benne elem */
+        printf(&quot;%d &quot;, t[0]);       /* Kiírjuk az első elemet */
+        tomb_kiir_elore(t+1, n-1); /* Meghívjuk ugyanezt a függvényt, csak a tömb következő */
+                                   /* elemétől kezdve és eggyel kisebb mérettel */
+    }
+}
+
+void tomb_kiir_hatra(int t[], int n) {
+    if(n &gt; 0) {                    /* Ha van benne elem */
+        tomb_kiir_hatra(t+1, n-1); /* Meghívjuk ezt a függvényt, egyel kisebb méret */
+        printf(&quot;%d &quot;, t[0]);       /* Kiírjuk az első elemet */
+    }
+}
+
+int main(void) {
+    int t5[] = {1,2,3,4,5}, t10[] = {1,2,3,4,5,6,7,8,9,10};
+
+    tomb_kiir_elore(t5, 5); printf(&quot;\n&quot;);
+    tomb_kiir_hatra(t5, 5); printf(&quot;\n&quot;);
+    tomb_kiir_elore(t10, 10); printf(&quot;\n&quot;);
+    tomb_kiir_hatra(t10, 10); printf(&quot;\n&quot;);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Számrendszer váltó</h2>
+</div>
+
+<p>Írj függvényt, amely paraméterként kap egy pozitív egész számot valamint egy
+számrendszert, és kiírja a képernyőre a számot a megadott számrendszerben! A
+megoldáshoz használj rekurziót! Miért sokkal egyszerűbb ez a megoldás, mint az
+iteratív?</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<p>Ennek a feladatnak a megoldásához az előbbi ad ötletet. Pl. a 123-at 10-es számrendszerben
+úgy kell kiírni, hogy előbb kiírjuk a 123/10-et (12), utána pedig a 123%10-et (3). A rekurzióval
+ez a fordított sorrend könnyen előállítható.</p>
+</div>
+</div>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* Ez a függvény r&lt;=10 számrendszerekre működik */
+void atvalt(int n,int r) {
+    /* Ha n osztható az alapszámmal, akkor rekurzívan meghívjuk a függvényt */
+    if (n/r &gt; 0)
+        atvalt(n/r, r);
+    /* Majd kiírjuk a maradékot */
+    printf(&quot;%d&quot;, n%r);
+}
+
+/* Ez a teljes angol ABC-t fel tudja használni (36os számrendszerig) */
+void atvalt2(int n,int r) {
+    char *t=&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+    /* Ha n osztható az alapszámmal, akkor rekurzívan meghívjuk a függvényt */
+    if(n/r &gt; 0)
+        atvalt2(n/r, r);
+    /* Majd kiírjuk a maradékot (a határok ellenőrzésétől most eltekintek) */
+    putchar(t[n%r]);
+}
+
+int main(void) {
+    atvalt(27, 5);  /* 102 */
+    printf(&quot;\n&quot;);
+    atvalt(13, 2);  /* 1101 */
+    printf(&quot;\n&quot;);
+    atvalt2(64519, 16);  /* FC07 */
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>További feladatok</h2>
+</div>
+
+<p>Ha elkészültél, folytasd a feladatgyűjtemény ehhez a témakörhöz kapcsolódó
+<a href="f06.html#allapotgepek">állapotgépes feladataival</a>!</p>
+
+<p>A rekurzió gyakorlásához oldd meg az
+<a href="f07.html#emeletes">emeletes házas feladatot</a> a
+feladatgyűjteményből!</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lab10.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

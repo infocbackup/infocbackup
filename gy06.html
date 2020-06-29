@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 6. hét: származtatott típusok</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 6. hét: származtatott típusok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Származtatott típusok: tömbök és struktúrák. Összetett adatszerkezetek definíciója és kezelése.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Származtatott típusok: tömbök és struktúrák. Összetett adatszerkezetek definíciója és kezelése.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy06.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyakstrukturak" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 6. hét: származtatott típusok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Származtatott típusok: tömbök és struktúrák. Összetett adatszerkezetek definíciója és kezelése.</p>
+</div>
+
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>A <a href="ea05.html#eastrukturak">struktúrákról szóló előadás</a> anyagának megértése.
+    <li>A <a href="gy04.html#gyaktombok">tömbökről szóló gyakorlat</a> átismétlése.
+</ul>
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy06.html#1">Tic-tac-toe – 2D tömb</a>
+<li><a href="gy06.html#2">Időpontok</a>
+<li><a href="gy06.html#3">Római számok II.</a>
+<li><a href="gy06.html#4">Bankautomata II.</a>
+<li><a href="gy06.html#5">Dátumok, öröknaptár</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Tic-tac-toe – 2D tömb</h2>
+</div>
+
+<img src="gy06/amoba.svg" class="float" alt="Tic-tac-toe" style="width: 8em;">
+<p>3×3-as amőba (tic-tac-toe) játékot csinálunk. A 3×3-as pálya egyes állapotai lehetnek: üres 
+(még nem rajzolt oda senki), kör és iksz.</p>
+<ul>
+    <li>Hozzunk létre egy ilyet tároló adatszerkezetet!
+    <li>Rajzoljuk ki a pályát karakterekkel!
+    <li>Írjunk programrészt, amelyik ellenőrzi, hogy nyert-e az iksz játékos!
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A pálya egyes celláinak tárolására egyik megoldás az, hogy karaktereket használunk. A szóköz 
+jelentheti az üres cellát, az <code>x</code> az egyik, az <code>o</code> pedig a másik játékost. 
+A pálya ezen cellák két dimenziós tömbje – vagyis tömbben tömb. Mivel egy sorban sok ilyen van; 
+és a sorokból is sok van.</p>
+
+<p> A programban meg kell vizsgálni, az egyes sorokban, oszlopokban stb. van-e az x játékosnak 
+nyerő helyzete; ha bármelyikben igen, akkor az egész állás számára nyerő.</p> <p>A pálya 
+kirajzolása ciklusban ciklus. Vegyük észre: egy dimenziós tömb &rarr; ciklus, két dimenziós tömb 
+(tömbben tömb) &rarr; ciklusban ciklus. </p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    typedef char Babu;
+    typedef Babu Palya[3][3];
+
+    Palya p = {
+      { 'o', 'o', 'o' },
+      { 'x', 'o', ' ' },
+      { 'x', 'x', ' ' },
+    };
+    int x, y;
+    int nyert;
+
+    /* kirajzolás */
+    printf(&quot;+---+\n&quot;);
+    for (y=0; y&lt;3; y++) {
+        printf(&quot;|&quot;);
+        for (x=0; x&lt;3; x++)
+            printf(&quot;%c&quot;, p[y][x]);
+        printf(&quot;|\n&quot;);
+    }
+    printf(&quot;+---+\n&quot;);
+
+    /* nyert-e az x? */
+    nyert=0;
+    /* vizszintesen --- */
+    for (y=0; y&lt;3; y++)
+        if (p[y][0]=='x' &amp;&amp; p[y][1]=='x' &amp;&amp; p[y][2]=='x')
+            nyert=1;
+    /* fuggolegesen ||| */
+    for (x=0; x&lt;3; x++)
+        if (p[0][x]=='x' &amp;&amp; p[1][x]=='x' &amp;&amp; p[2][x]=='x')
+            nyert=1;
+    /* atlosan \ */
+    if (p[0][0]=='x' &amp;&amp; p[1][1]=='x' &amp;&amp; p[2][2]=='x')
+        nyert=1;
+    /* atlosan / */
+    if (p[0][2]=='x' &amp;&amp; p[1][1]=='x' &amp;&amp; p[2][0]=='x')
+        nyert=1;
+
+    if (nyert)
+        printf(&quot;iksznek van nyero harmasa!\n&quot;);
+    else
+        printf(&quot;iksznek nincs nyero harmasa.\n&quot;);
+
+    return 0;
+}</pre>
+
+<p class="megjegyzes">A megoldás kicsit kezdetleges. A karakteres ábrázolás hátránya, hogy az egyes cellák ezen 
+kívül más értéket is felvehetnek. Ennek kiküszöbölésére is jó az ún. felsorolt típus, amelyről 
+az előadáson lesz szó. Ugyancsak, a nyerést ellenőrző programrészt legjobb lenne paraméteresen 
+megoldani – vagyis egy függvényre lenne szükségünk, amely a pályát (tömböt) paraméterként kapja, 
+és egy játékost is, akinek a nyerő állását ellenőrizni kell. (Hiszen ugyanígy működne a program, 
+ha a kör játékos szempontjából kellene ellenőrizni a nyerő állást.) Erről is a következő 
+előadáson lesz szó.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Időpontok</h2>
+</div>
+
+<p>Írjunk programot, amely egy struktúrában időpontot tárol: óra, perc.
+Írjunk függvényeket ehhez:</p>
+<ul>
+    <li><code>ido_kiir(i)</code>: kiírja az időpontot óra:perc formában.
+    <li><code>ido_hozzaad(i, p)</code>: hozzáad <code>p</code> percet az <code>i</code> időponthoz,
+        és visszatér az új időponttal. Pl. 15:15 + 45 = 16:00.
+    <li><code>ido_eltelt(i1, i2)</code>: megmondja, hány perc telt el
+        a két időpont között, pl. 16:30-15:15 = 75 perc. (A paraméterek
+        sorrendje a kivonásnál megszokott: kisebbítendő, kivonandó.)
+    <li><code>ido_kivon(i, p)</code>: kivon <code>p</code> percet az <code>i</code> időpontból,
+        és visszatér az új időponttal. Pl. 15:45 - 30 = 15:15.
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A 60 perc és a 24 óra kezelésére a percek hozzáadásánál nagyon jól
+használható a maradékképzés. Pl. <code>16:55+10</code> esetén: <code>:55+10 = :65</code>,
+ami helyett a következő óra <code>:05</code> kellene. <code>65%60</code>, vagyis
+a 60-nal osztás maradéka pont a percet adja, <code>65/60</code>, maga az osztás pedig 1-et,
+amennyivel az órát meg kell növelni. Az órát utána egyszerűen 24-gyel modulózzuk,
+mert a napokkal már nem kell foglalkozni.</p>
+
+<p>A kivonás nem megy ilyen egyszerűen, mert <code>(5-10)%60 = (-5)%60 = -5</code>.
+Ott sajnos külön kell kezelni a keletkező negatív értékeket.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* Időpontot tárol egy napon belül: óra és perc. */
+typedef struct Ido {
+    int ora, perc;
+} Ido;
+
+/* Kiírja a paraméterként kapott időpontot óra:perc formában. */
+void ido_kiir(Ido i) {
+    printf(&quot;%02d:%02d&quot;, i.ora, i.perc);
+}
+
+/* Hozzáad a megadott i időponthoz p percet, és visszatér
+ * az így kapott időponttal. A hozzáadott percek száma azért
+ * unsigned, mert negatív számra helytelenül működne a függvény. */
+Ido ido_hozzaad(Ido i, unsigned p) {
+    Ido uj;
+    uj.perc = (i.perc + p) % 60;
+    uj.ora = (i.ora + (i.perc + p)/60) % 24;
+    return uj;
+}
+
+/* Kiszámolja, hány perc telt el i1-től i2-ig. A paraméterek
+ * sorrendje a kivonásnál megszokott: i2-i1, rendre a
+ * kisebbítendő és a kivonandó. Azzal a feltételezéssel ad
+ * helyes eredményt, hogy a két időpont egy napon van. */
+int ido_eltelt(Ido i2, Ido i1) {
+    return i2.ora*60-i1.ora*60 + i2.perc-i1.perc;
+}
+
+/* Kivon valahány percet a megadott időpontból, és az így keletkező
+ * új időponttal tér vissza. Negatív p-re helytelenül működne, ezért
+ * unsigned a paramétere. */
+Ido ido_kivon(Ido i, unsigned p) {
+    Ido uj;
+    uj.perc = i.perc-p;
+    uj.ora = i.ora;
+    while (uj.perc &lt; 0) {
+        uj.perc += 60;
+        uj.ora -= 1;
+    }
+    while (uj.ora &lt; 0)
+        uj.ora += 24;
+    return uj;
+}
+
+
+int main(void) {
+    Ido i1 = { 11, 50 }, i2 = { 12, 10 }, i3 = { 3, 30 };
+
+    printf(&quot;i1 = &quot;); ido_kiir(i1); printf(&quot;\n&quot;);
+    printf(&quot;i2 = &quot;); ido_kiir(i2); printf(&quot;\n&quot;);
+    printf(&quot;i3 = &quot;); ido_kiir(i3); printf(&quot;\n&quot;);
+
+    printf(&quot;i2-i1 = %d\n&quot;, ido_eltelt(i2, i1));
+    printf(&quot;i1+195 = &quot;); ido_kiir(ido_hozzaad(i1, 195)); printf(&quot;\n&quot;);
+    printf(&quot;i2-195 = &quot;); ido_kiir(ido_kivon(i2, 195)); printf(&quot;\n&quot;);
+    printf(&quot;i3-240 = &quot;); ido_kiir(ido_kivon(i3, 240)); printf(&quot;\n&quot;);
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Római számok II.</h2>
+</div>
+
+<p>Elevenítsük fel a római számok kiírása programot! Ott a számok értéke szerint csökkenő 
+sorrendben haladtunk. Valahogy így:</p>
+
+<pre class="brush: c "  >
+…
+if (szam &gt;= 5) { printf(&quot;V&quot;); szam -= 5; }
+if (szam &gt;= 4) { printf(&quot;IV&quot;); szam -= 4; }
+while (szam &gt;= 1) { printf(&quot;I&quot;); szam -= 1; }
+…</pre>
+
+<p>Figyelmesen vizsgálva a problémát rájöhettünk arra, hogy bármelyik feltétel kicserélhető 
+ciklusra ebben a feladatban. Azért írtunk feltételt a <code>szam&gt;=5</code> kifejezéshez, mert 
+tudjuk, hogy legfeljebb csak egyszer fog teljesülni – de akár írhattunk volna ciklust is.</p>
+
+<p>Ha mindegyik helyre ciklus kerül, akkor így néz ki a kód:</p>
+
+<pre class="brush: c "  >
+…
+while (szam &gt;= 5) { printf(&quot;V&quot;); szam -= 5; }
+while (szam &gt;= 4) { printf(&quot;IV&quot;); szam -= 4; }
+while (szam &gt;= 1) { printf(&quot;I&quot;); szam -= 1; }
+…</pre>
+
+<p>Ez a sorminta már csak arra vár, hogy ciklust csináljunk belőle. Írjuk át a programot!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Minden római számhoz (pl. V, egy sztring C-ben) egy érték <em>tartozik</em> (pl. 5, egy egész 
+szám C-ben), ez <em>struktúrába</em> való. A <em>sok</em> római szám struktúrái pedig
+<em>tömbbe.</em> Használhatjuk azt a trükköt, mint a lenti bankautomatánál is, hogy egy oda nem illő 
+értékkel megjelöljük a tömb végét. Mivel a rómaiak nem használtak 0-t, a tömb végét jelölheti 
+egy olyan elem, ahol az érték 0.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   typedef struct Romai {
+      char romai[5];
+      int ertek;
+   } Romai;
+   Romai szamjegyek[] = {
+      { &quot;XC&quot;, 90 },
+      { &quot;L&quot;, 50 },
+      { &quot;XL&quot;, 40 },
+      { &quot;X&quot;, 10 },
+      { &quot;IX&quot;, 9 },
+      { &quot;V&quot;, 5 },
+      { &quot;IV&quot;, 4 },
+      { &quot;I&quot;, 1 },
+      { &quot;&quot;, 0 }      /* tömb végét jelző */
+   };
+   int szam;
+
+   printf(&quot;Mi a szám? &quot;);
+   scanf(&quot;%d&quot;, &amp;szam);
+   if (szam&lt;1 || szam&gt;99)
+      printf(&quot;Ez nekem már sok. Csak 99-ig tudom.\n&quot;);
+   else {
+      int i;
+
+      i = 0;
+      while (szamjegyek[i].ertek &gt; 0) {
+         while (szam &gt;= szamjegyek[i].ertek) {
+            printf(&quot;%s&quot;, szamjegyek[i].romai);
+            szam -= szamjegyek[i].ertek;
+         }
+         ++i;  /* következő római szám */
+      }
+
+      printf(&quot;\n&quot;);
+   }
+
+   return 0;
+}</pre>
+
+<p> A programba épített táblázat egy inicializált tömb a megfelelő római jelekkel és a hozzájuk 
+tartozó értékkel. Ezt a függvényen belül is létrehozhatjuk, mivel máshol nem használjuk. A 
+struktúra definícióját egybe is építhetjük a tömb változó létrehozásával. Ilyenkor még az is 
+lehetséges, hogy a struktúra névtelen, mivel sehol máshol nem kell hivatkozni név szerint a 
+típusra: </p>
+
+<pre class="brush: c "  >
+struct {
+   char romai[5];
+   int ertek;
+} szamjegyek[] = {
+   { &quot;XC&quot;, 90 },
+   { &quot;L&quot;, 50 },
+   { &quot;XL&quot;, 40 },
+   { &quot;X&quot;, 10 },
+   { &quot;IX&quot;, 9 },
+   { &quot;V&quot;, 5 },
+   { &quot;IV&quot;, 4 },
+   { &quot;I&quot;, 1 },
+   { &quot;&quot;, 0 }      /* tömb végét jelző */
+};</pre>
+
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Bankautomata II.</h2>
+</div>
+
+<p>Idézzük fel a múltkori bankautomatás feladatot! A feladatkiírás azt kérte, hogy írjunk egy 
+programot, amely egy adott pénzösszeget a megadott névértékű bankjegyekre és érmékre bont le. 
+Pl. 4200 Ft = 2×2000 Ft + 1×200 Ft.</p>
+
+<p>Csavarjuk meg ezt! Az automata rekeszei végesek. Tároljuk el azt is, hogy melyik bankjegyből 
+és érméből épp mennyi van! Írjuk meg a programot, amelyik úgy ad pénzt, hogy ezt figyelembe 
+veszi!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Ez is egy kiváló példa a <em>struktúra</em> használatára. <em>Összetartozó adat</em> a rekeszben 
+található címlet és a hozzá tartozó darabszám, pl. hogy 20000 forintosból 20 darab van. Hogy 
+mindkettő egész szám (a forint és a darab), senkit ne tévesszen meg, ez nem tömb! Minden 
+rekeszhez egy struktúra tartozik. A rekeszekből viszont <em>sok</em> van, és egyformák: ezért a 
+rekeszeknek egy <em>tömbje</em> lesz. A használt adatszerkezet struktúrák tömbje: <code>struct 
+Rekesz penzek[]</code>.</p>
+
+<p>A ciklusban először egy osztással kiszámoljuk, hogy mennyi kellene az adott címletből. Utána 
+pedig megnézzük, van-e annyi egyáltalán. Ha nincs, akkor csak kevesebbet adunk ki.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    typedef struct Rekesz {
+        int ertek;
+        int darab;
+    } Rekesz;
+    Rekesz penzek[]={
+        {20000, 20},    /* huszezresbol 20 db */
+        {10000, 0},     /* tizezres kifogyott */
+        {1000, 10},
+        {500, 50},
+        {20, 197},
+        {10, 123},
+        {5, 19},
+        {0, 0}          /* nullaval jelzem a tomb veget */
+    };
+    int mennyit;
+    int i;
+
+    printf(&quot;Mennyit kene adni? &quot;);
+    scanf(&quot;%d&quot;, &amp;mennyit);
+
+    printf(&quot;Az automata kiadja:\n&quot;);
+    for (i=0; penzek[i].ertek!=0; i++) {
+       int hany_db;
+
+       hany_db = mennyit/penzek[i].ertek; /* ennyit kene */
+       if (penzek[i].darab &lt; hany_db)     /* nincs ennyi? */
+           hany_db=penzek[i].darab;     /* jobb hijan... */
+
+       if (hany_db &gt; 0) { /* ha adunk ebbol (mert kell es mert van) */
+          printf(&quot;%d db %d Ft-os.\n&quot;, hany_db, penzek[i].ertek);
+          mennyit -= hany_db*penzek[i].ertek;
+          penzek[i].darab -= hany_db;   /* innen kivesszuk. */
+       }
+    }
+    if (mennyit!=0)
+        printf(&quot;Nem tudok rendesen adni! Kene meg: %d Ft\n&quot;, mennyit);
+
+    return 0;
+}</pre>
+
+<p class="megjegyzes">A fenti algoritmus amúgy nem tökéletes. Pl. ha 6000-t kérünk, és van 5000-es és 2000-es, de 
+nincs 1000-es, akkor ki akar adni egy 5000-est, és utána megáll – nem veszi észre, hogy 3 darab 
+2000-essel megoldható. A tökéletes megoldáshoz az ún. visszalépéses keresést kellene alkalmazni, 
+amelyhez a tudnivalók majd később szerepelnek az előadáson.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Dátumok, öröknaptár</h2>
+</div>
+
+<p>Írjunk programot, amely egy struktúrában dátumot tárol: év, hónap, nap. Kezeljék ezeket 
+függvények:</p>
+
+<ul>
+    <li><code>datum_kiir(d)</code>: kiírja a dátumot év.hónap.nap formában.
+    <li><code>datum_ev_napja(d)</code>: megmondja, az év hányadik napja. Vegye
+        figyelembe a szökőéveket! (Ehhez csak elő kell szedni a 4. gyakorlat
+        feladatát – tekinthetjük azt akár kidolgozottnak is.)
+    <li><code>datum_kivon(d1, d2)</code>: megmondja, hány nap telt el d2-től
+        d1-ig, ahol d1 a kisebbítendő, d2 a kivonandó.
+    <li><code>milyen_nap(d)</code>: megmondja, milyen napra esik az adott dátum.
+        1=hétfő, 7=vasárnap. 1900. január 1. hétfőre esett.
+</ul>
+
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* a dátum típusunk */
+typedef struct Datum {
+    int ev, honap, nap;
+} Datum;
+
+/*kiírja a dátumot éééé.hh.nn formában */
+void datum_kiir(Datum d) {
+    printf(&quot;%4d.%02d.%02d&quot;, d.ev, d.honap, d.nap);
+}
+
+/* segédfüggvény: szökőév-e? */
+int szokoev(int ev) {
+    return ev%400==0 || (ev%100!=0 &amp;&amp; ev%4==0);
+}
+
+/* megmondja, hogy az év hányadik napja */
+int datum_hanyadik(Datum d) {
+    /* hány egész hónapból adódó nap telt el eddig */
+    int honapok[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    int hanyadik, h;
+ 
+    hanyadik = 0;
+    for (h=1; h&lt;d.honap; ++h)
+        hanyadik+=honapok[h-1];
+    hanyadik += d.nap;
+    if (szokoev(d.ev) &amp;&amp; d.honap&gt;2)
+        hanyadik += 1;
+ 
+    return hanyadik;
+}
+
+/* hány nap telt el d1-től d2-ig?
+ * csak akkor működik helyesen, ha d2&gt;d1. */
+int datum_kivon(Datum d2, Datum d1) {
+    int kulonbseg, ev;
+
+    /* a különbség: amennyi különbség van a napok között */
+    kulonbseg=datum_hanyadik(d2)-datum_hanyadik(d1);
+    /* plusz amennyi különbség van az évek között. a d1 a kisebb! */
+    for (ev=d1.ev; ev&lt;d2.ev; ev+=1)
+        kulonbseg += szokoev(ev) ? 366:365;
+    return kulonbseg;
+}
+
+/* megmondja, milyen napra esett az adott nap.
+ * 1=hétfő, 2=kedd, 7=vasárnap. */
+int milyen_nap(Datum d) {
+    Datum viszonyitas = { 1900, 1, 1 }; /* hétfő */
+
+    /* megnézzük, hány nap telt el. modulo 7 miatt 0..6
+     * lesz az eredmény (7 nap egy héten), ahol 0 lesz
+     * a hétfő, mert a fenti dátumhoz képest. */
+    return datum_kivon(d, viszonyitas)%7 + 1;
+}
+
+int main(void) {
+    Datum ma = { 2014, 10, 14 }, eleje = { 2014, 9, 8 };
+
+    printf(&quot;Ma: &quot;);
+    datum_kiir(ma);
+    printf(&quot;, a hét %d. napja.\n&quot;, milyen_nap(ma));
+
+    printf(&quot;A szorgalmi időszak kezdete: &quot;);
+    datum_kiir(eleje);
+    printf(&quot;, ennyi nap telt el: %d.\n&quot;, datum_kivon(ma, eleje));
+    printf(&quot;%d. oktatási hét van.\n&quot;, datum_kivon(ma, eleje)/7+1);
+
+    return 0;
+}</pre>
+
+<p>A <code>datum_kivon()</code> függvény végzi a dátumok kivonását. A működésének az a lényege, 
+hogy kivonja egymásból azt a két számot, amely a két dátum év kezdete óta teltelt napjainak 
+száma; és ehhez adja hozzá az egész eltelt évekből adódó 365 vagy 366 napokat. Ez egy példán jól 
+látszik. Ha a 2012.09.03&rarr;2013.10.06 eltelt napokat kell kiszámolni, akkor a 10.06-ból 279, 
+a 09.03-ból 247 adódik. Azaz 279-247=32 nap telik el szept. 3 és okt. 6 között. Ehhez kell 
+hozzáadni még egy évnyit. Ha a hónapok szerint visszafelé megyünk (pl. 2012.09.03&rarr;
+2013.02.25, szeptember&rarr;február), akkor az összeg első tagja negatív, de ez utána 
+korrigálódik a hozzáadott teljes év által. (Mintha ugranánk egy évet előre, aztán visszajönnénk 
+a megadott dátumig.)</p>
+
+<p>Megfigyelhetjük, hogy a <code>honapok[]</code> tömbnek mindig az első <code>honap-1</code> 
+elemét összegezzük. Megírhatnánk úgy is a programot, hogy nem a hónapok napjainak számát, hanem 
+ezeket az összegeket tartalmazza a tömb: 0 (január), 31 (február), 59=31+28 (március) stb. Így az 
+összegző ciklust meg lehetne spórolni, de kicsit nehezebben lenne követhető a forráskód.</p>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy06.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

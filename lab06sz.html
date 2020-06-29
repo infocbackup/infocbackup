@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Labor, 6. hét, szombat: gyakorlófeladatok</title>
+<meta property="og:title" content="InfoC :: Labor, 6. hét, szombat: gyakorlófeladatok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Vegyes gyakorlófeladatok">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Vegyes gyakorlófeladatok">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lab06sz.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Labor, 6. hét, szombat: gyakorlófeladatok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Vegyes gyakorlófeladatok</p>
+</div>
+
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lab06sz.html#1">Számkitaláló</a>
+<li><a href="lab06sz.html#2">A kapitány</a>
+<li><a href="lab06sz.html#3">Ikerprímek</a>
+<li><a href="lab06sz.html#4">Fej vagy írás</a>
+<li><a href="lab06sz.html#5">Kő, papír, olló</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Számkitaláló</h2>
+</div>
+
+<p>Készíts egy számkitaláló programot! A program kitalál véletlenszerűen egy pozitív egész számot (1 és 1000 között), a
+felhasználó pedig addig tippel, amíg meg nem találja a keresett számot. A program minden tipp után megmondja, hogy a felhasználó
+tippje kisebb vagy nagyobb a keresett értéknél. Ha eltalálta, akkor pedig azt. Ilyenkor egyúttal be is fejeződik a program
+futása.</p>
+
+<p>Vajon mi a nyerő stratégia a gép „ellen”? Hogyan lehet legkevesebb tippből kitalálni a számot, amire a gép gondolt?
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A feladat megoldása nagyon jó példa a hátultesztelő ciklus alkalmazására. Minimum egy tippet kérnünk kell – a ciklusmag,
+amely a tippet kéri, és a beírt számot ellenőrzi, egyszer legalább lefut. Illetve a gép minimum egy számot kitalál, és utána
+várja a felhasználótól a megfejtést.</p>
+
+<p>A belső ciklusmagban az egyenlőséget nem is kell ellenőrizni, mert azt a ciklus feltétele megteszi. Ha egyenlő a tipp a
+gondolt számmal, akkor kijövünk a ciklusból, és ott viszont gondolkodás nélkül ki lehet írni, hogy talált.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main(void) {
+    char meg;
+
+    /* Generator inicializalasa. */
+    srand(time(0));
+
+    do {
+        int gondolt, tipp;
+
+        gondolt = rand()%1000+1;
+        printf(&quot;Gondoltam egy szamot 1 es 1000 kozott. Talald ki!\n&quot;);
+        do {
+            printf(&quot;Mi a tipped? &quot;);
+            scanf(&quot;%d&quot;, &amp;tipp);
+            if (gondolt &gt; tipp)
+                printf(&quot;Nagyobbra gondoltam!\n&quot;);
+            if (gondolt &lt; tipp)
+                printf(&quot;Kisebbre gondoltam!\n&quot;);
+        } while (tipp != gondolt);
+        printf(&quot;Gratulalok, kitalaltad! A gondolt szam %d.\n&quot;, gondolt);
+
+        printf(&quot;Akarsz meg jatszani (i/n)? &quot;);
+        scanf(&quot; %c&quot;, &amp;meg);
+    } while (meg=='i' || meg=='I');
+
+    return 0;
+}</pre>
+
+<p>A feladat megoldása nagyon jó példa a hátultesztelő ciklus alkalmazására. Minimum egy tippet kérnünk kell – a ciklusmag,
+amely a tippet kéri, és a beírt számot ellenőrzi, egyszer legalább lefut. Illetve a gép minimum egy számot kitalál, és utána
+várja a felhasználótól a megfejtést.</p>
+
+<p>A belső ciklusmagban az egyenlőséget nem is ellenőrzöm, mert azt a ciklus feltétele megteszi. Ha egyenlő a tipp a gondolt
+számmal, akkor kijövünk a ciklusból, és ott viszont gondolkodás nélkül ki lehet írni, hogy talált.</p>
+
+<p>A véletlenszám-generátor használata: program elején inicializálni kell (<code>srand</code>) egyszer, és utána a
+<code>rand()</code> ad egy számot. A <code>%100</code> hatására 0..99 között lesz; ehhez 1-et adva kapjuk az 1..100
+tartományt.</p>
+
+<p><code>scanf()</code>-guruknak: a <code>%c</code> előtti szóköz azt jelenti, hogy a bemeneten eldobjuk a whitespace
+karaktereket. A <code>%c</code> beolvassa azt is, egyébként semmi más nem. Erre azért van szükség, mert a legutolsó tipp utáni
+entert az előző <code>scanf</code> még a bemeneten hagyta.</p>
+
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A kapitány</h2>
+</div>
+
+<p>A kapitány abban az évben született, amely 2012-höz alulról a legközelebbi olyan szám, melynek osztói száma 8, és van benne 4-es számjegy. Hány éves a kapitány? Határozd meg algoritmikus módszerrel egy teljes C programban az évszámot! Írd ki ezt is, és azt is, hogy most hány éves!</p>
+
+<p>Használj top-down tervezést! Ha jól csinálod, a <code>main()</code>-ed kb. 5 soros.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+
+
+#include &lt;stdio.h&gt;
+ 
+int osztokszama(int szam) {
+    int db, i;
+    db = 0;
+    for (i=1; i&lt;=szam; ++i)
+       if (szam%i==0)
+           ++db;
+    return db;
+}
+ 
+int vanbenne(int szam, int mi) {
+    while (szam&gt;0) {
+       if (szam%10 == mi)
+           return 1;
+       szam/=10;
+    }
+    return 0;
+}
+ 
+int main(void) {
+    int ev = 2012;
+    while (!(osztokszama(ev)==8 &amp;&amp; vanbenne(ev, 4)))
+       --ev;
+    printf(&quot;%d-ben született, %d éves&quot;, ev, 2012-ev);
+ 
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Ikerprímek</h2>
+</div>
+
+<p>Ikerprímeknek nevezzük azokat a prímszám együtteseket, amelyeknél n és n+2 is prím. Az első 3 ilyen pár (3, 5), (5, 7) és (11, 13). Melyik a 60-adik? Határozd meg C programban! A két prím közötti egész számnak van 5-ös számjegye? Határozd meg ezt is!</p>
+<p>Használj top-down tervezést, ne duplikáld a prímkereső algoritmust!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+
+
+#include &lt;stdio.h&gt;
+ 
+int prim(int szam) {
+    int oszto;
+ 
+    for (oszto=2; oszto&lt;szam; ++oszto)
+        if (szam%oszto == 0)
+            return 0;
+    return 1;
+}
+ 
+int main(void) {
+    int szam, i, vanbenne;
+ 
+    /* ez a nulladik (ami nincs). az elso, amit megtalalunk, a 3;5 lesz. */
+    szam=1;
+    i=0;
+    while (i&lt;60) {
+        /* keressük a következőtől (lehetne hátultesztelő is) */
+        szam+=2;
+        while (!(prim(szam) &amp;&amp; prim(szam+2)))
+            szam+=2;
+        i++;
+    }
+    printf(&quot;%d. ikerprim: %d %d\n&quot;, 60, szam, szam+2);
+ 
+    vanbenne = 0;
+    szam += 1;  /* ez van kozottuk */
+    while (szam&gt;0) {
+        if (szam%10 == 5)
+            vanbenne = 1;
+        szam/=10;
+    }
+    printf(&quot;%s benne 5-os.\n&quot;, vanbenne ? &quot;Van&quot;:&quot;Nincs&quot;);
+ 
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Fej vagy írás</h2>
+</div>
+<p>Adott egy feladat: „dobjunk fel egy pénzt” a C programunkban, és írjuk ki, hogy fej vagy írás lett.
+Ennek a feladatnak az alábbi megoldása helytelen:</p>
+<pre class="brush: c "  >
+if (rand() % 2 == 0)
+    printf(&quot;Fej.\n&quot;);
+if (rand() % 2 == 1)
+    printf(&quot;Iras.\n&quot;);</pre>
+<p>A kipróbálás nélkül mondd meg: milyen hibás eredményt adhat ez a program, és milyen elvi hiba miatt?
+Ha megvan, próbáld ki, és végül javítsd ki a programot!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>A <code>rand()</code> minden hívása egy <em>új</em> véletlenszámot ad. A fenti, hibás kódrészletben
+a <code>rand()</code>-ot kétszer hívjuk meg, tehát tulajdonképpen mintha nem egy, hanem két pénzérmét
+vizsgálnánk: ha az első fej, kiírjuk hogy fej, ha a második írás, kiírjuk, hogy írás. Így aztán az is
+lehet, hogy mindkét szó kiíródik, de az is, hogy egyik sem. Javítva:</p>
+<pre class="brush: c "  >
+if (rand() % 2 == 0)
+    printf(&quot;Fej.\n&quot;);
+else
+    printf(&quot;Iras.\n&quot;);</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Kő, papír, olló</h2>
+</div>
+<pre class="screenshot float">
+Kő (k), papír (p), olló (o) vagy vége (v)?
+
+Szerinted: k
+Szerintem: k.
+Senki nem kap pontot.
+
+Szerinted: p
+Szerintem: k.
+p&gt;k, ezt te vitted!
+
+Szerinted: v
+
+Te nyertél, 1&gt;0 ponttal.
+</pre>
+<p>Írj programot, amelyik „kő, papír, olló” játékot játszik! A program először kérje el a 
+felhasználó tippjét (<code>k</code>, <code>p</code>, <code>o</code> betűk, mint kő, papír, olló).
+Ezután válasszon ő maga is egyet, és hasonlítsa a kettőt össze! A kő erősebb, mint az olló, 
+mert kicsorbítja. A papír erősebb, mint a kő, mert becsomagolja. Az olló erősebb, mint a papír, 
+mert elvágja. Ezek alapján a gép vagy a játékos kapjon egy pontot! Ha egyformát tippeltek, akkor 
+semelyikük nem kap. A <code>v</code> beírása után írja ki a program, hogy ki nyert!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<p>A gépnek háromféle választása lehet. Ehhez egy véletlenszámot kell sorsolni, amely a 0, 1 vagy
+2 értékeket veheti fel. (A 3-mal osztás maradékát figyelve éppen ilyen szám áll elő.)</p>
+<p>A véletlenszám sorsolása után érdemes a 0, 1 és 2 értékeket a programban a <code>k</code>,
+<code>p</code>, <code>o</code> karakterekre cserélni, hogy egységes legyen azzal, amit
+a felhasználó beírt. Ez javítja a programkód érthetőségét.</p>
+<p>Amikor karaktert kell beolvasni, a feladattól függően
+érdemes a <code>scanf()</code>-et <code>scanf("%c", &amp;betu)</code> helyett
+<code>scanf(" %c", &amp;betu)</code> formában használni, azaz tenni egy szóközt
+a <code>%c</code> elé. Ennek hatására a <code>scanf()</code> eldobja a kapott
+szóköz és újsor (enter) karaktereket, és megvárja az első nem szóközt.
+Erre azért van szükség, mert karakterek beolvasásánál alapértelmezés
+szerint megkapjuk a felhasználó által leütött entereket is.</p>
+</div>
+</div>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main(void) {
+    int jatekospont, geppont;
+    char jatekostipp, geptipp;
+    
+    /* pontszámok nullázása és üdvözlés*/
+    jatekospont = geppont = 0;
+    srand(time(0));
+    printf(&quot;Kő (k), papír (p), olló (o) vagy vége (v)?\n&quot;);
+    
+    /* az első tipp a játékostól */
+    printf(&quot;\nSzerinted: &quot;);
+    scanf(&quot; %c&quot;, &amp;jatekostipp);
+    
+    /* végjeles sorozat - a 'v' karakter jelzi a végét */
+    while (jatekostipp != 'v') {
+        /* tippel a gép is: 0, 1 vagy 2 véletlenszám. */
+        int geptipp_i = rand() % 3;
+        /* karakterré alakítjuk: 0-&gt;olló, 1-&gt;papír, 2-&gt;kő. */
+        /* hogy melyikből mi lesz, az mindegy. */
+        if (geptipp_i == 0)
+            geptipp = 'o';
+        else if (geptipp_i == 1)
+            geptipp = 'p';
+        else
+            geptipp = 'k';
+        printf(&quot;Szerintem: %c.\n&quot;, geptipp);
+
+        /* összehasonlítás és pontozás */
+        if ((jatekostipp == 'k' &amp;&amp; geptipp == 'o')        /* kő veri az ollót */
+            || (jatekostipp == 'p' &amp;&amp; geptipp == 'k')     /* papír veri a követ */
+            || (jatekostipp == 'o' &amp;&amp; geptipp == 'p')) {  /* olló veri a papírt */
+            ++jatekospont;
+            printf(&quot;%c&gt;%c, ezt te vitted!\n&quot;, jatekostipp, geptipp);
+        }
+        else if ((geptipp == 'k' &amp;&amp; jatekostipp == 'o')   /* kő veri az ollót */
+            || (geptipp == 'p' &amp;&amp; jatekostipp == 'k')     /* papír veri a követ */
+            || (geptipp == 'o' &amp;&amp; jatekostipp == 'p')) {  /* olló veri a papírt */
+            ++geppont;
+            printf(&quot;%c&lt;%c, ezt én vittem!\n&quot;, jatekostipp, geptipp);
+        }
+        else
+            printf(&quot;Senki nem kap pontot.\n&quot;);
+
+        /* a következő tipp a játékostól */
+        printf(&quot;\nSzerinted: &quot;);
+        /* a karakter beolvasása előtt a scanf() egy szóközt kap.
+         * ez azt jelenti, hogy a beolvasott szóközöket és újsor
+         * karaktereket dobja el, és várjon tovább betűre. */
+        scanf(&quot; %c&quot;, &amp;jatekostipp);
+    }
+    
+    /* végeredmény */
+    printf(&quot;\n&quot;);
+    if (jatekospont &gt; geppont)
+        printf(&quot;Te nyertél, %d&gt;%d ponttal.\n&quot;, jatekospont, geppont);
+    else if (jatekospont &lt; geppont)
+        printf(&quot;Én nyertem, %d&gt;%d ponttal.\n&quot;, geppont, jatekospont);
+    else
+        printf(&quot;A játék döntetlen, mindkettőnknek %d pontja lett.\n&quot;, jatekospont);
+    
+    return 0;
+}</pre>
+</div>
+</div>
+
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lab06sz.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

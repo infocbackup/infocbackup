@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   width="425"
+   height="335"
+   viewBox="298 98 224.20596 174.47768"
+   id="svg2"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="osszeg_2tag.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="948"
+     inkscape:window-height="672"
+     id="namedview35"
+     showgrid="false"
+     inkscape:zoom="2.8179104"
+     inkscape:cx="212.5"
+     inkscape:cy="251.50748"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs35">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         id="path3872"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow2Lend"
+       style="overflow:visible">
+      <path
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         id="path3884"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" />
+    </marker>
+    <linearGradient
+       id="linearGradient3794">
+      <stop
+         id="stop3796"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3794-3">
+      <stop
+         id="stop3796-8"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata66">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-67.867402,-41.642745)"
+     id="g24">
+    <path
+       d="m 460,180 h 40 v 40 h -40 z"
+       id="rect26"
+       style="fill:#8aeda4;fill-opacity:1" />
+    <path
+       d="m 460,180 h 40 v 40 h -40 z"
+       id="rect28"
+       style="fill:none;stroke:#000000;stroke-width:1.58263028;stroke-miterlimit:4;stroke-dasharray:none" />
+    <g
+       id="text30">
+      <path
+         d="m 480.83,193.46 v 5.5265 h 5.5265 v 1.6867 H 480.83 v 5.5265 h -1.6669 v -5.5265 h -5.5265 v -1.6867 h 5.5265 V 193.46 h 1.6669"
+         id="path3056" />
+    </g>
+    <rect
+       width="130.00002"
+       height="55.000008"
+       x="10"
+       y="12.910004"
+       transform="matrix(0.52754342,0,0,0.52754342,365.04218,136.26137)"
+       id="rect3845"
+       style="fill:#ffffbe;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       x="375.59305"
+       y="161.53598"
+       id="text3847"
+       xml:space="preserve"
+       style="font-size:21.10173607px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Kells SD;-inkscape-font-specification:Kells SD"><tspan
+         x="375.59305"
+         y="161.53598"
+         id="tspan3849"
+         style="font-size:16.88138962px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">gyökér</tspan></text>
+    <path
+       d="M 140.00001,37.91001 215,82.910004"
+       transform="matrix(0.52754342,0,0,0.52754342,365.04218,136.26137)"
+       id="path3851"
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+  </g>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:1.58263028;stroke-miterlimit:4;stroke-dasharray:none"
+     id="line48"
+     d="m 372.1326,218.36196 40,-40" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:1.58263028;stroke-miterlimit:4;stroke-dasharray:none"
+     id="line60"
+     d="M 452.80009,220.12649 412.1326,178.36196" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#bbedf6;fill-opacity:1;stroke:#000000;stroke-width:1.58263028;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path3018"
+     d="m 328.57142,227.43806 c 0,-12.03522 9.03675,-11.61294 17.27474,-4.43068 3.30632,0.10866 6.34013,-1.72151 9.3584,-2.88089 5.20616,-4.79248 18.89834,-5.70407 19.70548,1.02941 4.03466,2.37709 13.54438,-4.43148 17.1912,-0.87533 1.79298,2.34591 3.33154,8.76289 7.71153,6.70807 9.52781,1.94711 4.67832,9.52742 7.79526,12.63743 3.98429,4.87697 4.77892,6.65564 5.07178,14.96253 -1.18461,4.79109 -9.56601,2.55479 -9.17112,8.30205 -2.57792,3.16147 -7.14833,1.76141 -10.6815,1.78197 -5.7485,-2.03012 -7.20765,6.08998 -11.48033,6.58004 -4.27107,-0.16655 -7.88121,-4.66141 -12.2615,-2.55523 -4.79436,3.13594 -13.37007,5.57561 -16.27256,2.23481 -3.34595,-4.9979 -9.31543,-3.46585 -13.09842,-1.38322 -4.52988,2.57449 -3.20495,-4.71668 -7.4139,-6.62198 -2.49898,-1.73423 -6.24231,-4.18325 -8.51877,-0.41181 -4.7484,2.29103 -7.97685,-4.66117 -5.47261,-8.24849 1.6756,-4.62872 4.806,-6.05801 2.80148,-12.14226 -3.24749,-10.668 3.99576,-11.24779 7.46084,-14.68642 z"
+     sodipodi:nodetypes="ccccccccccccccccccc" />
+  <text
+     sodipodi:linespacing="125%"
+     style="font-size:21.10173607px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Kells SD;-inkscape-font-specification:Kells SD"
+     xml:space="preserve"
+     id="text3800"
+     y="241.94977"
+     x="332.29031"><tspan
+       style="font-size:16.88138962px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="tspan3802"
+       y="241.94977"
+       x="332.29031">szorzat</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#bbedf6;fill-opacity:1;stroke:#000000;stroke-width:1.58263028;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path3018-5"
+     d="m 435.56102,228.17014 c 0,-12.03522 4.91811,-14.98274 13.1561,-7.80048 3.30632,0.10866 6.34013,-1.72151 9.3584,-2.88089 5.20616,-4.79248 18.89834,-5.70407 19.70548,1.02941 4.03466,2.37709 9.42574,-1.43611 13.07256,2.12004 1.79298,2.34591 9.69671,2.39773 14.0767,0.34291 9.52781,1.94711 1.68294,11.39953 4.79988,14.50954 3.98429,4.87697 5.52777,8.15332 5.82063,16.46021 -1.18461,4.79109 -9.56601,2.55479 -9.17112,8.30205 -2.57792,3.16147 -7.14833,1.76141 -10.6815,1.78197 -5.7485,-2.03012 -7.20765,6.08998 -11.48033,6.58004 -4.27107,-0.16655 -7.88121,-4.66141 -12.2615,-2.55523 -4.79436,3.13594 -11.49796,0.70813 -14.40045,-2.63267 -3.34595,-4.9979 -7.44332,2.15048 -11.22631,4.23311 -4.52988,2.57449 -6.94917,-5.46553 -11.15812,-7.37083 -2.49898,-1.73423 -8.86326,1.43308 -11.13972,5.20452 -4.7484,2.29103 -5.3559,-10.2775 -2.85166,-13.86482 1.6756,-4.62872 8.92464,-4.93474 6.92012,-11.01899 -3.24749,-10.668 3.99576,-9.00126 7.46084,-12.43989 z"
+     sodipodi:nodetypes="ccccccccccccccccccc" />
+  <text
+     sodipodi:linespacing="125%"
+     style="font-size:21.10173607px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Kells SD;-inkscape-font-specification:Kells SD"
+     xml:space="preserve"
+     id="text3800-7"
+     y="239.31204"
+     x="435.16132"><tspan
+       style="font-size:16.88138962px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="tspan3802-7"
+       y="239.31204"
+       x="435.16132">szorzat</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     style="font-size:14.77121639px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Kells SD;-inkscape-font-specification:Kells SD"
+     xml:space="preserve"
+     id="text4596"
+     y="257.77606"
+     x="327.01489"><tspan
+       style="font-size:10.55086899px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="tspan4598"
+       y="257.77606"
+       x="327.01489">(bal gyermek)</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     style="font-size:14.77121639px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Kells SD;-inkscape-font-specification:Kells SD"
+     xml:space="preserve"
+     id="text4596-2"
+     y="255.13834"
+     x="427.24814"><tspan
+       style="font-size:10.55086899px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="tspan4621"
+       y="255.13834"
+       x="427.24814">(jobb gyermek)</tspan></text>
+</svg>

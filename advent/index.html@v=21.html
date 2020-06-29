@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Adventi naptár</title>
+<meta property="og:title" content="InfoC :: Adventi naptár">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="InfoC :: Adventi naptár">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="InfoC :: Adventi naptár">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="../modulz/logo_touch.png">
+<link rel="image_src" href="../modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="../modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="../modulz/style/localfonts.css@v10.css">
+<script src="../modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="../index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="../index.html">Kezdőlap</a>
+<li><a href="../nhf.html">Nagy házi feladat</a>
+<li><a href="../elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="../ea01.html">1. hét: bevezetés</a>
+<li><a href="../ea02.html">2. hét: algoritmusok</a>
+<li><a href="../ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="../ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="../ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="../ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../ea09.html">9. hét: láncolt listák</a>
+<li><a href="../ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="../ea12.html">12. hét: bináris fák</a>
+<li><a href="../ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="../ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="../gy02.html">2. hét: algoritmizálás</a>
+<li><a href="../gy03.html">3. hét: egyszerű programok</a>
+<li><a href="../gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="../gy05.html">5. hét: függvények</a>
+<li><a href="../gy06.html">6. hét: származtatott típusok</a>
+<li><a href="../gy07.html">7. hét: mutatók használata</a>
+<li><a href="../gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="../gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="../gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="../gy13.html">13. hét: bináris fák</a>
+<li><a href="../gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="../lab01.html">1. hét: operációs rendszer</a>
+<li><a href="../lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="../lab03.html">3. hét: egyszerű programok</a>
+<li><a href="../lab04.html">4. hét: tömbök</a>
+<li><a href="../lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="../lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="../lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="../lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="../lab11.html">11. hét: láncolt listák</a>
+<li><a href="../lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="../lab13.html">13. hét: bináris fák</a>
+<li><a href="../lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="../f01.html">1. hét: egyszerű programok</a>
+<li><a href="../f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="../f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="../f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="../f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="../f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../f09.html">9. hét: láncolt listák</a>
+<li><a href="../f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="../f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="../f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="../jegyzet.html">Jegyzet és puska</a>
+<li><a href="../fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="../stilus.html">Kódolási stílus</a>
+<li><a href="../tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="../debugmalloc.html">Debugmalloc</a>
+<li><a href="../mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="../nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="../nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="../nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="../orak.html">SVG óra galéria</a>
+<li><a href="../angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="../turing.html">Mit tud a számítógép?</a>
+<li><a href="../bf.html">BF</a>
+<li><a href="../bitturmix.html">Bitturmix</a>
+<li><a href="../labirintus.html">Labirintusok</a>
+<li><a href="../tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../karakterkodolas.html">Karakterkódolások</a>
+<li><a href="../strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="../internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="../sdl.html">SDL grafika</a>
+<li><a href="../sdl_telepito.html">SDL telepítés</a>
+<li><a href="../fa.html">Fák rajzolása</a>
+<li><a href="../lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="index.html@v=21.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="../mondatelemzo.html">Mondatelemző</a>
+<li><a href="../kifejezesek.html">Kifejezések</a>
+<li><a href="../derivalas.html">Deriválás</a>
+<li><a href="../ast_epit.html">AST: szintaxisfák</a>
+<li><a href="../ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="../ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="../advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<div class="float" style="margin-top: 0.25em; margin-bottom: 0;"><a href="../advent.html">&larr; vissza</a></div>
+<h1 class="eloadascim">Adventi naptár</h1>
+<img src="advent21-midikey.png" class="float">
+
+<h2>Boci boci tarka</h2>
+
+<p>Most egy újabb trilógia következik, ezúttal a hangokról.
+
+<p>A mai feladat: állítsunk elő <em>hangot!</em> Rajzolja ki a program egy zongora billentyűit. Az egy oktávos 
+billentyű gombjait a számítógép billentyűzetéről lehessen megnyomni. A billentyűzet
+<kbd>qwerty</kbd>
+sora a fehér, a
+<kbd>23567</kbd>
+sora pedig a fekete billentyűknek feleljenek meg.
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="index.html@v=21.html#1">A hangok természete</a>
+<li><a href="index.html@v=21.html#2">A program működése</a>
+<li><a href="index.html@v=21.html#3">A program</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A hangok természete</h2>
+</div>
+
+<p>Eddig hangról nem volt szó még itt az adventi naptárban sem. Ez nem azt jelenti, hogy
+nagyon bonyolult dologról lenne szó – legalábbis az alapjai nem bonyolultak sem fizikailag,
+sem programozási szempontból. Az SDL-ben ez is nagyon egyszerűen meg van oldva: ha jelezzük
+egy-két függvényhívással, hogy hangot szeretnénk megszólaltatni, kapunk egy <em>puffert,</em> egy tömböt,
+ahova a hangot meghatározó adatokat kell írni. Minden alkalommal, amikor az adatok elfogynak,
+az SDL meghívja az általunk megadott függvényt, amelynek az a feladata, hogy az újabb adag
+adatot előállítsa, azzal feltöltse a puffert – és ennyi, már szól is a hang. A kérdés csak az,
+hogy mivel kell ezt a tömböt feltölteni, hogy ne csak zajt halljunk.
+
+<p>A hang fizikailag valamilyen közeg, egy tárgy vagy a levegő <em>rezgése.</em> Levegő esetén a 
+légnyomás növekedéséről és csökkenéséről, azaz a levegő sűrűsödéséről és ritkulásáról van szó, 
+amelyet a fülünk érzékel. A légnyomásváltozások <em>mértéke</em> adja a hang <em>erősségét,</em> az <em>időbeli
+változásuk sebessége</em> pedig a hang <em>magasságát.</em>
+
+<p>Egy hang felvételekor ezeket a sűrűsödéseket-ritkulásokat kell rögzíteni elektromos úton egy 
+mikrofonnal. Lejátszásakor fordított irányban történik ugyanez, egy hangszóró mozgatja meg 
+ugyanolyan ütemben a levegőt, ahogyan az eredetileg is történt. Itt egy létező hang rögzítéséről 
+van szó, ahogyan egy fényképezőgép is egy létező képet rögzít. Megfelelő feszültség-idő függvény 
+előállításával azonban <em>szintetizálni</em> is tudunk hangot (ahogyan a „semmiből” képet is állíthatunk 
+elő a programunkban).
+
+
+
+<p>A matematikailag legegyszerűbb periodikus függvény a szinusz. A fentiek alapján egy szinuszos 
+légnyomásváltozás <em>amplitúdója</em> határozza meg a hallott hang erősségét, <em>frekvenciája</em> pedig a 
+magasságát. A zenei A hangnak a <code>440 Hz</code>-es rezgés felel meg. Ez így hangzik:
+<p class="kozep">
+<audio controls>
+    <source src="advent21-hang440.ogg" type="audio/ogg">
+    <source src="advent21-hang440.mp3" type="audio/mpeg">
+    <source src="advent21-hang440.wav" type="audio/x-wav">
+</audio>
+</p>
+A gyorsabb rezgéseket magasabb hangnak, a lassabb rezgéseket pedig alacsonyabb hangnak halljuk. A
+<code>440×2 = 880 Hz</code>-es hangra azt mondjuk, hogy egy <em>oktávval</em> magasabban van, mint a
+<code>440 Hz</code>-es:
+<p class="kozep">
+<audio controls>
+    <source src="advent21-hang880.ogg" type="audio/ogg">
+    <source src="advent21-hang880.mp3" type="audio/mpeg">
+    <source src="advent21-hang880.wav" type="audio/x-wav">
+</audio>
+</p>
+A következő ilyen hangköz azonban nem a <code>440×3 = 1320 Hz</code>:
+<p class="kozep">
+<audio controls>
+    <source src="advent21-hang1320.ogg" type="audio/ogg">
+    <source src="advent21-hang1320.mp3" type="audio/mpeg">
+    <source src="advent21-hang1320.wav" type="audio/x-wav">
+</audio>
+</p>
+Hanem a <code>440×4 = 440×2×2 = 1760 Hz</code>-es:
+<p class="kozep">
+<audio controls>
+    <source src="advent21-hang1760.ogg" type="audio/ogg">
+    <source src="advent21-hang1760.mp3" type="audio/mpeg">
+    <source src="advent21-hang1760.wav" type="audio/x-wav">
+</audio>
+</p>
+Az összes emberi érzékszervhez hasonlóan a fül hangmagasság-érzékelése is logaritmikus: mindig az
+előző hanghoz képest kétszeres frekvenciájút hallunk ugyanakkora (itt: oktáv) hangköznek. Ez 
+talán annyira nem meglepő, hiszen az ábrán láthatóan az <code>1760 Hz</code> viszonyul úgy a
+<code>880</code>-hoz, mint a 
+<code>880</code> a <code>440</code>-hez: hogy egy egész periódus fér be abba az időbe a nagyobbiknál, mint amekkorába a 
+kisebbiknél csak egy fél.
+
+<img src="advent21-oktav.svg" class="kozep">
+
+<img src="advent21-harsona.png" class="float">
+
+<p>Az egy oktávos hangközt a zenében a legtöbbször <em>tizenkét félhangra</em> bontjuk. Az 
+egyes hangközök között a fentiek alapján frekvenciában nem az összeadás, hanem a szorzás teremti
+meg a kapcsolatot. Ez egy mértani sorozat: a szomszédos, eggyel magasabb félhangra mindig
+egy szorzással tudunk tovább jutni: a szorzó tényező pedig <code><sup>12</sup>√<span class="felulhuzott">2</span></code>
+kell legyen, mivel ennek a tizenkettedik hatványa a kettő, és tizenként félhang az oktáv. Ezeket
+a félhangokat jelöljük a zenében a C, C#, D, D#, E, F, F#, G, G#, A, A#, H betűkkel (ahol az A
+a <code>440 Hz</code>-es). A hangszerek jelentős részén ezek meg is találhatóak. Például a zongora minden
+billentyűjének egy ilyen hang felel meg, a gitár minden bundjánál lefogva egy húrt úgy rövidíthető
+meg annak a hossza, hogy a megfelelő rezgésszámot produkálja. Más hangszereknél nincsen ilyen
+segítség, egy hegedűnél a zenésznek kell tudnia, hogy hol fogja le a húrt. A harsonánál is
+hasonló a helyzet: a zenész „lövi be” fülre, hogy milyen hosszúra kell nyújtania a csövet a
+kihúzásával, hogy a megfelelő frekvenciájú rezgés keletkezzen benne. Ez jó hallás és gyakorlás
+kérdése.
+
+
+<p>
+Tegyük fel, hogy két forrásból hallunk hangot. Ilyenkor a két forrás által keltett hangnyomás
+egyszerűen összeadódik. Ha az egyik hang az A (piros, <code>440 Hz</code>), a másik hang az A#
+(zöld <code>440×<sup>12</sup>√<span class="felulhuzott">2</span> &approx; 440×1,059 Hz</code>), egy
+ilyen függvény (kék) adódik:
+
+<img src="advent21-lebeges105.svg" class="kozep">
+
+<p class="kozep">
+<audio controls>
+    <source src="advent21-hangkisszekund.ogg" type="audio/ogg">
+    <source src="advent21-hangkisszekund.mp3" type="audio/mpeg">
+    <source src="advent21-hangkisszekund.wav" type="audio/x-wav">
+</audio>
+</p>
+
+<p>Látható, hogy a kis frekvenciakülönbség miatt a két hang néha erősíti egymást (amikor 
+mindkettő ép növekszik, azaz <em>fázisban</em> vannak), máskor meg gyengítik egymást (amikor 
+egyik nő, másik csökken, <em>ellentétes fázisban</em> vannak). Az erősítés-gyengítésnek is van 
+egy periodicitása, ami matematikailag is kifejezhető a <code>sin x + sin y</code>-ból:
+
+<pre class="papir mono kozep" style="line-height: 0.7;">
+                      x+y     x-y
+sin x + sin y = 2 sin --- cos ---
+                       2       2 
+</pre>
+
+<p>Ebben megjelenik a két frekvencia különbsége szorzóként, amely a fenti példában
+<code>0,059×440 = 25,96 Hz</code>. Ezt a jelenséget lebegésnek hívják. Ezt egy vibrálásnak érzékeljük, ami
+nem túl kellemes a fül számára. A két hang disszonáns, nem szól jól együtt. Ha kellően nagy a frekvenciák
+különbsége, akkor nem hallunk ilyesmit.
+
+<p>Adódik itt azonban egy kis probléma. A
+<code><sup>12</sup>√<span class="felulhuzott">2</span></code> szám irracionális. Mozduljunk el egy alaphangtól
+hétszer fél hanggal, azaz egy <em>kvinttel.</em> Vegyük tehát a szorzó hetedik
+hatványát: <code>(<sup>12</sup>√<span class="felulhuzott">2</span>)<sup>7</sup>&approx;1,49831</code>, ami
+majdnem <code>1,5</code>, de nem pontosan annyi. Két ilyen hang összege is, alig hallhatóan ugyan, de lebeg.
+Viszont ha az <code>1,49831</code>-es szorzó helyett inkább <code>1,5</code>-et használunk, azaz egy <em>tiszta hangközt</em>,
+nem történik ilyen. Hasonló a helyzet a <em>nagy tercnél,</em> négy félhang távolságnál: a szorzó
+<code>(<sup>12</sup>√<span class="felulhuzott">2</span>)<sup>4</sup>&approx;1,2599</code>, ami helyett meg
+szebb hangzású a pontosan <code>1,25</code>, azaz <code>5/4</code>-del helyettesített tiszta hangköz.
+
+<p>A tiszta és az egyenletes hangközök közötti különbség
+hallatszik kicsit. Alább két szinuszokból szintetizált <em>akkord</em> (több hang együtt), amelyben
+a C, E, és G betűkkel jelölt hangok szólalnak meg egyszerre. Az egyenletesen temperált,
+azaz <code><sup>12</sup>√<span class="felulhuzott">2</span></code> hatványait használó hangoknál
+az akkord kicsit lebeg, míg a tiszta hangközöknél (<code>4/3</code> és <code>3/2</code>) nem. Ha nem hallatszik,
+próbáld fejhallgatóval!
+
+<div class="columns">
+<div>
+<p class="kozep">
+<audio controls>
+    <source src="advent21-hangakkordlebeg.ogg" type="audio/ogg">
+    <source src="advent21-hangakkordlebeg.mp3" type="audio/mpeg">
+    <source src="advent21-hangakkordlebeg.wav" type="audio/x-wav">
+</audio>
+</p>
+<p class="kozep">C, E, G – egyenletes hangközökkel</p>
+</div>
+<div>
+<p class="kozep">
+<audio controls>
+    <source src="advent21-hangakkordnemlebeg.ogg" type="audio/ogg">
+    <source src="advent21-hangakkordnemlebeg.mp3" type="audio/mpeg">
+    <source src="advent21-hangakkordnemlebeg.wav" type="audio/x-wav">
+</audio>
+</p>
+<p class="kozep">C, E, G – tiszta hangközökkel</p>
+</div>
+</div>
+
+<p>Ebből adódik a hangszerek hangolásának az alapproblémája. Ha meg szeretnénk szüntetni a lebegést,
+akkor a <code>(<sup>12</sup>√<span class="felulhuzott">2</span>)<sup>n</sup></code> hatványsor minden
+számát egy hozzá közel álló racionális számmal kell helyettesíteni, pl. az <code>n=7</code>-ediket <code>3/2</code>-del
+(<code>1,49831&approx;3/2=1,5</code>), vagy az <code>n=5</code>-ödiket <code>4/3</code>-dal
+(<code>1,3348&approx;4/3=1,3333</code>). 
+Ha így teszünk, akkor viszont nem lesz az igaz például az,
+hogy <code>12</code> kvint (<code>12×7</code>) <code>7</code> oktávot (<code>7×12</code>) ad, mert <code>1,5<sup>12</sup></code>, a <code>12</code> kvint frekvenciaszorzója
+<code>129,74634</code>, míg a <code>7</code> oktávé csak <code>2<sup>7</sup>=128</code>.
+
+<p>Az évszázadok alatt sok mindennel próbálkoztak ennek a problémának a megoldására. Manapság 
+leginkább maradunk az irracionális arányoknál, azaz a <code><sup>12</sup>√<span class="felulhuzott">2</span></code>
+hatványainál. Ez az <em>egyenletesen temperált hangolás.</em> Ebben minden félhang 
+között pontosan ugyanakkora különbség van, szemben azzal, mintha a fenti módon, kis egész számok 
+hányadosával, racionális számokkal helyettesítenénk ezeket. Az egyenletes közök előnyösek:
+ezek teszik lehetővé  azt, hogy egy zenedarabot transzponáljunk, azaz valahány hanggal magasabban
+játsszunk el, anélkül, hogy a jellege nagyon megváltozna. 
+
+<p>Ennyit a frekvenciákról és a hangközökről. Ez csak azért kellett, hogy érthetőek 
+legyenek a programba beírt számok, <code>1/12</code>-edik hatványok. A programban ugyanis a billentyűkhöz egy 
+frekvenciát rendelünk, amilyen rezgésszámú szinuszt meg kell szólaltatni az adott billentyű 
+nyomva tartásakor.
+
+<pre class="brush: c "  >
+typedef struct Hang {
+    SDLKey sym;         /* billentyuje */
+    double frek;        /* a frekvenciaja */
+    double hangero;     /* a hangero, 0-&gt;1 és 1-&gt;0 valtoztatva, hogy ne pattogjon */
+    int szol;           /* epp szol-e */
+} Hang;
+
+Hang hangok[] = {
+    { SDLK_q, 440.0 * pow(2, -9 * 1.0/12.0) },   /* C */
+    { SDLK_2, 440.0 * pow(2, -8 * 1.0/12.0) },   /* C# */
+    { SDLK_w, 440.0 * pow(2, -7 * 1.0/12.0) },   /* D */
+    { SDLK_3, 440.0 * pow(2, -6 * 1.0/12.0) },   /* D# */
+    { SDLK_e, 440.0 * pow(2, -5 * 1.0/12.0) },   /* E */
+    { SDLK_r, 440.0 * pow(2, -4 * 1.0/12.0) },   /* F */
+    { SDLK_5, 440.0 * pow(2, -3 * 1.0/12.0) },   /* F# */
+    { SDLK_t, 440.0 * pow(2, -2 * 1.0/12.0) },   /* G */
+    { SDLK_6, 440.0 * pow(2, -1 * 1.0/12.0) },   /* G# */
+    { SDLK_y, 440.0 * pow(2,  0 * 1.0/12.0) },   /* A */
+    { SDLK_7, 440.0 * pow(2,  1 * 1.0/12.0) },   /* A# */
+    { SDLK_u, 440.0 * pow(2,  2 * 1.0/12.0) },   /* H */
+    { SDLK_i, 440.0 * pow(2,  3 * 1.0/12.0) },   /* C' */
+    { SDLK_UNKNOWN }    /* tomb veget jeloli */
+};</pre>
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A program működése</h2>
+</div>
+
+<p>A számítógépen nem tudunk időben folytonos jeleket feldolgozni. Mindig van egy legkisebb idő;
+illetve mindig van egy legkisebb jelváltozás is. Ez nincs másképp a hangoknál sem. Egy hang 
+felvételekor nem a folytonos függvényt tároljuk, hanem egy másodpercben több ezer mintát veszünk 
+belőle, és nem valós, hanem egész számokat tárolunk.
+
+<img src="advent21-mintavetel.svg" class="kozep">
+
+<p>Ha túl alacsony a másodpercenkénti mintavételek száma (vagyis túl sok az elhanyagolás az x 
+tengely mentén), akkor a visszaállított hang tompa lesz. Ha pedig a mintákat pontatlanul
+tároljuk, akkor zajos, sercegős hangot kapunk. A CD minőség másodpercenként 44100 darab mintát jelent, a 
+DVD minőség ennél még egy kicsit többet, 48000-et. A programban 44100 Hz-es 
+mintavételezésű hangot fogunk előállítani, 16 bites értékekkel. Csatornánk csak egy lesz: a hang 
+nem sztereó, nincs külön hang a bal és a jobb fül számára, hanem csak monó.
+
+<p>Az SDL-ben a <code>SDL_OpenAudio()</code> függvénnyel lehet elindítani a hanglejátszást. 
+Ennek egy <code>SDL_AudioSpec</code> struktúrában kell megadni a keltett hang paramétereit:
+
+<pre class="brush: c "  >
+void hang_init(void *userdata) {
+    audiospec.freq = 44100;                /* 44100Hz - CD minoseg, 48000 - dvd minoseg */
+    audiospec.format = AUDIO_S16SYS;       /* 16-bit elojeles; a rendszer bajtsorrendjevel */
+    audiospec.channels = 1;                /* mono */
+    audiospec.samples = audiospec.freq/50; /* puffer merete - 1/50 sec */
+    audiospec.callback = hang_callback;    /* sdl hivja, ha ujabb adag hang kell neki */
+    audiospec.userdata = userdata;         /* egy pointert atad mindig a callbacknek */
+    if (SDL_OpenAudio(&amp;audiospec, NULL) &lt; 0) {
+        fprintf(stderr, &quot;Hiba a hanggal: %s\n&quot;, SDL_GetError());
+        exit(1);
+    }
+}</pre>
+
+<p>Meg kell adni egy pufferméretet is, ez a programban <code>1/50</code> másodpercnyi hang. Ez 
+azt jelenti, hogy ekkora adatmennyiséget vár az SDL. Ha elfogy lejátszás közben az adat, akkor a 
+megadott függvényt meghívja (ez a <code>hang_callback()</code> függvény). Ennek a dolga, hogy a 
+következő pufferméretnyi hanganyagot előállítsa.
+
+<p>A hang kiszámításának menete nagyon egyszerű. Először is, tudni kell, hogy mennyi az idő. A
+<code>t</code> változó tárolja a programban az időt. Ezt minden minta kiszámolása után meg kell 
+növelni <code>dt</code>-vel, amit pedig abból lehet kiszámolni, hogy mekkora részét teszi ki egy 
+másodpercnek egy hangminta:
+
+<pre class="brush: c "  >
+double dt = 1.0/audiospec.freq;       /* ennyi masodperc hangmintankent */
+t += dt;</pre>
+
+A <code>hang_callback()</code> függvény kiszámolja a hangok adott pillanatbeli
+értékét a szokásos sin ωt képlet alapján, ahol ω a hang körfrekvenciája (ω = 2&pi;f, mert
+a szinusz függvény 2&pi; alatt tesz meg egy periódust):
+
+<pre class="brush: c "  >
+s_ez = sin(hangok[i].frek * 2 * 3.14159265 * t);</pre>
+ 
+
+<p>Az egyes hangokhoz tartozó mintát a hangerejükkel megszorozva kell hozzáadni az összesített
+értékhez. Ezáltal a többféle hang összemixelődik több gomb nyomva tartása esetén:
+
+<pre class="brush: c "  >
+s += s_ez * hangero * hangok[i].hangero;</pre>
+
+<p>Egy dologra kell még figyelni: a hangok ki- és bekapcsolásuk pillanatakor nem szabad azonnal 
+megváltoztatni a hangerejüket nulláról maximálisra, mert különben zavaró recsegést, pattanást 
+fogunk hallgatni (click). Ezért a gomb megnyomásakor a program nem hirtelen, 40 mintányi idő
+alatt növeli maximálisra a hangerőt (1/0.025 lépésben), gomb elengedésekor pedig a hangerő
+ugyanígy csökken:
+
+<pre class="brush: c "  >
+double const hangositas = 0.025;
+
+if (hangok[i].szol) {
+    if (hangok[i].hangero &lt; 1)
+        hangok[i].hangero += hangositas;
+} else {
+    if (hangok[i].hangero &lt; hangositas)
+        hangok[i].hangero = 0;
+    if (hangok[i].hangero &gt; 0)
+        hangok[i].hangero -= hangositas;
+}</pre>
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A program</h2>
+</div>
+
+<p>A forráskód letölthető innen: <a href="advent21-bociboci.c">advent21-bociboci.c</a>.
+Szükséges hozzá az SDL használata, amelyhez az útmutató az Érdekességek
+menüpont alatt megtalálható.
+
+<p>Az <kbd>y</kbd> helyén a program
+működik a <kbd>z</kbd> gombbal is, zenei A hangot keltve, hogy magyar billentyűzeten
+is jó legyen. Teszt bemenet: qeqett qeqett iuztrz trewqq.
+Adventi hangulathoz pedig: wuytw ww wuyte :D
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="index.html@v=21.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="../index.html"><img src="../modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="../index.html">főoldal</a> · <a href="../elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

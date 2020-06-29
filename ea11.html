@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Program és külvilág. Karbantartható programok</title>
+<meta property="og:title" content="InfoC :: Program és külvilág. Karbantartható programok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Program és külvilág kapcsolata: parancssori argumentumok és fájlkezelés. Többmodulos programok, tervezés és dokumentáció.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Program és külvilág kapcsolata: parancssori argumentumok és fájlkezelés. Többmodulos programok, tervezés és dokumentáció.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea11.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="eatobbmodul" class="namer"></a>
+<h1 class="eloadascim">Program és külvilág. Karbantartható programok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Program és külvilág kapcsolata: parancssori argumentumok és fájlkezelés. Többmodulos programok, tervezés és dokumentáció.</p>
+</div>
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea11.html#1"><em>A program és a külvilág</em></a>
+<li><a href="ea11.html#2">A parancssori argumentumok</a>
+<li><a href="ea11.html#3">A program visszatérési értéke</a>
+<li><a href="ea11.html#4">Fájlok kezelése</a>
+<li><a href="ea11.html#5">Hogy néz ki egy bináris fájl?</a>
+<li><a href="ea11.html#6">Bináris fájlok: fájl másoló program</a>
+<li><a href="ea11.html#7">Hogy néz ki egy szövegfájl?</a>
+<li><a href="ea11.html#8">Fájlok – további tudnivalók</a>
+<li><a href="ea11.html#9"><em>Az előfeldolgozó</em></a>
+<li><a href="ea11.html#10">A preprocesszor</a>
+<li><a href="ea11.html#11"><code>#define:</code> konstansok és makrók</a>
+<li><a href="ea11.html#12">Feltételes fordítás: <code>#if</code>, <code>#ifdef</code>, <code>#ifndef</code></a>
+<li><a href="ea11.html#13"><em>Többmodulos programok</em></a>
+<li><a href="ea11.html#14">Példa nagy projekt: függvényrajzoló</a>
+<li><a href="ea11.html#15">Függvényrajzoló: a rajzolás módja</a>
+<li><a href="ea11.html#16">Függvényrajzoló: az adatszerkezet</a>
+<li><a href="ea11.html#17">Függvényrajzoló: a rajzolás maga</a>
+<li><a href="ea11.html#18">A függvényre mutató pointerek</a>
+<li><a href="ea11.html#19">Nagy projektek: egy fájl? több modul!</a>
+<li><a href="ea11.html#20">Főprogram és a két modul</a>
+<li><a href="ea11.html#21">A két modul forrásfájljai</a>
+<li><a href="ea11.html#22">Deklarációk és definíciók</a>
+<li><a href="ea11.html#23">Fejlécfájlok használata; #include guard-ok</a>
+<li><a href="ea11.html#24">Függvényábrázoló – függőségek és fordítás</a>
+<li><a href="ea11.html#25">Globális változók használata</a>
+<li><a href="ea11.html#26"><em>Programok életciklusa</em></a>
+<li><a href="ea11.html#27">Egy program életciklusa</a>
+<li><a href="ea11.html#28">Hibalehetőségek és tesztelés</a>
+<li><a href="ea11.html#29">Dokumentáció I.</a>
+<li><a href="ea11.html#30">Dokumentáció II.</a>
+<li><a href="ea11.html#31">Tesztelés I. – Hogyan ellenőrizzük?</a>
+<li><a href="ea11.html#32">Tesztelés II. – makrók és <code>assert()</code></a>
+<li><a href="ea11.html#33">Tesztelés után – Ha maradna benne hiba…</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<h1 class="diacim">A program és a külvilág</h1>
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A parancssori argumentumok</h2>
+</div>
+
+<p>Az elindított <em>programoknak</em> is lehet <em>paramétereket</em> adni:</p>
+<pre class="screenshot">
+C:\>  notepad.exe  szoveg.txt<span class="blink">_</span>
+</pre>
+
+<br class="smallskip">
+
+<p>A <code>main()</code> függvény <em>sztring mutatók tömbjében</em> kapja meg ezeket:</em>
+
+<pre class="brush: cbub "  >
+int main(int argc, char *argv[]) {  // vagy char **argv
+   …
+}</pre>
+<pre class="screenshot">
+C:\>  teszt.exe  elso  "masodik szo"
+          ↑       ↑         ↑
+       argv[0]  argv[1]   argv[2]       argv[3]=NULL, argc=3 <span class="bubble">!</span>
+</pre>
+
+<p class="csakdoksi">A <code>main()</code> függvénynek a C nyelvben két 
+paramétere van. Az első a parancssorból kapott, szóközzel elválasztott 
+paraméterek számát mutatja, ezt <code>argc</code>-nek szokás nevezni (argument 
+count). A második pedig sztringek tömbje, ez a paramétereket tartalmazza. Ennek 
+szokásos neve az <code>argv</code> (argument vector). Mivel ennek típusa 
+pointerek tömbje, a <code>main()</code> függvény fejlécében ez megadható <code>
+char *argv[]</code> és <code>char **argv</code> formában is.</p>
+
+<p class="csakdoksi">Az <code>argv[]</code> tömb nulladik eleme, <code>argv[0]</code>
+a program nevét tartalmazza, a tényleges paraméterek csak ezután jönnek. Ez okozza azt,
+hogy az első tényleges paraméter (a fenti példában az <code>"elso"</code>) nem a tömb
+nulladik, hanem első indexű helyén van. A paraméterek számába a program saját neve
+is beleszámít, ezért a fenti példában <code>argc</code> értéke nem kettő, hanem három.
+Ha a programban a kapott parancssori paraméterek számát ellenőrizni szeretnénk, ezt
+figyelembe kell venni. Az <code>argv[]</code> tömb méretét nem csak az <code>argc</code>
+változón keresztül tudjuk egyébként vizsgálni, hanem azon keresztül is, hogy egy
+<code>NULL</code> pointerrel van lezárva. Mindezt könnyű fejben tartani: elég, ha
+megjegyezzük, hogy <code>argv[argc] = NULL</code>.</p>
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A program visszatérési értéke</h2>
+</div>
+
+<p>A <code>main()</code> visszatérési értéke egy egész szám. Átveszi az operációs 
+rendszer, és átadja a programnak, amely elindította a mienket.</p>
+
+<div class="csakdoksi">
+<p>Vigyázat: ez nem logikai típusú érték!</p>
+<ul>
+   <li>A <em>0</em>-val tudjuk jelezni, hogy minden rendben.
+   <li>Bármi más <em>pozitív szám:</em> általunk meghatározott hibakód.
+</ul>
+</div>
+
+<br class="smallskip">
+
+<pre class="brush: cbub csakeloadas"  >
+int main(int argc, char *argv[]) {
+   if (argc-1 != 2) {
+      printf(&quot;Két paraméter kell!\n&quot;);
+      return 1; // hibakód
+   }
+
+   /* … a program tényleges dolgai … */
+
+   return 0;    // minden oké
+}</pre>
+
+
+
+<div class="csakdoksi">
+<p>Példa az argumentumokra és a <code>main()</code> visszatérési értékére:</p>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[]) {
+   int egyik, masik;
+
+   /* 1-gyel tobb, mint a parameterek */
+   if (argc-1 != 2) {
+      printf(&quot;%s: ket szamot adj meg!\n&quot;, argv[0]);
+      return 1;   /* nem ket parameter van: 1-es hibakod */
+   }
+
+   if (sscanf(argv[1], &quot;%d&quot;, &amp;egyik) != 1) {
+      printf(&quot;Hibas elso parameter: %s!\n&quot;, argv[1]);
+      return 2;   /* 2-es hibakod: hibas parameter */
+   }
+   if (sscanf(argv[2], &quot;%d&quot;, &amp;masik) != 1) {
+      printf(&quot;Hibas masodik parameter: %s!\n&quot;, argv[2]);
+      return 2;
+   }
+
+   printf(&quot;Az osszeguk: %d\n&quot;, egyik + masik);
+
+   return 0;   /* 0-s kod: minden rendben, feladat elvegezve */
+}</pre>
+</div>
+
+<p class="csakdoksi"><em>Fontos</em> emlékezni arra, hogy az <code>argv[]</code> 
+sztringeket tartalmaz. Ha számokat veszünk át paraméterként, azt is sztringként 
+kapjuk! Ilyenkor pl. <code>atoi()</code> vagy <code>sscanf()</code> 
+függvényhívással lehet számmá alakítani őket.</p>
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Fájlok kezelése</h2>
+</div>
+
+<p>
+Az <code>stdio.h</code>-ban megadott <code>FILE*</code> típusú pointerrel és függvényekkel.
+
+<pre class="screenshot float">
+Hello, vilag!
+0
+1
+2
+
+…
+
+17
+18
+19
+</pre>
+
+<pre class="brush: cbub "  >
+FILE *fp; // fájl mutató (file pointer/handle)
+
+fp = fopen(&quot;szoveg.txt&quot;, &quot;wt&quot;); // megnyitás
+if (fp == NULL) {
+   perror(&quot;szoveg.txt megnyitása&quot;);
+   … … …
+}
+else {
+    fprintf(fp, &quot;Hello, vilag!\n&quot;);
+    for (i = 0; i &lt; 20; ++i)
+        fprintf(fp, &quot;%d\n&quot;, i);
+    fclose(fp);               // bezárás
+}</pre>
+
+<p>
+<ul>
+    <li>Megnyitás módja: <em>írás</em> (w) / <em>olvasás</em> (r), <em>szöveges</em> (t) / <em>bináris</em> (b).
+    <li>Az <code>fopen()</code> visszatérési értéke: hivatkozás a nyitott fájlra.
+        <br>Sikertelen megnyitásnál értéke: <code>NULL</code> pointer – <em>ezt ellenőrizni kell.</em>
+</ul>
+</p>
+
+<div class="csakdoksi">
+
+<p>
+Windowson az elérési útban \ az elválasztó: C:\Windows\hatter.bmp, Unixon / van:
+/usr/bin/firefox. Az <code>fopen()</code> mindig elfogadja a /-t. Ha a \-hez ragaszkodunk,
+azt viszont \\-nek kell írni a sztring belsejében, mivel a \ önmagában a speciális
+karaktereket jelöli (pl. \n).</p>
+
+<p>Létezik még két további megnyitás mód is:</p>
+<ul>
+   <li><em>hozzáfűzés</em> (a). Ilyenkor a fájlt írásra nyitjuk meg, de
+      a meglévő tartalmát meghagyva. Az írás mutató a fájl végére mutat,
+      vagyis a meglévő tartalomhoz hozzáadva lehet folytatni az írást.
+   <li><em>írás-olvasás</em> (+). Ilyenkor írni és olvasni is lehet.
+      Más betűkkel együtt használjuk: pl. r+ azt jelenti, hogy a fájl
+      tartalma megmarad, de írni is lehet bele.
+</ul>
+
+</div>
+
+<p class="csakdoksi">A bináris fájl és a szövegfájl közötti különbség leginkább
+úgy érthető meg, ha a kettőt összehasonlítjuk. Tegyük fel, hogy adott egy <code>int</code>
+változónk, legyen a benne tárolt érték 12345. Ha ezt szövegesen írjuk egy fájlba, akkor
+az <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>
+karakterek ASCII kódja kerül a fájlba (összesen 5 bájt). Ha binárisan, akkor pedig annyi bájtot
+írunk ki, ahány bájtot a számítógépünkon az <code>int</code> változók foglalnak; és pontosan
+azokat a bájtokat, amik a változó memóriaterületén vannak. Ezek lehetnek pl. az 57, 48, 0, 0 bájtok
+(ilyen sorrendben), mert 57 + 48*256 + 0*65536 + 0*16777216 = 12345.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Hogy néz ki egy bináris fájl?</h2>
+</div>
+
+<p class="csakdoksi">A bináris fájlok azok, amelyek nem szöveget tartalmaznak. Ezekbe bájtokat írunk; legtöbbször
+bájtról bájtra kiírunk valamilyen memóriaterületet. Ezekhez az <code>fread()</code> és <code>fwrite()</code> függvények használhatóak.</p>
+
+<div class="columns c4060">
+<div>
+<pre class="brush: c "  >
+struct adat {
+   char nev[13];
+   short eletkor;
+} tomb[2];</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+strcpy(tomb[0].nev, &quot;Ernoke&quot;);
+tomb[0].eletkor = 4;
+strcpy(tomb[1].nev, &quot;Szultan&quot;);
+tomb[1].eletkor = 5;</pre>
+</div>
+</div>
+
+<div class="sticky" style="clear: both;"><code>sizeof</code>:<br>hány bájt?</div>
+<div class="sticky" style="clear: both;"><code>void*</code><br>típus nélküli<br>mutató</div>
+
+<pre class="brush: c "  >
+FILE *fp;
+
+fp = fopen(&quot;adat.dat&quot;, &quot;wb&quot;);  /* write, binary */
+fwrite(tomb, sizeof(struct adat), 2, fp);
+fclose(fp);</pre>
+
+<div class="csakdoksi">
+
+<p>A két függvény paraméterezése egyforma: <code><em>fread</em>(ptr, méret, db, 
+fp)</code>, és <code><em>fwrite</em>(ptr, méret, db, fp)</code>. Ezek a <code>ptr</code> által 
+mutatott memóriaterület olvassák/írják az <code>fp</code> fájlból/fájlba. Az adat 
+<code>méret</code> bájt méretű, <code>db</code> darabszámú elemekből áll. 
+Visszatérési érték a sikeresen olvasott/írt elemek száma.
+
+<p> Itt több dologra kell figyelni. Első a <code>void*</code> típusú mutató (az 
+<code>fwrite()</code> és az <code>fread()</code> első paramétere ilyen típusú). 
+Ez a pointertípus azt jelenti, hogy nincsen meghatározva, milyen típusú elemre 
+mutat az a pointer, hanem csak annyi, hogy valahova a memóriába mutat. Az 
+<code>fread()</code> és <code>fwrite()</code> függvények azért várnak ilyen 
+típusú mutatót, mivel nem foglalkoznak az általunk megadott adatok értelmével – 
+egyszerűen csak elvégzik a fájlműveletet. </p>
+
+<p>Egy valamit azért mégis tudniuk kell az adatunkról, mégpedig azt, hogy hány 
+bájtból áll. Ezt a fordító meg tudja mondani: a <code>sizeof(típus)</code> 
+kifejezés megadja azt, hogy hány bájtból áll a megadott <code>típus</code>. Ez 
+kényelmes, egyrészt mivel nekünk nem kell fejben tartani, másrészt a fordító 
+úgyis jobban tudja. Ha átvisszük egy másik géptípusra a programunkat, ott a 
+<code>sizeof(típus)</code> értéke más lehet. Az <code>fread()</code> és 
+<code>fwrite()</code> második paramétere a típus méretét adja meg, a harmadik 
+paraméter pedig a darabszámot. Ez a megoldás tömbök kezelésére kiválóan alkalmas: 
+előbb egy tömbelem mérete, utána a tömb elemszáma.</p>
+
+<p>Az <code>fwrite()</code> visszatérési értéke azt mutatja, hány elemet sikerült kiírnia, az
+<code>fread()</code>-é pedig azt, hányat olvasott be. Ezek is „méret”, vagyis <code>size_t</code>
+típusúak. (A <code>size_t</code> típus egy egész szám, azonban a mérete (bitszáma) eltérhet az
+integerétől.)</p>
+</div>
+
+<br class="smallskip">
+
+<p>A keletkező fájl tartalma:</p>
+
+<pre class="eloadaskicsinyit">
+45 72 6E 6F   6B 65 00 <strong>21</strong>   <strong>80 07 40 00</strong>   <strong>7B</strong> <em>26</em> 04 00   Ernoke.<strong>!..@.{</strong><em>&amp;</em>..
+53 7A 75 6C   74 61 6E 00   <strong>F0 05 59 2A</strong>   <strong>6A</strong> <em>22</em> 05 00   Szultan.<strong>..Y*j</strong><em>"</em>..
+</pre>
+
+<p class="csakdoksi">Ezt az adatmegjelenítést úgy nevezik, hogy „hexa(decimális) dump”. Bal 
+oldalon a bájtok értéke hexadecimálisan, jobb oldalon pedig a hozzájuk tartozó 
+karakterek. A vezérlőkaraktereket, vagyis az ún. nem nyomtatható karaktereket 
+(mint az újsor vagy a tabulátor) az utóbbiban ponttal szokták helyettesíteni.</p>
+
+<div class="megjegyzes csakdoksi">
+
+<p>Érdekesség.
+A fenti sztringet 13 karakteren tároljuk, de a beírt sztring rövidebb. A
+fennmaradó helyen memóriaszemét van – ezt a <strong>színezett</strong>
+rész mutatja. Erről volt szó a sztringek kapcsán.</p>
+
+<p>Külön érdekesség még, hogy van egy <em>extra bájt</em> is a struktúrában, a sztring
+mintha 14 karaktert foglalna. Ez már nem tartozik a sztringhez, hanem egy
+ún. kitöltő (padding) bájt. Ezt a fordító a sztring és a <code>short</code>
+közé tette, valószínűleg azért, mert a processzor igényelte azt, hogy a
+<code>short</code> párosadik bájton kezdődjön. Ha binárisan írjuk ki fájlba
+az adatokat, ez is látszik.</p>
+
+<p>Az is megfigyelhető, hogy ezen a gépen a
+kétbájtos short típus helyiértékei fordított sorrendben vannak. Előbb az
+alsó helyiérték: 4, utána a felső: 0. Ernőke életkora 4+0*256 év. Ez is az
+adott számítógéptípus tulajdonságaitól függ, és egy olyan dolog, amely miatt
+nem hordozhatóak egyik gépről másikra az ilyen gondolkodás nélkül, memóriatartalmat
+egy az egyben kiírt bináris fájlok.</p>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Bináris fájlok: fájl másoló program</h2>
+</div>
+
+<pre class="screenshot float" style="margin: 0">
+C:\> copy eredeti.dat masolat.dat<span class="blink">_</span>
+</pre>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[]) {
+
+   FILE *fbe, *fki; /* két fájl */
+   fbe = fopen(argv[1], &quot;rb&quot;); /* read binary */
+   fki = fopen(argv[2], &quot;wb&quot;); /* write binary */
+
+   char puf[1024];  /* puffer; char=bájt */
+   int olv;         /* ahányat olvasott */
+   while ((olv = fread(puf, sizeof(char), 1024, fbe)) &gt; 0)
+      fwrite(puf, sizeof(char), olv, fki);
+
+   fclose(fbe);
+   fclose(fki);
+
+   return 0;
+}</pre>
+
+<p>(A hibakezelés most elmaradt, hogy ráférjen a kód egy diára!)</p>
+
+<div class="csakdoksi">
+<p>Ez a program az első paraméterében kapott nevű fájlról egy másolatot készít, 
+amelynek a nevét a második paraméterében kapja. Az <code>fread()</code> a fájl 
+végén 0-t fog adni (mert 0 bájtot olvasott be). Az <code>fwrite()</code> 
+visszatérési értéke azt jelzi, hány blokkot írt ki; jelen esetben hány bájtot, 
+mert egy blokk mérete 1 bájt (második paramétere).</p>
+<p>Természetesen a fájlmegnyitások sikerességét, illetve az írások sikerességét 
+is figyelni kellene, az előző diákon bemutatott módon. Még az 
+<code>fclose()</code> visszatérési értékét is illene vizsgálni, mert a bezárás 
+pillanatában is kiderülhet, hogy hiba történt a fájlba írás közben. Ezek nem 
+férnének fel a diára.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Hogy néz ki egy szövegfájl?</h2>
+</div>
+
+<p class="csakdoksi">A szövegfájlok azokat a karaktereket tartalmazzák, amelyeket 
+a <code>printf()</code> a képernyőre is írna. Azt gondolnánk, hogy a szövegfájlok 
+könnyedén átvihetők egyik számítógépről / operációs rendszerről a másikra, 
+azonban itt is lehetnek apró különbségek. Ha a fentebbi, helló világos programot 
+lefuttatjuk Windowson és valamilyen Unix operációs rendszeren, akkor két 
+különböző fájlt kapunk. Egyes rendszerek máshogy jelzik a szövegfájlokban a <em>sorok végét (\n).</em>
+Windowson két bájt, CR LF (0x0D 0x0A), Unixokon csak LF (0x0A).</p>
+
+<p>Unixokon (pl. Linux):</p>
+
+<pre class="eloadaskicsinyit" style="line-height: 1.1">
+48 65 6C 6C   6F 2C 20 76   69 6C 61 67   21 <strong>0A</strong> 30 <strong>0A</strong>   Hello, vilag!<strong>.</strong>0<strong>.</strong>
+31 0A 32 0A   33 0A 34 0A   35 0A 36 0A   37 0A 38 0A   1.2.3.4.5.6.7.8.
+39 0A 31 30   0A 31 31 0A   31 32 0A 31   33 0A 31 34   9.10.11.12.13.14
+0A 31 35 0A   31 36 0A 31   37 0A 31 38   0A 31 39 0A   .15.16.17.18.19.
+</pre>
+
+<p>Windowson:</p>
+
+<pre class="eloadaskicsinyit" style="line-height: 1.1">
+48 65 6C 6C   6F 2C 20 76   69 6C 61 67   21 <strong>0D 0A</strong> 30   Hello, vilag!<strong>..</strong>0
+<strong>0D 0A</strong> 31 0D   0A 32 0D 0A   33 0D 0A 34   0D 0A 35 0D   <strong>..</strong>1..2..3..4..5.
+0A 36 0D 0A   37 0D 0A 38   0D 0A 39 0D   0A 31 30 0D   .6..7..8..9..10.
+0A 31 31 0D   0A 31 32 0D   0A 31 33 0D   0A 31 34 0D   .11..12..13..14.
+0A 31 35 0D   0A 31 36 0D   0A 31 37 0D   0A 31 38 0D   .15..16..17..18.
+0A 31 39 0D   0A                                        .19..
+</pre>
+
+<br class="smallskip">
+
+<p class="csakeloadas"><em>Szöveges módban</em> nyitott fájlnál ezt elfedi nekünk a C.
+Kezelés: <code>fp = fopen(név, "&hellip;<strong>t</strong>")</code>, <code>fprintf(fp, &hellip;)</code>, <code>fscanf(fp, &hellip;)</code>.</p>
+
+<div class="csakdoksi">
+<p>A szövegfájlokat a <code>printf()</code> és a <code>scanf()</code> párjával, 
+az <code>fprintf()</code>-fel és az <code>fscanf()</code>-fel lehet kezelni. 
+Ezeknek első paramétere a megnyitott fájl, a folytatás pedig ugyanúgy van, mint a 
+képernyő / billentyűzet párjuknál. A szövegfájlokat lineárisan kezeljük, nem 
+ugrunk benne ide-oda. Bár elvileg lehetséges, de nehéz megvalósítani az adott 
+sorra ugrást: ki kellene számolnunk a bájtban megadott pozíciót. Azt meg nem 
+ismerjük, amíg nem olvastuk be a sorokat, mert minden sor különböző hosszúságú 
+lehet. </p>
+
+<p>A <code>"t"</code>-vel, <em>szöveges módban</em> megnyitott fájl olvasásakor 
+és írásakor a konverziót a C fájlkezelő függvényei <em>automatikusan 
+elvégzik.</em> Vagyis Unixon pl. a <code>\n</code> sortörést változatlanul 
+kiírják a fájlba, Windowson viszont a <code>printf("\n")</code> hatására nem egy, 
+hanem két bájt kerül a fájlba. Viszont az automatikus konverzió miatt ezzel 
+nekünk nem kell foglalkozni, csak annyiban, hogy <code>"t"</code> módban kell 
+megnyitni a fájlt, ha szöveges formátumot szeretnénk.</p>
+
+<p>A fenti apróságtól eltekintve a szövegfájlok sokkal inkább <em>hordozhatóak,</em>
+hiszen a bennük tárolt adatok nem függenek a számábrázolás módjától, amit az
+adott géptípus hardvere határoz meg. Ez az oka annak, hogy az utóbbi években egyre
+inkább terjednek a szöveg alapú formátumok:</p>
+<ul>
+    <li>szöveges dokumentumok: HTML, RTF, XML (DOCX)
+    <li>adatok, adatbázisok: XML
+</ul>
+
+</div>
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>Fájlok – további tudnivalók</h2>
+</div>
+
+
+<h3>Fájlkezelés – további függvények és változók</h3>
+
+<div class="sticky">Lásd a<br>C puskát!</div>
+
+<ul>
+<li><code><em>perror</em>(sztring)</code><br>
+    <span class="csakdoksi">A legutóbb történt hiba okát írja ki a szabványos hibakimenetre.
+        Ha <code>sztring</code> nem NULL pointer, akkor azt is kiírja. Pl.
+        <code>perror("Hiba a megnyitásnál")</code> &rarr; „Hiba a megnyitásnál: nincs ilyen fájl”.</span>
+
+<li><code><em>fseek</em>(fp, pozíció, honnan)</code><br>
+    <span class="csakdoksi">Ugrás a bájtban megadott pozícióra. A <code>honnan</code> értékei:
+    <code>SEEK_SET</code>=elejétől, <code>SEEK_END</code>=végétől,
+    <code>SEEK_CUR</code>=aktuális pozíciótól számolva.</span>
+
+<li><code><em>ftell</em>(fp)</code><br>
+    <span class="csakdoksi">Az aktuális pozíció lekérdezése (bájtokban).</span>
+
+<li><code><em>fputc</em>(c, fp)</code>, <code><em>fgetc</em>(fp)</code><br>
+    <span class="csakdoksi">A <code>putchar()</code> és <code>getchar()</code> párja.</span>
+
+<li><code><em>fputs</em>(str, fp)</code>, <code><em>fgets</em>(str, méret, fp)</code><br>
+    <span class="csakdoksi">A <code>puts()</code> és a <code>gets()</code> párja.</span>
+
+<li><code><em>errno</em></code><br>
+    <span class="csakdoksi">Globális változó, ami a legutolsó hiba kódját tartalmazza.</span>
+
+<li><code><em>feof</em>(fp)</code> <span class="bubble csakeloadas">!</span><br>
+    <span class="csakdoksi">Megmondja, hogy fájl vége volt-e sikertelen az előző olvasás. (Nem használjuk!)</span>
+</ul>
+
+<p class="csakdoksi"><strong>Vigyázat!</strong> Az <code>feof() </code> függvény kicsit 
+problémás, rendszeresen helytelenül szokták használni. Ugyanis ez a függvény <em>nem azt 
+jelzi,</em> hogy a fájl végén tart-e az olvasás, hanem azt, hogy az előző sikertelen olvasási 
+művelet a fájl végének elérése miatt történt-e. Az <code>feof()</code> <em>nem jóstehetség!</em> 
+Nem fogja előre jelezni a fájl végét. Csak akkor ad igaz értéket, ha <em>már bekövetkezett</em> 
+(múlt idő!) egy sikertelen olvasás. Ezért a <code>while(!feof(fp)) </code> fejlécű ciklusok 
+teljesen bizonyosan hibásak. Az <code>feof()</code> helyett a  beolvasást végző függvények: 
+<code>fscanf()</code>, <code>fread()</code>, <code>fgets()</code>, <code>fgetc()</code> 
+visszatérési értékét kell figyelni.</p>
+
+<br class="smallskip">
+
+<h3>Szabványos adatfolyamok</h3>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+fscanf(stdin, &quot;%d&quot;, &amp;i);
+fprintf(stdout, &quot;Helló!&quot;);</pre>
+</div>
+<div>
+<pre class="brush: cbub "  >
+scanf(&quot;%d&quot;, &amp;i); // ugyanaz
+printf(&quot;Helló!&quot;);</pre>
+</div>
+</div>
+
+<pre class="brush: c "  >
+fprintf(stderr, &quot;Hiba: nem megfelelő adatok a fájlban!&quot;);</pre>
+
+<div class="csakdoksi">
+<p>C-ben a szabványos kimeneti és bemeneti csatornákat (adatfolyamokat, stream) is fájlként 
+látjuk (második félévben ez elő fog még kerülni). A normál <code>printf(…)</code> függvény 
+egyenértékű egy <code>fprintf(stdout, …)</code> hívással, a <code>scanf(…)</code> pedig egy 
+<code>fscanf(stdin, …)</code> hívással. Az <code>stdin</code> neve szabványos bemenet (standard 
+input), az <code>stdout</code>-é szabványos kimenet (standard output), az <code>stderr</code>-é 
+pedig szabványos hibakimenet (standard error output).</p>
+<p>A szabványos hibakimenet (<code>stderr</code>) a normál kimenethez hasonló a programunk 
+számára. A kettő közötti különbség az, hogy a normál kimenetre a program által előállított 
+eredményt, kimeneti adatot szokás írni, a hibakimenetre pedig a hibaüzeneteket. Így elkerülhető, 
+hogy a kettő egymással keveredjen, ha a kimeneti adatokat egy fájlba szeretnénk irányítani, vagy 
+egy másik programnak átadni.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<h1 class="diacim">Az előfeldolgozó</h1>
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span>A preprocesszor</h2>
+</div>
+<h3>A C fordítás menete</h3>
+<div class="sticky"><span style="font-size: 2em">#</span><br>kettőskereszt<br>hash mark</div>
+<ol>
+<li><em>Előfeldolgozás:</em> az előfeldolgozó (preprocessor)
+    kezeli a <code>#</code>&nbsp;preprocesszor
+    direktívákat, és távolítja el a kommenteket.
+<li><em>Tényleges fordítás:</em> a gépi utasításokká alakítás.
+</ol>
+
+<p class="csakdoksi">Az előfeldolgozó utasításai <code>#</code>-tel kezdődnek és a sor végéig tartanak.
+<em>Nem kell a végükre pontosvessző.</em></p>
+
+
+
+<div class="csakdoksi">
+<h3>Az előfeldolgozó további feladatai</h3>
+<ol>
+   <li>
+      Egy sorba fűzi a \ karakterrel több sorban megadott forráskódot.
+      Vagyis ez a kettő egyenértékű:
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+printf(&quot;\
+hello\
+hello&quot;);</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+printf(&quot;hellohello&quot;);
+
+</pre>
+</div>
+</div>
+   
+   <li>Összefűzi a közvetlenül egymás mellett álló sztring konstansokat:
+      <code>"Hello"&nbsp;"vilag"</code> = <code>"Hellovilag"</code>.
+   
+   <li>Kicseréli az ún. hármas karaktereket (trigraph) a megfelelő párjukra.
+      A C megengedi, hogy egyes írásjeleket, pl. <code>[]</code>, <code>&lt;&gt;</code> stb. más
+      karakterekkel helyettesítsünk. Ennek célja az, hogy lehessen olyan billentyűzeten
+      is C programot írni, amelyeken ezek nincsenek – látszik, hogy ez egy nagyon
+      régi, mára elavult lehetősége a nyelvnek. Ez egy helyes C program:
+      <pre class="brush: c "  >
+??=include &lt;stdio.h&gt;
+
+int main(int argc, char *argv??(??))
+??&lt;
+   printf(&quot;hello world\n&quot;);
+   return 0;
+??&gt;</pre>
+      A csere sztringeken és kommenteken belül is megtörténik.
+      Egy sztringben lévő egymás utáni két <code>??</code> karakter
+      hatására ez aktiválódhat, azért fontos tudni róluk.
+      Manapság kódot így nem szokás írni,
+      sőt egyes fordítóknak külön jelezni kell, ha kérjük
+      ezeket a helyettesítéseket.
+   
+</ol>
+</div>
+
+
+<br class="smallskip">
+
+<pre class="brush: c float"  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &quot;rendezes.h&quot;
+
+int main(void) {
+    …
+}</pre>
+
+<h3>Ismerős preprocesszor direktíva: <code>#include</code></h3>
+
+<p class="csakdoksi">Az <code>#include</code> a megadott fájlokat
+beilleszti a megadott helyre, mintha copy-paste lenne.
+
+<ul>
+    <li><code>#include &lt;&hellip;&gt;</code> – szabványos fejlécfájlok
+    <li><code>#include &quot;&hellip;&quot;</code> – saját fejlécfájlok
+</ul>
+
+<p class="csakdoksi">Az idézőjeles és a kacsacsőrös változat között
+igazából annyi a különbség, hogy más mappában keresi a megadott
+fájlt a fordító.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span><code>#define:</code> konstansok és makrók</h2>
+</div>
+
+<p>A <code>#define</code> direktívával konstansokat és makrókat hozhatunk létre.
+<span class="csakdoksi">Hatását az <code>#undef</code> szünteti meg.</span></p>
+
+<div class="sticky" style="width: 13em;">„A makrókkal kapcsolatban az első szabály: ne használjuk őket, ha nem muszáj.”<br>– Bjarne Stroustrup</div>
+
+<pre class="brush: cbub "  >
+#define PI 3.14159265358979
+#define MERET 100
+
+double tomb[MERET];
+for (i = 0; i &lt; MERET; ++i)
+    tomb[i] = PI;
+
+#undef MERET</pre>
+
+<div class="csakdoksi">
+
+<p>A C maga is tartalmaz ilyen konstansokat. Pl. a beépített típusok 
+értékkészletét mutató makrók a <code>limits.h</code>-ban.</p>
+
+<table>
+    <caption><code>limits.h</code> – beépített típusok mérete</caption>
+    <thead><tr><th>konstans<th>érték</thead>
+    <tr><td>CHAR_MIN, CHAR_MAX<td>a char mérettartománya, pl. -128…127
+    <tr><td>INT_MIN, INT_MAX<td>a signed int mérete
+    <tr><td>UINT_MIN, UINT_MAX<td>az unsigned int mérete
+</table>
+</div>
+
+<br class="smallskip">
+
+<p>Függvényszerű paraméteres makró a <code>#define</code> direktívával:
+
+<button class="float" data-diapopup="buktatoid" style="margin-top: 2em;">Buktatók</button>
+
+<pre class="brush: c "  >
+#define SZORZAT(A,B) ((A)*(B))
+#define MAX(A,B) ((A)&gt;(B)?(A):(B))</pre>
+
+<p class="csakdoksi"> Van itt néhány buktató. Az egyik pusztán szintaktikai: a 
+paraméteres makrók definíciójában nem lehet szóköz a makró neve és a paramétereit 
+jelző zárójel között. <code>MAX&nbsp;(A,B)</code> azt jelenti, hogy a 
+<code>MAX</code> makró értéke <code>(A,B)</code>. Nézzük meg a komolyabb buktatókat!</p>
+
+
+<div id="buktatoid">
+
+<h3>1. buktató</h3>
+<p class="csakdoksi">A preprocesszor egy <em>buta szövegfeldolgozó program!</em>
+Csak behelyettesíti a megadott szövegrészleteket:</p>
+
+<pre class="brush: cbub "  >
+#define SZORZAT(A,B) A*B
+
+printf(&quot;Szorzat: %d&quot;, SZORZAT(1+1, 2+3));
+printf(&quot;Szorzat: %d&quot;, 1+1*2+3);           // előfeldolgozva</pre>
+
+<p class="csakdoksi">Ha <em>zárójelezzük a makróban a paramétereket,</em>
+akkor biztosan helyesen értékelődik ki akkor is, ha összetett
+kifejezést adunk meg paraméterként:
+
+<pre class="brush: cbub "  >
+#define SZORZAT(A,B) ((A)*(B))
+
+printf(&quot;Szorzat: %d&quot;, SZORZAT(1+1, 2+3));
+printf(&quot;Szorzat: %d&quot;, ((1+1)*(2+3)));     // előfeldolgozva</pre>
+
+<p class="csakdoksi">Ha nem zárójelezzük a makrókban a paramétereket,
+akkor az operátorok precendeciái miatt a kifejtett C kódrészlet
+mást jelenthet, mint amire számítunk. Ezért azokat mindig kötelező
+zárójelezni! A többlet zárójelekből baj nem lehet.</p>
+
+<h3>2. buktató</h3>
+
+<p class="csakdoksi">Ha olyan makrót írunk, amelyik <em>többször</em> is kiértékeli
+valamelyik paraméterét, akkor <em>nem szabad mellékhatással</em> rendelkező
+kifejezést megadni neki! Különben a következő probléma adódhat:</p>
+
+<pre class="brush: cbub "  >
+#define MAX(A,B) ((A)&gt;(B)?(A):(B))
+
+printf(&quot;%d&quot;, MAX(++a, ++b)); /* nem jó ötlet… */
+
+printf(&quot;%d&quot;, ((++a)&gt;(++b)?(++a):(++b))); // előfeldolgozva</pre>
+
+
+</div>
+
+<p class="csakdoksi megjegyzes"> Érdekesség: <a
+href="http://en.wikipedia.org/wiki/Bjarne_Stroustrup">Bjarne Stroustrup</a> dán programozó. Ő
+találta ki a C++ nyelvet, amely a C-nek a továbbfejlesztése. Második félévben lesz tananyag a
+Prog2 tárgyból. </p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<div class="slideheader">
+<h2><span class="oldalszam">12</span>Feltételes fordítás: <code>#if</code>, <code>#ifdef</code>, <code>#ifndef</code></h2>
+</div>
+
+
+<h3><code>#ifdef</code> / <code>#ifndef</code>, <code>#endif</code> – ha definiálva van a makró</h3>
+<p class="csakdoksi">A feltételtől függően (definiálva van-e az adott makró)
+lefordítja, vagy kihagyja a közbezárt részt.</p>
+<pre class="brush: c "  >
+#define TESZT       /* végleges programban nem kell */
+
+#ifdef TESZT
+   /* csak tesztelés közben */
+   fprintf(stderr, &quot;x = %d&quot;, x);
+#endif</pre>
+
+
+<br class="smallskip">
+
+
+<h3><code>#if</code> – ha igaz a kifejezés</h3>
+<p class="csakdoksi">Ez is arra való, hogy kihagyjuk vagy beillesszünk részeket. Itt arra
+használjuk, hogy a használt grafikus könyvtár verzióját ellenőrizzük; ha nem megfelelő, akkor
+megállítjuk a fordítást a megadott hibaüzenettel.</p>
+<pre class="brush: c "  >
+#include &lt;SDL.h&gt;
+
+#if SDL_MAJOR_VERSION != 1 || SDL_MINOR_VERSION != 2
+   #error 1.2-es verzioju SDL kell!
+#endif</pre>
+
+
+
+
+
+<div class="csakdoksi">
+<h3><code>#pragma</code> – nem szabványos kiterjesztések</h3>
+
+<p>A fordítók saját, nem szabványos kiterjesztései. Ha egy fordító nem érti a <code>#pragma</code> sort, figyelmen kívül hagyja. Pl.</p>
+
+<pre class="brush: c "  >
+#pragma omp parallel for schedule(dynamic)  /* OpenMP */
+for (y=0; y&lt;magassag; y++) {
+    …</pre>
+
+<p><em>OpenMP:</em> az ezt ismerő fordítóknak megadhatjuk, hogy egy
+ciklus iterációit szétossza a gépben lévő processzorok (magok)
+között.</p>
+
+<p>Mivel semelyik <code>#pragma</code> nem lehet szabványos
+(éppen az a célja, hogy jelezze a fordítónak, nem szabványos dolgot
+írunk be), ezért a <code>#pragma once</code> sem szerencsés.
+A fejlécfájlok többszöri feldolgozása ellen az <code>#ifndef</code>+<code>#define</code>
+technikát kell használni, amelyet minden fordító felismer.
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<h1 class="diacim">Többmodulos programok</h1>
+
+
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>Példa nagy projekt: függvényrajzoló</h2>
+</div>
+
+<img src="ea11/fuggveny.svg" class="kozep" style="width: 34em;">
+
+<div class="sticky">Letölthető:<br><a href="ea11/fuggveny.zip">fuggveny.zip</a></div>
+
+<h3>Lépések egy nagy program tervezésénél:</h3>
+<ul>
+    <li>Pontos specifikáció
+    <li>Adatszerkezetek megtervezése
+    <li>Algoritmusok megtervezése
+    <li>Implementáció
+</ul>
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>Függvényrajzoló: a rajzolás módja</h2>
+</div>
+
+<p>Rakja össze a program a függvényt szakaszokból!</p>
+<img src="ea11/fuggveny_cakkos.svg" class="kozep" style="width: 28em;">
+
+<br class="smallskip">
+
+<p>Ezt könnyedén leírhatjuk SVG-ben (szöveges, vektoros képformátum):</p>
+<pre class="brush: xml "  >
+&lt;svg width=&quot;320&quot; height=&quot;80&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;line x1=&quot;30&quot; y1=&quot;17.9136&quot; x2=&quot;0&quot; y2=&quot;42.9137&quot; stroke=&quot;blue&quot; /&gt;
+  &lt;line x1=&quot;60&quot; y1=&quot;21.0799&quot; x2=&quot;30&quot; y2=&quot;17.9136&quot; stroke=&quot;blue&quot; /&gt;
+  &lt;line x1=&quot;90&quot; y1=&quot;48.3747&quot; x2=&quot;60&quot; y2=&quot;21.0799&quot; stroke=&quot;blue&quot; /&gt;
+  &lt;line x1=&quot;120&quot; y1=&quot;64.9893&quot; x2=&quot;90&quot; y2=&quot;48.374&quot; stroke=&quot;blue&quot; /&gt;
+&lt;/svg&gt;</pre>
+
+<p class="csakdoksi">A program ilyen fájlokat tud majd létrehozni.</p>
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Függvényrajzoló: az adatszerkezet</h2>
+</div>
+
+<p>Szakasz: kezdőpont, végpont és szín.</p>
+
+<pre class="brush: cbub "  >
+typedef struct Szakasz {
+    double x1, y1, x2, y2;
+    char szin[20+1];     /* pl. &quot;red&quot; */
+    struct Szakasz *kov;
+} Szakasz;</pre>
+
+<br class="smallskip">
+
+<p>Kép: méret, pozíció (origó), nagyítás és a szakaszok.</p>
+
+<pre class="brush: cbub "  >
+typedef struct Rajz {
+    int kx, ky;          /* kép mérete */
+    double ox, oy;       /* origó pozíciója a képen */
+    double nx, ny;       /* nagyítás */
+    Szakasz *szakaszok;  /* szakaszok listája */
+} Rajz;</pre>
+
+
+<p class="csakdoksi">A terveink a következők. A megrajzolt függvényekhez egy csomó szakasz
+tartozik. Ezek különböző színűek is lehetnek. De nem csak ezek a szakaszok tartoznak a képhez,
+hanem annak vannak egyéb tulajdonságai is: tudni kell, mekkora (kx, ky), hol van rajta az origó
+(ox, oy) és hogy mekkora a nagyítása (nx, ny). Az utóbbi azt jelenti, hogy a monitoron hány
+képpont jelenti a matematikai koordinátarendszerben az egységet. Ha mindezek megvannak, akkor
+egy függvény kirajzolható. Ezek alapján a rajz struktúra tartalmaz egy szakaszokból álló listát.
+Az egyes rajzokon eltérő számú szakasz lehet (amelyek menet közben egyre többen vannak), ezért a
+lista jó ötletnek tűnik.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<div class="slideheader">
+<h2><span class="oldalszam">17</span>Függvényrajzoló: a rajzolás maga</h2>
+</div>
+
+<div class="csakdoksi">
+<p>Tervezzük meg az algoritmusokat! Legfontosabb a függvény kirajzolása – ezzel foglalkozunk először.</p>
+
+<p>A monitoron és a képeken más koordinátarendszert szokás használni (origó bal felső sarokban, 
+x jobbra, y lefelé), mint a matematikában (origó középen, x jobbra, y felfelé). A rajzaink 
+nagyítása is változhat. Ezért praktikus függvényeket írni, amelyek ezen koordinátarendszerek 
+között a transzformációt elvégzik, mert így bármikor át tudunk térni a képbeli koordinátákról a 
+matematikai koordinátákra és fordítva. Ezek a függvények a <code>kep2mat()</code> és a 
+<code>mat2kep()</code>.</p>
+
+</div>
+
+<pre class="brush: c eloadaskicsinyit"  >
+void kep2mat(Rajz *r, double kx, double ky, double *mx, double *my);
+void mat2kep(Rajz *r, double mx, double my, double *kx, double *ky);</pre>
+
+<div id="koordinatarsz"><img class="kozep" src="ea11/koordinatak.svg" style="width: 21.5em;"></div>
+
+<p class="csakdoksi">Ezek segítségével már könnyű megvalósítani a függvény ábrázolását. A
+rajzolást, ha a kép koordinátarendszerében végezzük, akkor biztosak lehetünk abban, hogy nem lesz
+túl cakkos sem a függvény (mint a fentebbi képen), de nem is számoljuk ki feleslegesen sok
+pontban (olyan sűrűn, hogy már nem is látszik a különbség – ez csak foglalná feleslegesen a
+memóriát). Ezért a kép koordinátái szerint haladunk egyesével; előbb átalakítva a
+képkoordinátarendszerbeli x-et matematikai koordinátává, ami a függvénybe behelyettesíthető. Az
+így kapott matematikai y koordinátát utána képbeli y koordinátává alakítva megkapjuk az SVG
+fájlba írandó szakasz koordinátáit.</p>
+
+<br class="smallskip">
+
+<button data-diapopup="koordinatarsz" class="float">koordináták</button>
+
+<pre class="brush: cbub "  >
+void szinuszt_rajzol(Rajz *r) {
+    double const lepes = 1.0;
+    double xk, yk, x_elozo, y_elozo; /* kép koord. */
+    double xmat, ymat;               /* matematikai koord. */
+
+    for (xk = 0; xk &lt;= r-&gt;kx; xk += lepes) {
+        kep2mat(r, xk, 0, &amp;xmat, NULL);    // képből matematikai
+        ymat = sin(xmat);
+        mat2kep(r, xmat, ymat, NULL, &amp;yk); // matematikaiból kép
+
+        szakasz_rajzol(r, xk, yk, x_elozo, y_elozo, szin);
+        x_elozo = xk;
+        y_elozo = yk;
+    }
+}</pre>
+
+
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>A függvényre mutató pointerek</h2>
+</div>
+
+<p>Vegyük át a megrajzolandó függvényt is paraméterként!</p>
+
+<div class="sticky">Függvényre<br>mutató pointer:<br>majd lesz róla szó.</div>
+
+<pre class="brush: cbub "  >
+double parabola(double x) {
+    return x*x + 1.2*x - 5.3;
+}
+fv_rajzol(&amp;r, parabola, &quot;red&quot;);
+fv_rajzol(&amp;r, sin, &quot;blue&quot;); // math.h</pre>
+
+<br class="smallskip">
+
+<p>A görbe megrajzolásának algoritmusa mindig ugyanaz.</p>
+
+<pre class="brush: cbub "  >
+void fv_rajzol(Rajz *r, double (*pfv)(double), char const *szin) {
+…
+    for (xk = 0; xk &lt;= r-&gt;kx; xk += lepes) {
+        …
+        y = pfv(x); // a paraméterként kapott függvény hívása
+        …
+    }</pre>
+
+<div class="csakdoksi">
+
+<p>Pointer, ami egy függvényre mutat. Paramétere: egy <code>double</code>, visszatérési értéke
+is egy <code>double</code>.</p>
+<pre class="brush: c "  >
+double (*pfv)(double);</pre>
+<p>A fenti <code>negyzet()</code> függvénynek is ilyen az aláírása, és a <code>math.h</code>
+<code>sin()</code> függvényének is. Bármelyik egyéb, ugyanilyen aláírással rendelkező – egy
+<code>double</code> paraméterű, <code>double</code> visszatérési értékű – függvényt képes így
+ábrázolni a rajzoló!</p>
+<p class="megjegyzes">A függvényekre mutató pointerekről egy későbbi előadáson lesz szó.
+Most csak említésképp szerepelnek.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<a id="tobbmodul" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Nagy projektek: egy fájl? több modul!</h2>
+</div>
+
+<div class="sticky">„MLOC project”<br>million lines of code</div>
+
+<p>Egy közepes projekt néhány tízezer sorból áll,
+egy nagy projekt több százezer, millió sorból.</p>
+
+<br class="smallskip">
+
+<div class="columns">
+<div><img src="ea11/onefileproject.png" class="kozep" style="width: 17em; margin-top: 2em;"></div>
+<div><img src="ea11/multifileproject.png" class="kozep" style="width: 17em;"></div>
+</div>
+
+<br class="smallskip">
+
+<p>A programot szerkezeti egységekre, modulokra kell bontani.
+<code>struct Tort</code>, <code>tort_osszead()</code>, <code>tort_szoroz()</code>&hellip; – ez lehet egy modul.</p>
+
+<div class="csakdoksi">
+<p>Ha a projekt egyetlen, nagy forrásállományban lenne megírva:</p>
+   <ul>
+      <li>akkor áttekinthetetlen lenne,
+      <li>a szerkesztő programok nehezen/lassan kezelnék,
+      <li>nehézkes lenne többen egyszerre dolgozni rajta,
+      <li>egy-egy újrafordítás akár órákat vehetne igénybe.
+   </ul>
+
+<p>Ha szerkezeti egységekre bontjuk a programot:</p>
+<ul>
+    <li>ezek önállóan fordíthatóak, a program ezek összeépítéséből lesz,
+    <li>egy csapat különböző tagjai egymástól függetlenül dolgozhatnak,
+    <li>az egyedi fordítások gyorsan lezajlanak.
+</ul>
+
+<p>Ez az egyedül fejlesztett programoknál is nagyon hasznos: az egyes modulok újra
+felhasználhatóak más projektekben. Érdemes a funkcionális egységeket általános módon
+megírni, hogy minél könnyebben fel lehessen használni őket más feladatok megoldásában.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<div class="slideheader">
+<h2><span class="oldalszam">20</span>Főprogram és a két modul</h2>
+</div>
+
+<p>Modulok: a főprogram és a függvényrajzoló.</p>
+
+<div class="sticky">Melyik<br>függvény<br>hova való?</div>
+<pre class="brush: cbub eloadaskicsinyit"  >
+rajz_inicializal(&amp;r1, 320, 120, 160, 60, 25, 25); // !
+
+do {
+    valasztas = menu();
+
+    switch (valasztas) {
+        case 1:  /* sin(x) rajzolása */
+            fuggveny_rajzol(&amp;r1, sin, &quot;blue&quot;);    // !
+            break;
+        ...
+        case 4:  /* rajz fájlba írása */
+            rajz_fajlba(&amp;r1, &quot;rajz.svg&quot;);         // !
+            break;
+    }
+} while (valasztas != 0);
+
+rajz_felszabadit(&amp;r1);                            // !</pre>
+
+<div class="csakdoksi">
+<p>A programot két modulra lehet bontani. Az első a <em>fő programmodul.</em> Ez tartalmazza a
+<code>main()</code> függvényt, a <code>menu()</code> függvényt, és az ábrázolandó parabolát
+kiszámoló függvényt is. A <em>másik modul</em> a függvények megjelenítését tartalmazó
+programrészekből áll össze. Érezhető, hogy ez egy külön egység, amely önmagában is megállja a
+helyét. Lehetne egy teljesen másik programot is írni, és abban ugyanezt az ábrázolót
+használni.</p>
+<p>Az ábrázoló függvényeit ezen belül tovább lehet bontani két csoportra. Azok a függvények,
+amelyek az ábrázoló modul <em>használója számára is fontosak,</em> például a
+<code>rajz_inicializal()</code> és a <code>fuggveny_rajzol()</code>. Ugyanebbe a csoportba
+tartozik a függvények mellett a <code>Rajz</code> nevű típus, hiszen ezt is ismernie kell annak,
+aki használni szeretné. Definiálnia kell tudni <code>Rajz</code> típusú változót! A másik
+csoportba olyan függvények tartoznak, amelyek a <em>használó számára nem lényegesek,</em> sőt
+jobb ha nem is kell foglalkoznia velük. Ezek például a koordinátarendszerek közti transzformációt végző
+<code>kep2mat()</code> és <code>mat2kep()</code> függvények.</p>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>A két modul forrásfájljai</h2>
+</div>
+
+<p>A program a két forráskód összeszerkesztéséből fog keletkezni.</p>
+
+<br class="smallskip">
+
+<div class="sticky">rajzolo.c:<br>az ábrázoló</div>
+
+<pre class="brush: c eloadaskicsinyit"  >
+/* más modulból NEM látszó függvény: static */
+static void kep2mat(………) { /* …kód… */ }
+static void mat2kep(………) { /* …kód… */ }
+static int szakasz_rajzol(………) { /* …kód… */ }
+
+/* más modulból is látszó függvények */
+void rajz_inicializal(………) { /* …kód… */ }
+void rajz_felszabadit(………) { /* …kód… */ }
+void rajz_ures(………) { /* …kód… */ }
+int fuggveny_rajzol(………) { /* …kód… */ }</pre>
+
+<br class="smallskip">
+
+<div class="sticky">main.c:<br>a főprogram</div>
+
+<pre class="brush: c eloadaskicsinyit"  >
+static double parabola(double x) { /* …kód… */ }
+static int menu() { /* …kód… */ }
+int main(void) { /* …kód… */ }</pre>
+
+<p class="csakdoksi">A programot a fentiek alapján két külön forrásfájlra bonthatjuk. A
+függvények elé írt <code>static</code> kulcsszó azt mondja, hogy az a függvény csak abból a
+modulból (abból a forrásfájlból) kell elérhető legyen, máshonnan nem. Vagyis pl. a
+<code>main.c</code>-ből nem lehet majd meghívni a <code>kep2mat()</code> függvényt. De nincsen is rá
+szükség. Elég, ha ennek a függvénynek a <em>láthatóságát</em> (scope) a függvényábrázoló modulra
+korlátozzuk. (Egy változó vagy függvény (név) láthatósági tartományának (scope) azt a
+kódrészletet nevezzük, amelyben az adott név definiálva van.) Az ábrázoló modul többi függvényei
+viszont elérhetőek kell legyenek a <code>main.c</code>-ből, hiszen a főprogram meghívja őket.</p>
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<div class="slideheader">
+<h2><span class="oldalszam">22</span>Deklarációk és definíciók</h2>
+</div>
+
+<p>A <code>main.c</code> fordításakor a fordítónak rengeteg
+<em>deklarációra</em> van szüksége:</p>
+
+<div class="sticky">main.c</div>
+
+<pre class="brush: c eloadaskicsinyit"  >
+#include &quot;rajzolo.h&quot;
+
+int main(int argc, char *argv[]) {
+    Rajz r1;
+    rajz_inicializal(&amp;r1, 320, 120, 160, 60, 25, 25);</pre>
+
+<br class="smallskip">
+
+<p>A fejlécfájl: <em>típusdefiníciók</em> és <em>függvénydeklarációk</em> vannak benne.</p>
+
+<div class="sticky">rajzolo.h</div>
+
+<pre class="brush: c eloadaskicsinyit"  >
+typedef struct Szakasz { ……… } Szakasz;
+typedef struct Rajz { ……… } Rajz;
+
+void rajz_inicializal(Rajz *r, int kx, int ky, ………);
+void rajz_felszabadit(Rajz *r);
+int fuggveny_rajzol(Rajz *r, double (*fv)(double), char const *szin);
+void rajz_ures(Rajz *r);
+void rajz_fajlba(Rajz const *r, char const *nev);</pre>
+
+<div class="csakdoksi">
+
+<p>Vagyis fogjuk az összes olyan típust és függvényt, amelyeket láthatóvá szeretnénk tenni a <em>
+többi modul</em> számára, és készítünk belőlük egy <code>rajzolo.h</code> nevű <em>fejlécfájlt
+</em> a <code>rajzolo.c</code> modul mellé.
+
+<p>Mi kerül a forrásfájlba (.c), és mi kerül a fejlécfájlba (.h)? Ez egyszerű: a kódfájlokba
+(.c) mennek a függvények definíciói, a fejlécfájlokba mennek a függvények deklarációi. Persze
+csak azok, amelyeknek máshonnan is látszaniuk kell, másik modulból. A statikus függvényeket,
+amelyek csak az adott modulból látszanak, nincsen értelme (sőt: hiba!) szerepeltetni a
+fejlécfájlban, hiszen azok a statikus jellegük miatt amúgy sem érhetők el máshonnan. Ugyancsak a
+fejlécfájlokba mennek a kívülről is használható típusok definíciói.</p>
+
+<p>Ezt a fejlécfájlt a többi modul, amely szeretné használni a függvényrajzoló modul
+szolgáltatásait, beilleszti a saját forráskódjába az <code>#include&nbsp;"rajzolo.h"</code>
+sorral. Így a fordító érteni fogja, mi az, hogy <code>Rajz</code>, és azt is fogja tudni, hogy
+létezik a <code>rajz_inicializal()</code> függvény, ismeri a paramétereinek típusait és így
+tovább. Le tudja fordítani a kódot!</p>
+
+<p><em>Fontos,</em> hogy a fejlécfájlt nem csak a többi modulnak kell beillesztenie, hanem
+annak a modulnak is, amelyhez tartozik. Vagyis jelen esetben a <code>rajzolo.c</code>-nek is
+include-olnia kell a <code>rajzolo.h</code>-t! Ennek oka kettős: egyrészt a függvényrajzoló
+kódjának is ismernie kell a hozzá tartozó típusokat (<code>Szakasz</code>, <code>Rajz</code>),
+másrészt pedig így biztosítható az, hogy a modul forráskódjában nincsenek véletlenül hibásan
+megadva a függvények paraméterei. Ha a forrásfájlban más fejléccel definiálunk egy függvényt,
+mint a fejlécfájlban, akkor az a projekt fordításakor hibához vezet. Ha beillesztjük minden
+modulba a saját fejlécfájlját is, akkor ezeket a hibákat a fordító megtalálja!</p>
+
+</div>
+
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Fejlécfájlok használata; #include guard-ok</h2>
+</div>
+
+
+<p>A függvényrajzoló modul fejlécfájlja:</p>
+<div class="sticky">rajzolo.h</div>
+<pre class="brush: c "  >
+#ifndef RAJZOLO_H_BEILLESZTVE
+#define RAJZOLO_H_BEILLESZTVE
+
+………
+
+typedef struct Rajz {
+    int kx, ky;
+    double ox, oy;
+    double nx, ny;
+    Szakasz *szakaszok;
+} Rajz;
+
+void rajz_ures(Rajz *r);
+void rajz_fajlba(Rajz const *r, char const *nev);
+
+………
+
+#endif</pre>
+
+<p class="csakdoksi">Az <code>#ifdef</code> és <code>#ifndef</code> direktívákkal ellenőrizni
+tudjuk, hogy definiálva van-e egy makró, és attól függően egy programrészt teljesen kihagyhatunk
+a fordításból. Jelen esetben ezt arra használjuk, hogy biztosítsuk azt, a függvények ne legyenek
+többször deklarálva. Összetett projektek esetén ugyanis a fejléc fájlok általában egymást is
+betöltik (include). A fenti preprocesszor direktíva úgy működik, hogy az első betöltéskor még
+beilleszti a kódot, mivel a <code>FUGGVENY_H_BEILLESZTVE</code> makró ilyenkor még nincs
+definiálva: <code>#ifndef</code>. De egyből definiálja is, vagyis másodjára már az egész
+kódrészlet kimarad.</p>
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>Függvényábrázoló – függőségek és fordítás</h2>
+</div>
+
+<div class="csakdoksi">
+<div class="columns">
+<div>
+<p>A futtatható program előállítása valójában mindig <em>két lépésből áll:</em>
+   <ol>
+      <li>a forráskód <em>lefordítása</em> (compile) tárgykóddá (object code),
+      <li>a tárgykódok <em>összeszerkesztése</em> (link) futtatható programmá (executable).
+   </ol>
+</div>
+<div>
+<img src="ea11/comp_link.svg" class="kozep" style="width: 18em;">
+</div>
+</div>
+
+<p> A tárgykód olyan gépi kódú program, amelyben <em>hivatkozások vannak</em> 
+(változónév, függvénynév) másik modulban lévő elemekre. Így csak az 
+összeszerkesztéskor kell őket feloldani. A fordító neve angolul: 
+<em>compiler</em>, a szerkesztőé: <em>linker</em>. Az egyes lefordított 
+<code>.c</code> fájlokat fordítási egységnek (compilation unit) is szokták 
+nevezni.</p>
+
+<p>A kész programunk a fentiek alapján most <em>három lépésből</em> állítható elő:</p>
+<ol>
+    <li>Le kell fordítani a függvény modult. Ebből egy tárgykód fájl keletkezik.
+    <li>Le kell fordítani a főprogram modult is. Ebből is egy tárgykód lesz.
+    <li>Végül pedig a két tárgykódot össze kell szerkeszteni.
+</ol>
+<p>Az összeszerkesztéskor (linking, „linkelés”) nem csak az általunk írt függvényeinket,
+hanem a szabványos C könyvtári függvényeket (<code>printf()</code>, <code>sin()</code> stb.)
+is megkeresi a linker.</p>
+</div>
+
+<pre class="screenshot eloadaskicsinyit">
+gcc -c rajzolo.c -o rajzolo.o
+gcc -c main.c -o main.o
+gcc rajzolo.o main.o -lm -o fuggvenyrajzolo.exe
+</pre>
+
+<p class="csakdoksi">A három műveletet az itt látható parancsok begépelésével lehet elvégezni
+Linux rendszeren. Windowson is hasonlóképpen működik. A fordítási és szerkesztési lépéseket
+egyébként az integrált fejlesztőkörnyezetek automatikusan elvégzik, azt ritkán kell
+parancssorból, kézzel végeznünk: a laboron használt Code::Blocksban is csak egy kattintás, és
+indul is a lefordított programunk.</p>
+
+<img src="ea11/fuggoseg.svg" style="width: 32em;" class="kozep">
+
+<div class="csakdoksi">
+<p>Ugyancsak automatikusan végzik a fejlesztőkörnyezetek a <em>függőségek</em> feltérképezését.
+Figyeljük meg az ábrán: az egyes fájlok módosítása esetén nem kell mindegyik műveletet
+újra elvégezni. Például ha a <code>main.c</code> fájl tartalmát szerkesztjük, akkor
+nincsen szükség a <code>rajzolo.c</code> újbóli fordítására, hiszen azon lépés által
+keletkező <code>rajzolo.o</code> fájl tartalma nem függ a <code>main.c</code>
+tartalmától. Szükség van viszont a <code>main.c</code> fordítása után
+az újbóli linkelésre is, hiszen a megújult <code>main.o</code>-tól függ a végleges
+programfájl, a <code>fuggveny</code> tartalma. Így végeredményben egy
+fordítást tudunk megspórolni ebben az esetben.</p>
+
+<p>Nagyobb projekteknek ennél sokkal bonyolultabb függőségi gráfjuk van. A függőségek
+figyelembe vételével könnyen meghatározható az, hogy egy adott fájl módosítása esetén
+mely fordítási, linkelési lépéseket lehet elhagyni. Minél kisebb részekre, fájlokra van
+bontva a projekt, annál kisebbek lehetnek az újból elvégzendő lépések, hiszen annál több
+fájl marad változatlan egy kisebb módosítás esetén.</p>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>Globális változók használata</h2>
+</div>
+
+<p>A függvényeken kívül definiált változók: <strong>globális változók.</strong>
+Ezeket minden függvény eléri.</p>
+
+<ul>
+    <li class="csakdoksi">Ezeket is megoszthatjuk modulok között.
+    <li>A <em>változódefiníciók</em> a modulokba kerülnek.
+    <li>A <em>deklaráció</em> az <code>extern</code> kulcsszóval történik. (Enélkül definíció lenne!)
+    <li class="csakdoksi"><em>Statikus</em> változó globálisan: csak az adott modulban látszik.
+</ul>
+
+<br class="smallskip">
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+int megosztott = 5;
+static double szorzo;</pre>
+<div class="kozep"><code>modul.c</code></div>
+<pre class="brush: cbub "  >
+extern int megosztott;</pre>
+<div class="kozep"><code>modul.h</code></div>
+</div>
+<div>
+<pre class="brush: cbub "  >
+#include &quot;modul.h&quot;
+
+int main(void) {
+    int a, b = 7;
+    a = b + megosztott;
+    …</pre>
+<div class="kozep"><code>foprogram.c</code></div>
+</div>
+</div>
+
+<p class="csakdoksi"> Itt jól látszik, mit jelent változók esetén a deklaráció és 
+a definíció: deklaráció, amikor megmondjuk a típusát, definíció, amikor memóriát 
+is foglalunk hozzá. Az <code>extern</code>-nel kezdődő sor csak deklaráció. Azt 
+mondja a fordítónak, hogy van valahol egy ilyen nevű és ilyen típusú változó egy 
+másik modulban; az linkeléskor majd elő fog kerülni. (Az <code>extern</code>
+kulcsszó is egy tárolási osztályt (storage class) ad meg (storage class specifier);
+a linkernek fontos, hogy tudja, másik modulban kell keresni a változót.)</p>
+
+<p class="csakdoksi"> A globális változókat igyekszünk kerülni, ugyanis nehezen 
+áttekinthetővé teszik a programot. Mivel mindegyik modulnak van hozzáférése a 
+globális változókhoz, nem lehet tudni, melyik működése függ attól, és hogy melyik 
+fogja azt módosítani. Ha a függvényeknek mindent paraméterben adunk át, akkor 
+tiszta: csak az lehet a bemenő adat, ami paraméter, és csak az a kijövő adat, ami 
+a visszatérési érték. </p>
+
+
+
+
+
+
+
+
+
+<blockquote class="csakdoksi">
+<h3>Láthatóság és élettartam: összefoglalás</h3>
+
+<p>Egy ilyen forrásfájlhoz:</p>
+<div class="sticky">modul.c</div>
+<pre class="brush: cbub "  >
+int globalis;                    // globális, projektben
+
+int globalis_fv(void) {
+   int lokalis;
+   static int statikus_lokalis;
+   …
+}
+
+static int statikus_globalis;    // globális, csak a modulban
+
+static int modul_fv(void) {
+   …
+}</pre>
+
+<p>Ilyen fejlécfájlt kell írni:</p>
+
+<div class="sticky">modul.h</div>
+<pre class="brush: cbub "  >
+#ifndef MODUL_H_INCLUDED
+#define MODUL_H_INCLUDED
+
+extern int globalis;             // globálisok deklarációi
+int globalis_fv(void);
+
+#endif</pre>
+
+<p class="csakdoksi">A láthatóságot a fenti kommentek jelzik. A változók élettartamát (storage 
+duration) is könnyű megjegyezni: a globális változók a program futásának egész ideje alatt 
+léteznek, a lokális változók pedig csak akkor, amikor az őket létrehozó függvényben van épp a 
+végrehajtás. A függvények statikus változói öszvérként viselkednek: a láthatóságuk lokális, azaz 
+a függvényre korlátozódik, az élettartamuk viszont a globális változókéhoz hasonló. Hiszen éppen 
+úgy tudják megőrizni az értéküket a függvényhívások között, hogy nem szűnnek meg a függvényből 
+visszatéréskor.</p>
+
+</blockquote>
+
+
+
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<h1 class="diacim">Programok életciklusa</h1>
+
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span>Egy program életciklusa</h2>
+</div>
+
+<div class="sticky">Szoftver-<br>technológia<br>3. félév</div>
+<ol>
+    <li><em>Specifikáció</em>
+      <ul>
+         <li>Elvárások, képességek (feature)
+         <li>Mit fog tudni a program
+      </ul>
+   
+    <li><em>Fejlesztés</em>
+        <ul>
+            <li>fejlesztői eszközök, technológiák megválasztása,
+            <li>a rendszer magas szintű megtervezése:
+                <ul>
+                    <li>modulok és kapcsolatuk,
+                    <li>be-, és kimeneti formátumok,
+                </ul>
+            
+            <li>algoritmusok, adatszerkezetek megtervezése,
+            <li>implementáció elkészítése (kód dokumentálása párhuzamosan),
+            <li>tesztelés, hibajavítás,
+            <li>dokumentáció elkészítése.
+        </ul>
+    
+    <li><em>Támogatás, továbbfejlesztés</em>
+</ol>
+
+
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Hibalehetőségek és tesztelés</h2>
+</div>
+
+<img src="ea11/bugfeature1.png" style="width: 10em;" class="float">
+
+<h3>Programozói hibák</h3>
+
+<dl>
+    <dt>Szintaktikai hiba
+    <dd>Nyelvtanilag hibás kód – le sem fordul.<br>
+        Pl. <code>for (x=0, x&lt;10, ++x)</code>
+    <dt>Szemantikai hiba – bug
+    <dd>Nyelvileg helyes, de logikailag hibás program.
+        <ul class="csakdoksi">
+            <li>Hibás algoritmus, hibás kódolás…
+            <li>Inicializálatlan változó, tömb túlindexelés…
+        </ul>
+    
+</dl>
+
+<br class="smallskip">
+
+<h3>Futási idejű hibák: hibás bemenet</h3>
+<ul>
+    <li>Felhasználó rossz adatot gépel
+    <li>Hibás a beolvasott fájl
+</ul>
+
+<br class="smallskip">
+
+<div class="sticky csakdoksi" style="width: 13em;">„Kétféleképpen lehet hibátlan programot írni. A harmadik módszer az, ami működik.”<br>– Alan Perlis</div>
+
+<p>A <em>tesztelés</em> sokkal fontosabb és nehezebb lépés, mint gondolnánk!</p>
+<ul class="csakdoksi">
+   <li>Egy egyszerű programot könnyű letesztelni.
+   <li>Egy komplex rendszer összes funkcióját leellenőrizni minden lehetséges bemenet és belső állapot
+   esetén szinte lehetetlen.
+</ul>
+
+
+<p>A <em>kis részektől a nagy felé haladva</em> érdemes tesztelni.</p>
+<ul class="csakdoksi">
+   <li><em>Minden függvényt külön</em> is tesztelni kell.
+   <li><em>Minden lehetséges ágat</em> (elágazások, ciklusok) ki kell próbálni.
+</ul>
+
+
+
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<div class="slideheader">
+<h2><span class="oldalszam">29</span>Dokumentáció I.</h2>
+</div>
+
+<img class="float" src="ea11/text.svg" style="width: 10em;">
+
+<p>A dokumentáció szintjei:
+
+        <ol>
+            <li><em>Fejlesztői dokumentáció</em>
+                <ul>
+               <li>adatszerkezetek dokumentációja,
+               <li>algoritmusok dokumentációja,
+                    <li>a kód szerkezeti áttekintése,
+                    <li>a kód részletes dokumentációja.
+                </ul>
+            
+         <li><em>A forráskód</em>
+            <ul>
+               <li>kommentezés! <code><span class="c"><span class="coMULTI">/* ajánlott: a kód 30%-a */</span></span></code>
+            </ul>
+         
+            <li><em>Felhasználói dokumentációja</em>
+                <ul>
+                    <li>a program használatának a leírása.
+                </ul>
+            
+         <li><em>Tesztelési dokumentáció</em>
+            <ul>
+               <li>a tesztelés körülményeit, eredményeit írja le
+            </ul>
+        </ol>
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>Dokumentáció II.</h2>
+</div>
+
+<p>A dokumentációt támogató kiváló eszköz pl. a Doxygen.</p>
+
+<div class="sticky">A függvényrajzoló<br>forráskódja<br>végig ilyen!</div>
+<button class="float" data-diapopup="doxygen">Generált</button>
+<pre class="brush: cbub "  >
+/**
+ * Megmondja, hogy egy szám prim szám-e.
+ * @param szam a megvizsgálandó szám
+ * @return logikai IGAZ, ha a szám prím
+ * @author Fejlesztő Fanni
+ * @date 2011. 10. 15.
+ */                     // Speciális megjegyzés!
+int prim(int szam) {
+   int oszto;
+   for (oszto = 2; oszto*oszto &lt;= szam; ++oszto)
+      if (szam%oszto == 0)
+         return 0;
+   return 1;
+}</pre>
+
+<div id="doxygen">
+<p>Ebből a Doxygen automatikusan generálja:</p>
+<img src="ea11/doxygen.png" class="arnyek" style="width: 100%">
+<p>A generált doksi elérhető <a href="ea11/doxygen/index.html">ide kattintva</a>.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>Tesztelés I. – Hogyan ellenőrizzük?</h2>
+</div>
+
+<h3>„Trace”-elés</h3>
+
+<pre class="brush: c "  >
+#define TESZT
+
+#ifdef TESZT
+   fprintf(stderr, &quot;x = %d&quot;, x);  /* csak tesztelés közben */
+#endif</pre>
+<p>A tesztelt program extra kimenete: a változó értéke
+mindig megjelenik a képernyőn, ha elér erre a pontra.</p>
+
+<br class="smallskip">
+
+<h3>Nyomkövetővel (debugger)</h3>
+<div class="sticky">laboron<br>már volt</div>
+<ul>
+   <li>Változó értékének megfigyelése (watch)
+   <li>Töréspont (breakpoint)
+   <li>Lépésenkénti végrehajtás
+</ul>
+
+
+
+
+</div>
+</section>
+<section id="32">
+<div class="slide" id="slide_32">
+<div class="slideheader">
+<h2><span class="oldalszam">32</span>Tesztelés II. – makrók és <code>assert()</code></h2>
+</div>
+
+<p>Beépített makrók: a fordítás körülményeire utalnak.</p>
+<pre class="brush: c "  >
+printf(&quot;Fordítás: %s %s\n&quot;, __DATE__, __TIME__);
+printf(&quot;%s:%d\n&quot;, __FILE__, __LINE__);</pre>
+
+<pre class="screenshot">
+Fordítás: Oct 14 2011 10:14:34
+proba.c:6
+</pre>
+
+<p class="csakdoksi">Ezeknek a neve két-két alulvonás (underscore)
+karakter között van. Céljuk: verziókövetés, hibaüzenetek
+kiírása.</p>
+
+<br class="smallskip">
+
+<p><code>assert()</code>: <em>programozói hibák</em> megtalálására való.</p>
+
+<pre class="brush: c eloadaskicsinyit"  >
+#include &lt;assert.h&gt;
+
+void sztring_masol(char *ide, char *ezt) {
+   assert(ide != NULL);
+   assert(ezt != NULL);
+   ...</pre>
+
+
+<div class="csakdoksi">
+<p>Az <code>assert.h</code>-ban definiált makró megszakítja
+a program futását, és hibaüzenetet ír ki, ha a paraméterként kapott kifejezés hamisra
+értékelődik ki.</p>
+
+<p>Ha definiálva van az <code>NDEBUG</code> makró, akkor üres
+utasításra cserélődik – vagyis a program végleges változatát
+már nem lassítják az ellenőrzések.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="33">
+<div class="slide" id="slide_33">
+<div class="slideheader">
+<h2><span class="oldalszam">33</span>Tesztelés után – Ha maradna benne hiba…</h2>
+</div>
+
+<div class="kozep">„It's not a bug! It's a feature!”</div>
+
+<br class="smallskip">
+
+<div class="csakeloadas">
+<img src="ea11/bugfeature1.png" style="width: 12em;" class="kozep" onclick="this.src=(this.src.match('bugfeature1.png') ? 'bugfeature2.png':'bugfeature1.png');">
+</div>
+
+<div class="csakdoksi">
+<img src="ea11/bugfeature.png" style="width: 24em;" class="kozep">
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea11.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

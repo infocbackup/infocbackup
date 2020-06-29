@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 5. hét: függvények</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 5. hét: függvények">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Függvények fogalma és C nyelvű megvalósítása. Bonyolult algoritmusok tervezése a felülről lefelé tervezés módszerével.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Függvények fogalma és C nyelvű megvalósítása. Bonyolult algoritmusok tervezése a felülről lefelé tervezés módszerével.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy05.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyakfuggvenyek" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 5. hét: függvények</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Függvények fogalma és C nyelvű megvalósítása. Bonyolult algoritmusok tervezése a felülről lefelé tervezés módszerével.</p>
+</div>
+
+
+<p>A mai témák: felülről lefelé tervezés (top-down tervezés) gyakorlása, függvények írása és a karakter típus használata.</p>
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>A <a href="ea04.html#eafunkcionalis">függvényekről, funkcionális dekompozícióról szóló előadás</a> anyagának megértése.
+    <li>A <a href="gy03.html#gyakcalapok">C alapokról szóló gyakorlat</a> átismétlése.
+</ul>
+
+
+
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy05.html#1">nagybetu(), kisbetu()</a>
+<li><a href="gy05.html#2">Madárnyelv</a>
+<li><a href="gy05.html#3">Kiírás adott számrendszerben</a>
+<li><a href="gy05.html#4">Beolvasás adott számrendszerben</a>
+<li><a href="gy05.html#5">Tökéletes és barátságos számok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>nagybetu(), kisbetu()</h2>
+</div>
+
+<p>Írjunk függvényeket, amelyek karaktereket kapnak paraméterként, és a visszatérési értékük a nagybetűsített/kisbetűsített
+karakter: pl. a&rarr;A. Egyéb bemenetek esetén pedig adják változatlanul vissza az eredetit, pl. 8&rarr;8.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A betűk is csak számok a gép számára. Így aztán két karakter kivonása is értelmes művelet. Az általában használt ASCII
+kódtáblában egymás mellett vannak ábécé sorrendben a nagybetűk, és egy másik tartományban egymás mellett a kisbetűk. Emiatt a
+<code>'C'-'A'</code> kifejezés 2-t ad (mivel a C és az A betű között 2 a távolság). Az <code>'A'-'a'</code> kifejezés a két
+tartomány távolságát adja meg.</p>
+
+<img class="kozep" src="gy05/szamegyenes.png" style="width: 28em;">
+
+<pre class="brush: c "  >
+/* visszaadja a karakter nagybetus parjat, vagy sajat magat */
+char nagybetu(char c) {
+    if (c&gt;='a' &amp;&amp; c&lt;='z')
+        return c-'a'+'A';
+    return c;
+}
+
+/* visszaadja a karakter kisbetus parjat, vagy sajat magat */
+char kisbetu(char c) {
+    if (c&gt;='A' &amp;&amp; c&lt;='Z')
+        return c-'A'+'a';
+    else
+        return c;
+}</pre>
+
+<p>Mindkét megoldásban lehet <code>else</code> is, vagy el is maradhat, mivel a <code>return</code> utasításnál egyből visszatérünk.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Madárnyelv</h2>
+</div>
+
+<p>Adott az alábbi program, amely madárnyelven (mavadávárnyevelveven) írja ki a beírt szöveget.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    char c;
+
+    while (scanf(&quot;%c&quot;, &amp;c)==1) {
+        if (c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+            printf(&quot;%cv%c&quot;, c, c);
+        else
+            printf(&quot;%c&quot;, c);
+    }
+
+    return 0;
+}</pre>
+
+<p>Írjunk függvényt, amelyik megmondja egy betűről, hogy magánhangzó-e! Alakítsuk át úgy
+a programot, hogy a megírt függvényt használjuk a <code>main()</code>-ben!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* Igaz ertekkel ter vissza, ha a parametere egy maganhangzo. */
+int maganhangzo(char c) {
+    return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+}
+
+int main(void) {
+    char c;
+
+    while (scanf(&quot;%c&quot;, &amp;c) == 1)
+        if (maganhangzo(c))
+            printf(&quot;%cv%c&quot;, c, c);
+        else
+            printf(&quot;%c&quot;, c);
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+<p>Hogyan lehetne megoldani azt, hogy a nagybetűvel kezdődő szavakat is helyesen kezelje a program? Pl. az „Alma” szóra azt kell
+kiírnia, hogy „Avalmava”. Ehhez fel kell tudnia ismerni a nagybetűvel írt magánhangzókat is. Kiíráskor a <code>v</code> betű
+után viszont már kisbetűvel kell kiírnia.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A fenti, magánhangzó vizsgálatát végző függvénynek ne a beolvasott karaktert adjuk, hanem annak kisbetűsített
+párját. Így az nem is fogja látni, hogy nagybetűről vagy kisbetűről van szó. Innen adódik lent a
+<code>maganhangzo(kisbetu(c))</code> kifejezés. Másrészt, a kiírásnál a <code>v</code> betű utáni duplázott magánhangzót ne az
+eredeti formájában írjuk ki, hanem kisbetűsítve. Ebből jön a <code>printf()</code> paramétereiben hívott <code>kisbetu()</code>
+függvény:</p>
+
+<pre class="brush: c "  >
+while (scanf(&quot;%c&quot;, &amp;c)==1)
+    if (maganhangzo(kisbetu(c)))
+        printf(&quot;%cv%c&quot;, c, kisbetu(c));
+    else
+        printf(&quot;%c&quot;, c);</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Kiírás adott számrendszerben</h2>
+</div>
+
+<p>Írjunk programot, amelyik adott számot ír ki adott számrendszerben!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Mivel a kiírás balról jobbra halad, ezért először a legnagyobb helyiértékű számjegyre van 
+szükségünk. Például ha 10-es számrendszerben szeretnénk kiírni a 123-at, akkor először az 1-est, 
+utána a 2-est, végül pedig a 3-ast kell.</p>
+
+<p>Ezért kell egy ciklus, amely a legnagyobb helyiértéktől a legkisebbig halad. A 123 példájában 
+n=2-től (százasok) n=0-ig (egyesek). A megoldásban ez szerepel a <code>kiir()</code> 
+függvényben. Hogy ez működni tudjon, két másik alproblémára kell még megoldás:</p>
+
+<ul>
+   <li>Tudnunk kell, melyik a legnagyobb helyiérték. Ehhez majd megírjuk a
+      <code>szamjegyek_szama()</code> függvényt.
+   <li>Ki kell tudnunk vágni a számból egy adott helyiértékű számjegyet.
+      Ehhez pedig az <code>n_edik_szamjegy()</code> függvény lesz használható.
+</ul>
+
+<p>Ehhez az egyszerű feladathoz természetesen nem lenne feltétlenül szükséges függvényeket 
+használni. De jól mutatják azt, hogyan lehet kisebb részekre bontani a problémát.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* megmondja, hogy egy adott szam egy adott szamrendszerben
+ * hany szamjegybol all. */
+int szamjegyek_szama(int szam, int szamrendszer) {
+   int szamjegyek = 0;
+   while (szam &gt; 0) {
+      szam /= szamrendszer;
+      szamjegyek += 1;
+   }
+
+   return szamjegyek;
+}
+
+/* adott szam adott szamrendszerbeli alakjanak n. szamjegyet
+ * adja vissza. n a kitevonek megfelelo hatvanykitevo,
+ * vagyis n=0 adja az egyeseket, n=1 a tizeseket stb.,
+ * ha epp 10-es szamrendszerben vagyunk. */
+int n_edik_szamjegy(int szam, int szamrendszer, int n) {
+   /* pelda: szam=1234, n=2 -&gt; szam=12 lesz, mert 2x osztja */
+   while (n &gt; 0) {
+      szam /= szamrendszer;
+      n -= 1;
+   }
+   /* pelda: szam=12 itt, szam%10 -&gt; 2-vel ter vissza */
+   return szam % szamrendszer;
+}
+
+/* adott szám kiírása adott számrendszerben. */
+/* először ki kell találni, az egész hány számjegyből áll;
+   mivel a legnagyobb helyiértékűt kell kiírni először. */
+void kiir(int mit, int miben) {
+   int n;
+
+   /* a kiírandó számjegyek, visszafelé */
+   for (n = szamjegyek_szama(mit, miben)-1; n &gt;= 0; n -= 1)
+      printf(&quot;%d&quot;, n_edik_szamjegy(mit, miben, n));
+}
+
+int main(void) {
+   kiir(123, 10); printf(&quot;\n&quot;);
+   kiir(255, 2); printf(&quot;\n&quot;);
+
+   return 0;
+}</pre>
+
+<p>A programban a megfelelő helyen nem véletlenül szerepel <code>while</code> és <code>for</code>
+ciklus. Az elsőnél a <code>while</code> praktikusabb (az igazi „amíg” jellegű),
+a másodiknál inkább a <code>for</code> (számlálásos jellegű).</p>
+
+</div>
+</div>
+
+<p>Módosítsuk úgy a programot, hogy 10-nél nagyobb alapú számrendszerben is (pl. 16-osban) 
+működjön! A 10-et, és annál nagyobb számjegyeket ilyenkor betűkkel szokás jelölni. Pl. 16-osban 
+a 0…15 számjegyek: 012…89ABCDEF.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Ehhez csak a kiírást kell módosítani, hiszen az <code>n_edik_szamjegy()</code> függvény már 
+eddigi formájában is elő tudja állítani a 10-nél nagyobb számjegyeket is. A kiírandó karaktert 
+így tudjuk előállítani:</p>
+
+<pre class="brush: c "  >
+/* Visszatér egy karakterrel, amely az adott számjegyet ábrázolja.
+ * 0..9 számjegyek -&gt; '0'..'9' karakterek.
+ * 10-nél nagyobb számjegyek -&gt; betűk 'A'-tól kezdődően. */
+char szamjegy_karakter(int szj) {
+    if (szj &lt; 10)
+        return szj + '0';
+    else
+        return szj - 10 + 'A';
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Beolvasás adott számrendszerben</h2>
+</div>
+
+<p>A szám kiírása feladat fordítottja: olvassunk be a billentyűzetről egy számot a megadott 
+számrendszerben. (Előbb láttuk, mennyi dolga van ezzel a <code>printf()</code>-nek, most látjuk, 
+mennyi dolga van a <code>scanf()</code>-nek.) Kövessük itt is a felülről lefelé tervezés 
+elvét!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+/* Visszaadja a számjegy értékét:
+ * - 0-9 -&gt; 0-9
+ * - A-Z (a-z) -&gt; 10-35
+ * - egyéb karakter (érvénytelen) -&gt; -1 */
+int ertek(char c) {
+    if (isdigit(c))
+        return c - '0';
+    if (isalpha(c))
+        return toupper(c) - 'A' + 10;
+    /* nem szám, nem betű - ez bizony hiba */
+    return -1;
+}
+
+/* beolvas egy egész számot a billentyűzetről,
+ * az adott számrendszerben. visszatérési értéke
+ * a beolvasott szám, vagy hiba esetén -1. */
+int beolvas(int alap) {
+    int szam;
+    char c;
+
+    szam = 0;
+    while (scanf(&quot;%c&quot;, &amp;c) == 1 &amp;&amp; !isspace(c)) {
+        int ert = ertek(c);
+        if (ert&lt;0 || ert&gt;=alap) /* ha hiba, vagy túl nagy az alaphoz */
+            return -1;
+        szam = szam*alap + ert;
+    }
+    return szam;
+}
+
+int main(void) {
+    printf(&quot;Irj 2-esben: &quot;);
+    printf(&quot;Erteke 10-esben: %d\n&quot;, beolvas(2));
+    printf(&quot;Irj 16-osban: &quot;);
+    printf(&quot;Erteke 10-esben: %d\n&quot;, beolvas(16));
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Tökéletes és barátságos számok</h2>
+</div>
+
+<p>Tökéletes szám az a szám, amely megegyezik a nála kisebb osztóinak összegével. A legkisebb 
+tökéletes szám a 6 (1+2+3), az utána következők a 28 (1+2+4+7+14) és 496.</p>
+
+<p>Barátságos számoknak nevezzük azokat a számpárokat, amelyeknél az egyik szám
+nála kisebb osztóinak összege egyenlő a másik számmal, és fordítva. A legkisebb
+ilyen számpár a (220;284), mert 1+2+4+5+10+11+20+22+44+55+110=284 és
+1+2+4+71+142=220. További párok (1184;1210) és (2620;2924).</p>
+
+<p>Írjunk függvényt, amely 1) megmondja egy számról, hogy tökéletes-e, 2) megmondja egy 
+számpárról, hogy barátságos-e! Kövessük a top-down tervezési elvet!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Induljunk ki a definícióból: tökéletes szám az, amelyik megegyezik a nála kisebb osztóinak összegével.
+A kisebb osztókat összeadő függvényt majd megcsináljuk később.</p>
+
+<pre class="brush: c "  >
+/* igazzal tér vissza, ha tökéletes szám */
+int tokeletes(int szam) {
+    return szam==kisebboszto_osszeg(szam);
+}</pre>
+
+<p>Barátságos számpár pedig az, amelyeknél egymásra vetítve működik ez ugyanígy.</p>
+
+<pre class="brush: c "  >
+/* igazzal tér vissza, ha barátságosak */
+int baratsagos(int szam1, int szam2) {
+    return szam1==kisebboszto_osszeg(szam2) &amp;&amp; szam2==kisebboszto_osszeg(szam1);
+}</pre>
+
+<p>A tökéletes szám és a barátságos számok definíciója nagyon hasonlít 
+egymáshoz. Tulajdonképpen a tökéletes szám önmaga barátja. Vegyük észre: az osztós függvény 
+létezését feltételezve egy-egy sorban meg tudtuk oldani a problémákat! Sőt mivel mindkét 
+függvény ugyanannak a segédfüggvénynek a létezését feltételezi, elég azt már egyszer megírnunk! 
+A teljes program:</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* visszatér a paraméterként kapott szám
+   osztóinak összegével (magát a számot kivéve) */
+int kisebboszto_osszeg(int szam) {
+    int osszeg = 0;
+    int oszto;
+    for (oszto = 1; oszto &lt;= szam/2; oszto += 1)
+        if (szam % oszto == 0)
+            osszeg += oszto;
+
+    return osszeg;
+}
+
+/* igazzal tér vissza, ha tökéletes szám */
+int tokeletes(int szam) {
+    return szam == kisebboszto_osszeg(szam);
+}
+
+/* igazzal tér vissza, ha barátságosak */
+int baratsagos(int szam1, int szam2) {
+    return szam1 == kisebboszto_osszeg(szam2)
+           &amp;&amp; szam2 == kisebboszto_osszeg(szam1);
+}
+
+int main(void) {
+    printf(&quot;6 tökéletes: %d\n&quot;, tokeletes(6));
+    printf(&quot;7 tökéletes: %d\n&quot;, tokeletes(7));
+    printf(&quot;220,284 barátságos: %d\n&quot;, baratsagos(220, 284));
+    printf(&quot;220,285 barátságos: %d\n&quot;, baratsagos(220, 285));
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy05.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

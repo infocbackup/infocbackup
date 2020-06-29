@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 14. hét: generikus algoritmusok</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 14. hét: generikus algoritmusok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Függvényekre mutató pointerek. Generikus algoritmusok.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Függvényekre mutató pointerek. Generikus algoritmusok.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy14.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyakgenerikus" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 14. hét: generikus algoritmusok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Függvényekre mutató pointerek. Generikus algoritmusok.</p>
+</div>
+
+
+<p>Függvényekre mutató pointerek. A gyakorlat első felében a generikus gondolkodást bemutató 
+feladatok vannak – magas szinten. Az utolsó feladat, a generikus rendezés megvalósítása a típus 
+nélküli pointerek kezelését mutatja be – alacsony szinten.</p>
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>A <a href="ea13.html#eagenerikus">generikus algoritmusokról szóló előadás</a> anyagának megértése.
+    <li>A <a href="ea07.html#earendezesek">rendezésekről szóló előadás</a> anyagának átismétlése.
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy14.html#1">Karakterek számlálása típusok szerint</a>
+<li><a href="gy14.html#2">Numerikus integrálás</a>
+<li><a href="gy14.html#3">Összeg, szorzat: akkumuláció</a>
+<li><a href="gy14.html#4"><code>double</code>-öket rendező függvény</a>
+<li><a href="gy14.html#5">A <code>qsort()</code> használata</a>
+<li><a href="gy14.html#6">Saját generikus rendező függvény</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Karakterek számlálása típusok szerint</h2>
+</div>
+
+<p>Írjunk C függvényt, amelyik egy sztringben meg képes számolni, hogy hány bizonyos 
+tulajdonsággal rendelkező karakter van (pl. kisbetűk vagy számjegyek, esetleg írásjelek). Hogy 
+mi ez a tulajdonság, az is a függvény paramétere legyen.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A sztringen végiglépkedés, a karakterek számlálásának módja független attól, hogy konkrétan 
+milyen karaktert keresünk. Az „e” betűs függvény a karaktert <code>int</code>-ként veszi át, 
+hogy kompatibilis legyen az <code>islower()</code> és hasonló függvényekkel.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int e_betu_e(int c) {
+    return c == 'E' || c == 'e';
+}
+
+/* A feladat megoldasa ez a fuggveny. */
+/* A &quot;feltetel&quot; parameter: egy darab int parameteru (c), int
+   visszateresi ertekkel rendelkezo fuggvenyre mutato pointer. */
+int karakter_szamol(char *str, int (*feltetel)(int c)) {
+    int darab, i;
+
+    darab = 0;
+    for (i = 0; str[i] != 0; ++i)
+        if (feltetel(str[i]))
+            darab++;
+    return darab;
+}
+
+int main(void) {
+    char szoveg[] = &quot;Ernoke 4 eves (jovore 5 lesz).&quot;;
+
+    printf(&quot;%d e vagy E betű\n&quot;, karakter_szamol(szoveg, e_betu_e));
+    printf(&quot;%d space\n&quot;, karakter_szamol(szoveg, isspace));
+    printf(&quot;%d kisbetű\n&quot;, karakter_szamol(szoveg, islower));
+    printf(&quot;%d számjegy\n&quot;, karakter_szamol(szoveg, isdigit));
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Numerikus integrálás</h2>
+</div>
+
+<img class="float" src="gy14/numint.svg" style="width: 12em">
+
+<p>Integráljunk egy függvényt egy korlátos intervallumon numerikusan! Vagyis számoljuk ki az 
+alatta lévő területet. Közelítsük ezt téglalapokkal! Írjunk generikus algoritmust, amely bármely 
+függvényen képes dolgozni!
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<ul>
+   <li>Az <code>x</code> tengelyen <code>dx</code> lépésközzel haladunk.
+   <li>Mindenhol kiszámítjuk <code>f(x)</code> értékét.
+   <li>Így meghatározható a rajzon látható téglalapok területe.
+   <li>Az integrál közelítő értéke ezek összege: ∑f(x)*dx.
+</ul>
+
+<p>Az integrálandó <code>f(x)</code> függvényt paraméterként vesszük át. Mivel ez a példában egy 
+egyváltozós, valós függvény, C-ben egy olyan függvényként jelenik meg, amelynek egy
+<code>double</code> paramétere, és <code>double</code> visszatérési értéke van. A paraméter típusa tehát:</p>
+
+<pre class="brush: c "  >
+double (*f)(double)</pre>
+
+<p>Az ezt megvalósító függvény pedig az alábbi. (A <code>dx</code>-szel való szorzást 
+kiemelhettük a szummán kívülre, hogy gyorsabb legyen a program.)</p>
+
+<pre class="brush: c "  >
+#include &lt;math.h&gt;
+
+double integral(double (*f)(double), double ettol, double eddig, double dx) {
+   double osszeg = 0.0, x;
+   for (x = ettol; x &lt; eddig; x += dx)
+      osszeg += f(x);             // ∑f(x)
+
+   return dx*osszeg;              // dx * ∑f(x)
+}
+
+double sajatf(double x) {
+   return 5*x*x + 2*x - 24.3;
+}
+
+int main(void) {
+   double t;
+
+   t = integral(sajatf, 14.3, 29.2, 0.1);
+   printf(&quot;sajatf -&gt; %g\n&quot;, t);
+   t = integral(sin, 0, 3.1415927, 0.05);
+   printf(&quot;sin -&gt; %g\n&quot;, t);
+
+   return 0;
+}</pre>
+
+<p>Természetesen akár a könyvtári <code>sin()</code> függvényt is integrálhatjuk, hiszen annak 
+is <code>double sin(double)</code> a típusa.</p>
+
+</div>
+</div>
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Összeg, szorzat: akkumuláció</h2>
+</div>
+
+<p>Írjunk függvényt, amely paraméterként kap két egész számot (a és b), és összegzi a két 
+intervallum közötti számokat (beleértve a-t és b-t is).</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+int osszeg(int a, int b) {
+   int szum, i;
+   
+   szum = 0;
+   for (i = a; i &lt;= b; i += 1)
+      szum = szum + i;
+   
+   return szum;
+}</pre>
+
+</div>
+</div>
+
+<p>Alakítsuk át ezt úgy, hogy ne csak összegezni, hanem szorozni is lehessen vele. Ehhez az 
+összeadást ki kell cserélnünk egy akkumuláló műveletre, és természetesen a kezdeti értéket is ki 
+kell cserélnünk egy paraméterre (hiszen 0-nál a szorzat mindig 0 lenne).</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+int akkumulal(int a, int b, int (*akkum)(int, int), int kiindul) {
+   int akk, i;
+   
+   akk = kiindul;
+   for (i = a; i &lt;= b; i += 1)
+      akk = akkum(akk, i);
+   
+   return akk;
+}</pre>
+
+<p>Gondoljunk bele: így olyan összegzések is megvalósíthatóak (pl. kivonás, osztás, 
+négyzetösszeg, stb.), amikre az összegzés függvény megírója eredendően nem is gondolt. A 
+függvény tovább általánosítható lenne, ha az <code>i+=1</code> lépést is egy függvényre 
+cserélnénk le.</p>
+
+</div>
+</div>
+
+<p>Számoljuk ki ezzel a függvénnyel az 1…6 számok összegét és az 1…6 számok szorzatát 
+(faktoriális)!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+int osszegzo(int a, int b) {
+   return a + b;
+}
+
+int szorzo(int a, int b) {
+   return a * b;
+}
+
+int main(void) {
+   printf(&quot;1-tol 6-ig osszeg: %d\n&quot;, akkumulal(1, 6, osszegzo, 0));
+   printf(&quot;1-tol 6-ig szorzat: %d\n&quot;, akkumulal(1, 6, szorzo, 1));
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span><code>double</code>-öket rendező függvény</h2>
+</div>
+
+<p>Írjunk függvényt, amely paraméterként kap egy <code>double</code> elemekből álló tömböt, és 
+rendezi azt! A rendezés szempontja (növekvő, csökkenő, abszolútérték szerint növekvő stb.) is 
+legyen a függvény paramétere!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+/* rendezi a tombot a megadott szempont szerint */
+void double_rendez(double tomb[], int meret, int (*kisebb_e)(double a, double b)) {
+   int i;
+   
+   for (i = 0; i &lt; meret-1; ++i) {
+      int lk = i;
+      int j;
+      double temp;
+      
+      for (j = i+1; j&lt;meret; ++j)
+         if (kisebb_e(tomb[j], tomb[lk]))
+            lk = j;
+      
+      temp = tomb[lk];
+      tomb[lk] = tomb[i];
+      tomb[i] = temp;
+   }
+}
+
+/* igaz, ha a&lt;b */
+int kisebb(double a, double b) {
+   return a &lt; b;
+}
+
+/* igaz, ha |a|&lt;|b| */
+int abszolut_kisebb(double a, double b) {
+   return fabs(a) &lt; fabs(b);
+}
+
+int main(void) {
+   int i;
+   double tomb[10] = {1.2, 5.6, 9, -1.4, -6, 5, 9.1, 11, 0, -12};
+   
+   double_rendez(tomb, 10, kisebb);
+   for (i = 0; i &lt; 10; ++i) 
+      printf(&quot;%7.2f&quot;, tomb[i]);
+   printf(&quot;\n&quot;);
+
+   double_rendez(tomb, 10, abszolut_kisebb);
+   for (i = 0; i &lt; 10; ++i) 
+      printf(&quot;%7.2f&quot;, tomb[i]);
+   printf(&quot;\n&quot;);
+
+   return 0;
+}</pre>
+
+<p>A fenti függvények nem követik az <code>strcmp()</code> konvenciót: az összehasonlító 
+függvények nem kompatibilisek azzal. Azonban nincs is erre szükség itt még, hiszen a rendezendő 
+adatok típusa adott.</p>
+
+<p>Gondoljuk meg: szétválasztottuk a rendezés algoritmusát az összehasonlítás
+menetétől. Ennek több előnye van:</p>
+<ul>
+   <li>Külön tudjuk megvalósítani őket.
+   <li>Az összehasonlítás algoritmusa cserélhető anélkül, hogy a rendező
+      algoritmust módosítani kellene.
+   <li>A rendező függvény használója olyan rendezési szempontot is megadhat,
+      amelyre a rendező függvény írója „álmában sem gondolt”.
+</ul>
+
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>A <code>qsort()</code> használata</h2>
+</div>
+
+<p>Írjunk összehasonlító függvényeket a <code>qsort()</code>-hoz, amelyekkel:</p>
+<ul>
+   <li>Egy egészekből álló tömb növekvő sorrendbe rendezhető.
+   <li>Egy sztringekből álló tömb csökkenő sorrendbe rendezhető.
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;string.h&gt;
+
+int integer_osszehasonlito(const void *pelso, const void *pmasodik) {
+    const int *elso = (const int *)pelso;
+    const int *masodik = (const int *)pmasodik;
+
+    if (*elso &lt; *masodik)
+        return -1;
+    if (*elso &gt; *masodik)
+        return 1;
+    return 0;
+}
+
+int sztring_csokkeno(const void *pelso, const void *pmasodik) {
+    /* -1-gyel megszorzom, es akkor csokkenobe lesz rendezve!
+     * a parameterek megforditasa is jo lenne:
+     *    return strcmp(pmasodik, pelso); */
+    return -1*strcmp((const char *) pelso, (const char *) pmasodik);
+}
+
+int main(void) {
+    enum { MERET=15, SZAVAKMERET=5 };
+    /* 5 db, max 19 betus szo */
+    char szavak[SZAVAKMERET][20] = {&quot;mango&quot;, &quot;pomelo&quot;, &quot;papaja&quot;, &quot;grapefruit&quot;, &quot;lime&quot;};
+    int intek[MERET];
+    int i;
+
+    /* veletlen elemek */
+    srand(time(0));
+    for (i = 0; i &lt; MERET; i++)
+        intek[i] = rand()%100;
+
+    /* rendezes es kiiras */
+    /* itt az int-et batran sizeofolhatom */
+    qsort(intek, MERET, sizeof(intek[0]), integer_osszehasonlito);
+    for (i = 0; i &lt; MERET; i++)
+        printf(&quot;%d &quot;, intek[i]);
+    printf(&quot;\n&quot;);
+
+    /* a sztringeket azert sizeofolom, mert a karaktertomb
+       meretere vagyok kivancsi, nem pedig a sztring hosszara! */
+    qsort(szavak, SZAVAKMERET, sizeof(szavak[0]), sztring_csokkeno);
+    for (i = 0; i &lt; SZAVAKMERET; i++)
+        printf(&quot;%s &quot;, szavak[i]);
+    printf(&quot;\n&quot;);
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Saját generikus rendező függvény</h2>
+</div>
+
+<p>Alakítsuk át az előbbi rendezőfüggvényünket úgy (bármelyik algoritmust is választottuk), hogy 
+ne <code>double</code>, hanem tetszőleges elemekkel dolgozzon!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Ehhez a függvénynek <code>void*</code> pointerrel kell átvennie a tömböt (mivel a típusait 
+nem ismeri), és ugyancsak paraméter kell legyen az egyes elemek mérete is. Az elemek cseréje nem 
+végezhető el értékadással, de segítségül hívhatjuk a <code>memcpy</code> függvényt, amely adott 
+méretű memóriaterületet másol. Az „ideiglenes változó” helyébe – amely a háromlépéses cseréhez 
+kell – is egy külön, típus nélküli memóriaterület lép. Mivel ennek mérete függvényparaméter, 
+dinamikusan foglaljuk. A hasonlító függvény is <code>void*</code>-okat kell várjon, nem pedig 
+<code>double</code>-öket. </p>
+
+<pre class="brush: c "  >
+void rendez(void *tomb,
+            int meret, size_t elemmeret,
+            int (*kisebb_e)(void const *pa, void const *pb)) {
+   int i;
+   void *temp;
+   
+   temp = malloc(elemmeret);
+   
+   for (i=0; i&lt;meret-1; ++i) {
+      void *pi = (char*)tomb + i*elemmeret;
+      void *plk = pi;
+      int j;
+      
+      for (j=i+1; j&lt;meret; ++j) {
+         void *pj = (char*) tomb + j*elemmeret;
+         if (kisebb_e(pj, plk))
+            plk=pj;
+      }
+      
+      if (plk != pi) {
+          memcpy(temp, plk, elemmeret); /* temp=lk */
+          memcpy(plk, pi, elemmeret);   /* lk=i */
+          memcpy(pi, temp, elemmeret);  /* i=temp */
+      }
+   }
+   
+   free(temp);
+}</pre>
+
+<p>A teljes program letölthető innen: <a href="gy14/genrend.c">genrend.c</a>.</p>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy14.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

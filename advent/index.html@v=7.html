@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Adventi naptár</title>
+<meta property="og:title" content="InfoC :: Adventi naptár">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="InfoC :: Adventi naptár">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="InfoC :: Adventi naptár">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="../modulz/logo_touch.png">
+<link rel="image_src" href="../modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="../modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="../modulz/style/localfonts.css@v10.css">
+<script src="../modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="../index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="../index.html">Kezdőlap</a>
+<li><a href="../nhf.html">Nagy házi feladat</a>
+<li><a href="../elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="../ea01.html">1. hét: bevezetés</a>
+<li><a href="../ea02.html">2. hét: algoritmusok</a>
+<li><a href="../ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="../ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="../ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="../ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../ea09.html">9. hét: láncolt listák</a>
+<li><a href="../ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="../ea12.html">12. hét: bináris fák</a>
+<li><a href="../ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="../ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="../gy02.html">2. hét: algoritmizálás</a>
+<li><a href="../gy03.html">3. hét: egyszerű programok</a>
+<li><a href="../gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="../gy05.html">5. hét: függvények</a>
+<li><a href="../gy06.html">6. hét: származtatott típusok</a>
+<li><a href="../gy07.html">7. hét: mutatók használata</a>
+<li><a href="../gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="../gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="../gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="../gy13.html">13. hét: bináris fák</a>
+<li><a href="../gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="../lab01.html">1. hét: operációs rendszer</a>
+<li><a href="../lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="../lab03.html">3. hét: egyszerű programok</a>
+<li><a href="../lab04.html">4. hét: tömbök</a>
+<li><a href="../lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="../lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="../lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="../lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="../lab11.html">11. hét: láncolt listák</a>
+<li><a href="../lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="../lab13.html">13. hét: bináris fák</a>
+<li><a href="../lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="../f01.html">1. hét: egyszerű programok</a>
+<li><a href="../f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="../f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="../f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="../f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="../f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../f09.html">9. hét: láncolt listák</a>
+<li><a href="../f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="../f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="../f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="../jegyzet.html">Jegyzet és puska</a>
+<li><a href="../fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="../stilus.html">Kódolási stílus</a>
+<li><a href="../tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="../debugmalloc.html">Debugmalloc</a>
+<li><a href="../mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="../nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="../nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="../nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="../orak.html">SVG óra galéria</a>
+<li><a href="../angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="../turing.html">Mit tud a számítógép?</a>
+<li><a href="../bf.html">BF</a>
+<li><a href="../bitturmix.html">Bitturmix</a>
+<li><a href="../labirintus.html">Labirintusok</a>
+<li><a href="../tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../karakterkodolas.html">Karakterkódolások</a>
+<li><a href="../strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="../internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="../sdl.html">SDL grafika</a>
+<li><a href="../sdl_telepito.html">SDL telepítés</a>
+<li><a href="../fa.html">Fák rajzolása</a>
+<li><a href="../lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="index.html@v=7.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="../mondatelemzo.html">Mondatelemző</a>
+<li><a href="../kifejezesek.html">Kifejezések</a>
+<li><a href="../derivalas.html">Deriválás</a>
+<li><a href="../ast_epit.html">AST: szintaxisfák</a>
+<li><a href="../ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="../ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="../advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<div class="float" style="margin-top: 0.25em; margin-bottom: 0;"><a href="../advent.html">&larr; vissza</a></div>
+<h1 class="eloadascim">Adventi naptár</h1>
+<h2>Dinamikus programozás</h2>
+
+<p>A laboron azt tapasztaltuk, hogy a rekurzióval működő Fibonacci számsor kiszámító program 
+borzalmasan lassú: a negyvenedik szám előállításán már több másodpercet gondolkodik a gép. Ez 
+azonban nem azt jelenti, hogy a rekurzív megvalósítás hibás, azt pedig főleg nem, hogy általában
+a rekurzió lassú lenne.
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="index.html@v=7.html#1">A Fibonacci számsor</a>
+<li><a href="index.html@v=7.html#2">Pénzváltás</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A Fibonacci számsor</h2>
+</div>
+
+<p>Szedjük elő egy kicsit az említett programot! A rekurzív <code>fib()</code> függvény így 
+nézett ki:
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int fib(int n) {
+    if (n&lt;2)
+        return n;
+    else
+        return fib(n-1)+fib(n-2);
+}
+
+int main(void) {
+    int i;
+    
+    for (i=0; i&lt;45; ++i)
+        printf(&quot;fib(%d) = %d\n&quot;, i, fib(i));
+    
+    return 0;
+}</pre>
+
+<p>Ez a nagy számokra a program egyre lassabb lesz. Bár
+minden sorban csak az előző két kiírt szám összegét kellene kiszámolni
+és kiírni, mégis egyre többet kell várni a megjelenő számokra. Ennek
+egyik oka az, hogy a kiírt nagy számok tulajdonképpen
+nullák és egyek összegeként állnak elő. Vegyük észre: csak n=0 és n=1
+esetén tér vissza a függvény konkrét értékkel, minden más érték
+számítás eredményeként jön ki:
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void fibkiir(int n) {
+    if (n&lt;2)
+        printf(&quot;%d&quot;, n);
+    else {
+        fibkiir(n-1);
+        printf(&quot;+&quot;);
+        fibkiir(n-2);
+    }
+}
+
+int main(void) {
+    fibkiir(10);
+    
+    return 0;
+}</pre>
+
+<p>Másik oka pedig – vagy ugyanez az ok, másképpen megközelítve – 
+az, hogy nem használja fel az algoritmus a már kiszámolt 
+részeredményeket. Amikor a kérdés <code>fib(45)</code>, akkor <code> 
+fib(44)</code> és <code>fib(43)</code> újra kiszámolódik, hiába 
+történt meg ez a kettő éppen az előbb. Sőt <code>fib(44)</code>-hez 
+kell <code>fib(43)</code> is, úgyhogy a <code>fib(43)</code> értéke
+is többször kérdés, sőt kisebb számokra még rosszabb a helyzet.</p>
+
+<img class="kozep" style="width: 36em;" src="advent7-fib.svg">
+
+<p>Vagyis az <em>oszd meg és uralkodj</em> módszerünk, miszerint a 
+<code>fib(45)</code> problémát egyszerűbb, <code>fib(44)</code> és 
+<code>fib(43)</code> részfeladatokra bontottuk, itt nem túl 
+hatékony. Mégpedig azért nem, mert a részfeladatoknak <em>közös 
+részfeladatai</em> is vannak, és ezt nem veszi figyelembe.</p>
+
+<p>Mi itt a az ötlet? Megtehetjük azt például, hogy <em>eltároljuk 
+</em> a már kiszámolt értékeket. Nem csak azért, mert esetleg újra 
+kérdezhetik ugyanazt (és a számsor 44. tagja mindig ugyanannyi 
+lesz), hanem mert a rekurzió során a függvény magától is mindig 
+ugyanazokat a számokat kérdezi. A tároló itt lehet egyszerűen egy 
+tömb, amely kezdetben 0 értékekkel van kitöltve. Természetesen ez 
+nem lehet a függvény automatikus, lokális változója, hiszen akkor 
+elveszne az értéke. Globális kell legyen, vagy ami a legjobb: egy 
+statikus lokális.</p>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+#include &lt;assert.h&gt;
+
+int fib(int n) {
+    /* statikus: megőrzi az értékét! */
+    static int fibszam[46] = {0};
+    
+    /* ha triviális */
+    if (n&lt;2)
+        return n;
+    /* a tároló véges, bár lehetne mallocolni */
+    assert(n&lt;46);
+    /* amúgy már kiszámoltuk? ha nem, számoljuk ki! */
+    if (fibszam[n]==0)
+        fibszam[n] = fib(n-1)+fib(n-2); // eltárolódik!
+    /* adjuk vissza */
+    return fibszam[n];
+}
+
+int main(void) {
+    int i;
+    
+    for (i=0; i&lt;45; ++i)
+        printf(&quot;fib(%d) = %d\n&quot;, i, fib(i));
+    
+    return 0;
+}</pre>
+
+<p>A lényeg a jelölt sorban van: amit egyszer már kérdeztek a függvénytől,
+az arra kapott választ eltárolja a tömbben, és legközelebb már számítás
+nélkül visszatér vele. Látszik, hogy ez így ugyanolyan gyors, mint az iteratív
+megoldás.</p>
+
+<p>A vázolt technikát <em>dinamikus programozásnak</em> nevezik 
+(dynamic programming – memoization, tabulation). Ezt az „elágazó” 
+problémáknál, ahol a részfeladatok közösek, gyakran alkalmazzák, 
+mivel legtöbbször egyszerűbb a részfeladatok eredményeit egy 
+táblázatban eltárolni, és onnan kikeresni, mintsem egy új, sokkal 
+bonyolultabb algoritmust tervezni a megoldásra, amely más úton 
+gondolkozik, és elkerüli a részfeladatok ismétlését.</p>
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Pénzváltás</h2>
+</div>
+
+<p>Nézzük meg újra a rekurziós gyak pénzváltós feladatát is ilyen
+szempontból! Ott
+az volt a kérdés, hányféleképpen fizethetünk ki 100 forintot úgy,
+hogy 5, 10, 20, 50 forintosokat használunk. Ha egy kicsit átírjuk
+ezt, hogy 2000 forintot kelljen fizetni, 100-asokkal és 200-asokkal
+is, máris látjuk, hogy nagyon lassú a program:</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+ 
+int penzvalto(int mennyit, int *fajtak, int hanyadiktol) {
+    if (mennyit==0)
+        return 1;
+    if (fajtak[hanyadiktol]==-1 || mennyit&lt;0)
+        return 0;
+ 
+    return penzvalto(mennyit-fajtak[hanyadiktol], fajtak, hanyadiktol)
+           + penzvalto(mennyit, fajtak, hanyadiktol+1);
+}
+ 
+int main(void) {
+    int fajtak[]={5, 10, 20, 50, 100, 200, -1};
+    
+    printf(&quot;Összesen: %d lehetőség\n&quot;, penzvalto(2000, fajtak, 0));
+    
+    return 0;
+}</pre>
+
+<p>Ennek ugyanaz a gondja, mint az első, fibonaccis programnak. Egy csomóféle
+úton eljut oda, hogy már csak a maradék 100 forint a kérdés, és újra meg újra
+megoldja ugyanezt a részfeladatot. A válasz itt is mindig ugyanaz, úgyhogy
+gyorsabb lenne eltárolva!
+
+<p>Tekintsük fixnek a használható pénzérméket: ilyenkor a függvénynek 
+csak két paramétere marad, hogy mennyit kell fizetni, és hogy a 
+használható érmék közül hányfélével dolgozhat még. A kiszámolt 
+válaszokat betehetnénk pl. egy láncolt listába, vagy valami más, 
+trükkösebb adatszerkezetbe is. Az egyszerűség kedvéért maradjunk egy 
+egyszerű tömbnél: a <code>megoldasok[][]</code> kétdimenziós tömb 
+tárolja azt, hogy <code>mennyit</code> pénzt <code>hanyadiktol</code>
+fajtákkal hányféleképpen lehet kifizetni: 
+<code>megoldasok[mennyit/5][hanyadiktol]</code>. (Azért /5, mert 
+úgyis 5 forint a legkisebb egység.)</p>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int fajtak[]={5, 10, 20, 50, 100, 200};
+ 
+int penzvalto(int mennyit, int hanyadiktol) {
+    /* megoldasok[mennyit/5][hanyadiktol] */
+    static int megoldasok[2000/5+1][6];
+    static int elso = 1;
+
+    /* triviális megoldások */
+    if (mennyit==0)
+        return 1;
+    if (hanyadiktol==6 || mennyit&lt;0)
+        return 0;
+
+    /* első futtatáskor inicializáljuk a tömböt csupa -1-re,
+     * mert itt nem jó a 0-s kezdeti érték */
+    if (elso) {
+        int m, h;
+        for (m = 0; m&lt;2000/5+1; m+=1)
+            for (h = 0; h&lt;6; h+=1)
+                megoldasok[m][h] = -1;
+        elso = 0;
+    }
+    
+    if (megoldasok[mennyit/5][hanyadiktol]==-1) // kiszámoltuk már ezt?
+        megoldasok[mennyit/5][hanyadiktol] =
+            penzvalto(mennyit-fajtak[hanyadiktol], hanyadiktol)
+             + penzvalto(mennyit, hanyadiktol+1);
+ 
+    return megoldasok[mennyit/5][hanyadiktol];
+}
+ 
+int main(void) {
+    printf(&quot;Összesen: %d lehetőség\n&quot;, penzvalto(2000, 0));
+    
+    return 0;
+}</pre>
+
+<p>Látszik, hogy az átalakítás szinte triviális, és az eredeti 
+algoritmus is változatlan formában szerepelhet a programban. Ez más 
+algoritmusoknál sincs másképp: csak létre kell hozni egy (kérdés;válasz) 
+elemeket tartozó táblázatot, és a számítás előtt mindig megnézni, 
+hogy kiszámoltuk-e már valamikor azt, ami éppen most is a kérdés.</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="index.html@v=7.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="../index.html"><img src="../modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="../index.html">főoldal</a> · <a href="../elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

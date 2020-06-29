@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 12. hét: láncolt listák II.</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 12. hét: láncolt listák II.">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Láncolt listák használata algoritmusokban. Fájlkezelés.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Láncolt listák használata algoritmusokban. Fájlkezelés.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy12.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyaklista2" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 12. hét: láncolt listák II.</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Láncolt listák használata algoritmusokban. Fájlkezelés.</p>
+</div>
+
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>A <a href="ea09.html#ealista">listákról szóló előadás</a> anyagának megértése.
+    <li>A <a href="gy11.html#gyaklista">listákról szóló első gyakorlat</a> átismétlése.
+</ul>
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy12.html#1">A teljes szöveg visszafelé</a>
+<li><a href="gy12.html#2">Listák és rekurzió</a>
+<li><a href="gy12.html#3">A lista fájlba írása</a>
+<li><a href="gy12.html#4">Fésűs lista</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A teljes szöveg visszafelé</h2>
+</div>
+
+<p>Az alábbi program beolvas egy szöveget fájl vége jelig, majd kiírja azt visszafelé. 
+Elmélkedjünk rajta, miért!</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void forditva_kiir(void) {
+    int c = getchar();
+    if (c != EOF) {
+        forditva_kiir();
+        putchar(c);
+    }
+}
+
+
+int main(void) {
+    forditva_kiir();
+    return 0;
+}</pre>
+
+<p>Írjunk meg ezt a programot úgy, hogy nem használunk rekurziót, hanem magunk építünk vermet!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A verem tároló lényege, hogy ha beleteszünk egy adatot, az mindig a tetejére kerül, és ha 
+kiveszünk belőle egyet, akkor azt mindig a tetejéről vesszük ki. Amelyik legutoljára bekerült, 
+az jön ki elsőnek (LIFO, last in, first out). Vermet egyszeresen láncolt listából nagyon könnyű 
+csinálni. Ha mindig a lista elejére szúrjuk az új elemet, és mindig a lista elejéről vesszük el, 
+ha ki kell venni egyet, akkor pont vermet kapunk. (Azért érdemes a lista elejét, és nem a végét 
+kezelni ilyen módon, mivel a lista eleje mutató így épp arra mutat, amire kell, nem kell 
+végiglépkedni a lista végéig.)</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+typedef struct Verem {
+    char karakter;
+    struct Verem *alatta;
+} Verem;
+
+
+void verembe(Verem **v, char c) {
+    Verem *uj = (Verem *) malloc(sizeof(Verem));
+    uj-&gt;karakter = c;
+    uj-&gt;alatta = *v;             /* alatta az eddigi legfelso lesz */
+    *v = uj;                     /* mostantol ez van a tetejen */
+}
+
+
+char verembol(Verem **v) {
+    Verem *elso = *v;            /* az elsot fogjuk eldobni */
+    char adat = elso-&gt;karakter;  /* kimentjuk a szamot belole */
+    *v = elso-&gt;alatta;           /* a masodik lesz az elso */
+    free(elso);
+    return adat;
+}
+
+
+int verem_ures(Verem **v) {
+    return *v == NULL;
+}
+
+
+int main(void) {
+    Verem *v = NULL;
+    int c;
+    
+    printf(&quot;Kedves draga jo felhasznalo! Irj egy tetszolegesen hosszu szoveget, EOF-ig!\n&quot;);
+    while ((c = getchar()) != EOF)
+        verembe(&amp;v, c);
+    
+    printf(&quot;Kedves draga jo felhasznalo! A szoveged visszafele:\n&quot;);
+    while (!verem_ures(&amp;v))
+        putchar(verembol(&amp;v));
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Listák és rekurzió</h2>
+</div>
+
+<p>Egy láncolt lista egy első elemből, és egy abból kiinduló láncolt listából áll. Ezen gondolat 
+alapján írjunk függvényeket, amelyek:</p>
+
+<ul>
+    <li>Kiírják az egyszeresen láncolt listában tárolt adatokat.
+    <li>Kiírják az egyszeresen láncolt lista adatait <em>visszafelé</em>.
+    <li>Felszabadítják a listát.
+</ul>
+
+<p>Mikor érdemes használni a rekurziót a listáknál? Mikor nem?</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+
+typedef struct Lista {
+   int adat;
+   struct Lista *kov;
+} Lista;
+
+
+/* hogy legyen teszt adat */
+Lista *lista_letrehoz(void) {
+    Lista *l = NULL;
+    int i;
+    for (i = 0; i &lt; 20; ++i) {
+        Lista* u = (Lista*)malloc(sizeof(Lista));
+        u-&gt;kov = l;
+        u-&gt;adat = rand() % 100;
+        l = u;
+    }
+    return l;
+}
+
+
+/* kiírja a listát előrefelé. a lista a legelső elemből,
+ * és a többi részéből áll (ami úgyszintén egy lista).
+ * üres listánál nem kell csinálni semmit. */
+void lista_kiir_elore(Lista *l) {
+    if (l == NULL)
+        return;
+    printf(&quot;%d &quot;, l-&gt;adat);
+    lista_kiir_elore(l-&gt;kov);
+}
+
+
+/* kiírja a listát visszafelé. az előző függvényhez
+ * képest csak megcseréltük a két hátsó sort: előbb a
+ * lista &quot;többi részét&quot; írjuk ki, csak utána az első elemet.
+ * mivel ezt nem csak az első elemnél, hanem az összesnél így
+ * csináljuk, ezért nem csak az első elem kerül a végére,
+ * hanem az egész megfordul. */
+void lista_kiir_hatra(Lista *l) {
+    if (l == NULL)
+        return;
+    lista_kiir_hatra(l-&gt;kov);
+    printf(&quot;%d &quot;, l-&gt;adat);
+}
+
+
+/* felszabadítjuk a listát. előbb fel kell szabadítani
+ * az ebből az elemből kiinduló listát, utána pedig ezt
+ * az elemet. az ötlet hasonló, mint a hátrafelé kiírásnál. */
+void lista_felszabadit(Lista *l) {
+    if (l == NULL)
+        return;
+    lista_felszabadit(l-&gt;kov);
+    free(l);
+}
+
+
+int main(void) {
+    Lista *l = lista_letrehoz();
+    
+    lista_kiir_elore(l); printf(&quot;\n&quot;);
+    lista_kiir_hatra(l); printf(&quot;\n&quot;);
+    lista_felszabadit(l); 
+    
+    return 0;
+}</pre>
+<p>A rekurziót csak a hátrafelé kiírásnál érdemes alkalmazni. Az előrefelé történő kiírás és a 
+felszabadítás könnyedén megoldható ciklussal is, mivel a pointerek amúgy is előrefelé mutatnak a 
+listában. Ilyenkor nem érdemes egy O(n) memóriaigényű megoldást választani az O(1) memóriaigényű 
+helyett!</p>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A lista fájlba írása</h2>
+</div>
+
+<p>Definiáljunk legfeljebb 50 betűs szavak tárolására alkalmas, egyszeresen láncolt listát!</p>
+
+<p>Írjunk függvényt, amely egy paraméterként kapott listát egy szintén paraméterként kapott nevű
+szövegfájlba ír! Legyen minden sorban egy szó!</p>
+
+<p>Írjunk függvényt, amely egy fájlnevet kap paraméterként, visszatérési értéke pedig a fájlból 
+beolvasott szavakat tartalmazó lista!</p>
+
+<p>Figyeljünk arra, hogy a fájlba kiírt szavak sorrendje visszaolvasva ne forduljon meg!</p>
+
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+ 
+ 
+typedef struct Lista {
+   char szo[50+1];
+   struct Lista *kov;
+} Lista;
+
+
+/* az első paraméterként kapott listát a második paraméterként
+ * kapott nevű szövegfájlba írja. */
+void fajlba_ir(Lista *l, char const *fajlnev) {
+    FILE *fp;
+    Lista *iter;
+    
+    fp = fopen(fajlnev, &quot;wt&quot;);    /* write, text */
+    if (fp == NULL) {
+        perror(&quot;Nem sikerult fajlba menteni a listat&quot;);
+        return;
+    }
+    for (iter = l; iter != NULL; iter = iter-&gt;kov)
+        fprintf(fp, &quot;%s\n&quot;, iter-&gt;szo);
+    fclose(fp);
+}
+
+
+/* a paraméterként kapott nevű fájlból beolvassa a szavak
+ * listáját. a visszatérési érték az újonnan foglalt lista,
+ * amelynek elemeit a hívónak kell majd felszabadítania. */
+Lista *fajlbol_olvas(char const *fajlnev) {
+    FILE *fp;
+    Lista *eleje = NULL, *utolso = NULL;
+    char szo[50+1];
+    
+    fp = fopen(fajlnev, &quot;rt&quot;);  /* read, text */
+    if (fp == NULL) {
+        perror(&quot;Nem sikerult megnyitni a fajlt&quot;);
+        return NULL;
+    }
+    while (fscanf(fp, &quot;%s&quot;, szo) == 1) {
+        Lista *uj = (Lista *) malloc(sizeof(Lista));
+        strcpy(uj-&gt;szo, szo);
+        uj-&gt;kov = NULL;
+        if (utolso == NULL)
+            eleje = uj;
+        else
+            utolso-&gt;kov = uj;
+        /* mindig megjegyzi, melyik az utolsó elem,
+         * mert a következőt oda kell majd hozzáfázni. */
+        utolso = uj;
+    }
+    fclose(fp);
+    return eleje;
+}
+ 
+
+/* teszteléshez. */
+void lista_kiir(Lista *l) {
+    Lista *iter;
+    for (iter = l; iter != NULL; iter = iter-&gt;kov)
+        printf(&quot;%s &quot;, iter-&gt;szo);
+    printf(&quot;\n&quot;);
+}
+
+
+/* felszabadítjuk a listát. előbb fel kell szabadítani
+ * az ebből az elemből kiinduló listát, utána pedig ezt
+ * az elemet. az ötlet hasonló, mint a hátrafelé kiírásnál. */
+void lista_felszabadit(Lista *l) {
+    if (l == NULL)
+        return;
+    lista_felszabadit(l-&gt;kov);
+    free(l);
+}
+ 
+ 
+int main(void) {
+    Lista *eredeti, *fajlbol;
+    
+    eredeti = (Lista *) malloc(sizeof(Lista));
+    strcpy(eredeti-&gt;szo, &quot;alma&quot;);
+    eredeti-&gt;kov = (Lista *) malloc(sizeof(Lista));
+    strcpy(eredeti-&gt;kov-&gt;szo, &quot;barack&quot;);
+    eredeti-&gt;kov-&gt;kov = (Lista *) malloc(sizeof(Lista));
+    strcpy(eredeti-&gt;kov-&gt;kov-&gt;szo, &quot;korte&quot;);
+    eredeti-&gt;kov-&gt;kov-&gt;kov = NULL;
+    
+    lista_kiir(eredeti);
+    
+    fajlba_ir(eredeti, &quot;szavak.txt&quot;);
+    fajlbol = fajlbol_olvas(&quot;szavak.txt&quot;);
+    lista_kiir(fajlbol);
+    
+    lista_felszabadit(eredeti);
+    lista_felszabadit(fajlbol);
+    
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Fésűs lista</h2>
+</div>
+
+<p>Írjunk programot, amelyik tankörszámokat, NEPTUN kódokat, neveket és átlagokat olvas be egy 
+fájlból, és eltárolja az így kapott névsorokat! A fájl egy sora így néz ki:</p>
+
+<pre class="screenshot">
+13 MZPERX 5.1 Köb Üki
+</pre>
+
+<p>Ez azt jelenti, hogy Köb Üki a 13-as tankörbe jár, MZPERX a kódja és 5.1-es az 
+ösztöndíjátlaga.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>A megoldásban egy fésűs listát kell alkalmazni: kívül a tankörök listája, és mindegyik tankör 
+tartalmaz egy névsort (hallgatók listája).</p>
+<p>Minden beolvasott hallgatónál előbb meg kell keresni a tankört (vagy létrehozni, ha még 
+nincs), és utána abba a listába betenni. Mivel a feladat nem határozza meg a sorrendet, 
+egyszerűen az elejére szúrjuk be az adatokat.</p>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+/* egy hallgato adatai - lancolt listaban */
+typedef struct Hallgato {
+    char neptun[6+1];       /* a neptun kodja, max 6 */
+    char nev[30+1];         /* a neve, max 30 */
+    double atlag;           /* az atlaga */
+    struct Hallgato *kov;
+} Hallgato;
+
+
+/* egy tankor adatai: egy nevsor */
+typedef struct Tankor {
+    int szam;               /* sorszama */
+    Hallgato *nevsor;       /* nevek */
+    struct Tankor *kov;
+} Tankor;
+
+
+/* beolvassa a megadott nevu fajlbol az adatokat.
+ * visszater egy új Tankor listaval. */
+Tankor *tklista_beolvas(char const *fajlnev) {
+    Tankor *tklista = NULL; /* ez lesz a kimenet */
+    Hallgato temp;          /* a fajlbol olvasashoz */
+    FILE *fp;
+    int tk;
+    
+    fp = fopen(fajlnev, &quot;rt&quot;);
+    if (fp == NULL) {
+        perror(fajlnev);    /* igy a fajl neve is benne lesz a hibauzenetben */
+        return NULL;
+    }
+    /* %[^\n] - sztring enterig */
+    while (fscanf(fp, &quot;%d %s %lf %[^\n]&quot;, &amp;tk,
+            temp.neptun, &amp;temp.atlag, temp.nev)==4) {
+        Tankor *iter;       /* tankorlista bejarashoz */
+        Hallgato *ujh;      /* uj hallgato */
+        
+        for (iter=tklista; iter!=NULL &amp;&amp; iter-&gt;szam!=tk; iter=iter-&gt;kov)
+            ;   /* ures, csak keres */
+        if (iter==NULL) {   /* ha null, nem lett meg, uj kell */
+            iter = (Tankor*) malloc(sizeof(Tankor));
+            iter-&gt;szam = tk;
+            iter-&gt;kov = tklista;
+            iter-&gt;nevsor = NULL;
+            tklista = iter; /* elejere */
+        }
+        ujh = (Hallgato*) malloc(sizeof(Hallgato));
+        *ujh = temp;        /* minden adatot bemasolunk! */
+        ujh-&gt;kov = iter-&gt;nevsor;
+        iter-&gt;nevsor = ujh; /* elejere */
+    }
+    return tklista;
+}
+
+
+/* kilistazza a tankort es a nevsorokat. */
+void tklista_listaz(Tankor *tklista) {
+    Tankor *tkiter;         /* tankorok iteratora */
+    Hallgato *hgiter;       /* hallgatok iteratora */
+    
+    for (tkiter = tklista; tkiter!=NULL; tkiter=tkiter-&gt;kov) {
+        printf(&quot;%2d. tankor -- \n&quot;, tkiter-&gt;szam);
+        for (hgiter = tkiter-&gt;nevsor; hgiter!=NULL; hgiter=hgiter-&gt;kov)
+            printf(&quot;%6s %-30s %g\n&quot;, hgiter-&gt;neptun, hgiter-&gt;nev, hgiter-&gt;atlag);
+    }
+}
+
+
+void tklista_felszabadit(Tankor *tklista) {
+    while (tklista != NULL) {
+        Tankor *kov = tklista-&gt;kov;     /* kimentjuk */
+        
+        Hallgato *nevsor = tklista-&gt;nevsor;
+        while (nevsor != NULL) {
+            Hallgato *kov = nevsor-&gt;kov;   /* kimentjuk */
+            free(nevsor);
+            nevsor = kov;
+        }
+        
+        free(tklista);
+        tklista = kov;
+    }
+}
+
+
+int main(void) {
+    Tankor *tklista;        /* az osszes adat listaja */
+    
+    tklista = tklista_beolvas(&quot;nevek.txt&quot;);
+    tklista_listaz(tklista);
+    tklista_felszabadit(tklista);
+    
+    return 0;
+}</pre>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy12.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

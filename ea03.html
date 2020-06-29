@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Programozási tételek</title>
+<meta property="og:title" content="InfoC :: Programozási tételek">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Programozási tételek. Sorozatok és tömbök kezelése.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Programozási tételek. Sorozatok és tömbök kezelése.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea03.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="eatetelekestombok" class="namer"></a>
+<h1 class="eloadascim">Programozási tételek</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.21</p>
+<p class="kivonat">Programozási tételek. Sorozatok és tömbök kezelése.</p>
+</div>
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea03.html#1">Emlékeztető: feladatok és eszközök</a>
+<li><a href="ea03.html#2">Az állásinterjús kérdés: fizz buzz</a>
+<li><a href="ea03.html#3">Fizz buzz: 3-mal és 5-tel is</a>
+<li><a href="ea03.html#4"><em>Programozási tételek</em></a>
+<li><a href="ea03.html#5">Sorozatok és tételek</a>
+<li><a href="ea03.html#6">Összegzés tétele</a>
+<li><a href="ea03.html#7">Összegzés? Faktoriális!</a>
+<li><a href="ea03.html#8">Számlálás tétele: osztók száma</a>
+<li><a href="ea03.html#9">A karakter típus – feladat</a>
+<li><a href="ea03.html#10">A karakterek kezelése C-ben</a>
+<li><a href="ea03.html#11">Számlálás tétele: „e” és „E” betűk</a>
+<li><a href="ea03.html#12">Szélsőérték keresése: a leg…</a>
+<li><a href="ea03.html#13">Lineáris keresés</a>
+<li><a href="ea03.html#14">A logikai típus C-ben</a>
+<li><a href="ea03.html#15">Lineáris keresés: prímszám-e (C kód)</a>
+<li><a href="ea03.html#16">Tételek kombinációja: a klasszikus példa</a>
+<li><a href="ea03.html#17"><em>Tömbök</em></a>
+<li><a href="ea03.html#18">Tíz darab szám</a>
+<li><a href="ea03.html#19">A tömb</a>
+<li><a href="ea03.html#20">A tömbök kezelése I. – hogyan</a>
+<li><a href="ea03.html#21">A tömbök kezelése II. – hogyan ne</a>
+<li><a href="ea03.html#22">Tíz darab szám – és fordítva</a>
+<li><a href="ea03.html#23">Algoritmusok megvalósítása tömbökön</a>
+<li><a href="ea03.html#24">Tételek: kiválogatás két tömbbe</a>
+<li><a href="ea03.html#25">Tömbök vs. nem tömbök</a>
+<li><a href="ea03.html#26">Az álvéletlenszámok</a>
+<li><a href="ea03.html#27">Az adatszerkezet</a>
+<li><a href="ea03.html#28">Kockadobások összege</a>
+<li><a href="ea03.html#29"><em>Programozási hibák</em></a>
+<li><a href="ea03.html#30">Kontraszt</a>
+<li><a href="ea03.html#31">A fordítók figyelmeztetései</a>
+<li><a href="ea03.html#32">Néhány szó a kezdeti értékekről</a>
+<li><a href="ea03.html#33">Tömbök túlindexelése</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Emlékeztető: feladatok és eszközök</h2>
+</div>
+
+<div class="columns">
+<div>
+<h3>Szekvencia</h3>
+<pre class="brush: c "  >
+printf(&quot;Mi a szám? &quot;);
+scanf(&quot;%d&quot;, &amp;a);
+a = a*a;
+printf(&quot;Négyzete: %d&quot;, a);</pre>
+<h3>Elágazás</h3>
+<pre class="brush: c "  >
+if (szam &gt; 0)
+    printf(&quot;pozitív&quot;);
+else
+    printf(&quot;nem pozitív&quot;);</pre>
+<h3>Ciklus</h3>
+<pre class="brush: c "  >
+for (i = 1; i &lt;= 10; i = i+1)
+   printf(&quot;i = %d\n&quot;, i);</pre>
+</div>
+<div>
+
+<h3>Algoritmus</h3>
+<ul>
+   <li>Programozó: <em>algoritmust tervez</em> a feladat megoldására
+   <li><em>Többé-kevésbé általános</em>
+   <li>Véges számú lépésben fut
+</ul>
+
+<br class="smallskip">
+
+<h3>Vezérlési szerkezetek</h3>
+<ul>
+   <li>Számítási folyamat leírása: mi a lépések sorrendje
+   <li>Már <em>ismeritek a működést,</em> sejtitek, mi lesz az eredmény
+</ul>
+
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>Példák az általánosság fogalmához:</p>
+<ul>
+   <li><em>Prímszámok:</em> szám &rarr; igaz/hamis. Első 100 prímet tudja? Jó, de nem elég általános. Osztók próbálgatása: ez jobb megoldás!
+   <li><em>Böngészőprogram:</em> leíró kód &rarr; megjelenített oldal. Bemenet: szöveg, színek, margók, betűméretek, … Kimenet: a formázott oldal képe.
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Az állásinterjús kérdés: fizz buzz</h2>
+</div>
+
+<p class="csakdoksi megjegyzes">Az alábbi feladatot gyakran állásinterjúkon is feladják, és meglepő, hogy mennyiszer elrontják a jelentkezők. (Lásd
+<a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">itt</a> és
+<a href="http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/">itt</a>.)
+Hogyan függenek össze a feltételek? Hogyan kell egymásba tenni a vezérlési szerkezeteket?
+Jó-e az, ha leírjuk a három vizsgálatot (3-mal, 5-tel, mindkettővel), mindenhova közé <code>else</code>-t téve?
+Nem lenne jó itt felsorolni az összes rossz megoldást, és megmagyarázni mindegyikről, hogy mi 
+a bajuk – az egy egyszerű nyomkövetéssel észrevehető. Mindenki kipróbálhatja magának!</p>
+
+<pre class="screenshot float" style="clear: none">
+fizz
+buzz
+11
+fizz
+13
+14
+fizzbuzz
+16
+</pre>
+<pre class="screenshot float" style="clear: none">
+1
+2
+fizz&nbsp;&nbsp;&nbsp;&nbsp;
+4
+buzz
+fizz
+7
+8
+</pre>
+
+<h3>Fizz buzz: a feladat</h3>
+
+<p>Mondjuk sorban a számokat, de ha</p>
+<ul>
+    <li>3 többszöröse, a szám helyett: „fizz”
+    <li>5 többszöröse, akkor „buzz”
+    <li>mindkettőé, akkor „fizzbuzz”
+</ul>
+
+<br class="smallskip">
+
+<h3>Az oszthatóság vizsgálata</h3>
+<div class="sticky csakdoksi" style="clear: right;"><span style="font-size: 2em">==</span><br>egyenlő-e</div>
+<div class="sticky csakdoksi"><span style="font-size: 2em">%</span><br>maradék</div>
+
+<pre class="brush: cbub "  >
+/* osztható? a maradék nulla? */
+if (szam % 3 == 0)
+    printf(&quot;fizz\n&quot;);</pre>
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Fizz buzz: 3-mal és 5-tel is</h2>
+</div>
+
+<div class="sticky"><span style="font-size: 2em">&amp;&amp;</span><br>„és”: mindkét<br>feltétel teljesül</div>
+<pre class="brush: cbub "  >
+/* 3-mal és 5-tel is osztható */
+if (szam % 3 == 0 &amp;&amp; szam % 5 == 0)
+    printf(&quot;fizzbuzz\n&quot;);</pre>
+
+<p><strong>Vigyázat!</strong> Melyik feltétel is teljesül 15-nél???</p>
+
+<br class="smallskip">
+
+<div class="columns">
+<div><img class="kozep" src="ea03/fizzbuzzkarnaugh.svg" style="height: 8em;" alt="A fizzbuzz probléma Karnaugh-táblája"></div>
+<div><img class="kozep" src="ea03/eskapcsolat.svg" style="height: 8em;" alt="Az „és” kapcsolat"></div>
+</div>
+
+<p class="csakdoksi">Azért kell vigyázni, mert az egyes kiírások (fizz, buzz, fizzbuzz, szám) feltételei átfedik egymást. Ha egy 
+szám 3-mal és 5-tel is osztható, akkor igaz az a kijelentés is, hogy 5-tel osztható. A feltételek nem zárják ki egymást! Így a 
+programban két lehetőségünk van: vagy leírjuk azokat a feltételeket, amelyek teljesen kizárják egymást (pl. 3-mal és 5-tel is 
+osztható; 3-mal igen, de 5-tel nem osztható stb.), vagy olyan vezérlési szerkezetet írunk, amely figyelembe veszi a 
+halmaz–részhalmaz kapcsolatokat. Az utóbbi esetben az sem mindegy, hogy az elágazásokban melyik feltételt vizsgáljuk előbb. Ha a 
+két oszthatóság együtt nem teljesül, még mindig lehet, hogy külön-külön valamelyik igen!</p>
+
+<br class="smallskip">
+
+<div class="kozep">
+    <button data-diapopup="fizzbuzzstruktid">struktogram</button>
+    <button data-diapopup="fizzbuzzkodid">C kód</button>
+</div>
+
+<p class="csakdoksi">Az utóbbi elven működő megoldás:</p>
+
+<div id="fizzbuzzstruktid">
+    <img class="kozep" src="ea03/fizzbuzzdontes.svg" style="width: 20em;" alt="Fizz buzz döntések struktogramja">
+</div>
+
+<pre class="brush: c "   id="fizzbuzzkodid">
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int szam;
+
+   for (szam = 1; szam &lt;= 20; szam = szam+1)
+      if (szam % 3 == 0 &amp;&amp; szam % 5 == 0)
+         printf(&quot;fizzbuzz\n&quot;);
+      else
+         if (szam % 3 == 0)
+            printf(&quot;fizz\n&quot;);
+         else
+            if (szam % 5 == 0)
+               printf(&quot;buzz\n&quot;);
+            else
+               printf(&quot;%d\n&quot;, szam);
+
+   return 0;
+}</pre>
+
+<div class="csakdoksi">
+<p>Néhány C nyelvtani apróság a fenti programmal kapcsolatban. Mivel minden feltétel igaz és hamis ágában csak egy további utasítás van (egy következő <code>if</code> is egy utasításnak 
+számít), ezért itt nem volt szükség az utasítások <code>{}</code> blokkba helyezésére.</p>
+<p>A C szabályai szerint az 
+<code>else</code> utasítás mindig az azt megelőző, <em>legközelebbi</em> <code>if</code>-hez tartozik. Ha ezt módosítani 
+szeretnénk, az természetesen lehetséges, az utasítások megfelelő <code>{}</code> blokkba helyezésével. Így: </p>
+<pre class="brush: c "  >
+if (feltétel1) {
+   if (feltétel2)
+      printf(&quot;akkor, ha feltétel1 és feltétel2&quot;);
+} else
+   printf(&quot;akkor, ha nem feltétel1&quot;);</pre>
+<p>Sokan egyébként az önálló utasításokat is blokkba teszik, és nem
+írnak a fentihez hasonló kódot. Néha hosszabb kicsit úgy, de sok előnye van.</p>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<a id="eatetelek" class="namer"></a>
+<h1 class="diacim">Programozási tételek</h1>
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Sorozatok és tételek</h2>
+</div>
+
+<blockquote>
+<h3>Programozási tételek</h3>
+<p>Általánosságban megfogalmazott algoritmusok; mindig kicsit átalakítjuk
+a konkrét feladatunkhoz.</p>
+</blockquote>
+
+<br class="smallskip">
+
+<h3>Sorozatok (nem a Dallas)</h3>
+<p class="csakdoksi">Ezek a tételek általában sorozatokkal, sok feldolgozandó elemmel
+szoktak foglalkozni, pl. számsorok, névsorok, kirajzolandó alakzatok. A bemutatáshoz
+ezért most választunk egy konkrét példát: számsorokkal fogunk foglalkozni.</p>
+<ul>
+    <li>Számsorok: az elemszám kétféleképpen lehet adott.
+    <li><strong>Adott hosszúságú.</strong> A sorozat hossza előre adott.<br>Pl. 4 elem: 9, 1, 3, 5
+    <li><strong>Végjeles.</strong> A sorozat végét egy speciális érték
+        jelöli.<br>Pl. 9, 1, 3, 5, <strong>-1</strong>
+</ul>
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Összegzés tétele</h2>
+</div>
+
+<h3 class="csakdoksi">Összesítsük a rendeléseket!</h3>
+
+<p>
+Írjunk programot, amely összegzi a fogyasztásunkat: a <em>felhasználótól kapott pozitív, egész számokat összegez.</em>
+Addig, amíg &minus;1-et nem kap.
+</p>
+
+<div class="kozep" style="line-height: 1em; font-size: 2em;">
+2 <img src="ea03/sor.svg" style="height: 1.5em; vertical-align: -0.25em;" alt="sör">
++ 3 <img src="ea03/sor.svg" style="height: 1.5em; vertical-align: -0.25em;" alt="sör">
++ 1 <img src="ea03/sor.svg" style="height: 1.5em; vertical-align: -0.25em;" alt="sör"> = ?
+</div>
+
+<br class="smallskip">
+
+<h3>Összegzés tétele</h3>
+<pre class="editable">
+összeg = <em>0</em>                      <span class="bubble">akkumulátor</span>
+CIKLUS AMÍG <em>van még szám</em>, ADDIG
+    szám = <em>következő elem</em>
+    összeg = összeg <em>+</em> szám
+CIKLUS VÉGE
+</pre>
+
+<div class="kozep">
+<button data-diapopup="vegjelesbeolvasasid">Végjeles sorozat</button>
+<button data-diapopup="osszegzeskodid">Kész program</button>
+</div>
+
+<p class="csakdoksi">Az „akkumulátor” változó az, amelyikben összegyűlik,
+akkumulálódik az eredmény. Ezt először nullázzuk, utána minden feldolgozott
+számot hozzáadjuk. Minden iteráció végén az addig látott számok összegét
+fogja így tartalmazni. Ha esetleg egyszer sem ment volna be a ciklusba,
+akkor pedig nullát.</p>
+
+
+
+
+<div id="vegjelesbeolvasasid">
+<h3>A végjeles sorozat kezelése: a beolvasás helye</h3>
+<ul>
+   <li>A ciklus feltétele ez lesz: AMÍG szám &ne; &minus;1, …
+   <li>Ez a beolvasott számtól függ &rarr; <em>már az első előtt</em> lennie kell beolvasásnak
+   <li>De mindig kell egy új szám &rarr; <em>a cikluson belül is</em>
+</ul>
+
+<br class="smallskip">
+
+<h3>Helyes megoldás (a tétel alkalmazása)</h3>
+<div class="sticky">„az első<br>különleges”</div>
+<pre>
+összeg = 0
+BE: szám              <span class="bubble">első</span>
+CIKLUS AMÍG szám &ne; &minus;1, ADDIG
+   összeg = összeg+szám
+   BE: szám           <span class="bubble">következő (többi)</span>
+CIKLUS VÉGE
+</pre>
+
+<div class="csakdoksi">
+<p>Ez egy nagyon fontos rész. Itt a ciklus működését meg kell érteni! A ciklus egy 
+utasítássorozatot ismétel, amíg egy feltétel fennáll. A ciklusfeltétel ellenőrzi azt, hogy a 
+kapott szám &minus;1-e, vagy nem. Mivel ez egy <em>elöltesztelő ciklus,</em> ezért ennek a 
+feltételnek az ellenőrzése a ciklusba belépés előtt fog megtörténni. Ez azt jelenti, hogy a 
+ciklus első elérésekor már rendelkeznünk kell egy számmal, ami a felhasználótól származik, 
+vagyis kell lennie egy beolvasásnak a ciklus előtt.</p>
+<p>Namármost, ha a feltétel igaz, akkor bekerül a végrehajtás a ciklus belsejébe. Ilyenkor éppen 
+van egy számunk, amit a billentyűzetről kaptunk, és ami nem &minus;1, ezért azt hozzá kell 
+adnunk az összeghez. Itt azt általánosan megfogalmazott összegzés tételét át kell alakítanunk a 
+jelenlegi, konkrét feladatunkhoz, hiszen a ciklustörzs nem egy beolvasással kezdődik. Helyette az 
+összeadással, mert a számunk már megvan.</p>
+<p>A ciklustörzs egy újabb beolvasással végződik. Ami első ránézésre olyan, mintha a következő 
+beolvasott számmal már nem csinálnánk semmit, de ez <em>nincs így!</em> A ciklustörzs 
+végrehajtása után a vezérlés újra a ciklusfeltétel ellenőrzéséhez kerül. Ilyenkor már az <em>új
+</em> számot fogja ellenőrizni a feltétel újbóli kiértékelése – és ha igaznak adódott, vagyis ha 
+a szám nem &minus;1, akkor már az új szám fog az összeghez hozzáadódni. A ciklustörzs végén álló 
+beolvasás a <em>következő iteráció számára</em> készíti elő a terepet. Vegyük észre, hogy 
+ilyenkor a „terep” pont ugyanúgy néz ki, mint az első végrehajtás előtt. Van egy számunk, amit 
+meg kell vizsgálni, hogy &minus;1-e, és ha nem, akkor hozzáadni az összeghez.</p>
+<p>A fentiek végiggondolását kezdő és haladó programozóknak is ajánljuk. Ennek a problémának ez 
+A Szép Megoldása.</p>
+</div>
+</div>
+
+
+
+
+
+
+<div class="sticky csakdoksi"><span style="font-size: 2em">!=</span><br>nem egyenlő</div>
+
+<pre class="brush: cbub "   id="osszegzeskodid">
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int osszeg, szam;
+
+   printf(&quot;Kérem a számokat, -1: vége\n&quot;);
+
+   osszeg = 0;              // elején nulla
+   scanf(&quot;%d&quot;, &amp;szam);
+   while (szam != -1) {
+      osszeg = osszeg+szam; // ha van szám, hozzáad
+      scanf(&quot;%d&quot;, &amp;szam);
+   }
+
+   printf(&quot;Összeg: %d\n&quot;, osszeg);
+
+   return 0;
+}</pre>
+
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Összegzés? Faktoriális!</h2>
+</div>
+
+<p class="csakdoksi">Mi a különbség az összegzés és a faktoriális számítása között
+programozási szempontból? Szinte semmi!</p>
+
+<div class="sticky">C rövidítések:<br>a=a*b  &rarr;  a*=b<br>a=a+b  &rarr;  a+=b<br>stb.</div>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int i, n, szorzat;
+
+   printf(&quot;Melyik szám a faktoriálisa? &quot;);
+   scanf(&quot;%d&quot;, &amp;n);
+
+   szorzat = 1;
+   for (i = 1; i &lt;= n; i += 1)
+      szorzat *= i;       // szorzat = szorzat*i
+
+   printf(&quot;%d faktoriálisa %d\n&quot;, n, szorzat);
+
+   return 0;
+}</pre>
+
+<p>Más a művelet, de <em>ugyanaz az elv:</em> ciklusban akkumulálunk!</p>
+
+<div class="csakdoksi">
+<p>Az összegzés és a faktoriális egymás mellett:</p>
+<div class="columns">
+<div>
+<pre>
+összeg=0
+CIKLUS AMÍG van szám, ADDIG
+    szám = következő elem
+    összeg = összeg+szám
+CIKLUS VÉGE
+</pre>
+</div>
+<div>
+<pre>
+szorzat=<strong>1</strong>
+CIKLUS <strong>i=1-től n-ig</strong>
+
+    szorzat = szorzat<strong>*</strong>i
+CIKLUS VÉGE
+</pre>
+</div>
+</div>
+
+<p>Csak lecseréltük:</p>
+<ul>
+    <li>A kezdeti értéket 0-ról 1-re
+    <li>Az összeadást szorzásra
+    <li>A ciklust számlálásosra (1&rarr;n, ez előre adott hosszúságú sorozat)
+    <li>A számot nem kell beolvasni, hiszen benne van az i változóban
+</ul>
+
+<p>Algoritmikai szempontból a kettő tökéletesen ugyanaz. A <code>szorzat</code> változó tölti be az akkumulátor
+szerepét, az <code>i</code> pedig az iterátor, amelyre a ciklus szervezése épül.</p>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>Számlálás tétele: osztók száma</h2>
+</div>
+
+<h3>Feladat</h3>
+<p>Számoljuk meg, <em>egy számnak hány osztója van</em> (1 és saját maga is.)</p>
+
+<div class="kozep" style="font-size: 1.5em;">
+<strong>1</strong>&nbsp;&nbsp;<strong>2</strong>&nbsp;&nbsp;<strong>3</strong>&nbsp;&nbsp;<strong>4</strong>&nbsp;&nbsp;5&nbsp;&nbsp;<strong>6</strong>&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;&nbsp;9&nbsp;&nbsp;10&nbsp;&nbsp;11&nbsp;&nbsp;<strong>12</strong>
+</div>
+
+<div class="csakdoksi">
+<h3>Megoldás gondolatmenete</h3>
+<ul>
+    <li>Legegyszerűbb: próbálgatás
+    <li>CIKLUS 1-től a számig
+    <li>HA osztható, AKKOR növelünk egy számlálót
+    <li>A számláló kezdeti értéke 0
+</ul>
+<p>Vegyük észre: ez egy előre adott hosszúságú sorozat. 1-től az adott számig kell eljutni.</p>
+</div>
+
+<br class="smallskip">
+
+<h3>Számlálás tétele</h3>
+<pre class="editable">
+db = 0
+CIKLUS AMÍG van még szám, ADDIG
+    szám = <em>következő elem</em>
+    HA <em>igaz a feltétel szám</em>-ra, AKKOR    <span class="bubble">melyikeket?</span>
+        db = db+1
+    FELTÉTEL VÉGE
+CIKLUS VÉGE
+</pre>
+
+<div class="kozep"><button data-diapopup="osztokszamakodid">Megoldás C-ben</button></div>
+
+<div class="csakdoksi">
+<p>További példák</p>
+<ul>
+    <li>Hány páros számot gépeltek be?
+    <li>Hány osztója van egy számnak?
+    <li>Hány „e” betű van benne?
+</ul>
+</div>
+
+<pre class="brush: cbub "   id="osztokszamakodid">
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int szam, oszto, db;
+
+   printf(&quot;Kérem a számot: &quot;);
+   scanf(&quot;%d&quot;, &amp;szam);
+
+   db = 0;               // kezdetben 0
+   for (oszto = 1; oszto &lt;= szam; oszto += 1)
+      if (szam % oszto == 0)
+         db += 1;        // ha ez osztója, +1
+
+   printf(&quot;Összesen %d osztója van.\n&quot;, db);
+
+   return 0;
+}</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<div class="slideheader">
+<h2><span class="oldalszam">9</span>A karakter típus – feladat</h2>
+</div>
+
+<h3>Feladat</h3>
+
+<p>
+Számoljuk m<strong>e</strong>g, a b<strong>e</strong>gép<strong>e</strong>lt szöv<strong>e</strong>gb<strong>e</strong>n hány „<strong>e</strong>” b<strong>e</strong>tű van!
+</p>
+
+
+<br class="smallskip">
+
+<h3>Karakterek (character)</h3>
+
+<pre class="screenshot float sorsurit1" style="letter-spacing: 1px;">
+    0123456789
+
+ 30   ␣!"#$%&amp;'
+ 40 ()*+,-./01
+ 50 23456789:;
+ 60 &lt;=&gt;?@ABCDE
+ 70 FGHIJKLMNO
+ 80 PQRSTUVWXY
+ 90 Z[\]^_`abc
+100 defghijklm
+110 nopqrstuvw
+120 xyz{|}~
+</pre>
+
+<ul>
+   <li class="csakeloadas">Betű &rarr; kódszám <em>hozzárendelés</em>
+   <li class="csakdoksi">Minden betűhöz, számjegyhez, írásjelhez <em>egy kódszámot rendelnek</em>
+   <li>A gépnek szám: <em>belső ábrázolás</em>, nekünk betű: <em>külső ábrázolás</em>
+   <li class="csakeloadas">Többféle kódolás (táblázat) létezik
+   <li class="csakdoksi"><em>Többféle kódolás létezik,</em> gyakori a <em>Unicode,</em> <em>ASCII</em> („eszki”, American Standard Code for Information Interchange)
+   <li>Pl. <code>A</code>&rarr;65, <code>a</code>&rarr;97, <code>!</code>&rarr;33, <code>0</code>&rarr;48, de vezérlő kódok is: sortörés (\n), oldaltörés stb.
+   <li>Nem kell tudni fejből a kódszámokat!
+   <li>A számjegyek és a betűk sorban vannak
+</ul>
+
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span>A karakterek kezelése C-ben</h2>
+</div>
+
+<div class="sticky"><span style="font-size: 2em">'</span><br>aposztróf<br>„apostrophe”</div>
+<pre class="brush: cbub "  >
+char betu;
+betu = 'A';  betu = 65; // ugyanaz!
+
+betu += 1;              // következő: A→B
+
+x = 'c'-'a';            // távolság: 2, mert a→b→c
+
+if (betu &gt;= 'a' &amp;&amp; betu &lt;= 'z') {
+   printf(&quot;Ez egy kisbetű!\n&quot;);
+   betu = betu-'a'+'A';       // nagybetű lesz belőle
+}
+
+printf(&quot;%c betű kódja %d&quot;, 88, 88); // „X betű kódja 88”
+printf(&quot;%c betű kódja %d&quot;, 'X', 'X');
+scanf(&quot;%c&quot;, &amp;betu);</pre>
+
+<p class="csakdoksi">A karakterek a számítógép számára csak számok (belső ábrázolás), nekünk
+jelennek meg betűkként (külső ábrázolás). A szokványos operátorok így használhatók rajtuk,
+és a kódolási táblázat úgy van kialakítva, hogy ezek értelmes dolgot csináljanak: a <code>&lt;</code>
+operátor megmondja, hogy előrébb van-e az egyik betű a másiknál az ábécében, a <code>-</code> operátor
+pedig a távolságot adja meg. A <code>printf()</code> pedig mindkét formát meg tudja jeleníteni:
+a <code>printf %c</code> betűt ír ki, a <code>printf %d</code> pedig ugyanannak a betűnek kiírja
+a karakterkódját.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span>Számlálás tétele: „e” és „E” betűk</h2>
+</div>
+
+<div class="sticky"><span style="font-size: 2em">||</span><br>„vagy”: valamelyik<br>feltétel teljesül<br>(elég az egyik)</div>
+
+<div class="csakdoksi">
+<img class="kozep" src="ea03/vagykapcsolat.svg" style="height: 8em;" alt="A „vagy” kapcsolat">
+</div>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int db, beolv;
+   char c;
+
+   db = 0;
+   beolv = scanf(&quot;%c&quot;, &amp;c);
+   while (beolv == 1) {        // amíg nincs vége
+      if (c == 'e' || c == 'E')
+         db += 1;              // ha megfelel, növeli
+      beolv = scanf(&quot;%c&quot;, &amp;c);
+   }
+   printf(&quot;%d darab e betű volt.\n&quot;, db);
+
+   return 0;
+}</pre>
+
+<div class="csakdoksi">
+
+<p>A programban kihasználjuk azt, hogy a <code>scanf()</code> jelzi a beolvasás sikerességét is.
+A kért karakteren kívül ugyanis ad még egy számot (ezt tárolják el a
+<code>beolv = scanf(...)</code> sorok), amelynek az értéke 1, ha sikerült az egy karakter a
+beolvasása.</p>
+
+<p>A program a két feltételét (kis „e” betű-e, nagy „E” betű-e) VAGY kapcsolatba hozva
+használtuk. Ez azt jelenti, hogy bármelyik megfelel számunkra. Akár kis „e” betű van, akár „E”
+betű, a számlálót megnöveljük. A pongyolán megfogalmazott feladatkiírás szólhatna úgy, hogy
+„számoljuk meg a kicsi és a nagy E betűket” – hiába tudjuk, hogy nem lehet egy betű egyszerre
+kicsi és nagy is.</p>
+
+<p>A programok írásakor a logikai VAGY és logikai ÉS kapcsolatok közötti különbséget mindig
+pontosan át kell gondolni. Azért fontos ez, mert a köznapi beszédben a kettőt sokszor pont
+fordítva használjuk. Például elhangozhat egy tankörben a következő mondat: „Tegye fel a kezét,
+aki Budapesten és Debrecenben született!” Nyilvánvaló, hogy senki nem születhetett egyszerre
+Budapesten ÉS (logikai ÉS) Debrecenben. Egyszerűen csak ezt a gondolatot rövidítjük: „Tegye fel
+a kezét mindenki, aki Budapesten született, <em>és</em> tegye fel a kezét az <em>is,</em> aki
+Debrecenben született!” A matematikailag, és ezért a programjainkban is korrekt változat élő
+beszédben szokatlanul hangzana: „Tegye fel a kezét mindenki, aki <em>vagy</em> Budapesten,
+<em>vagy</em> Debrecenben született!”</p>
+
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<div class="slideheader">
+<h2><span class="oldalszam">12</span>Szélsőérték keresése: a leg…</h2>
+</div>
+
+<h3>Melyik a legmagasabb rakéta?</h3>
+<p>
+Olvassunk be a billentyűzetről a magasságokat!
+Hogy hány darabot, kérdezzük a felhasználótól!
+<em>Melyik volt a legnagyobb közülük?</em>
+</p>
+
+<br class="smallskip">
+
+<img class="float" style="margin-top: -2em; width: 13.8em;" src="ea03/rokec.png">
+
+<h3>Szélsőértékkeresés tétele</h3>
+<pre class="editable">
+legnagyobb = első elem        <span class="bubble">első</span>
+CIKLUS AMÍG van még szám, ADDIG
+   szám = <em>következő elem</em>      <span class="bubble">többi</span>
+   HA szám <em>&gt;</em> legnagyobb, AKKOR
+       legnagyobb = szám
+   FELTÉTEL VÉGE
+CIKLUS VÉGE
+</pre>
+
+<p>
+<strong>Vigyázat!</strong> Az <em>első „tippet” is a sorozatból</em> kell venni!
+<span  class="csakdoksi">Általános esetben elvi hibás a legnagyobb=&minus;1000 kezdetű vagy hasonló megoldás!
+(Ha az összes szám kisebb lenne &minus;1000-nél, akkor hibás lenne az eredmény.)</span>
+</p>
+
+<div class="kozep"><button data-diapopup="maximumkereseskodid">Megoldás C-ben</button></div>
+
+
+
+<div id="maximumkereseskodid">
+<h3>A maximumkeresés C kódrészlete</h3>
+
+<pre class="brush: cbub "  >
+printf(&quot;Hány szám lesz? &quot;);
+scanf(&quot;%d&quot;, &amp;db);
+
+printf(&quot;1. szám: &quot;);             // maximumkeresés
+scanf(&quot;%lf&quot;, &amp;aktualis);
+max = aktualis;                  /* az első külön! */
+
+for (i = 2; i &lt;= db; i += 1) {   /* a többit ciklusban */
+   printf(&quot;%d. szám: &quot;, i);
+   scanf(&quot;%lf&quot;, &amp;aktualis);
+   if (aktualis &gt; max)           /* nagyobb az eddigieknél? */
+      max = aktualis;
+}
+
+printf(&quot;Legnagyobb: %f\n&quot;, max); // eredmény</pre>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>Lineáris keresés</h2>
+</div>
+
+<h3>Feladat (általános megfogalmazásban)</h3>
+<p>
+Megtalálni egy elemet egy sorozatban.
+<br>
+Például: prímszám-e. Ahogy találunk egy osztót, tudjuk, hogy nem prímszám.
+</p>
+
+<br class="smallskip">
+
+<h3>A lineáris keresés tétele</h3>
+<pre class="editable">
+találat = HAMIS
+CIKLUS AMÍG van elem ÉS NEM találat <span class="bubble">van elem és nincs találat</span>
+   szám = következő elem
+   HA szám = keresett, AKKOR
+      találat = IGAZ                <span class="bubble">megvan: leáll a keresés</span>
+   FELTÉTEL VÉGE
+CIKLUS VÉGE
+</pre>
+
+<p>A ciklus után a <em>találat</em> változó tartalmazza az eredményt: <em>igaz</em> v. <em>hamis.</em></p>
+
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>A logikai típus C-ben</h2>
+</div>
+
+<h3>Logikai típus</h3>
+<ul>
+      <li>Lehetséges értékei: <em>IGAZ</em>, <em>HAMIS</em>; műveletek: <em>és</em>, <em>vagy</em>, <em>tagadás</em> stb.
+      <li>C-ben nincs külön neve, egy egész számmal reprezentáljuk: <code>int</code>
+          <ul>
+            <li>A <em>0</em> érték a HAMIS, a <em>nem 0</em> (minden más) az IGAZ
+          </ul>
+      
+</ul>
+
+<br class="smallskip">
+
+<div class="sticky"><span style="font-size: 2em;">!</span><br>tagadás</div>
+
+<pre class="brush: cbub "  >
+int kisebb, nagyobbegyenlo;
+
+kisebb = 5 &lt; 7;            // igaz
+if (kisebb)
+   printf(&quot;kisebb\n&quot;);
+
+nagyobbegyenlo = !kisebb;  // hamis lesz
+if (nagyobbegyenlo)
+   printf(&quot;nagyobb vagy egyenlő\n&quot;);</pre>
+
+<div class="csakdoksi">
+<p>Vegyük észre, hogy ez a trükk be van építve a nyelvbe: az
+<code>if()</code> igaz ága akkor hajtódik végre, ha a feltételben lévő „szám” nem
+nulla. A logikai típusú értékre kiértékelődő kifejezések (<code>!</code> –
+tagadás, <code>&amp;&amp;</code> – és kapcsolat, <code>&lt;</code> – kisebb, mint
+stb.) igaz érték esetén 1-et adnak, hamis érték esetén 0-t. Vagyis ha valamilyen
+C nyelvi kifejezés igaz/hamis értéket állít elő, akkor 0-t vagy 1-et kapunk, de
+egyébként bármilyen nem nulla számot elfogad a C a logikai igaz érték
+reprezentációjának.</p>
+
+<p>Fontos ezt a különbséget megérteni. A logikai típus egy
+külön típus, hiszen saját értékkészlete van (hamis, igaz), és saját műveletei
+(tagadás, és, vagy stb.). Csak éppenséggel a C nyelvben nincs a típusnak külön
+neve, hanem az egyszerűség kedvéért nulla és nem nulla egész számokkal
+jelképezzük azt. A legtöbb azóta létrejött nyelvben külön neve van ennek a
+típusnak, de a C megközelítése szinte mindegyikre hatással volt.</p>
+
+<div class="megjegyzes">
+
+<p>Ha logikai kifejezéseket írunk, nem szokás, és nem is szabad az <code>==1</code>-et
+és <code>!=0</code>-t odaírni. Ha egy egész számot logikai típusúként használunk, nem csak
+az <code>1</code> jelenti az IGAZ értéket, hanem a <code>0</code>-n kívül mindegyik!
+Ezért <strong>súlyos hiba</strong> odaírni az <code>==1</code> összehasonlítást!
+Pl. az alábbi kód a <code>ctype.h</code> <code>islower()</code> függvényét
+használja. Ez arra jó, hogy egy karakterről megmondja, kisbetű-e:</p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+#include &lt;ctype.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    if (islower('a') == 1)   // HIBÁS!!
+        printf(&quot;Kisbetu&quot;);
+    else
+        printf(&quot;Nem kisbetu&quot;);
+    return 0;
+}</pre>
+</div>
+
+<div>
+<pre class="brush: cbub "  >
+#include &lt;ctype.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    if (islower('a'))   // helyes.
+        printf(&quot;Kisbetu&quot;);
+    else
+        printf(&quot;Nem kisbetu&quot;);
+    return 0;
+}</pre>
+</div>
+</div>
+
+<p>Az bal oldali változat azt mondja az <code>a</code> betűre, hogy nem (!) kisbetű.
+Azért hibás itt a program, mert az <code>islower()</code> nem feltétlenül ad
+1-et, ha azt akarja mondani, hogy IGAZ. Csak az biztos, hogy egy nem
+<code>0</code> számot ad. A helyes változat a jobb oldalon látható: <code>==1</code>
+nélkül.</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>Lineáris keresés: prímszám-e (C kód)</h2>
+</div>
+
+<pre class="brush: cbub "  >
+int szam, oszto, vanoszto;
+
+printf(&quot;Kérem a számot: &quot;);
+scanf(&quot;%d&quot;, &amp;szam);
+
+vanoszto = 0;        // 0: hamis
+oszto = 2;
+while (oszto &lt; szam &amp;&amp; !vanoszto) {
+   if (szam % oszto == 0)
+      vanoszto = 1;  // 1: igaz
+   oszto += 1;
+}
+
+if (vanoszto)        // volt találat?
+   printf(&quot;Nem prím.\n&quot;);
+else
+   printf(&quot;Prím.\n&quot;);</pre>
+
+<p class="csakdoksi">Ha el kell dönteni egy számról, hogy prímszám-e, sokkal értelmesebb dolog a
+lineáris keresés tételét alkalmazni, mint a számlálás tételét. Mondhatjuk ugyan, hogy
+megszámoljuk a szám osztóit, és ha csak kettő (egy és saját maga), akkor az egy prímszám. De
+miért kellene a kérdés megválaszolásához megvizsgálni az összes osztót? Miért ne állnánk meg már
+az elsőnél, azt mondva, hogy kérem szépen, ez nem prímszám?! (Az osztókat amúgy elég lenne a szám feléig vizsgálni, hiszen ha osztója
+a fele, akkor osztója 2 is. Sőt elég lenne a gyökéig, ugyanemiatt.)</p>
+
+<div class="sticky csakdoksi">DeMorgan-féle<br>szabály</div>
+<p class="csakdoksi">A ciklusba belépésnek két feltétele van, 1) hogy nem értünk a számok végére,
+ÉS 2) nem találtunk még osztót. Mindkettőnek egyszerre teljesülnie kell, hogy bemenjünk a ciklusba.
+Ha nem mentünk be, akkor valamelyik nem teljesült, VAGY az egyik, VAGY a másik. Ezt vizsgáljuk
+a ciklus után: tudnunk kell, hogy melyik feltétel miatt lett vége a ciklusnak. Itt jól látható
+a Digitből is tanult DeMorgan azonosság: ha tagadjuk az egész feltételt és a tagjait is, akkor az ÉS-t
+VAGY-ra kell cserélnünk a gondolatmenetben. Bemegyünk a ciklusba, ha IGAZ az első feltétel ÉS
+IGAZ a második feltétel; NEM megyünk be a ciklusba, ha HAMIS az első feltétel VAGY a második feltétel.</p>
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Tételek kombinációja: a klasszikus példa</h2>
+</div>
+
+<p>Számoljuk meg, hány prímszám van 2 és 1000 között!</p>
+
+<br class="smallskip">
+
+<div class="csakdoksi">
+<h3>Megoldás</h3>
+<ul>
+   <li>Számoljuk meg &rarr; <em>számlálás</em> tétele
+   <li>Prímszám-e: „van-e osztója” &rarr; <em>lineáris keresés</em> tétele
+</ul>
+</div>
+
+<div class="columns">
+<div>
+Számlálás tétele
+<pre style="color: red;" class="eloadaskicsinyit">
+int sz, db;
+db = 0;
+for (sz = 2; sz &lt;= 1000; sz += 1)
+   if (<span style="color: blue;">… sz egy prím …</span>)
+      db += 1;
+</pre>
+
+Lineáris keresés tétele
+
+<pre style="color: blue;" class="eloadaskicsinyit">
+int oszt, van;
+van = 0;
+oszt = 2;
+while (oszt &lt; sz &amp;&amp; !van) {
+   if (sz % oszt == 0)
+      van = 1;
+   oszt += 1;
+}
+</pre>
+</div>
+
+<div>
+Teljes megoldás
+<pre class="eloadaskicsinyit">
+int <span style="color: red;">sz, db,</span> <span style="color: blue;">oszt, van</span>;
+
+<span style="color: red;">db = 0;
+for (sz = 2; sz &lt;= 1000; sz += 1){</span>
+   <span style="color: blue;">van = 0;
+   oszt = 2;
+   while (oszt &lt; sz &amp;&amp; !van) {
+      if (sz % oszt == 0)
+         van = 1;
+      oszt += 1;
+   }</span>
+   <span style="color: red;">if (!van)
+      db += 1;
+}</span>
+
+printf("%d prím.\n", db);
+</pre>
+</div>
+</div>
+
+<p class="csakdoksi">
+A két tételt összedolgozzuk. A kettő közötti kapcsolatot a <code>van</code>
+változó teremti meg; a lineáris keresés eredménye ide kerül.
+Ha nincs osztó, prímről van szó, növelni kell a darabszámot.
+Látható, hogy a keletkezett kód ugyan strukturált, de kusza lett. A két
+tétel „egymásba folyik”, hiába van szó matematikailag egy két nagyon jól
+elkülönülő fogalomról. Kellene valamilyen eszköz, amellyel szét tudjuk
+választani a két részt. Ezek lesznek a <em>függvények</em> a következő
+előadáson.
+</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<a id="eatombok" class="namer"></a>
+<h1 class="diacim">Tömbök</h1>
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>Tíz darab szám</h2>
+</div>
+<h3>Feladat</h3>
+<p>Kérjen a felhasználótól <em>10 számot,</em> és
+utána írja ki őket <em>fordított sorrendben!</em></p>
+
+<br class="smallskip">
+
+<h3>Megoldás – sorminta???</h3>
+<div class="sticky"><img src="modulz/halalfej.png" style="display: block"></div>
+<pre class="brush: c "  >
+int a, b, c, d, e, f, g, i, j, k;
+
+scanf(&quot;%d&quot;, &amp;a);
+scanf(&quot;%d&quot;, &amp;b);
+scanf(&quot;%d&quot;, &amp;c);
+…
+printf(&quot;%d\n&quot;, c);
+printf(&quot;%d\n&quot;, b);
+printf(&quot;%d\n&quot;, a);</pre>
+
+<div class="csakdoksi">
+<h3>Mire lenne itt szükség?</h3>
+<p>Az eddigi programjainkban:</p>
+<ul>
+   <li>Csak néhány nevesített változóval dolgoztunk, amelyeknek mind kitüntetett szerepe volt
+   <li>Nem tudtuk azt mondani, hogy <em>„sok”</em>
+   <li>Csak a beérkezés sorrendjében tudtuk feldolgozni az adatokat
+</ul>
+<p>Ami hiányzik:</p>
+<ul>
+   <li>Jó lenne egyszerre több elemet is tárolni
+   <li>Az elemeket sorszámozva hivatkozni (első szám, második szám…), mert akkor egy ciklus végigmehetne az elemeken
+   <li>Az elemeket tetszőleges sorrendben elérni, mert akkor kiírhatnánk fordított sorrendben
+</ul>
+</div>
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>A tömb</h2>
+</div>
+
+<blockquote>
+<h3>Tömb (array)</h3>
+<ul>
+    <li>Egyforma típusú változókból álló, fix méretű tároló (container).
+    <li>Az elemek sorszámozva vannak, <em>indexelhetőek.</em>
+</ul>
+</blockquote>
+
+<table class="tomb">
+<thead>
+    <tr><th>a<sub>0</sub><th>a<sub>1</sub><th>a<sub>2</sub><th>a<sub>3</sub><th>a<sub>4</sub><th>a<sub>5</sub>
+</thead>
+<tr><td>99<td>71<td>3<td>-45<td>47<td>12
+</table>
+
+<p class="csakdoksi">A tömb elemei egyforma típusúak kell legyenek, de ez a típus bármi lehet.
+Létrehozhatunk egészek, valósak, karakterek, akár logikai típusú változók tömbjét is. C-ben
+az elemek számozása 0-tól történik, és ez a legtöbb másik programozási nyelvben is így van.</p>
+
+<br class="smallskip">
+
+<h3>Szóhasználat</h3>
+<ul>
+   <li>Tömb más néven: vektor (vector).
+   <li><em>Egyszerű/beépített adattípusok:</em> egész, valós, karakter, …
+   <li><em>Összetett/származtatott adattípus:</em> pl. a tömb (több egészből)
+</ul>
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<div class="slideheader">
+<h2><span class="oldalszam">20</span>A tömbök kezelése I. – hogyan</h2>
+</div>
+
+<p>Tömb létrehozása: <code>elemtípus név[méret];</code>. Kezdeti érték: <code>{}</code> között.
+<pre class="brush: c "  >
+int tomb[10];
+double t[5] = {9.3, 7.5, 3.7, 0, 4.2};</pre>
+
+<p class="csakdoksi">Ha adunk meg kezdeti értéket – ez nem kötelező –, akkor legalább egy elemet
+írnunk kell a kapcsos zárójelek közé. Ha kevesebbet írunk, mint a tömb mérete, akkor a többi
+nulla lesz. Viszont ha egyáltalán nem adunk meg kezdeti értéket, akkor a tömb elemei
+inicializálatlanok! (Erről még lesz pár szó.)</p>
+
+<p class="csakdoksi">Figyelem: az inicializáláskor a meg nem adott tömbelemek értéke nulla lesz.
+Tehát a <code>double t[5] = {1.2};</code> sorral nem egy olyan tömböt adunk meg, amelynek összes
+eleme <code>1.2</code>, hanem egy olyat, amelynek első eleme <code>1.2</code>, a többi pedig nulla!</p>
+
+<br class="smallskip">
+
+<p class="csakeloadas">Elem elérése: indexelés/címzés (indexing) szögletes zárójellel (bracket).</p>
+<p class="csakdoksi">A tömb <em>indexelése</em> (indexing), más néven címzése szögletes zárójellel
+(bracket) történik. A művelet által megkapjuk a tömb egyetlen egy elemét, amely ugyanúgy
+használható, mint egy önálló változó. Új érték adható neki, de szerepelhet akár egy
+<code>printf()</code> vagy egy <code>scanf()</code> paramétereként is.</p>
+
+<pre class="brush: c "  >
+tomb[9] = 3;
+printf(&quot;%d&quot;, tomb[6]);
+scanf(&quot;%d&quot;, &amp;tomb[4]);</pre>
+
+<p class="csakeloadas">Tömb feldolgozása: ciklussal. Az index tartománya: <strong>0-tól méret&minus;1-ig!</strong>
+<p class="csakdoksi">A tömböket legtöbbször <em>ciklussal</em> dolgozzuk fel. Ilyenkor figyelni kell arra,
+hogy a tömbindexek tartománya <em>0-tól méret&minus;1-ig</em>-ig terjed.
+A lenti egy tipikus tömbös ciklus. Nullától indul az iterátor (ez a tömb legelső
+eleme), és egyesével növekszik. A ciklusban maradás feltételében (<code>i&lt;10</code>) a
+„kisebb” relációt szokás használni, nem pedig a „kisebb vagy egyenlő” relációt, mégpedig azért,
+mert így a tömb mérete szerepel a kódban. Bár <code>i&lt;30</code> és <code>i&le;29</code>
+ugyanazt jelenti, de az <code>i&lt;30</code> forma <em>sokkal egyszerűbb!</em> Nem kell figyelni arra,
+hogy kivonjunk egyet a tömb méretéből, hanem magát a méretet lehet odaírni. Szokjuk meg ezt a
+formát a tömbökhöz, az egész világon így csinálják!</p>
+
+<div class="sticky">Dijkstra</div>
+<pre class="brush: c "  >
+for (i = 0; i &lt; 10; i += 1)
+   tomb[i] = 0;</pre>
+
+<p class="csakdoksi megjegyzes"> Érdekesség: <a
+href="http://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger W. Dijkstra</a> holland
+matematikus, programozó volt. Fontosnak tartotta a levelezést és a tapasztalatcserét
+kollégáival. Ezért a gondolatait, megfigyeléseit, útjairól szóló írásait számozva, fénymásolt
+kéziratok formájában küldte el nekik. A fentiekkel kapcsolatban álljon itt egy <a href="ea03/ewd831.pdf">rövid írása (EWD831)</a>. </p>
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>A tömbök kezelése II. – hogyan ne</h2>
+</div>
+
+<p class="csakdoksi">Van néhány dolog, amit nem szabad csinálni a tömbökkel.</p>
+
+<p>A tömb elemeit csak egyesével lehet kezelni.</p>
+<div class="columns">
+<div>Helytelen:<br><pre class="brush: c athuzott"  >
+int a[10], b[10];
+a = b;</pre>
+</div>
+<div>Helyes:<br><pre class="brush: c "  >
+for (i = 0; i &lt; 10; i += 1)
+   a[i] = b[i];</pre>
+</div>
+</div>
+<p class="csakdoksi">Az <code>a=b</code> értékadás helytelen voltának mélyebb okai vannak.
+Erről később lesz szó.</p>
+
+<br class="smallskip">
+
+<p>A tömb méretét általában meg kell adni a program írásakor.</p>
+<div class="columns">
+<div>
+Újabb C-kben lehet csak:<br>
+<pre class="brush: c "  >
+scanf(&quot;%d&quot;, &amp;db);
+int tomb[db];</pre>
+</div>
+<div>
+Helytelen:<br>
+<div class="sticky"><img src="modulz/halalfej.png" style="display: block"></div>
+<pre class="brush: c athuzott"  >
+/* „elég nagy” */
+int tomb[];</pre>
+</div>
+</div>
+
+<p class="csakdoksi megjegyzes"> A C nyelv újabb változata (C99) elfogadja azt, ha a tömb
+méretét változóval adjuk meg, mint fent a <code>scanf()</code>-es példában. A régebbi, C89-es,
+illetve C90-es változatban ez még nem volt lehetséges. Ez más programnyelvek (Pascal, Java, …)
+esetén is eltérően szokott működni. Erről később részletesen lesz szó – egyelőre a tömbökre,
+mint fix méretű tárolókra gondoljunk. A nem megadott méretű tömb (üres szögletes zárójel)
+viszont nem működik semelyik fordítóval, és így nagyon súlyos hibának számít! </p>
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<div class="slideheader">
+<h2><span class="oldalszam">22</span>Tíz darab szám – és fordítva</h2>
+</div>
+
+<pre class="screenshot float">
+1. szám: 1.23
+2. szám: 3.14
+3. szám: 5
+
+…
+
+3. szám: 5
+2. szám: 3.14
+1. szám: 1.23
+</pre>
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   double szamok[10];
+   int i;
+
+   /* beolvasás */        // 0-tól 9-ig
+   for (i = 0; i &lt; 10; i += 1) {
+      printf(&quot;%d. szám: &quot;, i + 1);
+      scanf(&quot;%lf&quot;, &amp;szamok[i]);
+   }
+   /* kiírás */           // 9-től 0-ig
+   for (i = 9; i &gt;= 0; i -= 1)
+      printf(&quot;%d. szám: %f\n&quot;, i + 1, szamok[i]);
+
+   return 0;
+}</pre>
+
+<p class="csakdoksi">A fenti megoldásban mindig hozzáadunk egyet
+a tömbindexhez, amikor a felhasználónak szóló szövegben a sorszámot
+hivatkozzuk. Így a programban a tömbindexek tartománya 0…9 (ez kötelező,
+a C nyelv tömbje miatt), de a képernyőn 1…10 látszik.</p>
+
+
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Algoritmusok megvalósítása tömbökön</h2>
+</div>
+
+<h3>Tömb másolása</h3>
+
+<pre class="brush: cbub "  >
+double forras[5] = {9, 2, 4, 1, 5}, cel[5];
+int i;
+
+for (i = 0; i &lt; 5; i += 1)
+   cel[i] = forras[i];</pre>
+
+<div class="csakdoksi">
+<p>Természetesen ennek a tételnek is meg lehet adni a pszeudokódját általánosságban:</p>
+<pre>
+CIKLUS AMÍG van még szám, ADDIG
+    szám = következő elem
+    KI: szám
+CIKLUS VÉGE
+</pre>
+
+<p>A fenti kód ennek a tételnek a megvalósítása abból a célból, hogy egy tömb tartalmát egy
+másikba lemásoljuk. A cél tömb legalább akkora kell legyen, mint a forrás tömb, vagyis amennyi
+elemet másolunk.</p>
+</div>
+
+<div class="csakdoksi">
+<h3>Tömb elemeinek összegzése</h3>
+<pre class="brush: cbub "  >
+int tomb[5] = {9, 2, 4, 1, 5};
+int osszeg, i;
+
+osszeg = 0;
+for (i = 0; i &lt; 5; i += 1)
+  osszeg += tomb[i];
+printf(&quot;Összeg: %d\n&quot;, osszeg);</pre>
+<p>Ez teljesen analóg az előzővel. Szinte mindenhol ugyanezzel a ciklussal fogunk találkozni.</p>
+</div>
+
+<br class="smallskip">
+
+<h3>Szélsőértékkeresés tömbön</h3>
+
+<div class="csakeloadas">
+<pre class="brush: cbub "  >
+int tomb[5] = {5, 9, 3, 1, 2};
+int maxindex, i;
+
+maxindex = 0;
+for (i = 1; i &lt; 5; i += 1)
+  if (tomb[i] &gt; tomb[maxindex])
+     maxindex = i;                // a helyét jegyzi meg
+printf(&quot;Legnagyobb: tomb[%d] = %d\n&quot;, maxindex, tomb[maxindex]);</pre>
+</div>
+
+<div class="csakdoksi">
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int tomb[5] = {5, 9, 3, 1, 2};
+   int maxindex, i;
+
+   maxindex = 0;
+   for (i = 1; i &lt; 5; i += 1)
+      if (tomb[i] &gt; tomb[maxindex])
+         maxindex = i;              // a helyét jegyzi meg
+
+   printf(&quot;Legnagyobb: tomb[%d] = %d\n&quot;, maxindex, tomb[maxindex]);
+
+   return 0;
+}</pre>
+</div>
+
+<p class="csakdoksi">A legnagyobb szám <em>helyére (indexére) érdemes építeni</em> a keresést!
+Vagyis nem azt nyilvántartani a változóban, hogy <em>mi</em> volt a maximum értéke, hanem hogy
+<em>hol</em> van a legnagyobb szám, amit eddig láttunk. Ez van a <code>maxindex</code> nevű
+változóban. Ha a helyet tudjuk, akkor bármikor meg lehet nézni az értéket is. Ha azonban csak az
+értéket tudnánk, akkor újra meg kellene keresni, hol volt a tömbben az a szám – ha felmerülne ez
+a kérdés.</p>
+
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>Tételek: kiválogatás két tömbbe</h2>
+</div>
+
+<p>Negatívak az egyik tömbbe, nem negatívak a másikba.</p>
+
+<pre class="brush: cbub "  >
+int szamok[20] = { 3, -2, /* ... a számok ... */ };
+
+int neg[20], nemneg[20];          // ezekbe válogatja szét
+int db_neg, db_nemneg, i;
+
+db_neg = 0;
+db_nemneg = 0;
+for (i = 0; i &lt; 20; i += 1) {        // összes elem
+   if (szamok[i] &lt; 0) {
+      neg[db_neg] = szamok[i];       // ha igaz rá, hogy…
+      db_neg += 1;
+   } else {
+      nemneg[db_nemneg] = szamok[i]; // ha nem igaz
+      db_nemneg += 1;
+   }
+}
+printf(&quot;%d nemnegativ, %d negativ.\n&quot;, db_nemneg, db_neg);</pre>
+
+<div class="csakdoksi">
+<p>Ez az algoritmus egy adott tulajdonság szerint szétválogatja a tömb elemeit.
+Amelyek rendelkeznek egy bizonyos tulajdonsággal (itt: negatívak), azokat
+bemásolja az egyik tömbbe, a többit pedig a másikba. Az eredeti tömb
+változatlanul marad.</p>
+
+<img src="ea03/tombbeir.svg" class="float" style="width: 13em;">
+<p> A két cél tömb mérete ugyanakkora, mint az eredeti tömbbé, hiszen
+előfordulhat, hogy az utóbbiban pl. csak negatív számok vannak. Minden egyes
+esetben, amikor valamelyik tömbbe beírunk egy elemet, akkor az ahhoz a tömbhöz
+tartozó számlálót megnöveljük. Először így a 0. indexű helyre kerül az elem,
+utána az 1. indexűre és így tovább. A két számláló így egyben azt is tartalmazza,
+hogy az egyes tömbökbe hány elem került – azaz hogy hány negatív és hány
+nemnegatív elem volt. A <code>db_neg+db_nemneg</code> összeg a ciklus lefutása
+után értelemszerűen az eredeti tömb méretével egyezik meg, mert mindegyik számnak
+kerülnie kellett valahova.</p>
+
+<p>Érdemes más programokban is ezt az elvet követni. Ezért is hasznos az, hogy
+az indexelés nullától indul: mert így a darabszám egyenlő a következő elem indexével, ami
+pedig egyenlő azzal a tömbmérettel, amelyben elférnek az eddigi adatok.</p>
+
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>Tömbök vs. nem tömbök</h2>
+</div>
+
+<div class="sticky">Tipp: emlékezni<br>kell az összes<br>elemre &rarr; tömb</div>
+<h3>Tömb használata: példák</h3>
+<ul>
+   <li>Fordított sorrendű kiírás,
+   <li>Növekvő sorrendbe rendezett kiírás,
+   <li>Átlagnál nagyobb számok kiírása.
+</ul>
+
+<p class="csakdoksi">Miért is kell eltárolnunk az összes számot, ha az a feladat, hogy írjuk
+ki a beolvasott számok közül az átlagnál nagyobbakat? Azért, mert az átlaguk akkor derül ki,
+amikor már láttuk az összeset. Ha pedig már megvan az átlag, csak akkor tudjuk eldönteni az
+elsőről, hogy ki kellett volna-e írni, a másodikról úgyszint, és így tovább. Tehát emlékeznünk
+kell, mik voltak a számok.</p>
+
+<br class="smallskip">
+
+<h3>Kell tömb vagy nem kell?</h3>
+<ul>
+   <li><em>Tipikus hiba tömböt használni, amikor nincs rá szükség,</em>
+       <br>pl. hasraütésszerűen 1000 elemű tömbbe beolvasott számsor.
+   
+   <li>Összeg, keresés, szélsőérték: ezekhez <em>nem kell,</em>
+       <br>nem kell emlékezni a régiekre és sorrendben kell feldolgozni őket.
+</ul>
+
+<p class="csakdoksi">Hasraütésszerűen amúgy sem választhatunk a programban tömbméretet:
+csak akkor mondhatjuk, hogy 1000 elemű legyen a tömb, ha ez a feladat specifikációjából
+következik.</p>
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<div class="slideheader">
+<h2><span class="oldalszam">26</span>Az álvéletlenszámok</h2>
+</div>
+
+<p class="csakdoksi">A következő programban azt fogjuk megvizsgálni, hogy két dobókockával
+dobva, a két kockán látható számok összegének milyen eloszlása van. Mert az egy kockával
+dobással ellentétben ennél nem egyenletesen jön ki mindegyik összeg. A kockadobások
+szimulálásához véletlenszámokat fogunk használni.</p>
+
+<p>A jól megírt programok determinisztikusak. Kérdés: akkor honnan
+lesznek véletlenszámaink?</p>
+
+<div class="csakdoksi">
+
+<p>A determinisztikusság azt jelenti, hogy egy adott programot ugyanazzal a bemenettel futtatva 
+mindig ugyanazt a kimenetet kapjuk. A legtöbb esetben ez természetesnek tűnik, éppen ezt a 
+megbízhatóságot várjuk a számítógéptől. Azonban bizonyos alkalmazásoknál ez korlátot jelent. 
+Elképzelhetjük, elég unalmas lenne egy olyan kártyajáték, amelyben mindig ugyanazt a leosztást 
+kapjuk. Mégis ha a számítógép determinisztikus természetű, hogyan lehetne olyan programot írni, 
+amelynél nem minden futásnál ugyanaz az eredmény? Hogyan tudunk a programból feldobni egy pénzt, 
+fej vagy írás, vagy kockával egy 1 és 6 közötti számot dobni?</p>
+
+<p>A megoldás egy <em>álvéletlenszám-generátor</em> (vagy más néven: 
+pszeudovéletlenszám-generátor) alkalmazása. Ez egy olyan matematikai műveletsort jelent, 
+amelynek az eredménye egy össze-visszának tűnő számsor. Annyira össze-visszának, hogy az már 
+véletlenszerűnek fogadjuk el. Ha pl. az <code>x=(5*x+1)%16</code> kifejezést újra és újra 
+kiértékeljük, az <code>x</code> változó a 1, 6, 15, 12, 13, 2, 11, 8, 9, 14, 7, 4, 5, 10, 3, 0, 
+&hellip; értékeket veszi fel, amelyben nem nagyon látunk szabályosságot. (Ha tovább folytatjuk, 
+akkor persze igen, mert a számsor elkezd ismétlődni.)</p>
+
+<p>A C nyelv <code>rand()</code> függvénye a fentihez hasonló, de bonyolultabb módon előállított 
+véletlenszámokat ad, méghozzá a <code>0</code> és a <code>RAND_MAX</code> konstans közötti egész 
+számot. A <code>RAND_MAX</code> konstans értéke a C fordítónk típusától függ, és 
+számítógépenként változhat. Adott tartományban lévő számot legegyszerűbben egy osztás 
+maradékaként állíthatunk elő ebből. Ha például azt nézzük, az előállított véletlenszám páros 
+vagy páratlan, pénzfeldobást szimulálhatunk:</p>
+
+<pre class="brush: c "  >
+if (rand() % 2 == 0)
+    printf(&quot;fej&quot;);
+else
+    printf(&quot;írás&quot;);</pre>
+
+<p>Kockadobást pedig úgy tudunk szimulálni, ha a véletlenszámot elosztjuk
+hattal, és az így kapott, 0 és 5 közé eső maradékhoz még egyet adunk:</p>
+
+<pre class="brush: c "  >
+kocka = rand()%6 + 1;</pre>
+
+<p>Fontos, hogy az álvéletlenszámok determinisztikusak. Vagyis a program többszöri indítására 
+mindig újra ugyanaz a számsor áll elő. Ezt elkerülendő, a véletlenszám-generátort 
+<em>inicializálni,</em> azaz indítani kell. Az indítást az <code>srand(x)</code> utasítással 
+tehetjük meg, ahova az <code>x</code> helyére egy tetszőleges egész számot írhatunk. Ugyanaz az 
+<code>x</code> érték ugyanazt a számsort állítja elő újra, míg egy másik <code>x</code> érték 
+teljesen más számsort ad. Tehát már semmi más nem kell, csak egy olyan <code>x</code> érték, 
+amely a program minden futtatásánál más és más, mert ebből fog kiindulni a generátor. A probléma 
+megoldásához azt a trükköt szoktuk használni, hogy lekérdezzük a gép óráját: a 
+<code>time(0)</code> kifejezés az 1970. január 1. éjfél óta eltelt másodpercek számát adja. 
+Ezzel indítva a véletlenszám-generátort mindig más számsort fogunk kapni.</p>
+
+<pre class="brush: cbub "  >
+srand(time(0));  // a program elején egyszer!</pre>
+
+<p>Ezt az inicializálást nem kell, sőt nem is szabad minden új szám generálásánál elvégezni, 
+hanem csakis <strong>a program futásának elején, egyszer</strong> kell megtenni! Az alábbi 
+program tíz egymás utáni kockadobás eredményét írja a képernyőre. Figyeld meg, hogy míg a 
+<code>rand()%6 + 1</code> kifejezés többször is kiértékelődik a ciklusban, addig az 
+<code>srand()</code> csak egyszer, a program elején! Próbáld ki, mi történik akkor, ha a ciklus 
+belsejébe mozgatod az <code>srand()</code>-ot is!</p>
+
+</div>
+
+<img src="ea03/kocka.png" class="float" style="width: 8em;">
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main(void) {
+   int i;
+
+   srand(time(0));  // csak egyszer!
+
+   for (i = 0; i &lt; 10; i += 1)
+       printf(&quot;%d\n&quot;, rand()%6 + 1);
+
+   return 0;
+}</pre>
+
+<p class="csakdoksi">A <code>rand()</code> és az <code>srand()</code> függvény, továbbá a 
+<code>RAND_MAX</code> konstans használatához az <code>stdlib.h</code> fájlt kell a programkód 
+elején beilleszteni. A <code>time()</code>-hoz a <code>time.h</code> szükséges. A 
+<code>time()</code> működéséről és az ott lévő <code>0</code> szerepéről később lesz szó.</p>
+
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span>Az adatszerkezet</h2>
+</div>
+
+<blockquote><p><em>Adatszerkezet:</em> az adataink strukturális elrendezése a programban.</p></blockquote>
+
+<br class="smallskip">
+
+<p class="csakeloadas">A kockadobások lehetséges összegei 1+1=2 és 6+6=12 között vannak.</p>
+
+<p class="csakdoksi">Minden összeghez rendelünk egy számlálót; a dobás után az adott számlálóhoz húzunk egy strigulát.</p>
+
+<table class="tomb">
+    <caption>számlálók az egyes összegekhez</caption>
+    <thead>
+        <tr><th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>10<th>11<th>12
+    </thead>
+    <tbody>
+        <tr><td>|<td>|<td>|||<td>|||<td>||||<td>|||||<td>||<td>|||<td>|<td>||<td>|
+    </tbody>
+</table>
+
+<p class="csakdoksi">Az előálló számok közül a legkisebb az 1+1=2, a legnagyobb a 6+6=12. Ezért 
+a gyakoriságokat tároló tömbünk 12-2+1 = 11 elemű kell legyen. Ennek a tömbnek az indexei a 
+0&hellip;10 tartományban lesznek, ezért a dobások összegéből 2-t le kell vonni: 2&hellip;12 - 2 
+= 0&hellip;10, úgy kapjuk az adott dobás gyakoriságát tároló tömbelem indexét.</p>
+
+<p class="csakeloadas">A jelenlegi adatszerkezet működése:</p>
+
+<pre class="kozep">
+számláló[összeg - 2]  &rarr;  számláló az adott összeghez
+</pre>
+
+<table class="tomb">
+    <caption>a számlálók a program tömbjében</caption>
+    <thead>
+        <tr><th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>10
+    </thead>
+    <tbody>
+        <tr><td>1<td>1<td>3<td>3<td>4<td>5<td>2<td>3<td>1<td>2<td>1
+    </tbody>
+</table>
+
+
+
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Kockadobások összege</h2>
+</div>
+
+<p class="csakdoksi">Alább látható a programrészlet, amely elvégzi a kísérletet.</p>
+
+<pre class="brush: cbub "  >
+int dobas[12-2+1] = { 0 };
+int i, j;
+
+srand(time(0));
+
+for (i = 0; i &lt; 1000; i += 1) {
+    int kocka1 = rand() % 6 + 1;     /* 1-6 */
+    int kocka2 = rand() % 6 + 1;
+    int osszeg = kocka1 + kocka2;
+    dobas[osszeg - 2] += 1;      // 2-12 → 0-10
+}
+
+for (i = 2; i &lt;= 12; i += 1) {
+    printf(&quot;a+b = %2d: %3d alkalom &quot;, i, dobas[i - 2]); // !
+    for (j = 0; j &lt; dobas[i - 2] / 10; ++j)
+        printf(&quot;*&quot;);
+    printf(&quot;\n&quot;);
+}</pre>
+
+<p class="csakdoksi">Az adatszerkezet működése, nevezetesen hogy egy adott összeghez az <code>összeg - 2</code> indexű tömbelem
+tartozik, legjobban a felkiáltójellel jelölt sorban látszik.</p>
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<h1 class="diacim">Programozási hibák</h1>
+
+
+
+
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>Kontraszt</h2>
+</div>
+
+<table style="line-height: 1.2">
+  <caption></caption>
+  <thead>
+        <tr><th>kifejezés<th>jelentés
+  </thead>
+
+    <tr>
+       <td><code>3.14<br>3, 14</code>
+       <td><strong>tizedespont,</strong> a &pi; közelítő értéke<br><strong>vessző,</strong> elválasztás, pl. <code>pow(3, 14)</code>=3<sup>14</sup>
+    
+    <tr>
+       <td><code>x == y<br>x = y</code>
+       <td><button class="float" data-diapopup="yodadiv">Yoda</button>vizsgálat: x <strong>egyenlő-e</strong> y-nal<br>értékadás: x <strong>legyen egyenlő</strong> y-nal
+    
+    <tr>
+       <td><code>x = b<br>x = 'b'</code>
+       <td>x vegye fel a <strong>b változó értékét</strong><br>x legyen a <strong>b betű karakterkódja</strong>
+    
+    <tr>
+       <td><code>x = 1<br>x = '1'</code>
+       <td>x legyen <strong>1</strong><br>x legyen az <strong>1-es számjegy karakterkódja</strong>
+    
+    <tr>
+       <td><code>printf("%d",&nbsp;65)<br>printf("%c",&nbsp;65)</code>
+       <td>írd ki 65-öt, mint <strong>szám: "65"</strong><br>írd ki a 65-ös kódú <strong>karaktert: "A"</strong>
+    
+    <tr>
+       <td><code>"a"<br>'a'</code>
+       <td><strong>szöveg</strong> (sztring), amely egy betűt tartalmaz<br>egyetlen <strong>karakter</strong>
+    
+</table>
+
+<div id="yodadiv">
+    <br class="smallskip">
+    <img class="kozep" src="ea03/yodaconditional.png" style="width: 24em;">
+    <br class="smallskip">
+    <div class="kozep">If blue is the sky&hellip;</div>
+</div>
+
+<p class="csakdoksi">Az értékadás és az egyenlőségvizsgálat keverése miatt gyakran szokták 
+tanácsolni, hogy a feltételeket fordítva írjuk. Így nem lehet összekeverni a kettőt, hiszen 
+ebben a kódrészletben <code>=</code> értékadás használata esetén szintaktikai hibát kapunk, ami 
+fordítási hibához vezet. Sajnos a fordított feltétel az olvashatóságot csökkenti, néha zavar a 
+kód megértésében. Ezért mi nem javasoljuk a használatát. A programozó folklór egyébként ezt a 
+stílust Yoda-feltételnek nevezi, mert Yoda az eredeti Csillagok háborúja szinkronban így beszél 
+(pl. „if blue is the sky”-t mond „if the sky is blue” helyett.)</p>
+
+
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<a id="eawarning" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>A fordítók figyelmeztetései</h2>
+</div>
+
+<img class="kozep arnyek" src="ea03/compilersettings.png">
+
+<ul>
+    <li>Enable all compiler warnings (-Wall)
+    <li>Enable warnings demanded by strict ISO C (-pedantic)
+</ul>
+
+<p class="csakdoksi">A Code::Blocks Settings menüjében találunk egy Compiler and 
+debugger&hellip; menüpontot. Ezt megnyitva a fordítóprogram beállításaihoz 
+jutunk. A fent látható két opciót <strong>nagyon erősen javasolt</strong> 
+engedélyezni az otthoni gépeteken. Ilyenkor ugyanis a fordító minden gyanús, 
+szokatlan kódrészletre figyelmeztetést ad (-Wall), illetve a nem szabványos, 
+esetleg más fordítókkal nem működő nyelvi fordulatokat nem engedi használni 
+(-pedantic). Ezeket beállítva sokkal hatékonyabb, könnyebb a tanulás és a 
+gyakorlás! Például az előbb említett <code>x=y</code> és <code>x==y</code> 
+összekeverésére is legtöbbször figyelmeztetni tud.</p>
+
+
+
+</div>
+</section>
+<section id="32">
+<div class="slide" id="slide_32">
+<div class="slideheader">
+<h2><span class="oldalszam">32</span>Néhány szó a kezdeti értékekről</h2>
+</div>
+
+<pre class="brush: cbub "  >
+double pi = 3.14;       // inicializált változó
+
+int i, osszeg;          // inicializálatlan változó</pre>
+<p>Ha nem kap kezdeti értéket, <em>inicializálatlan lesz</em> &rarr; <em>memóriaszemét</em></p>
+
+<br class="smallskip">
+
+<p class="csakdoksi">A lentiek jelentik azt, hogy görcsösen adjunk kezdeti értéket minden 
+változónak, akkor is, ha felesleges! Például egy ciklusváltozót felesleges inicializálni a 
+létrehozásakor, hiszen a <code>for()</code> fejlécében úgyis fog értéket kapni. Egy összegzést 
+végző programrész <code>osszeg=0</code> utasítását is érdemes a ciklus elé tenni közvetlenül, 
+hiszen ahhoz a programrészlethez tartozik logikailag!</p>
+
+<a href="http://www.codinghorror.com/" style="position: absolute; bottom: 0; right: 0;"><img style="display: block" src="ea03/codinghorror.png" alt="Coding Horror logo"></a>
+<h3>Az inicializálatlan változók</h3>
+<ul>
+   <li><strong>Súlyos hiba egy inicializálatlan változó értékét használni!</strong>
+   <li class="csakdoksi">Lehet, hogy nulla, <em>lehet, hogy nem</em>. Lehet, hogy mindig más az értéke, <em>lehet, hogy nem</em>. Lehet, hogy működik a program, <em>lehet, hogy nem</em>
+   <li>Misztikus, követhetetlen hibajelenségek!
+</ul>
+
+<div id="inicializalatlankod">
+<p class="csakdoksi">Ezt a kódrészletet mindenki ki tudja próbálni
+a saját gépén. A legmeglepőbb dolgok történhetnek, mivel a működése
+az inicializálatlan változók miatt nem definiált.</p>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int t[15];  /* inicializálatlan */
+   int i;
+
+   for (i=0; i&lt;15; i+=1)
+      printf(&quot;%d\n&quot;, t[i]);
+
+   return 0;
+}</pre>
+</div>
+
+<div class="kozep"><button data-diapopup="inicializalatlankod">YOLO</button></div>
+
+
+
+
+</div>
+</section>
+<section id="33">
+<div class="slide" id="slide_33">
+<div class="slideheader">
+<h2><span class="oldalszam">33</span>Tömbök túlindexelése</h2>
+</div>
+
+<h3>Túlindexelés: súlyos hiba!</h3>
+<ul>
+   <li>A C <em>nem ellenőrzi a megadott tömbindexeket</em>
+   <li><code>int t[10]</code> tömb túlindexelése: <code class="athuzott">t[-1], t[10], t[234]</code>
+   <li>Misztikus hibák, elvesző változóértékek, lefagyó programok
+</ul>
+
+<div class="kozep"><button data-diapopup="tulindexproba">YOLO</button></div>
+
+<p class="csakdoksi">Az indexhatárok nem ellenőrzésének az oka egyszerű: a hatékonyság. A C 
+nyelv sok modern programozási nyelvvel ellentétben arra való, hogy a lehető leggyorsabban futó 
+programokat írjuk vele. A helyesen megírt programban <em>sehol</em> nincsen tömb túlindexelés, 
+ezért felesleges is lenne a program futása közben ellenőrizni, hogy van-e benne ilyen hiba! A 
+helyes program írása így aztán nem másnak a feladata, mint a programozónak.</p>
+
+<br class="smallskip">
+
+<div><img class="float" src="ea03/ordog.png" alt="Ördög"></div>
+<h3>„Ki itt belépsz, hagyj fel minden reménnyel.”</h3>
+<p><em>Nem definiált működés:</em> ha valami nincs meghatározva a C szabványban, akkor annak
+hatására akármi is történhet. Nincs garantálva <em>semmi.</em>
+</p>
+
+<div id="tulindexproba">
+<p class="csakdoksi">Ezt is érdemes kipróbálni.</p>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   double t[10];
+   int a = 1, b = 2, c = 3;
+
+   printf(&quot;a=%d\nb=%d\nc=%d\n&quot;, a, b, c);
+
+   /* túlindexelés */
+   t[-1] = 0.2;
+   t[10] = 0.3;
+   printf(&quot;\n&quot;);
+
+   printf(&quot;a=%d\nb=%d\nc=%d\n&quot;, a, b, c);
+
+   return 0;
+}</pre>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea03.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

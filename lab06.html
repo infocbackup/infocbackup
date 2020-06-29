@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Labor, 6. hét: struktúrák és függvények</title>
+<meta property="og:title" content="InfoC :: Labor, 6. hét: struktúrák és függvények">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Struktúrák és függvények kezelése. Néhány vezérlési szervezet.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Struktúrák és függvények kezelése. Néhány vezérlési szervezet.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lab06.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Labor, 6. hét: struktúrák és függvények</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Pohl László, Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Struktúrák és függvények kezelése. Néhány vezérlési szervezet.</p>
+</div>
+
+
+<p>Felkészülés a laborra:</p>
+<ul>
+    <li>A <a href="ea05.html#easwitch">switch() szerkezet</a> megértése.
+    <li>A <a href="ea05.html#eastruct">struktúrákról tanultak</a> átismétlése.
+    <li>A <a href="ea04.html#eafunkcionalis">függvényekről tanultak</a> átismétlése.
+    <li>Az <a href="ea05.html#eaoperatorok">operátorokról szóló előadás</a> megértése.
+    <li>A <a href="ea04.html#eabitek">számábrázolásról szóló előadás</a> megértése.
+</ul>
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lab06.html#1">Egyszerű menü</a>
+<li><a href="lab06.html#2">Minimum, maximum, határ</a>
+<li><a href="lab06.html#3">Távolság</a>
+<li><a href="lab06.html#4">Átfedő körök</a>
+<li><a href="lab06.html#5">Számrendszerek</a>
+<li><a href="lab06.html#6">Bitminta kiírása</a>
+<li><a href="lab06.html#7">Bitek titkai</a>
+<li><a href="lab06.html#8">További feladatok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Egyszerű menü</h2>
+</div>
+
+<p>Készíts egyszerű menüvezérelt programot! A program tároljon el egy számot, melynek kezdőértéke <code>a = 1</code>. Ezt követően a program
+jelenítse meg a képernyőn a értékét, és az alább látható menüt. A megfelelő menüpont számának megadása (<code>scanf()</code>-el)
+esetén a program írja ki, hogy melyik menüpontot választottuk, majd hajtsa végre a-n a kiválasztott műveletet, írja ki újból a új
+értékét és a menüt. A menüből mindaddig lehessen újból választani, míg a kilépést nem választja a felhasználó!</p>
+
+<pre class="brush: c "  >
+printf(&quot;0. Alapertek visszaallitasa (a = 1)\n&quot;
+       &quot;1. Hozzzad 1-et\n&quot;
+       &quot;2. Megforditja az elojelet\n&quot;
+       &quot;3. Szorozza 2-vel\n&quot;
+       &quot;4. Kivon 5-ot\n&quot;
+       &quot;9. Kilepes\n&quot;);</pre>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A tevékenység kiválasztásához a <code>switch()</code> szerkezetet érdemes használni; úgy egymás
+alatt, szám szerint felsorolhatóak az értékadások. Figyelni kell, ne maradjon ki a <code>break</code>!
+A menürendszer keretét pedig egy ciklus adja. Ez lehet hátultesztelő is, mert egyszer biztosan végre
+kell hajtani.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int menupont;
+    int a;
+
+    a = 1;
+
+    do {
+        printf(&quot;a = %d\n\n&quot;, a);
+        printf(
+            &quot;0. Alapérték visszaállítása (a = 1)\n&quot;
+            &quot;1. Hozzáad 1-et\n&quot;
+            &quot;2. Megfordítja az előjelét\n&quot;
+            &quot;3. Szorozza 2-vel\n&quot;
+            &quot;4. Kivon 5-öt\n&quot;
+            &quot;9. Kilépés\n&quot;
+            &quot;? &quot;);
+
+        scanf(&quot;%d&quot;, &amp;menupont);
+        switch (menupont) {
+            case 0: a = 1; break;
+            case 1: a += 1; break;
+            case 2: a =- a; break;
+            case 3: a *= 2; break;
+            case 4: a -= 5; break;
+            case 9: /* semmi, majd kilepunk */ break;
+            default: printf(&quot;NA!\n&quot;); break;
+        }
+        printf(&quot;\n&quot;);          /* hogy ne folyjon ossze */
+    } while (menupont != 9);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Minimum, maximum, határ</h2>
+</div>
+
+<p>Írj olyan függvényeket, amelyek:</p>
+<ul>
+    <li>Visszaadja két egész szám közül a nagyobbikat: <code>max(a, b)</code>.
+    <li>Visszaadja két egész szám közül a kisebbiket: <code>min(a, b)</code>.
+</ul>
+<p>Teszteld ezeket a függvényeket! Utána írj olyan függvényt is <em>a fentiek használatával,</em> amely:</p>
+<ul>
+    <li>Két oldalról korlátoz egy értéket: <code>korlatoz(szam, min, max)</code>
+    adja vissza a számot, ha <code>min</code> és <code>max</code> közé esik,
+    amúgy pedig <code>min</code>-t vagy <code>max</code>-ot attól függően,
+    hogy merre haladta meg a tartományt.
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* Visszaadja a két egész szám közül a kisebbiket. A ?: operátoros megoldás is jó. */
+int min(int a, int b) {
+    if (a &lt; b)        /* ha &quot;a&quot; kisebb */
+        return a;
+    else              /* amugy &quot;b&quot; kisebb, vagy egyenloek */
+        return b;
+}
+
+/* Visszaadja a két egész szám közül a nagyobbikat. Az if-else megoldás is jó.*/
+int max(int a, int b) {
+    return a &gt; b ? a : b;
+}
+
+/* A [min;max] intervallumba szorítja a megadott számot, és
+ * azzal tér vissza. Csak akkor működik helyesen, ha min&lt;=max. */
+int korlatoz(int szam, int also, int felso) {
+    return min(max(szam, also), felso);
+}
+
+int main(void) {
+    int i;
+
+    printf(&quot;min(5, 7)=%d\n&quot;, min(5, 7));
+    printf(&quot;max(5, 7)=%d\n&quot;, max(5, 7));
+    printf(&quot;-5..10 számok [0;5] közé korlátozva:\n&quot;);
+    for (i = -5; i &lt;= 10; i += 1)
+        printf(&quot;%d &quot;, korlatoz(i, 0, 5));
+    printf(&quot;\n&quot;);
+
+    return 0;
+}</pre>
+
+<p>1. beugrató: a korlátozásnál figyelni kell arra, hogy az alulról limitáláshoz a <code>max()</code> függvényt kell használni, a felülről
+limitáláshoz pedig a <code>min()</code> függvényt.</p>
+
+<p>2. beugrató: vigyázni kell arra is, hogy a <code>korlatoz()</code> formális paramétereit nem szabad <code>min</code>-nek és
+<code>max</code>-nak elnevezni, hiszen akkor nem lehetne belőle meghívni a <code>min()</code> és <code>max()</code>
+függvényeket:</p>
+
+<pre class="brush: cbub "  >
+int korlatoz(int szam, int min, int max) {
+    return min(max(szam, min), max);       // HIBÁS!
+}</pre>
+
+<p>A formális paraméter neve <em>elfedi</em> a függvényen kívül megadott másik függvény nevét. Érdemes ezt átgondolni a fent
+helyesen megírt <code>alulrol()</code> és <code>felulrol()</code> esetén is! Ott is megtörténik ez, csak nem probléma, mert
+mindkettőnél pont a másik függvényre van szükség.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Távolság</h2>
+</div>
+
+<p>Adj meg egy <code>Pont</code> típust, amely kétdimenziós koordinátát (<code>x</code>, <code>y</code>) tárol! Írj függvényt
+(<code>tav()</code>), amely a paraméterként kapott két pont távolságával tér vissza! (Ehhez Pitagorasz tételét kell használni.)
+Definiálj két pontot a forráskódban! Számíttasd ki ezek távolságát, és írd ki a képernyőre!</p>
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Átfedő körök</h2>
+</div>
+
+<div class="sticky">Kis ZH volt</div>
+<p>Egy geometriai programban körök adatait kell tárolni: középpont (x, y koordináta) és sugár. 
+Ezek valós számok. <ul>
+
+<li>Definiálj adatszerkezetet, amelyben egy kör adatai eltárolhatóak!
+<li>Írj függvényt, amely paraméterként kap két kört, és megmondja, hogy
+    azok átfedik-e egymást! (Ez akkor van, ha a középpontjaik Pitagorasz-tétellel
+    számolható távolsága kisebb, mint a sugaraik összege.)
+<li>Írj függvényt, amely beolvassa a billentyűzetről a középpontot és
+    a sugarat, és visszatérési értéke egy ilyen tulajdonságú kör.
+<li>Egészítsd ki ezt teljes programmá, amelyben beolvasod két kör adatait, és megmondod,
+    hogy azok átfedik-e egymást!
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+typedef struct Kor {
+    double x, y, r;
+} Kor;
+
+Kor beolvas(void) {
+    Kor k;
+    scanf(&quot;%lf %lf %lf&quot;, &amp;k.x, &amp;k.y, &amp;k.r);
+    return k;
+}
+
+int atfed(Kor k1, Kor k2) {
+    return sqrt(pow(k1.x-k2.x, 2)+pow(k1.y-k2.y, 2))&lt;k1.r+k2.r;
+}
+
+int main(void) {
+    Kor a, b;
+    a = beolvas();
+    b = beolvas();
+    printf(&quot;%s\n&quot;, atfed(a, b) ? &quot;Atfedik egymast&quot; : &quot;Nem fedik at egymast.&quot;);
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Számrendszerek</h2>
+</div>
+
+<table class="float">
+  <thead>
+    <tr><th>hex<th>bin<th>dec
+  </thead>
+  <tr><td>0<td>0000<td>0
+  <tr><td>1<td>0001<td>1      <tr><td>2<td>0010<td>2
+  <tr><td>…<td>…<td>…
+  <tr><td>e<td>1110<td>14
+  <tr><td>f<td>1111<td>15
+</table>
+
+<p>Váltsd át papíron a következő 2-es számrendszerbeli (bináris) számokat 10-esbe (decimális): 1011, 
+1101, 10000, 10101!</p>
+
+<p>Váltsd papíron át a következő decimális számokat binárisba: 13, 27, 35.</p>
+
+<p>Váltsd át a következő számokat hexadecimálisból binárisba: 0x1f, 0xfce2, 0xabba, 
+0xcaffe! Váltsd át ezeket binárisból hexadecimálisba: 11111111, 1011100, 101, 10101!</p>
+
+<p class="megjegyzes">2<sup>4</sup>=16, ezért minden hexadecimális (16-os számrendszerbeli) számjegynek pontosan 4 
+darab bináris számjegy felel meg, ahogyan az jobb oldalt is látható. Emiatt pl. a bináris 101011 
+hexadecimális értéke 0x2b, mivel alulról 4-es csoportokban 10'1011, és 10=0x2, illetve 1011=0xb. </p>
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Bitminta kiírása</h2>
+</div>
+
+<p>Írj függvényt, amely paraméterként kap egy <code>unsigned char</code> értéket, és kiírja az 
+érték bitmintáját! Pl. 130 esetén 10000010-t. Tételezd fel, hogy az <code>unsigned char</code> 
+típus 8 bites! Írd ki 0-tól 20-ig a számokat kettes számrendszerben!
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* Bitmintát kiíró függvény */
+void bitminta(unsigned char c) {
+    int i;
+    /* Ciklus 7-0ig (hogy a legnagyobb helyiérték legyen az első) */
+    for (i = 7; i &gt;= 0; i--)
+        /* Minden lépésben elcsúsztatjuk i-vel a számot */
+        /* hogy az adott bitje kerüljön a legkisebb helyiértékre */
+        /* majd az &amp;1-el levágunk mindent, kivéve a legkisebb helyiértéket */
+        printf(&quot;%u&quot;, (c&gt;&gt;i) &amp; 1);
+}
+
+int main(void) {
+    unsigned char i;
+
+    for (i = 0; i &lt;= 20; i++) {
+        bitminta(i);
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Bitek titkai</h2>
+</div>
+
+<p>Az előző feladat folytatása: a bitenként kiíró függvényt írd át úgy, hogy <code>unsigned 
+long</code> típussal dolgozzon. Vagyis több bittel – most tételezzük fel, hogy az <code>unsigned 
+long</code> 32 bites. Másold be a kódba az alábbi tömböt, és írd ki külön sorba az összes számot 
+bitenként!</p>
+
+<pre class="brush: c "  >
+unsigned long szamok[9] = { 0U, 1934128004U, 2219346506U, 2219346513U,
+                            1685621663U, 340306449U, 3813175825U, 2048U, 0U };</pre>
+
+<p>Mit látsz? Írd át úgy, hogy a <code>0</code>-k helyett szóköz, az <code>1</code>-esek helyett 
+<code>X</code> karakter jelenjen meg! (Ehhez használhatod a <code>?:</code> operátort is.)</p>
+
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+ /* Bitmintát kiíró függvény */
+void bitminta(unsigned long c) {
+    int i;              
+    /* Adott helyiértékű bit kiírása (szóköz vagy 'X') */
+    for (i = 31; i &gt;= 0; i--)
+        printf(&quot;%c&quot;, ((c&gt;&gt;i)&amp;1) ? 'X' : ' ');
+}
+
+int main(void) {
+    unsigned long szamok[9] = { 0U, 1934128004U, 2219346506U, 2219346513U,
+                                1685621663U, 340306449U, 3813175825U, 2048U, 0U };
+    int i;
+    for (i = 0; i &lt; 9; i++) {
+        bitminta(szamok[i]);
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>További feladatok</h2>
+</div>
+
+<p>Ha elkészültél, folytasd a feladatgyűjtemény ehhez a témakörhöz kapcsolódó
+<a href="f05.html#feladatstruct">struktúrákkal kapcsolatos feladataival</a>!</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lab06.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

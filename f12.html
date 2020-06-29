@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: 12. hét: bináris fák, többszörös indirekció</title>
+<meta property="og:title" content="InfoC :: 12. hét: bináris fák, többszörös indirekció">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Gyakorlófeladatok a 12. előadás anyagához kapcsolódóan.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Gyakorlófeladatok a 12. előadás anyagához kapcsolódóan.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<script>infoc.onloads.push(function(){ h3toid(); });
+</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="f12.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="feladatbinarisfa" class="namer"></a>
+<h1 class="eloadascim">12. hét: bináris fák, többszörös indirekció</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Nagy Gergely, Pohl László · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Gyakorlófeladatok a 12. előadás anyagához kapcsolódóan.</p>
+</div>
+
+
+<p>Ezen az oldalon rengeteg feladat található a gyakorláshoz. Egy részük megoldással együtt, míg 
+a többi anélkül. A gyakorlófeladatok megoldásához elvileg elegendő az az ismeretanyag, amely az előadáson 
+szerepelt. Természetesen a megoldás kitalálásához szükség lehet arra a rálátásra és 
+tapasztalatra, amit a gyakorlatok és a laborok adnak. A feladatok témakörök szerinti 
+csoportosítása viszont ettől függetlenül az előadást követi.</p>
+
+<p>Felhívjuk a figyelmed arra, hogy a megoldások olvasgatása lényegében nulla 
+tapasztalatot és gyakorlatot ad, így az eredményes számonkérésekhez nem tud hozzásegíteni! A 
+megoldásokat akkor nézd csak meg, ha a saját megoldás elkészítése közben elakadsz.
+Lásd <a href="tanacsok.html">itt</a>.</p>
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="f12.html#1">Listák és kétszeres indirekció</a>
+<li><a href="f12.html#2">Bináris fák</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<a id="ketszeres" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Listák és kétszeres indirekció</h2>
+</div>
+
+<h3>Elejéről a végére</h3>
+<div class="sticky">Kis ZH volt</div>
+<p>Írj függvényt, amely egy lista legelső elemét a lista végére helyezi át! (Például az 
+1,2,3,4,5 listából így 2,3,4,5,1 lesz.) A függvény a lista elejére mutató pointert cím szerint 
+kapja. Ha kettőnél kevesebb elem van, akkor ne csináljon semmit.</p>
+<p>Definiáld az egyszeresen láncolt lista adatszerkezetét úgy, hogy egész számokat tartalmazzon! 
+Készíts rajzot, amely a listakezelést mutatja számozott lépésekkel! Írj programrészt, amely 
+létrehoz két listaelemet, és meghívja a keletkező listára a függvényt.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<img src="f12/zh5a.svg" class="kozep" style="width: 50%">
+
+<pre class="brush: c "  >
+typedef struct Lista {
+   int szam;
+   struct Lista *kov;
+} Lista;
+
+void elso_vegere(Lista **peleje) {
+   Lista *iter, *elso;
+
+   if (*peleje==NULL) return;
+   if ((*peleje)-&gt;kov==NULL) return;
+
+   for (iter=*peleje; iter-&gt;kov!=NULL; iter=iter-&gt;kov)
+      ;
+
+   elso=*peleje;
+
+   iter-&gt;kov=elso;
+   *peleje=elso-&gt;kov;
+   elso-&gt;kov=NULL;
+}
+
+Lista *eleje;
+eleje=(Lista*) malloc(sizeof(Lista));
+eleje-&gt;szam=3;
+eleje-&gt;kov=(Lista*) malloc(sizeof(Lista));
+eleje-&gt;kov-&gt;szam=4;
+eleje-&gt;kov-&gt;kov=NULL;
+
+elso_vegere(&amp;eleje);</pre>
+
+</div>
+</div>
+
+
+
+<h3>Végéről az elejére</h3>
+<div class="sticky">Kis ZH volt</div>
+<p>Írj függvényt, amely egy lista utosó elemét a lista elejére helyezi át! (Például az 1,2,3,4,5 
+listából így 5,1,2,3,4 lesz.) A függvény a lista elejére mutató pointert cím szerint kapja. Ha 
+kettőnél kevesebb elem van, akkor ne csináljon semmit.</p>
+<p>Definiáld az egyszeresen láncolt lista adatszerkezetét úgy, hogy az valós számokat 
+tartalmazzon! Készíts rajzot, amely a listakezelést mutatja számozott lépésekkel! Írj 
+programrészt, amely létrehoz két listaelemet, és meghívja a keletkező listára a függvényt.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<img src="f12/zh5d.svg" class="kozep" style="width: 70%">
+<pre class="brush: c "  >
+typedef struct Lista {
+   double szam;
+   struct Lista *kov;
+} Lista;
+
+void utolso_elore(Lista **peleje) {
+   Lista *iter, *utolso;
+
+   if (*peleje==NULL) return;
+   if ((*peleje)-&gt;kov==NULL) return;
+
+   for (iter=*peleje; iter-&gt;kov-&gt;kov!=NULL; iter=iter-&gt;kov)
+      ;
+
+   utolso=iter-&gt;kov;
+
+   utolso-&gt;kov=*peleje;
+   *peleje=utolso;
+   iter-&gt;kov=NULL;
+}
+
+eleje=(Lista*) malloc(sizeof(Lista));
+eleje-&gt;szam=3;
+eleje-&gt;kov=(Lista*) malloc(sizeof(Lista));
+eleje-&gt;kov-&gt;szam=4;
+eleje-&gt;kov-&gt;kov=NULL;
+
+utolso_elore(&amp;eleje);</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<a id="binarisfak" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Bináris fák</h2>
+</div>
+
+
+
+<h3>Fa építése</h3>
+
+<p>A következő számokat a megadott sorrendben egy balról jobbra rendezett keresőfába szúrjuk, annak kiegyensúlyozása
+nélkül: 5, 8, 3, 6, 7, 2, 9, 1. Rajzold le a keletkező fát!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="sorsurit1">
+            5
+           / \
+          3   8
+         /   / \
+        2   6   9
+       /     \
+      1       7
+</pre>
+</div>
+</div>
+
+
+
+<h3>Fa tulajdonságai</h3>
+
+<p>Mennyi az itt látható bináris fa magassága és leveleinek száma?</p>
+
+<pre class="sorsurit1">
+            o
+           / \
+          o   o
+         /   / \
+        o   o   o
+       /     \
+      o       o
+</pre>
+
+
+
+<h3>Fa bejárása</h3>
+
+<p>Milyen sorrendben járja be egy a) inorder b) postorder c) preorder bejáró
+algoritmus az alábbi fa elemeit?</p>
+
+<pre class="sorsurit1">
+            3
+           / \
+          4   9
+         /   / \
+        2   6   5
+       /     \   \
+      1       7   0
+</pre>
+
+
+
+
+<h3>Mikulás</h3>
+<div class="sticky">Vizsga volt</div>
+<p>A Mikulás a szánjával nekihajtott a fent látható, a gyökérpointerével adott fának. A
+csomagok a puttonyából kihullottak és szétszóródtak a fa ágain. Ezért a Mikulás felmászik a fára, végigjárja
+az összes ágát, és az ott található ajándékokat összegyűjti. Mindet a fa gyökeréhez cipeli.
+Az egyes ágakon található ajándékok számai a fa elemeiben tárolt egész érték által adottak. Feladat:
+megírni azt a függvényt, amely a gyökérpointernél összegzi a fában tárolt elemeket, míg az összes
+többi, fában tárolt egészet kinullázza.</p>
+
+
+
+
+<h3>Lista vagy fa?</h3>
+
+<div class="sticky">Vizsga volt</div>
+
+<p>Egy bináris fa egész számokat tárol. Definiáld C-ben az adatszerkezetet! Írj függvényt, 
+amelyik megmondja egy ilyen fáról, hogy <em>listává fajult-e,</em> vagyis úgy néz-e ki, mint a 
+lent látható fák. A visszatérési értékében jelezze ezt, logikai igaz értékkel. Írj egy rövid 
+programrészt, amelyben definiálsz egy fát, és meghívod arra a fára a megírt függvényt.
+
+<pre class="sorsurit1">
+    o     vagy     o       vagy       o
+   /                \                /
+  o                  o              o
+ /                    \              \
+o                      o              o
+</pre>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct Fa {
+    int adat;
+    
+    struct Fa *b, *j;
+} Fa;
+
+int lista_e(Fa *gy) {
+    /* ha ures, akkor igen. ures fa, ures lista. */
+    if (gy==NULL)
+        return 1;
+    
+    /* ha 2 gyerek van, az elagazas, szoval nem. */
+    if (gy-&gt;b!=NULL &amp;&amp; gy-&gt;j!=NULL)
+        return 0;
+
+    /* ha balra a folytatas, akkor lehet, hogy jok
+     * vagyunk. pontosabban ha a tobbi resz jo, akkor jo. */
+    if (gy-&gt;b)
+        return lista_e(gy-&gt;b);
+    /* mert amugy jobbra ugyanez */
+    return lista_e(gy-&gt;j);
+    
+}
+
+Fa *uj_csomopont(int i) {
+    Fa *uj=(Fa *) malloc(sizeof(Fa));
+    uj-&gt;adat=i;
+    uj-&gt;b=uj-&gt;j=NULL;
+    
+    return uj;
+}
+
+void fa_free(Fa *gy) {
+    if (gy==NULL)
+        return;
+    fa_free(gy-&gt;b);
+    fa_free(gy-&gt;j);
+    free(gy);
+}
+
+int main(void) {
+    Fa *gy=NULL;
+
+    /* itt meg 1 */
+    gy=uj_csomopont(1); /* itt is 1 */
+    gy-&gt;b=uj_csomopont(2);  /* itt is 1 */
+    gy-&gt;j=uj_csomopont(3);  /* itt 0va valik */
+    
+    fa_free(gy-&gt;j);
+    gy-&gt;j=NULL;             /* ujra 1 */
+    gy-&gt;b-&gt;b=uj_csomopont(4);   /* megint 1 */
+    gy-&gt;b-&gt;b-&gt;j=uj_csomopont(5);    /* meg mindig */
+    gy-&gt;b-&gt;b-&gt;b=uj_csomopont(6);    /* es nem */
+    
+    printf(&quot;%d\n&quot;, lista_e(gy));
+    
+    fa_free(gy);
+    
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+<h3>Pontosan kettő vagy nulla leszármazott</h3>
+
+<div class="sticky">Kis ZH volt</div>
+
+<p>Egy bináris fa max. 50 betűs szavakat tárol. Definiáld C-ben az adatszerkezetet! Írj fv-t, 
+amelyik megmondja egy ilyen fáról, hogy minden csomópontnak pontosan kettő vagy nulla 
+leszármazottja van-e. A visszatérési értékében jelezze ezt, logikai igaz értékkel. Írj egy rövid 
+programrészt, amelyben definiálsz egy fát, és meghívod arra a fára a megírt függvényt.
+
+<pre class="sorsurit1">
+     o                                  o
+    / \    ez pl ilyen                 / \    ez meg nem
+   /   \                              /   \
+  o     o                            o     o
+ / \   / \                          / \     \
+o   o o   o                        o   o     o 
+</pre>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+typedef struct Fa {
+    char adat[51];
+    
+    struct Fa *b, *j;
+} Fa;
+
+int ketto_vagy_nulla_e(Fa *gy) {
+    /* ha ures, akkor igen. ha nincs kerdes, akkor igazat valaszolunk. */
+    if (gy==NULL)
+        return 1;
+    
+    /* ha 2 gyerek van, az elagazas.
+     * akkor ez rendben van - ha a reszfak is rendben vannak */
+    if (gy-&gt;b!=NULL &amp;&amp; gy-&gt;j!=NULL)
+        return ketto_vagy_nulla_e(gy-&gt;b) &amp;&amp; ketto_vagy_nulla_e(gy-&gt;j);
+
+    /* ha nincs leszarmazottunk, akkor mi rendben
+     * vagyunk, mert a vegen vagyunk.
+     * ez amugy egyesitheto lenne a fentivel, mert
+     * ha mindketto 0, akkor kvne(null)&amp;&amp;kvne(null) = 1,
+     * vagyis a fenti kifejezes is helyes eredmenyt ad */
+    if (gy-&gt;b==NULL &amp;&amp; gy-&gt;j==NULL)
+        return 1;
+    
+    /* most csak az lehet, hogy egy fele van felolunk
+     * tovabb menes, ami viszont nem jo. */
+    return 0;
+}
+
+Fa *uj_csomopont(char *szo) {
+    Fa *uj=(Fa *) malloc(sizeof(Fa));
+    strcpy(uj-&gt;adat, szo);
+    uj-&gt;b=uj-&gt;j=NULL;
+    
+    return uj;
+}
+
+void fa_free(Fa *gy) {
+    if (gy==NULL)
+        return;
+    fa_free(gy-&gt;b);
+    fa_free(gy-&gt;j);
+    free(gy);
+}
+
+int main(void) {
+    Fa *gy=NULL;
+
+    /* itt 1 */
+    gy=uj_csomopont(&quot;1&quot;); /* itt is 1 */
+    gy-&gt;b=uj_csomopont(&quot;2&quot;);  /* itt 0, most igy nez ki / */
+    gy-&gt;j=uj_csomopont(&quot;3&quot;);  /* megint 1, most igy nez ki /\ */
+
+    gy-&gt;b-&gt;b=uj_csomopont(&quot;4&quot;);   /* megint 0 /\
+                                             /   */
+
+    gy-&gt;b-&gt;j=uj_csomopont(&quot;5&quot;);   /* ujra 1 /\
+                                           /\  */
+    
+
+    gy-&gt;b-&gt;b=uj_csomopont(&quot;6&quot;);
+    gy-&gt;b-&gt;j=uj_csomopont(&quot;7&quot;);   /* es vegul 1  /\
+                                                /\/\ */
+    
+    printf(&quot;%d\n&quot;, ketto_vagy_nulla_e(gy));
+    
+    fa_free(gy);
+    
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+<h3>Meddig van teljesen kitöltve?</h3>
+<div class="sticky">Vizsga volt</div>
+<p>Írj egy függvényt, amelyik megkapja egy fának a gyökerét, és megmondja, hogy a fa
+felső hány szintje van teljesen kitöltve!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>Onnantól van nem teljesen kitöltve, ahol van benne egy <code>NULL</code> pointer.
+Tehát a gyökérhez legközelebbi <code>NULL</code> pointert kell keresni. Ha a gyökér
+maga is <code>NULL</code>, akkor ez a távolság nulla. Ha nem, akkor 1 + a két részfából
+a kisebbik érték.</p>
+<p>Úgy is lehet gondolkozni, hogy egy fa adott szintjein lévő elemek száma egy teljesen
+kitöltött fában a kettő hatványait adják ki: 1, 2, 4, 8 stb. Ameddig ez igaz a szintekre,
+addig teljesen ki van töltve. Már csak kell egy ciklus, amelyik az egyre mélyebb szinteket
+ellenőrzi a külön segédfüggvény hívásával. Ez sokkal lassabb megoldás, de helyes.</p>
+</div>
+</div>
+
+
+<h3>Két régebbi kis ZH</h3>
+
+<div class="sticky">Kis ZH volt</div>
+
+<p>A. Egy bináris fa szavakat tárol, max. 30 betűseket. Definiáld C-ben az adatszerkezetet! Írj 
+fv-t, amelyik megszámolja, hogy egy ilyen fában hány olyan csomópont van, amelyik a „dinnye” és a 
+„papaja” közötti szavakat tárolja az ABC-ben (beleértve pontosan ezeket is.) Az eredményt 
+visszatérési értékként adja. Írj egy rövid programrészt, amelyben definiálsz egy fát, és 
+meghívod arra a fára a megírt függvényt.
+
+<p>B. Egy bináris fa szavakat tárol, amelyek dinamikusan foglalt sztringben vannak. Definiáld a 
+fát! Írj függvényt, amelyik egy ilyen fát teljesen felszabadít (minden hozzá tartozó dinamikus 
+memóriaterületettel együtt!) Írj egy rövid programrészt, amelyben definiálsz egy fát, és 
+meghívod arra a fára a megírt függvényt.
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A megoldás közösen tartalmazza a két feladat által kért függvényeket. Az első feladat maximum 
+30 betűs sztringjei helyett is a második feladat dinamikusan foglalt sztringjei szerepelnek.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+typedef struct Fa {
+    char *sztring;
+    
+    struct Fa *bal, *jobb;
+} Fa;
+
+int dinnye_papaja_kozott(Fa *gy) {
+    int db;
+    
+    if (gy==NULL)       /* ha nincs fa, 0 ilyen szo van */
+        return 0;
+    
+    db=0;
+    if (strcmp(gy-&gt;sztring, &quot;dinnye&quot;)&gt;=0 &amp;&amp; strcmp(gy-&gt;sztring, &quot;papaja&quot;)&lt;=0)
+        db=1;
+    
+    /* ez + a reszfakban levok */
+    return db + dinnye_papaja_kozott(gy-&gt;bal) + dinnye_papaja_kozott(gy-&gt;jobb);
+}
+
+void free_fa(Fa *gy) {
+    if (gy==NULL)       /* ha nincs is csomopont */
+        return;
+    
+    /* elobb a reszfak */
+    free_fa(gy-&gt;bal);
+    free_fa(gy-&gt;jobb);
+    
+    /* utana maga a csomopont */
+    if (gy-&gt;sztring)    /* ha van sztring, free */
+        free(gy-&gt;sztring);
+    free(gy);
+}
+
+Fa *uj_csomopont(char *str) {
+    Fa *uj=(Fa *) malloc(sizeof(Fa));
+    uj-&gt;sztring=malloc(strlen(str)+1);
+    strcpy(uj-&gt;sztring, str);
+    uj-&gt;bal=uj-&gt;jobb=NULL;
+    
+    return uj;
+}
+
+int main(void) {
+    Fa *gy;
+    
+    gy=uj_csomopont(&quot;kigyo&quot;);
+    gy-&gt;bal=uj_csomopont(&quot;cseresznye&quot;);
+    gy-&gt;jobb=uj_csomopont(&quot;free&quot;);
+    gy-&gt;bal-&gt;bal=uj_csomopont(&quot;gyumolcsos&quot;);
+    
+    printf(&quot;dinnye-papaja kozott: %d\n&quot;, dinnye_papaja_kozott(gy));
+    
+    free_fa(gy);
+    
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+<h3>Fát másol, fák egyformák-e</h2>
+
+<p>
+Definiálj egy adatszerkezetet, amelyik karaktereket tároló bináris fa létrehozására alkalmas!
+<br>
+Írj egy függvényt, amelyik paraméterként egy 
+ilyen bináris fa gyökerére mutató pointert kap! Visszatérési értéke 
+legyen egy má - sik bináris fa gyökerére mutató pointer, amelyik az 
+előbbinek a másolata! (A másolást is végezze el a függvény!)
+Írj egy függvényt, amelyik paraméterként két ilyen 
+bináris fa gyökerére mutató pointert kap! Térjen vissza igazzal a 
+függvény, ha a paraméterként kapott két bináris fa egyforma, 
+hamissal akkor, ha nem egyformák.
+Írj egy függvényt, amelyik felszabadít egy paraméterként kapott bináris fát!
+<br>
+Van egy fánk, és&hellip; 
+1) Feltételezve, hogy az egyik már tartalmaz adatot, másold le azt! 
+2) Hasonlítsd őket össze; írd ki a képernyőre, hogy „egyformák”, ha azok. Szabadítsd fel utána a fákat.
+</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Ez a vizsga négy különböző csoportjainak feladataiból összegyúrt
+nagy feladat. Az A csoportban olyan programrészt kellett 
+írni, amelyik egy bináris fát lemásol; a B csoportban pedig úgyszint 
+fát kellett másolni, de úgy, hogy a másolat az eredetinek a 
+tükörképe legyen. Hogy lehet lemásolni egy fát? Egy fa másolata az a 
+gyökér csomópontjának a másolata (1. malloc, 2. adat másolása), és a 
+két részfájának másolata (itt a rekurzió.) Az új csomópont bal 
+oldali részfája az eredeti fa bal oldali részfájának másolata; és a 
+jobb oldalira ugyanez. Természetesen üres fa másolata üres fa.</p>
+
+<pre class="brush: c "  >
+Fa *masol(Fa *gy) {
+    Fa *m;
+
+    if (gy==NULL)    /* ures fa masolata ures fa */
+        return NULL;
+
+    m=(Fa *) malloc(sizeof(Fa));       /* uj csomopont es adat */
+    m-&gt;adat=gy-&gt;adat;
+
+    m-&gt;bal=masol(gy-&gt;bal);      /* reszfak */
+    m-&gt;jobb=masol(gy-&gt;jobb);
+    
+    return m;
+}</pre>
+
+<p>Tükrözve lemásolni ugyanígy kell. Csak olyankor a bal részfába 
+kerül a jobb oldalinak a másolata, a jobb oldaliba pedig a bal 
+másolata – persze az egyes másolatok is tükrözve kell legyenek, így 
+ahhoz ugyanúgy csak egy függvény kell:</p>
+
+<pre class="brush: c "  >
+m-&gt;bal=tukormasol(gy-&gt;jobb);      /* reszfak */
+m-&gt;jobb=tukormasol(gy-&gt;bal);</pre>
+
+<p>Az összehasonlítás a következő módon képzelhető el. A függvény 
+ebben az esetben két fát kap. Ha mind a két fa üres (NULL), akkor 
+igazat kell válaszoljon; két üres fa ugyanis egyforma. Ha az egyik fa 
+üres, a másik meg nem, akkor nem egyformák (legyen bármi is a 
+másikban, ha az első teljesen üres.) Ezekkel a NULL pointeres 
+eseteket lerendeztük. Ha egyik fa sem üres, akkor össze kell 
+hasonlítani őket: akkor egyformák, ha a gyökérelemeik egyformák, 
+<em>és</em> a bal részfáik egyformák, <em>és</em> a jobb részfáik 
+egyformák.</p>
+
+<pre class="brush: c "  >
+int egyforma_e(Fa *egyik, Fa *masik) {
+    if (egyik==NULL &amp;&amp; masik==NULL)     /* ket ures fa egyforma */
+        return 1;
+    if (egyik!=NULL &amp;&amp; masik==NULL)     /* ures fa es nem ures fa -&gt; nem egyf */
+        return 0;
+    if (egyik==NULL &amp;&amp; masik!=NULL)     /* detto */
+        return 0;
+
+    return egyik-&gt;szam==masik-&gt;szam                     /* egyforma szam a gyokerben */
+           &amp;&amp; egyforma_e(egyik-&gt;bal, masik-&gt;bal)        /* es egyformak a bal reszfak */
+           &amp;&amp; egyforma_e(egyik-&gt;jobb, masik-&gt;jobb);     /* es a jobb reszfak */
+}</pre>
+
+<p>Hogy a két fa egymásnak tükörképe-e, azt ugyanígy lehet 
+ellenőrizni, csak lent a feltételnél a bal részfát a jobbal kell 
+hasonlítani, és fordítva. A teljes kódot, néhány aprósággal 
+kiegészítve, hogy működjön, lásd lent.</p>
+
+<p>Buktató: hogy két fa inorder bejárással ugyanazt a listát adja, 
+nem biztosan jelenti azt, hogy a két fa egyforma! Egy 5 gyökerű fa, 
+aminek a balra leszármazottja 7, és annak a balra leszármazottja 9, 
+a 9-7-5 számsort adja inorder bejárva; a 7 gyökerű fa, amelyiknek a 
+bal leszármazottja 9, a jobb pedig 5, úgyszint. Pedig az egyik ilyen 
+/ alakú, a másik meg ilyen /\.</p>
+
+<p>A teljes, kipróbálható program:</p>
+
+<pre class="brush: c "  >
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+typedef struct Fa {
+    int szam;                   /* double, float, char, ... */
+    struct Fa *bal, *jobb;
+} Fa;
+
+/* ezt mindegyik keri */
+void torol(Fa *gy) {
+    if (gy==NULL)
+        return;
+    torol(gy-&gt;bal);
+    torol(gy-&gt;jobb);
+    free(gy);
+}
+
+/* ezt semelyik nem keri, csak nekem kellett */
+Fa *uj(int szam) {
+    Fa *uj=malloc(sizeof(Fa));
+    uj-&gt;szam=szam;
+    uj-&gt;bal=uj-&gt;jobb=NULL;
+    return uj;
+}
+
+/* ezt sem kerte egyik feladat sem */
+void kiir(Fa *gy) {
+    if (gy==NULL)
+        return;
+    kiir(gy-&gt;bal);
+    printf(&quot;%d\n&quot;, gy-&gt;szam);
+    kiir(gy-&gt;jobb);
+}
+
+/* A */
+Fa *masol(Fa *gy) {
+    Fa *uj;
+    if (gy==NULL)
+        return NULL;
+    uj=malloc(sizeof(Fa));
+    uj-&gt;szam=gy-&gt;szam;
+    uj-&gt;bal=masol(gy-&gt;bal);
+    uj-&gt;jobb=masol(gy-&gt;jobb);
+    return uj;
+}
+
+/* B */
+Fa *tukormasol(Fa *gy) {
+    Fa *uj;
+    if (gy==NULL)
+        return NULL;
+    uj=malloc(sizeof(Fa));
+    uj-&gt;szam=gy-&gt;szam;
+    uj-&gt;jobb=tukormasol(gy-&gt;bal);    /* itt a kutya elasva */
+    uj-&gt;bal=tukormasol(gy-&gt;jobb);    /* bal &lt;- jobb, jobb &lt;- bal */
+    return uj;
+}
+
+/* C */
+int egyforma_e(Fa *egyik, Fa *masik) {
+    if (egyik==NULL &amp;&amp; masik==NULL)   /* ket ures fa egyforma */
+        return 1;
+    if (egyik!=NULL &amp;&amp; masik==NULL)   /* ures fa es nem ures fa -&gt; nem egyf */
+        return 0;
+    if (egyik==NULL &amp;&amp; masik!=NULL)   /* detto */
+        return 0;
+    
+    return egyik-&gt;szam==masik-&gt;szam                     /* egyforma szam a gyokerben */
+           &amp;&amp; egyforma_e(egyik-&gt;bal, masik-&gt;bal)        /* es egyformak a bal reszfak */
+           &amp;&amp; egyforma_e(egyik-&gt;jobb, masik-&gt;jobb);     /* es a jobb reszfak */
+}
+
+/* D */
+int tukros_e(Fa *egyik, Fa *masik) {
+    if (egyik==NULL &amp;&amp; masik==NULL)   /* ket ures fa egyforma */
+        return 1;
+    if (egyik!=NULL &amp;&amp; masik==NULL)   /* ures fa es nem ures fa -&gt; nem egyf */
+        return 0;
+    if (egyik==NULL &amp;&amp; masik!=NULL)   /* detto */
+        return 0;
+    
+    return egyik-&gt;szam==masik-&gt;szam                  /* egyforma szam a gyokerben */
+           &amp;&amp; tukros_e(egyik-&gt;bal, masik-&gt;jobb)      /* es bal reszfa ~ jobb reszfa */
+           &amp;&amp; tukros_e(egyik-&gt;jobb, masik-&gt;bal);     /* illetve jobb reszfa ~ bal reszfa */
+}
+
+int main(void) {
+    Fa *eredeti;
+    Fa *masolat;
+    Fa *tukormasolat;
+
+    /* hogy legyen min kiprobalni, nem feladat */
+    eredeti=uj(5);
+    eredeti-&gt;bal=uj(7);
+    eredeti-&gt;jobb=uj(9);
+
+    /* A */
+    masolat=masol(eredeti);
+    /* B */
+    tukormasolat=tukormasol(eredeti);
+
+    kiir(eredeti);
+    kiir(masolat);
+    kiir(tukormasolat);
+    
+    /* C */
+    printf(&quot;egyforma eredeti,masolat: %s\n&quot;, egyforma_e(eredeti, masolat)?&quot;egyforma&quot;:&quot;nem az&quot;);
+    printf(&quot;egyforma eredeti,tukormasolat: %s\n&quot;, egyforma_e(eredeti, tukormasolat)?&quot;egyforma&quot;:&quot;nem az&quot;);
+    
+    /* D */
+    printf(&quot;tukros eredeti,masolat: %s\n&quot;, tukros_e(eredeti, masolat)?&quot;tukros&quot;:&quot;nem az&quot;);
+    printf(&quot;tukros eredeti,tukormasolat: %s\n&quot;, tukros_e(eredeti, tukormasolat)?&quot;tukros&quot;:&quot;nem az&quot;);
+
+    /* mind keri */
+    torol(eredeti);
+    torol(masolat);
+    torol(tukormasolat);
+    
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+
+<h3>Kulcs szerint rendezett fa</h3>
+<p>Adott a következő program, amelyben egy kétdimenziós tömb elemeinek
+első fele egy kulcs, második fele egy érték. Például a legelső elemnél
+a 13 a kulcs, a 105 pedig az érték.</p>
+
+<pre class="brush: c "  >
+char minta[][2]={{13, 105}, {22, 116}, {14, 111}, {45, 101}, {3, 99}, 
+   {35, 32}, {23, 32}, {65, 32}, {18, 10}, {53, 97}, {17, 62}, 
+   {27, 110}, {55, 33}, {15, 46}, {4, 108}, {59, 41}, {72, 32}, 
+   {41, 102}, {6, 100}, {39, 110}, {60, 59}, {68, 116}, {31, 10}, 
+   {74, 59}, {30, 123}, {63, 32}, {1, 105}, {16, 104}, {47, 108}, 
+   {66, 114}, {28, 40}, {20, 105}, {26, 105}, {62, 32}, {29, 41}, 
+   {46, 108}, {71, 110}, {25, 97}, {7, 101}, {64, 32}, {0, 35}, 
+   {77, 10}, {50, 118}, {76, 125}, {56, 92}, {5, 117}, {34, 32}, 
+   {48, 111}, {38, 105}, {8, 32}, {54, 103}, {19, 10}, {33, 32}, 
+   {73, 48}, {32, 32}, {61, 10}, {51, 105}, {12, 100}, {36, 112}, 
+   {67, 101}, {37, 114}, {44, 72}, {70, 114}, {58, 34}, {9, 60}, 
+   {2, 110}, {52, 108}, {11, 116}, {10, 115}, {75, 10}, {24, 109}, 
+   {40, 116}, {21, 110}, {49, 32}, {42, 40}, {43, 34}, {57, 110}, 
+   {69, 117}, {78, 0}};</pre>
+
+<p>Írj egy programot, amely felépít egy bináris fát, amely ezeket
+a kulcs-érték párokat tartalmazza, és a kulcs szerint rendezve van!
+Az értékeket karakternek tekintve, járd be a keletkező fát a kulcs
+szerint növekvő sorrendben, és írd ki a karaktereket! Milyen üzenetet
+rejt a fa?</p>
+
+
+
+
+
+<h3>Keresés rendezetlen fában</h3>
+
+<p>Írj rekurzív függvényt, amely nem feltételez semmilyen rendezettséget a fa elemei részéről 
+(az értékek részéről), és úgy keres meg egy karaktert a fenti fában!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<ul>
+   <li>Ha üres a fa, akkor nincs meg a keresett elem.
+   <li>Ha a gyökérelem pont az, amit keresünk, akkor arra kell visszatérni pointerrel.
+   <li>Amúgy lehet, hogy a bal oldali részfában lesz. Ha ott megtaláljuk, akkor egy onnan
+      származó pointerrel kell visszatérni.
+   <li>Ugyanez lehet a jobb oldali részfánál is.
+   <li>Ha egyikben sem – akkor <code>NULL</code> pointer.
+</ul>
+</div>
+</div>
+
+
+<h3>Lista építése</h3>
+
+<p>Írj függvényt, amely egyszeresen láncolt listát épít a fenti, karaktereket tároló fa azon 
+elemeire mutató pointerekből, amelyek:
+
+<ul>
+   <li>az <code>'l'</code> betűt tartalmazzák,
+   <li>whitespace (szóköz, újsor vagy tabulátor) karaktert tartalmaznak (ehhez használható az <code>isspace()</code> függvény),
+   <li>egy tetszőleges, paraméterként adott karaktert tartalmaznak.
+</ul>
+
+<p>Hol lehet ehhez többszörös indirekciót alkalmazni? Miért?</p>
+
+
+
+
+<h3>Törlés a fából</h3>
+
+<p>A tananyagban nem szerepel a bináris fából törlés, de nem nehéz megcsinálni.</p>
+<ul>
+    <li>Ha a törlendő elem levél, simán törölhető.
+<pre class="sorsurit1">
+            5                       5           
+           / \                     / \          
+          3   8                   3   8         
+         /   / \                 /   / \        
+        2   6   9               2   6   9       
+       /     \   \             /         \
+      1       <span class="athuzott piros">7</span>   10          1           10
+</pre>
+    
+    <li>Ha egy gyereke van, akkor is. Természetesen ilyenkor helyettesíteni kell a töröltet a gyerekével:
+<pre class="sorsurit1">
+            5                       5           
+           / \                     / \          
+          3   8                   3   8         
+         /   / \                 /   / \        
+        2   <span class="athuzott piros">6</span>   9               2   7   9       
+       /     \   \             /         \
+      1       7   10          1           10
+</pre>
+    
+    <li>Nehézség csak akkor adódik, ha a törlendő elemnek két gyereke van, mivel ilyenkor
+    az egyetlen törölt elem helyét nem foglalhatja el a két gyereke:
+<pre class="sorsurit1">
+            5
+           / \
+          3   <span class="athuzott piros">8</span>
+         /   / \
+        2   6   9
+       /     \   \
+      1       7   10
+</pre>
+        Ilyenkor a törlendő elem <em>tartalmát</em> helyettesíteni kell akár az in-order bejárás szerint
+        utána következő, akár az in-order bejárás szerint őt megelőző elemmel (mindegy, hogy melyikkel, lent
+        mind a kettő ki van emelve).
+        Utána pedig a helyettesítő elem könnyedén törölhető, mivel bizonyítható, hogy nulla vagy
+        egy gyereke volt csak, tehát a probléma vissza van vezetve az előző két esetek egyikére.
+<pre class="sorsurit1">
+            5                       5                       5           
+           / \                     / \                     / \          
+          3   <span class="athuzott piros">8</span>                   3   7                   3   7         
+         /   / \                 /   / \                 /   / \        
+        2   6   <em>9</em>               2   6   9               2   6   9       
+       /     \   \             /     \   \             /         \
+      1       <em>7</em>   10          1       <span class="athuzott piros">7</span>   10          1           10
+</pre>
+</ul>
+
+<p>Feladatok:</p>
+<ul>
+    <li>Gondold ki, hogyan lehet megtalálni egy adott elemet követő, vagy adott elemet megelőző elemet!
+        Ehhez ne másold ki a fát lineáris adatszerkezetbe (tömbbe vagy listába), az felesleges.
+    <li>Magyarázd meg, miért igaz az a kijelentés, hogy az így megtalált elemnek nulla vagy egy
+        gyereke van csak!
+    <li>A törlésnél figyelni kell arra, hogy a szülő elem valamelyik pointere, vagy esetleg a fa
+        gyökere pointer módosul. Ezért a programban a faelemekben szülőre mutató pointert lehet
+        érdemes használni, vagy a program kétszeres indirekcióval egyszerűsíthető. Gondold végig,
+        hogy a nulla vagy egy gyerekű elem törlése hogyan működik pointerek szintjén! Ezt a problémát
+        megoldhatod úgy is, hogy mindig visszatérsz a fa (új) gyökerével.
+    <li>Írj programot, amelyben egy függvénnyel tudod egy keresőfa egy adott elemét törölni!
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Részmegoldás: a következő és az előző elem</a></h4>
+<div class="megjelenik csik">
+<p>Egy adott elemet megelőző és az azt követő elem könnyen megtalálható iteratív algoritmussal 
+is. Az őt megelőző elem a nála kisebbek közül a legnagyobb, tehát a bal oldali részfájának 
+jobb szélső eleme. Az őt követő elem pedig szimmetrikusan a jobb oldali részfájának 
+bal szélső eleme.</p>
+<p>Az így megtalált elemek mindenképp legfeljebb egy gyerekkel rendelkeznek csak: a 
+bal szélső elem azért, mert nincs bal oldali szomszédja (különben nem ő lenne a 
+bal szélső), a jobb szélső pedig ugyanígy, csak a másik irányba.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="f12.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

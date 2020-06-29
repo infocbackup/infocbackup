@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Adventi naptár</title>
+<meta property="og:title" content="InfoC :: Adventi naptár">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="InfoC :: Adventi naptár">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="InfoC :: Adventi naptár">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="../modulz/logo_touch.png">
+<link rel="image_src" href="../modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="../modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="../modulz/style/localfonts.css@v10.css">
+<script src="../modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="../index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="../index.html">Kezdőlap</a>
+<li><a href="../nhf.html">Nagy házi feladat</a>
+<li><a href="../elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="../ea01.html">1. hét: bevezetés</a>
+<li><a href="../ea02.html">2. hét: algoritmusok</a>
+<li><a href="../ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="../ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="../ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="../ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../ea09.html">9. hét: láncolt listák</a>
+<li><a href="../ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="../ea12.html">12. hét: bináris fák</a>
+<li><a href="../ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="../ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="../gy02.html">2. hét: algoritmizálás</a>
+<li><a href="../gy03.html">3. hét: egyszerű programok</a>
+<li><a href="../gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="../gy05.html">5. hét: függvények</a>
+<li><a href="../gy06.html">6. hét: származtatott típusok</a>
+<li><a href="../gy07.html">7. hét: mutatók használata</a>
+<li><a href="../gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="../gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="../gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="../gy13.html">13. hét: bináris fák</a>
+<li><a href="../gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="../lab01.html">1. hét: operációs rendszer</a>
+<li><a href="../lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="../lab03.html">3. hét: egyszerű programok</a>
+<li><a href="../lab04.html">4. hét: tömbök</a>
+<li><a href="../lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="../lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="../lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="../lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="../lab11.html">11. hét: láncolt listák</a>
+<li><a href="../lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="../lab13.html">13. hét: bináris fák</a>
+<li><a href="../lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="../f01.html">1. hét: egyszerű programok</a>
+<li><a href="../f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="../f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="../f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="../f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="../f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../f09.html">9. hét: láncolt listák</a>
+<li><a href="../f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="../f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="../f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="../jegyzet.html">Jegyzet és puska</a>
+<li><a href="../fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="../stilus.html">Kódolási stílus</a>
+<li><a href="../tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="../debugmalloc.html">Debugmalloc</a>
+<li><a href="../mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="../nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="../nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="../nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="../orak.html">SVG óra galéria</a>
+<li><a href="../angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="../turing.html">Mit tud a számítógép?</a>
+<li><a href="../bf.html">BF</a>
+<li><a href="../bitturmix.html">Bitturmix</a>
+<li><a href="../labirintus.html">Labirintusok</a>
+<li><a href="../tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../karakterkodolas.html">Karakterkódolások</a>
+<li><a href="../strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="../internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="../sdl.html">SDL grafika</a>
+<li><a href="../sdl_telepito.html">SDL telepítés</a>
+<li><a href="../fa.html">Fák rajzolása</a>
+<li><a href="../lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="index.html@v=18.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="../mondatelemzo.html">Mondatelemző</a>
+<li><a href="../kifejezesek.html">Kifejezések</a>
+<li><a href="../derivalas.html">Deriválás</a>
+<li><a href="../ast_epit.html">AST: szintaxisfák</a>
+<li><a href="../ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="../ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="../advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<div class="float" style="margin-top: 0.25em; margin-bottom: 0;"><a href="../advent.html">&larr; vissza</a></div>
+<h1 class="eloadascim">Adventi naptár</h1>
+<h2>Háromdimenziós grafika – forgatás és perspektíva</h2>
+
+<img src="advent18-kocka.png" class="float">
+
+<p>Eddig az összes grafikus program az adventi naptárban kétdimenziós grafikával dolgozott.
+Minden kirajzolt dolog egy síkon volt, a monitor síkján. A repülős játéknál kicsit foglalkozni
+kellett a magasságokkal (hogy ne úgy rajzolja ki a program a repülőket, mintha a fák alatt
+mennének el), de a repülők abban sem térben mozogtak – nem tároltuk el igazából azok magasságát.
+
+<p>Három dimenzióban viszont ezt megtesszük. Itt minden tárgynak három koordinátája van,
+<code>x</code>, <code>y</code>, és <code>z</code>. Viszont a monitorunk továbbra is kétdimenziós, úgyhogy a
+látott képet valahogy ki kell lapítani, leképezni azt a monitor síkjára, pontosan úgy, mint amikor
+egy fényképet készítünk. Ehhez nem elég simán csak eldobni a <code>z</code>, mélység koordinátát, hanem
+valamiféle számításokat kell végezni. Minél messzebb van egy tárgy, annál kisebbnek kell látszódjon.
+Az ehhez tartozó számítás, amelynek neve vetítés (perspektivikus leképezés), meglepően egyszerű.
+
+<p>A mai program nem lesz OpenGL-es, és a 3D kirajzolást nem a grafikus kártya fogja elvégezni,
+hanem maradunk az SDL-nél, és a „kézzel” számolásnál. Így látszani fog, mi hogyan történik. A
+végeredmény: egy program, amely szabályos testeket rajzol ki és forgat – vagyis inkább bármit,
+mivel a kirajzolt testek adatait fájlból olvassa be.
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="index.html@v=18.html#1">A vetítés matematikája</a>
+<li><a href="index.html@v=18.html#2">A forgatás matematikája</a>
+<li><a href="index.html@v=18.html#3">Az adatszerkezet</a>
+<li><a href="index.html@v=18.html#4">A program működése</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A vetítés matematikája</h2>
+</div>
+
+<p>A programban a függvénykirajzolóhoz hasonlóan két koordinátarendszert fogunk használni. A
+képernyő koordinátarendszerének origója a monitor bal felső sarka, és az <code>x</code> tengely jobbra
+mutat, az <code>y</code> pedig lefelé. A térbeli koordinátarendszer origója ezzel szemben középen van;
+az <code>x</code> irány a vízszintes, és jobbra nő, az <code>y</code> a függőleges, és felfelé nő, a <code>z</code>
+tengely pedig a mélységet jelenti. Leképezéskor ez átdöfi a monitot. A nagyobb <code>z</code>
+koordinátájú tárgyak távolabb vannak.
+
+<p>Az első és legfontosabb kérdés az, hogyan lesz a háromdimenziós  koordinátákból kétdimenziós
+képkoordináta. Ez a leképezés meglepően egyszerű.
+
+<img src="advent18-persp.svg" style="width: 42em;" class="kozep">
+
+<p>Ezen a rajzon a P(x;y;z) pont van a háromdimenziós térben; ennek a helyét, P'(x';y')-t
+keressük a vetítési síkon (monitoron :)). A monitor a <code>z=0</code> síknak felel meg, amit most
+oldalról nézzük, és egybeesik a rajzon az <code>y</code> tengellyel. A néző a kép bal szélén van, az M
+pontban, <code>d</code> távolságra a monitortól. A P' pont helyét a P és M pontok közötti szakasz és a
+sík metszete határozza meg. Ezt a szakaszt berajzolva a metszéspontonkívül kapunk két hasonló,
+derékszökű háromszöget. Ezen derékszögű háromszögek befogói <code>d</code> és <code>y'</code>, továbbá
+<code>d+z</code> és <code>y</code>. A hasonlóság miatt a <code>d/y'=(d+z)/y</code> egyenletet írhatjuk fel. Ebből
+<code>y'</code>-t kifejezve <code>y'=d&middot;y/(d+z)</code> adódik – és már kész is vagyunk. A vetítés
+lényegében egy osztásból áll, ami szemlélet szerint helyes is: minél távolabb van valami, annál kisebb lesz.
+Az <code>x'</code> koordináta ugyanígy számítható:
+
+<pre class="brush: c "  >
+xk = +d * x/(z + d) + screen-&gt;w/2;
+yk = -d * y/(z + d) + screen-&gt;h/2;</pre>
+
+<p>Az <code>yk</code> -1-es szorzója azért kell, mert eltérő a függőleges tengelyek iránya a
+térben és a monitoron, a <code>w/2</code> és a <code>h/2</code> pedig a képernyő közepét adják.
+
+<p>A programban a forgatott testek az origó körül lesznek, mivel az 
+akörüli forgatást könnyű leírni matematikailag. A vetítési sík pedig 
+a <code>z=0</code> sík, ahogy a rajzon is – tehát az origó helye a 
+monitor közepe. A <code>d</code> távolsággal azt adjuk meg, hogy 
+milyen messze vagyunk ettől a vetítési síktól. Nagy távolság esetén 
+nem nagyon számít a vetített pontok eredeti <code>z</code> 
+koordinátája a hányadosban hozzáadott nagy <code>d</code> miatt. Ha 
+közel megyünk a síkhoz, akkor viszont <code>d</code> kicsi, és a 
+pontok vetített helyzetét erősen befolyásolja a <code>z</code> 
+koordinátájuk. Az alábbi rajzok egy 200 egység oldalhosszúságú kockát
+mutatnak különböző távolságokból:
+
+<div class="columns c3">
+    <div>
+        <img src="advent18-kocka300.png" class="kozep">
+        <p class="kozep">d = 300</p>
+    </div>
+    <div>
+        <img src="advent18-kocka1200.png" class="kozep">
+        <p class="kozep">d = 1200</p>
+    </div>
+    <div>
+        <img src="advent18-kocka600.png" class="kozep">
+        <p class="kozep">d = 600</p>
+    </div>
+</div>
+
+<p>Az első rajzon annyira közel van a kocka a szemünkhöz, hogy az első lapja elfed minden
+mást; a harmadik rajzon pedig olyan távol, hogy a leképezésen már majdnem teljesen párhuzamosak
+azok a vonalak, amelyek térben is azok. Az elsőn szinte kiböki a szemünket, a harmadikon
+meg messziről nézzük, távcsővel.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A forgatás matematikája</h2>
+</div>
+
+<img src="advent18-forgat.svg" class="float" style="width: 11em;">
+
+<p>Forgassunk el egy P(x;y) pontot az origó körül! Ha a forgatás szöge β, akkor az alábbi
+egyenleteket írhatjuk fel (α és r a pont eredeti helyzetét határozzák meg):
+
+<pre style="width: auto; overflow: auto;">
+x  = r·cosα        y  = r·sinα
+x' = r·cos(α+β)    y' = r·sin(α+β)
+</pre>
+
+<p>Behelyettesítve <code>cos(α+β)</code>-t és <code>sin(α+β)</code>-t az ismert összefüggések alapján:
+
+<pre style="width: auto; overflow: auto;">
+x' = r·(cosα·cosβ-sinα·sinβ) = r·cosα·cosβ-r·sinα·sinβ = x·cosβ - y·sinβ
+y' = r·(sinα·cosβ+cosα·sinβ) = r·sinα·cosβ+r·cosα·sinβ = x·sinβ + y·cosβ
+</pre>
+
+<p>Vagyis az elforgatott pont koordinátái könnyen kifejezhetők az eredeti koordinátákból és
+a forgatás szögének megfelelő <code>sinβ</code>, <code>cosβ</code> függvényértékekből. Egy
+síkon ez az egyetlen egy fajta forgatás lehetséges, a térben viszont többféle, mert forgathatunk
+mind a három tengely körül. A <code>z</code> tengely körüli forgatást éppen a fenti képlet írja le,
+mert olyankor <code>z'=z</code>. Az <code>x</code> és az <code>y</code> tengely körüli forgatásnál rendre az
+<code>x</code> és <code>y</code> koordináták maradnak változatlanul, míg a másik kettő a fenti képlethez
+hasonlóan számolható. A három tengely körüli forgatást billentésnek (pitch), fordulásnak (yaw)
+és csavarásnak (roll) is szoktuk nevezni.
+
+<p>A térben forgatásnál egy dologra kell figyelni, nevezetesen arra, hogy a három forgatás
+sorrendje számít: nem mindegy, hogy valamit előbb az <code>x</code>, utána az <code>y</code> tengely körül
+forgatunk el, vagy fordítva. Ezt mindenki könnyedén kipróbálhatja magának egy dobókockával.
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Az adatszerkezet</h2>
+</div>
+
+<img src="advent18-ikoza.png" class="float">
+
+<p>Eljött a programozás ideje. Jobb oldalt egy ikozaéder látható. Ennek a térbeli
+koordinátáit kellene tárolnunk; ezt kellene forgatnunk és kirajzolnunk a képernyőre.
+
+<p>Van egy nagyon fontos megfigyelés, amit tehetünk itt, mégpedig az, hogy ennek minden csúcsából
+három él indul ki. Ezt általánosságban is megfigyelhetjük, hogy bármelyik poliédernek (sík lapokkal
+határolt testnek) minden csúcsából legalább három él indul ki. Ha a jobb oldalihoz hasonló drótvázat
+kell kirajzolni, azaz az éleket, akkor nem érdemes minden élhez eltárolni azok koordinátáit.
+Ha így tennénk, akkor egy ikozaéder esetén minden csúcson ötször végeznénk el a forgatást és
+a vetítést. Érdemes tehát a csúcsokat külön eltárolni, és az éleknél pedig csak azt az információt
+rögzíteni, hogy melyik két csúcsot köti össze.
+
+<p>Definiáljuk az alábbi bemeneti fájlformátumot a programhoz:
+
+<pre>
+; komment, ami pontosvesszővel kezdődik, vagy üres sor
+
+; a p-vel kezdődő sorok csúcsokat határoznak meg.
+; az első szám a pont sorszáma, a többi három pedig az x,y,z koordináta (valós)
+p 1 -100 100 -100
+p 2 100 100 -100
+p 3 100 -100 -100
+p 4 -100 -100 -100
+
+; az l-es sorok egy élt adnak meg. az első szám egy színkód (egész),
+; a másik kettő pedig a két összekötendő pont
+l 1 1 2
+l 1 2 3
+l 1 3 4
+l 1 4 1
+
+; az s-es sor egy szöveg, ami megjelenik a képen. 
+; az első két szám a képernyőkoordináta, a harmadik a színkód.
+; utána sor végéig a megjelenítendő szöveg.
+s 10 10 1 Negyzet
+</pre>
+
+<p>Definiáljuk az alábbi adatszerkezetet! Legalapvetőbb építőkő a <code>Pont</code>.
+Ez tárolja egy pont fájlból beolvasott, térbeli koordinátáit (x, y, z), és a sorszámát (hanyadik).
+Ezen kívül eltárolja a forgatás során előálló új térbeli koordinátákat (xf, yf, zf), és a vetítéssel
+kapott képernyőkoordinátákat (xk, yk). A láncolt lista építéséhez pedig egy pointert:
+
+<pre class="brush: c "  >
+typedef struct Pont Pont;
+struct Pont {
+    double x, y, z;     /* eredeti 3d koordináta */
+    int hanyadik;       /* fájlbeli sorszám */
+    double xf, yf, zf;  /* forgatott 3d koordináta */
+    int xk, yk;         /* képernyőn koordináta */
+    Pont *kov;
+};</pre>
+
+<p>Egy élt a <code>Vonal</code> nevű struktúrában tárolunk. Ez tárolja a két hivatkozott pont 
+sorszámot, és tárol két pointert is a két összekötött pontra. Ezek közül elvileg csak az egyik 
+párosra lenne szükség, de kényelmes, ha megvan mind a kettő. A fájl a sorszámokkal hivatkozik a 
+pontokra, de a teljes bemenet beolvasása után a program minden élhez megkeresi a két összekötött 
+pontot a pontok láncolt listájából, hogy ne kelljen újra és újra elvégezni ezt a műveletet. Mivel
+a forgatás közben az nem változik, hogy melyik él mely csúcsokat köti össze, ezért ez megtehető:
+
+<pre class="brush: c "  >
+typedef struct Vonal Vonal;
+struct Vonal {
+    int pi1, pi2;   /* pontok indexe, amit osszekot */
+    Pont *p1, *p2;  /* pointer rájuk, hogy ne kelljen mindig megkeresni */
+    int szin;       /* színkód a fenti tömbből */
+    Vonal *kov;
+};</pre>
+
+<p>A feliratot tároló <code>Szoveg</code> struktúra sok magyarázatot nem igényel:
+
+<pre class="brush: c "  >
+typedef struct Szoveg Szoveg;
+struct Szoveg {
+    char felirat[100];  /* felirat szövege */
+    int x, y, szin;     /* pozíció és szín */
+    Szoveg *kov;
+};</pre>
+
+<p>Ahogyan a <code>Rajz</code> struktúra sem: egy rajz pontokból, azokat összekötő vonalakból
+és feliratokból áll. A <code>latszik[]</code> tömb öt darab logikai értéket tárol: a rajzon
+a különböző élek a programban ki-be kapcsolhatók. Ennek célja érthető lesz a program kipróbálásakor.
+
+<pre class="brush: c "  >
+typedef struct Rajz Rajz;
+struct Rajz {
+    Pont *pontok;
+    Vonal *vonalak;
+    Szoveg *szovegek;
+    int latszik[5];     /* melyik színű vonalak látszanak épp */
+};</pre>
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>A program működése</h2>
+</div>
+
+<p>A fentiek után a program működése különösebb magyarázatot nem igényel. A függvények az alábbiak:
+<ul>
+    <li><code>int beolvas(char const *fajlnev, Rajz *rajz)</code>: beolvassa a megadott nevű fájlt
+        az addig inicializálatlan <code>Rajz</code> struktúrába. Hamissal tér vissza hiba esetén.
+        (Ez a kód megmutatja, hogyan szokás használni az utasításblokkokat a változók láthatóságának
+        korlátozására. Ezen kívül mutat egy-két <code>scanf()</code>-es trükköt.) Az adatok
+        beolvasása után végigmegy a vonalak listáján, és mindegyik vonalnak megkeresi a két végpontját,
+        hogy később már ne kelljen ezzel foglalkoznia a kirajzoló függvénynek.
+    <li><code>void forgat_es_vetit(SDL_Surface *screen, Rajz *rajz, double szog, double d)</code>:
+        ez a függvény végzi el a fent részletezett matematikai műveleteket, a három tengely körüli
+        forgatást és a vetítési transzformációt. Az egyes pontok <code>xk</code>, <code>yk</code>
+        adattagjait módosítja, amelyeket a
+    <li><code>void kirajzol(SDL_Surface *screen, Rajz const *rajz, double szog, double d)</code> függvény
+        használ majd fel.
+</ul>
+
+
+<p>A program futása közben az 1, 2, 3, 4 gombokkal lehet ki- és bekapcsolni az egyes
+éleket, szín szerint. A 0-s gomb az élek sorszámait kapcsolja ki-be (ez jól jön akkor,
+amikor egy bemeneti fájlt vizsgálunk). A fel és le nyilakkal pedig közelebbről vagy
+távolabbról lehet nézni a forgatott testet. d=200-nál közelebb nem lehet menni hozzá, mivel
+akkor egyes pontok már a megfigyelő mögött lennének. Olyankor pedig <code>z&lt;0</code> miatt a vetítés
+képlete hibás eredményt ad!
+
+<p>Az <a href="advent18-drot.zip">advent18-drot.zip</a>-ben található néhány adatfájl is.
+Ezekben az összes szabályos test szerepel, és
+a szövegek megmutatják azt is, hogy mi közöttük a kapcsolat. A beolvasott adatfájl nevét a <code>main()</code>
+függvény legelején lehet beállítani, vagy az első parancssori paraméterrel.
+
+<p>Három ötlet a továbbfejlesztésre:
+
+<ol>
+    <li>Akinek van kék-piros vagy kék-sárga 3D szemüvege, megcsinálhatja,
+    hogy minden képre kétszer rajzolja ki az éleket, egymáshoz képest kicsit eltolva vízszintesen a pontokat.
+
+    <li>A távolabbi éleket halványabb színnel kirajzolva a 3D hatás erősíthető, hasonlóan, mint fent az ikozaéder
+    képénél. (Ehhez az él színének megválasztásánál figyelembe kell venni a forgatás utáni <code>z</code> koordinátát.
+    A szakaszokat fel kell bontani kis darabokra, mivel az SDL_gfx <code>lineColor()</code> függvénye csak konstans
+    színnel tud rajzolni.)
+
+    <li>Az élek tárolása helyett lapokat tárolni, vagyis azokat a sokszögeket, amelyek
+    a poliédert határolják. A vonalak láncolt listája helyébe ilyenkor a lapok láncolt listája lép. Egy laphoz
+    egy dinamikus tömb tartozhat, mivel a lapok csúcsszáma eltérő lehet – de a csúcsok ugyanígy egy pontra hivatkozásként
+    jelenhetnek meg, mint most. A <a href="http://www.scienceu.com/geometry/facts/solids/">Science U</a> oldalán
+    lehet olyan adatfájlokat találni, amelyekben a lapok adatai is szerepelnek. Az SDL_gfx <code>filledPolygonColor()</code>
+    függvénye nem csak teljesen átlátszatlan (FF-re végződő), hanem félig átlátszó színeket is kaphat, így olyan testeket
+    lehet rajzolni, amelyeket üveglapok építenek fel: mint például <a href="http://hu.wikipedia.org/wiki/Ikoza%C3%A9der">ezen</a> a Wikipedia oldalon.
+</ol>
+
+<p class="kicsinyit" style="margin-top: 2em;">A félszabályos testek koordinátái a <a href="http://www.scienceu.com/geometry/facts/solids/">Science U</a> oldalról származnak.</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="index.html@v=18.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="../index.html"><img src="../modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="../index.html">főoldal</a> · <a href="../elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

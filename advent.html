@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Adventi naptár</title>
+<meta property="og:title" content="InfoC :: Adventi naptár">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="InfoC :: Adventi naptár">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="InfoC :: Adventi naptár">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="advent/advent_style.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="advent.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Adventi naptár</h1>
+<div id="advent">
+<nav class="line-1">
+<a class="" href="advent/index.html@v=1.html" title="színek: r, g, b"><img data-number="1" src="advent/pik/1.png">1</a>
+<a class="" href="advent/index.html@v=2.html" title="fraktálok"><img data-number="2" src="advent/pik/2.png">2</a>
+<a class="" href="advent/index.html@v=3.html" title="fflush(stdin)"><img data-number="3" src="advent/pik/3.png">3</a>
+<a class="" href="advent/index.html@v=4.html" title="scanf %n"><img data-number="4" src="advent/pik/4.png">4</a>
+<a class="" href="advent/index.html@v=5.html" title="változó méretű tömbök"><img data-number="5" src="advent/pik/5.png">5</a>
+<a class="" href="advent/index.html@v=6.html" title="backtrack"><img data-number="6" src="advent/pik/6.png">6</a>
+<a class="" href="advent/index.html@v=7.html" title="dinamikus programozás"><img data-number="7" src="advent/pik/7.png">7</a>
+<a class="" href="advent/index.html@v=8.html" title="teknőcgrafika"><img data-number="8" src="advent/pik/8.png">8</a>
+<a class="" href="advent/index.html@v=9.html" title="widgetek"><img data-number="9" src="advent/pik/9.png">9</a>
+</nav>
+<nav class="line-2">
+<a class="" href="advent/index.html@v=10.html" title="virtuális kandalló"><img data-number="10" src="advent/pik/10.png">10</a>
+<a class="" href="advent/index.html@v=11.html" title="ugrás előrejelzés"><img data-number="11" src="advent/pik/11.png">11</a>
+<a class="" href="advent/index.html@v=12.html" title="változó paraméterszámú függvények"><img data-number="12" src="advent/pik/12.png">12</a>
+<a class="" href="advent/index.html@v=13.html" title="adatrejtés"><img data-number="13" src="advent/pik/13.png">13</a>
+<a class="" href="advent/index.html@v=14.html" title="reflektivitás"><img data-number="14" src="advent/pik/14.png">14</a>
+<a class="" href="advent/index.html@v=15.html" title="repülős játék"><img data-number="15" src="advent/pik/15.png">15</a>
+<a class="" href="advent/index.html@v=16.html" title="biliárd"><img data-number="16" src="advent/pik/16.png">16</a>
+<a class="" href="advent/index.html@v=17.html" title="World of Goo"><img data-number="17" src="advent/pik/17.png">17</a>
+</nav>
+<nav class="line-3">
+<a class="" href="advent/index.html@v=18.html" title="3D drótváz"><img data-number="18" src="advent/pik/18.png">18</a>
+<a class="" href="advent/index.html@v=19.html" title="3D tájkép"><img data-number="19" src="advent/pik/19.png">19</a>
+<a class="" href="advent/index.html@v=20.html" title="síelős játék"><img data-number="20" src="advent/pik/20.png">20</a>
+<a class="" href="advent/index.html@v=21.html" title="boci boci tarka"><img data-number="21" src="advent/pik/21.png">21</a>
+<a class="" href="advent/index.html@v=22.html" title="szintetizátor"><img data-number="22" src="advent/pik/22.png">22</a>
+<a class="" href="advent/index.html@v=23.html" title="tone matrix"><img data-number="23" src="advent/pik/23.png">23</a>
+<a class="" href="advent/index.html@v=24.html" title="meglepetés"><img data-number="24" src="advent/pik/24.png">24</a>
+</nav>
+</div>
+<p class="attr">Háttér: <a href="https://www.behance.net/gallery/12039687/Winter-Scene">Rosie Jenkins</a>, ikonok:
+         <a href="http://www.smashingmagazine.com/2014/11/25/freebie-christmas-icon-set-ai-psd-eps-pdf-svg-png/">Manuela Langella</a>.</p><nav><div id="tartalom"></div></nav>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="advent.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

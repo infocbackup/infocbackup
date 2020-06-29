@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Labor, 11. hét: láncolt listák</title>
+<meta property="og:title" content="InfoC :: Labor, 11. hét: láncolt listák">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Egyszeresen láncolt listák.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Egyszeresen láncolt listák.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lab11.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Labor, 11. hét: láncolt listák</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Egyszeresen láncolt listák.</p>
+</div>
+
+
+<p>A lenti feladatok első része egyszeresen láncolt, strázsa nélküli listára 
+vonatkozik. Meg kell valósítani az összes alapvető műveletet: bejárás, beszúrás, 
+felszabadítás. Javasolt az összes függvény kidolgozása előtt
+<em>rajzot készíteni:</em> melyik pointer hova mutat a művelet előtt, és hogyan módosulnak azok a 
+művelet hatására! Így sokkal könnyebb megírni a függvényeket is.</p>
+
+<p>Felkészülés a laborra:</p>
+<ul>
+    <li>A <a href="ea09.html#ealista">listákról szóló előadás</a> átismétlése.
+    <li>A <a href="gy11.html#gyaklista">listákról szóló első gyakorlat</a> átismétlése.
+</ul>
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lab11.html#1">Lista kiírása</a>
+<li><a href="lab11.html#2">A lista felszabadítása</a>
+<li><a href="lab11.html#3">Beszúrás a lista elejére</a>
+<li><a href="lab11.html#4">Hozzáfűzés a lista végéhez</a>
+<li><a href="lab11.html#5">A lista hossza</a>
+<li><a href="lab11.html#6">Keresés a listában</a>
+<li><a href="lab11.html#7">További feladatok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Lista kiírása</h2>
+</div>
+
+<p>Adott a lenti programkód. Ez létrehoz egy dinamikusan foglalt, egyszeresen láncolt, strázsa 
+nélküli listát, amelynek az elejére a <code>lis</code> pointer mutat. Így néz ki:</p>
+
+<img class="kozep" src="lab11/lista.png" style="width: 36em;">
+
+
+<pre class="brush: c "  >
+#include &lt;stdlib.h&gt;
+
+typedef struct Lista {
+   int adat;
+   struct Lista *kov;
+} Lista;
+
+
+/* létrehoz egy listát, benne egy csomó számmal */
+Lista *lista_letrehoz(void) {
+    int szamok[] = { 8, 14, 13, 17, 1, 19, 16, 5, 3, 11, 2,
+                     15, 9, 10, 6, 22, 4, 7, 18, 20, -1 };
+    Lista *l = NULL;
+    int i;
+    
+    for (i = 0; szamok[i] != -1; ++i) {
+        Lista *u = (Lista*)malloc(sizeof(Lista));
+        u-&gt;kov = l;
+        u-&gt;adat = szamok[i];
+        l = u;
+    }
+    return l;
+}
+
+
+int main(void) {
+   Lista *lis=lista_letrehoz();
+   
+   ....
+   
+   return 0;   
+}</pre>
+
+<p>Másold be egy új projektbe a kódot! Írj ciklust, amely kiírja a képernyőre a listában tárolt 
+számokat! A képernyőn ezt kell kapjad:</p>
+
+<pre class="screenshot">
+20 18 7 4 22 6 10 9 15 2 11 3 5 16 19 1 17 13 14 8
+</pre>
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A lista felszabadítása</h2>
+</div>
+
+<p>A fenti program memóriaszivárgást tartalmaz. Írj egy ciklust, amely felszabadítja a listát! 
+(Ne használj rekurziót!) Tedd be ezt a ciklust és az előzőt egy-egy függvénybe, amelyek 
+paraméterként veszik át a listát!</p>
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Beszúrás a lista elejére</h2>
+</div>
+
+<p>Írj függvényt, amely paraméterként átvesz egy listát és egy egész számot. Szúrja be a 
+függvény a számot a lista legelejére! Térjen vissza az így megváltozott lista eleje mutatóval! 
+</p>
+
+<div class="megjegyzes">
+<p>Ettől a lista eleje mutató megváltozik. Vagyis azt a függvény visszatérési értékként meg kell 
+adja (esetleg cím szerint kell átvegye). Most válaszd az előbbit:</p>
+<pre class="brush: c "  >
+lis = lista_elejere_beszur(lis, 21);</pre>
+</div>
+
+<p>Szúrj be számokat a lista elejére, és írd ki a lista tartalmát! A beszúrt számok 
+természetesen fordítva kell megjelenjenek. Ha működik ez a függvény, akkor a kapott létrehozó 
+függvényt (<code>lista_letrehoz()</code>) már kitörölheted, hiszen van saját listaépítőd.</p>
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Hozzáfűzés a lista végéhez</h2>
+</div>
+
+<p>Írj függvényt, amely egy paraméterként kapott lista végéhez láncol egy új elemet, amely az 
+ugyancsak paraméterként kapott számot tartalmazza! Figyelj arra, hogy üres lista esetén (vagyis 
+ha <code>NULL</code> pointert kap) is helyesen működjön a függvény! Ebben az esetben megváltozik 
+a lista elejét mutató pointer, ezért a fentihez hasonlóan kell kezelni azt.</p>
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>A lista hossza</h2>
+</div>
+
+<p>Írj függvényt, amely paraméterként egy listát vesz át, és visszatér annak hosszával! Ennek 
+működését könnyen ellenőrizni tudod, ha az eredményt összehasonlítod a képernyőre kiírt lista 
+elemszámával.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Keresés a listában</h2>
+</div>
+
+<p>Írj függvényt, amely paraméterként egy listát és egy számot vesz át. Visszatérési értékként 
+pedig egy pointert ad a lista első olyan elemére, amely a számot tartalmazza. Ha nincs ilyen, 
+akkor pedig <code>NULL</code> pointert.</p>
+
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+
+/* Lista adatszerkezet */
+typedef struct Lista {
+   int adat; /* Maga az adat */
+   struct Lista *kov; /* Pointer a következő elemre */
+} Lista;
+ 
+
+/* Lista létrehozása */
+Lista *lista_letrehoz(void) {
+    int szamok[] = { 8, 14, 13, 17, 1, 19, 16, 5, 3, 11, 2,
+                     15, 9, 10, 6, 22, 4, 7, 18, 20, -1 };
+    Lista *l = NULL;
+    int i;
+    
+    for (i = 0; szamok[i] != -1; ++i) {
+        Lista *u = (Lista*)malloc(sizeof(Lista));
+        u-&gt;kov = l;
+        u-&gt;adat = szamok[i];
+        l = u;
+    }
+    return l;
+}
+
+
+/* Lista kiírása */
+void lista_kiir(Lista *l) { 
+	Lista *p;
+	
+    /* Végigmegyünk a listán és kiírjuk az adatokat */
+	for (p=l; p!=NULL; p=p-&gt;kov)
+        printf(&quot;%d &quot;,p-&gt;adat);
+}
+
+/* Lista felszabadítása */
+void lista_free(Lista *l) {
+	Lista *p=l; /* Végigmegyünk a listán */
+
+	while (p!=NULL) {
+		/* Ha csak simán azt mondanánk hogy free(p); akkor elveszne a következő */
+		/* elemre a pointer, nem mondhatnánk azt hogy: p=p-&gt;kov;  */
+		Lista *tmp = p-&gt;kov; /* Ezért eltároljuk a következő elem címét */
+		free(p); /* Mostmár törölhetjük az adott elemet */
+		p=tmp; /* Folytassuk a következőtől */
+	}
+}
+
+/* Adat beszúrása a lista elejére */
+Lista *lista_elejere_beszur(Lista *l,int mit) {
+	Lista *uj = (Lista *) malloc(sizeof(Lista)); /* Új elem */
+	
+	uj-&gt;adat = mit; /* Adat bemásolása */
+	uj-&gt;kov = l; /* Az új elem után jön az eddigi lista (akkor is jó, ha üres volt eredetileg) */
+    
+    return uj; /* A lista eleje ez az elem lesz */
+}
+
+/* Adat beszúrása a lista végére */
+Lista *lista_vegere_beszur(Lista *l, int mit) {
+	Lista *uj = (Lista *)malloc(sizeof(Lista)); /* Új elem */
+
+	uj-&gt;adat = mit; /* Adat bemásolása */
+	uj-&gt;kov=NULL; /* Ez lesz a lista vége, ezért NULL a következő elem */
+	if (l==NULL)
+       return uj; /* Ha üres a lista, akkor ez lesz az eleje */
+	else {
+		Lista *p=l; /* Elmegyünk az utolsó elemig (aminek a pointere NULL pointer) */
+		while (p-&gt;kov!=NULL) p=p-&gt;kov;
+		p-&gt;kov=uj; /* És hozzáfűzzük */
+        return l;
+	}
+}
+
+/* Lista hosszának kiszámolása */
+int lista_hossz(Lista *l) {
+	Lista *p=l;
+	int hossz=0;
+    
+	/* Végigmegyünk a listán és számoljuk az elemeket */
+	while (p!=NULL) {
+		p=p-&gt;kov;
+		hossz++;
+	}
+	return hossz;
+}
+
+/* Keresés a listában */
+Lista *lista_keres(Lista *l,int mit) {
+	Lista *p;
+	for (p=l; p!=NULL; p=p-&gt;kov)
+        if (p-&gt;adat==mit)
+            return p;
+	return NULL;
+}
+
+
+/* főprogram */
+int main(void) {
+   Lista *lis=NULL, *tal;
+   
+   /* lis = lista_letrehoz(lis); */
+   lis = lista_vegere_beszur(lis, 66);
+   lis = lista_elejere_beszur(lis, 55);
+   lis = lista_vegere_beszur(lis, 77);
+   lis = lista_elejere_beszur(lis, 44);
+   lis = lista_elejere_beszur(lis, 33);
+   lis = lista_elejere_beszur(lis, 22);
+   lis = lista_elejere_beszur(lis, 11);
+   lista_kiir(lis);
+   printf(&quot;\n\nHossz: %d\n&quot;, lista_hossz(lis));
+   
+   tal = lista_keres(lis, 44);
+   if (tal!=NULL)
+      printf(&quot;%d\n&quot;, tal-&gt;adat);
+   else
+      printf(&quot;nincs ilyen\n&quot;);
+ 
+   lista_free(lis);
+   
+   return 0;   
+}</pre>
+</div>
+</div>
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>További feladatok</h2>
+</div>
+
+<p>Ha elkészültél, folytasd a feladatgyűjtemény ehhez a témakörhöz kapcsolódó
+<a href="f09.html#feladatlancoltlista">feladataival</a>!</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lab11.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

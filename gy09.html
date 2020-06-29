@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 9. hét: dinamikus tömbök</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 9. hét: dinamikus tömbök">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Dinamikus memóriakezelés. Dinamikusan foglalt tömbök. Halmaz típus és függvényei.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Dinamikus memóriakezelés. Dinamikusan foglalt tömbök. Halmaz típus és függvényei.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy09.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyakdinamikustomb" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 9. hét: dinamikus tömbök</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Dinamikus memóriakezelés. Dinamikusan foglalt tömbök. Halmaz típus és függvényei.</p>
+</div>
+
+
+<p>Dinamikus memóriakezelés. Halmaz típus létrehozása dinamikus tömbbel.</p>
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>Az <a href="ea08.html#eadinamikusmemoria">dinamikus memóriakezelésről szóló előadás</a> anyagának megértése.
+    <li>A <a href="gy07.html#gyakpointerek">pointerekről és cím szerinti paraméterátadásról szóló gyakorlat</a> átismétlése.
+</ul>
+
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy09.html#1">Dinamikus tömb</a>
+<li><a href="gy09.html#2">Dinamikus tömbbel visszatérő függvény</a>
+<li><a href="gy09.html#3">Halmaz adatstruktúra</a>
+<li><a href="gy09.html#4">Halmaz dinamikusan foglalt struktúrával</a>
+<li><a href="gy09.html#5">Halmaz továbbfejlesztés</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Dinamikus tömb</h2>
+</div>
+
+<p>Írjunk programot, amelyik bekéri, egy eltárolandó sokszögnek hány csúcsa van; utána pedig 
+tárolja el a begépelt csúcsok koordinátáit!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void) {
+    int n, i;
+    typedef struct Pont {
+        double x, y;
+    } Pont;
+    Pont *poligon;
+
+    printf(&quot;n=&quot;); scanf(&quot;%d&quot;, &amp;n);
+    poligon=(Pont*) malloc(n*sizeof(Pont));
+    if (poligon==NULL) {
+        printf(&quot;Memoriafoglalasi hiba.\n&quot;);
+        return 1;
+    }
+
+    for (i=0; i&lt;n; i++) {
+        printf(&quot;%d. x=&quot;, i+1);  scanf(&quot;%lf&quot;, &amp;poligon[i].x);
+        printf(&quot;%d. y=&quot;, i+1);  scanf(&quot;%lf&quot;, &amp;poligon[i].y);
+    }
+
+    /* itt csinálhatnánk valami hasznosat a tömbbel. például
+       ha a sokszög konvex, akkor a súlypontját (belső pont)
+       véve háromszögekre bonthatjuk azt, és kiszámolhatjuk
+       a területét. */
+
+    free(poligon);
+
+    return 0;
+}</pre>
+
+<p>Egy <code>Pont</code> struktúra méretét a <code>sizeof(Pont)</code> kifejezés adja meg. Ezt a 
+fordító kiszámolja, nem nekünk kell vele foglalkozni. Mivel a tömb elemei pedig közvetlenül 
+egymás után vannak, ezt a mérettel szorozva kapjuk a tömb méretét bájtokban.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Dinamikus tömbbel visszatérő függvény</h2>
+</div>
+<p>
+Írjunk feladatot, amelyik egy paraméterben kapott double tömbből kiválogatja az
+átlagnál kisebb elemeket, és egy újonnan lefoglalt dinamikus tömbbe rakja
+azokat! Az új tömb címével és méretével térjen vissza cím szerint
+átadott paraméterben! A visszatérési érték legyen IGAZ, ha sikerült
+a művelet, és HAMIS, ha nem.
+</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A gondolatmenet: double tömböt kell foglalnunk, és abba az elsőből válogatnunk.
+De mekkorát? Azt a foglalás előtt még meg kell számolni! Vagyis:</p>
+<ol>
+<li>átlag számítása,
+<li>keresett elemek számlálása (mert most már tudjuk az átlagot),
+<li>foglalás (mert most már tudjuk a méretet),
+<li>keresett elemek másolása (mert most már van hova másolni).
+</ol>
+
+<pre class="brush: c "  >
+int valogat(double *eredeti, int meret, double **ujtomb, int *ujmeret) {
+    double *uj;
+    double sum, atlag;
+    int db, i, ide;
+
+    sum=0;
+    for (i=0; i&lt;meret; i++)
+        sum+=eredeti[i];
+    atlag=sum/i;    /* megvan az atlag. */
+
+    db=0;
+    for (i=0; i&lt;meret; i++)
+        if (eredeti[i]&lt;atlag)
+            db++;
+    /* megvan a darab. */
+
+    uj=(double *) malloc(sizeof(double)*db);
+    if (uj==NULL)
+        return 0;
+    /* megvan a tomb. */
+
+    ide=0;
+    for (i=0; i&lt;meret; i++)
+        if (eredeti[i]&lt;atlag) {   /* megint! */
+            uj[ide]=eredeti[i];
+            ide++;
+        }
+    /* kesz az uj tomb. */
+
+    /* visszateresek: */
+    *ujtomb=uj;
+    *ujmeret=db;
+    return 1;
+}</pre>
+
+<p>Nincs itt semmi újdonság: a tömböt pointerével és méretével
+vesszük át, az új tömböt pointerével és méretével adjuk vissza.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Halmaz adatstruktúra</h2>
+</div>
+
+<p>Írjunk egy programot, amelyik egy „double”-ökből álló halmaz
+típust hoz létre. A halmaz a következőket kell tudja (ezek a
+megírandó függvények):</p>
+
+<ul>
+   <li>Be lehessen tenni egy elemet a halmazba. (Ha már benne van, nem történik semmi.)
+   <li>Ki lehessen venni egy elemet a halmazból.
+   <li>Le lehessen kérdezni, egy elem benne van-e a halmazban.
+</ul>
+
+<p>A halmazban lévő elemek száma lehessen tetszőlegesen nagy!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Az utóbbi kitétel miatt dinamikus memóriát használunk. A halmaz elemeit egy dinamikus tömbben jegyezzük
+meg; mivel a lefoglalt memóriaterületre csak egy pointerünk van, ezért magunknak kell az éppen aktuális
+méretet (az elemszámot) nyilvántartani. Egy adott halmazhoz egy konkrét elemszám tartozik; a két
+elválaszthatatlan adat természetesen egy struktúrába kerül:</p>
+<pre class="brush: c "  >
+typedef struct Halmaz {
+    int db;
+    double *adat;
+} Halmaz;</pre>
+<p>Ha létrehozunk egy halmaz struktúrát, akkor az memóriaszemetet fog tartalmazni, mind a <code>db</code>,
+mind az <code>adat</code> mezőben. Ezért egy halmazt az első használat előtt inicializálni kell.
+Hogy ne szivárogjon a memória, az utolsó használat után a dinamikusan foglalt területet fel is kell
+szabadítani. Ezért a fenti három függvényen kívül még kettőt írunk, amelyeknek a feladatai ezek lesznek.</p>
+
+<p>A függvények, amelyek valamely halmazon dolgoznak, megváltoztathatják a struktúra tartalmát. Pl. a
+memóriaterület más helyre kerülhet, vagy a darabszám nőhet. Ezért a függvényeknek nem a struktúrát,
+vagyis annak másolatát, hanem <em>a struktúrára</em> mutató pointert kell átvegyenek. A <code>betesz</code>
+és <code>kivesz</code> függvényeknél ez mindenképpen így van, de a kényelem kedvéért érdemes az
+összeset így megírni. Akkor nem kell majd fejben tartani, melyik függvény vár halmazt, és melyik
+halmazra mutató pointert. Azok a függvények, amelyek pedig nem változtatják meg a struktúrát (pl. egy
+halmaz nem változik meg azáltal, hogy ellenőrizzük, tartalmaz-e egy elemet), a halmazra mutató
+pointert konstans pointerként veszik át. Így a fordító ellenőrizni tudja, nem írtunk-e azokba
+véletlenül olyan kódot, amely megváltoztatná azt.</p>
+
+<p>A halmazba új számot betenni és számot abból kivenni sajnos költséges művelet. A dinamikusan foglalt
+tömböt átméretezni nem lehet, mivel lehet hogy előtte, utána másra használt, foglalt memória van.
+Ezért átméretezés esetén új memóriaterületet kell foglalni, és az elemeket átmásolni. A másolás után
+pedig a régi memóriaterület felszabadítható, végül pedig a halmaz struktúrában található pointer
+az új területre állítható át. (A szabványos <code>realloc()</code> függvény egyébként ugyanezt csinálja.)</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct Halmaz {
+    int db;
+    double *adat;
+} Halmaz;
+
+/* inicializalatlan strukturat hoz alapallapotba */
+void halmaz_init(Halmaz *h) {
+    h-&gt;db=0;
+    h-&gt;adat=NULL;
+}
+
+/* halmazt felszabadit az utolso hasznalat utan */
+void halmaz_felszabadit(Halmaz *h) {
+    free(h-&gt;adat);
+}
+
+/* igazzal ter vissza, ha benne van az adott elem */
+int halmaz_benne_van_e(Halmaz const *h, double mi) {
+    int i;
+
+    for (i=0; i&lt;h-&gt;db; ++i)
+        if (h-&gt;adat[i]==mi)
+            return 1;  /* ha valahol megtalaljuk, igaz */
+    return 0;          /* ha sehol nem talaltuk, hamis */
+}
+
+void halmaz_betesz(Halmaz *h, double mit) {
+    double *uj;
+    int i;
+
+    /* ha mar benne van, nem kell semmit csinalni */
+    if (halmaz_benne_van_e(h, mit))
+        return;
+
+    /* atmasoljuk a regi adatokat eggyel nagyobb helyre */
+    uj=(double*) malloc((h-&gt;db+1)*sizeof(double));
+    for (i=0; i&lt;h-&gt;db; ++i)
+        uj[i]=h-&gt;adat[i];
+
+    uj[h-&gt;db]=mit;    /* vegere az uj */
+    free(h-&gt;adat);    /* a regi mar nem kell */
+    h-&gt;adat=uj;       /* atallitjuk a pointert az ujra */
+    h-&gt;db++;          /* eggyel nott a darabszam */
+}
+
+void halmaz_kivesz(Halmaz *h, double mit) {
+    double *uj;
+    int i, j;
+
+    /* ha nincs benne, nincs dolgunk */
+    if (!halmaz_benne_van_e(h, mit))
+        return;
+
+    /* uj memoriaterulet, eggyel kisebb */
+    uj=(double*) malloc((h-&gt;db-1)*sizeof(double));
+    j=0;
+    for (i=0; i&lt;h-&gt;db; ++i)
+        if (h-&gt;adat[i]!=mit)
+            uj[j++]=h-&gt;adat[i];
+    free(h-&gt;adat);
+    h-&gt;adat=uj;
+    h-&gt;db--;         /* eggyel csokken a darabszam */
+}
+
+/* kilistazza egy halmaz tartalmat */
+void halmaz_lista(Halmaz const *h) {
+    int i;
+    for (i=0; i&lt;h-&gt;db; ++i)
+        printf(&quot;%g &quot;, h-&gt;adat[i]);
+    printf(&quot;\n&quot;);
+}
+
+int main(void) {
+    Halmaz h;
+
+    halmaz_init(&amp;h);
+    halmaz_betesz(&amp;h, 3.14);
+    halmaz_betesz(&amp;h, 2.0);
+    halmaz_betesz(&amp;h, 3.14);
+    halmaz_lista(&amp;h);
+    halmaz_betesz(&amp;h, 6.1);
+    halmaz_lista(&amp;h);
+    halmaz_kivesz(&amp;h, 3.14);
+    halmaz_lista(&amp;h);
+    halmaz_felszabadit(&amp;h);
+
+    return 0;
+}</pre>
+
+<p>A fenti megoldásban kihasználjuk, hogy <code>free(NULL)</code> a szabvány
+szerint elfogadott. Azonban egyes régebbi fordítók esetén ebből gond lehet.
+Ilyenkor a <code>if (ptr!=NULL) free(ptr);</code> formát érdemes használni.
+</p>
+
+<p>Miután a <code>main()</code> függvény a 6.1-es számot betette a halmazba,
+így néz ki a program memóriaképe:</p>
+
+<img src="gy09/memoriakep_halmaz1.svg" class="kozep" style="width: 22em;">
+
+<p>A veremben a <code>h</code> struktúra van, amely az egész számot és a pointert
+tartalmazza; a pointer pedig a dinamikusan foglalható területre mutat, oda, ahol
+a <code>malloc()</code> hívás helyet talált a három <code>double</code> méretű
+memóriaterületnek.</p>
+
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Halmaz dinamikusan foglalt struktúrával</h2>
+</div>
+
+<p>Írjuk át a programot úgy, hogy a halmazt <em>létrehozó</em> függvények ne egy meglévő, inicializálatlan
+halmaz struktúrán dolgozzanak, hanem azt is dinamikusan foglalják, és a címével térjenek vissza. Erősen
+különböztessük meg az új halmazt <em>létrehozó</em> és a meglévő halmazt <em>módosító</em> függvényeket!
+Az előbbiek visszatérnek egy pointerrel, az utóbbiak várnak egy pointert a módosítandó halmazra.
+A függvények használata legyen ilyen:
+</p>
+
+<pre class="brush: c "  >
+Halmaz *h;
+
+h=halmaz_uj();
+halmaz_betesz(h, 3.14);
+halmaz_betesz(h, 6.1);
+halmaz_lista(h);
+halmaz_kivesz(h, 3.14);
+halmaz_lista(h);
+halmaz_felszabadit(h);</pre>
+
+<p>Így a halmazokat kényelmesen adogathatjuk át a függvények között, nem szűnnek 
+meg amiatt, mert lokális változók lennének. Figyeljük meg, hogy ez a 
+szintaktikára nézve is jótékony hatással van: mivel <code>h</code> itt eleve már 
+pointer, sehol nem kell az <code>&amp;</code> címképző operátort használni.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>Ilyenkor a memóriaképünk ilyen:</p>
+<img src="gy09/memoriakep_halmaz2.svg" class="kozep" style="width: 22em;">
+<p>A <code>main()</code>-ben lokális változó csak egy pointer; a kupacon van a struktúra és a tömb is.</p>
+<p>A különbség csak a létrehozó és a felszabadító függvényekben van. A létrehozáskor
+<code>malloc()</code>-oljuk a struktúrát <em>is</em>, és emiatt természetesen a felszabadításnál
+<code>free()</code>-zni kell azt is:</p>
+
+<pre class="brush: c "  >
+Halmaz *halmaz_init() {
+    Halmaz *ph;
+    ph = (Halmaz*) malloc(sizeof(Halmaz));
+    ph-&gt;adat = NULL;
+    ph-&gt;db = 0;
+    return ph;
+}
+
+void halmaz_felszab(Halmaz *ph) {
+    free(ph-&gt;adat);
+    free(ph);
+}</pre>
+
+</div>
+</div>
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Halmaz továbbfejlesztés</h2>
+</div>
+
+<p>Írjunk meg egy további létrehozó és másoló függvényt:</p>
+
+<ul>
+   <li>Halmaz létrehozása egy másik halmaz másolataként (legyen az utóbbitól független, ún. mély másolat!),
+   <li>Halmaz másolása egy már inicializált másik halmazba (az addig abban tárolt értékek eldobásával).
+</ul>
+
+<p>Írjuk meg a következőket is:</p>
+
+<ul>
+   <li>Két halmaz metszete (új halmazként),
+   <li>Két halmaz uniója (ugyanígy),
+   <li>Két halmaz kivonása.
+</ul>
+
+<p>Ezekhez érdemes a halmazt rendezve tartani (sőt eleve rendezve építeni),
+hiszen akkor könnyebb hatékonyan megvalósítani a műveleteket (nem kell folyton keresgélni).
+A rendezve tartáshoz a <code>betesz()</code> és <code>kivesz()</code> függvényeket
+is módosítani kell, hiszen azoknak figyelnie kell a rendezettség megtartására.
+Ha a halmaz belül rendezett, akkor pedig a <code>benne_van_e()</code>
+függvényt átírni bináris keresésre.
+</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy09.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

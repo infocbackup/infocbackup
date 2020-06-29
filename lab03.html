@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Labor, 3. hét: egyszerű programok</title>
+<meta property="og:title" content="InfoC :: Labor, 3. hét: egyszerű programok">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Vezérlési szerkezetek: elágazásokkal és ciklusokkal megoldható feladatok. Nyomkövetés és hibakeresés a Code::Blocks eszközeivel.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Vezérlési szerkezetek: elágazásokkal és ciklusokkal megoldható feladatok. Nyomkövetés és hibakeresés a Code::Blocks eszközeivel.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lab03.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Labor, 3. hét: egyszerű programok</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Pohl László, Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Vezérlési szerkezetek: elágazásokkal és ciklusokkal megoldható feladatok. Nyomkövetés és hibakeresés a Code::Blocks eszközeivel.</p>
+</div>
+
+
+
+
+<img src="lab03/little-lazy-programmer.png" class="kozep arnyek">
+
+<p>Ezen a héten a vezérlési szerkezeteket gyakoroljuk: elágazásokat és ciklusokat kell írni
+a feladatok megoldásához.</p>
+
+<p>Felkészülés a laborra:</p>
+<ul>
+    <li>A <a href="ea02.html#eavezerles">vezérlési szerkezetekről szóló előadás</a> átismétlése.
+    <li>A <a href="gy03.html#gyakcalapok">C alapokról szóló gyakorlat</a> átismétlése.
+</ul>
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lab03.html#1">Egyszerű ciklus – számok kiírása</a>
+<li><a href="lab03.html#2">Számok szorzata</a>
+<li><a href="lab03.html#3">Adott hosszúságú vonal</a>
+<li><a href="lab03.html#4">Adott méretű négyzet</a>
+<li><a href="lab03.html#5">Ferde hajítás II.</a>
+<li><a href="lab03.html#6">A Leibniz-féle sor</a>
+<li><a href="lab03.html#7">További feladatok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Egyszerű ciklus – számok kiírása</h2>
+</div>
+
+<pre class="float">
+Gondolok egy számra, legyen ez 1.
+<em>Ismétlés, amíg</em> a szám &le; 20
+    Leírom a számot.
+    Új sort kezdek.
+    Növelem a számot 1-gyel.
+<em>Ismétlés eddig</em>
+</pre>
+
+<p>
+Az ábrán egy program pszeudokódja látható, amely kiírja a számokat 1-től 20-ig.
+</p>
+
+<p>Írd meg ezt a programot C-ben <code>while()</code> ciklussal! Figyeld meg: ahogy gépeled be a 
+<code>while()</code> utáni <code>{</code> kapcsos zárójelet, az enter billentyű hatására a gép 
+egyből néhány szóközzel beljebb kezdi a sorokat. A bezáró <code>}</code> kapcsos után pedig újra 
+kintebb. Így áttekinthetőbb lesz a programod. Használd ezt ki!</p>
+
+<p>Ha elkészült, futtasd le! Próbáld ki a <em>nyomkövető</em> használatával is! Figyeld meg, 
+hogy a ciklusfeltétel azt mondja meg, hogy meddig ismételjük a műveleteket – amíg a feltétel <em>
+igaz,</em> addig újból és újból végrehajtja a ciklusmagban lévő utasításokat. Amikor <em>hamissá
+</em> válik, a ciklusmag utáni utasítással folytatja a végrehajtást.</p>
+
+<p>Figyeld a „Watches” ablakban a ciklusváltozó értékét! Mennyi az értéke a program futásának 
+vége előtt közvetlenül? Írd át a <code>while()</code> ciklust <code>for()</code> ciklusra! 
+Végezd el így is a nyomkövetést!</p>
+
+<div class="megjegyzes">
+    <p><em>Emlékeztető:</em> a Code::Blocksban a nyomkövetést legegyszerűbben úgy
+    tudod elindítani, ha arra a sorra állsz a kurzorral, ahol először meg szeretnéd
+    a programot állítani, és megnyomod az F4-et (Debug/Run to cursor). Innentől
+    a program az F7-ttel léptethető soronként (Debug/Next line). A „Debug/Debug windows/Watches”
+    menüponttal hívhatod elő az ablakot, amelyben a változók (Local variables) értékét
+    tudod figyelni.</p>
+    <img src="lab03/debug.png" class="kozep arnyek">
+</div>
+
+<p><em>Számok négyzete.</em> Alakítsd át úgy is a programot, hogy minden szám mellé írja oda annak
+négyzetét is. Ezt meg lehet oldani egyetlen <code>printf()</code>
+utasítással is!</p>
+
+<p><em>Szám beolvasása.</em> Alakítsd át az előző programot úgy, hogy ne 1 és 20 között írja ki a
+számokat, hanem a felhasználó által megadott határok között!
+A program indítása után ne csak villogjon a kurzor egy üres ablakban, hanem
+írja is ki a program, hogy épp mit kérdez, azaz milyen bemenetre vár!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int mettol, meddig, i;
+
+    /* Beolvasás */
+    printf(&quot;Mettol? &quot;);
+    scanf(&quot;%d&quot;, &amp;mettol);
+    printf(&quot;Meddig? &quot;);
+    scanf(&quot;%d&quot;, &amp;meddig);
+
+    /* Az &quot;ettől-eddig-így&quot; ciklusok szebbek,
+     * áttekinthetőbbek a for (...) változatban */
+    for (i = mettol; i &lt;= meddig; i = i+1)
+        printf(&quot;%d\n&quot;, i); /* Szám kiírása */
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+<p><em>Fordított intervallum.</em> Próbáld ki, mi történik akkor, ha az előbbi
+programnak fordítva adja meg a felhasználó az intervallum határait
+(pl. 1–20 helyett 20–1). Nézd meg nyomkövetővel, mi történik!
+Egészítsd ki úgy a programot, hogy ilyenkor is helyesen működjön!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>A releváns programrészlet:</p>
+<pre class="brush: c "  >
+/* Beolvasás */
+printf(&quot;Mettol? &quot;);
+scanf(&quot;%d&quot;, &amp;hatar1);
+printf(&quot;Meddig? &quot;);
+scanf(&quot;%d&quot;, &amp;hatar2);
+
+/* Melyik nagyobb? */
+if (hatar1 &lt; hatar2) {
+    mettol = hatar1;
+    meddig = hatar2;
+} else {
+    meddig = hatar1;
+    mettol = hatar2;
+}</pre>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Számok szorzata</h2>
+</div>
+
+<pre class="float">
+Legyen a szorzat 1.
+Legyen n értéke 10.
+<em>Ismétlés, amíg</em> n&ge;2
+    A szorzat legyen szorzat × n.
+    Csökkentem n-et eggyel.
+<em>Ismétlés eddig</em>
+Kiírom a szorzatot.
+</pre>
+
+<p>Módosítsd a programodat úgy, hogy az első 10 szám (1…10) szorzatát,
+vagyis a 10 faktoriálisát számolja ki! Tegyél a ciklus belsejébe egy olyan
+programsort is, amely kiírja a ciklusváltozó értékét,
+és a szorzatot tároló változó értékét is!</p>
+
+<p>Mi történik akkor, ha túl nagy szám faktoriálisát próbálod kiszámítani?
+Beszéljétek meg a laborvezetővel a tapasztaltakat!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int szorzat;
+    int n;
+
+    szorzat = 1;
+    n = 10;
+    while (n &gt;= 2) {
+        printf(&quot;szorzat: %d, n: %d\n&quot;, szorzat, n);
+        szorzat = szorzat*n;
+        n = n-1;
+    }
+    printf(&quot;%d&quot;, szorzat);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Adott hosszúságú vonal</h2>
+</div>
+
+<p>Írj egy programot, amely kér a felhasználótól egy
+számot, és kirajzol egy akkora, <code>+</code> és <code>−</code> jelekből álló szakaszt. Pl.
+ha a szám 4, akkor a képernyőn a lenti ábra jelenjen meg,
+vagyis a belsejében 4 db <code>−</code> legyen:</p>
+
+<pre class="screenshot">
+Milyen hosszu legyen a vonal? 4
++----+
+</pre>
+
+<p>Írd meg a program <em>pszeudokódját</em> papíron,
+utána pedig gépen a <em>C forráskódot!</em></p>
+
+<p class="megjegyzes"><em>Tipp:</em> ehhez a programhoz nem kell <code>if()</code> elágazás. Ha 
+olyan változatot írtál, amiben van, akkor próbáld meg anélkül is. Kérd a laborvezető segítségét!
+</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void){
+    int hossz;  /* Vonal hossza */
+    int i;      /* Ciklusváltozó */
+
+    printf(&quot;Milyen hosszu legyen a vonal? &quot;);
+    scanf(&quot;%d&quot;, &amp;hossz);  /* Hossz beolvasása */
+
+    printf(&quot;+&quot;);  /* A vonal elejére kell egy + jel */
+    for (i = 0; i &lt; hossz; i = i+1)  /* Ciklus, ami kiír adott - jelet */
+        printf(&quot;-&quot;);
+    printf(&quot;+&quot;);  /* A vonal végére is kell egy + jel */
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Adott méretű négyzet</h2>
+</div>
+
+<pre class="screenshot float">
+|....|
+</pre>
+
+<pre class="screenshot float">
++----+
+|....|
+|....|
+|....|
+|....|
++----+
+</pre>
+
+<p>Az előző feladat rajzolást végző programrészéből készíts egy olyan másolatot, amely
+<code>+</code> és <code>-</code> karakterek helyett <code>|</code> és <code>.</code>
+karaktereket használ, mint jobb oldalon! Végül pedig írj egy olyan változatot, amelyben
+egy adott méretű négyzet jelenik meg.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void){
+    int hossz;
+    int i, j;
+
+    printf(&quot;Mekkora legyen a negyzet? &quot;);
+    scanf(&quot;%d&quot;, &amp;hossz);
+
+    /* felső sor */
+    printf(&quot;+&quot;);
+    for (i = 0; i &lt; hossz; i = i+1)
+        printf(&quot;-&quot;);
+    printf(&quot;+\n&quot;);
+
+    /* közepe, n-szer */
+    for (j = 0; j &lt; hossz; j = j+1) {
+        printf(&quot;|&quot;);
+        for (i = 0; i &lt; hossz; i = i+1)
+            printf(&quot;.&quot;);
+        printf(&quot;|\n&quot;);
+    }
+
+    /* alsó sor, mint a teteje */
+    printf(&quot;+&quot;);
+    for (i = 0; i &lt; hossz; i = i+1)
+        printf(&quot;-&quot;);
+    printf(&quot;+\n&quot;);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Ferde hajítás II.</h2>
+</div>
+
+<p>Emlékezz vissza az előző heti „ferde hajítás” programra.
+Ebben <code>t=0</code> időpillanatban, <code>v<sub>0</sub></code> sebességgel,
+<code>alfa</code> szöggel kilövünk egy ágyúgolyót. Írd meg most úgy a programot, hogy <code>t=0,0; 0,1; 0,2; … s</code>
+időpontokban (tized másodpercenként) írja ki az ágyúgolyó helyét; egészen addig, amíg
+be nem csapódik az a földbe (<code>y&le;0</code>)!</p>
+
+<img src="lab03/ferde.png" style="width: 32em;" class="kozep">
+<img src="lab03/ferdex.png" class="kozep">
+<img src="lab03/ferdey.png" class="kozep">
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void) {
+    double t, x, y;
+    double v0, alfa, alfa_rad;
+    double g = 9.81;
+    
+    printf(&quot;Ferde hajitas\n&quot;);
+    printf(&quot;Add meg a kiloves sebesseget!\n&quot;);
+    scanf(&quot;%lf&quot;, &amp;v0);
+    printf(&quot;Es a kiloves szoget!\n&quot;);
+    scanf(&quot;%lf&quot;, &amp;alfa);
+    
+    /* radianban */
+    alfa_rad = alfa*3.1415926535/180;
+    
+    t = 0;
+    x = 0;
+    y = 0;
+    while (y &gt;= 0) {
+        printf(&quot;t=%8.4f x=%8.4f y=%8.4f\n&quot;, t, x, y);
+        
+        t = t+0.1;
+        x = v0*t*cos(alfa_rad);
+        y = v0*t*sin(alfa_rad) - g/2*t*t;
+    }
+    printf(&quot;t=%.4f s-ra mar biztosan becsapodott.\n&quot;, t);
+    
+    return 0;
+}</pre>
+
+<p>A fenti megoldás betartja a ciklusokkal kapcsolatos, előadáson bemutatott játékszabályt. 
+Nevezetesen azt, hogy a ciklustörzs elején szerepel az aktuális elem feldolgozása (jelen esetben 
+ez a kiírást jelenti), és a végén a következő elemre lépést (most ez az idő növelése, és 
+értelemszerűen a koordináták újraszámolása). Ennek az az előnye, hogy egy már ellenőrzött
+<code>y</code> értékkel megyünk be a ciklusba, amelyet külön feltétel nélkül ki is lehet írni!</p>
+
+<p>Mivel így a ciklus feltétele függ az <code>y</code> koordinátától (ez amúgy sem lehet 
+másképp, mert a becsapódás időpontját keressük), az első iteráció előtt már ki kell számolnunk 
+<code>x</code>-et és <code>y</code>-t. Odamásolhatnánk a ciklus előttre is a ferde hajítás 
+képleteit, de <code>t=0</code> miatt azok <code>x=0</code>-ra és <code>y=0</code>-ra 
+egyszerűsödnek.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>A Leibniz-féle sor</h2>
+</div>
+
+<p>Leibniz a lenti összegképletet vezette le a &pi; becslésére.
+Minél több tag szerepel az összegben, annál pontosabb az eredmény.
+Feladat: írj egy programot úgy, hogy ennek alapján
+számolja ki a &pi; közelítő értékét!</p>
+
+<pre class="boxdrawing sorsurit1">
+π       1   1   1
+─ = 1 - ─ + ─ - ─ + …
+4       3   5   7
+</pre>
+
+
+<p>A feladat több buktatót is tartalmaz. Ha nem helyes a program által
+kiírt eredmény, használj nyomkövetést, figyeld a változók értékét!</p>
+
+
+<p class="megjegyzes"><em>Tipp:</em> figyeld meg, hogy az összeadás és a kivonás váltakoznak.
+Érdemes kettesével, páronként haladni az összegzésben, mert akkor
+a páros/páratlan vizsgálat kimaradhat a programból.</p>
+<p class="megjegyzes"><em>Fontos:</em> ehhez át kell térned a programban valós típusú változók használatára,
+hiszen az eredmény biztosan nem egész szám. Tudni kell, hogy ha
+a C nyelvben elosztasz két egész számot, akkor az eredmény is egész (lefelé
+kerekítve). Vagyis <code>1/3</code> értéke C-ben <code>0</code>.
+Viszont <code>1.0/3</code> értéke <code>0.333333</code> lesz.
+Erről később részletesen lesz szó előadáson is.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    double pi;  /* Változó a az eredmény tárolásához */
+    int i;      /* Ciklusváltozó */
+
+    /* Ciklus ami páronként halad, azaz egy */
+    /* lépésben hozzáad és ki is von egy számot */
+    pi = 0;
+    i = 1;
+    while (i&lt;100000) {
+        pi = pi + 1.0/i;  /* Hozzáadjuk a píhez az aktuális szám reciprokát */
+        i = i+2;          /* Kettővel megnöveljük az aktuális számot */
+        pi = pi - 1.0/i;  /* Levonjuk a szám reciprokát */
+        i = i+2;          /* Kettővel megnöveljük a számot */
+    }
+
+    pi = pi*4;  /* A ciklus a pi/4-et közelítette, ezért 4-el szorozni kell */
+
+    printf(&quot;%f&quot;, pi);  /* Eredmény kiírása */
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>További feladatok</h2>
+</div>
+
+<p>Ha elkészültél, folytasd a feladatgyűjtemény ehhez a témakörhöz kapcsolódó
+<a href="f02.html#ciklus">ciklusos feladataival</a>!</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lab03.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

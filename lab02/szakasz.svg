@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="381.67" width="381.67" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="199 197 199.764 199.764">
+ <metadata id="metadata42">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="g4" transform="translate(0,-4.236)">
+  <path id="line6" d="m300 400v-190.26" stroke="#000" stroke-width="2" fill="none"/>
+  <path id="polygon8" d="m300 209.74-5 2.5 5-10 5 10z"/>
+  <path id="polygon10" d="m300 209.74-5 2.5 5-10 5 10z" stroke="#000" stroke-width="2" fill="none"/>
+ </g>
+ <g id="g12" transform="translate(0,-4.236)">
+  <path id="line14" d="m200 300h190.26" stroke="#000" stroke-width="2" fill="none"/>
+  <path id="polygon16" d="m390.26 300-2.5-5 10 5-10 5z"/>
+  <path id="polygon18" d="m390.26 300-2.5-5 10 5-10 5z" stroke="#000" stroke-width="2" fill="none"/>
+ </g>
+ <path id="line20" d="m320 215.76-80 160" stroke="#a0a0a0" stroke-width="2" fill="none"/>
+ <path id="line22" d="m320 291.76v8" stroke="#000" stroke-width="2" fill="none"/>
+ <path id="line24" d="m296 275.76h8" stroke="#000" stroke-width="2" fill="none"/>
+ <g id="g26" stroke="#000" stroke-width="2" fill="none" transform="translate(0,-4.236)">
+  <path id="line28" d="m236 376 8 8"/>
+  <path id="line30" d="m236 384 8-8"/>
+ </g>
+ <g id="g32" stroke="#000" stroke-width="2" fill="none" transform="translate(0,-4.236)">
+  <path id="line34" d="m316 216 8 8"/>
+  <path id="line36" d="m316 224 8-8"/>
+ </g>
+</svg>

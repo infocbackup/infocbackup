@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Dinamikus adatszerkezetek I. – Listák</title>
+<meta property="og:title" content="InfoC :: Dinamikus adatszerkezetek I. – Listák">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Dinamikus adatszerkezetek I.: láncolt listák. Egyszeres és kétszeres láncolás.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Dinamikus adatszerkezetek I.: láncolt listák. Egyszeres és kétszeres láncolás.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea09.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="ealista" class="namer"></a>
+<h1 class="eloadascim">Dinamikus adatszerkezetek I. – Listák</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18</p>
+<p class="kivonat">Dinamikus adatszerkezetek I.: láncolt listák. Egyszeres és kétszeres láncolás.</p>
+</div>
+
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea09.html#1">Dinamikus tömbök</a>
+<li><a href="ea09.html#2">A láncolható elem</a>
+<li><a href="ea09.html#3">A lista nyilvántartása</a>
+<li><a href="ea09.html#4">A lista bejárása (traversing the list)</a>
+<li><a href="ea09.html#5"><em>Láncolt listák – listaműveletek</em></a>
+<li><a href="ea09.html#6">Listaépítés – beszúrás a lista elejére</a>
+<li><a href="ea09.html#7">Listaépítés – beszúrás előre, függvénnyel</a>
+<li><a href="ea09.html#8">Listaépítés – hozzáfűzés</a>
+<li><a href="ea09.html#9">Listaépítés – hozzáfűzés függvény</a>
+<li><a href="ea09.html#10">A lista felszabadítása</a>
+<li><a href="ea09.html#11">Összetett példa: mondatok generálása</a>
+<li><a href="ea09.html#12">Mondatok – adatszerkezet választása</a>
+<li><a href="ea09.html#13">Mondatok – EBNF megadás, lista építése</a>
+<li><a href="ea09.html#14"><em>Törlés, rendezve építés</em></a>
+<li><a href="ea09.html#15">Törlés listából I.</a>
+<li><a href="ea09.html#16">Törlés listából II.</a>
+<li><a href="ea09.html#17">Törlés listából III.</a>
+<li><a href="ea09.html#18">Rendezve építés I.</a>
+<li><a href="ea09.html#19">Rendezve építés II.</a>
+<li><a href="ea09.html#20"><em>Duplán láncolt listák</em></a>
+<li><a href="ea09.html#21">Duplán láncolás és strázsák</a>
+<li><a href="ea09.html#22">A duplán láncolt <code>ListaElem</code> és <code>Lista</code></a>
+<li><a href="ea09.html#23">Mindkét végén strázsás lista: bejárás</a>
+<li><a href="ea09.html#24">Duplán láncolt lista: törlés</a>
+<li><a href="ea09.html#25">Duplán láncolt lista: rendezve beszúrás</a>
+<li><a href="ea09.html#26">Speciális listák</a>
+<li><a href="ea09.html#27">Autók a hídon – komplex példa</a>
+<li><a href="ea09.html#28">Autók a hídon – megvalósítás</a>
+<li><a href="ea09.html#29">Tűzijáték – komplex példa</a>
+<li><a href="ea09.html#30">Tűzijáték – pontok kezelése (kódrészlet)</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Dinamikus tömbök</h2>
+</div>
+
+<p><em>Feladat:</em> határozzuk meg egy tetszőleges sokszög területét.</p>
+
+<div class="csakdoksi">
+<p>Sokszor a program írásakor nem, de a feldolgozás előtt
+közvetlenül már ismerjük a szükséges memória méretét.
+Az ilyen feladat megoldható dinamikusan foglalt tömb segítségével: pl. egy sokszög csúcsainak 
+tárolása. A fenti feladat megoldása egy konvex sokszögre, amelynek ismerjük a koordinátáit:</p>
+<ol>
+   <li>Bekérjük a felhasználótól az oldalak számát.
+   <li>Lefoglalunk egy megfelelő méretű koordinátatömböt és beolvassuk a csúcsokat.
+   <li>Keresünk egy belső pontot a sokszögben (pl. súlypont).
+   <li>Háromszögekre osztjuk a sokszöget, kiszámoljuk és összegezzük azok területét.
+   <li>Felszabadítjuk a tömböt.
+</ol>
+</div>
+
+<img src="ea09/sokszog.svg" style="width: 7em" alt="Sokszög területe háromszögekre osztással" class="float">
+
+<pre class="brush: c "  >
+Pont *csucsok;
+csucsok = (Pont*) malloc(sizeof(Pont)*6);
+csucsok[5].x = 12;
+csucsok[5].y = 17;
+/* .... */
+free(csucsok);</pre>
+
+
+<p class="csakdoksi">A <em>tömbök előnye:</em> gyors, közvetlen adatelérés.
+<span class="csakdoksi">Az elemeket tetszőleges sorrendben, közvetlen
+címzéssel érjük el, hiszen közvetlenül egymás mellett
+helyezkednek el a memóriában. Ezt gyakran ki is használjuk, pl. bináris
+keresésnél „ugrálunk” a tömbben.</span>
+
+<p class="csakdoksi">A <em>tömbök hátránya:</em> lassú az átméretezés.
+Mivel feltétlenül egymás mellett kell, hogy legyenek az elemek,
+ha változtatni akarjuk a tömb méretét, újra kell foglalni a memóriaterületet.
+Ennek lépései:
+(I.) Le kell foglalni másutt a szükséges méretű területet,
+(II.) Át kell másolni az elemeket a régi helyről,
+(III.) Fel kell szabadítani a régi tömböt.
+A tömbök <em>dinamikus nyújtása</em> ezért nagyon költséges művelet.
+Ráadásul másolás közben az eredeti tartalom kétszer szerepel a memóriában!
+</p>
+
+<br class="smallskip">
+
+<p>
+<em>Feladat:</em> kezeljük az egy szerverre bejelentkezett felhasználók listáját!
+</p>
+<ul class="csakdoksi">
+   <li>Nem tudhatjuk, hogy hányan akarnak majd bejelentkezni hozzánk.
+   <li>A felhasználók <em>száma folyamatosan változik.</em>
+</ul>
+
+<p class="csakdoksi">Ideális megoldás lenne: minden belépéskor csak az új 
+felhasználónak megfelelő területet foglalni. Ezzel az a probléma, hogy a memóriában elszórva 
+helyezkednek el az adatok. Valahogyan nyilván kellene tartani, hogy hol vannak az egyes elemek! 
+Ha ehhez pointerek tömbjét használnánk, akkor az lesz az, amit folyton át kell méretezni – 
+vagyis visszakapnánk az eredeti probémát. </p>
+
+<div class="columns c3">
+<div><img src="ea09/03.svg" style="width: 7em" class="kozep" alt="Tömb a memóriában – nagyon lassú az átméretezés"></div>
+<div><img src="ea09/04.svg" style="width: 7em" class="kozep" alt="Egyesével foglalt memóriaterületek"></div>
+<div><img src="ea09/05.svg" style="width: 7.5em" class="kozep" alt="Egyesével foglalt memóriaterületek: láncolás"></div>
+</div>
+
+<p class="csakdoksi">Ötlet: az egyes elemek tárolják az őket követő elem címét! Így minden elem 
+egyesével foglalható. Minden elem adatát kiegészítjük egy mutatóval, ami ugyan plusz költség, de egy olyan adatszerkezetet kapunk, amire teljesül, hogy</p>
+<ul class="csakdoksi">
+    <li>tetszőleges méretűre bővíthető dinamikusan,
+    <li>új elem hozzáadásának a költsége nagyon kicsi,
+    <li>elemek törlése is olcsó művelet.
+</ul>
+<p class="csakdoksi">Vegyük észre, hogy minderre a dinamikus memóriakezelés ad lehetőséget:
+egy olyan adatszerkezetet készülünk most létrehozni, amelyben az egyes elemek külön jönnek létre,
+és külön szűnhetnek meg. Nem csak az összes tárolt adat élettartamát fogjuk kontrollálni
+egyszerre, mint a dinamikus tömbnél, hanem az egyes elemekét külön-külön is!</p>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A láncolható elem</h2>
+</div>
+
+<blockquote>
+<p><strong>Láncolt lista (linked list):</strong>
+adatszerkezet, ahol az egyes elemek láncba vannak fűzve azáltal,
+hogy tárolják a soron <em>következő elem címét.</em></p>
+</blockquote>
+
+<img src="ea09/06.svg" style="width: 26em;" class="kozep" alt="Lista elemei">
+
+<br class="smallskip">
+
+<p class="csakdoksi">Nyelvi szinten egy láncolt listába fűzhető elem <em>önhivatkozó struktúrával</em> írható le:</p>
+
+<div class="sticky">önhivatkozó<br>struktúra:<br>pointerrel!</div>
+<pre class="brush: cbub "  >
+typedef struct ListaElem {
+
+   … // tetszőleges adat(ok)
+
+   struct ListaElem *kov;
+} ListaElem;</pre>
+
+<div class="csakdoksi">
+
+<p><strong>Fontos:</strong> az önhivatkozás csak mutató segítségével oldható meg. Egy 
+adattag típusa nem egyezhet meg a strukúrával, amiben szerepel, hiszen akkor egy 
+végtelen nagyságú adatszerkezetet kapnánk!</p>
+
+<p>Figyeljük meg, hogy <code>typedef</code> segítségével ugyan létrehozunk egy rövidebb nevet, a 
+struktúrán belül muszáj használni a <code>struct</code> kulcsszót, hiszen ott még nem 
+létezik az alternatív név. Bár általában, ha <code>typedef</code> segítségével definiálunk 
+struktúrát, akkor a <code>struct</code> kulcsszó mellett elhagyható a név, itt ez nem tehető 
+meg az önhivatkozás miatt.</p>
+
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A lista nyilvántartása</h2>
+</div>
+
+<p>A lista <em>első elemének címét</em> kell eltárolnunk: ettől elindulva a teljes adatszerkezet bejárható.</p>
+
+<p class="csakdoksi">Így a lista olyan, mintha az elemei egy madzagra lennének felfűzve.
+Az utolsó elemben lévő cím <code>NULL</code>: ezzel a 
+speciális értékkel jelezzük, hogy nincsen további elem a listában.</p>
+
+<br class="smallskip">
+
+<img src="ea09/07.svg" style="width: 28em" class="kozep" alt="Lista eleje">
+
+<br class="smallskip">
+
+<ol>
+   <li>elem címe: <code>eleje</code>
+   <li>elem címe: <code>eleje-&gt;kov</code> <code style="opacity: 0.5">(*eleje).kov</code>
+   <li>elem címe: <code>eleje-&gt;kov-&gt;kov</code> <code style="opacity: 0.5">(*(*eleje).kov).kov</code>
+   <li>elem címe: <code>eleje-&gt;kov-&gt;kov-&gt;kov</code> (ami itt <code>NULL</code>)
+   <li>…
+</ol>
+
+<p class="csakdoksi">Ne feledjük: <code>eleje-&gt;kov</code> ugyanazt jelenti, mint <code>
+(*eleje).kov</code>. Az <code>eleje</code> pointer által mutatott struktúra <code>kov</code> 
+adattagja. A <code>-&gt;</code> nyíl operátort azért találták ki, hogy ne kelljen mindig 
+zárójelezni az ilyen kifejezéseket. De ez nagyon kényelmes is: a nyíl emlékeztet a pointerre!</p>
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>A lista bejárása (traversing the list)</h2>
+</div>
+
+<p>
+A listán ciklussal tudunk végigmenni:
+</p>
+
+<pre class="brush: cbub "  >
+ListaElem *mozgo;
+
+for (mozgo = eleje; mozgo != NULL; mozgo = mozgo-&gt;kov) {
+    printf(&quot;%d&quot;, mozgo-&gt;szam);
+}</pre>
+
+<img src="ea09/10.svg" style="width: 28em;" class="kozep" alt="Ciklus végig a listán">
+
+<p class="csakdoksi">Nincs új a nap alatt: <code>for (első; meddig; következő)</code>.
+Az <code>első</code> itt a lista eleje: <code>mozgo=eleje</code>.
+A <code>meddig</code> itt a <code>NULL</code> pointerig: <code>mozgo != NULL</code>.
+A <code>következő</code> az aktuális elem által mutatott: <code>mozgo=mozgo-&gt;kov</code>
+</p>
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<h1 class="diacim">Láncolt listák – listaműveletek</h1>
+
+<br class="smallskip">
+<div class="sticky">Tanulási javaslat:<br>papír, ceruza, radír!</div>
+
+<p class="csakdoksi">A következőkben a láncolt listák kezelésének algoritmusairól lesz szó. A 
+listák kezelése közben szinte minden művelet valamilyen pointerművelet; az összes algoritmus a 
+listák láncolását állítja be. Van olyan eset, ahol négy pointert is át kell állítani, megfelelő 
+sorrendben. Ezeket nem szabad magolva tanulni! Azt kell megérteni, hogy mit jelent a lista 
+láncolása, és hogy egy adott listaművelet előtt és után hogyan kellene kinéznie a láncolásnak. 
+Egy rajz alapján a programok nagyon könnyen megalkothatóak! A tervezés és a tanulás ezért a 
+javaslatunk szerint papíron történik! Minden <code>malloc()</code> után egy dobozt kell 
+rajzolni, minden <code>free()</code> után egy dobozt kiradírozni. Minden pointerértékadás egy
+nyíl megrajzolását jelenti. Ha papíron megy, utána kódban is könnyedén menni fog!</p>
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Listaépítés – beszúrás a lista elejére</h2>
+</div>
+
+<img src="ea09/08.svg" style="width: 28em;" class="kozep" alt="Új elem a lista elejére">
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+ListaElem *uj;
+
+uj = (ListaElem*) malloc(sizeof(ListaElem)); // 1
+uj-&gt;kov = eleje; // 2
+eleje = uj; // 3</pre>
+
+<ol class="csakdoksi">
+   <li>Új elem dinamikus lefoglalása
+   <li>Az új elem „következő” pointerének beállítása az „eleje” értékére.
+   <li>Az „eleje” pointer beállítása az új elem címére
+</ol>
+
+<p class="csakdoksi">Ha az „eleje” mutató kezdetben <code>NULL</code>, a fenti kód akkor is egy teljes listát helyesen épít fel a teljesen ürestől indulva.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<a id="beszuraselorefuggvennyel" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Listaépítés – beszúrás előre, függvénnyel</h2>
+</div>
+
+<p class="csakdoksi">Írjuk meg az előző feladatot függvényként! A függvény vegye át paraméterként a lista eleje
+mutatót, és a beszúrandó adatot! Például:</p>
+
+<div class="sticky"><img src="modulz/halalfej.png" style="display: block"></div>
+
+<pre class="brush: cbub "  >
+ListaElem *eleje = NULL;
+elore_beszur(eleje, 2);     // működhet ez???</pre>
+
+<p class="csakdoksi">Működhet ez így? Garantáltan nem! C-ben érték szerinti paraméterátadás van.
+Ha a függvény első paramétereként átadjuk az „eleje” mutatót, akkor annak csak az értékét
+fogja megkapni, másolatként. Az „eleje” változó viszont nem fog megváltozni,
+a beszúrás után még mindig null lesz az értéke. Akármit is csinál az <code>elore_beszur()</code> függvény,
+a fenti kódrészlet csak hibás lehet! Ezt a problémát még meg kell oldani: a beszúrás által meg
+kell tudni változtatni a lista elejének címét tároló változót.</p>
+
+<br class="smallskip">
+
+<p class="csakdoksi">A probléma pl. úgy oldható meg, hogy a függvény mindig <strong>visszaadja az új „eleje” 
+pointert,</strong> amivel <em>felül kell írni</em> a tároltat. A függvény használata ez lesz:</p>
+
+<pre class="brush: cbub "  >
+ListaElem *eleje = NULL;
+eleje = elore_beszur(eleje, 2); // !</pre>
+
+<p class="csakdoksi">A beszúró függvény, amely visszaadja az új „eleje” pointert:</p>
+
+<pre class="brush: cbub "  >
+/* Új elemet hoz létre, és a lista elejére fűzi.
+ * Visszatér a megváltozott lista eleje pointerrel. */
+ListaElem *elore_beszur(ListaElem *eleje, int adat) {
+   ListaElem *uj;
+   uj = (ListaElem*) malloc(sizeof(ListaElem));
+   uj-&gt;adat = adat;
+   uj-&gt;kov = eleje;
+   return uj;       // !
+}</pre>
+
+<div class="csakdoksi">
+<p>A lista elejére kerül az új elem, ezért pont annak a címével tér vissza.</p>
+
+<div class="sticky">Fontos!</div>
+<p>Ha nem tároljuk el az új címet, akkor az elem <em>elvész!</em> Ezért a visszatérési értékét eldobni, nem eltárolni az eleje
+változóban, <strong>nagyon súlyos hiba!</strong></p>
+
+<p class="megjegyzes">Vegyük észre: bár a függvény paramétere <code>ListaElem *</code> típusú, tehát egy pointer, itt mégsem cím
+szerinti paraméterátadásról van szó. Mert a paraméter, amit átadunk, azaz a változó, aminek az értékét szeretnénk változtatni,
+maga is pointer típusú. Ha cím szerinti paraméterátadásról lenne szó, a hívásban <code>&amp;eleje</code> lenne, a függvény
+paraméterének típusa pedig <code>ListaElem **</code>. Ez is jó megoldáshoz vezetne, de egyelőre csináljuk az első változattal: visszatérési
+értékkel.</p>
+</div>
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>Listaépítés – hozzáfűzés</h2>
+</div>
+
+<p class="csakdoksi">Ha abban a sorrendben szeretnénk elérni az elemeket, amiben 
+érkeztek, akkor a lista végére kell „beszúrni” (hozzáfűzni) őket.</p>
+
+<img src="ea09/09.svg" style="width: 30em;" class="kozep" alt="Új elem a lista végére">
+
+<pre class="brush: cbub "  >
+ListaElem *mozgo, *uj;
+
+for (mozgo = eleje; mozgo-&gt;kov != NULL; mozgo = mozgo-&gt;kov) // 1
+   ; /* üres ciklus */
+uj = (ListaElem*) malloc(sizeof(ListaElem));                // 2
+mozgo-&gt;kov = uj;
+uj-&gt;kov = NULL;                                             // 3</pre>
+
+<div class="csakdoksi">
+<p>Hozzáfűzés a lista végéhez (append):</p>
+<ol>
+   <li>lefoglaljuk az új elemet,
+   <li>megkeressük az utolsót (mivel csak az első pointere van meg),
+   <li>az utolsó elem „következő” mutatóját beállítjuk az új elem címére, az új elemét pedig NULL-ra.
+</ol>
+
+<p>A ciklus egy apró, de fontos dologban különbözik a bejárás ciklusától.
+Itt a ciklusfeltétel nem <code>mozgo != NULL</code>, hanem <code>mozgo-&gt;kov != NULL</code> –
+vagyis a ciklus nem az utolsó elem után áll meg, hanem még az utolsó elemnél.
+Az utolsó elemet éppen arról ismerjük meg, hogy a benne lévő <code>kov</code> pointer
+értéke <code>NULL</code>.</p>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<div class="slideheader">
+<h2><span class="oldalszam">9</span>Listaépítés – hozzáfűzés függvény</h2>
+</div>
+
+
+<p><span class="csakdoksi">Elsőre azt gondolhatnánk, hogy ha hátulra szúrunk be, 
+akkor az „eleje” mutató nem változik. Ez így nem igaz!</span>
+<em>Üres listában</em> a hátulra fűzéstől változik az „eleje” mutató!</p>
+
+<img src="ea09/09b.svg" style="width: 16em;" class="kozep" alt="Új elem a lista végére">
+
+<br class="smallskip">
+
+<div class="sticky">Itt is fontos az<br>eleje mutató!</div>
+<pre class="brush: cbub "  >
+ListaElem *eleje = NULL; // üres lista
+
+eleje = vegere_fuz(eleje, 2);
+eleje = vegere_fuz(eleje, 9);</pre>
+
+<p class="csakdoksi">Vagyis nem csak hogy az üres listát külön esetként kell kezelnünk (mivel 
+az előbb mutatott ciklust a benne lévő <code>mozgo-&gt;kov != NULL</code> feltétel miatt nem 
+futtathatjuk üres listán!), hanem a lista végére fűző függvényt ugyananúgy kell megoldanunk, 
+mint az elejére beszúrást. Nevezetesen, hogy vissza kell térnie ennek is az esetlegesen 
+megváltozott lista eleje pointerrel.</p>
+
+<div class="kozep"><button data-diapopup="beszurhatrafvid">C függvény</button></div>
+
+<pre class="brush: cbub "   id="beszurhatrafvid">
+/* Új elemet helyez el a lista végén, és
+ * visszatér a megváltozott lista eleje mutatóval. */
+ListaElem *vegere_fuz(ListaElem *eleje, int adat) {
+   ListaElem *uj;
+   uj = (ListaElem*) malloc(sizeof(ListaElem));
+   uj-&gt;adat = adat;
+   uj-&gt;kov = NULL;
+
+   if (eleje == NULL)     // üres lista?
+      return uj;
+
+   ListaElem *mozgo;
+   for (mozgo = eleje; mozgo-&gt;kov != NULL; mozgo = mozgo-&gt;kov)
+      ; /* üres ciklus */
+   mozgo-&gt;kov = uj;
+
+   return eleje;
+}</pre>
+
+<div class="csakdoksi">
+<p>Az új elemre mutatnia kell egy pointernek. Azonban hogy hol van ez a pointer,
+az a listától függően változhat:</p>
+<ul>
+  <li>Ha a lista nem üres, akkor meg kell keresni az utolsó elemet. Ilyenkor annak
+    a <code>kov</code> pointere változik meg.
+  <li>Ha üres, akkor nincs utolsó elem sem. Ilyenkor a lista elejét mutató pointer
+    kell változzon. Még egyszer: ez azáltal történik meg, hogy visszaadjuk a megváltozott
+    pointert, és az értékadást pedig a hívó végzi el. A visszaadott pointert
+    be kell másolni a listaeleje pointerbe!
+</ul>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<div class="slideheader">
+<h2><span class="oldalszam">10</span>A lista felszabadítása</h2>
+</div>
+
+<p>Az alábbi kódrészlet kézenfekvőnek tűnik, de <strong>hibás:</strong></p>
+<div class="sticky"><img src="modulz/halalfej.png" style="display: block"></div>
+<pre class="brush: cbub editable"  >
+for (iter = eleje; iter != NULL; iter = iter-&gt;kov)
+   free(iter);                              // hibás</pre>
+<p class="csakdoksi">Mivel az „iter” által mutatott listaelemet felszabadítjuk, a ciklusmag
+után a következő elemet előszedő <code>iter=iter-&gt;kov</code>
+utasítás már egy felszabadított területre hivatkozna.
+</p>
+
+<br class="smallskip">
+
+<p>El kell tárolni a törölt elemből a „következő” mutatót, hiszen a felszabadítás után 
+még szükségünk van rá a továbblépéshez:</p>
+
+<pre class="brush: cbub "  >
+iter = eleje;
+while (iter != NULL) {
+   ListaElem *temp = iter-&gt;kov; // következő elem
+   free(iter);
+   iter = temp;
+}
+eleje = NULL;                   // üressé vált</pre>
+
+<p class="csakdoksi">Így végeredményben egy <code>iter = eleje; iter != NULL; iter = iter-&gt;kov</code>
+ciklust kapunk, de az <code>iter-&gt;kov</code> kifejezés kiértékelése a ciklustörzs elejére került,
+eltoltuk időben a <code>free()</code> előttre.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<a id="mondatgeneralo" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">11</span>Összetett példa: mondatok generálása</h2>
+</div>
+
+<div class="sticky">Letölthető:<br><a href="ea09/mondat.c">mondat.c</a></div>
+
+<p><em>Feladat:</em> írjunk programot, amely véletlenszerűen generált, magyar 
+nyelvű mondatokat ír ki!</p>
+
+<pre>
+A kutya alszik.
+A lassú kutya gyorsan fut.
+</pre>
+
+<br class="smallskip">
+
+<p>Mit kell ehhez tenni?</p>
+<ol>
+  <li>Specifikáljuk, milyen a helyes mondat!
+  <li>Döntsük el, milyen adatszerkezetben tárolhatók a mondatok!
+  <li>Adjuk meg, mely függvények rakják össze a mondatokat!
+  <li>Írjuk meg a programot.
+</ol>
+
+<p class="csakdoksi megjegyzes">A mondatos feladat ötlete a varázslós könyvből származik: Hal Abelson, 
+Gerald Sussman and Julie Sussman: Structure and Interpretation of Computer Programs.</p>
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<div class="slideheader">
+<h2><span class="oldalszam">12</span>Mondatok – adatszerkezet választása</h2>
+</div>
+
+<p class="csakdoksi">Mondatok: eltérő hosszúságúak lehetnek, szavakból állnak.
+<br>
+Szavak: betűkből állnak, bármilyen hosszúak lehetnek.</p>
+
+<p>
+A mondat legyen lista, amely szavakból áll.
+<span class="csakdoksi">Így tetszőlegesen hosszú mondatok összefűzhetőek,
+és egyetlen pointerrel hivatkozhatóak.</span>
+A szó legyen dinamikusan foglalt tömb – abban pedig a szokásos sztring.
+</p>
+
+<img src="ea09/mondat.svg" class="kozep" style="width: 22em;" alt="A mondatok adatszerkezete">
+
+<pre class="brush: c "  >
+typedef struct SzoLista {
+    char *szo;
+    struct SzoLista *kov;
+} SzoLista;</pre>
+
+<p class="csakdoksi">Karakterekből nem érdemes listát építeni, hiszen
+akkor minden bájt mellé egy újabb pointert lefoglalnánk. Amúgy is, maradjunk
+a sztringnél, hogy <code>printf()</code>-fel könnyedén ki tudjuk majd írni a szavakat!</p>
+
+<div class="kozep"><button data-diapopup="egyszavasfoglalasid">Egyszavas mondat létrehozása</button></div>
+
+<div id="egyszavasfoglalasid">
+<p>A listaelem és a benne lévő szó is dinamikusan foglalt!
+Az egyszavas lista foglalásához foglalni kell listaelemet és tömböt is:</p>
+
+<pre class="brush: c "  >
+/* Egyelemű lista építése egy sztringből.
+ * Bemenet: egy sztring - a szó, amit lemásol.
+ * Visszatérési érték: az újonnan létrehozott lista. */
+SzoLista *ujegyszavas(char const *szo) {
+    SzoLista *uj;
+    uj = (SzoLista*) malloc(sizeof(SzoLista));
+    uj-&gt;kov = NULL;
+    uj-&gt;szo = (char*) malloc(sizeof(char)*(strlen(szo)+1));
+    strcpy(uj-&gt;szo, szo);
+
+    return uj;
+}</pre>
+</div>
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>Mondatok – EBNF megadás, lista építése</h2>
+</div>
+
+<p><em>EBNF</em> nyelvtani szabályokkal specifikáljuk a mondatot:</p>
+
+<pre>
+kijelentés = névelő, alanyi_rész, állítmányi_rész;
+alanyi_rész = melléknév, főnév;
+állítmányi_rész = határozó, ige;
+
+melléknév = "piros" | "lassú" | "álmos";
+főnév = "macska" | "kutya" | "tanár" | "hallgató";
+határozó = "gyorsan" | "lassan";
+</pre>
+
+<img src="ea09/iszik.png" style="width: 12em; margin-top: 3.6em;" class="float" alt="All the beers!">
+
+<p>Példa: névelő, <em>alanyi rész,</em> <strong>állítmányi rész:</strong></p>
+<div>
+A <em>vidám hallgató</em> <strong>gyorsan iszik.</strong>
+</div>
+
+<br class="smallskip">
+
+<div class="csakeloadas">
+    <p>A vidám hallgató <button data-diapopup="listaepitesid">listát épít</button>,
+    <button data-diapopup="veletlenszavak">véletlenszavak</button> <button data-diapopup="osszefuzesevel">összefűzésével</button>.</p>
+</div>
+
+<div id="listaepitesid">
+<p>A lista építése:</p>
+<pre class="brush: c "  >
+alanyi_resz = osszefuz(veletlenszo(melleknevek),
+                       veletlenszo(fonevek));
+allitmanyi_resz = osszefuz(veletlenszo(hatarozok),
+                           veletlenszo(igek));
+mondat = osszefuz(alanyi_resz, allitmanyi_resz);</pre>
+
+<p>A mondat kiírása:</p>
+<pre class="brush: c "  >
+/* kiír egy mondatot, végén ponttal. */
+void kiir(SzoLista *mondat) {
+    SzoLista *iter = mondat;
+    while (iter-&gt;kov != NULL) {  /* az utolsó előttiig */
+        printf(&quot;%s &quot;, iter-&gt;szo);
+        iter = iter-&gt;kov;
+    }
+    printf(&quot;%s.\n&quot;, iter-&gt;szo);  /* az utolsó */
+}</pre>
+</div>
+
+<div id="veletlenszavak">
+<p class="csakdoksi">A <code>veletlenszo()</code> a kapott szótömbből véletlenszerűen
+választ egyet, és visszaad egy új listát, amelyben csak az van. Ehhez előbb meg kell
+számolnia, hány szó van a tömbben (pointerek tömbje, végén NULL pointer):</p>
+<p class="csakeloadas">Véletlenszerűen választott szó a tömbből:</p>
+<pre class="brush: cbub "  >
+/* A kapott tömbből (NULL pointer a végén) kiválaszt egy szót,
+ * és épít egy egyelemű listát, amelyikben az van. */
+SzoLista *veletlenszo(char **szavak) {
+   int db;
+   for (db = 0; szavak[db] != NULL; ++db)
+      ; /* üres - csak megszámolja */
+   if (db == 0)
+      return NULL;
+
+   int melyik = rand()%db;
+   return ujegyszavas(szavak[melyik]);
+}</pre>
+</div>
+
+<p class="csakdoksi">A fenti függvény működése egyszerű: megszámolja a
+<code>NULL</code> pointerrel terminált tömbben lévő szavakat, utána pedig generál egy 
+véletlenszámot 0 és db-1 között. Végül az annyiadik szó másolatával tér vissza.</p>
+
+
+<p class="csakdoksi">Az <code>osszefuz()</code> az első lista végéhez
+fűzi a másodikat, és visszatér az összefűzöttel. Sem új lista, sem új listaelem nem keletkezik.</p>
+
+<div id="osszefuzesevel">
+<pre class="brush: cbub "  >
+/* A két listát összefűzi, és visszaadja az így kapottat.
+ * Nem történik új listaelem foglalás. */
+SzoLista *osszefuz(SzoLista *egyik, SzoLista *masik) {
+    if (egyik == NULL)
+        return masik;
+    SzoLista *futo;
+    for (futo = egyik; futo-&gt;kov != NULL; futo = futo-&gt;kov)
+        ; /* üres */
+    futo-&gt;kov = masik;
+    return egyik;
+}</pre>
+
+<img src="ea09/osszefuz.svg" class="kozep" style="width: 18em;" alt="A két lista összefűzése">
+</div>
+
+<div class="csakdoksi">
+<p>A függvény működése a következő:</p>
+<ul>
+  <li>Ha az első lista üres, akkor az összefűzött lista a második lista. (Függetlenül attól, hogy az mit tartalmaz.)
+  <li>Ha nem üres, akkor meg kell keresni a legutolsó elemét, és annak <code>NULL</code> értékű <code>kov</code> pointerét
+    beállítani a másik lista elejére. Ezután vissza is lehet térni az előbbi lista elejére mutató pointerrel.
+</ul>
+<p>A függvény visszatérési értékét el kell tárolni, ugyanis az az összefűzött mondatra mutató pointer.
+Mivel új listaelemek nem keletkeznek, az <code>egyik</code> és a <code>másik</code> listákat
+később nem kell majd felszabadítani, csak a keletkezőt! Tulajdonképp a két bemeneti lista
+megszűnik önálló életet élni, és csak az összefűzött lista fog létezni.</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<h1 class="diacim">Törlés, rendezve építés</h1>
+
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>Törlés listából I.</h2>
+</div>
+
+<p class="csakdoksi">A törlés problémái nagyon hasonlóak a beszúrásnál látottakhoz:
+(i) ha a lista első elemét törüljük, módosítani kell az „eleje” pointert,
+(ii) ha középről kell törölnünk, akkor szükség van egy lemaradó pointerre a mutatók megfelelő átállításához.</p>
+
+
+<p><em>Törlés</em> lista belsejéből:</p>
+<ol>
+   <li>megkeressük a törlendő elemet,
+   <li>felszabadítjuk,
+   <li>az előtte lévő <code>kov</code> pointerét az utána lévőre állítjuk.  <span class="bubble">?!</span>
+</ol>
+
+<img src="ea09/15_eloszor.svg" style="width: 28em;" class="kozep" alt="Törlés a listából">
+
+<p class="csakdoksi"><em>Gond</em> a 3. ponttal: amelyik elemet megtaláljuk így, 
+az azelőtti elemet kell módosítani. Hátrafelé haladni pedig nem 
+tudunk.</p>
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Törlés listából II.</h2>
+</div>
+
+<p class="csakdoksi">Ötlet: <em>két mutatót mozgatunk</em> végig a listán!</p>
+
+<img src="ea09/15.svg" style="height: 10em;" class="kozep" alt="Törlés a listából: lemaradó pointer">
+
+<br class="smallskip">
+
+<div class="sticky">lemaradó ptr<br>(inchworm)</div>
+<pre class="brush: cbub "  >
+lemarado = NULL; mozgo = eleje;
+while (mozgo != NULL &amp;&amp; mozgo-&gt;adat != keresett) {
+   lemarado = mozgo; mozgo = mozgo-&gt;kov;
+}</pre>
+
+
+<p class="csakdoksi"> A „mozgó” pointerrel</strong> vizsgáljuk az
+elemek értékét, a „lemaradó” pointer</strong> mindig eggyel
+lemaradva követi a „mozgót”.</p>
+
+<p class="csakdoksi">A ciklusban kihasználjuk a
+logikai rövidzárat. Akkor megyünk tovább a listában, ha nem
+értük el még a végét és az aktuális elem nem a keresett. Ha
+elértük a lista végét, akkor „mozgó” értéke NULL. Ha ilyenkor
+kiértékelődne az ÉS kapcsolat második fele is, akkor az hibát
+okozna, hiszen egy NULL pointer értékét próbálnánk megvizsgálni!
+Fontos tehát, hogy az ÉS kapcsolatban először
+vizsgáljuk meg, hogy elértünk-e a lista végére és csak utána az
+aktuális elem értékét!</p>
+
+<p class="csakdoksi">A törlés így már egyszerű:</p>
+
+<div class="sticky">törlés</div>
+
+<pre class="brush: cbub "  >
+lemarado-&gt;kov = mozgo-&gt;kov;     // törlendő = ahol megállt
+free(mozgo);</pre>
+
+
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<div class="slideheader">
+<h2><span class="oldalszam">17</span>Törlés listából III.</h2>
+</div>
+
+<pre class="brush: cbub "  >
+/* Adott elemet töröl. Visszatér az új eleje mutatóval. */
+ListaElem *torol(ListaElem *eleje, int adat) {
+   ListaElem *lemarado, *mozgo;
+   lemarado = NULL; mozgo = eleje;
+   while (mozgo != NULL &amp;&amp; mozgo-&gt;adat != adat) { // törlendő hol?
+      lemarado = mozgo; mozgo = mozgo-&gt;kov;
+   }
+
+   if (mozgo == NULL)      // üres vagy nincs ilyen elem
+      return eleje;
+   if (lemarado == NULL) { // az első elemet kell törölni
+      ListaElem *ujeleje = mozgo-&gt;kov;
+      free(mozgo);
+      return ujeleje;
+   }
+   lemarado-&gt;kov = mozgo-&gt;kov;  // a közepéről/végéről törlünk
+   free(mozgo);
+   return eleje;
+}</pre>
+
+<div class="csakdoksi">
+<p>Az elem keresése egy lemaradó pointeres bejárást használ. A ciklus után háromszoros esetszétválasztást kell végezni.</p>
+<ul>
+   <li>Ha „mozgó” értéke <code>NULL</code>, akkor vagy üres a lista és rögtön az első iteráció előtt kiléptünk a ciklusból az ÉS kapcsolat első tagja miatt; vagy végigértünk a listán és az utolsó elem sem egyezett meg a keresettel, tehát az nem szerepel a listában. Akármelyik is, nincs mit törölni, ezért egyből visszatérhetünk.
+   <li>Ha „mozgó” értéke nem <code>NULL</code>, de „lemaradó” igen, akkor az azt jelenti, hogy az első iteráció előtt kiléptünk a ciklusból azért, mert az ÉS kapcsolat második része nem teljesült, tehát rögtön az első elem megegyezett a keresettel. Ezt a <code>mozgo == eleje</code> feltétellel is ellenőrizhetnénk. Ilyenkor az első elemre mutató pointert át kell állítani az őt követőre, majd törölni kell őt. Itt azt is írhatnánk, hogy <code>free(eleje)</code>. A törlés előtt egy ideiglenes változóba (<code>ujeleje</code>) el kell menteni a második elem címét, hiszen muszáj felszabadítani az első elemet a <code>return</code> előtt, visszaadni viszont a második elem címét kell, mert az
+   lesz az új listafej. (Ez ugyanaz a probléma, mint amit a lista felszabadításánál már láttunk.)
+   <li>Ha mindkét pointer egy létező elemre mutat, akkor a lista közepéből, vagy az utolsó elemet kell törölni. Mindkét esetben annyi a teendő, hogy a „lemaradó” által mutatott elem következő pointerét átállítjuk a „mozgó” utánira (ami akár <code>NULL</code> is lehet), majd töröljük azt, amire a „mozgó” mutat. Ilyenkor az eredeti „eleje” pointerrel térünk vissza, hiszen a lista eleje nem változott meg.
+</ul>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>Rendezve építés I.</h2>
+</div>
+
+<p class="csakdoksi">Gyakran van szükség arra, hogy <em>rendezetten</em> tároljunk adatokat.</p>
+
+<div class="csakdoksi">
+<ul>
+    <li>A tömböknél az adatok rendezett rögzítése nagyon költséges, hiszen mindig odébb kell csúsztatni a beszúrási pozíció utáni elemeket.
+    <li>Listákat könnyű rendezve építeni, hiszen csak a mutatókat kell megfelelően beállítani.
+</ul>
+
+<p>Tömbök esetén egy új elemet mindig a meglévő adatok után szúrunk be és utána rendezünk, listáknál pedig eleve rendezetten
+építünk és így ott nincs szükség utólagos rendezésre. Ez jó, mert az utólagos rendezés a listáknál még kevésbé hatékony, mint tömböknél.</p>
+</div>
+
+<p>Beszúrás egy rendezett listába:</p>
+<ol>
+   <li>Az első elemre állunk a „mozgó” pointerrel.
+   <li>Amíg az aktuális elem kisebb, mint a beszúrandó, és nem értük el a lista végét, addig továbblépünk a következőre.
+   <li>A megtalált elem elé beszúrjuk az újat. <span class="bubble">Látjuk az előzőt?</span>
+</ol>
+
+<img src="ea09/11.svg" style="width: 22em;" class="kozep" alt="Beszúrás a listába">
+
+<p class="csakdoksi">A beszúrásnál a megtalált elem elé kell beszúrni: ezt a problémát is megoldhatjuk lemaradó pointerrel!</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Rendezve építés II.</h2>
+</div>
+
+<div class="csakdoksi">
+<p>A beszúrás folyamata a lemaradó pointeres keresés után: a „lemaradó” pointerét átállítjuk az új elemre, az új elem  pointerét átállítjuk a „mozgó”-ra.</p>
+
+<img src="ea09/12.svg" style="width: 22em;" class="kozep" alt="Beszúrás a listába">
+</div>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+/* Rendezett listába új elemet szúr be. Visszatér az új
+   lista eleje mutatóval, ami változhatott. */
+ListaElem *rendezve(ListaElem *eleje, int adat) {
+   ListaElem *uj;
+   uj = (ListaElem*) malloc(sizeof(ListaElem));
+   uj-&gt;adat = adat;
+
+   ListaElem *lemarado, *mozgo;
+   lemarado = NULL; mozgo = eleje;
+   while (mozgo != NULL &amp;&amp; mozgo-&gt;adat &lt; uj-&gt;adat) { // hely?
+      lemarado = mozgo; mozgo = mozgo-&gt;kov;
+   }
+      
+   if (lemarado == NULL) {      // üres vagy első elé?
+      uj-&gt;kov = eleje;
+      return uj;
+   }
+   lemarado-&gt;kov = uj;   // lista belsejébe/végére
+   uj-&gt;kov = mozgo;
+   return eleje;
+}</pre>
+
+
+<div class="csakdoksi">
+
+<p>Az alábbi eseteket kell megkülönböztetni a keresés után.</p>
+
+<p>Ha <code>lemarado == NULL</code>:</p>
+<ul>
+  <li>vagy üres volt a lista, vagyis „mozgó” értéke <code>NULL</code> volt (tehát rögtön az első iteráció előtt kiléptünk a ciklusból az ÉS kapcsolat első tagja miatt),
+  <li>vagy az első elem elé kell beszúrni, ezért az ÉS kapcsolat második tagja miatt léptünk ki az első iteráció előtt a kereső ciklusból.
+</ul>
+
+<p>
+Ilyenkor mindenképp az „uj” pointerrel kell visszatérni, hiszen ő lesz ezentúl a lista első eleme.
+Mindkét esetben értelmes az <code>uj-&gt;kov=eleje</code> kifejezés, hiszen az vagy NULL, és akkor egy egyelemű listát kapunk, vagy az első elemre mutat és akkor beszúrtunk eléje egy elemet.
+</p>
+
+<p>Ha <code>lemarado != NULL</code>:</p>
+<ul>
+  <li>Vagy elértük a lista végét (az ÉS kapcsolat első fele miatt léptünk ki a ciklusból) – ekkor mozgo értéke NULL,
+  <li>Vagy valahová a lista közepére szúrunk be, mert az ÉS kapcsolat második fele nem teljesült, tehát megtaláltuk az első elemet, ami nagyobb, mint a beszúrandó (ekkor mozgo értéke nem <code>NULL</code>).
+</ul>
+
+<p>
+Mindkét esetben át kell állítani a „lemaradó” által mutatott elem „következő” pointerét az új elemre.
+Továbbá mindkét esetben a „mozgó” lesz az új elem „következő” pointere:
+</p>
+<ol>
+  <li>vagy egy listabeli, létező elem,
+  <li>vagy a <code>NULL</code> pointer, és így az új elem lesz a lista utolsó eleme innentől kezdve.
+</ol>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<h1 class="diacim">Duplán láncolt listák</h1>
+
+
+
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>Duplán láncolás és strázsák</h2>
+</div>
+
+<p>
+A listás algoritmusok nehézségei:
+<ol>
+   <li>csak előrefelé tudunk menni, hátra nem,
+   <li>lista első eleme problémás,
+   <li>nem látunk visszafelé, ezért lemaradó pointer kellett.
+</ol>
+
+<br class="smallskip">
+
+<p>Ötletek:</p>
+<ol>
+   <li>Láncoljunk „duplán” (doubly linked list)!
+   <li>Helyezzünk el egy-egy extra elemet a lista végein (strázsa, sentinel)!
+</ol>
+
+<img src="ea09/16.svg" style="width: 24em;" class="kozep" alt="Duplán láncolt lista">
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<div class="slideheader">
+<h2><span class="oldalszam">22</span>A duplán láncolt <code>ListaElem</code> és <code>Lista</code></h2>
+</div>
+
+<p>A lista egy eleme így:</p>
+
+<div class="columns c6040">
+<div>
+<pre class="brush: cbub "  >
+typedef struct ListaElem {
+  …
+
+  struct ListaElem *elozo, *kov;
+} ListaElem;</pre>
+</div>
+<div>
+<img src="ea09/18.svg" style="width: 10em;" class="kozep" alt="Elem pointerei: előző és következő elem">
+</div>
+</div>
+
+<br class="smallskip">
+
+<p>
+A két strázsára mutató pointert egy struktúrába tesszük, hiszen
+ezek egy listához tartoznak:
+</p>
+
+<div class="columns">
+<div>
+<pre class="brush: cbub "  >
+typedef struct Lista {
+  ListaElem *elso;
+  ListaElem *utolso;
+} Lista;</pre>
+</div>
+<div>
+<img src="ea09/19.svg" style="width: 14em;" class="kozep" alt="A lista eleje és vége">
+</div>
+</div>
+
+<p class="csakdoksi"> A két strázsa elem mindig a lista elején és a végén áll, 
+tehát új elem beszúrásakor sosem fordulhat elő, hogy az első elé vagy az utolsó 
+után kéne beszúrni. Így a beszúrás illetve törlés művelete mindig két létező elem 
+között történik, vagyis minden pozíción ugyanazt a műveletet kell végrehajtani. Az
+algoritmusok sokkal egyszerűbbek, hiszen nem kell felderíteni azt, hogy milyen 
+speciális pozíció az, ahol a műveletet el kell végezni, és nem kell elágazni 
+eszerint. Fontos, hogy a két strázsa nem tartalmaz értelmes adatot, tehát az 
+értelmes adatok listája az eleje („első”) strázsa utáni elemtől a vége („utolsó”) 
+strázsa előtti elemig tart!</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Mindkét végén strázsás lista: bejárás</h2>
+</div>
+
+<p>A listán végimenni az alább bemutatott módon lehet:</p>
+<ol>
+   <li>az „első”, vagyis a kezdő strázsa utáni elemtől indulunk,
+   <li>az „utolsó”, vagyis a záró strázsa előtti elemig megyünk.
+</ol>
+
+<pre class="brush: cbub "  >
+/* Kiírja a listában található számokat. */
+void kiir(Lista *lista) {
+   ListaElem *mozgo;
+   for (mozgo = lista-&gt;elso-&gt;kov;  // 1
+        mozgo != lista-&gt;utolso;        // 2
+        mozgo = mozgo-&gt;kov)
+      printf(&quot;%d &quot;, mozgo-&gt;adat);
+}</pre>
+
+<p class="csakdoksi">A <code>lista-&gt;elso-&gt;kov</code>: a kezdő strázsa utáni, első hasznos elem.
+Ezt már fel kell dolgozni, innen indul a ciklus. A <code>lista-&gt;utolso</code>
+a záró strázsa elem; ezt már nem kell feldolgozni, vagyis amint a <code>mozgo!=lista-&gt;utolso</code>
+feltétel hamis lesz, a ciklus megáll.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>Duplán láncolt lista: törlés</h2>
+</div>
+
+<img src="ea09/20.svg" style="width: 22em;" class="kozep" alt="Beszúrás duplán láncolt listába">
+
+<br class="smallskip">
+
+<pre class="brush: c "  >
+void torol(ListaElem *torlendo) {
+   torlendo-&gt;elozo-&gt;kov = torlendo-&gt;kov;
+   torlendo-&gt;kov-&gt;elozo = torlendo-&gt;elozo;
+
+   free(torlendo);
+}</pre>
+
+<p>Nem kell lemaradó pointer, nem kell a végeken külön figyelni!</p>
+
+<div class="csakdoksi">
+<p>Ha egy adott tartalmú elemet szeretnénk törölni, akkor a teendők a következők:</p>
+<ol>
+   <li>megkeressük a törlendő elemet,
+   <li>az előtte lévő elem „következő” pointerét átállítjuk az utána lévőre,
+   <li>az utána lévő „előző” pointerét átállítjuk az előtte lévőre,
+   <li>felszabadítjuk az elemet.
+</ol>
+<pre class="brush: cbub "  >
+/* megadott adat első előfordulását törli */
+void torol(Lista *lista, int adat) {
+   ListaElem *mozgo;
+   mozgo = lista-&gt;elso-&gt;kov;
+   while (mozgo != lista-&gt;utolso &amp;&amp; mozgo-&gt;adat != adat) {
+      mozgo = mozgo-&gt;kov;
+   }
+
+   if (mozgo != lista-&gt;utolso) { // megvan?
+      mozgo-&gt;elozo-&gt;kov = mozgo-&gt;kov;
+      mozgo-&gt;kov-&gt;elozo = mozgo-&gt;elozo;
+      free(mozgo);
+   }
+}</pre>
+<p>A törlésnél szükség van egy feltételvizsgálatra: le kell
+ellenőrizni, hogy a törlendő elem egyáltalán benne van-e a listában.
+Ha a „mozgó” pointer az „utolsó”-n áll meg a keresés során, az azt
+jelenti, hogy nem találta meg a törlendő elemet a listában. Ebben az
+esetben a függvény nem csinál semmit. A pointer ilyenkor a
+végstrázsára mutat, amit nem szabad törölni.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>Duplán láncolt lista: rendezve beszúrás</h2>
+</div>
+
+<p class="csakdoksi">A duplán láncolt, strázsás listák előnye igazán akkor
+válik nyilvánvalóvá, amikor egy új elemet kell beszúrni.</p>
+
+<ol>
+   <li>Csak egy pointerre van szükség: arra, amelyik elé kerül az új elem.
+   <li>A beszúrás művelete mindig azonos: a két strázsa is valódi elem.
+</ol>
+
+<img src="ea09/17.svg" style="width: 22em;" class="kozep" alt="Beszúrás duplán láncolt listába">
+
+<div class="kozep"><button data-diapopup="duplanlancoltbeszurasid">Beszúró függvény</button></div>
+
+<pre class="brush: cbub "   id="duplanlancoltbeszurasid">
+/* új elemet szúr a rendezett listába */
+void rendezve_beszur(Lista *lista, int adat) {
+   ListaElem *uj;
+   uj = (ListaElem*) malloc(sizeof(ListaElem));
+   uj-&gt;adat=adat;
+
+   /* Egyszerű keresés, nincs lemaradó pointer */
+   ListaElem *mozgo;
+   mozgo = lista-&gt;elso-&gt;kov;
+   while (mozgo != lista-&gt;utolso &amp;&amp; mozgo-&gt;adat &lt; adat)
+      mozgo = mozgo-&gt;kov;
+
+   uj-&gt;elozo = mozgo-&gt;elozo;  // ő a szomszédaira mutat
+   uj-&gt;kov = mozgo;
+   mozgo-&gt;elozo-&gt;kov = uj;    // a szomszédai rá
+   mozgo-&gt;elozo = uj;
+}</pre>
+
+<div class="csakdoksi">
+
+<p>A kétszeres láncolás miatt négy pointert kell helyesen
+beállítani:</p>
+
+<ol>
+  <li>az új elem „előző” pointerét,
+  <li>az új elem „következő” pointerét (vagyis az új elem a szomszédaira mutat),
+  <li>az új előtti elem „következő” pointerét,
+  <li>az új utáni elem „előző” pointerét (az új elem szomszédai rá mutatnak).
+</ol>
+
+<p>A keresésnél sincsen szükség lemaradó pointerre, hiszen a
+megtalált elemből elérjük az előtte lévő elemet is
+(<code>mozgo-&gt;elozo</code>), amelyre az új elemnek mutatnia kell
+(visszafelé), és amelynek az új elemre mutatnia kell (előrefelé). Ez
+a művelet helyesen fut le akkor is, ha a lista üres: ilyenkor a
+„mozgó” pointer a lista végét jelölő strázsa elemre („utolsó”) fog
+mutatni. Ezen felül, mivel minden listaelem előtt van még egy elem
+(lehet, hogy az a strázsa, de van), nincsen szükség az
+esetszétválasztásra, amely külön kezelte a lista elejét és a
+belsejét. Legvégül pedig, mivel az eleje strázsa mindenképpen első
+elem marad, a lista elejét mutató pointer sem változik!</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<div class="slideheader">
+<h2><span class="oldalszam">26</span>Speciális listák</h2>
+</div>
+
+<div class="columns kozep">
+<div>
+    <img src="ea09/22.svg" style="width: 12em">
+    <div class="kozep">sor (FIFO)</div>
+</div>
+<div>
+    <img src="ea09/23.svg" style="width: 12em">
+    <div class="kozep">verem (LIFO)</div>
+</div>
+</div>
+
+<br class="smallskip">
+
+<div class="columns kozep">
+<div>
+    <img src="ea09/24.svg" style="width: 12em">
+    <div class="kozep">fésűs lista (listák listája)</div>
+</div>
+<div>
+    <img src="ea09/25.svg" style="width: 8em">
+    <div class="kozep">ciklikus lista</div>
+</div>
+</div>
+
+<div class="csakdoksi">
+
+<p>A várakozási <em>sor</em> (queue, FIFO – first in, first
+out) olyan lineáris adatszerkezet, amelyben új elemet az
+elejéhez adunk hozzá, a feldolgozandó elemeket a
+végéről vesszük el. Várakozási sort duplán láncolt listával
+érdemes megvalósítani, mert gyakori művelet az, amikor a lista végét
+módosítjuk.</p>
+
+<p>Egyenetlen terhelések, illetve eltérő sebességű folyamatok
+kiegyenlítésére szokás használni ún. pufferként várakozási sorokat.
+Nagy terhelés esetén a kérések a sor elejéhez adódnak hozzá, a
+kiszolgáló pedig a végéről veszi el őket, tehát a legrébben érkezett
+fog a legkorábban sorra kerülni. Ilyen módon nem veszik el egy kérés
+sem, hiszen a lista dinamikus nő, vagy csökken attól függően, hogy
+éppen a "termelő" vagy a "fogyasztó" oldal dolgozik gyorsabban.
+Példa: egy szerverre időben egyenetlenül elosztva érkeznek be a
+kérések. Előfordulnak üresjáratok és olyan időszakok, amikor nem
+tudja olyan sebességgel kiszolgálni a kéréseket, ahogy beérkeznek.
+Másik példa: a nyomtatási sor a számítógépen. A kinyomtatandó oldalakat
+megjegyzi a gép, és olyan sorrendben küldi a nyomtatónak, ahogyan azok
+eredetileg a felhasználó által ki lettek nyomtatva.</p>
+
+
+<p>A <em>verem</em> (stack, LIFO – last in, first out) olyan
+lineáris adatszerkezet, amelyben új elemet az elejéhez
+adunk hozzá (push), és a feldolgozandókat is az elejéről
+vesszük el (pop). Verem megvalósítása legegyszerűbben egyszeresen
+láncolt listával lehetséges, amelybe az új elemeket a lista elején
+tesszük, és a kivett elemek is a lista elejéről származnak.</p>
+
+<p>A verem használható például matematikai kifejezések
+kiértékelésekor átmeneti tárolónak, és általában olyan
+algoritmusokban, ahol az adatok feldolgozása azok érkezésének
+fordított sorrendjében történik. Példa: a függvényeknél láttuk, hogy
+a verem alapvető adatszerkezete a memóriakezelésnek. A függvények
+lokális változói hasonlóan tárolódnak.</p>
+
+
+
+<p>A <em>fésűs lista</em> egy olyan láncolt lista,
+amelynek elemei láncolt listák. Olyan esetben, amikor az adatok
+kétszintű hierarchiában helyezkednek el, érdemes fésűs listát
+használni – főként, ha mindkét szinten rendezett tárolást
+szeretnénk.</p>
+
+<p>Példa: egy nyelviskola tanulói – a főlista (sárga) egy eleme egy
+kurzus (pl. „holland haladó”, „hindi kezdő” stb.). Minden óra
+tartalmaz egy listát (kék), amelynek elemei a kurzuson résztvevő
+hallgatók.</p>
+
+<p>A <em>ciklikus lista</em> olyan lista, amelyben az „utolsó” elem után újból
+az első következik (vagyis az utolsó elem „következő” pointere az elsőre mutat).</p>
+<p>Példák:</p>
+<ul>
+   <li>Futó programok listája egy operációs rendszerben. Ha foglalkozott az utolsóval, akkor utána megint az elsővel.
+   <li>Sokszög csúcspontjai: az utolsó után az első jön, az első előtt az utolsó.
+</ul>
+<p>Érdekes egy ciklikus lista bejárása. Mivel nem mehetünk <code>NULL</code> pointerig (nincs vége a listának),
+addig kell futnia a ciklusnak, amíg el nem érjük a lista elejét. Egy ilyen feltétel
+azonban a lista elején is teljesülne. Ahogy leírjuk ezt, egyből észbe is kapunk:</p>
+<pre class="brush: cbub athuzott"  >
+for (iter = eleje; iter != eleje; iter = iter-&gt;kov)</pre>
+<p>
+Ehelyett például egy hátultesztelő ciklust alkalmazhatunk, hogy biztosítsuk, lefusson
+legalább egyszer a ciklustörzs, és a feltétel már a második elemet lássa elsőnek.
+Ekkor azonban az üres listára külön figyelnünk kell bejáráskor is:
+</p>
+<pre class="brush: c "  >
+if (eleje == NULL)
+    printf(&quot;üres a lista!\n&quot;);
+else {
+    iter = eleje;
+    do {
+        …
+        iter = iter-&gt;next;
+    } while (iter != eleje);
+}</pre>
+
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span>Autók a hídon – komplex példa</h2>
+</div>
+
+<p><em>Feladat:</em> programot írni, amely egy híd előtti közlekedési lámpát vezérel.</p>
+<br class="smallskip">
+<p>A híd teherbírása 20 tonna. Különböző súlyú járművek haladnak át rajta. A lámpát úgy kell
+vezérelni, hogy egy jármű csak akkor hajthasson fel, ha nem terhelődik túl a híd.</p>
+
+<img src="ea09/autosor.svg" class="kozep" style="width: 30em;">
+
+<p class="csakdoksi">Alább a program top-down megvalósításának részletei láthatóak.</p>
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Autók a hídon – megvalósítás</h2>
+</div>
+
+<p>Az autók <em>sorban</em> haladnak:</p>
+<ul class="csakdoksi">
+    <li>Amelyik elsőnek hajt fel a hídra, az hajt le először.
+    <li>Amelyik elsőnek állt be a lámpához, az hajthat fel először.
+</ul>
+
+<img src="ea09/autosor_prog.svg" class="kozep" style="width: 32em;">
+
+<br class="smallskip">
+
+<p>A választott adatszerkezet: <em>FIFO</em> &rarr; duplán láncolt lista strázsákkal.</p>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+typedef struct Auto {
+   double tomeg;
+   struct Auto *elozo, *kov;
+} Auto;</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+typedef struct Sor {
+   Auto *eleje,
+        *vege; /* strázsák */
+} Sor;</pre>
+</div>
+</div>
+
+<p class="csakdoksi">Láthatóan teljesen mindegy programozási szempontból, hogy a lámpánál álló 
+sorról vagy a hídról van szó. Mindkettő ugyanúgy várakozási sorként (FIFO) viselkedik, és 
+ugyanazok a műveletek értelmezettek rájuk: beállni a sorba ugyanaz, mint felhajtani a hídra, és 
+zöld jelzésre elhaladni a lámpa mellett (kiállni a sorból) ugyanaz, mint lehajtani a hídról.</p>
+
+<p class="csakdoksi">Figyelni kell arra is, hogy a sor fordítva van lerajzolva: a sor eleje a 
+rajzon a jobb szélen szerepel, a vége pedig a bal szélen. Az „előző” és „következő” pointereknél 
+is fogalmazhatunk fordítva. Programozási szempontból mindegy, hogy a két szópár jelentését 
+megfordítjuk-e, mert ugyanazt az eredményt kapjuk. Lényeg, hogy a sor egyik végére tegyük az 
+„új” autókat, és másik végéről vegyük el a „feldolgozattakat.”</p>
+
+<div class="kozep">
+<button data-diapopup="autolistamuvelet">Listaműveletek</button>
+<button data-diapopup="autokiegeszito">Egyéb függvények</button>
+</div>
+
+
+<div id="autolistamuvelet">
+<p>Ha egy autó várakozik, és szabaddá válik az út, akkor felhajt a hídra:</p>
+<pre class="brush: c "  >
+if (!ures(varakozok)) {   /* van várakozó autó? */
+    if (mehet_e(sor-&gt;eleje-&gt;kov, hidon)) {    /* elbírja? */
+        Auto *a = elejerol(sor);    /* sorból kivesz */
+        vegere(hid, a);             /* hídra (sorba) betesz */
+    }
+}</pre>
+
+<br class="smallskip">
+
+<div class="columns">
+<div>
+<p><em><code>vegere()</code></em>: egy autó sorba állítása</p>
+
+<pre class="brush: c "  >
+void vegere(Sor *s, Auto *a) {
+    a-&gt;elozo = s-&gt;vege-&gt;elozo;
+    a-&gt;kov = s-&gt;vege;
+    s-&gt;vege-&gt;elozo-&gt;kov = a;
+    s-&gt;vege-&gt;elozo = a;
+}</pre>
+</div>
+<div>
+<p><em><code>elejerol()</code></em>: sorra kerülő autó</p>
+
+<pre class="brush: c "  >
+Auto *elejerol(Sor *s) {
+    Auto *a = s-&gt;eleje-&gt;kov;
+    a-&gt;kov-&gt;elozo = a-&gt;elozo;
+    a-&gt;elozo-&gt;kov = a-&gt;kov;
+    return a;
+}</pre>
+</div>
+</div>
+</div>
+
+<div id="autokiegeszito">
+
+<p><em><code>mehet_e()</code></em>: megmondja, hogy egy adott autó felhajthat-e a hídra. Igazzal tér vissza, ha még elbírja
+(ilyenkor lehet zöld a lámpa).</p>
+
+<pre class="brush: c "  >
+int mehet_e(Auto *a, Sor *hidon) {
+    return sor_ossztomeg(hidon) + a-&gt;tomeg &lt; 20000; /* 20 t */
+}</pre>
+
+<br class="smallskip">
+
+<p><em><code>sor_ossztomeg()</code></em>: összeadja egy sor autóinak tömegét. A híd
+terhelésének számítására használható.</p>
+<pre class="brush: c eloadaskicsinyit"  >
+double sor_ossztomeg(Sor *sor) {
+    Auto *iter;
+    double ossz = 0;
+    for (iter = sor-&gt;eleje-&gt;kov; iter != sor-&gt;vege; iter = iter-&gt;kov)
+        ossz += iter-&gt;tomeg;
+    return ossz;
+}</pre>
+
+</div>
+
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<div class="slideheader">
+<h2><span class="oldalszam">29</span>Tűzijáték – komplex példa</h2>
+</div>
+
+<div class="sticky">Letölthető:<br><a href="ea09/tuzijatek.c">tuzijatek.c</a></div>
+<p class="csakdoksi">Feladat: írjunk programot, amely tűzijátékot rajzol ki!</p>
+
+<p>Fizika: egy kilőtt lövedék mozgása Δt idő alatt:</p>
+<ul>
+    <li>Helyzete: <b>r</b> = <b>r</b> + <b>v</b>Δt
+    <li>Sebessége: <b>v</b> = <b>v</b> + <b>g</b>Δt
+</ul>
+<p>A robbanáskor sok apró darab keletkezik, azok ugyanígy mozognak.</p>
+
+<br class="smallskip">
+
+<p class="csakdoksi">Milyen adatszerkezetben tároljuk a rengeteg pontot? A pontok sorrendje nem számít, a számuk viszont nagyon 
+gyorsan változik. Legyen ezért lista! Az új elemeket tetszőleges helyre tehetjük beszúráskor, akár az aktuális elem elé, akár az 
+aktuális elem mögé – ugyanúgy fog kinézni a mozgás. Bejáráskor figyelni kell majd: a lista bejárása közben kell majd hozzáadnunk
+új elemeket (robbanáskor) és törölni régieket!</p>
+
+<img class="float" src="ea09/tuzijatek.svg" style="width: 10em;">
+
+<pre class="brush: c "  >
+typedef enum Tipus { robbano, eltuno } Tipus;
+
+typedef struct Pont {
+    Tipus tipus;
+    double x, y, vx, vy;
+    double elettartam;
+    int szin;
+
+    struct Pont *kov;
+} Pont;</pre>
+
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>Tűzijáték – pontok kezelése (kódrészlet)</h2>
+</div>
+
+<p class="csakdoksi">A top-down megvalósítás gondolatmenete, kódrészletei láthatók alább.
+Az egyes pontokat kezelő ciklus vázlatosan így néz ki:</p>
+
+<pre class="brush: cbub eloadaskicsinyit"  >
+lemarado = lista;
+iter = lista-&gt;kov;                   /* strázsát kihagy */
+while (iter != NULL) {
+   iter-&gt;elettartam -= delta_t;
+   if (iter-&gt;elettartam &gt; 0) {       // még repülhet?
+      iter-&gt;x += iter-&gt;vx*delta_t;   /* fizika: helyzet + sebesség */
+      iter-&gt;y += iter-&gt;vy*delta_t;
+      iter-&gt;vy += g*delta_t;
+      lemarado = iter;
+      kovetkezo = iter-&gt;kov;
+   } else {                          // vége
+      if (iter-&gt;tipus == robbano)
+         for (i = 0; i &lt; 30; i++)    /* 30 darabra robban */
+            beszur(iter, uj_eltuno(iter-&gt;x, iter-&gt;y, iter-&gt;szin));
+      kovetkezo = iter-&gt;kov;         /* ez a ciklushoz kell */
+      lemarado-&gt;kov = iter-&gt;kov;
+      free(iter);                    /* törlés */
+   }
+   iter = kovetkezo;
+}</pre>
+
+<div class="csakdoksi">
+<p>Ez feldolgozza a pontok listájának minden elemét:</p>
+<ul>
+    <li>Ha lejárt az ideje, felrobbanhat. De mindenképpen eltűnik.
+    <li>Ha még nem, akkor mozog a ferde hajítás képlete szerint.
+</ul>
+<p>A beszúráskor az aktuális elem után szúrjuk be az új pontokat
+(így, a ciklus folytatva, egyből fel is dolgozzuk majd őket). Ez azért egyszerűbb
+így, mivel könnyebb az aktuális elem után beszúrni, mint elé:</p>
+<img src="ea09/tuzilistabeszur.svg" style="width: 25em;" class="kozep">
+<p>A törléshez pedig nyilvántartunk egy „lemaradó” pointert. Mivel az aktuális
+elem (<code>iter</code>) törölhető, ezért a ciklus nem végződhet <code>iter=iter-&gt;kov</code>
+sorral – a törlés előtt a <code>kov</code> pointert ki kell menteni a törölt elemből:</p>
+<img src="ea09/tuzilistatorol.svg" style="width: 25em;" class="kozep">
+<p>Figyelni kell a „lemaradó” pointerre is. Ha nem töröljük az aktuális elemet, akkor
+a következő iterációban a „lemaradó” pointer arra kell mutasson. Ha viszont töröljük,
+akkor a „lemaradó” pointer értéke nem változik, a következő iterációban még mindig
+a törölt elem előttire kell mutasson. A felépített lista elején strázsa van,
+hogy ne kelljen még a lista eleje miatt is külön esetszétválasztást csinálni.</p>
+</div>
+
+<div class="kozep"><button data-diapopup="tuzijatekkisfuggveny">Kisebb függvények</button></div>
+
+<div id="tuzijatekkisfuggveny">
+
+<p><em><code>uj_eltuno()</code></em>: új pontot hoz létre, amely eltűnik, nem pedig robban.</p>
+
+<pre class="brush: c "  >
+Pont *uj_eltuno(double x, double y, int szin) {
+    Pont *uj;
+    uj = uj_pont(x, y, rand()%60 - 30, rand()%60 - 30);
+    uj-&gt;elettartam = 3 + rand()%10/10.0;
+    uj-&gt;tipus = eltuno;
+    uj-&gt;szin = szin;
+    return uj;
+}</pre>
+
+<p class="csakdoksi">Ez a függvény pedig új pontot hoz létre, amely egy robbanáskor keletkezik. 
+Az élettartama és a sebessége véletlenszám. A struktúrában szereplő <code>kov</code> pointert az 
+<code>uj_pont()</code> függvény <code>NULL</code>-ra állítja csak; az később kap értéket, a 
+listába befűzés során.</p>
+
+<br class="smallskip">
+
+<p><em><code>beszur()</code></em>: beszúrja a „mit” elemet a „miután” elemet követően.</p>
+
+<pre class="brush: c "  >
+void beszur(Pont *miutan, Pont *mit) {
+    mit-&gt;kov = miutan-&gt;kov;
+    miutan-&gt;kov = mit;
+}</pre>
+
+<p class="csakdoksi"> A fenti függvény az első paraméterében adott listaelem után fűzi a második 
+paraméterében adott listaelemet. Nem tér vissza semmivel, hiszen ezáltal a lista eleje (ami 
+amúgy is strázsás) nem változik.</p>
+
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea09.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

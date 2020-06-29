@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Labor, 4. hét: tömbök</title>
+<meta property="og:title" content="InfoC :: Labor, 4. hét: tömbök">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Tömbök létrehozása és kezelése. Egyszerű algoritmusok megvalósítása tömbökön.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Tömbök létrehozása és kezelése. Egyszerű algoritmusok megvalósítása tömbökön.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lab04.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Labor, 4. hét: tömbök</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Pohl László, Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Tömbök létrehozása és kezelése. Egyszerű algoritmusok megvalósítása tömbökön.</p>
+</div>
+
+
+<p>Felkészülés a laborra:</p>
+<ul>
+    <li>A <a href="ea03.html#eatombok">tömbökről szóló előadás</a> átismétlése.
+    <li>A <a href="gy04.html#gyaktombok">tömbökről szóló gyakorlat</a> átismétlése.
+</ul>
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lab04.html#1">Legkisebb</a>
+<li><a href="lab04.html#2">A folyó</a>
+<li><a href="lab04.html#3">Túlindexelés</a>
+<li><a href="lab04.html#4">Tömb léptetése</a>
+<li><a href="lab04.html#5">Az utolsó öt szám… átlaga</a>
+<li><a href="lab04.html#6">További feladatok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Legkisebb</h2>
+</div>
+
+<p>Írj programot, amely tartalmaz egy <em>tíz elemű tömböt,</em> az általad megadott kezdeti értékekkel!
+Írd ki ezt a tömböt!</p>
+
+<p>Írj programrészt, amely megmondja, melyik a <em>legkisebb szám</em> a tömbből! Írd ki ezt a számot! (Próbáld
+ki a programod úgy is, hogy a legkisebb szám a tömb legelején és legvégén van!)
+Írj programrészt, amely megkeresi a legkisebb elemet – és utána úgy írja ki a tömböt, hogy a legkisebb
+elem mellé tesz egy <em>jelzést!</em></p>
+
+<pre class="screenshot">
+A tömb: 25 69 54 8 77 6 29 10 3 98
+
+A legkisebb: 3
+Jelölve: 25 69 54 8 77 6 29 10 3[MIN] 98
+</pre>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int tomb[10] = { 25, 69, 54, 8, 77, 6, 29, 10, 3, 98 };
+    int i, min;
+
+    /* Kiírás */
+    printf(&quot;A tömb:&quot;);
+    for (i = 0; i &lt; 10; ++i)
+        printf(&quot; %d&quot;, tomb[i]);
+    printf(&quot;\n\n&quot;);
+
+    /* Keresés */
+    min = 0;
+    for (i = 1; i &lt; 10; ++i)
+        if (tomb[i] &lt; tomb[min])
+            min = i;
+
+    /* Kiírás */
+    printf(&quot;A legkisebb: %d\n&quot;, tomb[min]);
+    printf(&quot;Jelölve:&quot;);
+    for (i = 0; i &lt; 10; ++i) {
+        printf(&quot; %d&quot;, tomb[i]);
+        if (i == min)
+            printf(&quot;[MIN]&quot;);
+    }
+    printf(&quot;\n&quot;);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A folyó</h2>
+</div>
+
+<p>Egy folyó sodrásirányára merőlegesen 2 m-enként megmértük a meder mélységét,
+és egy valós tömbben sorfolytonosan eltároltuk. Így az alábbi 18 számot kaptuk:</p>
+<blockquote>
+0.1, 1, 1.5, 1.7, 2, 2.3, 2.8, 4.5, 9.8, 12, 14.1, 13, 11.9, 8.7, 6.1, 3.5, 1, 0.5
+</blockquote>
+
+<img src="lab04/folyo.png" class="kozep" style="width: 32em;">
+
+<p>Készíts programot, mely meghatározza, hogy hol a legmeredekebb a mederfal, és hány a 
+százalékos meredeksége! (A százalékos lejtés azt mutatja, hogy egységnyi táv alatt mennyit 
+változott a magasság: 10 m távon 5 m különbség 50%-os lejtőt jelent.)</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<p>Melyik programozási tétel kell itt? A meredekségnek
+mijét kell meghatározni? Vigyázz, a lejtő és az emelkedő ugyanaz, ha
+másik irányból nézzük, és vigyázz, ne indexeld túl a tömböt!</p>
+<p>A <code>printf()</code>-nél a <code>%%</code> jelenti a <code>%</code> jel
+kiírását.</p></div>
+</div>
+
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void) {
+    double folyo[18] = { 0.1, 1, 1.5, 1.7, 2, 2.3, 2.8, 4.5, 9.8,
+                         12, 14.1, 13, 11.9, 8.7, 6.1, 3.5, 1, 0.5 };
+    int i, max;
+
+    /* Keresés */
+    max = 0;
+    for (i = 1; i &lt; 18-1; ++i)  /* i+1 indexelés miatt! */
+        if (fabs(folyo[i+1] - folyo[i]) &gt; fabs(folyo[max+1] - folyo[max]))
+            max = i;
+
+    /* Kiírás */
+    printf(&quot;A legmeredekebb: max=%d-%d méter között\n&quot;, max*2, (max+1)*2);
+    printf(&quot;A meredekség: %f %%-os\n&quot;, fabs(folyo[max+1]-folyo[max])/2*100);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Túlindexelés</h2>
+</div>
+<p>Mi történik a következő program futtatásakor?</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   int tomb[10], i;
+
+   for (i = 0; i &lt; 10; i += 1)
+      tomb[i] = i;
+   i = 0;
+   while (1) {
+      printf(&quot;%d. elem: %d\n&quot;, i, tomb[i]);
+      i += 1;
+   }
+
+   return 0;
+}</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Tömb léptetése</h2>
+</div>
+
+<pre class="screenshot float">
+25 69 54  8 77  6 29 10  3 98
+69 54  8 77  6 29 10  3 98 25
+54  8 77  6 29 10  3 98 25 69
+ 8 77  6 29 10  3 98 25 69 54
+77  6 29 10  3 98 25 69 54  8
+ 6 29 10  3 98 25 69 54  8 77
+29 10  3 98 25 69 54  8 77  6
+</pre>
+
+
+<p>Írj egy programot, amely tartalmaz egy általad megadott értékekkel feltöltött, tíz elemű
+tömböt! Írja ki a program ezt a tömböt a képernyőre!</p>
+
+<p>Léptesd egy tömb összes elemét eggyel az eleje felé. A tömb egyik végén kilépő elem jöjjön be
+a túlsó végén. Ismételd meg ezt a műveletet tízszer, közben mindig írd ki a tömböt!
+Az eredmény a jobb oldalon láthatóhoz hasonló kell legyen.
+</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<p>Segédtömbre ehhez nincs szükség! Az első felülírható a másodikkal, a második a harmadikkal…
+Kérdés, az utolsó helyre ilyenkor mi kerül. Rajzold le, és gondold végig úgy, minek kell
+történnie!</p>
+</div>
+</div>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int tomb[10] = { 25, 69, 54, 8, 77, 6, 29, 10, 3, 98 };
+    int i, j, tmp; /* Ideiglenes változó */
+
+    /* Kiírás és elemek léptetése 10szer */
+    for(j = 0; j &lt; 10; j++) {
+        /* Kiírás */
+        for(i = 0; i &lt; 10; i++)
+            printf(&quot;%2d &quot;,tomb[i]);
+        printf(&quot;\n&quot;);
+
+        /* Léptetés */
+        tmp = tomb[0]; /* Az első elemet kell félretenni */
+        for(i = 0; i &lt; 9; i++)
+            tomb[i] = tomb[i+1]; /* Léptetés */
+        tomb[9] = tmp; /* Az utolsó elem a régi első lesz */
+    }
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Az utolsó öt szám… átlaga</h2>
+</div>
+
+<p>Írj C programot, amely a felhasználótól számokat kér be. A bevitel
+addig tartson, amíg a felhasználó 0-t nem ad meg. Amikor ez megtörtént, a
+program írja ki az utoljára bevitt öt szám átlagát! (Tegyük fel,
+hogy volt legalább ennyi.)</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<p>A gondolat, hogy „csinálok egy
+egymillió elemű tömböt, abba biztos belefér majd az összes szám”, elvi hibás.
+Gondold végig, hogy a feladat megoldásához hány számot kell
+mindenképpen eltárolni! Szükség van-e ehhez egyáltalán tömbre? Ha igen,
+akkor mekkorára? Kell-e úgy tologatni az elemeket a tömbön belül, mint
+az előző feladatban?</p>
+</div>
+</div>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+int main(void) {
+   double szamok[5], beolv, szum;
+   int i;
+
+   printf(&quot;Szám vagy 0? &quot;);      /* első */
+   scanf(&quot;%lf&quot;, &amp;beolv);
+   i = 0;
+   while (beolv != 0) {
+      szamok[i] = beolv;
+      i = (i+1) % 5;               /* 4 után megint 0 */
+
+      printf(&quot;Szám vagy 0? &quot;);     /* következő */
+      scanf(&quot;%lf&quot;, &amp;beolv);
+   }
+
+   szum = 0;
+   for (i = 0; i &lt; 5; i += 1)
+      szum += szamok[i];
+
+   printf(&quot;Utolsó 5 átlaga: %f\n&quot;, szum/5);
+
+   return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>További feladatok</h2>
+</div>
+
+<p>Ha elkészültél, folytasd a feladatgyűjtemény ehhez a témakörhöz kapcsolódó
+<a href="f03.html#tombok">tömbös feladataival</a>!</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lab04.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

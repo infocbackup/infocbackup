@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: 5. hét: operátorok, struktúrák</title>
+<meta property="og:title" content="InfoC :: 5. hét: operátorok, struktúrák">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Gyakorlófeladatok az 5. előadás anyagához kapcsolódóan.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Gyakorlófeladatok az 5. előadás anyagához kapcsolódóan.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<script>infoc.onloads.push(function(){ h3toid(); });
+</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="f05.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">5. hét: operátorok, struktúrák</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Gyakorlófeladatok az 5. előadás anyagához kapcsolódóan.</p>
+</div>
+
+
+<p>Ezen az oldalon rengeteg feladat található a gyakorláshoz. Egy részük megoldással együtt, míg 
+a többi anélkül. A gyakorlófeladatok megoldásához elvileg elegendő az az ismeretanyag, amely az előadáson 
+szerepelt. Természetesen a megoldás kitalálásához szükség lehet arra a rálátásra és 
+tapasztalatra, amit a gyakorlatok és a laborok adnak. A feladatok témakörök szerinti 
+csoportosítása viszont ettől függetlenül az előadást követi.</p>
+
+<p>Felhívjuk a figyelmed arra, hogy a megoldások olvasgatása lényegében nulla 
+tapasztalatot és gyakorlatot ad, így az eredményes számonkérésekhez nem tud hozzásegíteni! A 
+megoldásokat akkor nézd csak meg, ha a saját megoldás elkészítése közben elakadsz.
+Lásd <a href="tanacsok.html">itt</a>.</p>
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="f05.html#1">Vezérlési szerkezetek</a>
+<li><a href="f05.html#2">Struktúrák</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Vezérlési szerkezetek</h2>
+</div>
+
+<h3>Számkitaláló</h3>
+
+<p>Készíts egy számkitaláló programot! A program kitalál véletlenszerűen egy pozitív egész számot (1 és 1000 között), a
+felhasználó pedig addig tippel, amíg meg nem találja a keresett számot. A program minden tipp után megmondja, hogy a felhasználó
+tippje kisebb vagy nagyobb a keresett értéknél. Ha eltalálta, akkor pedig azt. Ilyenkor egyúttal be is fejeződik a program
+futása.</p>
+
+<p>Vajon mi a nyerő stratégia a gép „ellen”? Hogyan lehet legkevesebb tippből kitalálni a számot, amire a gép gondolt?
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A feladat megoldása nagyon jó példa a hátultesztelő ciklus alkalmazására. Minimum egy tippet kérnünk kell – a ciklusmag,
+amely a tippet kéri, és a beírt számot ellenőrzi, egyszer legalább lefut. Illetve a gép minimum egy számot kitalál, és utána
+várja a felhasználótól a megfejtést.</p>
+
+<p>A belső ciklusmagban az egyenlőséget nem is kell ellenőrizni, mert azt a ciklus feltétele megteszi. Ha egyenlő a tipp a
+gondolt számmal, akkor kijövünk a ciklusból, és ott viszont gondolkodás nélkül ki lehet írni, hogy talált.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main(void) {
+    char meg;
+
+    /* Generator inicializalasa. */
+    srand(time(0));
+
+    do {
+        int gondolt, tipp;
+
+        gondolt = rand()%1000+1;
+        printf(&quot;Gondoltam egy szamot 1 es 1000 kozott. Talald ki!\n&quot;);
+        do {
+            printf(&quot;Mi a tipped? &quot;);
+            scanf(&quot;%d&quot;, &amp;tipp);
+            if (gondolt &gt; tipp)
+                printf(&quot;Nagyobbra gondoltam!\n&quot;);
+            if (gondolt &lt; tipp)
+                printf(&quot;Kisebbre gondoltam!\n&quot;);
+        } while (tipp != gondolt);
+        printf(&quot;Gratulalok, kitalaltad! A gondolt szam %d.\n&quot;, gondolt);
+
+        printf(&quot;Akarsz meg jatszani (i/n)? &quot;);
+        scanf(&quot; %c&quot;, &amp;meg);
+    } while (meg=='i' || meg=='I');
+
+    return 0;
+}</pre>
+
+<p>A feladat megoldása nagyon jó példa a hátultesztelő ciklus alkalmazására. Minimum egy tippet kérnünk kell – a ciklusmag,
+amely a tippet kéri, és a beírt számot ellenőrzi, egyszer legalább lefut. Illetve a gép minimum egy számot kitalál, és utána
+várja a felhasználótól a megfejtést.</p>
+
+<p>A belső ciklusmagban az egyenlőséget nem is ellenőrzöm, mert azt a ciklus feltétele megteszi. Ha egyenlő a tipp a gondolt
+számmal, akkor kijövünk a ciklusból, és ott viszont gondolkodás nélkül ki lehet írni, hogy talált.</p>
+
+<p>A véletlenszám-generátor használata: program elején inicializálni kell (<code>srand</code>) egyszer, és utána a
+<code>rand()</code> ad egy számot. A <code>%100</code> hatására 0..99 között lesz; ehhez 1-et adva kapjuk az 1..100
+tartományt.</p>
+
+<p><code>scanf()</code>-guruknak: a <code>%c</code> előtti szóköz azt jelenti, hogy a bemeneten eldobjuk a whitespace
+karaktereket. A <code>%c</code> beolvassa azt is, egyébként semmi más nem. Erre azért van szükség, mert a legutolsó tipp utáni
+entert az előző <code>scanf</code> még a bemeneten hagyta.</p>
+
+</div>
+</div>
+
+
+<h3>Számkitaláló fordítva</h3>
+
+<p>A felhasználó gondol egy számra 1 és 100 között, a gép pedig megpróbálja kitalálni. Például: „kisebb a szám, mint 25?”, erre a
+felhasználó „i”gen vagy „n”em választ ad. Mi a nyerő stratégia a gép részéről, hogy tudja a legkevesebb kérdésből kitalálni?
+Valósítsa meg a programot!</p>
+
+<p>Gondolkodtató: ha a gép a nyerő stratégiát alkalmazza, meg tudja-e mondani, ha a felhasználó következetlen választ ad, csalni
+próbál? Miért?</p>
+
+
+<h3>Nincsenek egyformák</h3>
+
+<p>Készíts programot, amely N (maximum 100) darab véletlen számot állít elő, amelyek között nincsenek egyformák!</p>
+
+<h3>Lottószámok</h3>
+
+<p>Az előadás lottószámos programja úgy generált öt különböző számot az 1&hellip;90 intervallumból, hogy a már meglévőket egy
+tömbbe tette, és abban a tömbben ellenőrizte minden új véletlenszámra, hogy egyedi-e.</p>
+
+<p>Írj programot, amely eltérő logikával generál öt különböző számot! Egy 90 elemű tömbbe írd bele a számokat 1-től 90-ig, és
+utána tömbindexet generálj véletlenszerűen! Miután egy számot már kisorsoltál, vedd ki a tömbből. Hogyan kell módosítani a tömböt
+és a későbbi véletlenszám-generálást, hogy öt különböző számot adjon a program?</p>
+
+
+<h3>Ötvenhét</h3>
+<p>Készíts programot, mely egy, a felhasználó által megadott
+1 és 99 közötti természetes számot képes kiírni betűvel! Pl.:</p>
+<pre>
+5: ot
+44: negyvennegy
+16: tizenhat
+</pre>
+
+<h3>Ezerkilencázhetvenöt</h3>
+<p>A feladat ugyanaz, mint fent, csak a tartomány legyen 1 és 999999
+között. 2000-ig minden számot egybeírunk, 2000 fölött az ezres és ezer
+alatti rész közé kötőjelet kell tenni. Példák:</p>
+<pre>
+625: hatszazhuszonot
+1975: ezerkilencszazhetvenot
+8000: nyolcezer
+23870: huszonharomezer-nyolcszazhetven
+</pre>
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<a id="feladatstruct" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Struktúrák</h2>
+</div>
+
+
+
+<h3>Elmozdulás egy adott ponttól</h3>
+<p>Készíts függvényt, mely egy pont x és y koordinátáival tér vissza. A 
+függvény paraméterként kapja egy pont x és y koordinátáját (egy pontot), valamint egy 
+szöget és egy távolságértéket. Számítsd ki a visszatérési értékként szereplő 
+pont x és y koordinátáit, hogy az a megadott ponttól meghatározott szögben 
+és távolságban legyen.
+
+<h3>Elforgatás egy pont körül</h3>
+<p>Készíts függvényt, amely egy x és y koordinátával rendelkező pontot elforgat
+egy másik adott pont körül, adott szöggel! A függvény visszatérési értéke az elforgatott
+pont legyen. (A forgatáshoz való képletet megtalálod a függvénytáblában is.)</p>
+
+<h3>3D vektorok</h3>
+<p>Az előadáson bemutatott törtes példa alapján írj
+egy programot, amelyik háromdimenziós vektor típust képes kezelni!
+Tudjon vektorokat kiírni, összeadni, kivonni; számítsa ki két vektor
+skaláris szorzatát! A program kerete az alábbi legyen:</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* ... a megírt programrészek ... */
+
+int main(void) {
+   Vektor a = {3, 2, 1}, b = {4, 6, 8}, c;
+   
+   c = osszead(a, b);
+   kiir(c); printf(&quot;\n&quot;);
+
+   c = kivon(a, b);
+   kiir(c); printf(&quot;\n&quot;);
+   
+   printf(&quot;Skalárszorzat: %g\n&quot;, skalarszorzat(a, b));
+   
+   return 0;
+}</pre>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Egy háromdimenziós vektor x, y, és z komponensekből áll.
+Ezeket egy struktúrába tehetjük, mivel összetartozó értékek,
+elválaszthatatlanok egymástól, és együtt adnak ki egy vektort.</p>
+
+<pre class="brush: c "  >
+typedef struct Vektor {
+   double x, y, z;
+} Vektor;
+
+/* kiirja egy vektor komponenseit */
+void kiir(Vektor v) {
+   printf(&quot;(%g;%g;%g)&quot;, v.x, v.y, v.z);
+}
+
+/* osszead ket vektort, visszater az osszeggel */
+Vektor osszead(Vektor a, Vektor b) {
+   Vektor ossz;
+   
+   /* a kivon()-hoz hasonlóan is lehetne */
+   ossz.x = a.x+b.x;
+   ossz.y = a.y+b.y;
+   ossz.z = a.z+b.z;
+   
+   return ossz;
+}
+
+/* kivon ket vektort, visszater a kulonbseggel */
+Vektor kivon(Vektor a, Vektor b) {
+   /* az osszead()-hoz hasonloan is lehetne */
+   Vektor eredm = {a.x-b.x, a.y-b.y, a.z-b.z};
+   return eredm;
+}
+
+/* visszater a ket vektor skalarszorzataval */
+double skalarszorzat(Vektor a, Vektor b) {
+   return a.x*b.x + a.y*b.y + a.z*b.z;
+}</pre>
+
+</div>
+</div>
+
+<h3>Kártyapakli I.</h3>
+<p>Kártyás játékot írunk. Mutass egy olyan C-s adatszerkezetet, amely 
+tárolhatja egy kártya adatait (szín: pikk, treff, &hellip; és szám: A, 2, 3, &hellip;
+J, Q, K). Tölts fel egy tömböt egy pakli kártyáival. Utána keverd meg a 
+tömböt. A keverő algoritmus ne cserélje feleslegesen sokszor a tömb elemeit! 
+Végül írd ki, milyen sorrendben szerepelnek a kártyák a megkevert 
+pakliban.</p>
+
+<h3>Kártyapakli II.</h3>
+<p>Mutass egy olyan C-s adatszerkezetet, amely tárolhatja egy kártya adatait (szín: pikk, treff, 
+&hellip; és szám: A, 2, 3, &hellip; J, Q, K)!</p>
+<p>Írj függvényt, amely megmondja egy pakli kártyáról (kártyák tömbjéről), hogy:</p>
+<ul>
+    <li>Hiányos-e a pakli,
+    <li>Van-e benne dupla lap (kétszer ugyanaz)!
+</ul>
+
+
+
+<h3>Rudak hossza</h3>
+<div class="sticky">Kis ZH volt</div>
+<p>Egy gyárban fémrudakat gyártanak. A megmunkálás pontatlansága miatt azonban ezek hossza 
+kicsit eltérő: pl. egy 1 méteresnek szánt rúd 999 mm és 1001 mm között bármekkorára sikerülhet. 
+Ha két ilyen rudat egymás mögé teszünk, akkor az összegzett hosszuk valahol 1998 és 2002 mm 
+között lesz.
+<ul>
+<li>Definiálj adatszerkezetet, amely egy rúd minimális és maximális
+hosszát tárolja!
+<li>Írj egy függvényt, amely paraméterként kapja két rúd adatait, és
+visszatérési értéke egy rúd, amely ezek összege (egymás mögé tett rudak hossztartománya).
+<li>Írj függvényt, amely visszaadja egy paraméterként kapott rúd átlagos hosszát!
+<li>Egészítsd ki ezt teljes programmá, amelyben létrehozol egy 999-1001 mm-es, és egy 498-502 mm-es
+rudat. Számolja ki a program a függvényekkel, hogy mekkora ezek összege minimálisan, maximálisan
+és átlagosan!
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+typedef struct Rud {
+    double min, max;
+} Rud;
+
+Rud osszeg(Rud r1, Rud r2) {
+    Rud uj;
+    uj.min=r1.min+r2.min;
+    uj.max=r1.max+r2.max;
+    return uj;
+}
+
+double atlagos(Rud r) {
+    return (r.min+r.max)/2;
+}
+
+int main(void) {
+    Rud a = { 999, 1001 }, b = { 498, 502 }, o;
+
+    o = osszeg(a, b);
+    printf(&quot;min: %f, max: %f, atlag: %f\n&quot;,
+        o.min, o.max, atlagos(o));
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+<h3>Átfedő téglalapok</h3>
+<div class="sticky">Kis ZH volt</div>
+<p>Geometriai programodban téglalapok adatait kell tárolni: x, y bal felső koordináták, 
+szélesség és magasság (valós számok).
+
+<ul>
+<li>Definiálj adatszerkezetet, amelyben egy téglalap adatai eltárolhatóak!
+<li>Írj függvényt, amely beolvassa a billentyűzetről egy téglalap adatait,
+és visszatérési értéke az ezekből az adatokból létrehozható téglalap.
+<li>Írj függvényt, amely paraméterként kap két téglalapot, és megmondja
+visszatérési értékében, hogy ha megrajzoljuk az elsőt, utána a másodikat,
+akkor a második eltakar-e valamennyit az elsőből.
+<li>Egészítsd ki ezt teljes programmá, amelyben beolvasod két téglalap
+adatait, és megmondod, hogy azok átfedik-e egymást.
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+typedef struct Teglalap {
+    double x, y, a, b;
+} Teglalap;
+
+Teglalap beolvas(void) {
+    Teglalap uj;
+    scanf(&quot;%lf %lf %lf %lf&quot;, &amp;uj.x, &amp;uj.y, &amp;uj.a, &amp;uj.b);
+    return uj;
+}
+
+int atfed(Teglalap t1, Teglalap t2) {
+    /* ez nem a teljes atfedesvizsgalat!!!!! tobb csucsot kell vizsgalni. */
+    return t2.x&gt;t1.x &amp;&amp; t2.y&gt;t1.y &amp;&amp; t2.x&lt;t1.x+t1.a &amp;&amp; t2.y&lt;t1.y+t1.a;
+}
+
+int main(void) {
+    Teglalap t1, t2;
+
+    t1 = beolvas();
+    t2 = beolvas();
+    printf(&quot;%s\n&quot;, atfed(t1, t2) ?
+            &quot;Eltakar valamennyit belole.&quot; : &quot;Nincsenek atfedesben.&quot;);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+<h3>Vektorok</h3>
+<div class="sticky">Kis ZH volt</div>
+<p>Egy programban kétdimenziós vektorok adatait kell tárolni. Ilyenek lehetnek a sebességek: 
+v<sub>x</sub> vízszintes irányú, v<sub>y</sub> függőleges irányú sebességek adják a v 
+sebességvektort.
+
+<ul>
+<li>Definiálj adatszerkezetet, amely egy sebességvektort tárol!
+<li>Írj függvényt, amely paraméterként egy sebességvektort kap, és
+visszatérési értéke a vektor hossza (Pitagorasz-tétel)!
+<li>Írj függvényt, amely paraméterként két sebességvektort kap,
+és visszatérési értéke az összeg vektor (komponensenként)!
+<li>Egészítsd ki mindezt főprogrammá, amelyben egy (1 m/s, 2 m/s)
+és egy (-0,5 m/s, 3 m/s) sebességvektort összegzel, és utána
+kiszámolod, az eredő vektornak mekkora a hossza! Írd ki az összes
+kiszámolt adatot!
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+typedef struct Vektor {
+    double x, y;
+} Vektor;
+
+Vektor osszeg(Vektor v1, Vektor v2) {
+    Vektor uj;
+    uj.x = v1.x+v2.x;
+    uj.y = v1.y+v2.y;
+    return uj;
+}
+
+double hossz(Vektor v) {
+    return sqrt(pow(v.x, 2)+pow(v.y, 2));
+}
+
+int main(void) {
+    Vektor v1 = { 1, 2 }, v2 = { -0.5, 3 }, vo;
+
+    vo = osszeg(v1, v2);
+    printf(&quot;vx: %f, vy: %f\n&quot;, vo.x, vo.y);
+    printf(&quot;hossz: %f\n&quot;, hossz(vo));
+    return 0;
+}</pre>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="f05.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

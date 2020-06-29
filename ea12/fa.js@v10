@@ -1,0 +1,261 @@
+"use strict";
+
+infoc.onloads.push(function() {
+
+    /* ez az osztaly mindent tud ami a fas animaciokhoz kell */
+    function fabejar(mit, hogyandefault) {
+        this.ujcsomo=function(szam) {
+             var ujszam=document.createElement("div");
+             ujszam.innerHTML=szam;
+             this.div.appendChild(ujszam);
+             this.elemek.push(ujszam);
+             return ujszam;
+        }
+        this.elhelyez=function(gyoker, x, y, dx, dy) {
+           if (gyoker==null)
+             return;
+           gyoker.style.left=x+"em";
+           gyoker.style.top=y+"em";
+           if (gyoker.bal) {
+             var vonal=document.createElement("div");
+             vonal.className="bal";
+             this.div.appendChild(vonal);
+             vonal.style.left=x-dx+this.meret/2+0.1+"em";
+             vonal.style.top=y+(this.meret+(dy-this.meret)/2)+"em";
+             vonal.style.width=dx-0.2+"em";
+             gyoker.balvonal=vonal;
+           }
+           if (gyoker.jobb) {
+             var vonal=document.createElement("div");
+             vonal.className="jobb";
+             this.div.appendChild(vonal);
+             vonal.style.left=x+this.meret/2+0.1+"em";
+             vonal.style.top=y+(this.meret+(dy-this.meret)/2)+"em";
+             vonal.style.width=dx-0.2+"em";
+             gyoker.jobbvonal=vonal;
+           }
+           var magas=y+this.meret;
+           var magas1=this.elhelyez(gyoker.bal, x-dx, y+dy, dx/1.8, dy/1.13);
+           var magas2=this.elhelyez(gyoker.jobb, x+dx, y+dy, dx/1.8, dy/1.13);
+
+           /* legnagyobb magassag */
+           if (magas2>magas1 && magas2>magas) return magas2;
+           if (magas1>magas) return magas1;
+           return magas;
+        }
+        this.start=function() {
+           this.elemek = [];
+           if (this.capt!=null)
+             this.capt.innerHTML="&nbsp;";
+           while (this.div.firstChild!=null)
+             this.div.removeChild(this.div.firstChild);
+           this.gyoker=this.ujcsomo(5);
+           this.gyoker.bal=this.ujcsomo(3);
+           this.gyoker.bal.bal=this.ujcsomo(1);
+           this.gyoker.bal.bal.bal=this.ujcsomo(0);
+           this.gyoker.bal.bal.jobb=this.ujcsomo(2);
+           this.gyoker.bal.jobb=this.ujcsomo(4);
+           this.gyoker.jobb=this.ujcsomo(7);
+           this.gyoker.jobb.bal=this.ujcsomo(6);
+           this.gyoker.jobb.jobb=this.ujcsomo(9);
+           this.gyoker.jobb.jobb.bal=this.ujcsomo(8);
+           var magassag=this.elhelyez(this.gyoker, 11, 0, 4.5, 2.5);
+           this.div.style.height=magassag+"em";
+         }
+         
+         this.szinez=function(elem, szin, duma) {
+            if (szin=="jelolt")
+               elem.className+=" jelolt";
+            else if (szin=="-jelolt")
+               elem.className=elem.className.replace("jelolt", "");
+            else {
+               if (elem.className.search("jelolt")==-1) {
+                   elem.className=szin;
+               } else {
+                   elem.className=szin+" jelolt";
+                   if (elem.balvonal!=null)
+                      elem.balvonal.className="bal kesz";
+                   if (elem.jobbvonal!=null)
+                      elem.jobbvonal.className="jobb kesz";
+                }
+            }
+
+            if (duma!="" && this.capt!=null)
+              this.capt.innerHTML=this.capt.innerHTML+" "+duma;
+         }
+         this.szinezszam=function(x) {
+            this.szinez(this.bejartomb[x][0], this.bejartomb[x][1], this.bejartomb[x][1]=="kesz"?this.bejartomb[x][0].innerHTML:"");
+         }
+         this.kovetkezo=function() {
+            if (this.holtart>=this.bejartomb.length)
+               this.bejar();
+            this.szinezszam(this.holtart);
+            this.holtart++;
+            return this.holtart<this.bejartomb.length;
+         }
+         this.vegigfunc=function() { var dis=this; return function() { dis.vegig(); }; }
+         this.vegig=function() {
+            if (this.kovetkezo())
+               setTimeout(this.vegigfunc(), this.anim);
+         }
+
+         this.bejardo=function(gyoker) {
+            if (gyoker==null)
+               return;
+
+            this.bejartomb.push([gyoker, "jelolt"]);
+            for (var x=0; x<this.hogyan.length; ++x)
+                switch (this.hogyan.charAt(x)) {
+                   case 'b': 
+                      if (gyoker.bal!=null) {
+                         this.bejardo(gyoker.bal);
+                      }
+                      break;
+                   case 'g': 
+                      this.bejartomb.push([gyoker, "kesz"]);
+                      break;
+                   case 'j':
+                      if (gyoker.jobb!=null) {
+                         this.bejardo(gyoker.jobb);
+                      }
+                      break;
+                }
+            this.bejartomb.push([gyoker, "-jelolt"]);
+         }
+         this.faszinez=function(gyoker, milyenre) {
+            if (gyoker==null) return;
+            gyoker.className=milyenre;
+            this.faszinez(gyoker.bal, milyenre);
+            this.faszinez(gyoker.jobb, milyenre);
+         }
+         this.alapszin=function(milyen) {
+             for (var x=0; x<this.elemek.length; ++x) {
+                var elem=this.elemek[x];
+                elem.className="";
+                if (elem.balvonal!=null) elem.balvonal.className="bal";
+                if (elem.jobbvonal!=null) elem.jobbvonal.className="jobb";
+             }
+         }
+         this.bejar=function() {
+             if (this.capt!=null)
+                this.capt.innerHTML="&nbsp;";
+             this.alapszin();
+             this.bejartomb = [];
+             this.bejardo(this.gyoker);
+             this.holtart=0;
+         }
+
+         this.gyokerszines=function(kommentar) {
+            this.alapszin();
+            this.gyoker.className="kesz";
+            if (this.capt!=null)
+               this.capt.innerHTML=kommentar;
+         }
+         this.levelszinesfunc=function(gyoker) {
+            if (gyoker==null) return;
+            this.levelszinesfunc(gyoker.bal);
+            this.levelszinesfunc(gyoker.jobb);
+            if (gyoker.bal==null && gyoker.jobb==null)
+                gyoker.className="kesz";
+         }
+         this.levelszines=function(kommentar) {
+            this.alapszin();
+            this.levelszinesfunc(this.gyoker);
+            if (this.capt!=null)
+               this.capt.innerHTML=kommentar;
+         }
+         
+         this.szulogyerekszines=function(kommentar) {
+            this.faszinez(this.gyoker, "");
+            this.faszinez(this.gyoker.bal, "torolt");
+            this.faszinez(this.gyoker.jobb, "torolt");
+            this.gyoker.className="";
+            this.gyoker.bal.className="kesz";
+            this.gyoker.jobb.className="kesz";
+            if (this.capt!=null)
+               this.capt.innerHTML=kommentar;
+         }
+
+         this.szuloleszarmazottszines=function(kommentar) {
+            this.faszinez(this.gyoker, "kesz");
+            this.gyoker.className="";
+            if (this.capt!=null)
+               this.capt.innerHTML=kommentar;
+         }
+
+         this.reszfaszines=function(kommentar) {
+            this.gyoker.className="kesz";
+            this.faszinez(this.gyoker.bal, "kek");
+            this.faszinez(this.gyoker.jobb, "piros");
+            if (this.capt!=null)
+               this.capt.innerHTML=kommentar;
+         }
+
+         this.baljobbszomszedszinesfunc=function(gyoker) {
+             if (gyoker==null) return;
+             if (gyoker.bal!=null) {
+                gyoker.bal.className="kek";
+                this.baljobbszomszedszinesfunc(gyoker.bal);
+             }
+             if (gyoker.jobb!=null) {
+                gyoker.jobb.className="piros";
+                this.baljobbszomszedszinesfunc(gyoker.jobb);
+             }
+         }
+         this.baljobbszomszedszines=function(kommentar) {
+            this.faszinez(this.gyoker, "torolt");
+            this.gyoker.className="kesz";
+            this.gyoker.bal.className="";
+            this.gyoker.bal.bal.className="kek";
+            this.gyoker.bal.jobb.className="piros";
+            if (this.capt!=null)
+               this.capt.innerHTML=kommentar;
+         }
+
+         this.adottszintszinesfunc=function(gyoker, szint) {
+             if (gyoker==null) return;
+             if (szint==0) { gyoker.className="kesz"; return; }
+             this.adottszintszinesfunc(gyoker.bal, szint-1);
+             this.adottszintszinesfunc(gyoker.jobb, szint-1);
+         }
+         this.adottszintszines=function(szint) {
+            this.alapszin();
+            this.adottszintszinesfunc(this.gyoker, szint);
+            if (this.capt!=null)
+               this.capt.innerHTML=szint+". szintű elemek";
+         }
+
+        this.div=$(mit);
+        this.capt=$(mit+"capt");
+        this.meret=1.5;
+        this.anim=250;
+        this.holtart=0;
+        this.bejartomb = [];
+        this.hogyan=hogyandefault;
+        if (hogyandefault==null || hogyandefault=="")
+          this.hogyan="bgj";
+    }
+
+
+
+    infoc.faea = {};
+    
+    infoc.faea.fabemutat = new fabejar("fabemutat");
+    infoc.faea.fabemutat.start();
+
+    infoc.faea.fabejar1 = new fabejar("fabejar1");
+    infoc.faea.fabejar1.start();
+    infoc.faea.fabejar1.reszfaszines('<span class=\'kek\'>bal</span>- és <span class=\'piros\'>jobb</span>oldali részfák');
+
+    infoc.faea.fabgj = new fabejar("fabgj", "bgj");
+    infoc.faea.fabgj.start();
+
+    infoc.faea.fajgb = new fabejar("fajgb", "jgb");
+    infoc.faea.fajgb.start();
+
+    infoc.faea.fabjg = new fabejar("fabjg", "bjg");
+    infoc.faea.fabjg.start();
+
+    infoc.faea.fagbj = new fabejar("fagbj", "gbj");
+    infoc.faea.fagbj.start();
+});

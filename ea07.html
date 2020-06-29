@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Tömbök algoritmusai. Rekurzió</title>
+<meta property="og:title" content="InfoC :: Tömbök algoritmusai. Rekurzió">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Tömbi algoritmusok: keresések és rendezések. Rekurzió.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Tömbi algoritmusok: keresések és rendezések. Rekurzió.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="ea07/ea08.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+<script src="ea07/osszesscript.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ea07.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Tömbök algoritmusai. Rekurzió</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László, Nagy Gergely · <i class="ido"></i> 2015.02.18</p>
+<p class="kivonat">Tömbi algoritmusok: keresések és rendezések. Rekurzió.</p>
+</div>
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ea07.html#1">Halálfejes hibák I. – új nyelvi elemek</a>
+<li><a href="ea07.html#2">Halálfejes hibák II. – sorminta, tömb, fv</a>
+<li><a href="ea07.html#3"><em>Tömbi algoritmusok: keresések</em></a>
+<li><a href="ea07.html#4">Keresések általában</a>
+<li><a href="ea07.html#5">„Van-e?” – lineáris keresés / eldöntés</a>
+<li><a href="ea07.html#6">Lineáris keresés: hol van?</a>
+<li><a href="ea07.html#7">A strázsa technika (sentinel)</a>
+<li><a href="ea07.html#8">Bináris keresés – legyünk okosabbak!</a>
+<li><a href="ea07.html#9">A keresések időigénye</a>
+<li><a href="ea07.html#10"><em>Rendezések</em></a>
+<li><a href="ea07.html#11">Rendezések, helyben rendezés</a>
+<li><a href="ea07.html#12">Buborékrendezés (bubble sort)</a>
+<li><a href="ea07.html#13">Közvetlen kiválasztással (selection sort)</a>
+<li><a href="ea07.html#14">Rendezések hatékonysága – cserék száma</a>
+<li><a href="ea07.html#15">Az indexelő tömbök és használatuk</a>
+<li><a href="ea07.html#16">Kertitörpe-rendezés (gnome sort)</a>
+<li><a href="ea07.html#17"><em>Rekurzió</em></a>
+<li><a href="ea07.html#18">Függvényhívás megint: a verem (stack)</a>
+<li><a href="ea07.html#19">Faktoriális rekurzív függvénnyel</a>
+<li><a href="ea07.html#20">Faktoriális: a függvényhívás menete</a>
+<li><a href="ea07.html#21">A leállási feltétel</a>
+<li><a href="ea07.html#22">Hanoi tornyai játék</a>
+<li><a href="ea07.html#23">Hanoi tornyai – a megoldás vázlata</a>
+<li><a href="ea07.html#24">Hanoi tornyai – megoldás C-ben</a>
+<li><a href="ea07.html#25">Iterációval vagy rekurzióval?</a>
+<li><a href="ea07.html#26">A rekurzív hívás helye a függvényben</a>
+<li><a href="ea07.html#27">Gyorsrendezés (egy rekurzív módszer)</a>
+<li><a href="ea07.html#28">Szétválogatás – kékek előre, pirosak hátra</a>
+<li><a href="ea07.html#29"><code>gyorsrendez.c</code></a>
+<li><a href="ea07.html#30">Zárt terület kifestése (boundary fill)</a>
+<li><a href="ea07.html#31">Labirintus generálása</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Halálfejes hibák I. – új nyelvi elemek</h2>
+</div>
+
+<p class="csakdoksi">A nagy számonkéréseken <em>halálfejes hibának</em> nevezzük azokat a hibákat, amik leginkább
+arról tanúskodnak, hogy az elkövetőjük soha gépen, önállóan C programot még nem írt. Eléggé meglehetős
+pontlevonások járnak értük.</p>
+
+<br class="smallskip">
+
+<div class="columns">
+<div>
+<div class="sticky"><img src="modulz/halalfej.png" style="display: block"></div>
+<pre>
+<em>/* true story */</em>
+include [stdio.h]
+
+world main {
+   var $szám, $szorzat;
+
+   repeat {
+      scanf $szám
+      $szám=$szám · $szorzat
+   } until (szam&lt;&gt;0)
+   printf $szorzat;
+}
+</pre>
+</div>
+
+<div>
+<div class="sticky"><img src="modulz/halalfej.png" style="display: block"></div>
+<pre>
+<em>/* fv-ben fv */</em>
+int hányprím(int max) {
+   int prím(int melyik) {
+      …
+   …
+
+<em>/* „amíg minden elem -1” */</em>
+while (for (i=0; i&lt;10; ++i)
+         tömb[i]==-1; ) {
+
+<em>/* beolvasás és összegzés */</em>
+scanf("%d", &amp;+sum);
+</pre>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Halálfejes hibák II. – sorminta, tömb, fv</h2>
+</div>
+
+
+<div class="columns">
+<div>
+<div class="sticky clear"><img src="modulz/halalfej.png" style="display: block"></div>
+<pre>
+<em>/* tíz szám visszafelé */</em>
+int a, b, c, d, …;
+scanf("%d", &amp;a);
+  –||– ("%d", &amp;b);
+         –||–    c);
+…
+printf("%d", c);
+  –||–   ("%d", b);
+  –||–   ("%d", a);
+</pre>
+</div>
+
+<div>
+
+<div class="sticky clear"><img src="modulz/halalfej.png" style="display: block"></div>
+<pre>
+<em>/* triviális túlindex */</em>
+int tomb[10];
+for (i=1; i&lt;=1000; ++i)
+   tomb[i]=1;
+<em>/* indefinit méretű tömb */</em>
+char s1[];
+gets(s1);
+char *s2;
+gets(s2);
+</pre>
+
+</div>
+</div>
+
+<p class="csakdoksi">Pl. „<em>térjen vissza</em> a függvény IGAZ-zal, ha páros, HAMIS-sal, ha páratlan a <em>paraméterként</em> kapott szám”</p>
+<div class="sticky"><img src="modulz/halalfej.png" style="display: block"></div>
+
+<br class="smallskip">
+
+<pre>
+<em>/* felesleges, nem kért input/output művelet */</em>
+void fv() {
+   int szám;
+   scanf("%d", &amp;szám);
+   if (szám%2==0) printf("páros");
+   else printf("páratlan");
+}
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<h1 class="diacim">Tömbi algoritmusok: keresések</h1>
+<p class="motto">
+„Tapasztalt C programozó – nagyjából azt jelenti, hogy <em>tömbkezelésből teljesen profi.</em>”
+– Marshall Cline
+</p>
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Keresések általában</h2>
+</div>
+
+<h3>Keresés táblázatban – kérdéseink</h3>
+<div class="sticky">„Adatbázisok”<br>tárgy</div>
+<ul>
+   <li><em>Szerepel-e</em> egy konkrét elem?
+   <li><em>Hol van</em> az első ilyen elem?
+   <li>Egy <em>bizonyos tulajdonságú</em> elem
+      <ul>
+         <li>Ezt a keresés <em>kulcsának</em> nevezzük
+      </ul>
+   
+</ul>
+
+<br class="smallskip">
+
+<h3>Generikus algoritmusok</h3>
+<ul>
+   <li>A keresések ugyanúgy működnek:
+      <ul>
+         <li>Akármilyen típusú az adat (szám, sztring, ember, …)
+         <li>Akármilyen tulajdonság (adott értékű elem, páros elem, „a” betűvel kezdődő, 170–180 centi magas)
+      </ul>
+   
+   <li>A következő példák <code>double[]</code>-ben keresnek adott elemet
+</ul>
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>„Van-e?” – lineáris keresés / eldöntés</h2>
+</div>
+
+<pre class="brush: cbub editable"  >
+int van_e(double *szamok, int meret, double keresett) {
+   int i, van_talalat;
+
+   van_talalat = 0;
+   i = 0;
+   while (i &lt; meret &amp;&amp; !van_talalat) {
+      if (szamok[i] == keresett)
+         van_talalat = 1;
+      ++i;
+   }
+
+   return van_talalat; // miért állt meg a ciklus?
+}</pre>
+
+<ul>
+   <li>„Van-e?” – <em>elég egy olyat találni,</em> és megállhat a ciklus
+   <li>Ha egyet sem találtunk, akkor hamis érték marad a változóban
+</ul>
+
+<div class="kozep"><button data-diapopup="vane_egyebmegvalositas">Egyéb megvalósítások</button></div>
+
+<p class="csakdoksi">A van-e függvényt egyéb formákban is lekódolhatjuk. Ezek mind
+ugyanolyan jól működnek, mint a fenti változat.</p>
+
+<div id="vane_egyebmegvalositas">
+
+<h3><code>for()</code> összetett feltétellel</h3>
+<pre class="brush: c "  >
+van_talalat = 0;
+for (i = 0; i &lt; meret &amp;&amp; !van_talalat; ++i)
+   if (szamok[i] == keresett)
+      van_talalat = 1;
+
+return van_talalat;</pre>
+<p class="csakdoksi">A C bármilyen kifejezést enged a <code>for()</code> ciklus fejlécében,
+így ott egy összetett kifejezés is lehet.</p>
+
+<div class="csakdoksi">
+<h3>Összetett feltétel v2.0</h3>
+<pre class="brush: cbub "  >
+for (i = 0; i &lt; meret &amp;&amp; szamok[i] != keresett; ++i)
+   ;
+
+return i&lt;meret;</pre>
+<p>Ez ugyanaz, mint a fenti, csak a <code>van_talalat</code> változó
+lett benne megspórolva. A ciklus két dolog miatt is megállhat;
+azért, mert elérjük a tömb végét, vagy azért, mert megtaláltuk
+a keresett elemet. A visszatérésnél ellenőrizni kell, hogy melyik
+történt a kettő közül. Ezt a tömbindex vizsgálatával lehet
+megtenni. (A <code>return szamok[i]==keresett</code> parancs
+rossz ötlet, hiszen lehet, hogy a tömb vége miatt állt meg;
+olyankor <code>i==meret</code>, vagyis <code>szamok[i]</code>
+túlindexelés lenne!)
+</p>
+</div>
+
+<br class="smallskip">
+
+<h3>A keresést megszakítva</h3>
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+for (i = 0; i &lt; meret; ++i)
+   if (szamok[i] == keresett)
+      return 1;
+
+return 0;</pre>
+<p class="csakdoksi">Mivel a C-ben szabad a függvény belsejében is visszatérni, egy
+találat esetén azonnal visszatérünk igaz válasszal a „van-e” kérdésre.</p>
+</div>
+<div>
+<pre class="brush: cbub "  >
+for (i = 0; i &lt; meret; ++i)
+   if (szamok[i] == keresett)
+      break;
+
+return i&lt;meret;</pre>
+<p class="csakdoksi">Így is lehetne. Megszakítjuk a kereső ciklust, ha megtaláltuk az elemet.
+Utána kell egy feltétel, ami igazra értékelődik ki, ha megtaláltuk az elemet
+– ehhez figyelni kell azt, hogy az <code>i&lt;meret</code> miatt állt meg.</p>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Lineáris keresés: hol van?</h2>
+</div>
+
+<pre class="brush: c editable"  >
+int hol_van(double *szamok, int meret, double mit) {
+   int i;
+
+   for (i = 0; i &lt; meret; ++i)
+      if (szamok[i] == mit)
+         return i;
+
+   return -1;
+}</pre>
+
+<ul class="csakeloadas">
+   <li>A függvény a megtalált elem <em>indexével tér vissza</em>
+   <li>Ha nincs meg, akkor <code>-1</code>-gyel vagy <code>meret</code>-tel
+   <li>Egyik sem lehet index, így megkülönböztethető
+</ul>
+
+<p class="csakdoksi">A nincs találatra a -1-et és a tömb méretét is elterjedten használják.
+Mindkettő a tömb indexeinek tartományán kívül esik (mivel az 0…meret-1),
+ezért mindkettő egyformán jó lehet. A -1 előnye, hogy szembetűnőbb;
+a méret előnye, hogy nem negatív szám (mivel a tömb mérete amúgy sem lehet
+negatív, így elvileg a méreteket, indexeket tárolhatnánk előjel nélküli
+változókban is).
+</p>
+
+<br class="smallskip">
+
+<div class="kozep">
+    <button data-diapopup="pointerrel2id">Pointer aritmetika</button>
+</div>
+
+
+<div class="csakdoksi">
+
+<p>A találatra mutató pointerrel visszatérő változat:</p>
+
+<pre class="brush: cbub "  >
+double *keres(double *szamok, int meret, double mit) {
+   int i;
+
+   for (i = 0; i&lt;meret; ++i)
+      if (szamok[i] == mit)
+         return szamok+i;  // &amp;szamok[i]
+
+   return NULL;
+}</pre>
+
+<p class="csakdoksi">A függvény a megtalált elem <em>pointerével tér vissza</em>,
+ha nincs, akkor <code>NULL</code> pointerrel. Ehhez hasonlóan viselkednek a
+könyvtári <code>strchr()</code>, <code>strstr()</code> stb. függvények.</p>
+
+</div>
+
+
+
+
+<div id="pointerrel2id">
+
+<p>Pointer aritmetikát használó változat:</p>
+
+<pre class="brush: cbub "  >
+double *keres(double *szamok, int meret, double mit) {
+   double *iter;
+
+   iter = szamok;
+   while (iter != szamok+meret) { // utolsó utáni
+      if (*iter == mit)
+         return iter;
+      ++iter;                   // pointer lép a következőre
+   }
+
+   return NULL;
+}</pre>
+
+<p class="csakdoksi">Ebben a pointert a tömb elejére állítjuk: <code>iter=szamok</code>.
+Utána addig megyünk, amíg nem az utolsó <em>utáni:</em> <code>iter!=szamok+meret</code>.
+Itt <code>*iter</code> a pointer által mutatott, a vizsgált érték,
+a <code>++iter</code> kifejezés pedig a következő elemre lépteti a pointert.</p>
+
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>A strázsa technika (sentinel)</h2>
+</div>
+
+<div class="sticky">Niklaus Wirth<br>találmánya</div>
+
+<pre class="brush: cbub "  >
+tomb[elemek] = keresett; // szándékos!
+for (i = 0; tomb[i] != keresett; ++i) {
+   /* üres */
+}
+if (i != elemek)
+   return i;  /* meglett! */
+else
+   return -1; /* a strázsát találtuk meg */</pre>
+
+<pre class="brush: cbub "  >
+int tomb[10+1] = {2, 5, 7, 3, 8, 6, 9, 4, 8, 7}; // +1!
+hely = strazsakeres(tomb, 10);</pre>
+
+<table class="tomb kozep">
+   <tr>
+   <td>2
+   <td>5
+   <td>7
+   <td>3
+   <td>8
+   <td>6
+   <td>9
+   <td>4
+   <td>8
+   <td>7
+   <td class="piros">?
+   
+</table>
+
+<br class="smallskip">
+
+<p>Lényege: betesszük a tömb végére a keresett elemet.</p>
+
+<div class="csakdoksi">
+
+<p>A strázsás keresés egy kicsit gyorsabb, mert tömbelemenként csak egy
+vizsgálatot kell végezni – arra nem kell figyelni, hogy elértük-e a ciklussal a
+tömb végét. Mivel a végére betettük a keresett elemet, ezért a ciklus feltétele
+előbb-utóbb hamis lesz, legkésőbb a strázsánál.</p>
+
+<p>Ez a módszer csak akkor használható, ha tudjuk, hogy van még hely a tömbben 
+(legalább eggyel nagyobb), és szabad módosítani a tömböt.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>Bináris keresés – legyünk okosabbak!</h2>
+</div>
+
+<h3>Ha rendezett a tömb…</h3>
+<p class="csakdoksi">Nem csak <code>==</code> és <code>!=</code> van, hanem a <code>&lt;</code> és a <code>&gt;</code> is hasznos információ!</p>
+<ul>
+    <li><code>==</code>: Ezt keressük!
+    <li><code>&lt;</code>: Valahol előrébb kell legyen.
+    <li><code>&gt;</code>: Hátrébb kell legyen.
+</ul>
+
+<br class="smallskip">
+
+<div id="binkeres" class="tomb"></div>
+<div id="binkerescapt" class="tombcaption"></div>
+
+<div class="kozep">
+    <button onclick="infoc.ea08.binkeresobj.start()">új</button>
+    <button onclick="infoc.ea08.binkeresobj.kovetkezo()">következő</button>
+    <button data-diapopup="binkeresc">C megvalósítás</button>
+</div>
+
+<pre class="brush: cbub "   id="binkeresc">
+int binkeres(double *t, int db, double mit) {
+   int min = 0, max = db-1, // határok
+       kozep = (min+max)/2;
+
+   /* amíg nincs meg és el nem fogy a vizsgálandó rész */
+   while (min &lt;= max &amp;&amp; t[kozep] != mit) {
+      if (t[kozep] &lt; mit)
+         min = kozep+1;   // középtől jobbra
+      else
+         max = kozep-1;   // középtől balra
+      kozep = (min+max)/2;
+   }
+
+   /* miért állt meg a ciklus? megtaláltuk vagy nem? */
+   return min &lt;= max ? kozep : -1;
+}</pre>
+
+<p class="csakdoksi">A bináris keresés minden lépésben megfelezi a vizsgálandó
+tömbtartományt. A működésének lényege: megvizsgálja a középső tömbelemet.
+Ha az rögtön az, amit keresett, akkor vissza is tér vele. Ha nem, akkor
+a kisebb-nagyobb relációtól függően tudja folytatni a vizsgálatot. Ha
+a keresett elem kisebb, mint a rendezett tömb középső eleme, akkor valahol
+tőle balra kell keresni az elemet; ha nagyobb, akkor pedig valahol tőle
+jobbra. Ezért a <code>min</code> és a max <code>max</code> változók (amely
+az épp vizsgált tartomány alsó és felső határát mutatják) ettől
+függően beállíthatók a középsőtől balra vagy jobbra lévő elemre.</p>
+
+<p class="csakdoksi">Mindezt
+addig kell folytatni, amíg meg nem találjuk a keresett elemet, vagy a vizsgálandó
+tartomány nulla méretűvé nem zsugorodik. (Mivel a <code>min</code>-t és a
+<code>max</code>-ot mindig a középsőtől eggyel arrébb állítjuk, a tartomány
+eltűnését a <code>min&gt;max</code> miatt vehetjük észre.) A ciklusnak itt
+is összetett feltétele van, a befejeződése után ezért meg kell vizsgálni, miért
+állt meg.</p>
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="9">
+<div class="slide" id="slide_9">
+<div class="slideheader">
+<h2><span class="oldalszam">9</span>A keresések időigénye</h2>
+</div>
+
+<table class="float">
+    <thead>
+        <tr><th>hatékonyság<th>örülünk-e
+    </thead>
+        <tr><td>O(1), konstans<td><img src="ea07/face-laugh.png">
+        <tr><td>O(log n), logaritmikus<td><img src="ea07/face-smile.png">
+        <tr><td>O(n), lineáris<td><img src="ea07/face-plain.png">
+        <tr><td>O(n<sup>2</sup>), négyzetes<td><img src="ea07/face-sad.png">
+        <tr><td>O(e<sup>n</sup>), exponenciális<td><img src="ea07/face-crying.png">
+</table>
+
+<h3>Lineáris keresés: O(n)</h3>
+<ul>
+   <li class="csakdoksi">Lehet, hogy egyből megtaláljuk, lehet, hogy a végén lesz
+   <li>Átlagosan a felét kell végignézni
+   <li>A keresési idő <em>egyenesen arányos</em> a tömb méretével
+</ul>
+
+<h3>Bináris keresés: O(log<sub>2</sub>n)</h3>
+<ul>
+   <li>Minden lépésben felezzük az intervallumot
+   <li><em>A keresési idő ~ log<sub>2</sub>méret</em>. 1&nbsp;millió &rarr; 20&nbsp;lépés ☺
+</ul>
+
+<div class="csakdoksi">
+<h3>Algoritmusok hatékonysága általában</h3>
+<div class="sticky">Algoritmuselmélet<br>tárgyból lesz</div>
+<p>Az O(n) jelöléssel szoktuk leírni azt, hogy egy algoritmus mennyi
+idő alatt végzi el a feladatát – egészen pontosan azt, hogy az elvégzéshez
+szükséges idő hogyan függ a bemeneti adatok számától. Ebben a jelölésben
+általában a konstans szorzókat el szoktuk hanyagolni; O(2n) helyett egyszerűen
+O(n)-t írunk, hiszen a függés jellegén azok nem változtatnak.</p>
+<p>
+A konstans szorzók amiatt sem számítanak, mert csak az egyes függvénytípusok „erőssége”
+döntő nagy n-ek esetén. Az n<sup>2</sup> „bikább”, mint az n, mivel még
+10000n esetén is lehet olyan n-et találni, amelyre n<sup>2</sup>&gt;10000n.
+Ilyen értelemben az e<sup>n</sup> a „legbikább” függvény, hiszen megfelelően
+nagy n esetén az nagyobb bármilyen hatványfüggvénynél (pl. n<sup>1000</sup>).
+Ez azt jelenti, hogy az tart leggyorsabban a végtelenhez, míg a logaritmus függvény
+értéke pedig mindegyik közül a leglassabban.
+</p>
+<p class="csakdoksi">
+Emiatt részesítjük előnyben az olyan algoritmusokat, amelyek O(1), O(log&nbsp;n)
+vagy O(n) időben futnak. Az O(n<sup>2</sup>) nagy n-ek esetén már
+lassúnak lehet; O(e<sup>n</sup>) pedig valószínűleg lassú már kis n-ek esetén is.
+Éppen erre épülnek a titkosítások: ha jó az algoritmus, akkor a megfejtés csak
+próbálkozásra épülhet – ami viszont viszonylag kis kulcs esetén is beláthatatlanul
+hosszú ideig tart. (Titkosítás: ha a jelszó (titkosítás kulcsa)
+<em>128</em>&nbsp;bites, a végigpróbálandó lehetőségek száma: <em>2<sup>128</sup>=340282366920938463463374607431768211456</em> darab.)
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="10">
+<div class="slide" id="slide_10">
+<a id="earendezesek" class="namer"></a>
+<h1 class="diacim">Rendezések</h1>
+
+<br class="smallskip">
+<br class="smallskip">
+
+<div id="egyszerre" class="tomb" onclick="infoc.ea08.egyszerreclick()"></div>
+
+
+
+
+
+
+</div>
+</section>
+<section id="11">
+<div class="slide" id="slide_11">
+<div class="slideheader">
+<h2><span class="oldalszam">11</span>Rendezések, helyben rendezés</h2>
+</div>
+
+<h3>Rendezett tömb</h3>
+<ul>
+   <li>Növekvő sorrend: a szomszédos elemekre <code>t[i] &lt;= t[i+1]</code>
+   <li>Tranzitív tulajdonság: ha A≤B és B≤C, akkor A≤C
+</ul>
+
+<h3>A „helyben rendezés” fogalma</h3>
+<ul>
+   <li><em>Nincs segédtömb,</em> a meglévő tömbben dolgozunk
+   <li>Megengedett lépések: két elem <em>összehasonlítása</em> és <em>cseréje</em>
+</ul>
+
+<br class="smallskip">
+
+<h3>A rendezések működése</h3>
+<ul>
+   <li><em>Genericitás:</em> az algoritmusok általánosak (sorrend, típus)
+   <li>„Oszd meg és uralkodj” elv: divide and conquer <span class="csakdoksi">(latinul: divide et impera)</span>
+   <li class="csakdoksi">A rendezett részt növeljük, amíg el nem fogy
+</ul>
+
+<div class="tomb">
+   <span class="kesz">1</span>
+   <span class="kesz">2</span>
+   <span class="kesz">3</span>
+   <span class="kesz">4</span>
+   <span>7</span>
+   <span>5</span>
+   <span>8</span>
+   <span>6</span>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="12">
+<div class="slide" id="slide_12">
+<div class="slideheader">
+<h2><span class="oldalszam">12</span>Buborékrendezés (bubble sort)</h2>
+</div>
+
+<div id="bub" class="tomb"></div>
+<div id="bubcapt" class="tombcaption csakdoksi"></div>
+
+<br class="smallskip">
+
+<div class="kozep">
+    <button onclick="infoc.ea08.rendezbubobj.start()">start</button>
+    <button onclick="infoc.ea08.rendezbubobj.kovetkezo()">következő</button>
+    <button onclick="infoc.ea08.rendezbubobj.folyamatos()">folyamatos</button>
+    <button data-diapopup="buborekrendezc">C kód</button>
+    <button data-diapopup="buborekvariaciok">variációk</button>
+</div>
+
+<br class="smallskip">
+
+<p>Lényege: egymás melletti elemek összehasonlítása és cseréje.</p>
+<p>Egy sor csere által a legnagyobb elem a végére kerül.</p>
+
+<div class="csakdoksi">
+<p>
+A buborékrendezés egymás melletti elemeket hasonlít össze. Lépései:
+</p>
+<ul>
+<li>Hasonlítsuk össze az első két elemet. Ha nincsenek jó sorrendben, cseréljük meg.
+<li>Hasonlítsuk össze a második párt (második és harmadik elem). Esetleg csere.
+<li>Folytassuk így a tömb végéig.
+<li>A legnagyobb elem ezáltal a tömb végére kerül, még akkor is, ha legelöl
+volt. Az már a végleges helye.
+<li>Csináljuk meg ugyanezt még egyszer, a tömb elejétől az utolsó előttiig. Az utolsóhoz
+már nem kell nyúlni, hiszen az a legnagyobb.
+<li>Aztán ugyanezt megint, de az utolsó kettőhöz már nem nyúlunk stb.
+</ul>
+<p>
+Futás közben így a tömb két részre oszlik: egy már rendezett és egy még rendezetlen
+részletre. A rendezetlen részlet egyre csökken; azon belül kell összehasonlítani
+és esetleg cserélni a párokat. Ezért az algoritmus két ciklust tartalmaz. A külső
+ciklus az egyre kisebb rendezetlen részt határozza meg; a belsejében lévő
+pedig az egymás melletti párok összehasonlítását vezérli.
+</p>
+</div>
+
+<pre class="brush: cbub "   id="buborekrendezc">
+void buborek(double t[], int db) {
+   int i, j;
+
+   /* egyre rövidebb tömbrészletek ciklusa */
+   for (i = db-1; i &gt; 0; --i)
+      /* egymás utáni párok ciklusa */
+      for (j = 0; j &lt; i; ++j)
+         if (t[j+1] &lt; t[j]) {      // összehasonlítás
+            double temp = t[j];
+            t[j] = t[j+1];         // csere
+            t[j+1] = temp;
+         }
+}</pre>
+
+
+
+<div id="buborekvariaciok">
+
+<br class="smallskip">
+<br class="smallskip">
+
+<h3>Javított buborékrendezés (improved bubble sort)</h3>
+<p>Figyeli, hogy egy fésülés során volt-e csere. Ha nem, leállítható a rendezés.</p>
+
+<br class="smallskip">
+
+<h3>Keverő rendezés (cocktail sort)</h3>
+
+<img src="ea07/nyul.jpg" class="float">
+
+<p>A sima buborékrendezésnél: nyulak és teknősök.</p>
+
+<dl class="csakdoksi">
+   <dt>nyulak (rabbits)</dt>   <dd>nagy értékű elemek, amelyek a hamar a helyükre kerülnek</dd>
+   <dt>teknősök (turtles)</dt> <dd>kicsi értékűek, amelyek lassan vándorolnak a tömb elejére</dd>
+</dl>
+
+<p><em>Ötlet:</em> a rendezést felváltva egyik-másik irányba végezzük.</p>
+
+</div>
+
+
+
+</div>
+</section>
+<section id="13">
+<div class="slide" id="slide_13">
+<div class="slideheader">
+<h2><span class="oldalszam">13</span>Közvetlen kiválasztással (selection sort)</h2>
+</div>
+
+<div id="min" class="tomb"></div>
+<div id="mincapt" class="tombcaption csakdoksi"></div>
+
+<br class="smallskip">
+
+<div class="kozep">
+    <button onclick="infoc.ea08.rendezminobj.start()">start</button>
+    <button onclick="infoc.ea08.rendezminobj.kovetkezo()">következő</button>
+    <button onclick="infoc.ea08.rendezminobj.folyamatos()">folyamatos</button>
+    <button data-diapopup="kozvetlenkivalasztasc">C kód</button>
+</div>
+
+<br class="smallskip">
+
+<p>Lényege: megkeresi a rendezetlen tömbrészlet legkisebb
+elemét, és az elejére rakja.</p>
+
+
+<div class="csakdoksi">
+<p>
+Ezt az algoritmust szélsőértékkeresős, vagy minimumkeresős
+rendezésnek is szokták nevezni. A működéséhez
+a buborék algoritmusnál tett megfigyelés adja az ötletet: ott a
+belső ciklus minden futása után a legnagyobb elem a rendezetlen
+részlet végére, és ezáltal a rendezett részlet elejére került.
+Az ötlet lényege, hogy ne cserékkel toljuk el odáig a legnagyobb
+elemet, hanem inkább keressük meg a tömbben azt, és végezzük el
+egy lépésben a cserét. Vagyis tegyük egyből a helyére a kérdéses
+elemet. Itt a legkisebb elemekkel történik ez.
+</p>
+<p>
+A közvetlen kiválasztásos algoritmus előnye a buborékrendezéshez képest,
+hogy jóval kevesebb cserét végez a tömbben. Itt mindegyik tömbelem
+egy lépésben a helyére kerül, vagyis legrosszabb esetben is a cserék
+száma db-1, ahol db a tömb mérete.
+</p>
+</div>
+
+<pre class="brush: cbub "   id="kozvetlenkivalasztasc">
+void kozvetlen(double t[], int db) {
+   int i, j, minindex;
+
+   for (i = 0; i &lt; db-1; ++i) {
+      minindex = i;                // minimum keresése
+      for (j = i+1; j &lt; db; ++j)
+         if (t[j] &lt; t[minindex])
+            minindex = j;
+      if (minindex != i) {         // csere?
+         double temp = t[minindex];
+         t[minindex] = t[i];       // csere.
+         t[i] = temp;
+      }
+   }
+}</pre>
+
+<p class="csakdoksi">
+A fenti megvalósítás nem a legnagyobbat, hanem
+a legkisebb elemet keresi meg a tömbből, és azt rakja az elejére,
+ahogyan az előbbi dián látható animáció is.
+A kód szerkezete hasonló az előzőéhez, itt is ciklusban ciklus kell.
+A külső ciklus <code>i</code> változója éppen azt az indexet tárolja
+mindig, amelyik helyre az odavaló elemet keressük. Első futásnál ez
+0, vagyis az egész tömb (<code>t[0]…t[db-1]</code>) legkisebb elemét
+keresi meg a <code>j</code>-s, belső ciklus. A keresés után a legkisebbnek
+talált elem ide kerül, és később már nem is mozdul el innen.
+</p>
+
+
+
+
+</div>
+</section>
+<section id="14">
+<div class="slide" id="slide_14">
+<div class="slideheader">
+<h2><span class="oldalszam">14</span>Rendezések hatékonysága – cserék száma</h2>
+</div>
+
+<p class="csakdoksi">Melyik algoritmus gyorsabb, a buborékrendezés vagy a szélsőértékkereséses
+rendezés?</p>
+
+<div id="bub2" class="tomb"></div>
+
+<br class="smallskip">
+
+<div id="min2" class="tomb"></div>
+
+
+<div class="kozep">
+    <button onclick="infoc.ea08.rendezbub2obj.start(); infoc.ea08.rendezmin2obj.start();">start</button>
+    <button onclick="infoc.ea08.rendezbub2obj.folyamatosgyors(); infoc.ea08.rendezmin2obj.folyamatos()">folyamatos</button>
+</div>
+
+<div class="csakdoksi">
+
+<p> A fenti animáció kicsit csal. Nem túl igazságos, ugyanis az összehasonlítások 
+idejére nem figyel, hanem csak a helycseréket animálja. Ugyanakkor a lényeg 
+látszik: a buborékrendezés nagyon sok ideig bíbelődik a cserékkel, míg a 
+közvetlen kiválasztásos módszer hamarabb végez a tömbbel. </p>
+
+<p>Ez azonban csak az általános eset. Lehetnek olyan speciális esetek, amelyeknél a buborékrendezés
+jobban teljesít: Pl. ha csak egy-két elem van rossz helyen, azokat a buborékrendezés sokkal gyorsabban
+a helyükre tudja rakni, mintha egy szélsőértékkereséses algoritmust használnánk.</p>
+
+<p>Ezért a rendezőalgoritmusok összehasonlításakor mindig meg szokták adni a minimális, átlagos
+és maximális lépésszámot.</p>
+
+</div>
+
+<br class="smallskip">
+
+<table class="eloadaskicsinyit" style="line-height: 1.2;">
+<caption class="csakdoksi">Rendezések hatékonysága cserék alapján, n elemű tömbre</caption>
+<thead>
+   <tr><th rowspan="2">rendezés<th colspan="3" style="border-bottom: 0" class="kozep balrolvonal">összehasonlítás<th colspan="3" style="border-bottom: 0" class="kozep balrolvonal">cserék
+   <tr>                             <th class="balrolvonal">max<th>átlag<th>min<th class="balrolvonal">max<th>átlag<th>min
+</thead>
+   <tr><th>javított buborék     <td class="balrolvonal">n<sup>2</sup><td>n<sup>2</sup><td>n<td class="balrolvonal">n<sup>2</sup><td>n<sup>2</sup><td>0
+   <tr><th>közvetlen kiválasztás<td class="balrolvonal">n<sup>2</sup><td>n<sup>2</sup><td>n<sup>2</sup><td class="balrolvonal">n<td>n<td>0
+   <tr><th>gyorsrendezés        <td class="balrolvonal">n<sup>2</sup><td>n·logn<td>n·logn<td class="balrolvonal">n<sup>2</sup><td>n·logn<td>0
+   <tr><th>kupacrendezés        <td class="balrolvonal">n·logn<td>n·logn<td>n·logn<td class="balrolvonal">n·logn<td>n·logn<td>n·logn
+</table>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="15">
+<div class="slide" id="slide_15">
+<div class="slideheader">
+<h2><span class="oldalszam">15</span>Az indexelő tömbök és használatuk</h2>
+</div>
+
+<p class="csakdoksi">Tömbök rendezésekor két problémába ütközhetünk. Az egyik, ha
+nagyon nagyok a tömbelemek (pl. nagy struktúrák), akkor a rendezés nagyon lassú lehet.
+A másik, hogy esetleg egyszerre többféle rendezettségre is szükségünk lehet (pl.
+egy névsornál név szerinti ábécé sorrendre, és kor szerinti, azaz születési évszám
+szerinti sorrendre.)</p>
+
+<p>Ötlet: egy <em>indexelő tömböt</em> rendezzünk, ne az eredetit!</p>
+
+<p class="csakdoksi">Az indexelő tömb lényege, hogy a tényleges, adatokat tároló
+tömböt nem közvetlenül indexeljük, hanem veszünk mellé egy <code>int</code>-eket
+tároló tömböt is, és annak „szemüvegén” keresztül nézzük az eredeti tömböt. Így az
+indexelő tömbbe tett számok sorrendje határozza meg azt, hogy az adatelemeinket
+milyen sorrendben látjuk.</p>
+
+<div class="columns">
+<div><img src="ea07/indexelo1.svg" class="kozep" style="width: 14em;"></div>
+<div><img src="ea07/indexelo2.svg" class="kozep" style="width: 14em;"></div>
+</div>
+
+<br class="smallskip">
+
+<pre class="brush: cbub "  >
+Ember nevsor[100];
+int index[100];   // ugyanakkora
+
+printf(&quot;%s&quot;, nevsor[index[3]].nev);
+/* nevsor[nev_index[i]]             → név szerinti sorrend */
+/* nevsor[szuletesi_datum_index[i]] → dátum szerinti sorrend */</pre>
+
+<p class="csakdoksi"> Ha nem az eredeti tömböt rendezzük, hanem az indexelő 
+tömböt, akkor sokkal gyorsabbak a cserék, és ezáltal a rendezések is. Az indexelő 
+tömb ötlete megoldja a többféle rendezettség problémáját is: elég csak két 
+indexelő tömböt használni. Sőt, az adatokat sem kell duplán tárolni! </p>
+
+
+
+
+</div>
+</section>
+<section id="16">
+<div class="slide" id="slide_16">
+<div class="slideheader">
+<h2><span class="oldalszam">16</span>Kertitörpe-rendezés (gnome sort)</h2>
+</div>
+
+<div id="torpe" class="tomb"></div>
+<div id="torpecapt" class="tombcaption csakdoksi"></div>
+
+<br class="smallskip">
+
+<div class="kozep">
+<button onclick="infoc.ea08.rendeztorpeobj.start()">start</button>
+<button onclick="infoc.ea08.rendeztorpeobj.kovetkezo()">következő</button>
+<button onclick="infoc.ea08.rendeztorpeobj.folyamatos()">folyamatos</button>
+<button data-diapopup="torperendezid">C kód</button>
+</div>
+
+<img class="float" src="ea07/torpe.png">
+
+<br class="smallskip">
+
+<p>Lényege: ha az egymás mellettiek jó sorrendben vannak, léphetünk
+egyet előre. Ha rossz sorrendben, akkor csere.
+Ha a csere által rossz sorrend keletkezik, az csak a csere előtt
+lehet, ezért visszafelé kell lépni egyet.</p>
+
+<pre class="brush: cbub "   id="torperendezid">
+void torperendez(double t[], int db) {
+    int i = 0;
+    while (i &lt; db) {
+        if (i == 0 || t[i-1] &lt;= t[i]) { // jó sorrend?
+            i++;                /* előre */
+        } else {
+            double tmp = t[i];  /* csere */
+            t[i] = t[i-1];
+            t[i-1] = tmp;
+            i--;                /* vissza */
+        }
+    }
+}</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="17">
+<div class="slide" id="slide_17">
+<a id="earekurzio" class="namer"></a>
+<h1 class="diacim">Rekurzió</h1>
+
+<p class="motto">
+Az elv, hogy meg lehet hívni egy <em>függvényből</em> egy <em>másikat,</em>
+rögtön felveti a kérdést: vajon <em>saját magát</em> is?
+</p>
+
+<div class="csakdoksi">
+<p>Pl. mi lenne, ha egy faktoriálist számító masina így nézne ki belülről:</p>
+<img class="kozep" src="ea07/faktgep.svg" style="width: 24em; background: url(ea07/bg1v.png);">
+<pre class="sorsurit11 float">
+     ┌
+     │ 1,        ha n=0
+n! = ┤
+     │ n·(n-1)!, ha n>0
+     └
+</pre>
+<p>Ez helyes, hiszen ha N=0, a faktoriálisa 1, ha nem 0, akkor pedig N faktoriálisa
+N szorozva N-1 faktoriálisával.</p>
+<p>Ha beteszünk a nagy faktoriális gépbe egy miniatűr
+faktoriális gépet (működjön az bárhogy is), egy jó megoldást kapunk.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="18">
+<div class="slide" id="slide_18">
+<div class="slideheader">
+<h2><span class="oldalszam">18</span>Függvényhívás megint: a verem (stack)</h2>
+</div>
+
+<p>A <em>verem</em> nevű memóriaterületre kerülnek függvényhíváskor
+a paraméterek és a visszatérés adatai. Ide kerülnek a lokális
+változók is.</p>
+
+<br class="smallskip">
+
+<div class="csakdoksi">
+<p>Ezt a memóriaterületet azért nevezik veremnek, mivel ugyanúgy telik
+meg, mint egy verem (gödör). Amit legutoljára betettünk, azt látjuk
+legfelül, és kivenni is azt tudjuk legelőször.
+</p>
+
+<p class="megjegyzes">Érdekesség: a vermet is <a href="http://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>
+találta ki. Amikor egy értéket az általa tervezett gép
+betett a verembe, azt a műveletet BURY-nek, azaz eltemetésnek nevezte. A kivétel pedig az UNBURY, vagyis a kiásás.</p>
+
+<p>A paramétereket a hívó programrész helyezi el a verembe. A visszatérési értéknek a helyét is
+a hívó foglalja le. Ezért a függvényhívás után ennek a dolga ezeket a területeket felszabadítani
+is. A hívott függvény foglal helyet a saját lokális változói számára, és így ennek a dolga az
+is, hogy felszabadítsa azt. Mindezzel nekünk semmi dolgunk nincsen, a fordító hozza létre ezeket
+a programrészeket a háttérben. Ezért ezeket automatikus kezelésű változóknak is szokták nevezni.
+</p>
+
+<p>Minden függvényhíváskor létrejön tehát egy rész a veremben, amely az adott híváshoz tartozik,
+és visszatéréskor megszűnik. Ennek neve: <em>keret</em> (stack frame). Ha a függvényből egy
+másik függvényt is meghívunk, akkor egy ahhoz tartozó keret is létrejön a veremben – mindig
+legfelül, természetesen.</p>
+
+<p>Alább egy függvényhívás látható, a hozzá kialakuló veremszerkezettel.</p>
+</div>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+int fakti(int mie) {
+   int szorzat, i;
+   szorzat = 1;
+   for (i = 2; i &lt;= mie; ++i)
+      szorzat *= i;
+   return szorzat;
+}
+
+int main(void) {
+   int x = fakti(5);
+   printf(&quot;%d&quot;, x);
+
+   return 0;
+}</pre>
+
+</div>
+
+<div>
+<img src="ea07/verem.svg" class="kozep" style="width: 16em;">
+</div>
+</div>
+
+<div class="csakdoksi">
+<p><em>A függvényhívás előtt</em> a következő történik:</p>
+<ul>
+   <li>A hívó <code>main()</code> beteszi a verembe a paramétereket.
+   <li>Helyet csinál a visszatérési értéknek is.
+   <li>Meghívja a függvényt, ami által bekerül a verembe a visszatérés címe
+      (vagyis hogy hol kell folytatni a programot a függvényből visszatérvén).
+</ul>
+<p><em>A <code>fakti()</code> függvényben</em> a működés:</p>
+<ul>
+   <li>Létrehozza magának a lokális változókat a veremben.
+   <li>A paramétereit a veremben találja.
+   <li>A visszatérési értéket a verembe teszi, a megfelelő memóriaterület felülírásával.
+   <li>Amikor visszatér, akkor a hívóhoz ugrik vissza – a cím a veremben.
+</ul>
+<p><em>A függvényhívás után</em> a hívó:</p>
+<ul>
+   <li>A veremben megtalálja a visszatérési értéket. Ezt felhasználja, ha szeretné.
+   <li>Kitörli a veremből az általa betett függvényparamétereket, hiszen azokra
+      már nincsen szükség.
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="19">
+<div class="slide" id="slide_19">
+<a id="faktorialisrekurziv" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">19</span>Faktoriális rekurzív függvénnyel</h2>
+</div>
+
+<p class="csakdoksi">Rekurzív függvény az, amely meghívja saját magát.</p>
+
+<div class="columns">
+<div>
+<pre class="sorsurit11">
+
+     ┌
+     │ 1,        ha n = 1
+n! = ┤
+     │ n·(n-1)!, ha n > 1
+     └
+</pre>
+</div>
+<div>
+<pre class="brush: c sorsurit11"  >
+int fakt(int n) {
+   if (n == 1)
+      return 1;
+   else
+      return n * fakt(n-1);
+}</pre>
+</div>
+</div>
+
+<br class="smallskip">
+
+<img src="ea07/fakt.svg" style="width: 32em;" class="kozep">
+
+<p>Ezt a működést a <em>verem</em> teszi lehetővé!</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="20">
+<div class="slide" id="slide_20">
+<div class="slideheader">
+<h2><span class="oldalszam">20</span>Faktoriális: a függvényhívás menete</h2>
+</div>
+
+<div class="columns c7030">
+<div>
+<pre class="syntaxhighlighter c">
+<button onclick="infoc.ea08.faktpeld.kovetkezo()" class="float">léptet</button><span class="color1">int</span> fakt(<span class="color1">int</span> n) {
+<span class="sor" id="fakt6"><span class="sor" id="fakt4"><span class="sor" id="fakt2">   <span class="keyword">if</span> (n &lt;= <span class="number">1</span>)   </span></span></span>
+<span class="sor" id="fakt7">      <span class="keyword">return</span> <span class="number">1</span>;   </span>
+   <span class="keyword">else</span>
+<span class="sor" id="fakt9"><span class="sor" id="fakt8">      <span class="keyword">return</span> n*    </span></span>
+<span class="sor" id="fakt5"><span class="sor" id="fakt3">              fakt(n-<span class="number">1</span>);   </span></span>
+}
+&nbsp;
+<span class="color1">int</span> main() {
+   <span class="color1">int</span> eredm;
+
+<span class="sor" id="fakt1">   eredm = fakt(<span class="number">3</span>);   </span>
+<span class="sor" id="fakt10">   <span class="color2">printf</span>(<span class="st0">&quot;3!=<span class="es6">%d</span>&quot;</span>, eredm);   </span>
+<span class="sor" id="fakt11">   <span class="keyword">return</span> <span class="number">0</span>;   </span>
+}
+</pre>
+</div>
+
+<div>
+<pre id="faktstack1" class="stack hidden">
+<em>fakt(1)</em>
+n: 1
+(vissza): <span id="fakt1vissza"></span>
+</pre>
+<pre id="faktstack2" class="stack hidden">
+<em>fakt(2)</em>
+n: 2
+(vissza): <span id="fakt2vissza"></span>
+</pre>
+<pre id="faktstack3" class="stack hidden">
+<em>fakt(3)</em>
+n: 3
+(vissza): <span id="fakt3vissza"></span>
+</pre>
+<pre class="stack">
+<em>main()</em>
+eredm: <span id="fakteredm"></span>
+</pre>
+</div>
+
+</div>
+
+<p class="csakdoksi">A lokális változók csak addig léteznek, amíg a faktoriálist számoló
+függvény belsejében van a végrehajtás. Amint visszatér abból a
+<code>main()</code>-be, azok megszűnnek.</p>
+
+<p class="csakdoksi">Gondoljunk bele: most használjuk ki igazán, hogy a függvény után a gép onnan
+folytatja a végrehajtást, ahonnan meg lett hívva! Ha ez sok függvényhívással odébb
+volt, akkor is. Ha sok rekurzív függvényhívással beljebb (lejjebb) volt, akkor is!
+Ezért mindig tudja a gép, hogy épp a <code>fakt(n-1)</code> kiszámítása ért
+véget, és visszaugrik abba a példányba, ahol a <code>fakt(n)</code> kiszámítása
+folyik.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="21">
+<div class="slide" id="slide_21">
+<div class="slideheader">
+<h2><span class="oldalszam">21</span>A leállási feltétel</h2>
+</div>
+
+<p class="csakdoksi">Ahogy a ciklusoknak is van egy feltételük, amely nem teljesülése
+esetén megállnak az iterációk, a rekurziónál is előbb-utóbb el kell jutnunk egy olyan
+pontra, amikor a függvény már nem hívja meg magát. Különben sose térne vissza. A
+rekurziónál ezt báziskritériumnak nevezzük.</p>
+
+<h3>Leállási feltétel</h3>
+<ul>
+    <li>Kell legyen egy <em>báziskritérium:</em> amikor már nem hívja meg magát.
+    <li>Minden lépésben <em>közeledni kell a báziskritériumhoz.</em>
+</ul>
+
+<br class="smallskip">
+
+<p class="csakdoksi">Klasszikus példa a rekurzióra az ún. Fibonacci számsor. Ebben
+a számsorban minden elem az őt megelőző két elem összege.</p>
+
+<div class="columns">
+<div>
+<pre class="sorsurit11">
+
+     ┌
+     │ n, ha n&lt;2
+F(n) ┤
+     │ F(n-2)+F(n-1) amúgy
+     └
+
+</pre>
+</div>
+<div>
+<pre class="brush: cbub sorsurit11"  >
+int fib(int n)
+{
+  if (n &lt; 2)  // báziskritérium
+    return n;
+  else
+    return fib(n-2) + fib(n-1);
+}</pre>
+</div>
+</div>
+
+<div class="kozep"><button data-diapopup="fibonaccistick">A hívások rajzon</button></div>
+
+<p class="csakdoksi">A fenti függvényben teljesül a leállási feltétel: <code>n&lt;2</code>
+esetén a függvény nem hívja meg már magát, és a hívások során mindig kisebb <code>n</code>
+szám a paraméter. A számsor kiszámítására amúgy ez nem túl hatékony megoldás, inkább
+csak az egyszerűsége miatt szép a függvény. Vegyük észre a rajzon: pl. a fib(2)
+értékét többször is kiszámoljuk. (Sőt a függvényhívások száma exponenciálisan növekszik.)</p>
+
+<div id="fibonaccistick">
+    <img src="ea07/fib.svg" class="kozep" style="width: 24em;">
+    <div class="sticky" style="margin-top: -12em">laboron még <br>lesz róla szó</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="22">
+<div class="slide" id="slide_22">
+<a id="hanoi" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">22</span>Hanoi tornyai játék</h2>
+</div>
+
+<p class="csakdoksi">Másik klasszikus példa a rekurzióra az ún. Hanoi tornyai játék.
+Ebben a korongokat át kell tenni az első rúdról a harmadikra, de úgy, hogy 1)
+egyszerre csak egy korongat mozgathatunk, 2) kicsi korongra nagyot nem tehetünk.
+(A középső oszlop ideiglenes tárolónak használható.)
+Négy korong esetén ez a lépéssorozat adja a megoldást:
+A→B, A→C, B→C, A→B, C→A, C→B, A→B, A→C, B→C, B→A, C→A, B→C, A→B, A→C, B→C.
+A látszólag bonyolult probléma rekurzív megoldása pár soros.
+</p>
+
+<div id="hanoi1" class="hanoi"></div>
+<div id="" class="hanoialja"></div>
+
+<div class="kozep">
+   <button onclick="infoc.ea08.hanoi1obj.start()">start</button>
+   <button onclick="infoc.ea08.hanoi1obj.kovetkezo()">következő</button>
+   <button onclick="infoc.ea08.hanoi1obj.folyamatos()">folyamatos</button>
+   <button onclick="infoc.ea08.hanoi1obj.varazslat()">varázslat</button>
+</div>
+
+<br class="smallskip">
+
+<p>
+   <em>Ötlet.</em> Rakjunk félre n-1 korongot… Akkor az alsó korong mozgatható!
+   <br>
+   Na de arról volt szó, hogy <em>egyszerre csak egy korong mozoghat…</em>
+</p>
+
+<p class="csakdoksi">Próbáld ki! A „következő” és „folyamatos” gombokat nyomva
+egyesével látszanak a lépések. A „start” után a „varázslat” gomb pedig megmutatja
+azt, min alapszik a megoldás ötlete.</p>
+
+
+
+</div>
+</section>
+<section id="23">
+<div class="slide" id="slide_23">
+<div class="slideheader">
+<h2><span class="oldalszam">23</span>Hanoi tornyai – a megoldás vázlata</h2>
+</div>
+
+<h3>Top-down tervezés</h3>
+<div class="sticky">Mennyire hiszel<br>a top-down<br>tervezésben?</div>
+<pre class="brush: c "  >
+if (prim(i))
+    ...;</pre>
+
+<p>Függvény = fekete doboz. Nem kell belelátnunk!</p>
+
+<br class="smallskip">
+
+
+<h3>Hanoi tornyai: megoldásvázlat top-down tervezéssel</h3>
+
+<div style="position: relative">
+<pre class="brush: cbub editable"  >
+/* VÁZLAT */
+void hanoi_vazlat(int n, char honnan, char seged, char hova) {
+    varazslat(n-1, honnan, hova, seged);
+    printf(&quot;rakj 1-et: %c-&gt;%c\n&quot;, honnan, hova);
+    varazslat(n-1, seged, honnan, hova);
+}</pre>
+
+<div class="csakdoksi">
+<p>Ha szeretnénk <code>honnan</code>, <code>hova</code> pakolni a korongokat a 
+<code>seged</code> oszlop használatával, a lépések:</p>
+
+<ol>
+    <li>Varázsoljunk n-1 korongot a kiindulási (honnan) oszlopról a segédoszlopra. Eközben
+        a cél, „hova” oszlop lehet az ideiglenes tároló.
+    <li>Ha ezt megoldottuk, akkor a legalsó korongot csak át kell rakni.
+    <li>És az átrakott legalsó, legnagyobb korongra a félretett <code>n-1</code>
+        korongot varázsoljuk. Vagyis a segédoszlopról (mert oda tettük őket félre)
+        a céloszlopra (végleges helyükre), közben a kiindulási oszlop (honnan)
+        lehet az ideiglenes tároló.
+</ol>
+
+<p>Tehát <code>n-1</code> korongot varázsolunk, <code>1</code>-et mozgatunk, 
+végül megint <code>n-1</code>-et varázsolunk. Mit jelent a varázslat? Hogy 
+<code>n-1</code> korongot helyezünk át; ott viszont ugyanazt kell majd csinálni, 
+mint amit itt kellett. Innen jön a rekurzió.</p>
+
+<p>A megértés kulcsa az, ha <em>nem (!)</em> próbáljuk meg megérteni, a 
+<code>varazsol(n-1)</code> belsejében mi történik. A top-down tervezést mindig úgy
+végeztük el, hogy feltételeztük bizonyos függvények létezését, amelyek 
+részfeladatokat végeznek el. Ezekről a függvényekről azt feltételeztük, hogy 
+helyes bemenetre helyes eredményt adnak. A rekurzió tervezésekor ezt gondoljuk
+az éppen írt függvényünkről is.</p>
+
+<p>A rekurzió tervezésénél a következő két dolgot kell tehát végiggondolni:</p>
+<ul>
+    <li>Melyik az a legegyszerűbb eset, amelynél a megoldás egyértelmű?
+        Jelen esetben ez az lesz, amikor 0 korongot kell mozgatni, mert olyankor
+        már nincs is dolgunk.
+    <li>Ha bonyolultabb esetről van szó, hogyan lehet visszavezetni egyszerűbb esetekre?
+        Jelen esetben: n-1 korong mozgatása, egy korong mozgatása, n-1 korong mozgatása.
+        
+</ul>
+
+</div>
+
+
+
+</div>
+</section>
+<section id="24">
+<div class="slide" id="slide_24">
+<div class="slideheader">
+<h2><span class="oldalszam">24</span>Hanoi tornyai – megoldás C-ben</h2>
+</div>
+
+<p class="csakdoksi">A fentiek alapján a teljes megoldás:</p>
+
+<pre class="brush: cbub "  >
+#include &lt;stdio.h&gt;
+
+void hanoi(int n, char honnan, char seged, char hova) {
+   if (n == 0)
+      return;
+   hanoi(n-1, honnan, hova, seged);
+   printf(&quot;rakj 1-et: %c-&gt;%c\n&quot;, honnan, hova);
+   hanoi(n-1, seged, honnan, hova);
+}
+
+int main(void) {
+   hanoi(4, 'A', 'B', 'C');
+
+   return 0;
+}</pre>
+
+<div style="position: absolute; z-index: 50; width: 45%; font-size: 0.6em; top: 22em; right: 0; padding: 1em;" class="csakeloadas">
+<div id="hanoi3" class="hanoi"></div>
+<div id="" class="hanoialja"></div>
+<div class="kozep">
+    <button onclick="infoc.ea08.hanoi3obj.start()">start</button>
+    <button onclick="infoc.ea08.hanoi3obj.varazslat()">varázslat</button>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="25">
+<div class="slide" id="slide_25">
+<div class="slideheader">
+<h2><span class="oldalszam">25</span>Iterációval vagy rekurzióval?</h2>
+</div>
+
+<p>Bizonyítható: minden rekurzív probléma megoldható iteratívan is, és minden iteráció átalakítható rekurzióvá.</p>
+
+<div class="columns eloadaskicsinyit">
+<div>
+<pre class="brush: c "  >
+int fib(int n) {
+   int eloz = 1, f = 0, kov, i;
+   for (i = 0; i &lt; n; ++i) {
+      kov = f+eloz;
+      eloz = f; f = kov;
+   }
+   return f;
+}</pre>
+<p class="csakdoksi kozep">iteratív</p>
+</div>
+<div>
+<pre class="brush: c "  >
+int fib(int n) {
+   if (n &lt; 2)
+      return n;
+   else
+      return fib(n-2)
+             +fib(n-1);
+}
+</pre>
+<p class="csakdoksi kozep">rekurzív</p>
+</div>
+</div>
+
+<div class="columns eloadaskicsinyit">
+<div>
+<pre class="brush: c "  >
+void kiir(char *sztring) {
+   while (*sztring != '\0') {
+      putchar(*sztring);
+      sztring += 1;
+   }
+}</pre>
+<div class="kozep">iteratív</div>
+</div>
+<div>
+<pre class="brush: c "  >
+void kiir(char *sztring) {
+   if (*sztring == '\0')
+      return;
+   putchar(*sztring);
+   kiir(sztring+1);
+}</pre>
+<div class="kozep">rekurzív</div>
+</div>
+</div>
+
+<p class="csakdoksi"> Némely rekurzív függvények egészen egyszerűen átírhatók 
+ciklusra. Ugyanis ha a rekurzív hívás után már nem csinál semmit a függvény, 
+hanem egyből visszatér, az végeredményben csak egy ciklus. Az <code>kiir()</code> 
+pont ilyen, ún. jobbrekurzív függvény. Itt az átalakítás a másik irányban 
+látható; iteratív függvényből rekurzív lett. </p>
+
+<div class="csakdoksi">
+<h3>Mikor használjuk a rekurziót?</h3>
+<ul>
+   <li><em>Sokszor egyszerű és szemléletes</em> a rekurzív megoldás, pl. <code>fib(n)</code>
+      <ul>
+         <li>Egyszerűbb a helyességét is bizonyítani… pl. <code>fib(n)</code>
+         <li>De nem biztos, hogy a leghatékonyabb… pl. <code>fib(n)</code>
+      </ul>
+      
+   <li><em>Nem érdemes indokolatlanul használni ciklusok helyett</em>
+   <li>Leginkább <em>rekurzív jellegű problémák esetén</em>
+      <ul>
+         <li>Pl. 5+2*3 kifejezés értelmezése
+      </ul>
+   
+   <li>Rekurzív adatszerkezetek esetén (erről később lesz szó)
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="26">
+<div class="slide" id="slide_26">
+<div class="slideheader">
+<h2><span class="oldalszam">26</span>A rekurzív hívás helye a függvényben</h2>
+</div>
+
+<div class="columns">
+<div>
+<pre class="brush: c "  >
+void elore(char *sztring) {
+   if (*sztring == '\0')
+      return;
+   putchar(*sztring);
+   elore(sztring+1);
+}</pre>
+<pre class="brush: cbub "  >
+előre(&quot;InfoC&quot;) // InfoC
+   putchar('I')
+   előre(&quot;nfoC&quot;)
+      putchar('n')
+      előre(&quot;foC&quot;)
+         putchar('f')
+         előre(&quot;oC&quot;)
+            putchar('o')
+            előre(&quot;C&quot;)
+               putchar('C')
+               előre(&quot;&quot;)
+                  /* semmi */</pre>
+</div>
+<div>
+<pre class="brush: c "  >
+void hatra(char *sztring) {
+   if (*sztring == '\0')
+      return;
+   hatra(sztring+1);
+   putchar(*sztring);
+}</pre>
+<pre class="brush: cbub "  >
+hátra(&quot;InfoC&quot;) // CofnI
+   hátra(&quot;nfoC&quot;)
+      hátra(&quot;foC&quot;)
+         hátra(&quot;oC&quot;)
+            hátra(&quot;C&quot;)
+               hátra(&quot;&quot;)
+                  /* semmi */
+               putchar('C')
+            putchar('o')
+         putchar('f')
+      putchar('n')
+   putchar('I')</pre>
+</div>
+</div>
+
+<div class="csakdoksi">
+<p>Természetesen az előre függvény a sztringet előrefelé,
+a hátra pedig a sztringet hátrafelé, vagyis megfordítva írja
+ki. Ez mindössze két utasítás felcserélésén múlik. Az előre
+függvény ugyanis kiírja az első karaktert, utána pedig
+a sztring többi részét. A hátra függvény ezzel szemben
+kiírja a sztring többi részét, utána pedig az első karaktert
+– de mivel a „többi részét” is ugyanilyen módon jeleníti meg,
+ezért az a „többi rész” is fordítva lesz.</p>
+<p>A rekurzív hívás során az átadott sztring viszont
+mindkét esetben ugyanaz lépésenként, hiszen az eredeti sztring nem fordul meg!
+Ez látható a lenti táblázatban, amely azt mutatja be,
+hogy mi történik a rekurzív hívás előtt és után az egyes
+esetekben.
+</p>
+<table>
+<caption>A függvények működése az <code>"InfoC"</code> sztringen</caption>
+<thead>
+   <tr><th><th>előre<th>hátra
+</thead>
+   <tr><th>hívás előtt<td><code>putchar('I')</code><td>-
+   <tr><th>rekurzív hívás<td><code>elore("nfoC")</code><td><code>hatra("nfoC")</code>
+   <tr><th>hívás után<td>-<td><code>putchar('I')</code>
+</table>
+<p>Érdemes ezt kipróbálni nyomkövetőben!</p>
+</div>
+
+<p class="csakdoksi">
+Tömböket (és később: listákat) C-ben ciklusokkal dolgozunk fel,
+hiszen az a természetesen adódó eszköz erre a feladatra. Az itt
+bemutatott rekurzív sztringfeldolgozás célja kizárólag az, hogy a rekurzió
+működésére rávilágítson, és mindehhez egyszerű példát adjon.
+A sztring előre- és hátrafelé történő kiírása olyan egyszerű,
+magától értetődő iteratív feladat, amelyet C-ben rekurzív módon
+megvalósítani pazarlás (a sok függvényhívás mind időbe telik).
+</p>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="27">
+<div class="slide" id="slide_27">
+<div class="slideheader">
+<h2><span class="oldalszam">27</span>Gyorsrendezés (egy rekurzív módszer)</h2>
+</div>
+
+<div id="qsorttomb" class="tomb"></div>
+<div id="qsorttombcapt" class="tombcaption csakdoksi"></div>
+
+<br class="smallskip">
+
+<div class="kozep">
+   <button onclick="infoc.ea08.rendezqsortobj.start()">start</button>
+   <button onclick="infoc.ea08.rendezqsortobj.kovetkezo()">következő</button>
+   <button onclick="infoc.ea08.rendezqsortobj.folyamatos()">folyamatos</button>
+</div>
+
+<br class="smallskip">
+
+<div class="sticky">Feltalálója:<br>Tony Hoare</div>
+
+<p>Lényege: egy elemet vezérelemnek választva két részre osztjuk a tömböt:
+annál kisebbekre és nagyobbakra.
+<br>
+Ezután az így keletkező két részt rendezzük.</p>
+
+<div class="csakdoksi">
+<p>
+A gyorsrendezés az „oszd meg és uralkodj” elven működik.
+Lépései a következők:
+</p>
+<ul>
+   <li>Kiválasztunk a tömbből egy tetszőleges elemeket. Ez lesz az ún. vezérelem (pivot).
+   <li>Az ennél kisebbeket a tömb elejére, az ennél nagyobbakat a tömb végére rendezzük.
+      (Ez a sima szétválogatási feladat. A vezérelemmel megegyező elemek mehetnek bármelyik oldalra.)
+   <li>Ezután az így keletkező két tömbrészletet külön rendezzük, az algoritmus rekurzív hívásával.
+</ul>
+<p>
+Érdemes megfigyelni a következőt: ha a vezérelem elé rendeztük a kisebbeket, mögé a nagyobbakat,
+az azt jelenti, hogy a vezérelem már a végleges helyére kerül. Ugyanis ha nála kisebből van
+emennyi (előtte), nála nagyobból meg amannyi (utána), akkor ezek a számok egyben a vezérelem helyét
+is meghatározzák. Hiszen ezek (emennyi és amannyi) nem fognak már változni.
+</p>
+</div>
+<div class="csakdoksi">
+   
+<p> Az algoritmus hatékonysága azon múlik, hogy sikerül-e jó vezérelemet választani. Akkor lehet 
+minden lépésben a kisebbekre és nagyobbakra szedett tömbrészeket egyenlő nagyságúvá tenni 
+(vagyis felezni a tömböt), ha a vezérelem éppen a tömb mediánja, azaz a rendezett tömb középső 
+eleme. Sajnos a mediánt nem tudjuk megmondani, hiszen ahhoz rendezve kellene legyen a tömb… 
+Ezért leginkább azt szokták csinálni, hogy találomra választanak egyet, akár éppen az elsőt 
+vezérelemnek, és kész. Ez persze nem optimális. Pár „start” gomb klikkelés után ez látszik is, 
+ha kijön egy olyan tömb, ahol 1 vagy 9 az első elem. Ilyenkor az első körben szinte semmi nem 
+történik. Emiatt van az, hogy bár átlagos esetben ez az algoritmus O(log n) időben tud 
+teljesíteni, de legrosszabb esetben ugyanúgy O(n<sup>2</sup>) időben fut le, mint az előbbiek. 
+Olyankor ugyanis pont a buborékrendezést kapjuk vissza. </p>
+<p class="megjegyzes">Érdekesség: jól optimalizálható az algoritmus,
+ha számokat kell rendezni. Mivel minden összehasonlítás a vezérelemet
+vizsgálja, azt körönként csak egyszer kell kiolvasni a memóriából. (Ez persze a C
+kódban nem látszik, csak a fordító által optimalizáltban.)
+<a href="http://en.wikipedia.org/wiki/C._A._R._Hoare#Further_reading">C. A. R. Hoare</a>
+angol programozó, matematikus. Legismertebb eredménye a gyorsrendezés algoritmusa, amelyet 26 évesen
+dolgozott ki.</p>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="28">
+<div class="slide" id="slide_28">
+<div class="slideheader">
+<h2><span class="oldalszam">28</span>Szétválogatás – kékek előre, pirosak hátra</h2>
+</div>
+
+<div id="szetvalogat" class="tomb">
+</div>
+<div id="szetvalogatcapt" class="tombcaption csakdoksi">
+</div>
+
+<br class="smallskip">
+
+<div class="kozep">
+   <button onclick="infoc.ea08.szetvalogatobj.start()">start</button>
+   <button onclick="infoc.ea08.szetvalogatobj.kovetkezo()">következő</button>
+   <button data-diapopup="szetvalogatasc">C kód</button>
+</div>
+
+<br class="smallskip">
+
+<p>Lényege: a tömb két végéről indulnak indexek.<br>Megkeressük balról az első
+pirosat, jobbról kéket, és megcseréljük őket.<br>Ezt folytatjuk, amíg a két index
+nem találkozik.</p>
+
+<div class="csakdoksi">
+<p>
+Az algoritmus működésének a lényege:
+</p>
+<ol>
+   <li>Indítunk két indexet, egyiket a tömb elejéről (bal), másikat a végéről (jobb).
+   <li>Balt addig növeljük, amíg kék golyóra mutat. Így találunk egy piros golyót.
+   <li>Jobbat addig csökkentjük, amíg piros golyóra mutat. Így
+   <li>Megcseréljük a talált pirosat a kékkel, és így folytatjuk, amíg
+      a két index „össze nem ér”.
+</ol>
+<p>
+Minden csere után természetesen növelhetjük a balt és csökkenthetjük a jobbat eggyel,
+hiszen a csere hatására a bal index alá kék, a jobb index alá pedig piros golyó
+kerül. Fontos, hogy a keresések során is figyeljük, hogy nem értek-e össze az
+indexek; ez előfordulhat ugyanis bármelyik pillanatban. (Ezzel azt is
+ellenőrizzük, hogy nem érünk-e a tömb végére valamelyik indexszel. Az is lehetséges,
+ha a tömb csak kék vagy csak piros golyót tartalmaz.)
+</p>
+</div>
+
+
+
+
+
+<pre class="brush: cbub "   id="szetvalogatasc">
+enum golyo { kek, piros };
+
+void szetvalogat(enum golyo *tomb, int meret) {
+   int bal = 0, jobb = meret-1;
+
+   while (bal &lt; jobb) {
+      while (bal &lt; jobb &amp;&amp; tomb[bal] != piros)  // pirosat keres
+         ++bal;
+      while (bal &lt; jobb &amp;&amp; tomb[jobb] != kek) // kéket keres
+         --jobb;
+
+      if (bal &lt; jobb) {
+         enum golyo temp = tomb[bal];   // csere
+         tomb[bal] = tomb[jobb];
+         tomb[jobb] = temp;
+         ++bal;
+         --jobb;        // egyből a következőkre
+      }
+   }
+}</pre>
+
+<div class="csakdoksi">
+<p>Vagyis pl. a kereső ciklusok megállhatnak így:</p>
+<div class="tomb">
+<span class="kek">0</span>
+<span class="kek">0</span>
+<span class="piros jelolt">1</span>
+<span class="piros">1</span>
+<span class="kek">0</span>
+<span class="piros">1</span>
+<span class="kek jelolt">0</span>
+<span class="piros">1</span>
+</div>
+<p>Ha megcseréljük a <code>tomb[bal]</code> és a <code>tomb[jobb]</code> elemet:</p>
+<div class="tomb">
+<span class="kek">0</span>
+<span class="kek">0</span>
+<span class="kek jelolt">0</span>
+<span class="piros">1</span>
+<span class="kek">0</span>
+<span class="piros">1</span>
+<span class="piros jelolt">1</span>
+<span class="piros">1</span>
+</div>
+<p>Akkor a csere után a két indexet gondolkodás nélkül
+növelhetjük és csökkenthetjük:</p>
+<div class="tomb">
+<span class="kek">0</span>
+<span class="kek">0</span>
+<span class="kek">0</span>
+<span class="piros jelolt">1</span>
+<span class="kek">0</span>
+<span class="piros jelolt">1</span>
+<span class="piros">1</span>
+<span class="piros">1</span>
+</div>
+<p>És innen folytatjuk megint piros-kék kereséssel.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="29">
+<div class="slide" id="slide_29">
+<div class="slideheader">
+<h2><span class="oldalszam">29</span><code>gyorsrendez.c</code></h2>
+</div>
+
+<pre class="brush: cbub "  >
+void gyorsrendez(double tomb[], int min, int max) {
+   double vezer = tomb[(min+max)/2]; // vezérelem: középső
+   int i = min, j = max;
+   while (i &lt;= j) {                  // piros/kék válogatás
+      while (tomb[i] &lt; vezer) ++i;
+      while (tomb[j] &gt; vezer) --j;
+      if (i &lt;= j) {
+         double tmp = tomb[i];
+         tomb[i] = tomb[j];
+         tomb[j] = tmp;
+         ++i;
+         --j;
+      }
+   }
+
+   if (min &lt; j) gyorsrendez(tomb, min, j); // rekurzió
+   if (i &lt; max) gyorsrendez(tomb, i, max);
+}</pre>
+
+<div class="csakdoksi">
+<p>Az algoritmus részei: a <code>while (i &lt;= j)</code> ciklus végzi a szétválogatást;
+utána pedig az utolsó két sorban láthatók a rekurzív hívások, amelyek rendezik a tömb
+így keletkezett két részét.</p>
+<p>Az <code>i&lt;=j</code> ciklus végefelé az <code>i</code> és
+a <code>j</code> index is a már helyre került vezérelemnél áll.
+A belső, piros-kék keresős ciklusok megállnak a megtalált
+vezérelemnél is, hiszen elem&lt;vezér és elem&gt;vezér a feltételeik. (Tehát a pirosat
+kereső ciklusnak a vezérelem pirosnak számít, a kéket kereső ciklusnak a vezérelem
+kéknek számít. Ha a vezérelem elöl van, akkor egy cserében hátrébb kerül, ha hátul
+van, akkor egy cserében előrébb kerül. Előfordulhat, hogy ide-oda pattog, de végül
+középre fog kerülni.) A ciklus futása után egy ilyen állapot lesz a tömbben:
+</p>
+<div class="tomb">
+<span class="kek">min</span>
+<span class="kek">&nbsp;</span>
+<span class="kek">&nbsp;</span>
+<span class="kek">&nbsp;</span>
+<span class="pivot jelolt">i,j</span>
+<span class="piros">&nbsp;</span>
+<span class="piros">&nbsp;</span>
+<span class="piros">&nbsp;</span>
+<span class="piros">max</span>
+</div>
+<p>Ezután az <code>i++</code> és <code>j--</code> utasítással még
+módosítjuk az indexeket (lásd a szétválogatási feladatot). Így
+<code>i</code> és <code>j</code> a rendezendő két részintervallum
+széleit is jelzik, és az eddigiektől eltérően <code>j&lt;i</code> igaz:</p>
+<div class="tomb">
+<span class="kek">min</span>
+<span class="kek">&nbsp;</span>
+<span class="kek">&nbsp;</span>
+<span class="kek jelolt">j</span>
+<span class="pivot">&nbsp;</span>
+<span class="piros jelolt">i</span>
+<span class="piros">&nbsp;</span>
+<span class="piros">&nbsp;</span>
+<span class="piros">max</span>
+</div>
+<p>Ezért van az, hogy a két rendezendő tömbrészlet a <code>[min,j]</code>
+és az <code>[i,max]</code> indexű részek.</p>
+<p>Az előzőektől eltérően ennek a függvénynek nem a tömb méretét kell
+megadni, hanem a rendezendő intervallum alsó és felső határát. De
+ez nem gond, hiszen egy egysoros függvénnyel ugyanolyan formában
+használhatjuk ezt is:</p>
+<pre class="brush: c "  >
+void gyorsrendez_indit(double tomb[], int meret) {
+   gyorsrendez(tomb, 0, meret-1);
+}</pre>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="30">
+<div class="slide" id="slide_30">
+<div class="slideheader">
+<h2><span class="oldalszam">30</span>Zárt terület kifestése (boundary fill)</h2>
+</div>
+
+<div class="columns c4060">
+<div>
+<h3>Adott pont kifestése</h3>
+<ul>
+   <li>Ha fekete, azt nem lehet festeni
+   <li>Ha már ki van festve, nincs teendő
+   <li>Amúgy ki kell festeni, <em>a szomszédait is!</em>
+</ul>
+
+<h3>Miért rekurzív?</h3>
+<ul>
+   <li>Mert ugyanaz a teendő minden pontnál
+   <li>A konkáv alakzatoknál elágazik
+</ul>
+
+<p class="csakdoksi">Próbáld ki a kifestőt!</p>
+
+</div>
+
+<div class="eloadaskicsinyit">
+    <div class="pixel" id="alakzat" style="font-size: 0.6em;"></div>
+    <div class="pixel" id="alakzatszinek" style="margin-top: 0.5em;"></div>
+</div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<section id="31">
+<div class="slide" id="slide_31">
+<div class="slideheader">
+<h2><span class="oldalszam">31</span>Labirintus generálása</h2>
+</div>
+
+<div class="columns c4060">
+<div>
+<h3>Adott pontban…</h3>
+<ul>
+   <li><em>Termet</em> építeni
+   <li>Mind a négy irányba véletlenszerűen:
+      <ul>
+      <li>Ha lehet, új <em>járatot</em>
+      <li>És <em>abból a pontból indulva: labirintus!</em>
+      </ul>
+   
+</ul>
+<h3>Rekurzió?</h3>
+<ul>
+   <li>Ha visszatért egy irányból…
+   <li>… akkor a többi irányt is meg kell próbálni
+   <li>Emlékezni kell, melyeket!
+   <li>„Bejárni a területet”
+</ul>
+</div>
+<div>
+<div class="pixel large" id="labirintus" style="font-size: 0.8em;"></div>
+<div style="margin-top: 1em;"><button onclick="infoc.ea08.labirintusobj.uj()">új labirintus</button></div>
+</div>
+</div>
+
+
+<div class="csakdoksi">
+
+<p>Ez nagyon hasonlít a zárt terület kifestéséhez – itt is a téglalap alakú terület minden
+pontjába el kell jutni. Annyi a különbség, hogy itt véletlenszerűen kell megválasztani azt, hogy
+merre megyünk tovább.</p>
+<p>A labirintus generálása mellett a <em>megfejtése</em> is megoldható rekurzívan. Ha elérkezünk
+az út során egy terembe, ahol egy elágazás van, akkor meg kell próbálni mind a négy irányt. Ha
+az egyikből visszatérünk, mert az zsákutca, akkor a másik irányba is meg kell próbálni. Az
+<em>útvonalkereső algoritmusok,</em> amelyek egy térképen megkeresik A és B város között a
+legrövidebb utat, általában is így működnek.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ea07.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

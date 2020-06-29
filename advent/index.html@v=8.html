@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Adventi naptár</title>
+<meta property="og:title" content="InfoC :: Adventi naptár">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="InfoC :: Adventi naptár">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="InfoC :: Adventi naptár">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="../modulz/logo_touch.png">
+<link rel="image_src" href="../modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="../modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="../modulz/style/localfonts.css@v10.css">
+<script src="../modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="../index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="../index.html">Kezdőlap</a>
+<li><a href="../nhf.html">Nagy házi feladat</a>
+<li><a href="../elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="../ea01.html">1. hét: bevezetés</a>
+<li><a href="../ea02.html">2. hét: algoritmusok</a>
+<li><a href="../ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="../ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="../ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="../ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../ea09.html">9. hét: láncolt listák</a>
+<li><a href="../ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="../ea12.html">12. hét: bináris fák</a>
+<li><a href="../ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="../ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="../gy02.html">2. hét: algoritmizálás</a>
+<li><a href="../gy03.html">3. hét: egyszerű programok</a>
+<li><a href="../gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="../gy05.html">5. hét: függvények</a>
+<li><a href="../gy06.html">6. hét: származtatott típusok</a>
+<li><a href="../gy07.html">7. hét: mutatók használata</a>
+<li><a href="../gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="../gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="../gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="../gy13.html">13. hét: bináris fák</a>
+<li><a href="../gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="../lab01.html">1. hét: operációs rendszer</a>
+<li><a href="../lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="../lab03.html">3. hét: egyszerű programok</a>
+<li><a href="../lab04.html">4. hét: tömbök</a>
+<li><a href="../lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="../lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="../lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="../lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="../lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="../lab11.html">11. hét: láncolt listák</a>
+<li><a href="../lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="../lab13.html">13. hét: bináris fák</a>
+<li><a href="../lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="../f01.html">1. hét: egyszerű programok</a>
+<li><a href="../f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="../f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="../f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="../f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="../f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="../f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="../f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="../f09.html">9. hét: láncolt listák</a>
+<li><a href="../f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="../f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="../f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="../jegyzet.html">Jegyzet és puska</a>
+<li><a href="../fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="../stilus.html">Kódolási stílus</a>
+<li><a href="../tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="../debugmalloc.html">Debugmalloc</a>
+<li><a href="../mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="../nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="../nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="../nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="../orak.html">SVG óra galéria</a>
+<li><a href="../angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="../turing.html">Mit tud a számítógép?</a>
+<li><a href="../bf.html">BF</a>
+<li><a href="../bitturmix.html">Bitturmix</a>
+<li><a href="../labirintus.html">Labirintusok</a>
+<li><a href="../tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="../karakterkodolas.html">Karakterkódolások</a>
+<li><a href="../strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="../internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="../sdl.html">SDL grafika</a>
+<li><a href="../sdl_telepito.html">SDL telepítés</a>
+<li><a href="../fa.html">Fák rajzolása</a>
+<li><a href="../lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="index.html@v=8.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="../mondatelemzo.html">Mondatelemző</a>
+<li><a href="../kifejezesek.html">Kifejezések</a>
+<li><a href="../derivalas.html">Deriválás</a>
+<li><a href="../ast_epit.html">AST: szintaxisfák</a>
+<li><a href="../ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="../ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="../advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<div class="float" style="margin-top: 0.25em; margin-bottom: 0;"><a href="../advent.html">&larr; vissza</a></div>
+<h1 class="eloadascim">Adventi naptár</h1>
+<h2>Teknőcgrafika</h2>
+
+<img src="advent8-spiral.png" class="float">
+
+<p>A programozásban sokszor egy probléma megoldásának úgy érdemes 
+nekiindulni, hogy kitalálunk egy új nyelvet, amellyel (amelyen) a 
+megoldást könnyebben megfogalmazhatjuk. Gondoljunk bele: ha a 
+kitalált nyelv szavait, kifejezéseit lefordítjuk C nyelvre (pl. C-
+beli függvényhívásokra), akkor a C nyelv lehetőségeit (ciklusok, 
+változók, függvények stb.) automatikusan kapjuk melléjük 
+kiterjesztésként. Vagyis a kitalált nyelvünknek automatikusan részévé
+válnak a C nyelv kombinációs és absztrakciós lehetőségei.
+
+<p>
+Ilyen kitalált nyelv a <em>teknőcgrafika,</em> amely sokak számára
+Comenius Logo néven lehet ismerős.
+Képzeljük el, hogy egy teknős
+sétál a képernyőn. Van nála egy ceruza, amellyel vagy húz vonalat
+séta közben, vagy nem. A következő utasításokat kaphatja:</p>
+
+<ul>
+   <li>Emelje fel a ceruzát. (A mozdulatai így nem fognak látszani.)
+   <li>Tegye le a papírra a ceruzát. (A nyoma így megmarad.)
+   <li>Sétáljon előre valamennyit.
+   <li>Forduljon el valahány fokkal.
+</ul>
+
+<p>Ezen a nyelven egy négyzet rajzolása így fogalmazható meg:</p>
+
+<div class="columns c7030">
+<div>
+<pre class="papir">
+Tedd le a ceruzát.
+Sétálj előre 5 centit.
+Fordulj balra 90 fokkal.
+Sétálj előre 5 centit.
+Fordulj balra 90 fokkal.
+Sétálj előre 5 centit.
+Fordulj balra 90 fokkal.
+Sétálj előre 5 centit.
+</pre>
+</div>
+<div>
+<img src="advent8-negyzet.svg" style="width: 12em;">
+</div>
+</div>
+
+<p>Ha megírjuk az alap teknőcműveleteket C-ben, akkor annak képességei
+kiterjesztik a teknőcgrafika képességeit is. A fenti példában
+az ismétlés lesz a C <code>for()</code> ciklusára cserélhető:
+
+<pre class="papir">
+Tedd le a ceruzát.
+for (i=0; i&lt;4; ++i) {
+   Sétálj előre 5 centit.
+   Fordulj balra 90 fokkal.
+}
+</pre>
+
+<p>Innentől kezdve pikk-pakk megy minden, használhatunk változókat,
+ciklusokat, írhatunk függvényeket, amelyek bonyolultabb műveleteket végeznek
+el és így tovább. Együtt használhatjuk a C nyelv adta lehetőségeket a grafikus
+nyelvünkkel. A fenti négyzet könnyen általánosítható akárhány
+oldalú szabályos sokszögre, ha nem 360/4=90 fokot fordulunk, hanem 360/n
+fokot, ahol n a csúcsok száma. Erre is írhatunk C függvényt:</p>
+
+<pre class="papir">
+void sokszög(int csúcsok, double oldalhossz) {
+   int i;
+   for (i=0; i&lt;csúcsok; ++i) {
+      Sétálj előre oldalhossz centit.
+      Fordulj balra 360/csúcsok fokot.
+   }
+}
+</pre>
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="index.html@v=8.html#1">A teknőc implementálása</a>
+<li><a href="index.html@v=8.html#2">Fraktálok</a>
+<li><a href="index.html@v=8.html#3">Rekurzív rajzok</a>
+<li><a href="index.html@v=8.html#4">A letölthető program</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>A teknőc implementálása</h2>
+</div>
+
+<p>A rajzolás megvalósításához az SDL függvénykönyvtárat használja
+a letölthető program. Ez egy viszonylag egyszerű, játékok írásához kifejlesztett
+függvénykönyvtár. A telepítéséről és használatáról az Érdekességek menü
+SDL menüpontja alatt már írtunk.
+</p>
+
+<pre class="brush: c float"  >
+typedef struct Teknoc {
+   double x, y;   /* pozicio */
+   double szog;   /* szog */
+   int rajzol;    /* rajzol-e mozgas kozben */
+   Uint32 szin;   /* szin */
+} Teknoc;</pre>
+
+<p>A teknőc a következő adatokkal rendelkezik, amelyeket egy struktúrában
+tárolhatunk:
+<ul>
+   <li>koordináta a képernyőn,
+   <li>irány (merre néz),
+   <li>ceruza lent/fent
+   <li>és a ceruza színe.
+</ul>
+<p>Az egyes alap lépésekhez mind érdemes függvényeket írni, amelyek első 
+paraméterükként átveszik azt a teknőcöt, amellyel dolgoznak.
+Így ingyen kapjuk azt a lehetőséget is a teknőcgrafikánkat most megalapozó C-ből,
+hogy több teknőcöt hozzunk létre, amelyek egymástól függetlenül tudnak 
+rajzolni.
+</p>
+
+<p>
+A függvények implementálása egyszerű. A legbonyolultabb függvény lent látható, és
+az előrefelé sétálást valósítja meg. (Ez is csak néhány sorból áll.)
+Ebben kapunk
+egy hosszt – ennyit kell a teknőcnek előre mennie. Az elmozdulás irányát
+az adja meg, hogy éppen merre néz. A képernyőn ennek komponensei az r·cos(szög)
+és r·sin(szög) képletekkel számolhatóak. A <code>math.h</code> szögfüggvényeinek
+a szöget radiánban
+kell megadnunk. A lenti kódrészletben a <code>line()</code> az SDL
+függvénye, és egy szép, „simított” szakaszt rajzol. Első paraméterével
+adjuk meg, hogy hova rajzoljon –
+<code>screen</code> azt jelenti, hogy közvetlenül a képernyőre. A további
+paraméterei a kezdő- és végpontok, illetve a szín.</p>
+
+<pre class="brush: c "  >
+void teknoc_elore(Teknoc *t, double r) {
+   double const deg2rad=3.14159265358979323846/180.0;
+   double ujx=t-&gt;x+r*cos(t-&gt;szog*deg2rad),
+          ujy=t-&gt;y-r*sin(t-&gt;szog*deg2rad);
+   if (t-&gt;rajzol)
+      aalineColor(screen, t-&gt;x, t-&gt;y, ujx, ujy, t-&gt;szin);
+   t-&gt;x=ujx;
+   t-&gt;y=ujy;
+}</pre>
+
+<p>A letölthető kódban a további megvalósított függvények az alábbiak:</p>
+
+<pre class="brush: c "  >
+/* inicializal egy teknocot: kepernyo kozepe, jobbra nez, nem rajzol */
+   void teknoc_init(Teknoc *t);
+/* beallitja a ceruza szinet, rgb: voros, zold, kek komponensek 0..255 */
+   void teknoc_szin(Teknoc *t, Uint8 r, Uint8 g, Uint8 b);
+/* leteszi a ceruzat */
+   void teknoc_rajzol(Teknoc *t);
+/* felemeli a ceruzat */
+   void teknoc_nemrajzol(Teknoc *t);
+/* balra fordul valahany fokkal */
+   void teknoc_fordul(Teknoc *t, double dszog);
+/* teleportal az adott kepernyokoordinatakra es iranyba */
+   void teknoc_teleport(Teknoc *t, double ujx, double ujy, double ujszog);</pre>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Fraktálok</h2>
+</div>
+
+<p>Fraktálok ismétlődő részekből álló görbék, minták, amelyek dimenziószáma nem egész szám.
+(Vigyázat: nem ez a pontos, matematikai definíció.) Mit jelent ez? A pontokról tudjuk, hogy nincs kiterjedésük:
+nulla dimenziósak. Egy görbének hossza van: egy dimenziós. Egy síkidomnak két irányban van kiterjedése,
+ezért két dimenziós, míg egy testnek három irányba. A fraktáloknál nem ilyen egyszerű a helyzet.
+
+<img src="advent8-rekurzio.png" class="float">
+
+<p>Nézzük meg egy kicsit jobban az ábrát. Ez a következőképpen keletkezik.
+Először adott egy szakasz (legyen ez egységnyi hosszú). Ezt a szakaszt elharmadoljuk,
+és a középső harmadot kicseréljük két egyharmad hosszú szakaszra (minta egy egyenlő
+oldalú háromszög lenne). Az így kapott töröttvonal hossza 4×1/3, azaz 4/3 lesz, ami
+az eredeti szakasz hosszának 4/3-adszorosa.
+
+<p>Ha ezt a műveletet megismételjük minden 1/3 hosszú szakaszra, a keletkező töröttvonalak
+hossza 4/3×1/3 lesz, és mivel összesen 4 van belőlük – az összegzet hosszuk 4/3×4/3, tehát
+(4/3)<sup>2</sup>. Így haladva minden lépésben a hossz az előző 4/3-szorosa lesz, tehát
+L=(4/3)<sup>n</sup> az n-edik lépés után. Ez nem korlátos: n növelésével a végtelenbe tart! Miért érdekes
+ez annyira? Azért, mert az ábra mérete viszont korlátos. Könnyen rajzolhatunk egy téglalapot,
+amelybe belefér, tehát az elfoglalt területe korlátos, a töröttvonal hossza mégsem az! Mivel csak
+egy vonalról van szó, nem mondhatjuk, hogy két dimenziós. Azt sem, hogy egy dimenziós, mivel
+a hossza bármely két tetszőleges pontja között is végtelen.
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Rekurzív rajzok</h2>
+</div>
+
+<p>Mivel a fenti, teknőcös függvényeket használhatjuk a saját, C-ben megírt rekurzív 
+függvényünkben, így ezek a rajzok könnyen elkészíthetőek. Az előbb leírt görbéhez,
+Koch görbéjéhez az alábbi rekurzív algoritmus vezet:</p>
+
+<ul>
+   <li>Ha n=0, akkor egy egyenes szakaszt kell rajzolni,
+   <li>Ha n&gt;0, akkor pedig a következőket kell tenni:
+      <ul>
+      <li>Kirajzolni az n-1-es ábrát,
+      <li>Elfordulni balra 60 fokkal, újabb rajzot készíteni,
+      <li>Jobbra fordulni 120 fokkal, újabb rajz,
+      <li>Balra 60 fok, és újabb rajz.
+      </ul>
+   
+</ul>
+
+<p>A fentiek C-ben, vagy éppen teknőcgrafikában, kinek hogy tetszik:</p>
+
+<pre class="brush: c "  >
+void fraktal(Teknoc *t, int mennyi, double mekkora) {
+   if (mennyi==0)
+      teknoc_elore(t, mekkora);
+   else {
+      fraktal(t, mennyi-1, mekkora);
+      teknoc_fordul(t, 60);
+      fraktal(t, mennyi-1, mekkora);
+      teknoc_fordul(t, -120);
+      fraktal(t, mennyi-1, mekkora);
+      teknoc_fordul(t, 60);
+      fraktal(t, mennyi-1, mekkora);
+   }
+}</pre>
+
+<img src="advent8-ho.png" class="float">
+
+<p>Ha egy hatszög oldalait cseréljük ilyen rajzokra, akkor egy hópelyhet kapunk.
+Kifordítva a rajzokat megkapjuk <a href="http://en.wikipedia.org/wiki/Koch_snowflake">Koch hópelyhét</a> is.
+Rengeteg ilyen tulajdonságú görbét lehet találni:
+<a href="http://en.wikipedia.org/wiki/Hilbert_curve">David Hilbert térkitöltő görbéje</a> is
+ilyen. Ezeket mind nagyon könnyű teknőcgrafikával, és az azt most megvalósító C
+nyelv egyik eszközével – a rekurzióval – megrajzolni.
+
+<pre class="brush: c "  >
+/* hópelyhet rajzol */
+for (i=0; i&lt;6; ++i) {
+   fraktal(&amp;t, 2, 10);
+   teknoc_fordul(&amp;t, 60);
+}</pre>
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>A letölthető program</h2>
+</div>
+
+<p>A program letölthető innen: <a href="advent8-teknoc.c">advent8-teknoc.c</a>.
+A lefordításhoz az SDL című írás ad segítséget
+(lásd az Érdekességek menüpontot – Windowshoz és Linuxhoz).
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="index.html@v=8.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="../index.html"><img src="../modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="../index.html">főoldal</a> · <a href="../elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Az SDL multimédiás könyvtár</title>
+<meta property="og:title" content="InfoC :: Az SDL multimédiás könyvtár">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Grafikus programozás az SDL multimédiás könyvtárral.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Grafikus programozás az SDL multimédiás könyvtárral.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="sdl.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Az SDL multimédiás könyvtár</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Grafikus programozás az SDL multimédiás könyvtárral.</p>
+</div>
+
+<img class="float" src="sdl/sdl.png">
+
+<p>Az SDL egy <em>platformfüggetlen multimédiás függvénykönyvtár</em>. A programozók számára egy 
+egységes felületet biztosít a grafikus megjelenítéshez, hangok megszólaltatásához, billentyűk, 
+egér és botkormányok kezeléséhez, miközben az egyes géptípusok, operációs rendszerek 
+különbségeit elfedi. Így az SDL-lel megírt program működik különféle Windows verziókon, de 
+Linuxokon, Mac OS X-en, és még néhány okostelefonon is.</p>
+
+<p>Az alap SDL-ben nincsenek vonal, kör, és egyéb primitívek kirajzolásához függvények. Ahhoz 
+további könyvtárakat kell telepíteni (pl. SDL_gfx). Ezen függvénykönyvtárak tudása viszont már 
+elég nagy. Az SDL_ttf segítségével bármilyen betűtípust használva rajzolhatunk, az SDL_mixer 
+több hang és zene megszólaltatását teszi lehetővé, az SDL_net pedig a hálózatprogramozás 
+ügyes-bajos dolgait rejti egy platformfüggetlen réteg mögé. Az SDL_image nevű kiegészítő sokféle 
+képformátumot (PNG, JPG) ismer; ilyen fájlokat lehet vele betölteni, és a programban kirajzolni.
+</p>
+
+<p>Ez az írás tartalmaz néhány olyan információt (pl. a többmodulos programokkal kapcsolatban), 
+amelyek csak egy későbbi előadás után lesznek teljesen érthetőek. De addig is használhatóak az 
+instrukciókat pontosan követve. Az <em>SDL telepítéséről</em> egy <a href="sdl_telepito.html">külön írásban</a> olvashattok.</p>
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="sdl.html#1">Az első program</a>
+<li><a href="sdl.html#2">Események, eseményvezérelt programozás</a>
+<li><a href="sdl.html#3">Az időzítők használata</a>
+<li><a href="sdl.html#4">Képfájlok beolvasása</a>
+<li><a href="sdl.html#5">Szövegek megjelenítése</a>
+<li><a href="sdl.html#6">A billentyűzet kezelése</a>
+<li><a href="sdl.html#7">Többmodulos projektek és az SDL-es programok futtatása</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Az első program</h2>
+</div>
+
+<img src="sdl/sdl-korok.png" class="float" alt="SDL: grafikus primitívek">
+
+<p>Alább látható az első program. Ez kirajzol néhány kört a képernyőre, utána pedig
+addig vár, amíg a felhasználó be nem zárja az ablakot a nagy piros X-szel.</p>
+
+<p>Az első lépés az SDL könyvtár inicializálása, ezt az <code>SDL_Init()</code>
+nevű függvénnyel tehetjük meg. Az SDL alrendszerekből áll (grafika, hang, időzítés
+stb.), ezek közül az első programban csak a grafikai alrendszerre van szükségünk,
+ezért a függvény paramétere <code>SDL_INIT_VIDEO</code> (később majd az
+<code>SDL_INIT_TIMER</code> is kell).</p>
+
+<p>Ezután létrehozunk egy 440×360 képpont méretű ablakot az <code>SDL_SetVideoMode()</code>
+hívással. Ennek harmadik paramétere a használandó színek számával kapcsolatos – nem
+lényeges, állíthatjuk nullára; a negyedik pedig a grafikus alrendszer beállításait
+adja meg, ez sem lényeges most. (<code>SDL_ANYFORMAT</code> annyit jelent, hogy
+bármilyen beállításokat elfogadunk, amit az operációs rendszer ad.)</p>
+
+<p>Az <code>SDL_SetVideoMode()</code> függvény visszatérési értéke egy <code>SDL_Surface</code>
+típusú pointer. Az <code>SDL_Surface</code> a kép típusa az alrendszernek: minden
+függvény, ami valamit kirajzol, egy ilyet vár első paramétereként, hogy tudja, melyik
+képre kell rajzolnia. Ezt a mutatót el kell mentenünk, mert később hivatkozni kell
+rá. Ha <code>NULL</code> pointert ad a függvény, az azt jelenti, hogy valami probléma
+történt. Ha nem, akkor viszont indulhat a rajzolás!</p>
+
+<pre class="brush: c "  >
+#include &lt;SDL.h&gt;
+#include &lt;SDL_gfxPrimitives.h&gt;
+#include &lt;math.h&gt;
+
+int main(int argc, char *argv[]) {
+    SDL_Event ev;
+    SDL_Surface *screen;
+    int x, y, r;
+
+    /* SDL inicializálása és ablak megnyitása */
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+    screen=SDL_SetVideoMode(440, 360, 0, SDL_ANYFORMAT);
+    if (!screen) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni az ablakot!\n&quot;);
+        exit(1);
+    }
+    SDL_WM_SetCaption(&quot;SDL peldaprogram&quot;, &quot;SDL peldaprogram&quot;);
+
+    r=50;
+
+    /* karika */
+    x=100; y=100;
+    circleRGBA(screen, x, y, r,                                 255, 0, 0, 255);
+    circleRGBA(screen, x+r, y, r,                               0, 255, 0, 255);
+    circleRGBA(screen, x+r*cos(3.1415/3), y-r*sin(3.1415/3), r, 0, 0, 255, 255);
+
+    /* antialias karika */
+    x=280; y=100;
+    aacircleRGBA(screen, x, y, r,                                 255, 0, 0, 255);
+    aacircleRGBA(screen, x+r, y, r,                               0, 255, 0, 255);
+    aacircleRGBA(screen, x+r*cos(3.1415/3), y-r*sin(3.1415/3), r, 0, 0, 255, 255);
+
+    /* kitoltott kor */
+    x=100; y=280;
+    filledCircleRGBA(screen, x, y, r,                                 255, 0, 0, 255);
+    filledCircleRGBA(screen, x+r, y, r,                               0, 255, 0, 255);
+    filledCircleRGBA(screen, x+r*cos(3.1415/3), y-r*sin(3.1415/3), r, 0, 0, 255, 255);
+
+    /* attetszo kor */
+    x=280; y=280;
+    filledCircleRGBA(screen, x, y, r,                                 255, 0, 0, 96);
+    filledCircleRGBA(screen, x+r, y, r,                               0, 255, 0, 96);
+    filledCircleRGBA(screen, x+r*cos(3.1415/3), y-r*sin(3.1415/3), r, 0, 0, 255, 96);
+
+    /* szoveg */
+    stringRGBA(screen, 110, 350, &quot;Kilepeshez: piros x az ablakon&quot;, 255, 255, 255, 255);
+
+    /* eddig elvegzett rajzolasok a kepernyore */
+    SDL_Flip(screen);
+
+    /* varunk a kilepesre */
+    while (SDL_WaitEvent(&amp;ev) &amp;&amp; ev.type!=SDL_QUIT) {
+    }
+
+    /* ablak bezarasa */
+    SDL_Quit();
+
+    return 0;
+}</pre>
+
+<p>A program köröket rajzol, négyféleképpen. Az első három körnél egyszerűen kiszínezi
+azokat a képpontokat (pixel), amelyek a körívre esnek. A második háromnál ennél okosabb. Ahol
+a körív nem pont a képpontra esik, ott a szomszédos képpontok között színátmenetet képez.
+Ezt az eljárást úgy nevezik, hogy antialiasing. Így a rajz szebb, a körív nem annyira recegős.</p>
+
+<p>A pozíció és a méret megadása után következik mindegyik függvénynél a szín megadása.
+Ezek három komponensből állnak: vörös, zöld és kék, mindegyik 0-tól 255-ig. 255, 0, 0 jelenti
+a vöröset, 255, 255, 255 pedig a teljesen fehéret. A legutolsó paraméter az átlátszatlanságot
+adja meg, amely ugyancsak egy 0 és 255 közötti érték. 0 jelenti a teljesen átlátszót, 255
+pedig a teljesen átlátszatlant. Ez látszik az alsó köröknél, ahol a jobb oldali köröknél
+az érték 255 helyett csak 96. Így azok színei keverednek.</p>
+
+<p>Miután elvégeztük az összes rajzolást, meg kell hívni az <code>SDL_Flip</code> függvényt
+a képernyőre. A rajzolások először csak a memóriában történtek, és igazából a hívás hatására
+kerül ki minden az ablakba. Ez azért előnyös, mert így a felhasználó nem fogja látni, ahogy
+egyesével jelennek meg az elemek, hanem csak a végeredményt – animációnál ez fontos lesz.
+A további rajzolásokkal a meglévő képet módosítjuk; az eredmény pedig egy újabb
+<code>SDL_Flip</code> hatására jelenik meg.</p>
+
+<p>Az SDL_gfx függvénykönyvtár néhány rajzeleme (grafikus primitíve):</p>
+
+<ul>
+    <li><code>pixelRGBA(kép, x, y, r, g, b, a)</code> – képpont rajzolása.
+    <li><code>lineRGBA(kép, x1, y1, x2, y2, r, g, b, a)</code> – szakasz.
+    <li><code>thickLineRGBA(kép, x1, y1, x2, y2, v, r, g, b, a)</code> – vastag szakasz.
+    <li><code>rectangleRGBA(kép, x1, y1, x2, y2, r, g, b, a)</code> – téglalap.
+    <li><code>boxRGBA(kép, x1, y1, x2, y2, r, g, b, a)</code> – kitöltött téglalap.
+    <li><code>circleRGBA(kép, x1, y1, R, r, g, b, a)</code> – kör.
+    <li><code>trigonRGBA(kép, x1, y1, x2, y2, x3, y3, r, g, b, a)</code> – háromszög.
+    <li><code>filledTrigonRGBA(kép, x1, y1, x2, y2, x3, y3, r, g, b, a)</code> – kitöltött háromszög.
+    <li><code>stringRGBA(kép, x, y, szöveg, r, g, b, a)</code> – szöveg.
+</ul>
+
+<p>A vonalas rajzokat (szakasz, kör, háromszög stb.) készítő függvényeknek mind van <code>aa
+</code>-val kezdődő párjuk is. Ezen felül minden függvénynek van egy nem <code>RGBA</code>-ra, 
+hanem <code>Color</code>-ra végződő nevű párja: az utóbbiak a négy, színt megadó paraméter 
+helyett csak egyetlen egyet várnak. Ez az egyetlen <code>Uint32</code> típusú paraméter <code>
+0xRRGGBBAA</code> formában tartalmazza a színkomponenseket és az átlátszóság információt. Tehát 
+mind a vörös, zöld, kék komponensnek, mind az átlátszóságnak egyetlen egy bájt jut. Így egy szín 
+egyetlen egy változóban is eltárolható. A 32 biten megadott színkód bitműveletekkel állítható 
+elő (<code>r&lt;&lt;24 | g&lt;&lt;16 | b&lt;&lt;8 | a</code>). Például az alábbi sorok teljesen 
+ekvivalensek, mindegyik félig átlátszó lila kört rajzol:</p>
+
+<pre class="brush: c "  >
+filledCircleRGBA(screen, 320, 240, 100, 255, 0, 255, 128);
+filledCircleRGBA(screen, 320, 240, 100, 0xFF, 0, 0xFF, 0x80);
+filledCircleColor(screen, 320, 240, 100, 0xFF00FF80);</pre>
+
+<p>A rajzoló függvények dokumentációja elérhető
+<a href="http://www.ferzkopp.net/Software/SDL_gfx-2.0/Docs/html/_s_d_l__gfx_primitives_8h.html">ezen az oldalon</a>,
+a teljes SDL_gfx függvénykönyvtáré pedig
+<a href="http://www.ferzkopp.net/Software/SDL_gfx-2.0/Docs/html/index.html">ezen az oldalon</a>.</p>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Események, eseményvezérelt programozás</h2>
+</div>
+
+<img src="sdl/sdl-pofa.png" class="float" alt="Események kezelése: egér">
+
+<p>Az egyszerű, konzolos programok lineárisan működnek: a <code>printf()</code>-fel mondhatunk 
+valamit a felhasználónak, a <code>scanf()</code>-fel pedig kérdezhetünk tőle valamit. Nem gond 
+az, hogy a <code>scanf()</code> megakasztja a programot, mert amíg nincs meg a bemenő adat, addig 
+úgysem tudna továbbhaladni a program. Egy játéknál, meg általában a grafikus programoknál ez 
+nincs így. A programnak itt egyszerre több bemenete van: a billentyűzetre és az egérre is 
+reagálnia kell, arról nem is beszélve, hogy ha a felhasználó épp nem nyúl semelyikhez, akkor is 
+folytatódnia kell a képernyőn látható eseményeknek. Nem akadhat meg a játék attól, hogy éppen 
+nem nyomtuk meg egyik gombot sem!</p>
+
+<p>Ezért találták ki az <em>eseményvezérelt programozást</em>. Az SDL a programhoz beérkező 
+eseményeket összegyűjti (billentyűzet, egérmozdulatok, időzítések, ablak bezárása), és azokat 
+keletkezésük sorrendjében adja nekünk. Ezt a programnak egy eseményhurokban (event loop) kell 
+feldolgoznia, amely nagyon egyszerű:</p>
+
+<pre class="brush: c "  >
+SDL_Event event;
+
+while (fut_a_program) {
+    SDL_WaitEvent(&amp;event);  /* várunk a következő eseményre */
+
+    switch (event.type) {   /* esemény típusa szerinti esetszétválasztás */
+
+        ...                 /* esemény feldolgozása */
+
+    }
+}</pre>
+
+<p>Az <code>SDL_WaitEvent()</code> függvény addig vár, amíg meg nem történik a következő 
+esemény; amint az bekövetkezik, akkor az adatait beteszi az <code>event</code> nevű, 
+<code>SDL_Event</code> típusú struktúrába (azért veszi át cím szerint, hogy ezt meg tudja 
+tenni). Ezután az esemény feldolgozhatjuk, annak típusa szerint:</p>
+
+<ul>
+    <li><code>case <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlquitevent.html">SDL_QUIT</a>:</code> kilépés, a felhasználó az ablak bezárása
+        piros x-re kattintott; <code>break;</code>
+    <li><code>case <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlmousemotionevent.html">SDL_MOUSEMOTION</a>:</code> egérmozdulat; <code>break;</code>
+    <li><code>case <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlmousebuttonevent.html">SDL_MOUSEBUTTONDOWN</a>: case SDL_MOUSEBUTTONUP:</code> egérgomb kattintás és elengedés; <code>break;</code>
+    <li><code>case <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkeyboardevent.html">SDL_KEYDOWN</a>: case SDL_KEYUP:</code> billentyűzet események; <code>break;</code>
+</ul>
+
+<p>Az <code>event</code> struktúra az esemény típusától függően további információkat tartalmaz. 
+Egérmozgás esetén az <a 
+href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlmousemotionevent.html"><code>event.motion</code></a> 
+struktúrát tölti ki az <code>SDL_WaitEvent()</code> a koordinátákkal: <code>event.motion.x</code>
+a vízszintes, <code>event.motion.y</code> a függőleges koordináta. Kattintásnál az <a 
+href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlmousebuttonevent.html"><code>event.button</code></a> 
+struktúra adattagjai vesznek fel értékeket: az <code>event.button.button</code> adattag mutatja, 
+hogy melyik gombról van szó <code>SDL_BUTTON_LEFT</code>, <code>SDL_BUTTON_MIDDLE</code>, 
+<code>SDL_BUTTON_RIGHT</code>.</p>
+
+<p>Az alábbi C programban rajzolni lehet az egérrel. A működést a kód közepén lévő eseményhurok
+irányítja. A bal gombbal lehet rajzolni, a jobb gombbal pedig törölni az ablak tartalmát.
+Az eseményvezérlés kellemes vonása, hogy a program gyakorlatilag semennyire sem terheli le
+a számítógépet. Amíg nincs esemény, addig ugyanúgy alszik, ahogyan azt egy <code>scanf()</code>-re
+várakozás esetén is teszi.</p>
+
+<pre class="brush: c "  >
+#include &lt;SDL.h&gt;
+#include &lt;SDL_gfxPrimitives.h&gt;
+#include &lt;math.h&gt;
+
+int main(int argc, char *argv[]) {
+    SDL_Event event;
+    SDL_Surface *screen;
+    int elozox, elozoy, click, quit, rajzoltam;
+
+    /* SDL inicializálása és ablak megnyitása */
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+    screen=SDL_SetVideoMode(360, 360, 0, SDL_ANYFORMAT);
+    if (!screen) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni az ablakot!\n&quot;);
+        exit(1);
+    }
+    SDL_WM_SetCaption(&quot;SDL esemenyek&quot;, &quot;SDL esemenyek&quot;);
+
+    /* az esemenyvezerelt hurok */
+    quit = 0;
+    click = 0;
+    elozox = 0;
+    elozoy = 0;
+    while (!quit) {
+        SDL_WaitEvent(&amp;event);
+
+        rajzoltam = 0;
+
+        switch (event.type) {
+            /* eger kattintas */
+            case SDL_MOUSEBUTTONDOWN:
+                if (event.button.button == SDL_BUTTON_LEFT) {
+                    click = 1;
+                    elozox = event.button.x;
+                    elozoy = event.button.y;
+                }
+                else if (event.button.button == SDL_BUTTON_RIGHT) {
+                    boxColor(screen, 0, 0, 359, 359, 0x000000FF);
+                    rajzoltam = 1;
+                }
+                break;
+            /* egergomb elengedese */
+            case SDL_MOUSEBUTTONUP:
+                if (event.button.button == SDL_BUTTON_LEFT) {
+                    click = 0;
+                }
+                break;
+            /* eger mozdulat */
+            case SDL_MOUSEMOTION:
+                if (click) {
+                    aalineColor(screen, elozox, elozoy,
+                                        event.motion.x, event.motion.y, 0xFFFFFFFF);
+                    rajzoltam = 1;
+                }
+                /* a kovetkezo mozdulat esemenyhez */
+                elozox = event.motion.x;
+                elozoy = event.motion.y;
+                break;
+            /* ablak bezarasa */
+            case SDL_QUIT:
+                quit=1;
+                break;
+        }
+
+        if (rajzoltam)
+            SDL_Flip(screen);
+    }
+
+    SDL_Quit();
+
+    return 0;
+}</pre>
+
+<p>Maga az eseményhurok ennél a progamnál tulajdonképpen egy állapotgép. Na nem azért, mert 
+<code>switch()</code> van benne (az csak az események típusának megállapításához kell), hanem 
+mert az egyes események jelentése eltérő attól függően, hogy mik történtek a múltban. Például az 
+egérmozdulatnál csak akkor rajzolunk, ha előzőleg egy kattintás eseményt már feldolgoztunk, és 
+minden mozdulatnál megjegyezzük a koordinátákat, hogy a legközelebbi ugyanilyen eseménynél 
+tudjuk, honnan hova kell húzni a vonalat.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Az időzítők használata</h2>
+</div>
+
+<img src="sdl/sdl-golyo.png" class="float" alt="Pattogó labda">
+
+<p>Előbb arról volt szó, hogy a program futásának nem szabad megszakadnia amiatt, mert eseményre 
+vár – és aztán jött egy program forráskódja, amely nem csinál semmit, azaz alszik az események 
+között. Hogy fog akkor a játék tovább futni, amíg a felhasználó nem nyúl se a billentyűzethez, 
+se az egérhez? Nagyon egyszerű: létre kell hozni egy időzítőt, amely adott időközönként generál 
+egy eseményt. Ha létrejön az esemény, annak hatására fel fog ébredni az eseményhurok – de fel fog 
+ébredni a billentyűzet vagy az egér hatására is.</p>
+
+<p>Időzítőt létrehozni az <code>SDL_AddTimer()</code> függvénnyel lehet. Ennek paraméterei a 
+következők: 1) mennyi idő múlva hívódjon meg (ezredmásodperc), 2) melyik függvény hívódjon meg, 
+3) egy tetszőleges mutató, amit paraméterként meg fog kapni a függvény. (Ha ez nem kell semmire, 
+akkor lehet NULL.) A függvény visszatérési értéke egy <code>SDL_TimerID</code> típusú azonosító, 
+amivel hivatkozhatunk az időzítőre (pl. az <code>SDL_RemoveTimer()</code>-nek paraméterként adva 
+letilthatjuk azt.) A hívás tehát így néz ki:</p>
+
+<pre class="brush: c "  >
+id = SDL_AddTimer(20, idozit, NULL);</pre>
+
+<p>A paraméterként adott függvény fejléce kötött, ilyen kell legyen:</p>
+
+<pre class="brush: c "  >
+Uint32 idozit(Uint32 ms, void *param);</pre>
+
+<p>Vagyis az SDL időzítője által meghívott függvény megkapja paraméterként azt, hogy milyen 
+időközökre lett beállítva, és a tetszőleges felhasználói paramétert. Visszatérési értéke pedig 
+egy egész szám, hogy legközelebb hány ezredmásodperc múlva hívódjon meg. Legegyszerűbb, ha egy 
+<code>return ms;</code> sorral fejezzük be a függvényt, amiben általában amúgy sincs más, csak 
+egy felhasználói típusú esemény létrehozása, és beillesztése a várakozási sorba:</p>
+
+<pre class="brush: c "  >
+Uint32 idozit(Uint32 ms, void *param) {
+    SDL_Event ev;
+    ev.type = SDL_USEREVENT;
+    SDL_PushEvent(&amp;ev);
+    return ms;   /* ujabb varakozas */
+}</pre>
+
+<p>Az eseménykezelő hurkot tehát ki kell egészíteni az SDL_USEREVENT típusú esemény(ünk) 
+feldolgozásával. A labdát pattogtató program így néz ki:</p>
+
+<pre class="brush: c "  >
+#include &lt;SDL.h&gt;
+#include &lt;SDL_gfxPrimitives.h&gt;
+
+/* ez a fuggveny hivodik meg az idozito altal.
+ * betesz a feldolgozando esemenyek koze (push) egy felhasznaloi esemenyt */
+Uint32 idozit(Uint32 ms, void *param) {
+    SDL_Event ev;
+    ev.type = SDL_USEREVENT;
+    SDL_PushEvent(&amp;ev);
+    return ms;   /* ujabb varakozas */
+}
+
+int main(int argc, char *argv[]) {
+    enum { ABLAK=360, GOLYO_R=10 };
+    struct Golyo {
+        int x, y;
+        int vx, vy;
+    };
+    SDL_Event event;
+    SDL_Surface *screen;
+    int quit;
+    SDL_TimerID id;
+    struct Golyo g;
+
+    /* SDL inicializálása és ablak megnyitása */
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+    screen = SDL_SetVideoMode(ABLAK, ABLAK, 0, SDL_ANYFORMAT);
+    if (!screen) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni az ablakot!\n&quot;);
+        exit(1);
+    }
+    SDL_WM_SetCaption(&quot;SDL idozites&quot;, &quot;SDL idozites&quot;);
+
+    quit = 0;
+    g.x = ABLAK/2;
+    g.y = ABLAK/3;
+    g.vx = 3;
+    g.vy = 2;
+    /* idozito hozzaadasa: 20 ms mulva hivodik meg eloszor */
+    id = SDL_AddTimer(20, idozit, NULL);
+    /* szokasos esemenyhurok */
+    while (!quit) {
+        SDL_WaitEvent(&amp;event);
+
+        switch (event.type) {
+            /* felhasznaloi esemeny: ilyeneket general az idozito fuggveny */
+            case SDL_USEREVENT:
+                /* kitoroljuk az elozo poziciojabol */
+                filledCircleColor(screen, g.x, g.y, GOLYO_R, 0x000000FF);
+                /* kiszamitjuk az uj helyet */
+                g.x += g.vx;
+                g.y += g.vy;
+                /* visszapattanás */
+                if (g.x&lt;GOLYO_R || g.x&gt;ABLAK-GOLYO_R)
+                    g.vx *= -1;
+                if (g.y&lt;GOLYO_R || g.y&gt;ABLAK-GOLYO_R)
+                    g.vy *= -1;
+                /* ujra kirajzolas, es mehet a kepernyore */
+                filledCircleColor(screen, g.x, g.y, GOLYO_R, 0x8080FFFF);
+                SDL_Flip(screen);
+                break;
+
+            case SDL_QUIT:
+                quit = 1;
+                break;
+        }
+    }
+    /* idozito torlese */
+    SDL_RemoveTimer(id);
+
+    SDL_Quit();
+
+    return 0;
+}</pre>
+
+<p>Itt nagyon fontos, hogy csak a kép teljes megrajzolása után hívjuk meg az 
+<code>SDL_Flip()</code>-et. Ha a törlés után is meghívnánk, akkor az animáció villódzna 
+(flicker), így viszont szép, folytonos a megjelenítés. Törölni viszont kell, hiszen mindig az 
+előzőleg megrajzolt képet módosítjuk.</p>
+
+<p>Nem csak egy, hanem akár egyszerre több időzítőt is létrehozhatunk. Hogy ezeket meg lehessen 
+különböztetni, az általuk generált eseményeknek érdemes külön azonosítót adni. Az események 
+típusa, az <code>event.type</code> adattag nem felsorolt típus, hanem egy egyszerű egész szám. 
+Az SDL dokumentációja pedig azt mondja, hogy az <code>SDL_USEREVENT</code> konstanstól (ez egy 
+felsorolt típusú érték) fölfelé bármilyen saját eseményt definiálhatunk. Ezért ezeket 
+használhatjuk akár úgy is, hogy az egyik időzítőnk <code>SDL_USEREVENT+1</code>, a másik 
+<code>SDL_USEREVENT+2</code> stb. típusú eseményeket generál.</p>
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Képfájlok beolvasása</h2>
+</div>
+
+<img src="sdl/sdl-sakk.png" class="float" alt="Sakktábla" style="width: 20em;">
+
+<p>Ez nagyon egyszerű feladat: az SDL_image nevű függvénykönyvtárnak van egy 
+<code>IMG_Load()</code> nevű függvénye. Ennek egyetlen paramétere a <em>betöltendő kép,</em> ami 
+elég sokféle formátumú lehet (az SDL_image dokumentációja szerint BMP, GIF, JPEG, LBM, PCX, PNG, 
+PNM, TGA, TIFF, WEBP, XCF, XPM és XV). A függvény visszatérési értéke egy 
+<code>SDL_Surface*</code>, vagyis egy mutató a betöltött képre. Ezzel tudunk később hivatkozni 
+rá, mert bent maradt a gép memóriájában. Ha már nincs rá szükség, <em>fel kell azt 
+szabadítani,</em> az <code>SDL_FreeSurface()</code> függvénnyel. Ha ezt nem tesszük meg, a 
+betöltött képek miatt a programunk egyre több memóriát foglal. Úgyhogy ez fontos!</p>
+
+<p>A betöltött képpel sincsen nehéz dolgunk: az <code>SDL_BlitSurface()</code> függvény tud 
+kép(részlet)et másolni egyik <code>SDL_Surface</code>-ről a másikra. Ennek a paraméterei: 
+forráskép, forrás téglalap, cél kép, cél téglalap (bal felső sarka). Vagyis nem csak a teljes 
+képet tudja másolni, hanem annak csak egy részletét is, a cél kép tetszőleges pozíciójára. A 
+pozíciókat és a méreteket <code>SDL_Rect</code> típusú struktúrákkal kell megadni; ezekre a 
+függvény pointereket vesz át:</p>
+
+<pre class="brush: c "  >
+SDL_Rect forrasterulet = { forras_x, forras_y, forras_szelesseg, forras_magassag };
+SDL_Rect celpozicio    = { cel_x, cel_y, 0, 0 };
+
+SDL_BlitSurface(forraskep, &amp;forrasterulet, celkep, &amp;celpozicio);</pre>
+
+<p>Ha a teljes forrás képet szeretnénk másolni, akkor a forrás téglalapra mutató pointer lehet 
+<code>NULL</code>; ha a cél kép bal felső sarkába szánjuk a képet, akkor pedig a cél téglalap 
+pointere helyett elfogadott <code>NULL</code> pointert adni. (A struktúra adattagjai: 
+<code>x</code>, <code>y</code> bal felső sarok, <code>w</code>, <code>h</code> szélesség és 
+magasság.)</p>
+
+<img src="sdl/pieces.png" class="kozep" alt="Sakk figurák">
+<div class="kozep"><a href="sdl/pieces.png">pieces.png</a> (klikk a letöltéshez)</div>
+
+<p>Az alábbi programban kihasználjuk azt, hogy a kép egy részét is lehet másolni. A program 
+tartalmaz egy felsorolt típust, amely a fenti képen látható figurák sorrendjében nevezi meg 
+azokat. A <code>mezo_rajzol()</code> függvényen belül kiszámolódik a fenti képen belüli 
+koordináták (melyik figuráról van szó), és a cél koordináták is (melyik mezőre kerül). Ez a kép 
+egyébként átlátszó képpontokat is tartalmaz, az SDL ezt is támogatja. A fájlt le kell tölteni, 
+és a futtatható (.exe) mellé tenni <code>pieces.png</code> néven.</p>
+
+<p>A program futása közben bármikor létrehozhatunk egyéb képeket is az 
+<code>SDL_CreateRGBSurface()</code> függvényhívással (lásd a <a 
+href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlcreatergbsurface.html">dokumentációt</a>). Ez arra jó, 
+ha munka képrészletekkel szeretnénk dolgozni; pl. egy háttérképet bonyolult műveletekkel 
+megrajzolunk, és később már csak a megrajzolt képet másolgatjuk az ablakba. Csak arra kell 
+figyelni, hogy minden külön létrehozott képet szabadítsunk is fel az 
+<code>SDL_FreeSurface()</code> függvénnyel, ha már nem kell.</p>
+
+<p>A letöltött képfájlt (pieces.png) a projekt mappájába kell tenni.</p>
+
+<pre class="brush: c "  >
+#include &lt;SDL.h&gt;
+#include &lt;SDL_image.h&gt;
+#include &lt;SDL_gfxPrimitives.h&gt;
+#include &lt;math.h&gt;
+
+enum { MERET = 52, KERET = 26 };
+
+/* mezon allo figura. ugyanolyan sorrendben vannak, mint a kepen,
+ * igy a kapott egesz szamok megegyeznek a png-beli indexekkel */
+typedef enum Babu {
+    Ures = -1,
+    VKiraly, VVezer, VBastya, VFuto, VHuszar, VGyalog,
+    SKiraly, SVezer, SSastya, SFuto, SHuszar, SGyalog
+} Babu;
+typedef Babu Tabla[8][8];
+
+/* uj allassal tolti ki a parameterkent kapott tablat */
+void uj_allas(Tabla tabla) {
+    int x, y;
+
+    for (y=0; y&lt;8; y++)
+        for (x=0; x&lt;8; x++)
+            tabla[y][x]=Ures;
+    tabla[0][0]=SSastya; tabla[0][1]=SHuszar; tabla[0][2]=SFuto; tabla[0][3]=SVezer;
+    tabla[0][4]=SKiraly; tabla[0][5]=SFuto; tabla[0][6]=SHuszar; tabla[0][7]=SSastya;
+    for (x=0; x&lt;8; x++)
+        tabla[1][x]=SGyalog;
+    tabla[7][0]=VBastya; tabla[7][1]=VHuszar; tabla[7][2]=VFuto; tabla[7][3]=VVezer;
+    tabla[7][4]=VKiraly; tabla[7][5]=VFuto; tabla[7][6]=VHuszar; tabla[7][7]=VBastya;
+    for (x=0; x&lt;8; x++)
+        tabla[6][x]=VGyalog;
+}
+
+/* kiszamolja, hogy milyen koordinatan van a kepernyon az adott mezo */
+int palyapos(int koord) {
+    return MERET*koord + KERET;
+}
+
+/* kirajzol egy mezot; a forras a betoltott png, a cel nevu kepre rajzol.
+ * melyik babut, milyen koordinatakra: melyik, x, y. */
+void mezo_rajzol(SDL_Surface *forraskep, SDL_Surface *celkep, Babu melyik, int x, int y) {
+    /* a forras kepbol ezekrol a koordinatakrol, ilyen meretu reszletet masolunk. */
+    SDL_Rect src = { 12+(melyik%6)*62-2, 13+60*(melyik/6)-2, MERET, MERET };
+    /* a cel kepre, ezekre a koordinatakra masoljuk. (0, 0 lenne a meret, de az nem szamit,
+     * a masolando kepreszlet meretet az elozo struct adja meg. */
+    SDL_Rect dest = { x*MERET + KERET, y*MERET + KERET, 0, 0 };
+
+    /* mezo alapszine */
+    if (x%2 != y%2)
+        boxColor(celkep, palyapos(x), palyapos(y), palyapos(x+1)-1, palyapos(y+1)-1, 0xCCAD99FF);
+    else
+        boxColor(celkep, palyapos(x), palyapos(y), palyapos(x+1)-1, palyapos(y+1)-1, 0xE6D1C3FF);
+
+    if (melyik==Ures)
+        return;
+    /* kepreszlet masolasa */
+    SDL_BlitSurface(forraskep, &amp;src, celkep, &amp;dest);
+}
+
+/* kirajzolja az egesz tablat. forraskep a betoltott png, celkep ahova rajzol. */
+void tabla_rajzol(Tabla tabla, SDL_Surface *forraskep, SDL_Surface *celkep) {
+    int x, y;
+
+    /* az egeszet kitolti */
+    boxColor(celkep, 0, 0, celkep-&gt;w-1, celkep-&gt;h-1, 0x90E090FF);
+    rectangleColor(celkep, palyapos(0)-1, palyapos(0)-1, palyapos(8), palyapos(8), 0x00000080);
+    /* kirajzolja a mezoket */
+    for (y=0; y&lt;8; y++)
+        for (x=0; x&lt;8; x++)
+            mezo_rajzol(forraskep, celkep, tabla[y][x], x, y);
+}
+
+int main(int argc, char *argv[]) {
+    SDL_Event event;
+    SDL_Surface *screen;
+    SDL_Surface *babuk;
+    Tabla tabla;
+
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+    screen=SDL_SetVideoMode(MERET*8+KERET*2, MERET*8+KERET*2, 0, SDL_ANYFORMAT);
+    if (!screen) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni az ablakot!\n&quot;);
+        exit(1);
+    }
+    SDL_WM_SetCaption(&quot;SDL kepek&quot;, &quot;SDL kepek&quot;);
+
+    /* kep betoltese */
+    babuk = IMG_Load(&quot;pieces.png&quot;);
+    if (!babuk) {
+        fprintf(stderr, &quot;Nem sikerult betolteni a kepfajlt!\n&quot;);
+        exit(2);
+    }
+
+    /* uj allas letrehozasa es kirajzolasa */
+    uj_allas(tabla);
+    tabla_rajzol(tabla, babuk, screen);
+    SDL_Flip(screen);
+
+    while (SDL_WaitEvent(&amp;event) &amp;&amp; event.type!=SDL_QUIT) {
+    }
+
+    /* nincs mar ra szukseg: felszabaditjuk a memoriat */
+    SDL_FreeSurface(babuk);
+    SDL_Quit();
+
+    return 0;
+}</pre>
+
+<div class="sticky">Fontos!</div>
+
+<p>Néhány fontos dolog:</p>
+<ul>
+    <li>A betöltött képet, amíg nem dobtuk el az <code>SDL_FreeSurface()</code> függvénnyel,
+        akárhányszor használhatjuk.
+    <li>A képeket ide-oda adogathatjuk a programban: az <code>SDL_Surface*</code> típusú képhivatkozás
+        akár függvény eparamétere vagy visszatérési értéke is lehet.
+    <li>Az <code>SDL_BlitSurface()</code> függvény az utolsó paraméterében megadott
+        <code>SDL_Rect</code> téglalapba beírja, hogy a másolt kép mekkora területe
+        látható az ablakban (ami kisebb lehet a kép teljes méreténél, ha kilóg abból).
+        Ha egy <code>SDL_Rect</code> változót többször kell használni, akkor mindig
+        újra <code>w=0</code> és <code>h=0</code> értékeket kell tenni a struktúrába.
+</ul>
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Szövegek megjelenítése</h2>
+</div>
+
+<p>Az SDL_gfx <code>stringRGBA()</code> és <code>stringColor()</code> függvénye meg tud jeleníteni szövegeket (lásd az első 
+példaprogramot), de sajnos a használt betűk nagyon kicsik, és nem ismeri a magyar ékezetes 
+betűket sem (árvíztűrő tükörfúrógép). SDL_TTF függvénykönyvtár megoldja mindkét problémát. (A 
+dokumentációja <a href="http://www.libsdl.org/projects/SDL_ttf/docs/">itt érhető el.</a>) Ez 
+tetszőleges True Type betűtípust be tud olvasni (Arial, Trebuchet stb.), és helyesen tudja 
+kezelni az ékezetes betűket is.</p>
+
+<p>Bár az angol ábécé betűit kódoló ASCII szabvány gyakorlatilag mára egyeduralkodóvá vált a 
+világon, az ékezetes betűket és egyéb karaktereket kódoló szabványokról ez sajnos nem mondható 
+el. Több kódtáblát, azaz betű&rarr;szám táblázatot is használnak elterjedten a világon; az 
+egységes Unicode kódolás még nem szorította ki a többit. (Ezekről bővebben a <a href="karakterkodolas.html">Rémtörténet a karakterkódolásokról</a> írásban 
+olvashatsz.) A többféle kódtábla miatt az SDL_TTF-ben minden szövegrajzoló függvénynek három 
+változata van: 1) a Latin-1 kódolású szöveget, 2) a Unicode kódolású szöveget, és 3) az UTF-8 
+kódolású szöveget váró függvény.</p>
+
+<p>A használat menete a következő. A használandó betűtípus fájlt először meg kell nyitni az 
+<code>TTF_OpenFont()</code> függvényhívással. Ilyenkor meg kell adni a betűk méretét is. A 
+függvény visszatérési értéke egy <code>TTF_Font</code> típusú mutató, amellyel hivatkozni lehet 
+a betűtípusra (ilyenből több is lehet), és amelyet a <code>TTF_CloseFont()</code> függvénynek a 
+program végén oda kell adni, hogy felszabadítsa a memóriaterületet.</p>
+
+<img src="sdl/sdl-ttf.png" class="kozep">
+
+<div class="kozep"><a href="sdl/liberationserif-regular.ttf.html">LiberationSerif-Regular.ttf</a> (klikk a letöltéshez)</div>
+
+<p>Minden alkalommal, amikor egy szöveget meg kell rajzolni, azt valamelyik 
+<code>TTF_Render&hellip;()</code> függvénnyel kell tenni (lásd <a 
+href="http://www.libsdl.org/projects/SDL_ttf/docs/SDL_ttf.html#SEC42">itt</a>), függően a 
+rajzolás kívánt minőségétől és a karakterkódolástól. A függvények visszatérnek egy 
+<code>SDL_Surface</code> típusú mutatóval, mivel a rajzolások kimenete egy kép, amelyben meg van 
+rajzolva a felirat. Ezt a képet lehet átmásolni a kívánt helyre a képernyőre az 
+<code>SDL_BlitSurface()</code> függvényhívással; egy feliratot akár többször, több helyre is. Ha 
+már nincs rá szükség, akkor pedig fel kell szabadítani a hozzá tartozó memóriaterületet az 
+<code>SDL_FreeSurface()</code> hívással. (Természetesen ha sok, különféle felirat van, akkor 
+ehhez a műveletsorhoz érdemes saját függvényeket írni. A programozásban nem copy-pastelünk!)
+
+<p>A rajzolások módja a következő lehet, bár a kép mindent elmond:</p>
+<ul>
+    <li><code>TTF_Render&hellip;_Solid</code>: gyors, de a betűk széle recegős.
+    <li><code>TTF_Render&hellip;_Shaded</code>: nem recegős. A háttér egy megadott szín.
+    <li><code>TTF_Render&hellip;_Blended</code>: nem recegős. A háttér átlátszó.
+</ul>
+
+<p>Betűtípusokat a Windows <code>C:\Windows\Fonts</code> mappájában, vagy a Linux
+<code>/usr/share/fonts/truetype</code> mappájában lehet találni. Meg a neten egy
+csomó helyen, csak sajnos az ingyenes betűtípusokból hiányozni szokott a hosszú <code>ő</code> és az <code>ű</code>
+betű. A lenti program a Liberation Serif nevű betűtípust használja. A linkre
+kattintva letölthető fájlt a Code::Blocks projekt mappájába kell tenni.</p>
+
+<pre class="brush: c "  >
+#include &lt;SDL.h&gt;
+#include &lt;SDL_gfxPrimitives.h&gt;
+#include &lt;SDL_ttf.h&gt;
+
+int main(int argc, char *argv[]) {
+    SDL_Color feher = {255, 255, 255}, piros = {255, 0, 0};
+    SDL_Rect hova = { 0, 0, 0, 0 };
+    SDL_Event event;
+    SDL_Surface *screen;
+    TTF_Font *font;
+    SDL_Surface *felirat;
+    int i;
+
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+    screen=SDL_SetVideoMode(480, 200, 0, SDL_ANYFORMAT);
+    if (!screen) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni az ablakot!\n&quot;);
+        exit(1);
+    }
+    SDL_WM_SetCaption(&quot;SDL betutipusok&quot;, &quot;SDL betutipusok&quot;);
+
+    /* hatter */
+    for (i=0; i&lt;500; ++i)
+        filledCircleRGBA(screen, rand()%screen-&gt;w, rand()%screen-&gt;h,
+                         10+rand()%5, rand()%256, rand()%256, rand()%256, 64);
+
+    /* betutipus betoltese, 32 pont magassaggal */
+    TTF_Init();
+    font = TTF_OpenFont(&quot;LiberationSerif-Regular.ttf&quot;, 32);
+    if (!font) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni a fontot! %s\n&quot;, TTF_GetError());
+        exit(2);
+    }
+
+    /* felirat megrajzolasa */
+    /* ha sajat kodban hasznalod, csinalj belole fuggvenyt! */
+    felirat = TTF_RenderUTF8_Solid(font, &quot;TTF_RenderUTF8_Solid()&quot;, feher);
+    /* felirat kep masolasa a kepernyore */
+    hova.x = (screen-&gt;w-felirat-&gt;w)/2;
+    hova.y = 20;
+    SDL_BlitSurface(felirat, NULL, screen, &amp;hova);
+    /* a feliratot tartalmazo kepre nincs mar szukseg */
+    SDL_FreeSurface(felirat);
+
+    /* ha sajat kodban hasznalod, csinalj belole fuggvenyt! */
+    felirat = TTF_RenderUTF8_Shaded(font, &quot;TTF_RenderUTF8_Shaded()&quot;, feher, piros);
+    hova.x = (screen-&gt;w-felirat-&gt;w)/2;
+    hova.y += 40;
+    SDL_BlitSurface(felirat, NULL, screen, &amp;hova);
+    SDL_FreeSurface(felirat);
+
+    /* ha sajat kodban hasznalod, csinalj belole fuggvenyt! */
+    felirat = TTF_RenderUTF8_Blended(font, &quot;TTF_RenderUTF8_Blended()&quot;, feher);
+    hova.x = (screen-&gt;w-felirat-&gt;w)/2;
+    hova.y += 40;
+    SDL_BlitSurface(felirat, NULL, screen, &amp;hova);
+    SDL_FreeSurface(felirat);
+
+    felirat = TTF_RenderUTF8_Blended(font,
+        /* ez az utf8 szoveg azert nez ki ilyen rosszul,
+         * mert szinte csak ekezetes betu van benne */
+        &quot;\xC3\xA1rv\xC3\xADzt\xC5\xB1r\xC5\x91 &quot;
+        &quot;t\xC3\xBCk\xC3\xB6rf\xC3\xBAr\xC3\xB3g\xC3\xA9p &quot;
+        &quot;\xE2\x98\xBA \xE2\x82\xAC&quot;, feher);
+    hova.x = (screen-&gt;w-felirat-&gt;w)/2;  /* kozepre vele */
+    hova.y += 40;
+    SDL_BlitSurface(felirat, NULL, screen, &amp;hova);
+    SDL_FreeSurface(felirat);
+
+    /* nem kell tobbe */
+    TTF_CloseFont(font);
+
+    SDL_Flip(screen);
+    while (SDL_WaitEvent(&amp;event) &amp;&amp; event.type!=SDL_QUIT) {
+    }
+
+    SDL_Quit();
+
+    return 0;
+}</pre>
+
+<div class="sticky">Fontos!</div>
+<p>A <code>TTF_Init()</code> függvényhívást elég egyszer megtenni a program legelején. A 
+<code>TTF_OpenFont()</code> által beolvasott betűtípus pedig akárhányszor használható – annyi 
+szöveget írhatunk ki vele, amennyit csak szeretnénk. Akár többféle betűtípus is lehet betöltve 
+egyszerre. Ha valamelyikre nincs már szükségünk, csak akkor kell felszabadítani a hozzá tartozó 
+memóriaterületet egy <code>TTF_CloseFont()</code> hívással. Ha többször is szeretnénk használni 
+a betűtípust, nem szabad mindig törölni és újra betölteni azt, mivel nagyon időigényes az a 
+művelet! A betöltött betűtípusokat hivatkozó <code>TTF_Font*</code> típusú mutatók a képekhez 
+hasonlóan függvényeknek is átadhatjuk.</p>
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>A billentyűzet kezelése</h2>
+</div>
+
+<p>A billentyűzet kezelése SDL-ben nem nagy ördöngősség: <code>SDL_KEYDOWN</code>
+eseményt kapunk egy billentyű megnyomásánál, <code>SDL_KEYUP</code> eseményt az
+elengedésénél. Az esemény adatait tároló strktúrában az
+<a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/guideinputkeyboard.html#AEN334">alábbi adattagok</a> érhetőek el:</p>
+
+<ul>
+    <li><code>event.key.keysym.sym</code>: a lenyomott billentyű azonosítója,
+    <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkey.html">ebből</a> a táblázatból.
+    <li><code>event.key.keysym.mod</code>: módosító billentyűk (shift, ctrl stb.)
+    <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkey.html#SDLMOD">ebből</a> a táblázatból.
+    Mivel egyszerre több módosító is le lehet nyomva, egy bitenkénti ÉS <code>&amp;</code>
+    művelettel kell megvizsgálni azt, amelyik érdekes. A módosítók lenyomásakor
+    külön esemény is érkezik.
+    <li><code>event.key.keysym.unicode</code>: a karakter UNICODE kódja, ha van.
+    (Pl. a shift lenyomásakor nincs: 0.) Csak akkor van kitöltve, ha előzetesen
+    egy <code>SDL_EnableUNICODE(1)</code> hívást kiadtunk, és csak a billentyű
+    lenyomásakor, a felengedésekor nem.
+</ul>
+
+<p>Játékokban, ahol arra vagyunk kíváncsiak, hogy nyomva van-e tartva egy billentyű, nekünk kell 
+külön megjegyezni azt. Ez egyszerűen megoldható egy logikai típusú változóval, amelynek értékét 
+<code>SDL_KEYDOWN</code> esemény esetén igazra, <code>SDL_KEYUP</code> esemény esetén pedig 
+hamisra állítjuk.</p>
+
+<p>Az alábbi példaprogram egy szöveg beolvasását végző függvényt tartalmaz. Ez példa a UNICODE 
+karakterek kezelésére is. Kell neki a LiberationSerif-Regular.ttf nevű fájl, amelyet az 
+előző program is használt.</p>
+
+<pre class="brush: c "  >
+#include &lt;SDL.h&gt;
+#include &lt;SDL_gfxPrimitives.h&gt;
+#include &lt;SDL_ttf.h&gt;
+#include &lt;math.h&gt;
+ 
+/* Beolvas egy szoveget a billentyuzetrol.
+ * Ehhez rajzol egy zold keretet x, y, sz, m helyen, 'hatter' szinnel
+ * es 'szin' szinu betukkel.
+ * A rajzolashoz hasznalt font es a kepernyo surface-e az utolso parameterek.
+ * Az elso a tomb, ahova a beolvasott szoveg kerul.
+ * A visszateresi erteke logikai igaz, ha sikerult a beolvasas.
+ * Ha nem kell UNICODE text, akkor a dest tipusa char * legyen, a
+ * TTF_RenderUNICODE_Blended() fuggvenyhivas pedig TTF_RenderText_Blended-re cserelheto. */
+int input_text(Uint16 *dest, int x, int y, int sz, int m,
+               SDL_Color hatter, SDL_Color szin, TTF_Font *font, SDL_Surface *screen) {
+    SDL_Rect forras = { 0, 0, sz, m}, cel = { x, y, sz, m };
+    SDL_Surface *felirat;
+    SDL_Event event;
+    int hossz, kilep, enter;
+ 
+    hossz = 0;
+    dest[hossz] = 0x0000;   /* lezaro 0 */
+    SDL_EnableUNICODE(1);
+    enter = 0;
+    kilep = 0;
+    while (!kilep &amp;&amp; !enter) {
+        /* szoveg kirajzolasa */
+        boxRGBA(screen, x, y, x+sz-1, y+m-1, hatter.r, hatter.g, hatter.b, 255);
+        felirat = TTF_RenderUNICODE_Blended(font, dest, szin);
+        SDL_BlitSurface(felirat, &amp;forras, screen, &amp;cel);
+        SDL_FreeSurface(felirat);
+        rectangleRGBA(screen, x, y, x+sz-1, y+m-1, 0, 255, 0, 255);
+        /* updaterect: mint az sdl_flip, de csak a kepernyo egy darabjat */
+        SDL_UpdateRect(screen, x, y, sz, m);
+        
+        SDL_WaitEvent(&amp;event);
+        switch (event.type) {
+            case SDL_KEYDOWN:
+                switch (event.key.keysym.unicode) {
+                    case 0x0000:
+                        /* nincs neki megfelelo karakter (pl. shift gomb) */
+                        break;
+                    case '\r':
+                    case '\n':
+                        /* enter: bevitel vege */
+                        enter = 1;
+                        break;
+                    case '\b':
+                        /* backspace: torles visszafele, ha van karakter */
+                        if (hossz&gt;0)
+                            dest[--hossz] = 0x0000;
+                        break;
+                    default:
+                        /* karakter: tombbe vele, plusz lezaro nulla */
+                        dest[hossz++] = event.key.keysym.unicode;
+                        dest[hossz] = 0x0000;
+                        break;
+                }
+                break;
+            case SDL_QUIT:
+                /* visszatesszuk a sorba ezt az eventet, mert
+                 * sok mindent nem tudunk vele kezdeni */
+                SDL_PushEvent(&amp;event);
+                kilep = 1;
+                break;
+        }
+    }
+    
+    /* 1 jelzi a helyes beolvasast; = ha enter miatt allt meg a ciklus */
+    return enter;
+}
+ 
+ 
+int main(int argc, char *argv[]) {
+    SDL_Color feher = {255, 255, 255}, fekete = { 0, 0, 0 };
+    SDL_Rect hely;
+    Uint16 szoveg[100];
+    SDL_Event event;
+    SDL_Surface *screen, *felirat;
+    TTF_Font *font;
+    int i;
+ 
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+    SDL_WM_SetCaption(&quot;SDL szoveg bevitele&quot;, &quot;SDL szoveg bevitele&quot;);
+    screen=SDL_SetVideoMode(480, 200, 0, SDL_ANYFORMAT);
+    if (!screen) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni az ablakot!\n&quot;);
+        exit(1);
+    }
+    TTF_Init();
+    font = TTF_OpenFont(&quot;LiberationSerif-Regular.ttf&quot;, 32);
+    if (!font) {
+        fprintf(stderr, &quot;Nem sikerult megnyitni a fontot! %s\n&quot;, TTF_GetError());
+        exit(2);
+    }
+    SDL_EnableKeyRepeat(500, 30);
+ 
+    /* szoveg beolvasasa */
+    for (i=0; i&lt;500; ++i)
+        lineRGBA(screen, rand()%screen-&gt;w, rand()%screen-&gt;h, rand()%screen-&gt;w, rand()%screen-&gt;h,
+                         rand()%256, rand()%256, rand()%256, 64);
+    SDL_Flip(screen);
+    input_text(szoveg, 40, 80, 400, 40, fekete, feher, font, screen);
+ 
+    /* szoveg kirajzolasa */
+    if (szoveg[0]!=0x0000) {
+        boxColor(screen, 0, 0, screen-&gt;w, screen-&gt;h, 0x000000FF);
+        for (i=0; i&lt;100; ++i)
+            filledCircleRGBA(screen, rand()%screen-&gt;w, rand()%screen-&gt;h,
+                             20+rand()%5, rand()%256, rand()%256, rand()%256, 64);
+        felirat = TTF_RenderUNICODE_Blended(font, szoveg, feher);
+        hely.x = (screen-&gt;w - felirat-&gt;w)/2 + 2;
+        hely.y = (screen-&gt;h - felirat-&gt;h)/2 + 2;
+        SDL_BlitSurface(felirat, NULL, screen, &amp;hely);
+        SDL_FreeSurface(felirat);
+ 
+        SDL_Flip(screen);
+        while (SDL_WaitEvent(&amp;event) &amp;&amp; event.type!=SDL_QUIT)
+            ;
+    }
+ 
+    TTF_CloseFont(font);
+    SDL_Quit();
+ 
+    return 0;
+}</pre>
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Többmodulos projektek és az SDL-es programok futtatása</h2>
+</div>
+
+<p>Van pár apróság, amit tudni kell az SDL-es projektek fordításáról és futtatásáról.</p>
+
+<div class="sticky">Fontos!</div>
+
+<p>Az egyik a többmodulos projektekkel kapcsolatos. A Code::Blocks beépített SDL projekt 
+varázslója egy olyan projektet hoz létre, amelyben a fő forrásfájl neve <code>main.cpp</code>, 
+ami a kiterjesztése miatt alapértelmezetten nem C, hanem C++ fordítóval fordul. Ha újabb modult 
+adunk hozzá, annak pedig <code>.c</code> a kiterjesztése, azt a C fordító fogja kapni. Ugyan 
+megoldható, hogy a kettővel együtt dolgozzunk, de ennek technikai részletei túlmutatnak a 
+Prog1 tárgyon. Használjuk inkább az <a href="sdl_telepito.html">SDL telepítős</a> 
+írásból letölthető InfoC SDL projekt típust!</p>
+
+<p>A másik az SDL-es programok futtatása. Az SDL könyvtár lefordított függvényei nem kerülnek be 
+a mi programunk futtatható, <code>.exe</code> fájljába, hanem külön fájlokban vannak. A végleges 
+linkelést nem a fordító végzi, hanem az elindított program „húzza be” az indításakor a szükséges 
+programrészeket. Ezt dinamikus linkelésnek (dynamic linking) nevezzük. Ezek a függvénykönyvtárak 
+a <code>*.dll</code> fájlokban (dynamic link library) vannak. Ha az SDL-es programot el 
+szeretnénk indítani a Code::Blockson kívülről, akkor vele egy mappába kell tenni az SDL 
+<code>*.dll</code> fájljait is. Ezek a fent letölthető ZIP fájl <code>bin</code> mappájában 
+vannak. A nagyobb programok telepítőinek (installer) egyébként éppen ez a feladata, hogy a 
+program futásához szükséges dinamikusan betöltött könyvtárakat is a megfelelő helyre másolják.</p>
+
+<p>Fel szokott merülni az a kérdés is, hogyan kell olyan SDL-es programot csinálni, amelynek nem 
+nyílik külön konzol ablaka az indításkor. A Code::Blocks eltérő fordítási beállítások mellett tud
+<code>.exe</code> fájlt készíteni. Ha fent, a menüsor alatt a „Release” mód van kiválasztva a 
+„Debug” helyett, akkor olyan <code>.exe</code> fájlt készít, amely nem nyit magának konzol 
+ablakot. Az elkészült <code>.exe</code> a projekt mappájában, a <code>\bin\Release</code> 
+almappa alatt található.</p>
+
+<p>Windowson alapvetően a grafikus programoknál nem szokás az, hogy írjanak a szabványos 
+kimenetükre. Ezért ott az SDL bezárja a szabványos kimenetet, és megnyit helyette egy 
+<code>stdout.txt</code> nevű fájlt, amibe ezután a <code>printf()</code>-elt szövegek kerülnek. 
+(Ugyanez történik a szabványos hibakimenettel is.) Ezért hiába <code>printf()</code>-elünk az 
+SDL programokban, nem fog az a konzol ablakban megjelenni, még ha van is ilyen ablak. Ezt az SDL 
+FAQ-ban is megemlítik, <a href="http://sdl.beuc.net/sdl.wiki/FAQ_Console">itt</a>. Ennek 
+elkerülésére azt javasolják, hogy újra kell nyitni a konzol ablakot. Ezt a <code>main()</code> 
+függvény elejére, de az <code>SDL_Init()</code> hívás után az alábbi módon lehet megtenni:</p>
+
+<pre class="brush: c "  >
+#ifdef __WIN32__
+    freopen(&quot;CON&quot;, &quot;w&quot;, stdout);
+    freopen(&quot;CON&quot;, &quot;w&quot;, stderr);
+#endif</pre>
+
+<p>Ezután már lehet <code>printf()</code>-elni. A <code>__WIN32__</code> makrót egyébként az SDL 
+definiálja. Mivel az csak a windowsos fordításoknál létezik, a fenti négy sort nyugodtan 
+betehetjük a programba (<code>#ifdef</code>-fel együtt!), platformfüggetlen marad.</p>
+
+<p>Az SDL igényli azt is, hogy a <code>main()</code> függvénynek meglegyenek a paraméterei:
+<code>int argc</code> és <code>char *argv[]</code>. Enélkül a program lefordítása nem fog mindenhol
+sikerülni.</p>
+
+<p>A parancssori argumentumokról és a többmodulos programokról egy külön előadáson beszélünk majd.</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="sdl.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

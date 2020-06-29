@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 2. hét: algoritmizálás</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 2. hét: algoritmizálás">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Algoritmizálás és típusok: a kártyapakli és algoritmusai. Változók és feltételek használata az algoritmusokban.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Algoritmizálás és típusok: a kártyapakli és algoritmusai. Változók és feltételek használata az algoritmusokban.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy02.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyakalgoritmizalas" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 2. hét: algoritmizálás</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Algoritmizálás és típusok: a kártyapakli és algoritmusai. Változók és feltételek használata az algoritmusokban.</p>
+</div>
+
+
+<p>Az óra célja az algoritmizálás gyakorlása. Erre a gyakorlatra kérjük, hogy mindenki hozzon be 
+egy pakli kártyát! Bármilyen megteszi, magyar, francia, akár uno, solo vagy autós kártya is.</p>
+
+
+
+
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy02.html#1">Kártyapakli</a>
+<li><a href="gy02.html#2">Típusok</a>
+<li><a href="gy02.html#3">A sorrend jelentése</a>
+<li><a href="gy02.html#4">Rendezés: szisztematikus módszerek</a>
+<li><a href="gy02.html#5">A számítógép helyett</a>
+<li><a href="gy02.html#6">Összehasonlítások</a>
+<li><a href="gy02.html#7">Számok</a>
+<li><a href="gy02.html#8">További feladatok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Kártyapakli</h2>
+</div>
+
+<p>A feladat egyszerű: keverjük meg a kártypaklit, és utána pedig rakjuk sorba. (A kényelem 
+miatt nem kell az egészet, csak kb. 10 lapot.) Magyarázzuk el, hogy hogyan végezzük a sorba 
+rendezést!</p>
+
+<p>Pl.:</p>
+
+<pre>
+1. Kitesszük a lapokat egymás mellé.
+2. Keresünk két lapot, amelyek nincsenek jó sorrendben.
+3. <em>Ha</em> találtunk, megcseréljük őket, és <em>újra</em> próbáljuk (2. lépés).
+4. <em>Ha</em> nincs ilyen páros, készen vagyunk.
+</pre>
+
+<p>Másik lehetőség:</p>
+
+<pre>
+1. Fogjuk a kezünkben a rendezetlen paklit.
+2. Tegyünk ki egy lapot az asztalra.
+3. Vegyük a következő lapot a rendezetlen pakliból.
+4. Helyezzük az asztalra az előző elé vagy mögé, attól függően, mi a helyes sorrend. (Ha már több van, akkor a sor közepére is szúrhatjuk.)
+5. <em>Folytassuk addig a 3. lépéstől, amíg</em> el nem fogy a rendezetlen sor.
+</pre>
+
+<p>Próbáljuk ki mind a két megoldást. Hasonlítsuk össze őket:</p>
+
+<ol>
+   <li>Melyik tűnik gyorsabbnak?
+   <li>Melyik egyszerűbbnek?
+   <li>Melyik tűnik úgy, hogy jobban, pontosabban van megfogalmazva?
+   <li>Vegyük észre,
+      hogy az első megoldás 2. lépése, „keressünk két rossz sorrendű lapot”
+      egyszerűnek tűnik, de igazából egy bonyolult, nehezen megoldható feladatot
+      tartalmaz.
+   <li>Vegyük észre azt is, hogy az első megoldás egyetlen sorral dolgozik (egy
+      rendezetlenből csinál rendezettet), míg a második kettővel: külön tartja
+      a rendezetlen és a rendezett sort. Az első esetben a sor hossza végig
+      ugyanakkora, a második esetben mindkét sor hossza változik.
+</ol>
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Típusok</h2>
+</div>
+
+<p>Az előző előadáson már szerepelt a típus fogalma. Ennek kapcsán nézzük meg, ki milyen fajta 
+kártyát hozott. Hogyan lehetne az egyes kártyákon látható adatokat meghatározni típus szerint? 
+Szám (egész, valós), szöveg, …?</p>
+
+<p>Milyen tulajdonságok határoznak meg pontosan egy kártyalapot? Milyen színek és számok vannak? 
+(Autós kártyánál: milyen egyéb adatok?) Mi az a legkevesebb adat, ami már elegendő ahhoz, hogy 
+egyértelműen azonosítsunk a pakliból pontosan egyet? Van a kártyán olyan adat, ami nem szükséges 
+ehhez? Lehetne tisztán egy egész számmal hivatkozni egy lapra? Kényelmes lenne az játék közben?
+</p>
+
+<div class="columns">
+<div class="kozep">
+<img src="gy02/francia.png" alt="Francia kártya">
+</div>
+<div>
+<img src="gy02/autos.png" alt="Autós kártya">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A sorrend jelentése</h2>
+</div>
+
+<p>Beszéljük meg azt is, mit jelent egyáltalán „sorba rendezni a lapokat.” Az egész számoknál 
+egyértelmű, matematikailag jól definiált dolog az, hogy az egyik szám nagyobb mint a másik. 
+Különböző kártyajátékokhoz viszont (pl. römi) eltérően szokás rendezni a paklit. Az sem 
+egyértelmű, hogy az ász a 2 alatt, vagy a király felett van. Adjunk különféle definíciókat arra, 
+mit jelent, ha az egyik kártyalap „nagyobb”, mint a másik! (Kisebb pedig akkor, ha nem nagyobb. 
+– Igaz ez a kijelentés?)</p>
+
+<ol>
+   <li>Egyik kártya nagyobb a másiknál, ha a rajta lévő szám nagyobb. A szín
+   pedig nem számít.
+   <li>Ha számítanak a színek, pl. a következő definíciót adhatjuk. Ha nem egyforma
+   a két lap színe, akkor ♠&lt;♣&lt;<span class="piros">♥</span>&lt;<span class="piros">♦</span>. Ha egyformák, akkor pedig növekvő
+   számsorrend szerint, mint az előző esetben.
+</ol>
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Rendezés: szisztematikus módszerek</h2>
+</div>
+
+<p>A fenti rendezési módszerek nincsenek teljesen pontosan meghatározva. A „keressünk két rossz 
+sorrendben lévő lapot” utasítás egy bonyolult műveletsort takar, hiszen nem tudjuk az egész 
+paklit átlátni egyszerre. Döntsük el ezért, hogy mik az elemi lépések! Legyenek ezek a 
+következők:</p>
+
+<ol>
+   <li>Egy kártyasoron dolgozunk. Az asztalra egy sorba kitett
+   lapokat kell növekvő sorrendbe rendezni. Új sort nem nyithatunk
+   sem az asztalon, sem a kezünkben.
+   <li>Két kártyát összehasonlíthatunk, és megmondhatjuk, hogy az egyik
+   kisebb vagy nagyobb-e, mint a másik. Nem mondhatjuk, hogy „keressünk egy párt, ami
+   nincs jó sorrendben.”
+   <li>Két kártyát megcserélhetünk egymással.
+</ol>
+
+<p>Ha az asztalra kitett kártyákat lefordítva tartjuk, akkor könnyen betarthatóak ezek a 
+szabályok: mindig legfeljebb két lapot fordíthatunk fel egyszerre összehasonlítás céljából, és 
+ugyanígy végezhetjük a cseréket is.</p>
+
+<h3>Egymás melletti lapok vizsgálata</h3>
+
+<p>Próbáljuk ki a következőt:</p>
+
+<pre>
+1. Összehasonlítjuk a sor 1. és 2. lapját.
+2. Ha rossz sorrendben vannak (a 2. kisebb, mint az 1.), akkor megcseréljük őket.
+3. Végezzük ezt el a 2. és 3. lapra, utána a 3. és 4. lapra, és így tovább.
+</pre>
+
+<p>Vagyis menjünk végig a soron, és mindig az egymás mellettieket cseréljük, ha nem jó a 
+sorrend. Mi történik ennek a hatására? Azt látjuk, hogy a legnagyobb lap a sor végére került, a többi
+lap sorrendje azonban ettől még nem lett helyes.</p>
+
+<p>Ha ezt a műveletsort megismételjük, akkor a 2. legnagyobb lap az utolsó előtti helyre fog 
+vándorolni. Ráadásul az utolsóval már össze sem kell majd hasonlítani, hiszen az volt a 
+legnagyobb, akkor pedig ennél már biztosan nagyobb. Az egyre kisebb maradék, még rendezetlen 
+sorra ismételve a lépéseket végül az egész sor rendezetté válik.</p>
+
+<p>Írjuk le ezt az algoritmust az eddigiekhez hasonlóan, számozott lépésekkel. Használjuk benne 
+változókat! Mondjuk pl. azt, hogy „cseréljük meg az n. és az n+1. lapot!” Két változóra lesz 
+szükségünk: egyikben azt jegyezzük meg, hogy hányadik lapot hasonlítjuk össze az azt követő 
+párjával (ez mindig növekszik); a másodikban pedig azt, hogy milyen hosszú a sor, amelyet 
+vizsgálunk (ez pedig csökken).</p>
+
+<h3>Legkisebb lap keresése</h3>
+
+<p>Nézzük végig a paklit. Döntsük el, hogy melyik a legkisebb lap! Hogyan tehetjük ezt meg 
+akkor, ha az engedélyezett, elemi összehasonlítási lépés az, hogy két lapot hasonlíthatunk össze 
+egymással?</p>
+
+<pre>
+1. Ha csak egy lap van, akkor az a legkisebb.
+2. Ha van egy második is, akkor az lehet, hogy kisebb nála. Ha így van, megjegyezzük azt.
+3. Összehasonlítjuk a harmadikat az eddig feltételezett legkisebbel…
+4. … és így tovább.
+</pre>
+
+<p>Mit csinálhatunk akkor, ha megtaláltuk a legkisebb lapot? Egyértelmű: a sor elejére tehetjük 
+(megcserélhetjük a sor elején lévővel). Ezáltal legelőre kerül a legkisebb lap, azt már nem kell 
+később elmozdítani onnan. Ha ezt a műveletsort ismételjük addig, amíg el nem fogy a sor, akkor 
+is rendezett sort kapunk. Írjuk le ezt az algoritmust a fentihez hasonlóan! Két változóra lesz 
+szükségünk: a legkisebb lap helyét (sorszámát) megjegyző változóra, és arra, amelyik a helyet 
+tartja nyilván, ahova keressük a maradékból legkisebb elemet.</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>A számítógép helyett</h2>
+</div>
+
+<p>Rendezzük a leírt algoritmusok utasításai alapján a paklit. (Nem kell mind a 30-50 lap, elég 
+az is, ha egy adott színből kiválasztjuk a számos lapokat, hogy legyen hely az asztalon.) 
+Tartsuk fejben vagy írjuk le papírra a változók aktuális értékeit! Kövessük minden esetben 
+pontosan a leírt utasításokat! Figyeljük meg, helyesek-e az algoritmusok! A helytelenül leírt 
+programnál esetleg már menet közben észrevehetjük, ha hibás.</p>
+
+<p>Ez a feladat elvégezhető párban is. Egy valaki játssza a számítógép szerepét. A másik pedig 
+diktálja az utasításokat. Az utasítások között lehetnek kérdések is, amelyekre az első embernek 
+felelnie kell. (Pl. kisebb az ötödik lap, mint a hatodik?) Vegyük észre, hogy ezek a kérdések 
+visszahatnak a végrehajtásra! Bár úgy tűnik, a program szövege pontosan meghatározza, mikor 
+melyik sort kell végrehajtani, mégis az az adatoktól függ. Ha nem lenne így, elég unalmasak 
+lennének a programok: a működésük nem függene a külvilágtól. Nem tudnának például reagálni a 
+felhasználók kéréseire sem.</p>
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Összehasonlítások</h2>
+</div>
+
+<p>Hasonlítsuk össze a fenti két algoritmust. Melyik tűnik gyorsabbnak? Melyikben kell többet 
+cserélgetni a lapokat?</p>
+
+<p>Figyeljük meg azt is, hogyan alakul a fenti algoritmusok hatékonysága abban az esetben, ha a 
+paklik teljesen rendezetlenek; és hogyan akkor, ha az egész pakliból csak egyetlen lap van rossz 
+helyen!</p>
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Számok</h2>
+</div>
+
+<p>Rajzoljunk egy táblázatot, amelybe ceruzával írjunk véletlenszerűen kiválasztott számokat! 
+Ebben az esetben nem tudunk közvetlenül olyan cserét végezni, mint a kártyáknál. A számokat 
+ugyanis nem vehetjük ki a sorból, legfeljebb kiradírozhatjuk az egyiket, és másikat írhatunk a 
+helyére. (Ez a programozásban az értékadásnak felel meg.) Hogyan működhetnek ekkor a rendezések? 
+Esetleg megoldható a csere értékadásokkal?</p>
+
+<table>
+<thead><tr><th>1.<th>2.<th>3.<th>4.<th>5.<th>6.<th>7.<th>8.<th>9.<th>10.</thead>
+<tr><td>23<td>81<td>5<td>88<td>52<td>17<td>2<td>75<td>37<td>22
+</table>
+
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>További feladatok</h2>
+</div>
+
+<ul>
+    <li>Keresés: válasszunk ki név alapján (pl. pikk dáma) egy lapot. Keressük meg ezt a lapot a 
+    pakliban (vagy a 10-20 kirakott lap közül, vagyis a hiányos pakliban). Írjuk le ennek is az 
+    algoritmusát a fentiekhez hasonlóan! Ötlet: „Ez az? Nem. Következő. Ez az? Nem. Következő. 
+    Ez az? Igen!”
+
+    <li>Számlálás: vegyük találomra a pakli egy részét. Számoljuk meg, hogy hány pikk van közte. 
+    Írjuk le az ehhez használható algoritmust is!
+
+    <li>Játékokkal kapcsolatos: pl. adott három kártya. Adjunk meg egy kifejezést, amely akkor 
+    igaz, ha a három kártya römiben egy helyes kombinációt (tercet) ad. A römiben ez kétféle 
+    lehet: ugyanabból a számból három különböző szín, vagy ugyanabból a színből három egymás 
+    utáni szám.
+	
+	<li>Folyamatábra: rajzoljuk meg az eddigi programjaink folyamatábráját.
+</ul>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy02.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

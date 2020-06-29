@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Labor, 12. hét: duplán láncolt listák</title>
+<meta property="og:title" content="InfoC :: Labor, 12. hét: duplán láncolt listák">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Duplán láncolt listák, többmodulos programok és fájlkezelés.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Duplán láncolt listák, többmodulos programok és fájlkezelés.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="lab12.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">Labor, 12. hét: duplán láncolt listák</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Pohl László · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Duplán láncolt listák, többmodulos programok és fájlkezelés.</p>
+</div>
+
+
+
+
+
+
+
+<p>A mai órán ismét listák kezelésével foglalkozunk. Ezúttal két irányban láncolt, mindkét végén strázsával lezárt lista a 
+feladat. A lista most szöveges adatokat (is) tartalmaz, tehát szövegfeldolgozás is része a feladatnak. Javasolt az összes 
+függvény kidolgozása előtt <em> rajzot készíteni:</em> melyik pointer hova mutat a művelet előtt, és hogyan módosulnak azok a 
+művelet hatására!</p>
+
+<p>Felkészülés a laborra:</p>
+<ul>
+    <li>A <a href="ea09.html#ealista">listákról szóló előadás</a> átismétlése.
+    <li>A <a href="gy11.html#gyaklista">listákról szóló első gyakorlat</a> átismétlése.
+</ul>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>A lenti feladatok megoldása letölthető innen:
+<a href="lab12/foprogram.c">foprogram.c</a>,
+<a href="lab12/lista.c">lista.c</a>,
+<a href="lab12/lista.h">lista.h</a>.
+</p>
+</div>
+</div>
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="lab12.html#1">Lista kiírása</a>
+<li><a href="lab12.html#2">A lista felszabadítása</a>
+<li><a href="lab12.html#3">Több forrásmodul</a>
+<li><a href="lab12.html#4">Keresés a listában</a>
+<li><a href="lab12.html#5">Hozzáfűzés a lista végéhez</a>
+<li><a href="lab12.html#6">Törlés</a>
+<li><a href="lab12.html#7">Lista írása fájlba, beolvasás fájlból</a>
+<li><a href="lab12.html#8">További feladatok</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Lista kiírása</h2>
+</div>
+
+
+<p>Adott a lenti programkód. Ez létrehoz egy dinamikusan foglalt, két irányban láncolt, mindkét 
+végén strázsával lezárt listát. A lista könyvek szerzőit és címeit tárolja, valamint egy egész 
+értéket darabszám tárolására.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+ 
+typedef struct ListaElem {
+    char szerzo_kereszt[51];
+    char szerzo_vezetek[51];
+    char cim[101];
+    int db;
+    struct ListaElem *kovetkezo, *elozo;
+} ListaElem;
+
+typedef struct Lista {
+    ListaElem *eleje, *vege;
+} Lista;
+ 
+void lista_letrehoz(Lista *lista) {
+    char *konyvtomb[][3]={
+        {&quot;Rick&quot;, &quot;Riordan&quot;, &quot;The Son of Neptunen&quot;},
+        {&quot;Jeff&quot;, &quot;Kinney&quot;, &quot;Cabin Fever&quot;},
+        {&quot;Rick&quot;, &quot;Riordan&quot;, &quot;The Throne of Fire&quot;},
+        {&quot;Rick&quot;, &quot;Riordan&quot;, &quot;The Lost Hero&quot;},
+        {&quot;Shel&quot;, &quot;Silverstein&quot;, &quot;Every Thing On It&quot;},
+        {&quot;J. K.&quot;, &quot;Rowling&quot;, &quot;Harry Potter Paperback Boxed Set&quot;},
+        {&quot;John&quot;, &quot;Flanagan&quot;, &quot;The Outcasts&quot;},
+        {&quot;Dorling&quot;, &quot;Kindersley&quot;, &quot;The LEGO Ideas Book&quot;},
+        {&quot;J. K.&quot;, &quot;Rowling&quot;, &quot;Harry Potter Hardcover Boxed Set&quot;},
+        {&quot;James&quot;, &quot;Patterson&quot;, &quot;Middle School, the Worst Years of My Life&quot;},
+        {&quot;Rick&quot;, &quot;Silverstein&quot;, &quot;The Outcasts&quot;},
+        {&quot;Brian&quot;, &quot;Selznick&quot;, &quot;Wonderstruck&quot;},
+        {&quot;Jeff&quot;, &quot;Kinney&quot;, &quot;The Ugly Truth&quot;},
+        {NULL}
+    };
+    ListaElem *akt;
+    int i;
+ 
+    /* kezdő strázsa */
+    lista-&gt;eleje = (ListaElem*) malloc(sizeof(ListaElem));
+    lista-&gt;eleje-&gt;elozo = NULL;
+    lista-&gt;vege = (ListaElem*) malloc(sizeof(ListaElem));
+    lista-&gt;vege-&gt;kovetkezo = NULL;
+ 
+    /* feltöltés */
+    akt=lista-&gt;eleje;
+    for (i=0; konyvtomb[i][0]!=NULL; i++) {
+        ListaElem *uj = (ListaElem*)malloc(sizeof(ListaElem));
+        strcpy(uj-&gt;szerzo_kereszt, konyvtomb[i][0]);
+        strcpy(uj-&gt;szerzo_vezetek, konyvtomb[i][1]);
+        strcpy(uj-&gt;cim, konyvtomb[i][2]);
+        uj-&gt;db = 1;
+
+        akt-&gt;kovetkezo=uj;
+        uj-&gt;elozo = akt;
+        akt=uj;
+    }
+ 
+    /* záró strázsához pointerek */
+    akt-&gt;kovetkezo = lista-&gt;vege;
+    lista-&gt;vege-&gt;elozo = akt;
+}
+
+int main(void) {
+    Lista konyvek;
+ 
+    lista_letrehoz(&amp;konyvek);
+ 
+    ...
+    
+    return 0;
+}</pre>
+
+<p>Írj függvényt, amely kiírja a képernyőre a listában tárolt könyvek adatait! 
+Ügyelj arra, hogy a strázsaelemek nem tartalmaznak adatot, ezért ezeket nem 
+szabad kiírni!</p>
+
+<p>Írj függvényt, amely paraméterként kapja a listát, és kiírja az abban tárolt 
+adatokat visszafelé (a végétől az elejéig haladva)!</p>
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A lista felszabadítása</h2>
+</div>
+
+<p>Írj egy függvényt, amely felszabadítja a listát! (Ne használj 
+rekurziót!)
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Több forrásmodul</h2>
+</div>
+
+<p>Az alábbiakban további függvényeket fogsz létrehozni. Érdemes a <code>Lista
+</code> típushoz tartozó függvényeket egy külön forrásmodulba tenni. Szedd szét 
+ezért az eddig keletkezett programot három fájlra:</p>
+
+<ol>
+   <li><code>lista.h</code>, amelyben a típus megadása és
+      a függvények deklarációi vannak. Ez tartalmazzon include őrszemet,
+      azaz a többszörös beépítést megakadályozó makrót!
+   <li><code>lista.c</code>, amelyben a függvények definíciói.
+   <li><code>main.c</code>, amelyben pedig a tesztelő programrészek
+      lesznek (mint pl. a fenti <code>main()</code> függvény).
+</ol>
+
+<p><em>Forrásfájlt</em> és <em>fejlécfájlt</em> a Code::Blocks-ban az alábbi 
+lépésekkel tudsz hozzáadni a projekthez:</p>
+
+<ol>
+    <li><img class="float arnyek" src="lab12/aktivprojekt.png">
+        Válaszd ki aktívnak a projektedet, ha esetleg több projekt van nyitva. Ehhez a projekt
+        nevére kattints a jobb gombbal, és a menüből Activate project.
+        
+    <li>A fenti menüből File, New, File pontot kell kiválasztani, a fájl típusának pedig a
+        C/C++ source-t (forrásfájlhoz) vagy a C/C++ header-t.
+        A nyelv legyen C. A következő ablakban be kell állítani a fájl elérési
+        útját és nevét; legyen ez most <code>lista.c</code> (<code>lista.h</code>).
+        Ugyanabba a mappába kell
+        tenni, mint a projekt többi fájljának a helye. Jelezni kell azt is, hogy az ebből
+        a forrásfájlból keletkező tárgykódot a futtatható <code>.exe</code>-hez kell majd
+        linkelni, ezért be kell pipálni az „Add file to active project in build targets”
+        résznél mindent:
+        <div class="columns">
+        <div>
+            <img class="kozep arnyek" src="lab12/forrashozzaad.png">
+        </div>
+        <div>
+            <img class="kozep arnyek" src="lab12/headerhozzaad.png">
+        </div>
+        </div>
+        
+    <li>Fejlécfájl esetén a Code::Blocks automatikusan létrehozza az ún. <em>include guard</em>-okat,
+        amelyek a többszörös beillesztés ellen védenek. (Ettől függetlenül ilyet tudni kell
+        írni. :D) A <code>main.c</code>-ben és a <code>lista.c</code>-ben is
+        be kell illeszteni ezt a fejlécfájlt; ezt tedd is meg:
+        <pre class="brush: c "  >
+#include &quot;lista.h&quot;</pre>
+        
+</ol>
+
+<p>A többi feladatot már ennek megfelelően dolgozd ki!</p>
+
+
+
+
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Keresés a listában</h2>
+</div>
+
+<p>Írj függvényt, amely paraméterként kapja egy listát, valamint a szerző 
+vezetéknevét, keresztnevét és a mű címét, és visszaadja annak a listaelemnek a 
+címét, amelyben a szerző műve található! Ha a keresett elem nincs a listában, 
+adjon vissza <code>NULL</code> pointert! (Mindhárom adat egyezését vizsgálni 
+kell!)</p>
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Hozzáfűzés a lista végéhez</h2>
+</div>
+
+<p>Írj függvényt, amely egy paraméterként kapott lista végéhez láncol egy új 
+elemet, amely az ugyancsak paraméterként kapott vezetéknevet, keresztnevet és 
+címet tartalmazza! Ha az új elem már megtalálható a listában, akkor ne fűzze 
+hozzá, hanem csak a darabszámot növelje eggyel!</p>
+
+
+
+
+
+</div>
+</section>
+<section id="6">
+<div class="slide" id="slide_6">
+<div class="slideheader">
+<h2><span class="oldalszam">6</span>Törlés</h2>
+</div>
+
+<p>Írj olyan függvényt is, amely egy nevével és címével megadott könyvet töröl a 
+listából! Ha az adott elem db adattaagja 0-nál nagyobb, a törlés a számláló 
+értékének csökkentését jelentse, ha 0, akkor az elem tényleges eltávolítását a 
+listából!</p>
+
+
+
+
+
+</div>
+</section>
+<section id="7">
+<div class="slide" id="slide_7">
+<div class="slideheader">
+<h2><span class="oldalszam">7</span>Lista írása fájlba, beolvasás fájlból</h2>
+</div>
+
+<p>Írj függvényt, amely egy paraméterként kapott nevű szöveges fájlba kiírja egy 
+lista tartalmát; minden könyvet egy külön sorba, az egyes adatrészeket 
+(vezetéknév, keresztnév, stb.) pontosvesszővel elválasztva! (Ha a fájl 
+kiterjesztésének csv-t adsz meg, meg tudod nyitni a magyar nyelvű Excellel is.)</p>
+
+<p>Írj egy másik függvényt, amely egy paraméterként kapott nevű fájlból új listát 
+épít, és az elejére mutató pointert egy cím szerint átvett üres listába teszi.  
+(Figyelj arra, hogy a lista a kiírás és beolvasás hatására ne forduljon meg!)</p>
+
+
+</div>
+</section>
+<section id="8">
+<div class="slide" id="slide_8">
+<div class="slideheader">
+<h2><span class="oldalszam">8</span>További feladatok</h2>
+</div>
+
+<p>Ha elkészültél, folytasd a feladatgyűjtemény
+<a href="f11.html#feladatfajlkezeles">fájlkezeléssel kapcsolatos feladataival</a>!</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="lab12.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

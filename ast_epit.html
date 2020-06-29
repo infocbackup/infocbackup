@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: AST: szintaxisfák építése</title>
+<meta property="og:title" content="InfoC :: AST: szintaxisfák építése">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Az absztrakt szintaxisfák egy kifejezés, vagy akár egy teljes forráskód szintaktikai felépítését tárolják. Ez az írás megmutatja, hogyan lehet felépíteni egy ilyet.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Az absztrakt szintaxisfák egy kifejezés, vagy akár egy teljes forráskód szintaktikai felépítését tárolják. Ez az írás megmutatja, hogyan lehet felépíteni egy ilyet.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="ast_epit.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">AST: szintaxisfák építése</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Nagy Gergely · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Az absztrakt szintaxisfák egy kifejezés, vagy akár egy teljes forráskód szintaktikai felépítését tárolják. Ez az írás megmutatja, hogyan lehet felépíteni egy ilyet.</p>
+</div>
+
+<p>
+Az <a href="ea14.html#eaparser">nyelvi elemzőkről szóló előadáson</a> 
+áttekintettük, hogy hogyan lehet nyelvi elemzőket készíteni EBNF-ben adott
+nyelvtanok kiértékelésére. Ott egy olyan programot készítettünk el, amely a
+négy alapműveletből és zárójelekből felépített tetszőleges bonyolultságú
+matematikai kifejezéseket elemzett és rögtön ki is számolta az eredményt.
+</p>
+
+<p>
+Egy egyszerű probléma esetén, mint amilyen ez is, a helyben történő kiértékelő
+teljesen megfelelő megoldás, hiszen mind az elemzéshez szükséges, mind a
+műveleteket elvégző kód egyszerű, így a kettő „összekeverése” nem rontja az
+áttekinthetőséget.
+</p>
+
+<p>
+Nagy nyelvtanok esetén (pl. egy programnyelv elemzésekor) azonban ez a megoldás
+már járhatatlan: <em>szét kell választani az elemzést és a kiértékelést</em>.
+Ez a gyakorlatban azt jelenti, hogy az elemző a feldolgozott szövegnek egy új
+reprezentációját állítja elő, amit már sokkal egyszerűbb értelmezni.  Így a
+kiértékelő algoritmusnak már nem kell törődnie a szintaxisből adódó
+nehézségekkel, csak az előírt műveletsor végrehajtására kell koncentrálnia.
+Ráadásul a két feladat szétválasztása azt is biztosítja, hogy az értelmező
+egység csak hibátlan adatokat kap, tehát hibakezeléssel már nem kell
+foglalkoznia – ez az elemző feladata.
+</p>
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="ast_epit.html#1">Az absztrakt szintaxisfa</a>
+<li><a href="ast_epit.html#2">A megoldás alapötlete</a>
+<li><a href="ast_epit.html#3">A faépítő program</a>
+<li><a href="ast_epit.html#4">A fa kiértékelése</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Az absztrakt szintaxisfa</h2>
+</div>
+
+<p>
+Felmerül a kérdés, hogy milyen adatszerkezet lehet alkalmas arra, hogy egy
+értelmezett szöveget (pl. egy matematikai kifejezést) eltároljunk benne. A
+válasz természetesen nem egyértelmű, de nagyon gyakran a fákat szokták
+alkalmazni. A nyelvi elemzés során előálló, a szöveget reprezentáló fákat
+<em>absztrakt szintaxisfának (abstract syntax tree, AST)</em> hívják.
+
+<p>
+Ahogy azt már <a href="kifejezesek.html">kifejezésekről szóló</a> 
+írásban is elmondtuk, a fa előnye az, hogy az adatokon túl azok
+hierarchiáját is képes eltárolni.  Ott azért jött ez a tulajdonság nagyon jól,
+mert így képesek voltunk a műveletek precedenciáját is eltárolni, ezáltal
+biztosítva azt, hogy a kiértékelés mindig helyes sorrendben történjék.
+</p>
+
+<p>
+Azoban ennél sokkal összetettebb esetekben is kiválóan alkalmazható ez az adatszerkezet.
+A <a href="http://en.wikipedia.org/wiki/Abstract_syntax_tree">Wikipédia erről szóló cikkében</a>
+egy rövid programkódrészletnek megfelelő fát mutat be.
+</p>
+
+<p>
+Itt most az utolsó előadás programját alakítjuk át
+úgy, hogy az ne számolja ki helyben a kifejezés értékét, hanem építse fel belőle a szintaxisfát.
+</p>
+
+<img src="ast_epit/muveletek.svg" style="width: 15em" class="float">
+
+<p>
+Figyeljük meg az ábrán látható fát, amely a <code>4*(5+7)</code> kifejezésnek
+felel meg. A kifejezésünk azt írja elő, hogy az 5 és 7 összegét előbb kell
+képezni kell és csak ezután számolhatjuk ki a 4-gyel való szorzatukat. Ezt a fa
+úgy jelöli, hogy a szorzás jobb oldali operandusa nem egy szám, hanem az összeg.
+</p>
+
+<p>
+A fa kiértékelése úgy történik, hogy megkérdezzük a gyökerétől, hogy mennyi a
+kifejezés értéke.  A válasza attól függ, hogy milyen jellegű csomópont. Ha ő
+egy szám, akkor megmondja az értékét és már kész is vagyunk. Ha viszont egy
+művelet, akkor megkérdezi az operandusaitól (a gyermekeitől), hogy mennyi az ő
+értékük, majd a kapott számokon elvégzi az előírt művelet és így vagyunk
+készen.
+</p>
+
+<p>
+Ez tehát egy rekurzív algoritmus, hiszen, amikor egy elem megkérdezi az
+gyermekeitől az ő értéküket, akkor ugyanazt a kérdést teszi fel, mint amit mi
+tettünk fel a szintaxisfánk gyökerének, vagyis ugyanazt a függvényt hívja meg.
+</p>
+
+<p>
+A példában tehát először a szorzástól kérdezzük meg az értékét, aki pedig
+tovább kérdezi a gyermekeit.  A balgyermek rögtön tud válaszolni, az ő értéke
+4. A jobbgyermek egy összeadás, tehát ő megkérdezi a gyermekeit.  Azok
+megmondják az értéküket, így az összeg előáll, amit megkap a szorzás, és ezzel
+kiszámoltuk a kifejezést.
+</p>
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>A megoldás alapötlete</h2>
+</div>
+
+<p>Az előadáson szerepelt a matematikai kifejezéseket leíró nyelvtan, amit most
+ismétlésképpen idemásoltunk:</p>
+
+<pre>
+kifejezés <strong>::=</strong> összeg
+összeg    <strong>::=</strong> szorzat <strong>(</strong><strong>(</strong>'+' <strong>|</strong> '-'<strong>)</strong> szorzat<strong>)</strong><strong>*</strong>
+szorzat   <strong>::=</strong> tényező <strong>(</strong><strong>(</strong>'*' <strong>|</strong> '/'<strong>)</strong> tényező<strong>)</strong><strong>*</strong>
+tényező   <strong>::=</strong> szám <strong>|</strong> zárójeles
+zárójeles <strong>::=</strong> '(' kifejezés ')'
+</pre>
+
+<p>
+A nehézséget az fogja jelenteni most a számunkra, hogy a nyelvtanunk rekurzív,
+tehát az elemzőnk is az lesz. Vagyis a fát egy rekurzív algoritmussal kell majd
+felépítenünk! Ez elsőre nagyon ijesztőnek tűnhet.
+</p>
+
+<p>
+Rekurzív problémák megoldásához azt szokták javasolni, hogy legyünk optimisták
+és tegyük fel, hogy a függvényünk helyesen működik. A feladatunk ezután kettős.
+Egyrészt ki kell találnunk, hogy hogyan tudjuk lebontani a megoldást lépésekre,
+másrészt meg kell megoldást kell adnunk egy lépésre úgy, hogy feltételezhetjük,
+hogy a probléma maradékát a függvényünk már meg fogja oldani.
+</p>
+
+<p>
+Ez így nagyon általánosan hangzik, ezért nézzünk meg egy konkrét példát! Vegyük a fenti nyelvtanunkhoz
+írt elemző egy részletének egyszerűsített pszeudó-kódját:
+</p>
+
+<pre>
+logikai összeg(szöveg_mutató, érték_mutató) {
+  munka_mutató = szöveg_mutató
+  
+  if (szorzat(munka_mutató, &amp;érték1)) {
+    if (karakter(munka_mutató, "+-", &amp;művelet)) {
+      if (szorzat(munka_mutató, &amp;érték2) { 
+        érték_mutató = (művelet == '+') ? (érték1 + érték2) : (érték1 - érték2)
+        szöveg_mutató = munka_mutató
+        return IGAZ
+      }
+    }
+  }
+  
+  return HAMIS
+}
+</pre>
+
+<p>
+A fenti kód egyelemű összegeket (vagy különbségeket) tud feldolgozni. Ha a
+szövegben talál egy szorzatot, akkor annak értékét elmenti az
+<code>érték1</code> változóba. Ezután ha talál egy <code>+</code> vagy
+<code>-</code> karaktert, akkor az azt jelenti, hogy lesz még egy tag, tehát
+újból keres egy szorzatot, aminek az értékét a <code>érték2</code> változóba
+helyezi. Ha mindez sikeresen megtörtént, akkor elvégzi az előírt műveleten, az
+eredményt beleírja az érték_mutatóba, a szövegmutatót az elemzett szöveg végére
+állítja és IGAZ értékkel tér vissza. Minden hibás esetben HAMIS értéket ad a
+függvény.
+</p>
+
+<p>
+A teljes elemzőnk ehhez hasonló függvényekből áll. A kérdés az, hogy hogyan
+tudnánk ezekbe az elemi kis algoritmusokba becsempészni a fa felépítésének
+egy-egy mozzanatát úgy, hogy az előálló kód végül egy teljes fát eredményezzen.
+</p>
+
+<p>
+Az egészen biztos, hogy egy-egy függvény csak egy farészletet tud elkészíteni.
+Azt is tudjuk, hogy a fa kezdetben üres lesz, tehát az első függvényhívás során
+egy <code>NULL</code> pointert kapunk.
+</p>
+
+<p>
+Az lehet a kiinduló ötletünk, hogy ne egy fa gyökerére mutató pintert vegyünk
+át, hanem egy olyan pointernek a címét, amibe mi írjuk bele az általunk
+elkészített fa gyökerének a címét. Tehát ha mondjuk a kifejezésünk egy darab
+számból áll, akkor megkapjuk egy olyan pointernek a címét, aminek az értéke
+<code>NULL</code>, elkészítünk egy fa-elemet, amit a kettes értéket tárolja és
+ennek a címét beleírjuk az átvett pointerbe.
+</p>
+
+<p>
+Mi történik összetettebb esetben, például a fenti <code>összeg</code> függvény esetén?
+A függvényünk tehát át fogja venni egy pointer címét, amibe egy „összeg” típusú elemnek a címét kell elhelyeznie.
+A kérdés az, hogy mi lesz ennek az „összeg” elemnek a két gyermeke? Természetesen két „szorzat”, hiszen ez a szabály
+szorzatok összegére illeszkedik!
+</p>
+
+<img src="ast_epit/osszeg_2tag.svg" style="width: 15em" class="float">
+
+<p>
+A teendő tehát az, hogy veszünk két lokális mutatót, amelyek a két szorzat
+által előállított fa gyökerei lesznek. Ezeket a <code>szorzat</code> feltölti
+tartalommal.  Nekünk mindössze annyi a dolgunk, hogy az „összeg” elem
+gyermekeire mutató pointereket beállítjuk a két visszakapott fa gyökerére.
+</p>
+
+<pre>
+logikai összeg(szöveg_mutató, gyökér_mutató) {
+  munka_mutató = szöveg_mutató
+  
+  if (szorzat(munka_mutató, &amp;bal_gyermek)) {
+    if (karakter(munka_mutató, "+-", &amp;művelet)) {
+      if (szorzat(munka_mutató, &amp;jobb_gyermek) { 
+
+        új_elem = új_összeg
+        új_elem-&gt;bal=bal_gyermek
+        új_elem-&gt;jobb=jobb_gyermek
+
+        gyökér_mutató = új_elem
+
+        szöveg_mutató = munka_mutató
+        return IGAZ
+      }
+    }
+  }
+  
+  return HAMIS
+}
+</pre>
+
+<p>
+Az történt tehát, hogy feltettük, hogy a függvényeink előállítják a megfelelő
+fákat, és mi csak azt elemi műveletet adtuk meg, ami két részfából egy összeget
+képez!
+</p>
+
+<p>
+Természetesen a <code>szám</code> szabályunk leveleket fog létrehozni, hiszen
+egy számnak már nincsenek operandusai.  A <code>zárójeles</code> szabály pedig
+elkéri az <code>összeg</code> szabálytól az általa előállított fa gyökerét és
+ezt adja meg a zárójel előtt művelet jobb oldali operandusaként. (Valójában
+persze egyszerűen visszaadja a kapott fa gyökerét, és az ő hívója fogja a
+pointerek beállítását végezni.)
+</p>
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>A faépítő program</h2>
+</div>
+
+<p>
+A szintaxisfát leíró adattípus egészen egyszerű lesz: a fa egy elem vagy szám,
+vagy művelet.  Ez a <code>szimbolum_tipus</code> nevű felsorolt típussal adjuk
+meg. Egy elemben vagy egy műveleti jelet, vagy egy számértéket tárolunk el
+– ilyenkor jönnek jól a <code>union</code>ok.
+</p>
+
+<pre class="brush: c "  >
+typedef enum {MUVELET, SZAM} szimbolum_tipus;
+
+typedef struct szimbolum {
+    szimbolum_tipus tipus;
+    union {
+        double szam;
+        char muveleti_jel;
+    } adat;
+
+    struct szimbolum *op1, *op2;
+} szimbolum;</pre>
+
+<p>
+Nézzük meg most valójában az <code>osszeg</code> függvény kódját. A dolog
+annyival bonyolultabb itt, hogy tetszőleges számú tagból álló összeget fel kell
+tudnunk dolgozni.
+</p>
+
+<p>Az a feladatunk, hogy előállítsunk egy olyan farészletet, aminek a kiértékelése a helyes 
+eredményre vezet. A megoldás az lehet, ha az első elkészült összegünk (aminek tehát két szorzat 
+operandusa van) lesz a következő összegnek a bal oldali operandusa, a jobb oldali pedig az 
+újonnan beolvasott szorzat lesz. Így tetszőleges számú tagot fel tudunk fűzni egymás után és 
+amikor a legfelsőt megkérjük, hogy adja meg az értékét, akkor sorban meghívja majd a bal oldali 
+irányban lévő összegeket és előáll a helyes érték.</p>
+
+<img src="ast_epit/osszeg_ntag.svg" style="width: 15em" class="float">
+
+<pre class="brush: c "  >
+int osszeg(char **szoveg, szimbolum **ast) {
+  char *munka = *szoveg;
+  char kar;
+  szimbolum *op1, *op2, *uj = NULL;
+
+  szokoz(&amp;munka);
+  if (szorzat(&amp;munka, &amp;op1)) {
+    while (karakter(&amp;munka, &quot;+-&quot;, &amp;kar)) {
+      if (szorzat(&amp;munka, &amp;op2)) {
+        uj = uj_muvelet(kar);
+        uj-&gt;op1 = op1;
+        uj-&gt;op2 = op2;
+
+        op1 = uj;
+      }
+      else return 0;
+    }
+
+    if (uj == NULL) *ast = op1;
+    else *ast = uj;
+    
+    *szoveg = munka;
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}</pre>
+
+<p>
+Figyeljük meg, hogy az <code>osszeg</code> függvény az <code>op1</code> és
+<code>op2</code> pointerekben menti el a <code>szorzat</code> hívásokból kapott
+részfák gyökerét, az <code>uj</code> pointer pedig arra szolgál, hogy az
+újonnan létrehozot „összeg” típusú elem címét tárolja.
+</p>
+
+<p>
+Az első két tag feldolgozásakor létrehozunk egy új elemet és a két gyermekeként
+beállítjuk az <code>op1</code> és <code>op2</code> pointereket. Ezután azt
+mondjuk, hogy az <code>op1</code> innentől mutasson az új elemre.  Ez nem okoz
+gondot, hiszen az <code>op1</code> értékét már eltároltuk
+<code>uj-&gt;op1</code>-ben, másrészt viszont így értjük el azt, hogy ha
+további tagok következnek, tehát ha újból belépünk a <code>while</code>
+ciklusba, akkor az ebben az iterációban létrehozott új elemnek az
+<code>op1</code> mutatója az előző <code>uj</code> elemre fog mutatni –
+pontosan úgy, ahogyan az ábrán látható.
+</p>
+
+<p>
+Még érdemes megnézni <code>tenyezo</code> szabályunk kódbeli megvalósulását:
+</p>
+
+<pre class="brush: c "  >
+int tenyezo(char **szoveg, szimbolum **ast) {
+  char *munka = *szoveg;
+  char kar;
+  double ertek;
+
+  szokoz(&amp;munka);
+  if (zarojeles(&amp;munka, ast)) {
+    *szoveg = munka;
+    return 1;
+  }
+  else if (szam(&amp;munka, &amp;ertek)) {
+    *ast = uj_szam(ertek);
+    *szoveg = munka;
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}</pre>
+
+<p>
+A kód nagyon egyszerű: egy tényező az vagy egy szám, vagy egy zárójeles kifejezés.
+Ha zárójeles kifejezés, akkor a <code>zarojeles</code> hívásból kapott fa lesz maga a tényező,
+tehát egyszerűen továbbadhatjuk a kapott pointert és hagyhatjuk, hogy az a függvény állítsa be őt.
+</p>
+
+<p>
+Ha pedig számot találtunk, akkor létrehozunk egy új szám elemet és ezt adjuk
+vissza. Az <code>uj_szam</code> függvény a gyermekek pointereit
+<code>NULL</code>-ra állítja, hiszen szám egy kifejezésfában csak levél lehet.
+</p>
+
+<p>
+A zárójeles kifejezés szintén továbbadja a megkapott pointert, mégpedig az <code>osszeg</code>
+függvénynek, hiszen a nyelvtanunk szerint egy zárójeles kifejezés az egy összeg zárójelek között:
+</p>
+
+<pre class="brush: c "  >
+int zarojeles(char **szoveg, szimbolum **ast) {
+  char *munka = *szoveg;
+  char kar;
+
+  szokoz(&amp;munka);
+  if (karakter(&amp;munka, &quot;(&quot;, &amp;kar) &amp;&amp; osszeg(&amp;munka, ast) &amp;&amp; karakter(&amp;munka, &quot;)&quot;, &amp;kar)) {
+    *szoveg = munka;
+    return 1;  
+  }
+  else {
+    return 0;
+  }
+}</pre>
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>A fa kiértékelése</h2>
+</div>
+
+<p>
+Végezetül álljon itt a fa kiértékelését végző rekurzív algoritmus, bár igazából ez lényegében nem
+különbözik a kifejezésekről szóló írásunkban adott megoldástól:
+</p>
+
+<pre class="brush: c "  >
+double ast_kiertekel(szimbolum *ast) {
+  if (ast == NULL) return 0.0;
+  else {
+    double op1 = ast_kiertekel(ast-&gt;op1), op2 = ast_kiertekel(ast-&gt;op2);
+
+    switch (ast-&gt;tipus) {
+      case SZAM:
+        return ast-&gt;adat.szam;
+
+      case MUVELET:
+        switch (ast-&gt;adat.muveleti_jel) {
+          case '+':
+            return op1 + op2;
+          case '-':
+            return op1 - op2;
+          case '*':
+            return op1 * op2;
+          case '/':
+            return op1 / op2;
+        }
+    }
+
+    return 0.0; //default ágak hiánya miatt
+  }
+}</pre>
+
+<p>
+Látható, hogy az aktuális elem típusa szerint ágazunk el egy <code>switch</code> szerkezettel.
+Ha az aktuális elemünk egy szám, akkor egyszerűen visszatérünk az értékével, ha pedig egy művelet, akkor elvégezzük
+a megfelelő műveletet a két operandusunkon.
+</p>
+
+<p>
+Az operandusok kiszámolásánál történik a rekurzív hívás, a báziskritérium pedig természetesen az, hogy ha a kapott
+fa gyökere <code>NULL</code>, akkor az érték legyen nulla. Igazából ez csak a rekurzió leállításához szükség, hiszen
+ez a nulla érték sehol sem fog megjelenni, ugyanis csak számok lehetnek levelek a fában, náluk viszont nem használjuk fel
+a gyermekek értékét.
+</p>
+
+<p>
+A teljes kód letölthető <a href="ast_epit/ast_epit.zip">innen</a>.
+</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="ast_epit.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

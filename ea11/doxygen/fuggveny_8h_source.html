@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Függvényrajzoló: fuggveny.h Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Függvényrajzoló
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Keresés');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Főoldal</span></a></li>
+      <li><a href="annotated.html"><span>Adatszerkezetek</span></a></li>
+      <li class="current"><a href="files.html"><span>Fájl</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Keresés" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Fájllista</span></a></li>
+      <li><a href="globals.html"><span>Globális&#160;elemek</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Összes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Adatszerkezetek</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fájl</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Függvények</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Változók</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Típusdefiníciók</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">fuggveny.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="fuggveny_8h.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FUGGVENY_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUGGVENY_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structszakasz.html">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structszakasz.html">Szakasz</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structszakasz.html#ab9445e75d84b88d95a0e12c87bb4b398">    9</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structszakasz.html#afc40ef5e4d10720ddc393dcb39b12303">x1</a>, <a class="code" href="structszakasz.html#ad67ccd11215a92fcc82b12811656c127">y1</a>, <a class="code" href="structszakasz.html#a910f1ee5ef8f2e60d9cb3b5dfa1078b9">x2</a>, <a class="code" href="structszakasz.html#ab9445e75d84b88d95a0e12c87bb4b398">y2</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structszakasz.html#a4b53d8f8299640a3168f12dac1a773df">   11</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structszakasz.html#a4b53d8f8299640a3168f12dac1a773df">szin</a>[20+1];</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structszakasz.html#aeeb55e688fe594c9c67272637f76b0d0">   13</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structszakasz.html">Szakasz</a> *<a class="code" href="structszakasz.html#aeeb55e688fe594c9c67272637f76b0d0">kov</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;} <a class="code" href="fuggveny_8h.html#a09e82e0000be8aa0a79b4d78fa58596c">Szakasz</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structrajz.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structrajz.html">Rajz</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structrajz.html#ab733c55fa004f30881f6733067b1c39c">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structrajz.html#a5312a777005c7e684281a1dfebc3a0a4">kx</a>, <a class="code" href="structrajz.html#ab733c55fa004f30881f6733067b1c39c">ky</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structrajz.html#a418010995c343033a5077f16f4277a7a">   23</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structrajz.html#ac893a39dd58ad79f24b51cee55f51cec">ox</a>, <a class="code" href="structrajz.html#a418010995c343033a5077f16f4277a7a">oy</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structrajz.html#a36bb50008a7734628251b6763413f54b">   25</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structrajz.html#acbb697dc2a54a46999f4c66734dbbeb8">nx</a>, <a class="code" href="structrajz.html#a36bb50008a7734628251b6763413f54b">ny</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structrajz.html#a79102191ab6000a2b2b28c2fb8395bcd">   27</a></span>&#160;    <a class="code" href="structszakasz.html">Szakasz</a> *<a class="code" href="structrajz.html#a79102191ab6000a2b2b28c2fb8395bcd">szakaszok</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <a class="code" href="fuggveny_8h.html#af821a960918aee35dbeec7923bbc5067">Rajz</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuggveny_8h.html#a8aa99fc25b047dd057740955cfd699eb">rajz_inicializal</a>(<a class="code" href="structrajz.html">Rajz</a> *r, <span class="keywordtype">int</span> kx, <span class="keywordtype">int</span> ky, <span class="keywordtype">double</span> ox, <span class="keywordtype">double</span> oy, <span class="keywordtype">double</span> nx, <span class="keywordtype">double</span> ny);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuggveny_8h.html#ac0a62cb69db4677a514ef377f47abf8c">rajz_felszabadit</a>(<a class="code" href="structrajz.html">Rajz</a> *r);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuggveny_8h.html#a065d18da6ad7a358670647811debbf60">rajz_ures</a>(<a class="code" href="structrajz.html">Rajz</a> *r);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuggveny_8h.html#a35f9b898d8a4a55e0cc8edfb358fa51a">rajz_kiir</a>(<a class="code" href="structrajz.html">Rajz</a> <span class="keyword">const</span> *r, FILE *fp);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuggveny_8h.html#a359969488b301c35479885b7412a05ab">rajz_fajlba</a>(<a class="code" href="structrajz.html">Rajz</a> <span class="keyword">const</span> *r, <span class="keywordtype">char</span> <span class="keyword">const</span> *nev);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuggveny_8h.html#abaa8104b610e15c962eeb5b06280f0cf">fuggveny_rajzol</a>(<a class="code" href="structrajz.html">Rajz</a> *r, <span class="keywordtype">double</span> (*fv)(<span class="keywordtype">double</span>), <span class="keywordtype">char</span> <span class="keyword">const</span> *szin);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="structSzakasz_html_aeeb55e688fe594c9c67272637f76b0d0"><div class="ttname"><a href="structszakasz.html#aeeb55e688fe594c9c67272637f76b0d0">Szakasz::kov</a></div><div class="ttdeci">struct Szakasz * kov</div><div class="ttdef"><b>Definition:</b> fuggveny.h:13</div></div>
+<div class="ttc" id="fuggveny_8h_html_a35f9b898d8a4a55e0cc8edfb358fa51a"><div class="ttname"><a href="fuggveny_8h.html#a35f9b898d8a4a55e0cc8edfb358fa51a">rajz_kiir</a></div><div class="ttdeci">void rajz_kiir(Rajz const *r, FILE *fp)</div><div class="ttdef"><b>Definition:</b> fuggveny.c:171</div></div>
+<div class="ttc" id="fuggveny_8h_html_a09e82e0000be8aa0a79b4d78fa58596c"><div class="ttname"><a href="fuggveny_8h.html#a09e82e0000be8aa0a79b4d78fa58596c">Szakasz</a></div><div class="ttdeci">struct Szakasz Szakasz</div></div>
+<div class="ttc" id="fuggveny_8h_html_ac0a62cb69db4677a514ef377f47abf8c"><div class="ttname"><a href="fuggveny_8h.html#ac0a62cb69db4677a514ef377f47abf8c">rajz_felszabadit</a></div><div class="ttdeci">void rajz_felszabadit(Rajz *r)</div><div class="ttdef"><b>Definition:</b> fuggveny.c:104</div></div>
+<div class="ttc" id="structRajz_html"><div class="ttname"><a href="structrajz.html">Rajz</a></div><div class="ttdef"><b>Definition:</b> fuggveny.h:19</div></div>
+<div class="ttc" id="fuggveny_8h_html_a359969488b301c35479885b7412a05ab"><div class="ttname"><a href="fuggveny_8h.html#a359969488b301c35479885b7412a05ab">rajz_fajlba</a></div><div class="ttdeci">void rajz_fajlba(Rajz const *r, char const *nev)</div><div class="ttdef"><b>Definition:</b> fuggveny.c:184</div></div>
+<div class="ttc" id="structRajz_html_a36bb50008a7734628251b6763413f54b"><div class="ttname"><a href="structrajz.html#a36bb50008a7734628251b6763413f54b">Rajz::ny</a></div><div class="ttdeci">double ny</div><div class="ttdef"><b>Definition:</b> fuggveny.h:25</div></div>
+<div class="ttc" id="structRajz_html_a79102191ab6000a2b2b28c2fb8395bcd"><div class="ttname"><a href="structrajz.html#a79102191ab6000a2b2b28c2fb8395bcd">Rajz::szakaszok</a></div><div class="ttdeci">Szakasz * szakaszok</div><div class="ttdef"><b>Definition:</b> fuggveny.h:27</div></div>
+<div class="ttc" id="structSzakasz_html_ab9445e75d84b88d95a0e12c87bb4b398"><div class="ttname"><a href="structszakasz.html#ab9445e75d84b88d95a0e12c87bb4b398">Szakasz::y2</a></div><div class="ttdeci">double y2</div><div class="ttdef"><b>Definition:</b> fuggveny.h:9</div></div>
+<div class="ttc" id="structRajz_html_a418010995c343033a5077f16f4277a7a"><div class="ttname"><a href="structrajz.html#a418010995c343033a5077f16f4277a7a">Rajz::oy</a></div><div class="ttdeci">double oy</div><div class="ttdef"><b>Definition:</b> fuggveny.h:23</div></div>
+<div class="ttc" id="structRajz_html_a5312a777005c7e684281a1dfebc3a0a4"><div class="ttname"><a href="structrajz.html#a5312a777005c7e684281a1dfebc3a0a4">Rajz::kx</a></div><div class="ttdeci">int kx</div><div class="ttdef"><b>Definition:</b> fuggveny.h:21</div></div>
+<div class="ttc" id="structRajz_html_ab733c55fa004f30881f6733067b1c39c"><div class="ttname"><a href="structrajz.html#ab733c55fa004f30881f6733067b1c39c">Rajz::ky</a></div><div class="ttdeci">int ky</div><div class="ttdef"><b>Definition:</b> fuggveny.h:21</div></div>
+<div class="ttc" id="structRajz_html_ac893a39dd58ad79f24b51cee55f51cec"><div class="ttname"><a href="structrajz.html#ac893a39dd58ad79f24b51cee55f51cec">Rajz::ox</a></div><div class="ttdeci">double ox</div><div class="ttdef"><b>Definition:</b> fuggveny.h:23</div></div>
+<div class="ttc" id="structSzakasz_html_ad67ccd11215a92fcc82b12811656c127"><div class="ttname"><a href="structszakasz.html#ad67ccd11215a92fcc82b12811656c127">Szakasz::y1</a></div><div class="ttdeci">double y1</div><div class="ttdef"><b>Definition:</b> fuggveny.h:9</div></div>
+<div class="ttc" id="fuggveny_8h_html_abaa8104b610e15c962eeb5b06280f0cf"><div class="ttname"><a href="fuggveny_8h.html#abaa8104b610e15c962eeb5b06280f0cf">fuggveny_rajzol</a></div><div class="ttdeci">int fuggveny_rajzol(Rajz *r, double(*fv)(double), char const *szin)</div><div class="ttdef"><b>Definition:</b> fuggveny.c:138</div></div>
+<div class="ttc" id="structSzakasz_html_a4b53d8f8299640a3168f12dac1a773df"><div class="ttname"><a href="structszakasz.html#a4b53d8f8299640a3168f12dac1a773df">Szakasz::szin</a></div><div class="ttdeci">char szin[20+1]</div><div class="ttdef"><b>Definition:</b> fuggveny.h:11</div></div>
+<div class="ttc" id="structSzakasz_html"><div class="ttname"><a href="structszakasz.html">Szakasz</a></div><div class="ttdef"><b>Definition:</b> fuggveny.h:7</div></div>
+<div class="ttc" id="structRajz_html_acbb697dc2a54a46999f4c66734dbbeb8"><div class="ttname"><a href="structrajz.html#acbb697dc2a54a46999f4c66734dbbeb8">Rajz::nx</a></div><div class="ttdeci">double nx</div><div class="ttdef"><b>Definition:</b> fuggveny.h:25</div></div>
+<div class="ttc" id="fuggveny_8h_html_a8aa99fc25b047dd057740955cfd699eb"><div class="ttname"><a href="fuggveny_8h.html#a8aa99fc25b047dd057740955cfd699eb">rajz_inicializal</a></div><div class="ttdeci">void rajz_inicializal(Rajz *r, int kx, int ky, double ox, double oy, double nx, double ny)</div><div class="ttdef"><b>Definition:</b> fuggveny.c:86</div></div>
+<div class="ttc" id="fuggveny_8h_html_a065d18da6ad7a358670647811debbf60"><div class="ttname"><a href="fuggveny_8h.html#a065d18da6ad7a358670647811debbf60">rajz_ures</a></div><div class="ttdeci">void rajz_ures(Rajz *r)</div><div class="ttdef"><b>Definition:</b> fuggveny.c:113</div></div>
+<div class="ttc" id="fuggveny_8h_html_af821a960918aee35dbeec7923bbc5067"><div class="ttname"><a href="fuggveny_8h.html#af821a960918aee35dbeec7923bbc5067">Rajz</a></div><div class="ttdeci">struct Rajz Rajz</div></div>
+<div class="ttc" id="structSzakasz_html_a910f1ee5ef8f2e60d9cb3b5dfa1078b9"><div class="ttname"><a href="structszakasz.html#a910f1ee5ef8f2e60d9cb3b5dfa1078b9">Szakasz::x2</a></div><div class="ttdeci">double x2</div><div class="ttdef"><b>Definition:</b> fuggveny.h:9</div></div>
+<div class="ttc" id="structSzakasz_html_afc40ef5e4d10720ddc393dcb39b12303"><div class="ttname"><a href="structszakasz.html#afc40ef5e4d10720ddc393dcb39b12303">Szakasz::x1</a></div><div class="ttdeci">double x1</div><div class="ttdef"><b>Definition:</b> fuggveny.h:9</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Projekt: Függvényrajzoló Készült: Tue Nov 18 2014 11:08:38 Készítette:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

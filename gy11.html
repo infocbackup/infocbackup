@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: Gyakorlat, 11. hét: láncolt listák I.</title>
+<meta property="og:title" content="InfoC :: Gyakorlat, 11. hét: láncolt listák I.">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Láncolt listák építése és kezelése.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Láncolt listák építése és kezelése.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="gy11.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<a id="gyaklista" class="namer"></a>
+<h1 class="eloadascim">Gyakorlat, 11. hét: láncolt listák I.</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Láncolt listák építése és kezelése.</p>
+</div>
+
+
+<p>Láncolt listák használata. Az óra célja az, hogy mindenki gyakorlatot szerezzen
+a listák használatában – különösen abban, hogyan kell a pointereket az
+egyes beszúrás, törlés stb. műveleteknél állítani. Ehhez minden esetben javasolt
+rajz készítése!</p>
+
+<p>Felkészülés a gyakorlatra:</p>
+<ul>
+    <li>A <a href="ea09.html#ealista">listákról szóló előadás</a> anyagának megértése.
+    <li>A <a href="ea08.html#eadinamikusmemoria">dinamikus memóriakezelésről szóló előadás</a> átismétlése.
+</ul>
+
+
+
+
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="gy11.html#1">Milyen adatszerkezet?</a>
+<li><a href="gy11.html#2">Számok listában</a>
+<li><a href="gy11.html#3">Madárnyelv számokkal és listával</a>
+<li><a href="gy11.html#4">Adott tulajdonságú elemek törlése</a>
+<li><a href="gy11.html#5">Megfordít</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Milyen adatszerkezet?</h2>
+</div>
+
+<p>Gondoljuk végig, az alábbi problémákhoz milyen adatszerkezetet érdemes használni.</p>
+<div class="tovabb">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldások</a></h4>
+<ul>
+<li>Egy program számokat olvas be, amelyek közül ki kell írni az átlagnál kisebbeket.
+Nem tudjuk, hány szám lesz.
+<div class="megjelenik csik">Ehhez a számokat el kell tárolnunk, mivel az összes szám ismeretében tudjuk
+meg az átlagot, és akkor kezdhetjük csak el a kiírást. Láncolt listát kell
+alkalmazni, ha nem szeretnénk minden számnál újra és újra nyújtani, lemásolni
+a tömböt.
+</div>
+<li>Egy program számokat olvas be, és a beolvasottak közül csak a prímszámokat
+írja ki.
+<div class="megjelenik csik"> Ehhez nem kell eltárolni a számokat, így a kérdés értelmetlen.
+</div>
+<li>Számokat olvasunk be, és visszafelé sorrendben ki kell írni az átlagnál kisebbeket.
+<div class="megjelenik csik"> Láncolt lista. Két lehetőségünk van: duplán láncolt listát használunk, mert
+visszafelé is szeretnénk haladni rajta; vagy egyszeresen láncoltat használunk
+veremként, hiszen annak eleve adott ez a tulajdonsága, hogy fordított sorrendben
+látszanak a betett elemek.
+</div>
+<li>Számokat olvasunk be, maximum százezret. Ki kell írni az átlagnál kisebbeket.
+<div class="megjelenik csik"> Ehhez ugyan jó lenne a tömb, de ha arra számítunk, hogy jóval kevesebb szám lesz csak,
+akkor pazarlás a 100000 elem, és így jobb a láncolt lista. (Különösen igaz ez akkor,
+ha nem csak számok tárolandók, hanem valami nagyobb adatok.)
+</div>
+<li>„Lemmings” játékot írunk. Egy bejáraton besétálnak a lemingek, akik egy adott időt
+töltenek a pályán, mindenféle dolgokat csinálva. A sok leming közül némelyek kimennek
+a kijáraton, mások pedig feláldozzák magukat a többiekért.
+<div class="megjelenik csik"> Láncolt lista, mivel folyton változik a számuk. Érdemes duplán láncoltat csinálni, ugyanis
+gyakori művelet a törlés is, és az egyszerűbb duplán láncolt listán.
+</div>
+<li>Be kell olvasnunk egy tetszőlegesen hosszú sort a bemenetről (karakterek enterig).
+<div class="megjelenik csik">
+Dinamikus tömb, amelyet időnként átméretezünk. A listás megoldás hatalmas pazarlás lenne
+(minden karakter mellé egy pointer!), és a keletkező adatszerkezetet nem tudnánk sztringként
+sem használni sehol.
+</div>
+<li>A programunk egy közlekedési társaság buszjáratait tárolja. Minden járatnak van egy
+száma, illetve van két végállomása, és közte tetszőlegesen sok megálló.
+<div class="megjelenik csik"> Fésűs lista, azaz listák listája. A „külső” listában a buszjáratok vannak, amelyekhez
+járatszámok, és darabonként egy megállólista („belső” listák) tartoznak.
+</div>
+<li>Amőba játékot írunk. A 13×13-as pályára a játékosok felváltva <code>o</code> és <code>x</code>
+jeleket tesznek, amelyek száma így változik. Nem tudjuk előre, mennyi lesz, hiszen lehet hogy hamar
+vége van a játéknak, lehet mindkét játékos ügyes, és szinte megtelik a pálya.
+<div class="megjelenik csik"> Átverés, ez 13×13-as tömb. Ha a letett <code>o</code> és <code>x</code> bábukat listában tárolnánk
+(mindegyik mellé felírva, hogy mely (x;y) koordinátára kerültek), akkor borzasztóan elbonyolódna
+egy elem „indexelése”, és így pl. a játékállás ellenőrzése.
+</div>
+<li>Beolvasunk számokat a billentyűzetről, és meg kell mondanunk, hogy melyik szám hányszor szerepelt.
+<div class="megjelenik csik"> Ez egy lista, legalábbis jelenlegi ismereteink szerint. Ha egy új szám jön, és még nincs a listában, akkor
+felvesszük; ha már benne van, akkor csak növeljük a hozzá tartozó számlálót. Mivel nem tudjuk, hány szám lesz,
+ezért a tömb itt nem jó.
+</div>
+<li>Beolvasunk karaktereket a billentyűzetről, és meg kell mondanunk, hogy melyik kisbetű (abc…z) hányszor szerepelt.
+<div class="megjelenik csik"> Ez viszont tömb. Mivel a számolandó elemek száma előre ismert és kicsi (mindössze <code>'z'-'a'+1=26</code> darab), nem érdemes
+a listával bajlódni.
+</div>
+</ul>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Számok listában</h2>
+</div>
+
+<p>Írjunk programot, amely a billentyűzetről számokat olvas be, egészen 0-ig. Írjuk ki ezután a beolvasott számok
+közül azokat, amelyek az átlagnál kisebbek! A sorrend nem számít.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Tudjuk, hogy a számokat el kell tárolni, mivel csak a legutolsó szám után derül ki az, hogy
+melyeket kell kiírni. A „tetszőlegesen sok” miatt listát kell alkalmaznunk. Kérdés, hogy
+egyszeresen vagy kétszeresen láncolt kell legyen. Mivel a kiírás sorrendje nem kötött,
+válasszunk egy egyszeresen láncolt listát, annak is a legegyszerűbb beszúró függvényét: a lista
+elejére beszúrást!</p>
+
+<p>A fentiek alapján a lista:</p>
+
+<pre class="brush: c "  >
+typedef struct Szam {
+   int szam;
+   struct Szam *kov;
+} Szam;</pre>
+
+<p>A főprogram szinte nem különbözik attól, mintha tömbbel csinálnánk:</p>
+
+<pre class="brush: c "  >
+int main(void) {
+   Szam *lista=NULL, *iter;
+   int beolv;
+   double atlag;
+
+   scanf(&quot;%d&quot;, &amp;beolv);
+   while (beolv!=0) {
+      lista=elejere(lista, beolv);
+      scanf(&quot;%d&quot;, &amp;beolv);
+   }
+
+   atlag=listaatlag(lista);
+
+   for (iter=lista; iter!=NULL; iter=iter-&gt;kov)
+      if (iter-&gt;szam&lt;atlag)
+         printf(&quot;%d &quot;, iter-&gt;szam);
+
+   felszabadit(lista);
+
+   return 0;
+}</pre>
+
+<p>Ha nem használnánk külön változót a beolvasott számnak, hanem egyenesen
+a listába szeretnénk beolvasni, akkor itt most nagy bajban lennénk. Ugyanis
+a beolvasás előtt már létre kellene hozni egy listaelemet, amit aztán ki kellene
+törölni, ha nullát olvastunk be.</p>
+
+<p>A listába beszúrás: mindig az elejére tesszük az új számot (ezért amúgy fordított
+sorrendben lesznek benne):</p>
+
+<img src="gy11/listaverem.svg" style="width: 20em;" class="float">
+
+<pre class="brush: c "  >
+/* uj elemet szur be a megadott lista elejere.
+ * visszater az uj, megvaltozott lista eleje
+ * mutatoval. a hasznalata:
+ * l = beszur(l, 5);
+ */
+Szam *elejere(Szam *lista, int szam) {
+   Szam *uj=(Szam*) malloc(sizeof(Szam)); /* 1 */
+   uj-&gt;szam=szam;
+   uj-&gt;kov=lista;                         /* 2 */
+   return uj;                             /* 3 */
+}</pre>
+
+<p>A lista elemeinek átlaga végülis ugyanolyan, mintha tömbünk lenne. Csak itt meg is kell 
+számolnunk az elemeket:</p>
+
+<pre class="brush: c "  >
+/* a megadott listan levo szamok atlagat adja */
+double listaatlag(Szam *lista) {
+   Szam *iter;
+   double szum=0;
+   int db=0;
+
+   for (iter=lista; iter!=NULL; iter=iter-&gt;kov) {
+      szum+=iter-&gt;szam;
+      db++;
+   }
+   return szum/db;   /* double/int oke */
+}</pre>
+
+<p>A teljes program letölthető ide kattitva: <a href="gy11/szamoklistaban.c">szamoklistaban.c</a>.</p>
+
+</div>
+</div>
+
+
+
+</div>
+</section>
+<section id="3">
+<div class="slide" id="slide_3">
+<div class="slideheader">
+<h2><span class="oldalszam">3</span>Madárnyelv számokkal és listával</h2>
+</div>
+
+<p>Adott egy egész számokat tartalmazó lista. Írjunk be minden páros szám után egy nullát
+és a számot magát. Vagyis legyen a 2,3,4,5 listából a 2,<strong>0,2,</strong>3,4,<strong>0,4,</strong>5 lista.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Ez könnyű, hiszen beszúrni egy adott elem <em>után</em> könnyen tudunk. Végigmegyünk a 
+listán, ha az páros, akkor beszúrunk utána egy nullát és saját magát. Vigyázat, két buktató is 
+van! Ha ilyen sorrendben tennénk, akkor fordított lenne az eredmény – vagyis előbb saját magát, 
+és utána a nullát kell beszúrni. (Ehhez inkább külön változókat használ a lenti kód.) Figyelni 
+kell arra is, hogy a beszúrás után az iterátort léptessük, nehogy a következő körben megtaláljuk 
+a nullát vagy a beszúrt számot (hiszen ezek is párosak). Kettővel léptetjük előre, ezáltal olyan 
+állapotot előidézve, mintha a ciklusváltozó a beszúrt elemre mutatna.</p>
+
+<img src="gy11/lista202.svg" style="width: 32em;" class="kozep">
+
+<pre class="brush: c "  >
+/* A listában minden páros szám után beszúr egy nullát,
+ * és még egyszer magát a számot.
+ */
+void lista_202(Szam *lista) {
+   Szam *iter;
+
+   for (iter=lista; iter!=NULL; iter=iter-&gt;kov)
+      if (iter-&gt;szam%2==0) {
+         Szam *ujszam, *ujnulla;
+         ujszam=(Szam*) malloc(sizeof(Szam));
+         ujszam-&gt;szam=iter-&gt;szam;
+         ujszam-&gt;kov=iter-&gt;kov;
+         ujnulla=(Szam*) malloc(sizeof(Szam));
+         ujnulla-&gt;szam=0;
+         ujnulla-&gt;kov=ujszam;
+         iter-&gt;kov=ujnulla;
+         /* 2-t ugrunk, es utana meg jon a 3. ugras */
+         iter=iter-&gt;kov-&gt;kov;
+      }
+}</pre>
+
+<p>
+Az 1-2. lépést, vagyis a szám és a pointer másolását összevonhatnánk
+egy lépésbe:
+</p>
+<pre class="brush: c "  >
+*ujszam = *iter;</pre>
+<p>Struktúra értékadással, ugyanis mind a számot, mind a pointert, vagyis az
+egész struktúrát másoljuk ott.</p>
+
+<p>A teljes program letölthető innen: <a href="gy11/lista202.c">lista202.c</a>.</p>
+
+</div>
+</div>
+
+
+</div>
+</section>
+<section id="4">
+<div class="slide" id="slide_4">
+<div class="slideheader">
+<h2><span class="oldalszam">4</span>Adott tulajdonságú elemek törlése</h2>
+</div>
+
+<p>Adott egy szavakat tartalmazó lista. Töröljük ki belőle a négybetűseket!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<img src="gy11/lista11eleje.svg" style="width: 25em;" class="float">
+
+<p>Itt figyelnünk kell arra, hogy előfordulhat, a lista első elemét kell törölni. Ilyenkor pedig
+a lista eleje mutató is megváltozhat. A következő további esetek lehetségesek:</p>
+
+<ul>
+   <li>Miután töröltük az első elemet, lehet hogy a második elem is négybetűs. Ekkor
+      azt is törölni kell. Viszont az az első helyre került – vagyis az első elem vizsgálata
+      nem csak egy feltétel, hanem egy ciklus. Amíg a lista elején négybetűs van,
+      addig töröljük azt.
+   <li>Mindeközben elfogyhat a lista – hiszen lehet az is, hogy csak négybetűs szavakat
+      tartalmazott. Sőt az is, hogy eleve üres volt.
+</ul>
+
+<p>Ez a ciklus így néz ki:</p>
+<pre class="brush: c "  >
+while (lista!=NULL &amp;&amp; strlen(lista-&gt;szo)==4) {
+   Szo *torlendo=lista;
+   lista=torlendo-&gt;kov;
+   free(torlendo);
+}</pre>
+
+<p>Itt kihasználjuk az <code>&amp;&amp;</code> operátor rövidzár tulajdonságát. Ha a pointer 
+NULL, akkor már a <code>lista->szo</code> kifejezés ki sem értékelődik, hiszen az egész kifejezés 
+értéke csak HAMIS lehet. Ez fontos, hiszen ez biztosítja azt, hogy ne dereferáljuk a 
+<code>NULL</code> pointert! Emiatt a kifejezés két oldala <em>nem cserélhető meg!</em>
+
+<p>Ezután két eset lehetséges:</p>
+<ul>
+   <li>A lista üressé vált, és nincs további teendőnk.
+   <li>A lista nem lett üres, amely esetben azonban az elején biztosan nem négybetűs szó
+      van. Az már meg fog maradni, így a lista elejét mutató pointer nem módosul tovább.
+</ul>
+
+<img src="gy11/lista11tobbi.svg" style="width: 48em;" class="kozep">
+
+<p>Mivel minden törlendő elemet <em>megelőző</em> pointerét kell módosítani a törlésnél, így vagy
+azt keressük meg, hogy mely elemeknél kell törölni a következőt, vagy lemaradó pointert 
+használunk. Alább a lemaradó pointeres megoldás látható. Figyelni kell, ha egy adott elemet 
+törlünk, akkor a <code>lemaradó</code> pointer nem mozdul, hanem csak az <code>iter</code>! 
+Amúgy pedig együtt mozognak. A programrész:
+
+<pre class="brush: c "  >
+if (lista!=NULL) {
+   Szo *lemarado=lista;
+   Szo *iter=lista-&gt;kov;
+
+   while (iter!=NULL) {
+      Szo *kovetkezo=iter-&gt;kov;
+
+      if (strlen(iter-&gt;szo)==4) {
+         lemarado-&gt;kov=kovetkezo;  /* 1 */
+         free(iter);               /* 2 */
+      } else
+         lemarado=iter;
+      iter=kovetkezo;              /* 3 */
+   }
+}</pre>
+
+<p>A teljes program letölthető innen: <a href="gy11/torles11.c">torles11.c</a>.</p>
+
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+<section id="5">
+<div class="slide" id="slide_5">
+<div class="slideheader">
+<h2><span class="oldalszam">5</span>Megfordít</h2>
+</div>
+
+<p>Fordítsunk meg egy listát az elemei átláncolása által! Írjunk egy programot, amely beolvas
+számokat 0-ig, és kiírja a keletkező listát eredeti sorrendjében (és ezáltal a számokat eredeti
+sorrendjükben), továbbá kiírja a megfordítottat is.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Ez egyszerűbb, mint gondolnánk. Ha mindig a lista elejéről elveszünk egy elemet, és a 
+megfordított lista elejére betesszük azt, akkor a lista éppen megfordul! Az eredeti lista szép 
+lassan elfogy, és mikor ez megtörténik, akkor a keletkező lista kész.</p>
+
+<img src="gy11/listamegfordit.svg" style="width: 26em;" class="kozep">
+
+<pre class="brush: c "  >
+/* Megfordit egy parameterkent kapott listat, es visszater
+ * a megforditott valtozattal.
+ * Vigyazat, az eredeti lista elveszik! A fuggveny nem uj
+ * listat epit, hanem az eredeti lista elemeinek felhasznalasaval
+ * epiti az uj listat. Igy a kapott pointert legjobb az eredeti
+ * lista eleje pointerbe visszairni:
+ *   szamok = lista_megfordit(szamok);
+ */
+Szam *lista_megfordit(Szam *lista) {
+   Szam *eredeti=lista;
+   Szam *megforditott=NULL;
+
+   while (eredeti!=NULL) {
+      Szam *atrakott=eredeti, *kovetkezo=eredeti-&gt;kov;
+      atrakott-&gt;kov=megforditott;   /* uj elejere be */   /* 1 */
+      megforditott=atrakott;                              /* 2 */
+      eredeti=kovetkezo;            /* regibol kihagy */  /* 3 */
+   }
+
+   return megforditott;
+}</pre>
+
+<p>A teljes program letölthető innen: <a href="gy11/listamegfordit.c">listamegfordit.c</a>.</p>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="gy11.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>

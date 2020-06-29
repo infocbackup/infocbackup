@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="hu" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<title>InfoC :: 7. hét: rendezések, rekurzió</title>
+<meta property="og:title" content="InfoC :: 7. hét: rendezések, rekurzió">
+<meta property="og:image" content="/modulz/logo.png">
+<meta property="og:description" content="Gyakorlófeladatok a 7. előadás anyagához kapcsolódóan.">
+<meta property="og:site_name" content="InfoC – Programozás alapjai I.">
+<meta name="description" content="Gyakorlófeladatok a 7. előadás anyagához kapcsolódóan.">
+<meta name="keywords" content="bme eet infoc programozás prog1 szoftlab1">
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="modulz/favicon.ico" id="faviconhref">
+<link rel="apple-touch-icon" href="modulz/logo_touch.png">
+<link rel="image_src" href="modulz/logo.png"> 
+<script>var infoc = { onloads: [], onresize: [] };</script>
+<script>infoc.onloads.push(function(){ h3toid(); });
+</script>
+<link rel="stylesheet" href="modulz/style/style-vik.css@v10.css">
+<link rel="stylesheet" href="modulz/style/localfonts.css@v10.css">
+<script src="modulz/siteui.js@v10" async></script>
+</head>
+
+<body class="doksibody">
+<!--[if lt IE 9]>
+<blockquote><p>A régi Internet Explorer böngésző, amit használsz, nem támogatott!
+Az oldal használatához keress egy <a href="http://browsehappy.com/">jobb, újabb böngészőprogramot</a>!</p></blockquote>
+<![endif]-->
+<div id="bodycontent">
+
+<nav role="navigation">
+<div id="menubg">
+<div id="menu" class="shaper dropdown">
+<div class="infoc"><a href="index.html">InfoC</a></div>
+<ul>
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Infó</a>
+<ul>
+<li><a href="index.html">Kezdőlap</a>
+<li><a href="nhf.html">Nagy házi feladat</a>
+<li><a href="elerhetoseg.html">Elérhetőség</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Tananyag</a>
+<ul>
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Előadás</a>
+<ul>
+<li><a href="ea01.html">1. hét: bevezetés</a>
+<li><a href="ea02.html">2. hét: algoritmusok</a>
+<li><a href="ea03.html">3. hét: tételek, tömbök</a>
+<li><a href="ea04.html">4. hét: függvények, számábrázolás</a>
+<li><a href="ea05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="ea06.html">6. hét: pointerek, állapotgépek</a>
+<li><a href="ea07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="ea08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="ea09.html">9. hét: láncolt listák</a>
+<li><a href="ea11.html">11. hét: fájlkezelés, modulok</a>
+<li><a href="ea12.html">12. hét: bináris fák</a>
+<li><a href="ea13.html">13. hét: generikus algoritmusok</a>
+<li><a href="ea14.html">14. hét: nagy program tervezése</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="gy01.html">1. hét: tanult algoritmusok</a>
+<li><a href="gy02.html">2. hét: algoritmizálás</a>
+<li><a href="gy03.html">3. hét: egyszerű programok</a>
+<li><a href="gy04.html">4. hét: tételek és tömbök</a>
+<li><a href="gy05.html">5. hét: függvények</a>
+<li><a href="gy06.html">6. hét: származtatott típusok</a>
+<li><a href="gy07.html">7. hét: mutatók használata</a>
+<li><a href="gy08.html">8. hét: rekurzió, állapotgép</a>
+<li><a href="gy09.html">9. hét: dinamikus tömbök</a>
+<li><a href="gy11.html">11. hét: láncolt listák I.</a>
+<li><a href="gy12.html">12. hét: láncolt listák II.</a>
+<li><a href="gy13.html">13. hét: bináris fák</a>
+<li><a href="gy14.html">14. hét: generikus algoritmusok</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Labor</a>
+<ul>
+<li><a href="lab01.html">1. hét: operációs rendszer</a>
+<li><a href="lab02.html">2. hét: fejlesztőkörnyezet használata</a>
+<li><a href="lab03.html">3. hét: egyszerű programok</a>
+<li><a href="lab04.html">4. hét: tömbök</a>
+<li><a href="lab06.html">6. hét: struktúrák és függvények</a>
+<li><a href="lab06sz.html">6. hét, szombat: gyakorlófeladatok</a>
+<li><a href="lab08.html">8. hét: mutatók, sztringek</a>
+<li><a href="lab09.html">9. hét: dinamikus tömbök</a>
+<li><a href="lab10.html">10. hét: rekurzió és állapotgépek</a>
+<li><a href="lab11.html">11. hét: láncolt listák</a>
+<li><a href="lab12.html">12. hét: duplán láncolt listák</a>
+<li><a href="lab13.html">13. hét: bináris fák</a>
+<li><a href="lab14.html">14. hét: labirintus játék</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Példatár</a>
+<ul>
+<li><a href="f01.html">1. hét: egyszerű programok</a>
+<li><a href="f02.html">2. hét: vezérlési szerkezetek</a>
+<li><a href="f03.html">3. hét: logika, sorozatok, tömbök</a>
+<li><a href="f04.html">4. hét: számábrázolás, bitek, függvények</a>
+<li><a href="f05.html">5. hét: operátorok, struktúrák</a>
+<li><a href="f06.html">6. hét: pointerek, sztringek, állapotgépek</a>
+<li><a href="f07.html">7. hét: rendezések, rekurzió</a>
+<li><a href="f08.html">8. hét: dinamikus memóriakezelés</a>
+<li><a href="f09.html">9. hét: láncolt listák</a>
+<li><a href="f11.html">11. hét: parancssor, fájlkezelés, modulok</a>
+<li><a href="f12.html">12. hét: bináris fák, többszörös indirekció</a>
+<li><a href="f13.html">13. hét: generikus algoritmusok</a>
+</ul>
+
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Segédlet</a>
+<ul>
+<li><a href="jegyzet.html">Jegyzet és puska</a>
+<li><a href="fejlesztokornyezet.html">Fejlesztőkörnyezetek</a>
+<li><a href="stilus.html">Kódolási stílus</a>
+<li><a href="tanacsok.html">Tanácsok a tanuláshoz</a>
+<li><a href="debugmalloc.html">Debugmalloc</a>
+<li><a href="mintanhf.html">NHF minta</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Extrák</a>
+<ul>
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Szorgalmik, versenyek</a>
+<ul>
+<li><a href="nhfszepsegverseny2014.html">NHF szépségverseny 2014</a>
+<li><a href="nhfszepsegverseny2013.html">NHF szépségverseny 2013</a>
+<li><a href="nhfszepsegverseny2012.html">NHF szépségverseny 2012</a>
+<li><a href="orak.html">SVG óra galéria</a>
+<li><a href="angrybirds.html">SVG Angry Birds</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Elmélet</a>
+<ul>
+<li><a href="turing.html">Mit tud a számítógép?</a>
+<li><a href="bf.html">BF</a>
+<li><a href="bitturmix.html">Bitturmix</a>
+<li><a href="labirintus.html">Labirintusok</a>
+<li><a href="tripla.html">Tripla indirekció</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Gyakorlat</a>
+<ul>
+<li><a href="karakterkodolas.html">Karakterkódolások</a>
+<li><a href="strlcpy.html">Kulturált sztringmásoló</a>
+<li><a href="internet.html">Internet</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Grafika</a>
+<ul>
+<li><a href="sdl.html">SDL grafika</a>
+<li><a href="sdl_telepito.html">SDL telepítés</a>
+<li><a href="fa.html">Fák rajzolása</a>
+<li><a href="lathatatlan.html">Láthatatlan zongorista</a>
+</ul>
+
+<li class="al "><a href="f07.html#" onclick="menu_click(this)">Nyelvészet</a>
+<ul>
+<li><a href="mondatelemzo.html">Mondatelemző</a>
+<li><a href="kifejezesek.html">Kifejezések</a>
+<li><a href="derivalas.html">Deriválás</a>
+<li><a href="ast_epit.html">AST: szintaxisfák</a>
+<li><a href="ast_epit_copa.html">AST: értékadás I.</a>
+<li><a href="ast_epit_parameteres.html">AST: értékadás II.</a>
+</ul>
+
+<li><a href="advent.html">Adventi naptár</a>
+</ul>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<main role="main">
+<div id="doksi" class="shaper">
+<section id="0">
+<div class="slide" id="slide_0">
+<h1 class="eloadascim">7. hét: rendezések, rekurzió</h1>
+<div class="focim">
+<p class="szerzocim"><i class="szerzo"></i> Czirkos Zoltán, Nagy Gergely, Pohl László · <i class="ido"></i> 2015.02.18 · Frissítve: 2015.02.15</p>
+<p class="kivonat">Gyakorlófeladatok a 7. előadás anyagához kapcsolódóan.</p>
+</div>
+
+
+<p>Ezen az oldalon rengeteg feladat található a gyakorláshoz. Egy részük megoldással együtt, míg 
+a többi anélkül. A gyakorlófeladatok megoldásához elvileg elegendő az az ismeretanyag, amely az előadáson 
+szerepelt. Természetesen a megoldás kitalálásához szükség lehet arra a rálátásra és 
+tapasztalatra, amit a gyakorlatok és a laborok adnak. A feladatok témakörök szerinti 
+csoportosítása viszont ettől függetlenül az előadást követi.</p>
+
+<p>Felhívjuk a figyelmed arra, hogy a megoldások olvasgatása lényegében nulla 
+tapasztalatot és gyakorlatot ad, így az eredményes számonkérésekhez nem tud hozzásegíteni! A 
+megoldásokat akkor nézd csak meg, ha a saját megoldás elkészítése közben elakadsz.
+Lásd <a href="tanacsok.html">itt</a>.</p>
+
+<nav><div id="tartalom">
+<h3>Tartalom</h3>
+<ol>
+<li><a href="f07.html#1">Keresések, rendezések</a>
+<li><a href="f07.html#2">Rekurzió</a>
+</ol>
+</div>
+</nav>
+</div>
+</section>
+<section id="1">
+<div class="slide" id="slide_1">
+<div class="slideheader">
+<h2><span class="oldalszam">1</span>Keresések, rendezések</h2>
+</div>
+
+<h3>Javított buborékrendezés</h3>
+
+<p>A buborékrendezés egymás melletti elemeket cserél sorban. Egy sor csere hatására
+a legnagyobb elem a tömb végére vándorol; a következő körben azt
+már nem kell vizsgálni, hanem a tömb eggyel rövidebb részletét
+csak. Ezt kell folytatni addig, amíg el nem fogy a tömb.</p>
+
+
+<p>A buborékrendezés hatékonysága javítható azzal, ha megjegyezzük, hogy a
+vizsgált tömbrészletnél volt-e csere. Ha nem volt, akkor minden pár jó
+sorrendben van. Akkor a rövidebb részt vizsgálva is ugyanerre az eredményre
+jutnánk, vagyis a külső ciklust már nem kell folytatni. Implementáld ezt a változatot!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+void buborek(double t[], int db) {
+   int i, j;
+   int voltcsere=1;
+   /* egyre rövidebb tömbrészletek ciklusa */
+   for (i=db-1; i&gt;0 &amp;&amp; voltcsere; --i){
+        voltcsere=0;
+        /* egymás utáni párok ciklusa */
+        for (j=0; j&lt;i; ++j){
+            if (t[j+1]&lt;t[j]) {       /*  összehasonlítás */
+                double temp=t[j];
+                t[j]=t[j+1];          /*  csere */
+                t[j+1]=temp;
+                voltcsere=1;
+            }
+        }
+    }
+}</pre>
+</div>
+</div>
+
+
+
+<h3>Lineáris és bináris keresés</h3>
+
+<p>Töltsünk fel egy nagy tömböt véletlenszámokkal. Rendezzük a tömböt. Válasszunk egy elemet a
+tömb értékkészletéből, és keressük meg, hogy a rendezett tömb mely tartományában szerepel
+(hányadiktól hányadik indexig). Tegyük ezt a keresést a lehető leggyorsabban!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A rendezett tömbön végezhetünk bináris keresést. A bináris keresés egy indexszel fog
+visszatérni, amelyik az adott szám EGY találatára fog mutatni. Ettől balra is, és jobbra is
+lehetnek még elemek, például a tömb részlete lehet:
+<code>1&nbsp;2&nbsp;2&nbsp;3&nbsp;3&nbsp;[3]&nbsp;3&nbsp;4&nbsp;4&nbsp;5&nbsp;6</code>, ahol a
+jelölt elem a bináris keresés által megtalált. A bináris keresés után a tartomány két szélét
+lineárisan kell megkeresnünk.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;assert.h&gt;
+
+void rendez(int *tomb, int meret) {
+    int i, j;
+    /* a j. helyre fogunk keresni elemet. */
+    /* j 0-tol meret-2-ig megy; j=meret-1 esetben
+       mar csak a legutolso elem lenne, az meg addigra
+       a helyen van (nincs mivel cserelni.) */
+    for (j=0; j&lt;meret-1; j++) {
+        int minindex;
+        int temp;
+
+        /* keressuk a minimumot; meret-1-ig, mert
+           ott is lehet. */
+        minindex=j;
+        for (i=j+1; i&lt;meret; i++)
+            if (tomb[i]&lt;tomb[minindex])
+                minindex=i;
+        temp=tomb[j];
+        tomb[j]=tomb[minindex];
+        tomb[minindex]=temp;
+    }
+}
+
+// A feladat megoldasa, 1. resz.
+/* binarisan keres egy tombben egy erteket.
+   ha megtalalja, visszater az indexszel (0..meret-1),
+   ha nem, -1-gyel. */
+int binkeres(int *tomb, int meret, int mit) {
+    int min, max, kozep;
+
+    min=0; max=meret-1;
+    kozep=(min+max)/2;  /* egesz osztas! milyen jo, hogy van. */
+    while (min&lt;max &amp;&amp; tomb[kozep]!=mit) {
+        /* ha kisebb, mint a kozepso, a tartomany felso hatarat  */
+        if (mit&lt;tomb[kozep])
+            max=kozep-1;
+        else
+        /* ha nagyobb, akkor az alsot. */
+            min=kozep+1;
+        kozep=(min+max)/2;
+    }
+    /* ha azert jottunk ki, mert megtalaltuk */
+    if (tomb[kozep]==mit)
+        return kozep;
+    /* amugy terjunk vissza a magikus -1-gyel */
+    return -1;
+}
+
+// A feladat megoldasa, 2. resz.
+void szelesit(int *tomb, int meret, int mit, int belul,
+    int *min, int *max) {
+    assert(tomb[belul]==mit);   /* enelkul nem megy */
+
+    /* ez a tartomanyon belul van. */
+    *min=belul;
+    /* ha az elotte levo is, akkor csokkentjuk. */
+    /* &amp;&amp; rovidzar tulajdonsaga miatt nincs tulindexeles! */
+    while (*min&gt;0 &amp;&amp; tomb[*min-1]==mit)
+        (*min)--;
+
+    *max=belul;
+    while (*max&lt;meret-1 &amp;&amp; tomb[*max+1]==mit)
+        (*max)++;
+}
+
+void kiir(int *tomb, int meret) {
+    int i;
+    for (i=0; i&lt;meret; i++)
+        printf(&quot;%d&quot;, tomb[i]);
+    printf(&quot;\n&quot;);
+}
+
+int main(void) {
+    int tomb[100];
+    int i;
+    int mitkeres=7;
+    int egyiktalalat;
+    int min, max;
+
+    srand(time(0));
+
+    for (i=0; i&lt;100; i++)
+        tomb[i]=rand()%10;
+    kiir(tomb, 100);
+
+    rendez(tomb, 100);
+    kiir(tomb, 100);
+
+    egyiktalalat=binkeres(tomb, 100, mitkeres);
+    if (egyiktalalat!=-1) {
+        printf(&quot;A keresett %d szam megtalalhato itt: %d.\n&quot;,
+            mitkeres, egyiktalalat);
+
+        szelesit(tomb, 100, mitkeres, egyiktalalat, &amp;min, &amp;max);
+        printf(&quot;A keresett %d szam megtalalhato itt: %d-%d.\n&quot;,
+            mitkeres, min, max);
+
+        /* kiiras, mindket oldalon +1 */
+        if (min&gt;0) min--;
+        if (max&lt;100-1) max++;
+        printf(&quot;A tartomany, +1 mindket oldalon: &quot;);
+        for (i=min; i&lt;=max; i++)
+            printf(&quot;%d&quot;, tomb[i]);
+        printf(&quot;\n&quot;);
+    }
+    else
+        printf(&quot;Egyaltalan nincs a keresett elembol.\n&quot;);
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+
+<h3>A három legkisebb</h3>
+
+<p>Írjunk programot, amelyik egy tömbből kiírja a három legkisebb
+elemet.</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>Ehhez praktikus a közvetlen kiválasztásos rendezést alkalmazni.
+A közvetlen kiválasztásos eljárás lényege, hogy megkeresi a legkisebb
+elemet, és azt a tömb elejére rakja; utána a fennmaradó tömbrészletre
+megcsinálja ugyanezt. Így a második lépésben a tömb második helyére
+a második legkisebb eleme kerül, a harmadikban a harmadik legkisebb.</p>
+
+<p>Mivel nekünk csak az első három legkisebb kell, itt le is állíthatjuk
+az algoritmust, nem futtatva azt az egészen tömb végéig. Így mindössze
+három csere után meg tudjuk adni a választ.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void harom_legkisebb(int *tomb, int meret) {
+    int i, j;
+
+    for (i=0; i&lt;3; ++i) {      /* csak 3, nem meret */
+        int minindex;
+        int temp;
+
+        minindex=i;            /* ez a legkisebb... */
+        for (j=i+1; j&lt;meret; ++j)  /* vagy megis van kisebb? */
+            if (tomb[j]&lt;tomb[minindex])
+                minindex=j;
+        /* csere 3 lepesben */
+        temp=tomb[minindex];
+        tomb[minindex]=tomb[i];
+        tomb[i]=temp;
+    }
+
+    /* veletlen elemek */
+    printf(&quot;Harom legkisebb: &quot;);
+    for (i=0; i&lt;3; ++i)
+        printf(&quot;%d &quot;, tomb[i]);
+    printf(&quot;\n&quot;);
+}
+
+int main(void) {
+    int tomb[10]={9, 4, 4, 6, 9, 1, 3, 9, 7, 4};
+
+    harom_legkisebb(tomb, 10);
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+<h3>Medián</h3>
+<div class="sticky">Vizsga volt</div>
+
+<p>Írj függvényt, amely átvesz egy double elemekből álló tömböt, és visszaadja a medián elemét!
+A medián az az elem, amelynél annyi kisebb van a tömbben, ahány nagyobb. Felteheti, hogy a
+tömbben páratlan sok elem van, és nincs két egyforma. Tetszőlegesen használhatsz
+segédfüggvényeket, memóriát, de az eredeti tömböt nem változtathatod meg!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+
+<p>A mediánról a gyorsrendezés (qsort) kapcsán volt szó előadáson, de a definíciója kiderül a
+feladat szövegéből is. Ha egy rendezett tömböt nézünk, annak a medián pont a középső eleme;
+hiszen a rendezett tömbben pont ugyanannyi van a középsőtől balra (nála kisebbek), mint tőle
+jobbra (nála nagyobbak.) Vagyis nincs más dolog, mint rendezni a tömböt, és visszatérni a
+középső elemmel. A probléma már csak annyi, hogy az eredeti tömböt nem változtathatjuk meg. Nem
+gond, másoljuk le, és rendezzük a másolatot.</p>
+
+<p>A lenti programban a könyvtári <code>qsort()</code> függvényt használjuk. A paraméterei
+lenézhetőek a C puskáról (tömb, méret, egy elem mérete, összehasonlító függvény.) Írni kell
+hozzá egy összehasonlító függvényt, ez is alap kérdés szokott lenni. A kiírásokat a feladat nem
+kérte; csak azért szerepelnek a kódban, hogy látszódjon, mi történik. A <code>qsort()</code>
+függvény használata csak egy későbbi előadáson szerepel; a feladat természetesen megoldható
+saját rendezőalgoritmussal is.</p>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+/* kiir egy double tombot. nem kerte a feladat. */
+void kiir(double *tomb, int meret) {
+    int i;
+
+    for (i=0; i&lt;meret; i++)
+        printf(&quot;%6.4lf  &quot;, tomb[i]);
+    printf(&quot;\n&quot;);
+}
+
+/* qsort()-nak valo osszehasonlito fuggveny. */
+int has(void const *pa, void const *pb) {
+    if (*(double *)pa &lt; *(double *)pb)
+        return -1;
+    if (*(double *)pa &gt; *(double *)pb)
+        return 1;
+    return 0;
+}
+
+/* *** ezt a fuggvenyt kerte a feladat! *** */
+double median(double const *tomb, int meret) {
+    double *masolat, med;
+    int i;
+
+    masolat=(double *) malloc(sizeof(double)*meret);
+    for (i=0; i&lt;meret; i++)
+        masolat[i]=tomb[i];
+    qsort(masolat, meret, sizeof(double), has);
+
+    /* ez a /2 a median, emiatt csinaltuk az egeszet */
+    med=masolat[meret/2];
+
+    /* csak hogy latszodjon */
+    kiir(tomb, meret);          /* nem kell */
+    kiir(masolat, meret);       /* nem kell */
+
+    free(masolat);
+    return med;
+}
+
+int main(void) {
+    double t[9];
+    int i;
+
+    /* nem kerte a feladat */
+    for (i=0; i&lt;9; i++)
+        t[i]=rand()/(double)RAND_MAX;
+
+    printf(&quot;Median=%6.4lf\n&quot;, median(t, 9));
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+<h3>Dicsőséglista</h3>
+<p>Játékot kell írni, amely egy maximum 20 nevet tároló dicsőséglistát vezet. A
+maximum 100 karakteres nevek mindegyikéhez egy egész pontszám tartozik.
+Írd meg a következő függvényeket:
+<br>
+1. függvény: eldönti egy adott pontszámról, hogy felkerül-e a listára. Igaz/hamis értékkel tér vissza.
+<br>
+2. függvény: kiírja a képernyőre a dicsőséglistát.
+<br>
+3. függvény: felvesz egy új bejegyzést (név, pontszám) a listára, és visszatér a helyezéssel. (-1, ha nem került fel a listára.) A legkisebb pontszámú bejegyzés ilyenkor törlődik.</p>
+
+
+
+</div>
+</section>
+<section id="2">
+<div class="slide" id="slide_2">
+<a id="feladatrekurzio" class="namer"></a>
+<div class="slideheader">
+<h2><span class="oldalszam">2</span>Rekurzió</h2>
+</div>
+
+<h3>Fibonacci</h3>
+<p>Írj programot, mely kiírja a képernyőre az első n Fibonacci számot. Az n változó értékét a
+felhasználó adhassa meg! Írd meg rekurzívan és iteratívan is!</p>
+
+<h3>Fibonacci szám-e</h3>
+<p>Készíts programot, mely a felhasználótól bekér egy természetes számot, majd megállapítja
+róla, hogy a szám Fibonacci szám-e!</p>
+
+<h3>Aknakereső</h3>
+<p>Írd meg azt az algoritmust, amely az aknakeresőben felfedi a pálya aknák nélküli részét!
+Egy két dimenziós pályán néhány akna van elszórva. A felhasználó szabadon
+léphet bármelyik mezőre. Ha aknára lép, veszít; ha nem, akkor megmutatjuk neki, hogy a
+választott mező mellett hány másik mező tartalmaz aknát (0 és 8 között). Ha 0, akkor a szomszédos
+mezők egyike sem tartalmaz aknát, vagyis azokra biztonságosan lehet lépni; ha azoknál is
+valamelyik mezőre 0 adódik, természetesen még tovább, arra is. Készíts függvényt, amely egy
+összefüggő, akna nélküli területet teljesen felderít!</p>
+
+
+<h3 id="emeletes">Emeletes ház (Dinesman feladata)</h3>
+<p>Ez a feladat már szerepelt egyszer:</p>
+<p class="bentebb">Baker, Cooper, Fletcher, Miller és Smith egy ötemeletes ház különböző
+emeletein laknak. Baker nem a legfölső emeleten lakik, Cooper pedig nem az alsó
+szinten. Fletcher lakhelye sem a legalsó szinten van, de nem is a legfölsőn.
+Miller magasabban lakik, mint Cooper. Smith nem Fletcherrel szomszédos emeleten
+lakik, ahogy Cooper és Fletcher sem emelet-szomszédok. A kérdés: melyik
+emelet kié?</p>
+<p>Akkor az a tipp szerepelt mellette, hogy az összes lehetőség közül (11111,
+11112, 11113 stb.) első körben azokat kell kiszűrni, ahol az öt változó közül van
+két egyforma.</p>
+<p>Oldd meg most másképp a feladatot! Tedd be egy tömbbe az öt különböző számot,
+amely tömb egyes elemei rendre Baker, Cooper, Fletcher, Miller és Smith emeleteinek
+számát mutatják. Írj függvényt, amely permutálja a tömböt, és írj olyan függvényt
+is, amely ellenőrzi a megkötéseket! Írj ezek használatával egy programot, amely
+megoldja a feladatot!</p>
+
+
+
+<h3>Bemenet megfordítása</h3>
+<p>Írj rekurziót használó programot, amely beolvassa a szabványos bemenetén érkező
+karaktersorozatot, és visszafelé írja ki azt! A program ne használjon tömböket!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>A trükk egy olyan rekurzív függvényt írni, amelynek első dolga a karakter beolvasása,
+utolsó dolga pedig a beolvasott karakter kiírása. A kettő között pedig a függvénynek
+meg kell hívnia saját magát, hogy beolvassa a második karaktert (és kiírja majd az első
+előtt) stb. Így a sok karakter beolvasásához ciklus sem kell, mert azt a rekurzió helyettesíti.</p>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void csinal(void) {
+    int c = getchar();
+    if (c != EOF) {
+        csinal();
+        putchar(c);
+    }
+}
+
+int main(void) {
+    csinal();
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+<h3>Zárójelek párjai</h3>
+<p>Írj rekurzív programot, amelyik egy nyitó zárójellel kezdődő sztringben megtalálja a zárójel
+bezáró párját. (A zárójelek (egymásba () lehetnek)) ágyazva.</p>
+<p>Írd meg ugyanezt iteratívan is!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>
+<em>Rekurzív megoldás.</em> Írjunk először egy függvényt, amelyik egy sztringet kap paraméterként, és egy
+kezdő pozíciót. Térjen vissza a függvény azzal az indexszel, ahol először bezáró
+zárójelet talál. Ez könnyű, egyszerűen csak egy ciklust kell futtatnunk addig,
+amíg meg nem lesz a keresett karakter:
+</p>
+<pre>
+FÜGGVÉNY bezárót_keres(sztring, pozíció)
+    AMÍG sztring[pozíció] != ')'
+        pozíció=pozíció+1
+    CIKLUS VÉGE
+
+    VISSZA: pozíció
+FÜGGVÉNY VÉGE
+</pre>
+<p>
+De ez még nem tudja a zárójelek egymásba ágyazását.
+Mit kell tenni, ha a bezárójel keresése közben egy nyitó zárójelet találunk? Akkor
+a következő bezárójel még nem az lesz, amit keresünk, hanem a mostani nyitónak a párja.
+Ez a belső zárójelpár közrefog egy sztringrészletet, amit át kéne ugranunk a keresés
+közben:
+</p>
+<pre class="sorsurit1">
+eredeti nyitó az elején          ezt a bezárót keressük
+↓                                ↓
+(A zárójelek <span style="text-decoration: line-through;">(egymásba lehetnek)</span> ) ágyazva.
+             ↑                 ↑
+             ezt a részt ki kell hagyni, mintha ott sem lenne
+</pre>
+<p>
+Hogy találjuk meg, hogy hol van ennek a nyitó zárójelnek a párja?
+Nagyon egyszerűen, hiszen már az előbb megírtuk azt a függvényt, ami
+ezt tudja! Ott van fent a
+pszeudokódja. Azt kiegészítve kapjuk a lenti függvényt. Az első utasítás
+a pozíció növelése; azzal az első nyitó zárójelet egyből átugorja.
+</p>
+<pre>
+FÜGGVÉNY bezárót_keres(sztring, pozíció)
+    pozíció=pozíció+1
+    CIKLUS AMÍG sztring[pozíció] != ')'
+        FELTÉTEL HA sztring[pozíció] == '('
+            pozíció = bezárót_keres(sztring, pozíció)
+        FELTÉTEL VÉGE
+
+        pozíció=pozíció+1
+    CIKLUS VÉGE
+
+    VISSZA: pozíció
+FÜGGVÉNY VÉGE
+</pre>
+
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* Kap egy sztringet, es azon belul egy poziciot; ott egy nyito
+   zarojelnek kell lennie. Annak a nyito zarojelnek megkeresi
+   a bezaro parjat, es annak az indexet (poziciojat) adja vissza. */
+int bezarot_keres(char *sztring, int pozicio) {
+    /* elso nyitot egybol atugorjuk */
+    pozicio++;
+    /* es keressuk a bezaro parjat */
+    while (sztring[pozicio]!=')') {
+        /* ha kozben nyitot talalunk, akkor azt a reszt,
+           az azutan kovetkezo bezaroig, atugorjuk */
+        if (sztring[pozicio]=='(')
+            pozicio=bezarot_keres(sztring, pozicio);
+
+        pozicio++;
+    }
+
+    return pozicio;
+}
+
+int main(void) {
+    char szoveg[]=&quot;(Ez egy (zarojeles) () sztring), aminek itt van vege a pontnal.&quot;;
+    int pozicio=bezarot_keres(szoveg, 0);
+
+    /* kiirjuk a keresett bezarotol kezdve */
+    printf(&quot;%s\n&quot;, szoveg+pozicio);
+
+    return 0;
+}</pre>
+<p>
+<em>Iteratív megoldás.</em> Minden rekurzív problémának létezik iteratív megoldása. Ennek például nagyon
+egyszerű. Ha a keresés közben találunk egy nyitó zárójelet, akkor eggyel
+több bezáró zárójelig kell futtatni a keresést:
+</p>
+<pre>
+A (zárójelek (egymásba () lehetnek) ) ágyazva.
+0011111111111222222222233222222222211000000000
+</pre>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+/* Az elozo problema iterativ megoldasat adja ez a fuggveny. */
+int bezarot_keres(char *sztring, int pozicio) {
+    /* most elvileg egy nyito zarojelen allunk;
+     * vagyis egy bezaro zarojelet keresunk. */
+    int hany_kell=1;
+
+    while (hany_kell&gt;0) {
+        /* nezzuk a kovetkezo karaktert */
+        pozicio++;
+        if (sztring[pozicio]=='(')
+            hany_kell++;
+        if (sztring[pozicio]==')')
+            hany_kell--;
+    }
+
+    return pozicio;
+}
+
+int main(void) {
+    char szoveg[]=&quot;(Ez egy (zarojeles) () sztring), aminek itt van vege a pontnal.&quot;;
+    int pozicio=bezarot_keres(szoveg, 0);
+
+    /* kiirjuk a keresett bezarotol kezdve */
+    printf(&quot;%s\n&quot;, szoveg+pozicio);
+
+    return 0;
+}</pre>
+
+</div>
+</div>
+
+
+
+
+<h3>Rendezés közvetlen kiválasztással</h3>
+
+<p>Egy tömb rendezve: a legelejére rakjuk a legkisebb elemet, utána rendezzük a tömb fennmaradó
+részét. Minden iteráció átírható rekurzióvá: írjuk meg a közvetlen kiválasztásos rendezőt
+rekurzívan!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void kozvetlen(double t[], int db) {
+    int j, minindex;
+
+    /* ha a tömbben nincs két elem, akkor csak rendezett lehet */
+    if (db &lt; 2)
+        return;
+
+    minindex=0;                /* minimum keresése */
+    for (j=1; j&lt;db; ++j)
+        if (t[j]&lt;t[minindex])
+            minindex=j;
+    if (minindex!=0) {         /* csere? */
+        double temp=t[minindex];
+        t[minindex]=t[0];      /* csere. */
+        t[0]=temp;
+    }
+
+    /* a tömb fennmaradó részének rendezése */
+    kozvetlen(t+1, db-1);
+}
+
+
+int main(void) {
+    double tomb[]={6, 9, 3, 7, 8, 5, 5.76};
+    int i;
+
+    kozvetlen(tomb, 7);
+    for (i=0; i&lt;7; ++i)
+        printf(&quot;%g &quot;, tomb[i]);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+<h3>Három számjegyenkénti felosztás</h3>
+
+<p>Írj függvényt, amely a paraméterként kapott pozitív egész számot három számjegyenként
+csoportosított formában írja ki. Pl.: 16&nbsp;077&nbsp;216. Próbáld ki más számokra is: 999,
+1000, 12, 0, 1000222!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Tipp</a></h4>
+<div class="megjelenik csik">
+<p>Használj rekurziót! Ez olyan, mintha ezres számrendszerben írnál ki.</p>
+</div>
+</div>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void kiir(int n) {
+    /* Ha több mint 3 számjegyű */
+    if (n/1000&gt;0) {
+        /* Levágunk 3 számjegyet (osztás 1000-el), és erre hívjuk a függvényt */
+        kiir(n/1000);
+        /* Kiírjuk a levágott 3 számjegyet vezető 0-kkal */
+        printf(&quot; %03d&quot;, n%1000);
+    }
+    else
+        printf(&quot;%d&quot;,n);       /* Különben simán kiírjuk a számot */
+}
+
+int main(void) {
+    kiir(16077216);
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+
+
+
+<h3>Gyors hatványozás</h3>
+
+<p>A hatványozás elvégezhető annál gyorsabban is, mintha a kitevőnek megfelelő számú szorzást csinálnánk. Pl. <code>a<sup>8</sup>=a<sup>4</sup>·a<sup>4</sup></code>, <code>a<sup>4</sup>=a<sup>2</sup>·a<sup>2</sup></code> és
+<code>a<sup>2</sup>=a·a</code> miatt a nyolcadikra hatványozáshoz mindössze három szorzásra van szükség.
+A következő megfigyelést tehetjük:</p>
+
+<ul>
+<li><code>a<sup>k</sup>=(a<sup>2</sup>)<sup>k/2</sup></code>, ha <code>k</code> páros, és
+<li><code>a<sup>k</sup>=a·a<sup>k-1</sup></code>, ha <code>k</code> páratlan.
+</ul>
+
+<p>Írj rekurzív függvényt, amely a fentiek alapján végzi el a hatványozást! Paraméterei legyenek
+az alap és a kitevő, visszatérési értéke pedig a hatvány. Írd ki kettő első tizenhat
+hatványát!</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+double hatvany(double alap, unsigned kitevo) {
+    /* barminek a 0. hatvanya 1 */
+    if (kitevo==0)
+        return 1;
+
+    if (kitevo%2==0)
+        /* ha paros, akkor alap negyzetre, kitevo felezve */
+        return hatvany(alap*alap, kitevo/2);
+    else
+        /* amugy alap * alap a k-1-ediken */
+        return alap * hatvany(alap, kitevo-1);
+}
+
+int main(void) {
+    int i;
+
+    for (i=0; i&lt;16; ++i)
+        printf(&quot;%d %g\n&quot;, i, hatvany(2, i));
+
+    return 0;
+}</pre>
+</div>
+</div>
+
+
+
+
+<h3>Hanoi tornyai – lépés sorszáma</h3>
+
+<p>A <a href="ea07.html#hanoi">rekurziós előadáson</a> volt szó a Hanoi tornyai
+feladatról. Ott szerepel egy megoldás, amely kiírja, mikor melyik korongot kell áthelyezni.
+Módosítsd azt a programot úgy, hogy beszámozza a lépéseket! (Ha esetleg globális változóra
+gondolnál, meg lehet oldani anélkül is!)</p>
+
+<div class="tovabb ">
+<h4><a onclick="tovabb_megnyit_bezar(this);">Megoldás</a></h4>
+<div class="megjelenik csik">
+<p>Ehhez az kell, hogy akármilyen mélyre megyünk a rekurzióban, mindig ugyanazt a számlálót lássuk;
+hogy minden lépés kiírásánál ugyanazt a számlálót tudjuk megnövelni. Ezért a számlálót a rekurzív
+hívásokon <em>kívül,</em> még azok előtt létrehozzuk, és a <code>hanoi()</code> függvény pedig
+pointert kap rá. Akárhányadik hívásról is van szó, a pointer segítségével ugyanazt a változót
+fogja elérni.</p>
+<pre class="brush: c "  >
+#include &lt;stdio.h&gt;
+
+void hanoi(int *plepes, int n, char honnan, char seged, char hova) {
+   if (n == 0)
+      return;
+   hanoi(plepes, n-1, honnan, hova, seged);
+   printf(&quot;%d. lepes: rakj 1-et: %c-&gt;%c\n&quot;, ++*plepes, honnan, hova);
+   hanoi(plepes, n-1, seged, honnan, hova);
+}
+
+int main(void) {
+   int lepes = 0;
+   hanoi(&amp;lepes, 4, 'A', 'B', 'C');
+
+   return 0;
+}</pre>
+</div>
+</div>
+
+
+
+<h3>Hanoi tornyai – lépés sorszáma</h3>
+
+<p>Írd át úgy a Hanoi tornyai programot, hogy valamilyen grafikus könyvtár segítségével
+(pl. SDL) ki is rajzolja a cseréket!</p>
+</div>
+</section>
+</div>
+</main>
+
+<nav role="navigation">
+<a href="f07.html#menu" id="scrolltotop"></a>
+</nav>
+
+<footer role="contentinfo">
+<div id="footer" class="shaper">
+<a href="index.html"><img src="modulz/logo.png" id="footerlogo" alt="Logo"></a>
+<div>InfoC – Programozás alapjai I.</div>
+<div class="csakkepernyon"><a href="index.html">főoldal</a> · <a href="elerhetoseg.html">elérhetőség</a> · <a href="https://www.facebook.com/infoceetbmehu">facebook</a></div>
+<div class="csaknyomtatasban">Kérjük, az oldalak kinyomtatása előtt gondolj a környezetre.</div>
+BME EET, 2009-2014.</div>
+</footer>
+
+</div>
+</body>
+
+</html>
